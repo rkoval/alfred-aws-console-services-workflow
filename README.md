@@ -1,4 +1,4 @@
-# AWS Console Services - Alfred Workflow
+# <img src="src/icons/aws.png" width="35"> AWS Console Services - Alfred Workflow
 
 Very simple workflow to quickly open up AWS Console Services in your browser.
 
