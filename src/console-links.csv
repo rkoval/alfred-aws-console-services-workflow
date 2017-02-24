@@ -1,6 +1,7 @@
 "acm","Certificate Manager - Provision, Manage, and Deploy SSL/TLS Certificates","https://console.aws.amazon.com/acm/home"
 "apigateway","API Gateway - Build, Deploy and Manage APIs","https://console.aws.amazon.com/apigateway/home"
 "appstream","AppStream - Low Latency Application Streaming","https://console.aws.amazon.com/appstream/home"
+"batch","Batch - Fully Managed Batch Processing at Any Scale","https://console.aws.amazon.com/batch/home"
 "catalog","Service Catalog - Create and Use Standardized Products","https://console.aws.amazon.com/catalog/home"
 "cloudformation","CloudFormation - Create and Manage Resources with Templates","https://console.aws.amazon.com/cloudformation/home"
 "cloudfront","CloudFront - Global Content Delivery Network","https://console.aws.amazon.com/cloudfront/home"
