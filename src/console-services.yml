@@ -11,6 +11,10 @@
   description: 'AppStream - Low Latency Application Streaming'
   url: 'https://console.aws.amazon.com/appstream/home'
 
+- command: batch
+  description: 'Batch - Fully Managed Batch Processing at Any Scale'
+  url: 'https://console.aws.amazon.com/batch/home'
+
 - command: catalog
   description: 'Service Catalog - Create and Use Standardized Products'
   url: 'https://console.aws.amazon.com/catalog/home'
