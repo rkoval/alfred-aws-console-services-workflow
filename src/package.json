@@ -1,0 +1,17 @@
+{
+  "name": "aws-console-services",
+  "version": "0.0.1",
+  "description": "Very simple workflow to quickly open up AWS Console Services in your browser",
+  "main": "generate_items.js",
+  "scripts": {
+    "generate": "./generate_items.js"
+  },
+  "author": "Ryan Koval <ryan@ryankoval.com>",
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^1.0.0",
+    "plist": "^2.1.0",
+    "traverse": "^0.6.6",
+    "yamljs": "^0.2.10"
+  }
+}

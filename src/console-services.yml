@@ -1,0 +1,224 @@
+---
+- command: acm
+  description: 'Certificate Manager - Provision, Manage, and Deploy SSL/TLS Certificates'
+  url: 'https://console.aws.amazon.com/acm/home'
+
+- command: apigateway
+  description: 'API Gateway - Build, Deploy and Manage APIs'
+  url: 'https://console.aws.amazon.com/apigateway/home'
+
+- command: appstream
+  description: 'AppStream - Low Latency Application Streaming'
+  url: 'https://console.aws.amazon.com/appstream/home'
+
+- command: catalog
+  description: 'Service Catalog - Create and Use Standardized Products'
+  url: 'https://console.aws.amazon.com/catalog/home'
+
+- command: cloudformation
+  description: 'CloudFormation - Create and Manage Resources with Templates'
+  url: 'https://console.aws.amazon.com/cloudformation/home'
+
+- command: cloudfront
+  description: 'CloudFront - Global Content Delivery Network'
+  url: 'https://console.aws.amazon.com/cloudfront/home'
+
+- command: cloudsearch
+  description: 'CloudSearch - Managed Search Service'
+  url: 'https://console.aws.amazon.com/cloudsearch/home'
+
+- command: cloudtrail
+  description: 'CloudTrail - Track User Activity and API Usage'
+  url: 'https://console.aws.amazon.com/cloudtrail/home'
+
+- command: cloudwatch
+  description: 'CloudWatch - Monitor Resources and Applications'
+  url: 'https://console.aws.amazon.com/cloudwatch/home'
+
+- command: codecommit
+  description: 'CodeCommit - Store Code in Private Git Repositories'
+  url: 'https://console.aws.amazon.com/codecommit/home'
+
+- command: codedeploy
+  description: 'CodeDeploy - Automate Code Deployments'
+  url: 'https://console.aws.amazon.com/codedeploy/home'
+
+- command: codepipeline
+  description: 'CodePipeline - Release Software using Continuous Delivery'
+  url: 'https://console.aws.amazon.com/codepipeline/home'
+
+- command: cognito
+  description: 'Cognito - User Identity and App Data Synchronization'
+  url: 'https://console.aws.amazon.com/cognito/home'
+
+- command: config
+  description: 'Config - Track Resource Inventory and Changes'
+  url: 'https://console.aws.amazon.com/config/home'
+
+- command: datapipeline
+  description: 'Data Pipeline - Orchestration for Data-Driven Workflows'
+  url: 'https://console.aws.amazon.com/datapipeline/home'
+
+- command: devicefarm
+  description: 'Device Farm - Test Android, iOS, and Web Apps on Real Devices in the Cloud'
+  url: 'https://console.aws.amazon.com/devicefarm/home'
+
+- command: directconnect
+  description: 'Direct Connect - Dedicated Network Connection to AWS'
+  url: 'https://console.aws.amazon.com/directconnect/home'
+
+- command: directoryservice
+  description: 'Directory Service - Host and Manage Active Directory'
+  url: 'https://console.aws.amazon.com/directoryservice/home'
+
+- command: dms
+  description: 'DMS - Managed Database Migration Service'
+  url: 'https://console.aws.amazon.com/dms/home'
+
+- command: dynamodb
+  description: 'DynamoDB - Managed NoSQL Database'
+  url: 'https://console.aws.amazon.com/dynamodb/home'
+
+- command: ec2
+  description: 'EC2 - Virtual Servers in the Cloud'
+  url: 'https://console.aws.amazon.com/ec2/home'
+
+- command: ecs
+  description: 'EC2 Container Service - Run and Manage Docker Containers'
+  url: 'https://console.aws.amazon.com/ecs/home'
+
+- command: efs
+  description: 'Elastic File System - Fully Managed File System for EC2'
+  url: 'https://console.aws.amazon.com/efs/home'
+
+- command: elasticache
+  description: 'ElastiCache - In-Memory Cache'
+  url: 'https://console.aws.amazon.com/elasticache/home'
+
+- command: elasticbeanstalk
+  description: 'Elastic Beanstalk - Run and Manage Web Apps'
+  url: 'https://console.aws.amazon.com/elasticbeanstalk/home'
+
+- command: elasticmapreduce
+  description: 'EMR - Managed Hadoop Framework'
+  url: 'https://console.aws.amazon.com/elasticmapreduce/home'
+
+- command: elastictranscoder
+  description: 'Elastic Transcoder - Easy-to-Use Scalable Media Transcoding'
+  url: 'https://console.aws.amazon.com/elastictranscoder/home'
+
+- command: es
+  description: 'Elasticsearch Service - Run and Scale Elasticsearch Clusters'
+  url: 'https://console.aws.amazon.com/es/home'
+
+- command: gamelift
+  description: 'GameLift - Deploy and Scale Session-based Multiplayer Games'
+  url: 'https://console.aws.amazon.com/gamelift/home'
+
+- command: glacier
+  description: 'Glacier - Archive Storage in the Cloud'
+  url: 'https://console.aws.amazon.com/glacier/home'
+
+- command: iam
+  description: 'Identity & Access Management - Manage User Access and Encryption Keys'
+  url: 'https://console.aws.amazon.com/iam/home'
+
+- command: importexport
+  description: 'Snowball - Large Scale Data Transport'
+  url: 'https://console.aws.amazon.com/importexport/home'
+
+- command: inspector
+  description: 'Inspector - Analyze Application Security'
+  url: 'https://console.aws.amazon.com/inspector/home'
+
+- command: iot
+  description: 'AWS IoT - Connect Devices to the Cloud'
+  url: 'https://console.aws.amazon.com/iot/home'
+
+- command: kinesis
+  description: 'Kinesis - Work with Real-Time Streaming Data'
+  url: 'https://console.aws.amazon.com/kinesis/home'
+
+- command: lambda
+  description: 'Lambda - Run Code without Thinking about Servers'
+  url: 'https://console.aws.amazon.com/lambda/home'
+
+- command: machinelearning
+  description: 'Machine Learning - Build Smart Applications Quickly and Easily'
+  url: 'https://console.aws.amazon.com/machinelearning/home'
+
+- command: mobileanalytics
+  description: 'Mobile Analytics - Collect, View and Export App Analytics'
+  url: 'https://console.aws.amazon.com/mobileanalytics/home'
+
+- command: mobilehub
+  description: 'Mobile Hub - Build, Test, and Monitor Mobile Apps'
+  url: 'https://console.aws.amazon.com/mobilehub/home'
+
+- command: opsworks
+  description: 'OpsWorks - Automate Operations with Chef'
+  url: 'https://console.aws.amazon.com/opsworks/home'
+
+- command: rds
+  description: 'RDS - Managed Relational Database Service'
+  url: 'https://console.aws.amazon.com/rds/home'
+
+- command: redshift
+  description: 'Redshift - Fast, Simple, Cost-Effective Data Warehousing'
+  url: 'https://console.aws.amazon.com/redshift/home'
+
+- command: route53
+  description: 'Route 53 - Scalable DNS and Domain Name Registration'
+  url: 'https://console.aws.amazon.com/route53/home'
+
+- command: s3
+  description: 'S3 - Scalable Storage in the Cloud'
+  url: 'https://console.aws.amazon.com/s3/home'
+
+- command: servermigration
+  description: 'Server Migration - Migrate on-premises servers to AWS'
+  url: 'https://console.aws.amazon.com/servermigration/home'
+
+- command: ses
+  description: 'SES - Email Sending and Receiving Service'
+  url: 'https://console.aws.amazon.com/ses/home'
+
+- command: sns
+  description: 'SNS - Push Notification Service'
+  url: 'https://console.aws.amazon.com/sns/home'
+
+- command: sqs
+  description: 'SQS - Message Queue Service'
+  url: 'https://console.aws.amazon.com/sqs/home'
+
+- command: storagegateway
+  description: 'Storage Gateway - Hybrid Storage Integration'
+  url: 'https://console.aws.amazon.com/storagegateway/home'
+
+- command: swf
+  description: 'SWF - Workflow Service for Coordinating Application Components'
+  url: 'https://console.aws.amazon.com/swf/home'
+
+- command: trustedadvisor
+  description: 'Trusted Advisor - Optimize Performance and Security'
+  url: 'https://console.aws.amazon.com/trustedadvisor/home'
+
+- command: vpc
+  description: 'VPC - Isolated Cloud Resources'
+  url: 'https://console.aws.amazon.com/vpc/home'
+
+- command: waf
+  description: 'WAF - Filter Malicious Web Traffic'
+  url: 'https://console.aws.amazon.com/waf/home'
+
+- command: workmail
+  description: 'WorkMail - Secure Email and Calendaring Service'
+  url: 'https://console.aws.amazon.com/workmail/home'
+
+- command: workspaces
+  description: 'WorkSpaces - Desktops in the Cloud'
+  url: 'https://console.aws.amazon.com/workspaces/home'
+
+- command: zocalo
+  description: 'WorkDocs - Secure Enterprise Storage and Sharing Service'
+  url: 'https://console.aws.amazon.com/zocalo/home'
