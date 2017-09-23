@@ -11,6 +11,10 @@
   description: 'AppStream - Low Latency Application Streaming'
   url: 'https://console.aws.amazon.com/appstream/home'
 
+- command: athena
+  description: 'Athena - Serverless Interactive Query Service'
+  url: 'https://console.aws.amazon.com/athena/home'
+
 - command: batch
   description: 'Batch - Fully Managed Batch Processing at Any Scale'
   url: 'https://console.aws.amazon.com/batch/home'
