@@ -55,6 +55,10 @@
   description: 'CodePipeline - Release Software using Continuous Delivery'
   url: 'https://console.aws.amazon.com/codepipeline/home'
 
+- command: codestar
+  description: 'Codestar - Develop, build and deploy applications'
+  url: 'https://console.aws.amazon.com/codestar/home'
+
 - command: cognito
   description: 'Cognito - User Identity and App Data Synchronization'
   url: 'https://console.aws.amazon.com/cognito/home'
