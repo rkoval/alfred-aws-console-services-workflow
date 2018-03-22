@@ -215,6 +215,10 @@
   description: 'SWF - Workflow Service for Coordinating Application Components'
   url: 'https://console.aws.amazon.com/swf/home'
 
+- command: support
+  description: 'Support - Support the success and operational health of your AWS solutions'
+  url: 'https://console.aws.amazon.com/support/home'
+
 - command: trustedadvisor
   description: 'Trusted Advisor - Optimize Performance and Security'
   url: 'https://console.aws.amazon.com/trustedadvisor/home'
