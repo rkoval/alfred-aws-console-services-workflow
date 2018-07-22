@@ -207,6 +207,10 @@
   description: 'SQS - Message Queue Service'
   url: 'https://console.aws.amazon.com/sqs/home'
 
+- command: stepfunctions
+  description: 'Step Functions - Coordinate components of distributed applications'
+  url: 'https://console.aws.amazon.com/states/home'
+
 - command: storagegateway
   description: 'Storage Gateway - Hybrid Storage Integration'
   url: 'https://console.aws.amazon.com/storagegateway/home'
@@ -242,3 +246,48 @@
 - command: zocalo
   description: 'WorkDocs - Secure Enterprise Storage and Sharing Service'
   url: 'https://console.aws.amazon.com/zocalo/home'
+
+- command: codebuild
+  description: ''
+  url: 'https://console.aws.amazon.com//home'
+
+- command: glue
+  description: ''
+  url: 'https://console.aws.amazon.com//home'
+
+- command: greengrass
+  description: ''
+  url: 'https://console.aws.amazon.com//home'
+
+- command: lex
+  description: ''
+  url: 'https://console.aws.amazon.com//home'
+
+- command: lightsail
+  description: ''
+  url: 'https://console.aws.amazon.com//home'
+
+- command: pinpoint
+  description: ''
+  url: 'https://console.aws.amazon.com//home'
+
+- command: polly
+  description: ''
+  url: 'https://console.aws.amazon.com//home'
+
+- command: rekognition
+  description: ''
+  url: 'https://console.aws.amazon.com//home'
+
+- command: xray
+  description: ''
+  url: 'https://console.aws.amazon.com//home'
+
+- command: cloud9
+  description: ''
+  url: 'https://console.aws.amazon.com/cloud8/home'
+
+- command: appsync
+  description: ''
+  url: 'https://console.aws.amazon.com//home'
+
