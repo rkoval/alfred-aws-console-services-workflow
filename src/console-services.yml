@@ -249,45 +249,56 @@
 
 - command: codebuild
   description: ''
-  url: 'https://console.aws.amazon.com//home'
+  url: 'https://console.aws.amazon.com/codebuild/home'
 
 - command: glue
-  description: ''
-  url: 'https://console.aws.amazon.com//home'
+  description: 'Fully managed ETL service'
+  url: 'https://console.aws.amazon.com/glue/home'
 
 - command: greengrass
-  description: ''
-  url: 'https://console.aws.amazon.com//home'
+  description: 'Deploy and run code on your devices'
+  url: 'https://console.aws.amazon.com/greengrass/home'
 
 - command: lex
-  description: ''
-  url: 'https://console.aws.amazon.com//home'
+  description: 'Build voice and text chatbots'
+  url: 'https://console.aws.amazon.com/lex/home'
 
 - command: lightsail
-  description: ''
-  url: 'https://console.aws.amazon.com//home'
+  description: 'Launch and manage virtual private servers'
+  url: 'https://lightsail.aws.amazon.com/ls/webapp/home'
 
 - command: pinpoint
-  description: ''
-  url: 'https://console.aws.amazon.com//home'
+  description: 'Engage users via email, sms, push & analytics'
+  url: 'https://console.aws.amazon.com/pinpoint/home'
 
 - command: polly
-  description: ''
-  url: 'https://console.aws.amazon.com//home'
+  description: 'Turn text into lifelike speech'
+  url: 'https://console.aws.amazon.com/polly/home'
 
 - command: rekognition
-  description: ''
-  url: 'https://console.aws.amazon.com//home'
+  description: 'Search and analyse images'
+  url: 'https://console.aws.amazon.com/rekognition/home'
 
 - command: xray
-  description: ''
-  url: 'https://console.aws.amazon.com//home'
+  description: 'Analyse and debug your applications'
+  url: 'https://console.aws.amazon.com/xray/home'
 
 - command: cloud9
-  description: ''
-  url: 'https://console.aws.amazon.com/cloud8/home'
+  description: 'Cloud IDE for writting, running, and debugging code '
+  url: 'https://console.aws.amazon.com/cloud9/home'
 
 - command: appsync
-  description: ''
-  url: 'https://console.aws.amazon.com//home'
+  description: 'Build data-driven apps with real-time and offline capabilities'
+  url: 'https://console.aws.amazon.com/appsync/home'
 
+- command: cloudhsm
+  description: 'Managed hardware security modules in the cloud'
+  url: 'https://console.aws.amazon.com/cloudhsm/home'
+
+- command: macie
+  description: 'Classifies and secures your business-critical content'
+  url: 'https://us-east-1.redirection.macie.aws.amazon.com/'
+
+- command: servicecatalog
+  description: 'Create and use standardised products'
+  url: 'https://console.aws.amazon.com/servicecatalog/home'
