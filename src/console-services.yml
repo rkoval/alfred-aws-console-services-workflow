@@ -229,7 +229,7 @@
 
 - command: globalaccelerator
   description: 'Global Accelerator - Improve your application’s availability and performance using the AWS Global Network'
-  url: 'https://console.aws.amazon.com/globalaccelerator/home'
+  url: 'https://us-west-2.console.aws.amazon.com/ec2/GlobalAccelerator/home?region=us-west-2'
 
 - command: glue
   description: 'Glue - fully managed ETL (extract, transform, and load) service'
@@ -385,7 +385,7 @@
 
 - command: quicksight
   description: 'QuickSight -  Fast, easy to use business analytics'
-  url: 'https://console.aws.amazon.com/quicksight/home'
+  url: 'https://quicksight.aws.amazon.com/'
 
 - command: rds
   description: 'RDS - Managed Relational Database Service'
