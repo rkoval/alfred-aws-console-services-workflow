@@ -1,31 +1,63 @@
 ---
-- command: acm
-  description: 'Certificate Manager - Provision, Manage, and Deploy SSL/TLS Certificates'
-  url: 'https://console.aws.amazon.com/acm/home'
+- command: alexa
+  description: 'Alexa for Business - Empower your organization with voice'
+  url: 'https://console.aws.amazon.com/a4b/home'
+
+- command: amplify
+  description: 'Amplify - Develop & deploy cloud-powered mobile and web apps'
+  url: 'https://console.aws.amazon.com/amplify/home'
 
 - command: apigateway
   description: 'API Gateway - Build, Deploy and Manage APIs'
   url: 'https://console.aws.amazon.com/apigateway/home'
 
 - command: appstream
-  description: 'AppStream - Low Latency Application Streaming'
-  url: 'https://console.aws.amazon.com/appstream/home'
+  description: 'AppStream 2.0 - Stream desktop applications securely to any web browser'
+  url: 'https://console.aws.amazon.com/appstream2/home'
+
+- command: appsync
+  description: 'AppSync - Real-Time Data Sync Using GraphQL for Mobile & Web Apps, Online or Offline'
+  url: 'https://console.aws.amazon.com/appsync/home'
+
+- command: artifact
+  description: 'Artifact - AWS Compliance Reports and Agreements'
+  url: 'https://console.aws.amazon.com/artifact/home'
 
 - command: athena
-  description: 'Athena - Serverless Interactive Query Service'
+  description: 'Athena - Query Data in S3 using SQL'
   url: 'https://console.aws.amazon.com/athena/home'
 
+- command: awsautoscaling
+  description: 'Auto Scaling - AWS Auto Scaling enables you to quickly scale your entire application on AWS'
+  url: 'https://console.aws.amazon.com/awsautoscaling/home'
+
+- command: backup
+  description: 'Backup - centrally manage and automate backups across AWS services'
+  url: 'https://console.aws.amazon.com/backup/home'
+
 - command: batch
-  description: 'Batch - Fully Managed Batch Processing at Any Scale'
+  description: 'Batch - Run Batch Jobs at Any Scale'
   url: 'https://console.aws.amazon.com/batch/home'
 
-- command: billing
-  description: 'Billing - Billing & Cost Management'
-  url: 'https://console.aws.amazon.com/billing/home'
+- command: blockchain
+  description: 'Blockchain - Easily create and manage scalable blockchain networks'
+  url: 'https://console.aws.amazon.com/blockchain/home'
 
-- command: catalog
-  description: 'Service Catalog - Create and Use Standardized Products'
-  url: 'https://console.aws.amazon.com/catalog/home'
+- command: budgets
+  description: 'Budgets - Set Custom Budgets and Receive Alerts'
+  url: 'https://console.aws.amazon.com/billing/home#/budgets#/home'
+
+- command: acm
+  description: 'Certificate Manager - Provision, Manage, and Deploy SSL/TLS Certificates'
+  url: 'https://console.aws.amazon.com/acm/home'
+
+- command: chime
+  description: 'Chime - Amazon Chime is a communications service that transforms online meetings'
+  url: 'https://chime.aws.amazon.com/'
+
+- command: cloud9
+  description: 'Cloud9 - A Cloud IDE for Writing, Running, and Debugging Code'
+  url: 'https://console.aws.amazon.com/cloud9/home'
 
 - command: cloudformation
   description: 'CloudFormation - Create and Manage Resources with Templates'
@@ -34,6 +66,14 @@
 - command: cloudfront
   description: 'CloudFront - Global Content Delivery Network'
   url: 'https://console.aws.amazon.com/cloudfront/home'
+
+- command: cloudhsm
+  description: 'CloudHSM - Managed Hardware Security Modules in the Cloud'
+  url: 'https://console.aws.amazon.com/cloudhsm/home'
+
+- command: cloudmap
+  description: 'Cloud Map - Build a dynamic map of your cloud'
+  url: 'https://console.aws.amazon.com/cloudmap/home'
 
 - command: cloudsearch
   description: 'CloudSearch - Managed Search Service'
@@ -46,6 +86,10 @@
 - command: cloudwatch
   description: 'CloudWatch - Monitor Resources and Applications'
   url: 'https://console.aws.amazon.com/cloudwatch/home'
+
+- command: codebuild
+  description: 'CodeBuild - Build and Test Code'
+  url: 'https://console.aws.amazon.com/codebuild/home'
 
 - command: codecommit
   description: 'CodeCommit - Store Code in Private Git Repositories'
@@ -67,13 +111,37 @@
   description: 'Cognito - User Identity and App Data Synchronization'
   url: 'https://console.aws.amazon.com/cognito/home'
 
+- command: comprehend
+  description: 'Comprehend - Analyze Unstructured Text'
+  url: 'https://console.aws.amazon.com/comprehend/home'
+
 - command: config
   description: 'Config - Track Resource Inventory and Changes'
   url: 'https://console.aws.amazon.com/config/home'
 
+- command: connect
+  description: 'Connect - managed contact center that enables engagement at any scale'
+  url: 'https://console.aws.amazon.com/connect/home'
+
+- command: controltower
+  description: 'Control Tower - set up and govern your multi-account AWS environment'
+  url: 'https://console.aws.amazon.com/controltower/home'
+
+- command: costreports
+  description: 'Cost Explorer - Visualize and Explore Your AWS Costs and Usage'
+  url: 'https://console.aws.amazon.com/cost-reports/home'
+
 - command: datapipeline
   description: 'Data Pipeline - Orchestration for Data-Driven Workflows'
   url: 'https://console.aws.amazon.com/datapipeline/home'
+
+- command: datasync
+  description: 'DataSync - DataSync simplifies, automates, and accelerates moving data'
+  url: 'https://console.aws.amazon.com/datasync/home'
+
+- command: deeplens
+  description: 'DeepLens - Deep Learning Enabled Video Camera'
+  url: 'https://console.aws.amazon.com/deeplens/home'
 
 - command: devicefarm
   description: 'Device Farm - Test Android, iOS, and Web Apps on Real Devices in the Cloud'
@@ -87,9 +155,17 @@
   description: 'Directory Service - Host and Manage Active Directory'
   url: 'https://console.aws.amazon.com/directoryservice/home'
 
+- command: discovery
+  description: 'Application Discovery Service - Discover on-premises application inventory and dependencies'
+  url: 'https://console.aws.amazon.com/discovery/home'
+
 - command: dms
   description: 'DMS - Managed Database Migration Service'
   url: 'https://console.aws.amazon.com/dms/home'
+
+- command: documentdb
+  description: 'DocumentDB - Fully-managed MongoDB-compatible database service'
+  url: 'https://console.aws.amazon.com/documentdb/home'
 
 - command: dynamodb
   description: 'DynamoDB - Managed NoSQL Database'
@@ -99,57 +175,125 @@
   description: 'EC2 - Virtual Servers in the Cloud'
   url: 'https://console.aws.amazon.com/ec2/home'
 
+- command: ecr
+  description: 'ECR - Fully-managed Docker container registry'
+  url: 'https://console.aws.amazon.com/ecr/home'
+
 - command: ecs
-  description: 'EC2 Container Service - Run and Manage Docker Containers'
+  description: 'ECS - Run and Manage Docker Containers'
   url: 'https://console.aws.amazon.com/ecs/home'
 
 - command: efs
-  description: 'Elastic File System - Fully Managed File System for EC2'
+  description: 'EFS - Managed File Storage for EC2'
   url: 'https://console.aws.amazon.com/efs/home'
+
+- command: eks
+  description: 'EKS - Managed Kubernetes on AWS'
+  url: 'https://console.aws.amazon.com/eks/home'
 
 - command: elasticache
   description: 'ElastiCache - In-Memory Cache'
   url: 'https://console.aws.amazon.com/elasticache/home'
 
-- command: elasticbeanstalk
-  description: 'Elastic Beanstalk - Run and Manage Web Apps'
-  url: 'https://console.aws.amazon.com/elasticbeanstalk/home'
-
-- command: elasticmapreduce
-  description: 'EMR - Managed Hadoop Framework'
-  url: 'https://console.aws.amazon.com/elasticmapreduce/home'
+- command: elasticsearchservice
+  description: 'Elasticsearch Service -  Run and Scale Elasticsearch Clusters'
+  url: 'https://console.aws.amazon.com/elasticsearchservice/home'
 
 - command: elastictranscoder
   description: 'Elastic Transcoder - Easy-to-Use Scalable Media Transcoding'
   url: 'https://console.aws.amazon.com/elastictranscoder/home'
 
-- command: es
-  description: 'Elasticsearch Service - Run and Scale Elasticsearch Clusters'
-  url: 'https://console.aws.amazon.com/es/home'
+- command: emr
+  description: 'EMR - Managed Hadoop Framework'
+  url: 'https://console.aws.amazon.com/emr/home'
+
+- command: forecast
+  description: 'Forecast - fully-managed service for accurate time-series forecasting'
+  url: 'https://console.aws.amazon.com/forecast/home'
+
+- command: freertos
+  description: 'FreeRTOS - IoT Operating System for Microcontrollers'
+  url: 'https://console.aws.amazon.com/freertos/home'
+
+- command: fsx
+  description: 'FSx - Fully managed third-party file systems optimized for a variety of workloads'
+  url: 'https://console.aws.amazon.com/fsx/home'
 
 - command: gamelift
   description: 'GameLift - Deploy and Scale Session-based Multiplayer Games'
   url: 'https://console.aws.amazon.com/gamelift/home'
 
 - command: glacier
-  description: 'Glacier - Archive Storage in the Cloud'
+  description: 'S3 Glacier - Archive Storage in the Cloud'
   url: 'https://console.aws.amazon.com/glacier/home'
 
-- command: iam
-  description: 'Identity & Access Management - Manage User Access and Encryption Keys'
-  url: 'https://console.aws.amazon.com/iam/home'
+- command: globalaccelerator
+  description: 'Global Accelerator - Improve your application’s availability and performance using the AWS Global Network'
+  url: 'https://console.aws.amazon.com/globalaccelerator/home'
 
-- command: importexport
-  description: 'Snowball - Large Scale Data Transport'
-  url: 'https://console.aws.amazon.com/importexport/home'
+- command: glue
+  description: 'Glue - fully managed ETL (extract, transform, and load) service'
+  url: 'https://console.aws.amazon.com/glue/home'
+
+- command: groundstation
+  description: 'Ground Station - Communicate with satellites'
+  url: 'https://console.aws.amazon.com/groundstation/home'
+
+- command: guardduty
+  description: 'GuardDuty - Intelligent Threat Detection to Protect Your AWS Accounts and Workloads'
+  url: 'https://console.aws.amazon.com/guardduty/home'
+
+- command: iam
+  description: 'IAM - Manage User Access and Encryption Keys'
+  url: 'https://console.aws.amazon.com/iam/home'
 
 - command: inspector
   description: 'Inspector - Analyze Application Security'
   url: 'https://console.aws.amazon.com/inspector/home'
 
-- command: iot
-  description: 'AWS IoT - Connect Devices to the Cloud'
-  url: 'https://console.aws.amazon.com/iot/home'
+- command: iot1click
+  description: 'IoT 1-Click - Trigger AWS Lambda functions from simple devices'
+  url: 'https://console.aws.amazon.com/iot1click/home'
+
+- command: iotanalytics
+  description: 'IoT Analytics - Collect, preprocess, store, analyze and visualize data of IoT devices'
+  url: 'https://console.aws.amazon.com/iotanalytics/home'
+
+- command: iotcore
+  description: 'IoT Core - Connect Devices to the Cloud'
+  url: 'https://console.aws.amazon.com/iotcore/home'
+
+- command: iotdevicedefender
+  description: 'IoT Device Defender - Connect Devices to the Cloud'
+  url: 'https://console.aws.amazon.com/devicedefender/home'
+
+- command: iotdevicemanagement
+  description: 'IoT Device Management - Securely Manage Fleets as Small as One Device, or as Broad as Millions of Devices'
+  url: 'https://console.aws.amazon.com/iotdm/home'
+
+- command: iotevents
+  description: 'IoT Events - Monitor device fleets for changes and trigger alerts to respond'
+  url: 'https://console.aws.amazon.com/iotevents/home'
+
+- command: iotgreengrass
+  description: 'IoT Greengrass - Deploy and run code on your devices'
+  url: 'https://console.aws.amazon.com/iotgreengrass/home'
+
+- command: iotsitewise
+  description: 'IoT SiteWise - Data driven decisions in Industrial operations'
+  url: 'https://console.aws.amazon.com/iotsitewise/home'
+
+- command: iotthingsgraph
+  description: 'IoT Things Graph - Easily connect devices and web services to build IoT applications'
+  url: 'https://console.aws.amazon.com/thingsgraph/home'
+
+- command: mks
+  description: 'MSK - Fully managed, highly available, and secure service for Apache Kafka'
+  url: 'https://console.aws.amazon.com/mks/home'
+
+- command: kms
+  description: 'Key Management Service - Securely Generate and Manage AWS Encryption Keys'
+  url: 'https://console.aws.amazon.com/keymanagementservice/home'
 
 - command: kinesis
   description: 'Kinesis - Work with Real-Time Streaming Data'
@@ -159,21 +303,89 @@
   description: 'Lambda - Run Code without Thinking about Servers'
   url: 'https://console.aws.amazon.com/lambda/home'
 
-- command: machinelearning
-  description: 'Machine Learning - Build Smart Applications Quickly and Easily'
-  url: 'https://console.aws.amazon.com/machinelearning/home'
+- command: lex
+  description: 'Lex - Build Voice and Text Chatbots'
+  url: 'https://console.aws.amazon.com/lex/home'
 
-- command: mobileanalytics
-  description: 'Mobile Analytics - Collect, View and Export App Analytics'
-  url: 'https://console.aws.amazon.com/mobileanalytics/home'
+- command: licensemanager
+  description: 'License Manager - Set rules to manage, discover, and report third-party license usage proactively'
+  url: 'https://console.aws.amazon.com/license-manager/home'
 
-- command: mobilehub
-  description: 'Mobile Hub - Build, Test, and Monitor Mobile Apps'
-  url: 'https://console.aws.amazon.com/mobilehub/home'
+- command: lightsail
+  description: 'Lightsail - Launch and Manage Virtual Private Servers'
+  url: 'https://lightsail.aws.amazon.com/ls/webapp/home'
+
+- command: macie
+  description: 'Macie - Amazon Macie classifies and secures your business-critical content.'
+  url: 'https://macie.aws.amazon.com/'
+
+- command: managedservices
+  description: 'Managed Services - IT operations management for AWS'
+  url: 'https://console.aws.amazon.com/managedservices/home'
+
+- command: marketplace
+  description: 'Marketplace Subscriptions - Digital catalog where you can find, buy, and deploy software'
+  url: 'https://console.aws.amazon.com/marketplace/home'
+
+- command: mediaconnect
+  description: 'MediaConnect - Reliable, secure, and flexible transport for live video'
+  url: 'https://console.aws.amazon.com/mediaconnect/home'
+
+- command: mediaconvert
+  description: 'MediaConvert - Convert file-based content for broadcast and multiscreen delivery'
+  url: 'https://console.aws.amazon.com/mediaconvert/home'
+
+- command: medialive
+  description: 'MediaLive - Convert video inputs into live outputs for broadcast and streaming delivery'
+  url: 'https://console.aws.amazon.com/medialive/home'
+
+- command: mediapackage
+  description: 'MediaPackage - Deliver video to many devices using just-in-time format conversion'
+  url: 'https://console.aws.amazon.com/mediapackage/home'
+
+- command: mediastore
+  description: 'MediaStore - Store and deliver video assets for live or on-demand media workflows'
+  url: 'https://console.aws.amazon.com/mediastore/home'
+
+- command: mediatailor
+  description: 'MediaTailor - Personalize and monetize multiscreen content with server-side ad insertion'
+  url: 'https://console.aws.amazon.com/mediatailor/home'
+
+- command: migrationhub
+  description: 'Migration Hub - Simplify and accelerate the migration of your data centers to AWS'
+  url: 'https://console.aws.amazon.com/migrationhub/home'
+
+- command: mq
+  description: 'MQ - Managed message broker service for Apache ActiveMQ'
+  url: 'https://console.aws.amazon.com/amazon-mq/home'
+
+- command: neptune
+  description: 'Neptune - Fast, reliable graph database built for the cloud'
+  url: 'https://console.aws.amazon.com/neptune/home'
 
 - command: opsworks
-  description: 'OpsWorks - Automate Operations with Chef'
+  description: 'OpsWorks - Configuration Management with Chef and Puppet'
   url: 'https://console.aws.amazon.com/opsworks/home'
+
+- command: organizations
+  description: 'Organizations - Policy-based management for multiple AWS accounts.'
+  url: 'https://console.aws.amazon.com/organizations/home'
+
+- command: personalize
+  description: 'Personalize - easily add real-time recommendations to your apps'
+  url: 'https://console.aws.amazon.com/personalize/home'
+
+- command: pinpoint
+  description: 'Pinpoint - Engage Users via Email, SMS, Push & Analytics'
+  url: 'https://console.aws.amazon.com/pinpoint/home'
+
+- command: polly
+  description: 'Polly - Turn Text into Lifelike Speech'
+  url: 'https://console.aws.amazon.com/polly/home'
+
+- command: quicksight
+  description: 'QuickSight -  Fast, easy to use business analytics'
+  url: 'https://console.aws.amazon.com/quicksight/home'
 
 - command: rds
   description: 'RDS - Managed Relational Database Service'
@@ -183,6 +395,18 @@
   description: 'Redshift - Fast, Simple, Cost-Effective Data Warehousing'
   url: 'https://console.aws.amazon.com/redshift/home'
 
+- command: rekognition
+  description: 'Rekognition - Search and Analyze Images'
+  url: 'https://console.aws.amazon.com/rekognition/home'
+
+- command: ram
+  description: 'Resource Access Manager - Share AWS resources with other accounts or AWS Organizations'
+  url: 'https://console.aws.amazon.com/ram/home'
+
+- command: robomaker
+  description: 'RoboMaker - Develop, test, and deploy intelligent robotics applications'
+  url: 'https://console.aws.amazon.com/robomaker/home'
+
 - command: route53
   description: 'Route 53 - Scalable DNS and Domain Name Registration'
   url: 'https://console.aws.amazon.com/route53/home'
@@ -191,49 +415,97 @@
   description: 'S3 - Scalable Storage in the Cloud'
   url: 'https://console.aws.amazon.com/s3/home'
 
-- command: servermigration
-  description: 'Server Migration - Migrate on-premises servers to AWS'
-  url: 'https://console.aws.amazon.com/servermigration/home'
+- command: sagemaker
+  description: 'SageMaker - Build, Train, and Deploy Machine Learning Models'
+  url: 'https://console.aws.amazon.com/sagemaker/home'
+
+- command: secretsmanager
+  description: 'Secrets Manager - Easily rotate, manage, and retrieve secrets throughout their lifecycle'
+  url: 'https://console.aws.amazon.com/secretsmanager/home'
+
+- command: securityhub
+  description: 'Security Hub - AWS’s security and compliance center'
+  url: 'https://console.aws.amazon.com/securityhub/home'
+
+- command: serverlessrepo
+  description: 'Serverless Application Repository - Assemble, deploy, and share serverless applications within teams or publicly'
+  url: 'https://console.aws.amazon.com/serverlessrepo/home'
+
+- command: servermigrationservice
+  description: 'Server Migration Service - Migrate on-premises servers to AWS'
+  url: 'https://console.aws.amazon.com/servermigrationservice/home'
+
+- command: servicecatalog
+  description: 'Service Catalog - allows organizations to manage approved catalogs of IT resources and make them available to employees via a personalized portal.'
+  url: 'https://console.aws.amazon.com/servicecatalog/home'
 
 - command: ses
-  description: 'SES - Email Sending and Receiving Service'
+  description: 'Simple Email Service - Email Sending and Receiving Service'
   url: 'https://console.aws.amazon.com/ses/home'
 
+- command: transfer
+  description: 'Transfer for SFTP - Fully-managed SFTP service for Amazon S3'
+  url: 'https://console.aws.amazon.com/transfer/home'
+
+- command: shield
+  description: 'WAF & Shield - Protects Against DDoS Attacks and Malicious Web Traffic'
+  url: 'https://console.aws.amazon.com/shield/home'
+
+- command: singlesignon
+  description: 'Single Sign-On - Manage Single Sign-On (SSO) Access to AWS Accounts and Business Applications'
+  url: 'https://console.aws.amazon.com/singlesignon/home'
+
+- command: snowball
+  description: 'Snowball - Large Scale Data Transport'
+  url: 'https://console.aws.amazon.com/snowball/home'
+
 - command: sns
-  description: 'SNS - Push Notification Service'
+  description: 'Simple Notification Service - SNS Pub/Sub, Mobile Push and SMS'
   url: 'https://console.aws.amazon.com/sns/home'
 
 - command: sqs
-  description: 'SQS - Message Queue Service'
+  description: 'Simple Queue Service - SQS Managed Message Queues'
   url: 'https://console.aws.amazon.com/sqs/home'
 
 - command: stepfunctions
-  description: 'Step Functions - Coordinate components of distributed applications'
+  description: 'Step Functions - Coordinate Distributed Applications'
   url: 'https://console.aws.amazon.com/states/home'
 
 - command: storagegateway
   description: 'Storage Gateway - Hybrid Storage Integration'
   url: 'https://console.aws.amazon.com/storagegateway/home'
 
-- command: swf
-  description: 'SWF - Workflow Service for Coordinating Application Components'
-  url: 'https://console.aws.amazon.com/swf/home'
+- command: sumerian
+  description: 'Sumerian - Build VR, AR, and 3D applications'
+  url: 'https://console.aws.amazon.com/sumerian/home'
 
-- command: support
-  description: 'Support - Support the success and operational health of your AWS solutions'
-  url: 'https://console.aws.amazon.com/support/home'
+- command: systemsmanager
+  description: 'Systems Manager - a Central Place to View and Manage AWS Resources'
+  url: 'https://console.aws.amazon.com/systemsmanager/home'
 
-- command: trustedadvisor
-  description: 'Trusted Advisor - Optimize Performance and Security'
-  url: 'https://console.aws.amazon.com/trustedadvisor/home'
+- command: transcribe
+  description: 'Transcribe - Powerful Speech Recognition'
+  url: 'https://console.aws.amazon.com/transcribe/home'
+
+- command: translate
+  description: 'Translate - Translate Text in Real-time'
+  url: 'https://console.aws.amazon.com/translate/home'
 
 - command: vpc
   description: 'VPC - Isolated Cloud Resources'
   url: 'https://console.aws.amazon.com/vpc/home'
 
 - command: waf
-  description: 'WAF - Filter Malicious Web Traffic'
+  description: 'WAF & Shield - Protects Against DDoS Attacks and Malicious Web Traffic'
   url: 'https://console.aws.amazon.com/waf/home'
+
+- command: wellarchitectedtool
+  description: 'Well-Architected Tool - learn best practices, measure, and improve your workloads'
+  url: 'https://console.aws.amazon.com/wellarchitectedtool/home'
+
+- command: workdocs
+  description: 'WorkDocs - Secure Enterprise Storage and Sharing Service'
+  url: 'https://console.aws.amazon.com/workdocs/home'
 
 - command: workmail
   description: 'WorkMail - Secure Email and Calendaring Service'
@@ -243,126 +515,6 @@
   description: 'WorkSpaces - Desktops in the Cloud'
   url: 'https://console.aws.amazon.com/workspaces/home'
 
-- command: zocalo
-  description: 'WorkDocs - Secure Enterprise Storage and Sharing Service'
-  url: 'https://console.aws.amazon.com/zocalo/home'
-
-- command: codebuild
-  description: ''
-  url: 'https://console.aws.amazon.com/codebuild/home'
-
-- command: glue
-  description: 'Fully managed ETL service'
-  url: 'https://console.aws.amazon.com/glue/home'
-
-- command: greengrass
-  description: 'Deploy and run code on your devices'
-  url: 'https://console.aws.amazon.com/greengrass/home'
-
-- command: lex
-  description: 'Build voice and text chatbots'
-  url: 'https://console.aws.amazon.com/lex/home'
-
-- command: lightsail
-  description: 'Launch and manage virtual private servers'
-  url: 'https://lightsail.aws.amazon.com/ls/webapp/home'
-
-- command: pinpoint
-  description: 'Engage users via email, sms, push & analytics'
-  url: 'https://console.aws.amazon.com/pinpoint/home'
-
-- command: polly
-  description: 'Turn text into lifelike speech'
-  url: 'https://console.aws.amazon.com/polly/home'
-
-- command: rekognition
-  description: 'Search and analyse images'
-  url: 'https://console.aws.amazon.com/rekognition/home'
-
 - command: xray
-  description: 'Analyse and debug your applications'
+  description: 'X-Ray - Analyze and Debug Your Applications'
   url: 'https://console.aws.amazon.com/xray/home'
-
-- command: cloud9
-  description: 'Cloud IDE for writting, running, and debugging code '
-  url: 'https://console.aws.amazon.com/cloud9/home'
-
-- command: appsync
-  description: 'Build data-driven apps with real-time and offline capabilities'
-  url: 'https://console.aws.amazon.com/appsync/home'
-
-- command: cloudhsm
-  description: 'Managed hardware security modules in the cloud'
-  url: 'https://console.aws.amazon.com/cloudhsm/home'
-
-- command: macie
-  description: 'Classifies and secures your business-critical content'
-  url: 'https://us-east-1.redirection.macie.aws.amazon.com/'
-
-- command: servicecatalog
-  description: 'Create and use standardised products'
-  url: 'https://console.aws.amazon.com/servicecatalog/home'
-
-- command: comprehend
-  description: 'Analyse unstructured text'
-  url: 'https://console.aws.amazon.com/comprehend/home'
-
-- command: deeplens
-  description: 'Deep learning enabled video camera'
-  url: 'https://console.aws.amazon.com/deeplens/home'
-
-- command: eks
-  description: 'Managed Kubernetes on AWS'
-  url: 'https://console.aws.amazon.com/eks/home'
-
-- command: freertos
-  description: 'FreeRTOS IoT operating system for microcontrollers'
-  url: 'https://console.aws.amazon.com/freertos/home'
-
-- command: guardduty
-  description: 'Intelligent thread detection for '
-  url: 'https://console.aws.amazon.com/guardduty/home'
-
-- command: managedservices
-  description: 'IT oeprations management for AWS'
-  url: 'https://console.aws.amazon.com/managedservices/home'
-
-- command: mq
-  description: 'Managed message broker service for Apache ActiveMQ'
-  url: 'https://console.aws.amazon.com/amazon-mq/home'
-
-- command: migrationhub
-  description: 'Simplify and accelerate the migration of your data centers to AWS'
-  url: 'https://console.aws.amazon.com/migrationhub/home'
-
-- command: neptune
-  description: 'Fast, reliable graph database built for the cloud'
-  url: 'https://console.aws.amazon.com/neptune/home'
-
-- command: sagemaker
-  description: 'Build, Train, and Deploy Machine Learning Models'
-  url: 'https://console.aws.amazon.com/sagemaker/home'
-
-- command: secretsmanager
-  description: 'Easily rotate, manage, and retrieve secrets throughout their lifecycle'
-  url: 'https://console.aws.amazon.com/secretsmanager/home'
-
-- command: systemsmanager
-  description: 'Central place to view and manage AWS resources'
-  url: 'https://console.aws.amazon.com/systems-manager/home'
-
-- command: transcribe
-  description: 'Powerful speech recognition'
-  url: 'https://console.aws.amazon.com/transcribe/home'
-
-- command: translate
-  description: 'Translate text in real-time'
-  url: 'https://console.aws.amazon.com/translate/home'
-
-- command: sumerian
-  description: 'Build VR, AR, and 3D applications'
-  url: 'https://console.aws.amazon.com/sumerian/home'
-
-- command: singlesignon
-  description: 'Manage SSO Access to AWS accounts and business applications'
-  url: 'https://console.aws.amazon.com/singlesignon/home'
