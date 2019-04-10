@@ -203,8 +203,8 @@
   description: 'Elastic Beanstalk - Run and Manage Web Apps'
   url: 'https://console.aws.amazon.com/elasticbeanstalk/home'
 
-- command: elasticsearchservice
-  description: 'Elasticsearch Service -  Run and Scale Elasticsearch Clusters'
+- command: ess
+  description: 'Elasticsearch Service - Run and Scale Elasticsearch Clusters'
   url: 'https://console.aws.amazon.com/elasticsearchservice/home'
 
 - command: elastictranscoder
