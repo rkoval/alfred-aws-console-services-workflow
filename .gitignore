@@ -64,3 +64,6 @@ typings/
 
 # End of https://www.gitignore.io/api/node
 info.plist.*
+
+# Visual Studio Code
+.vscode

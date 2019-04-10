@@ -43,6 +43,10 @@
   description: 'Blockchain - Easily create and manage scalable blockchain networks'
   url: 'https://console.aws.amazon.com/blockchain/home'
 
+- command: billing
+  description: 'Billing - Access, analyze, and control your AWS costs and usage'
+  url: 'https://console.aws.amazon.com/billing/home'
+
 - command: budgets
   description: 'Budgets - Set Custom Budgets and Receive Alerts'
   url: 'https://console.aws.amazon.com/billing/home#/budgets#/home'
@@ -195,6 +199,10 @@
   description: 'ElastiCache - In-Memory Cache'
   url: 'https://console.aws.amazon.com/elasticache/home'
 
+- command: elasticbeanstalk
+  description: 'Elastic Beanstalk - Run and Manage Web Apps'
+  url: 'https://console.aws.amazon.com/elasticbeanstalk/home'
+
 - command: elasticsearchservice
   description: 'Elasticsearch Service -  Run and Scale Elasticsearch Clusters'
   url: 'https://console.aws.amazon.com/elasticsearchservice/home'
@@ -317,7 +325,7 @@
 
 - command: macie
   description: 'Macie - Amazon Macie classifies and secures your business-critical content.'
-  url: 'https://macie.aws.amazon.com/'
+  url: 'https://us-east-1.redirection.macie.aws.amazon.com/'
 
 - command: managedservices
   description: 'Managed Services - IT operations management for AWS'
@@ -354,6 +362,10 @@
 - command: migrationhub
   description: 'Migration Hub - Simplify and accelerate the migration of your data centers to AWS'
   url: 'https://console.aws.amazon.com/migrationhub/home'
+
+- command: mobilehub
+  description: 'Mobile Hub - Build, Test, and Monitor Mobile Apps'
+  url: 'https://console.aws.amazon.com/mobilehub/home'
 
 - command: mq
   description: 'MQ - Managed message broker service for Apache ActiveMQ'
@@ -433,7 +445,7 @@
 
 - command: servermigrationservice
   description: 'Server Migration Service - Migrate on-premises servers to AWS'
-  url: 'https://console.aws.amazon.com/servermigrationservice/home'
+  url: 'https://console.aws.amazon.com/servermigration/home'
 
 - command: servicecatalog
   description: 'Service Catalog - allows organizations to manage approved catalogs of IT resources and make them available to employees via a personalized portal.'
@@ -442,6 +454,10 @@
 - command: ses
   description: 'Simple Email Service - Email Sending and Receiving Service'
   url: 'https://console.aws.amazon.com/ses/home'
+
+- command: swf
+  description: 'SWF - Workflow Service for Coordinating Application Components'
+  url: 'https://console.aws.amazon.com/swf/home'
 
 - command: transfer
   description: 'Transfer for SFTP - Fully-managed SFTP service for Amazon S3'
@@ -483,6 +499,10 @@
   description: 'Systems Manager - a Central Place to View and Manage AWS Resources'
   url: 'https://console.aws.amazon.com/systemsmanager/home'
 
+- command: support
+  description: 'Support - Support the success and operational health of your AWS solutions'
+  url: 'https://console.aws.amazon.com/support/home'
+
 - command: transcribe
   description: 'Transcribe - Powerful Speech Recognition'
   url: 'https://console.aws.amazon.com/transcribe/home'
@@ -490,6 +510,10 @@
 - command: translate
   description: 'Translate - Translate Text in Real-time'
   url: 'https://console.aws.amazon.com/translate/home'
+
+- command: trustedadvisor
+  description: 'Trusted Advisor - Optimize Performance and Security'
+  url: 'https://console.aws.amazon.com/trustedadvisor/home'
 
 - command: vpc
   description: 'VPC - Isolated Cloud Resources'
@@ -501,11 +525,11 @@
 
 - command: wellarchitectedtool
   description: 'Well-Architected Tool - learn best practices, measure, and improve your workloads'
-  url: 'https://console.aws.amazon.com/wellarchitectedtool/home'
+  url: 'https://console.aws.amazon.com/wellarchitected/home'
 
-- command: workdocs
-  description: 'WorkDocs - Secure Enterprise Storage and Sharing Service'
-  url: 'https://console.aws.amazon.com/workdocs/home'
+- command: worklink
+  description: 'WorkLink - Enable secure mobile access to internal websites and web apps'
+  url: 'https://console.aws.amazon.com/worklink/home'
 
 - command: workmail
   description: 'WorkMail - Secure Email and Calendaring Service'
