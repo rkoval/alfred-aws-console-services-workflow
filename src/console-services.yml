@@ -301,7 +301,7 @@
 
 - command: kms
   description: 'Key Management Service - Securely Generate and Manage AWS Encryption Keys'
-  url: 'https://console.aws.amazon.com/keymanagementservice/home'
+  url: 'https://console.aws.amazon.com/kms/home'
 
 - command: kinesis
   description: 'Kinesis - Work with Real-Time Streaming Data'
