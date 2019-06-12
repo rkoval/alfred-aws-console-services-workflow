@@ -497,7 +497,7 @@
 
 - command: systemsmanager
   description: 'Systems Manager - a Central Place to View and Manage AWS Resources'
-  url: 'https://console.aws.amazon.com/systemsmanager/home'
+  url: 'https://console.aws.amazon.com/systems-manager/home'
 
 - command: support
   description: 'Support - Support the success and operational health of your AWS solutions'
