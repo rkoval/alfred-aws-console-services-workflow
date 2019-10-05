@@ -213,7 +213,7 @@
 
 - command: emr
   description: 'EMR - Managed Hadoop Framework'
-  url: 'https://console.aws.amazon.com/emr/home'
+  url: 'https://console.aws.amazon.com/elasticmapreduce/home'
 
 - command: forecast
   description: 'Forecast - fully-managed service for accurate time-series forecasting'
