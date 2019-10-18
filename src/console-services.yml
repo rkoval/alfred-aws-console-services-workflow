@@ -205,7 +205,7 @@
 
 - command: ess
   description: 'Elasticsearch Service - Run and Scale Elasticsearch Clusters'
-  url: 'https://console.aws.amazon.com/elasticsearchservice/home'
+  url: 'https://console.aws.amazon.com/es/home'
 
 - command: elastictranscoder
   description: 'Elastic Transcoder - Easy-to-Use Scalable Media Transcoding'
