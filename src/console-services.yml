@@ -525,7 +525,7 @@
 
 - command: waf
   description: 'WAF & Shield - Protects Against DDoS Attacks and Malicious Web Traffic'
-  url: 'https://console.aws.amazon.com/waf/home'
+  url: 'https://console.aws.amazon.com/wafv2/home'
 
 - command: wellarchitectedtool
   description: 'Well-Architected Tool - learn best practices, measure, and improve your workloads'
