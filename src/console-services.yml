@@ -215,6 +215,10 @@
   description: 'EMR - Managed Hadoop Framework'
   url: 'https://console.aws.amazon.com/elasticmapreduce/home'
 
+- command: eventbridge
+  description: 'EventBridge - Serverless event bus that connects application data from your own apps, SaaS, and AWS services'
+  url: 'https://console.aws.amazon.com/events/home'
+
 - command: forecast
   description: 'Forecast - fully-managed service for accurate time-series forecasting'
   url: 'https://console.aws.amazon.com/forecast/home'
