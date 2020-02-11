@@ -546,3 +546,67 @@
 - command: xray
   description: 'X-Ray - Analyze and Debug Your Applications'
   url: 'https://console.aws.amazon.com/xray/home'
+
+- command: appmesh
+  description: Easily monitor and control microservices
+  url: https://console.aws.amazon.com/appmesh/home
+
+- command: augmentedai
+  description: Easy implement human review of machine learning predictions
+  url: https://console.aws.amazon.com/a2i/home
+
+- command: bracket
+  description: Service for exploring, evaluating, and experimenting with quantum computing
+  url: https://pages.awscloud.com/Amazon-Braket-Preview.html
+
+- command: mcs
+  description: Serverless Cassandra-compatible database
+  url: https://console.aws.amazon.com/mcs/home
+
+- command: codeguru
+  description: Intelligent recommendations for building and running modern applications
+  url: https://console.aws.amazon.com/codeguru/home
+
+- command: computeoptimizer
+  description: Recommend optimal AWS Compute resources for your workloads
+  url: https://console.aws.amazon.com/compute-optimizer/home
+
+- command: deepracer
+  description: Fully autonomous 1/18th scale race car, driven by machine learning
+  url: https://console.aws.amazon.com/deepracer/home
+
+- command: detective
+  description: Investigate and analyse possible security issues
+  url: https://console.aws.amazon.com/detective/home
+
+- command: ec2imagebuilder
+  description: https://console.aws.amazon.com/imagebuilder/home
+  url: A managed service to automate build, customize and deploy OS images
+
+- command: frauddetector
+  description: Detect more online fraud faster with machine learning
+  url: https://console.aws.amazon.com/frauddetector/home
+
+- command: kendra
+  description: Highly accurate enterprise search powered by machine learning
+  url: https://console.aws.amazon.com/kendra/home
+
+- command: qldb
+  description: Fully managed ledger database
+  url: https://console.aws.amazon.com/qldb/home
+
+- command: outpost
+  description: Run AWS Services On Premises
+  url: https://console.aws.amazon.com/outposts/home
+
+- command: iq
+  description: Complete projects faster with help from third-party AWS Certified experts
+  url: https://iq.aws.amazon.com/
+
+- command: chatbot
+  description: ChatOps for AWS
+  url: https://console.aws.amazon.com/chatbot/home
+
+- command: launchwizard
+  description: Size, configure, and deploy third-party applications on AWS
+  url: https://console.aws.amazon.com/launchwizard/home
