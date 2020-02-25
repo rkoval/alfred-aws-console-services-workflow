@@ -133,7 +133,7 @@ To add entries to the Alfred Workflow, modify [the .yml config file](src/console
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>2.6</string>
+	<string>test</string>
 	<key>webaddress</key>
 	<string>https://ryankoval.com</string>
 </dict>
