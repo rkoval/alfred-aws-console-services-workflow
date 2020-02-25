@@ -29,3 +29,7 @@ npm install
 #### Adding Entries
 
 To add entries to the Alfred Workflow, modify [the .yml config file](src/console-services.yml) and then run [this script](src/generate_items.js) from its directory. It will parse the .yml file and add elements in-place to the info.plist file, which Alfred reads.
+
+#### Packaging for Release
+
+See [this README](release_tools/README.md)
