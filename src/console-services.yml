@@ -299,9 +299,9 @@
   description: 'IoT Things Graph - Easily connect devices and web services to build IoT applications'
   url: 'https://console.aws.amazon.com/thingsgraph/home'
 
-- command: mks
+- command: msk
   description: 'MSK - Fully managed, highly available, and secure service for Apache Kafka'
-  url: 'https://console.aws.amazon.com/mks/home'
+  url: 'https://console.aws.amazon.com/msk/home'
 
 - command: kms
   description: 'Key Management Service - Securely Generate and Manage AWS Encryption Keys'
