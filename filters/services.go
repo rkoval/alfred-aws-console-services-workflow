@@ -1,7 +1,6 @@
 package filters
 
 import (
-	"log"
 	"strings"
 
 	aw "github.com/deanishe/awgo"
@@ -35,18 +34,6 @@ func Services(wf *aw.Workflow, awsServices []core.AwsService, query string) {
 		icon := &aw.Icon{Value: "images/" + awsService.Id + ".png"}
 		item.Icon(icon)
 	}
-
-	if query != "" {
-		res := wf.Filter(query)
-
-		log.Printf("%d results match %q", len(res), query)
-
-		for i, r := range res {
-			log.Printf("%02d. score=%0.1f sortkey=%s", i+1, r.Score, wf.Feedback.Keywords(i))
-		}
-	}
-
-	wf.WarnEmpty("No matching services found", "Try a different query?")
 }
 
 func ServiceSections(wf *aw.Workflow, awsService core.AwsService, subquery string) {
