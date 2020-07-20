@@ -7,7 +7,7 @@ import (
 
 	aw "github.com/deanishe/awgo"
 	"github.com/rkoval/alfred-aws-console-services-workflow/core"
-	"github.com/rkoval/alfred-aws-console-services-workflow/filters"
+	"github.com/rkoval/alfred-aws-console-services-workflow/searchers"
 	"gopkg.in/yaml.v2"
 )
 
@@ -36,14 +36,14 @@ func populateItems(awsServices []core.AwsService, query string) (string, error) 
 		awsServicesById[awsService.Id] = &awsServices[i]
 	}
 
-	// TODO add better lexing here to route filters
+	// TODO add better lexing here to route searchers
 
 	splitQuery := strings.Split(query, " ")
 	if len(splitQuery) > 1 && awsServicesById[splitQuery[0]] != nil {
 		id := splitQuery[0]
 		query = strings.Join(splitQuery[1:], " ")
 		awsService := awsServicesById[id]
-		searcher := filters.SearchersByServiceId[id]
+		searcher := searchers.SearchersByServiceId[id]
 		if strings.HasPrefix(query, "$") && searcher != nil {
 			query = query[1:]
 			log.Printf("using searcher associated with %s", id)
@@ -54,12 +54,12 @@ func populateItems(awsServices []core.AwsService, query string) (string, error) 
 			return "", nil
 		} else if len(awsServicesById[splitQuery[0]].Sections) > 0 {
 			log.Printf("filtering on sections for %s", id)
-			filters.ServiceSections(wf, *awsService, query)
+			searchers.ServiceSections(wf, *awsService, query)
 			return query, nil
 		}
 	}
 
-	filters.Services(wf, awsServices, query)
+	searchers.Services(wf, awsServices, query)
 	return query, nil
 }
 
