@@ -51,7 +51,7 @@ func populateItems(awsServices []core.AwsService, query string) (string, error) 
 			if err != nil {
 				return "", err
 			}
-			return query, nil
+			return "", nil
 		} else if len(awsServicesById[splitQuery[0]].Sections) > 0 {
 			log.Printf("filtering on sections for %s", id)
 			filters.ServiceSections(wf, *awsService, query)

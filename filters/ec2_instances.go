@@ -31,13 +31,23 @@ func GetInstanceStateEmoji(instanceState string) string {
 func SearchEC2Instances(wf *aw.Workflow, query string) error {
 	sess, cfg := core.LoadAWSConfig()
 	svc := ec2.New(sess, cfg)
+
+	values := []*string{
+		aws.String(strings.Join([]string{"*", query, "*"}, "")),
+	}
+
+	var name string
+	if strings.HasPrefix(query, "i-") {
+		// assume we're querying by instance ID here
+		name = "instance-id"
+	} else {
+		name = "tag:Name"
+	}
 	params := &ec2.DescribeInstancesInput{
 		Filters: []*ec2.Filter{
 			{
-				Name: aws.String("tag:Name"),
-				Values: []*string{
-					aws.String(strings.Join([]string{"*", query, "*"}, "")),
-				},
+				Name:   aws.String(name),
+				Values: values,
 			},
 		},
 	}
