@@ -232,10 +232,10 @@
     - id: instances
       name: Instances
       url: "https://console.aws.amazon.com/ec2/v2/home#Instances:"
-    - id: instanceTypes
+    - id: instancetypes
       name: Instance Types
       url: "https://console.aws.amazon.com/ec2/v2/home#InstanceTypes:"
-    - id: securityGroups
+    - id: securitygroups
       name: Security Groups
       url: "https://console.aws.amazon.com/ec2/v2/home#SecurityGroups:"
 
@@ -617,10 +617,10 @@
     - id: buckets
       name: Buckets
       url: "https://console.aws.amazon.com/s3/home"
-    - id: batchOperations
+    - id: batchoperations
       name: Batch Operations
       url: "https://console.aws.amazon.com/s3/jobs"
-    - id: accessAnalyzer
+    - id: accessanalyzer
       name: Access Analyzer
       url: "https://console.aws.amazon.com/s3/access"
     - id: settings
