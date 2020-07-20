@@ -53,7 +53,28 @@ func populateItems(awsServices []core.AwsService, query string) (string, error) 
 			}
 			return "", nil
 		} else if len(awsServicesById[id].Sections) > 0 {
+			sections := awsServicesById[id].Sections
 			log.Printf("filtering on sections for %s", id)
+			sectionsById := make(map[string]*core.AwsServiceSection)
+			for i, section := range sections {
+				sectionsById[section.Id] = &sections[i]
+			}
+			if len(splitQuery) > 2 && sectionsById[splitQuery[1]] != nil {
+				sectionId := splitQuery[1]
+				query = strings.Join(splitQuery[2:], " ")
+				id = id + "_" + sectionId
+				searcher := searchers.SearchersByServiceId[id]
+				if strings.HasPrefix(query, "$") && searcher != nil {
+					query = query[1:]
+					log.Printf("using searcher associated with %s", id)
+					err := searcher(wf, query)
+					if err != nil {
+						return "", err
+					}
+					return "", nil
+				}
+			}
+			query = strings.Join(splitQuery[2:], " ")
 			searchers.ServiceSections(wf, *awsService, query)
 			return query, nil
 		}

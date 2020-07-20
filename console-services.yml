@@ -235,6 +235,9 @@
     - id: instanceTypes
       name: Instance Types
       url: "https://console.aws.amazon.com/ec2/v2/home#InstanceTypes:"
+    - id: securityGroups
+      name: Security Groups
+      url: "https://console.aws.amazon.com/ec2/v2/home#SecurityGroups:"
 
 - id: ecr
   name: Elastic Container Registry

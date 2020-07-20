@@ -39,7 +39,7 @@ func Services(wf *aw.Workflow, awsServices []core.AwsService, query string) {
 func ServiceSections(wf *aw.Workflow, awsService core.AwsService, subquery string) {
 	for _, section := range awsService.Sections {
 		item := wf.NewItem(awsService.GetName() + " - " + section.Name).
-			Autocomplete(section.Id + " ").
+			Autocomplete(awsService.Id + " " + section.Id + " ").
 			UID(section.Id).
 			Arg(section.Url).
 			Subtitle(section.Description).

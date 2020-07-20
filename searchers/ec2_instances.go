@@ -33,7 +33,7 @@ func SearchEC2Instances(wf *aw.Workflow, query string) error {
 
 	var name string
 	if strings.HasPrefix(query, "i-") {
-		// assume we're querying by instance ID here
+		// assume we're querying by ID here
 		name = "instance-id"
 	} else {
 		name = "tag:Name"
