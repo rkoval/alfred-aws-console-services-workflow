@@ -228,6 +228,13 @@
   short_name: EC2
   description: Virtual Servers in the Cloud
   url: https://console.aws.amazon.com/ec2/home
+  sections:
+    - id: instances
+      name: Instances
+      url: "https://console.aws.amazon.com/ec2/v2/home#Instances:"
+    - id: instanceTypes
+      name: Instance Types
+      url: "https://console.aws.amazon.com/ec2/v2/home#InstanceTypes:"
 
 - id: ecr
   name: Elastic Container Registry

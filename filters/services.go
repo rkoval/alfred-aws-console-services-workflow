@@ -25,7 +25,7 @@ func Services(wf *aw.Workflow, awsServices []core.AwsService, query string) {
 		}
 
 		item := wf.NewItem(title).
-			// Autocomplete(awsService.Id).
+			Autocomplete(awsService.Id).
 			UID(awsService.Id).
 			Arg(awsService.Url).
 			Subtitle(awsService.Description).
@@ -47,4 +47,18 @@ func Services(wf *aw.Workflow, awsServices []core.AwsService, query string) {
 	}
 
 	wf.WarnEmpty("No matching services found", "Try a different query?")
+}
+
+func ServiceSections(wf *aw.Workflow, awsService core.AwsService, subquery string) {
+	for _, section := range awsService.Sections {
+		item := wf.NewItem(awsService.GetName() + " - " + section.Name).
+			Autocomplete(section.Id).
+			UID(section.Id).
+			Arg(section.Url).
+			Subtitle(section.Description).
+			Valid(true)
+
+		icon := &aw.Icon{Value: "images/" + awsService.Id + ".png"}
+		item.Icon(icon)
+	}
 }

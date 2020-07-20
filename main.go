@@ -3,6 +3,7 @@ package main
 import (
 	"io/ioutil"
 	"log"
+	"strings"
 
 	aw "github.com/deanishe/awgo"
 	"github.com/rkoval/alfred-aws-console-services-workflow/core"
@@ -32,14 +33,25 @@ func parseYaml() []core.AwsService {
 func run() {
 	var query string
 	if args := wf.Args(); len(args) > 0 {
-		query = args[0]
+		query = strings.TrimSpace(args[0])
 	}
 
 	awsServices := parseYaml()
 
-	// TODO add lexing here to route filters
+	awsServicesById := make(map[string]*core.AwsService)
+	for i, awsService := range awsServices {
+		awsServicesById[awsService.Id] = &awsServices[i]
+	}
 
-	filters.Services(wf, awsServices, query)
+	// TODO add better lexing here to route filters
+
+	splitQuery := strings.Split(query, " ")
+	if len(splitQuery) <= 1 || awsServicesById[splitQuery[0]] == nil {
+		filters.Services(wf, awsServices, query)
+	} else {
+		awsService := awsServicesById[splitQuery[0]]
+		filters.ServiceSections(wf, *awsService, strings.Join(splitQuery[1:], " "))
+	}
 
 	wf.SendFeedback()
 }
