@@ -2,7 +2,6 @@ package searchers
 
 import (
 	"fmt"
-	"log"
 	"strings"
 
 	"github.com/aws/aws-sdk-go/aws"
@@ -41,7 +40,7 @@ func SearchEC2SecurityGroups(wf *aw.Workflow, query string) error {
 			Icon(aw.IconError)
 		return err
 	}
-	log.Printf("%+v\n", *resp)
+	// log.Printf("%+v\n", *resp)
 
 	for _, securityGroup := range resp.SecurityGroups {
 		var title string

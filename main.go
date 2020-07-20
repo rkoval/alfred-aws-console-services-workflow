@@ -74,7 +74,7 @@ func populateItems(awsServices []core.AwsService, query string) (string, error) 
 					return "", nil
 				}
 			}
-			query = strings.Join(splitQuery[2:], " ")
+			query = strings.TrimSpace(strings.Join(splitQuery[1:], " "))
 			searchers.ServiceSections(wf, *awsService, query)
 			return query, nil
 		}
