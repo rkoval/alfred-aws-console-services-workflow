@@ -60,7 +60,7 @@ func SearchEC2SecurityGroups(wf *aw.Workflow, query string) error {
 
 		wf.NewItem(title).
 			Subtitle(subtitle).
-			Arg(fmt.Sprintf("https://%s.console.aws.amazon.com/ec2/v2/home?region=%s#SecurityGroups:search=%s", *cfg.Region, *cfg.Region, *securityGroup.GroupId)).
+			Arg(fmt.Sprintf("https://%s.console.aws.amazon.com/ec2/v2/home?region=%s#SecurityGroups:group-id=%s", *cfg.Region, *cfg.Region, *securityGroup.GroupId)).
 			Icon(core.GetImageIcon("ec2")).
 			Valid(true)
 	}
