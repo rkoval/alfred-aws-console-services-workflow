@@ -573,6 +573,19 @@
   short_name: S3
   description: Scalable Storage in the Cloud
   url: https://console.aws.amazon.com/s3/home
+  sections:
+    - id: buckets
+      name: Buckets
+      url: "https://console.aws.amazon.com/s3/home"
+    - id: batchOperations
+      name: Batch Operations
+      url: "https://console.aws.amazon.com/s3/jobs"
+    - id: accessAnalyzer
+      name: Access Analyzer
+      url: "https://console.aws.amazon.com/s3/access"
+    - id: settings
+      name: Account settings
+      url: "https://console.aws.amazon.com/s3/settings"
 
 - id: sagemaker
   name: SageMaker
