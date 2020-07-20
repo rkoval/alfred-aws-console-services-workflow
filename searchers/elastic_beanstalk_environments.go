@@ -37,12 +37,20 @@ func SearchElasticBeanstalkEnvironments(wf *aw.Workflow, query string) error {
 	for _, environment := range resp.Environments {
 		title := *environment.EnvironmentName
 		subtitle := GetHealthEmoji(*environment.Health) + " " + *environment.EnvironmentId + " " + *environment.ApplicationName
+		var page string
+		if *environment.Status == elasticbeanstalk.EnvironmentStatusTerminated {
+			// "dashboard" page does not exist for terminated instances
+			page = "events"
+		} else {
+			page = "dashboard"
+		}
 		wf.NewItem(title).
 			Subtitle(subtitle).
 			Arg(fmt.Sprintf(
-				"https://%s.console.aws.amazon.com/elasticbeanstalk/home?region=%s#/environment/dashboard?applicationName=%s&environmentId=%s",
+				"https://%s.console.aws.amazon.com/elasticbeanstalk/home?region=%s#/environment/%s?applicationName=%s&environmentId=%s",
 				*cfg.Region,
 				*cfg.Region,
+				page,
 				*environment.ApplicationName,
 				*environment.EnvironmentId,
 			)).
