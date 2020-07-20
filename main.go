@@ -52,7 +52,7 @@ func populateItems(awsServices []core.AwsService, query string) (string, error) 
 				return "", err
 			}
 			return "", nil
-		} else if len(awsServicesById[splitQuery[0]].Sections) > 0 {
+		} else if len(awsServicesById[id].Sections) > 0 {
 			log.Printf("filtering on sections for %s", id)
 			searchers.ServiceSections(wf, *awsService, query)
 			return query, nil
@@ -66,7 +66,7 @@ func populateItems(awsServices []core.AwsService, query string) (string, error) 
 func run() {
 	var query string
 	if args := wf.Args(); len(args) > 0 {
-		query = strings.TrimSpace(args[0])
+		query = strings.TrimLeft(args[0], " ")
 	}
 
 	awsServices := parseYaml()
