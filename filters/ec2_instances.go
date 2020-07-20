@@ -13,16 +13,12 @@ import (
 
 func GetInstanceStateEmoji(instanceState string) string {
 	if instanceState == ec2.InstanceStateNamePending {
-		return "🔵"
+		return "⚪️"
 	} else if instanceState == ec2.InstanceStateNameRunning {
 		return "🟢"
-	} else if instanceState == ec2.InstanceStateNameShuttingDown {
-		return "🟠"
-	} else if instanceState == ec2.InstanceStateNameTerminated {
-		return "⚫"
-	} else if instanceState == ec2.InstanceStateNameStopping {
+	} else if instanceState == ec2.InstanceStateNameShuttingDown || instanceState == ec2.InstanceStateNameStopping {
 		return "🟡"
-	} else if instanceState == ec2.InstanceStateNameStopped {
+	} else if instanceState == ec2.InstanceStateNameTerminated || instanceState == ec2.InstanceStateNameStopped {
 		return "🔴"
 	}
 	return "❔"
