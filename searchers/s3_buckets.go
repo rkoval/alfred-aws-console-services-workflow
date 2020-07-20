@@ -2,7 +2,6 @@ package searchers
 
 import (
 	"fmt"
-	"log"
 	"time"
 
 	"github.com/aws/aws-sdk-go/service/s3"
@@ -20,7 +19,7 @@ func SearchS3Buckets(wf *aw.Workflow, query string) error {
 			Icon(aw.IconError)
 		return err
 	}
-	log.Println("resp", resp)
+	// log.Println("resp", resp)
 
 	for _, bucket := range resp.Buckets {
 		title := *bucket.Name
