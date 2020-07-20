@@ -2,7 +2,6 @@ package filters
 
 import (
 	"fmt"
-	"log"
 	"strings"
 
 	"github.com/aws/aws-sdk-go/aws"
@@ -54,7 +53,7 @@ func SearchEC2Instances(wf *aw.Workflow, query string) error {
 			Icon(aw.IconError)
 		return err
 	}
-	log.Printf("%+v\n", *resp)
+	// log.Printf("%+v\n", *resp)
 
 	for _, reservation := range resp.Reservations {
 		for _, instance := range reservation.Instances {
@@ -63,11 +62,11 @@ func SearchEC2Instances(wf *aw.Workflow, query string) error {
 			name := GetTagValue(instance.Tags, "Name")
 			if name != "" {
 				title = name
-				subtitle += "  " + *instance.InstanceId
+				subtitle += " " + *instance.InstanceId
 			} else {
 				title = *instance.InstanceId
 			}
-			subtitle += "  " + *instance.InstanceType
+			subtitle += " " + *instance.InstanceType
 
 			wf.NewItem(title).
 				Subtitle(subtitle).
