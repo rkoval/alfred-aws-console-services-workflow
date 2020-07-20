@@ -32,7 +32,7 @@ func SearchElasticBeanstalkEnvironments(wf *aw.Workflow, query string) error {
 			Icon(aw.IconError)
 		return err
 	}
-	// log.Printf("%+v\n", *resp)
+	// log.Println("resp", resp)
 
 	for _, environment := range resp.Environments {
 		title := *environment.EnvironmentName

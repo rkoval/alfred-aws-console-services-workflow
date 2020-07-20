@@ -54,7 +54,6 @@ func populateItems(awsServices []core.AwsService, query string) (string, error) 
 			return "", nil
 		} else if len(awsServicesById[id].Sections) > 0 {
 			sections := awsServicesById[id].Sections
-			log.Printf("filtering on sections for %s", id)
 			sectionsById := make(map[string]*core.AwsServiceSection)
 			for i, section := range sections {
 				sectionsById[section.Id] = &sections[i]
@@ -73,6 +72,7 @@ func populateItems(awsServices []core.AwsService, query string) (string, error) 
 					return "", nil
 				}
 			}
+			log.Printf("filtering on sections for %s", id)
 			query = strings.TrimSpace(strings.Join(splitQuery[1:], " "))
 			searchers.ServiceSections(wf, *awsService, query)
 			return query, nil
