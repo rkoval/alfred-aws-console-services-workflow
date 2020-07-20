@@ -852,3 +852,8 @@
   name: Launch Wizard
   description: Size, configure, and deploy third-party applications on AWS
   url: https://console.aws.amazon.com/launchwizard/home
+
+- id: status
+  name: Status
+  description: Get a personalized view of AWS service health
+  url: https://status.aws.amazon.com/
