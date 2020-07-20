@@ -63,10 +63,12 @@ func SearchEC2Instances(wf *aw.Workflow, query string) error {
 			name := GetTagValue(instance.Tags, "Name")
 			if name != "" {
 				title = name
-				subtitle += " " + *instance.InstanceId
+				subtitle += "  " + *instance.InstanceId
 			} else {
 				title = *instance.InstanceId
 			}
+			subtitle += "  " + *instance.InstanceType
+
 			wf.NewItem(title).
 				Subtitle(subtitle).
 				Arg(fmt.Sprintf("https://%s.console.aws.amazon.com/ec2/v2/home?region=%s#Instances:search=%s", *cfg.Region, *cfg.Region, *instance.InstanceId)).
