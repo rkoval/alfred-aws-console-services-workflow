@@ -546,40 +546,40 @@
     - id: databases
       name: Databases
       url: "https://console.aws.amazon.com/rds/home#databases:"
-    - id: query-editor
+    - id: queryeditor
       name: Query Editor
       url: "https://console.aws.amazon.com/rds/home#query-editor:"
-    - id: performance-insights
+    - id: performanceinsights
       name: Performance Insights
       url: "https://console.aws.amazon.com/rds/home#performance-insights-v20206:"
     - id: snapshots
       name: Snapshots
       url: "https://console.aws.amazon.com/rds/home#snapshots-list:"
-    - id: automated-backups
+    - id: automatedbackups
       name: Automated backups
       url: "https://console.aws.amazon.com/rds/home#automatedbackups:"
-    - id: reserved-instances
+    - id: reservedinstances
       name: Reserved instances
       url: "https://console.aws.amazon.com/rds/home#reserved-instance-list:"
     - id: proxies
       name: Proxies
       url: "https://console.aws.amazon.com/rds/home#proxies:"
-    - id: subnet-groups
+    - id: subnetgroups
       name: Subnet groups
       url: "https://console.aws.amazon.com/rds/home#db-subnet-groups-list:"
-    - id: option-groups
+    - id: optiongroups
       name: Option groups
       url: "https://console.aws.amazon.com/rds/home#option-groups-list:"
     - id: events
       name: Events
       url: "https://console.aws.amazon.com/rds/home#event-list:"
-    - id: event-subscriptions
+    - id: eventsubscriptions
       name: Event subscriptions
       url: "https://console.aws.amazon.com/rds/home#event-subscriptions:"
     - id: recommendations
       name: Recommendations
       url: "https://console.aws.amazon.com/rds/home#recommendations:"
-    - id: certificate-update
+    - id: certificateupdate
       name: Certificate update
       url: "https://console.aws.amazon.com/rds/home#ca-cert-update:"
 
