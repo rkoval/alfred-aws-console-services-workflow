@@ -45,7 +45,6 @@ func ServiceSections(wf *aw.Workflow, awsService core.AwsService, subquery strin
 			Subtitle(section.Description).
 			Valid(true)
 
-		icon := &aw.Icon{Value: "images/" + awsService.Id + ".png"}
-		item.Icon(icon)
+		item.Icon(core.GetImageIcon(awsService.Id))
 	}
 }

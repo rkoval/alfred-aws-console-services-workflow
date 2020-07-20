@@ -30,14 +30,7 @@ func parseYaml() []core.AwsService {
 	return awsServices
 }
 
-func run() {
-	var query string
-	if args := wf.Args(); len(args) > 0 {
-		query = strings.TrimSpace(args[0])
-	}
-
-	awsServices := parseYaml()
-
+func populateItems(awsServices []core.AwsService, query string) (string, error) {
 	awsServicesById := make(map[string]*core.AwsService)
 	for i, awsService := range awsServices {
 		awsServicesById[awsService.Id] = &awsServices[i]
@@ -46,16 +39,44 @@ func run() {
 	// TODO add better lexing here to route filters
 
 	splitQuery := strings.Split(query, " ")
-	if len(splitQuery) <= 1 || awsServicesById[splitQuery[0]] == nil || len(awsServicesById[splitQuery[0]].Sections) <= 0 {
-		filters.Services(wf, awsServices, query)
-	} else {
+	if len(splitQuery) > 1 && awsServicesById[splitQuery[0]] != nil {
 		id := splitQuery[0]
-		log.Printf("filtering on sections for %s", id)
+		query = strings.Join(splitQuery[1:], " ")
 		awsService := awsServicesById[id]
-		filters.ServiceSections(wf, *awsService, strings.Join(splitQuery[1:], " "))
+		searcher := filters.SearchersByServiceId[id]
+		if strings.HasPrefix(query, "$") && searcher != nil {
+			query = query[1:]
+			log.Printf("using searcher associated with %s", id)
+			err := searcher(wf, query)
+			if err != nil {
+				return "", err
+			}
+			return query, nil
+		} else if len(awsServicesById[splitQuery[0]].Sections) > 0 {
+			log.Printf("filtering on sections for %s", id)
+			filters.ServiceSections(wf, *awsService, query)
+			return query, nil
+		}
 	}
 
-	if query != "" {
+	filters.Services(wf, awsServices, query)
+	return query, nil
+}
+
+func run() {
+	var query string
+	if args := wf.Args(); len(args) > 0 {
+		query = strings.TrimSpace(args[0])
+	}
+
+	awsServices := parseYaml()
+
+	query, err := populateItems(awsServices, query)
+
+	if err != nil {
+		log.Printf("error: %v", err)
+	} else if query != "" {
+		log.Printf("filtering with query %s", query)
 		res := wf.Filter(query)
 
 		log.Printf("%d results match %q", len(res), query)
