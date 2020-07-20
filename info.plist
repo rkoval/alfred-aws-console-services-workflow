@@ -48,7 +48,7 @@
 	<key>createdby</key>
 	<string>Ryan Koval</string>
 	<key>description</key>
-	<string>Very simple workflow to quickly open up AWS Console Services in your browser</string>
+	<string>Powerful workflow to quickly open up AWS Console Services in your browser or search within them</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
