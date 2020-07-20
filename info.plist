@@ -8,6 +8,19 @@
 	<string>Tools</string>
 	<key>connections</key>
 	<dict>
+		<key>9B470580-6D68-4E96-8948-95193A9A9BF9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A87D451E-A378-49ED-9500-216A6EDFC8F9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>ED4983E7-5D59-45C5-AE7F-5D5570D0B499</key>
 		<array>
 			<dict>
@@ -17,6 +30,16 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>9B470580-6D68-4E96-8948-95193A9A9BF9</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Copy URL to clipboard</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -32,6 +55,46 @@
 	<string>AWS Console Services</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>D1D5721F-0D3B-42C3-95D8-8996D9725E0C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Copied to clipboard</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>A87D451E-A378-49ED-9500-216A6EDFC8F9</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -82,21 +145,19 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
 				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
+				<key>transient</key>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
+			<string>alfred.workflow.output.clipboard</string>
 			<key>uid</key>
-			<string>D1D5721F-0D3B-42C3-95D8-8996D9725E0C</string>
+			<string>9B470580-6D68-4E96-8948-95193A9A9BF9</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -133,19 +194,33 @@ npm install
 To add entries to the Alfred Workflow, modify [the .yml config file](src/console-services.yml) and then run [this script](src/generate_items.js) from its directory. It will parse the .yml file and add elements in-place to the info.plist file, which Alfred reads.</string>
 	<key>uidata</key>
 	<dict>
+		<key>9B470580-6D68-4E96-8948-95193A9A9BF9</key>
+		<dict>
+			<key>xpos</key>
+			<integer>520</integer>
+			<key>ypos</key>
+			<integer>230</integer>
+		</dict>
+		<key>A87D451E-A378-49ED-9500-216A6EDFC8F9</key>
+		<dict>
+			<key>xpos</key>
+			<integer>670</integer>
+			<key>ypos</key>
+			<integer>230</integer>
+		</dict>
 		<key>D1D5721F-0D3B-42C3-95D8-8996D9725E0C</key>
 		<dict>
 			<key>xpos</key>
-			<integer>230</integer>
+			<integer>520</integer>
 			<key>ypos</key>
-			<integer>40</integer>
+			<integer>60</integer>
 		</dict>
 		<key>ED4983E7-5D59-45C5-AE7F-5D5570D0B499</key>
 		<dict>
 			<key>xpos</key>
-			<integer>50</integer>
+			<integer>60</integer>
 			<key>ypos</key>
-			<integer>40</integer>
+			<integer>230</integer>
 		</dict>
 	</dict>
 	<key>version</key>
