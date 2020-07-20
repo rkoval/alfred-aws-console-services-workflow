@@ -269,6 +269,13 @@
   name: Elastic Beanstalk
   description: Run and Manage Web Apps
   url: https://console.aws.amazon.com/elasticbeanstalk/home
+  sections:
+    - id: environments
+      name: Environments
+      url: "https://console.aws.amazon.com/elasticbeanstalk/home#/environments"
+    - id: applications
+      name: Applications
+      url: "https://console.aws.amazon.com/elasticbeanstalk/home#/applications"
 
 - id: ess
   name: Elasticsearch Service
