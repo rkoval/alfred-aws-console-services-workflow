@@ -746,7 +746,23 @@
   name: Web Application Firewall & Shield
   short_name: WAF
   description: Protects Against DDoS Attacks and Malicious Web Traffic
-  url: https://console.aws.amazon.com/wafv2/home
+  url: https://console.aws.amazon.com/wafv2/homev2
+  sections:
+    - id: webacls
+      name: Web ACLs
+      url: "https://console.aws.amazon.com/wafv2/homev2/web-acls"
+    - id: ipsets
+      name: IP sets
+      url: "https://console.aws.amazon.com/wafv2/homev2/ip-sets"
+    - id: regexpatternsets
+      name: Regex pattern sets
+      url: "https://console.aws.amazon.com/wafv2/homev2/regex-pattern-sets"
+    - id: rulegroups
+      name: Rule groups
+      url: "https://console.aws.amazon.com/wafv2/homev2/rule-groups"
+    - id: marketplace
+      name: AWS Marketplace
+      url: "https://console.aws.amazon.com/wafv2/homev2/marketplace"
 
 - id: wellarchitectedtool
   name: Well-Architected Tool
