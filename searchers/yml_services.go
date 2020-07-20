@@ -12,7 +12,7 @@ func Services(wf *aw.Workflow, awsServices []core.AwsService, query string) {
 		var title string
 		var match string
 		if awsService.ShortName != "" {
-			title = awsService.ShortName + " - " + awsService.Name
+			title = awsService.ShortName + " – " + awsService.Name
 			match = awsService.ShortName
 		} else {
 			title = awsService.Name
@@ -38,7 +38,7 @@ func Services(wf *aw.Workflow, awsServices []core.AwsService, query string) {
 
 func ServiceSections(wf *aw.Workflow, awsService core.AwsService, subquery string) {
 	for _, section := range awsService.Sections {
-		item := wf.NewItem(awsService.GetName() + " - " + section.Name).
+		item := wf.NewItem(awsService.GetName() + " – " + section.Name).
 			Autocomplete(awsService.Id + " " + section.Id + " ").
 			UID(section.Id).
 			Arg(section.Url).
