@@ -64,8 +64,7 @@ func populateItems(awsServices []core.AwsService, query string) (string, error) 
 				query = strings.Join(splitQuery[2:], " ")
 				id = id + "_" + sectionId
 				searcher := searchers.SearchersByServiceId[id]
-				if strings.HasPrefix(query, "$") && searcher != nil {
-					query = query[1:]
+				if searcher != nil {
 					log.Printf("using searcher associated with %s", id)
 					err := searcher(wf, query)
 					if err != nil {
