@@ -7,11 +7,8 @@ echo -e "Current version: $CURRENT_VERSION\nInput new version: "
 read -r VERSION
 VERSION="v${VERSION//v/}"
 
-generate_info_plist() {
-  cd src
-  npm install
-  ./generate_items.js
-  cd -
+install_package() {
+  go build
 }
 
 bump_version_and_tag() {
@@ -27,7 +24,7 @@ package_release() {
   local tmpdir
   tmpdir=$(mktemp -d)
   echo "Using tmp dir $tmpdir to stage release files ..."
-  cp -R "List Filter Images" icon.png info.plist LICENSE README.md "$tmpdir/"
+  cp -R images alfred-aws-console-services-workflow console-services.yml icon.png info.plist LICENSE README.md "$tmpdir/"
   ditto -ck "$tmpdir" "AWS Console Services ${VERSION}.alfredworkflow"
 }
 
@@ -36,7 +33,7 @@ open_github() {
   open "https://github.com/rkoval/alfred-aws-console-services-workflow/releases/new?tag=${VERSION}&title=${VERSION}&body=Fill out the release"
 }
 
-generate_info_plist
+install_package
 bump_version_and_tag
 package_release
 open_github

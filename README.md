@@ -16,19 +16,18 @@ Open up the Alfred Workflow configuration to see the full list of supported serv
 ### Contributing
 
 #### Requirements
-- Node.js 7.3.0 (or later)
+- go 1.14.0 (or later)
 
 #### Installation
 From the root of this repo, run:
 
 ```sh
-cd src
-npm install
+go get github.com/rkoval/alfred-aws-console-services-workflow
 ```
 
 #### Adding Entries
 
-To add entries to the Alfred Workflow, modify [the .yml config file](src/console-services.yml) and then run [this script](src/generate_items.js) from its directory. It will parse the .yml file and add elements in-place to the info.plist file, which Alfred reads.
+To add entries to the Alfred Workflow, modify [the .yml config file](console-services.yml). This file is used by the executable to populate entries in Alfred.
 
 #### Packaging for Release
 
