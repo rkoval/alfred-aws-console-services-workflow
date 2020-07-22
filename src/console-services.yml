@@ -485,7 +485,7 @@
 
 - command: sqs
   description: 'Simple Queue Service - SQS Managed Message Queues'
-  url: 'https://console.aws.amazon.com/sqs/home'
+  url: 'https://console.aws.amazon.com/sqs/v2/home'
 
 - command: stepfunctions
   description: 'Step Functions - Coordinate Distributed Applications'
