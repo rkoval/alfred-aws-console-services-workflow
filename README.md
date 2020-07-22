@@ -15,7 +15,7 @@ To use, activate Alfred and type in `aws`. From there, type to query any of the 
 
 ## Contributing
 
-![tests](https://github.com/rkoval/alfred-aws-console-services-workflow/workflows/test/badge.svg)
+![tests](https://github.com/rkoval/alfred-aws-console-services-workflow/workflows/tests/badge.svg)
 
 ### Adding services or service sections
 
