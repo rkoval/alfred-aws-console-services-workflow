@@ -31,55 +31,58 @@ func parseYaml() []core.AwsService {
 }
 
 func populateItems(awsServices []core.AwsService, query string) (string, error) {
-	awsServicesById := make(map[string]*core.AwsService)
-	for i, awsService := range awsServices {
-		awsServicesById[awsService.Id] = &awsServices[i]
-	}
-
 	// TODO add better lexing here to route searchers
 
 	splitQuery := strings.Split(query, " ")
-	if len(splitQuery) > 1 && awsServicesById[splitQuery[0]] != nil {
+	if len(splitQuery) > 1 {
 		id := splitQuery[0]
-		query = strings.Join(splitQuery[1:], " ")
-		awsService := awsServicesById[id]
-		searcher := searchers.SearchersByServiceId[id]
-		if strings.HasPrefix(query, "$") && searcher != nil {
-			query = query[1:]
-			log.Printf("using searcher associated with %s", id)
-			err := searcher(wf, query, nil)
-			if err != nil {
-				return "", err
+		var awsService *core.AwsService
+		for i := range awsServices {
+			if awsServices[i].Id == id {
+				awsService = &awsServices[i]
+				break
 			}
-			return "", nil
-		} else if len(awsServicesById[id].Sections) > 0 {
-			sections := awsServicesById[id].Sections
-			sectionsById := make(map[string]*core.AwsServiceSection)
-			for i, section := range sections {
-				sectionsById[section.Id] = &sections[i]
-			}
-			if len(splitQuery) > 2 && sectionsById[splitQuery[1]] != nil {
-				sectionId := splitQuery[1]
-				query = strings.Join(splitQuery[2:], " ")
-				id = id + "_" + sectionId
-				searcher := searchers.SearchersByServiceId[id]
-				if searcher != nil {
-					log.Printf("using searcher associated with %s", id)
-					err := searcher(wf, query, nil)
-					if err != nil {
-						return "", err
-					}
-					return "", nil
+		}
+
+		if awsService != nil {
+			searcher := searchers.SearchersByServiceId[id]
+			if strings.HasPrefix(query, "$") && searcher != nil {
+				query = query[1:]
+				log.Printf("using searcher associated with %s", id)
+				err := searcher(wf, query, nil)
+				if err != nil {
+					return "", err
 				}
+				return "", nil
+			} else if len(awsService.Sections) > 0 {
+				sections := awsService.Sections
+				sectionsById := make(map[string]*core.AwsServiceSection)
+				for i, section := range sections {
+					sectionsById[section.Id] = &sections[i]
+				}
+				if len(splitQuery) > 2 && sectionsById[splitQuery[1]] != nil {
+					sectionId := splitQuery[1]
+					query = strings.Join(splitQuery[2:], " ")
+					id = id + "_" + sectionId
+					searcher := searchers.SearchersByServiceId[id]
+					if searcher != nil {
+						log.Printf("using searcher associated with %s", id)
+						err := searcher(wf, query, nil)
+						if err != nil {
+							return "", err
+						}
+						return "", nil
+					}
+				}
+				log.Printf("filtering on sections for %s", id)
+				query = strings.TrimSpace(strings.Join(splitQuery[1:], " "))
+				searchers.SearchServiceSections(wf, *awsService)
+				return query, nil
 			}
-			log.Printf("filtering on sections for %s", id)
-			query = strings.TrimSpace(strings.Join(splitQuery[1:], " "))
-			searchers.ServiceSections(wf, *awsService, query)
-			return query, nil
 		}
 	}
 
-	searchers.Services(wf, awsServices, query)
+	searchers.SearchServices(wf, awsServices)
 	return query, nil
 }
 

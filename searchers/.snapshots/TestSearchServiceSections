@@ -1,0 +1,23 @@
+([]*aw.Item) (len=1) {
+  (*aw.Item)({
+    title: (string) (len=23) "Service 2 – Section 1",
+    subtitle: (*string)((len=32) "Description of the first section"),
+    match: (*string)(<nil>),
+    uid: (*string)((len=8) "section1"),
+    autocomplete: (*string)((len=18) "service2 section1 "),
+    arg: (*string)((len=31) "https://bookmarks.ryankoval.com"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=19) "images/service2.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  })
+}

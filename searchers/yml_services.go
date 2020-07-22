@@ -7,7 +7,7 @@ import (
 	"github.com/rkoval/alfred-aws-console-services-workflow/core"
 )
 
-func Services(wf *aw.Workflow, awsServices []core.AwsService, query string) {
+func SearchServices(wf *aw.Workflow, awsServices []core.AwsService) {
 	for _, awsService := range awsServices {
 		var title string
 		var match string
@@ -36,7 +36,7 @@ func Services(wf *aw.Workflow, awsServices []core.AwsService, query string) {
 	}
 }
 
-func ServiceSections(wf *aw.Workflow, awsService core.AwsService, subquery string) {
+func SearchServiceSections(wf *aw.Workflow, awsService core.AwsService) {
 	for _, section := range awsService.Sections {
 		item := wf.NewItem(awsService.GetName() + " – " + section.Name).
 			Autocomplete(awsService.Id + " " + section.Id + " ").

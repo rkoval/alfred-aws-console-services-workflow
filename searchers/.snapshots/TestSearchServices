@@ -1,0 +1,65 @@
+([]*aw.Item) (len=3) {
+  (*aw.Item)({
+    title: (string) (len=16) "S1 – Service 1",
+    subtitle: (*string)((len=32) "Description of the first service"),
+    match: (*string)((len=2) "S1"),
+    uid: (*string)((len=8) "service1"),
+    autocomplete: (*string)((len=9) "service1 "),
+    arg: (*string)((len=23) "https://ryankoval.pizza"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=19) "images/service1.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=9) "Service 2",
+    subtitle: (*string)((len=33) "Description of the second service"),
+    match: (*string)((len=9) "Service 2"),
+    uid: (*string)((len=8) "service2"),
+    autocomplete: (*string)((len=9) "service2 "),
+    arg: (*string)((len=21) "https://ryankoval.com"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=19) "images/service2.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=10) "W – Whoa",
+    subtitle: (*string)((len=8) "Whoa!!!!"),
+    match: (*string)((len=1) "W"),
+    uid: (*string)((len=4) "whoa"),
+    autocomplete: (*string)((len=5) "whoa "),
+    arg: (*string)((len=28) "https://github.ryankoval.com"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=15) "images/whoa.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  })
+}
