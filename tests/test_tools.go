@@ -23,8 +23,11 @@ func NewAWSRecorder(fixtureName string) *recorder.Recorder {
 	r.AddFilter(func(i *cassette.Interaction) error {
 		delete(i.Request.Headers, "Authorization")
 		delete(i.Request.Headers, "X-Amz-Date")
+		delete(i.Request.Headers, "X-Amz-Content-Sha256")
 		delete(i.Response.Headers, "X-Amzn-Requestid")
 		delete(i.Response.Headers, "Date")
+		delete(i.Response.Headers, "X-Amz-Id-2")
+		delete(i.Response.Headers, "X-Amz-Request-Id")
 		return nil
 	})
 
@@ -51,7 +54,7 @@ var longNumberInXmlTag *regexp.Regexp = regexp.MustCompile(`>[0-9]{8,}<`) // we'
 var uuidv2Regex *regexp.Regexp = regexp.MustCompile(`[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}`)
 var iso8601Regex *regexp.Regexp = regexp.MustCompile(`\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(\.\d+)?(([+-]\d\d:\d\d)|Z)?`)
 
-var idTagRegex *regexp.Regexp = regexp.MustCompile(`<id>.+</id>`)
+var idTagRegex *regexp.Regexp = regexp.MustCompile(`<(id|ID)>.+</(id|ID)>`)
 var keyNameTagRegex *regexp.Regexp = regexp.MustCompile(`<keyName>.+</keyName>`)
 
 var ipv4Regex *regexp.Regexp = regexp.MustCompile(`((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)`)

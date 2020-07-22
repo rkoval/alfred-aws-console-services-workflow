@@ -1,0 +1,65 @@
+([]*aw.Item) (len=3) {
+  (*aw.Item)({
+    title: (string) (len=8) "bucket-1",
+    subtitle: (*string)((len=36) "Created Wed Jan  1 00:00:00 UTC 2020"),
+    match: (*string)(<nil>),
+    uid: (*string)(<nil>),
+    autocomplete: (*string)(<nil>),
+    arg: (*string)((len=81) "https://console.aws.amazon.com/s3/buckets/bucket-1/?region=us-west-2&tab=overview"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=13) "images/s3.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=8) "bucket-2",
+    subtitle: (*string)((len=36) "Created Wed Jan  1 00:00:00 UTC 2020"),
+    match: (*string)(<nil>),
+    uid: (*string)(<nil>),
+    autocomplete: (*string)(<nil>),
+    arg: (*string)((len=81) "https://console.aws.amazon.com/s3/buckets/bucket-2/?region=us-west-2&tab=overview"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=13) "images/s3.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=8) "bucket-3",
+    subtitle: (*string)((len=36) "Created Wed Jan  1 00:00:00 UTC 2020"),
+    match: (*string)(<nil>),
+    uid: (*string)(<nil>),
+    autocomplete: (*string)(<nil>),
+    arg: (*string)((len=81) "https://console.aws.amazon.com/s3/buckets/bucket-3/?region=us-west-2&tab=overview"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=13) "images/s3.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  })
+}
