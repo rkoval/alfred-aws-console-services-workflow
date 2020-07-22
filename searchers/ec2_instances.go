@@ -2,6 +2,7 @@ package searchers
 
 import (
 	"fmt"
+	"net/http"
 	"strings"
 
 	"github.com/aws/aws-sdk-go/aws"
@@ -23,8 +24,8 @@ func GetInstanceStateEmoji(instanceState string) string {
 	return "❔"
 }
 
-func SearchEC2Instances(wf *aw.Workflow, query string) error {
-	sess, cfg := core.LoadAWSConfig()
+func SearchEC2Instances(wf *aw.Workflow, query string, transport http.RoundTripper) error {
+	sess, cfg := core.LoadAWSConfig(transport)
 	svc := ec2.New(sess, cfg)
 
 	values := []*string{

@@ -1,0 +1,65 @@
+([]*aw.Item) (len=3) {
+  (*aw.Item)({
+    title: (string) (len=21) "test-environment-name",
+    subtitle: (*string)((len=37) "🟢 e-aaaaaaaaaa TestApplicationName"),
+    match: (*string)(<nil>),
+    uid: (*string)(<nil>),
+    autocomplete: (*string)(<nil>),
+    arg: (*string)((len=165) "https://us-west-2.console.aws.amazon.com/elasticbeanstalk/home?region=us-west-2#/environment/dashboard?applicationName=TestApplicationName&environmentId=e-aaaaaaaaaa"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=27) "images/elasticbeanstalk.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=24) "another-environment-name",
+    subtitle: (*string)((len=42) "⚪️ e-aaaaaaaaaa AnotherApplicationName"),
+    match: (*string)(<nil>),
+    uid: (*string)(<nil>),
+    autocomplete: (*string)(<nil>),
+    arg: (*string)((len=165) "https://us-west-2.console.aws.amazon.com/elasticbeanstalk/home?region=us-west-2#/environment/events?applicationName=AnotherApplicationName&environmentId=e-aaaaaaaaaa"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=27) "images/elasticbeanstalk.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=6) "server",
+    subtitle: (*string)((len=24) "🔴 e-aaaaaaaaaa Server"),
+    match: (*string)(<nil>),
+    uid: (*string)(<nil>),
+    autocomplete: (*string)(<nil>),
+    arg: (*string)((len=152) "https://us-west-2.console.aws.amazon.com/elasticbeanstalk/home?region=us-west-2#/environment/dashboard?applicationName=Server&environmentId=e-aaaaaaaaaa"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=27) "images/elasticbeanstalk.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  })
+}

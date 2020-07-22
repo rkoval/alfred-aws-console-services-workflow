@@ -2,6 +2,7 @@ package searchers
 
 import (
 	"fmt"
+	"net/http"
 
 	"github.com/aws/aws-sdk-go/service/elasticbeanstalk"
 	aw "github.com/deanishe/awgo"
@@ -22,8 +23,8 @@ func GetHealthEmoji(environmentHealth string) string {
 	return "❔"
 }
 
-func SearchElasticBeanstalkEnvironments(wf *aw.Workflow, query string) error {
-	sess, cfg := core.LoadAWSConfig()
+func SearchElasticBeanstalkEnvironments(wf *aw.Workflow, query string, transport http.RoundTripper) error {
+	sess, cfg := core.LoadAWSConfig(transport)
 	svc := elasticbeanstalk.New(sess, cfg)
 	params := &elasticbeanstalk.DescribeEnvironmentsInput{}
 	resp, err := svc.DescribeEnvironments(params)

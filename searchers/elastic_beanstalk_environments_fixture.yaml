@@ -1,0 +1,116 @@
+---
+version: 1
+interactions:
+- request:
+    body: Action=DescribeEnvironments&Version=2010-12-01
+    form:
+      Action:
+      - DescribeEnvironments
+      Version:
+      - "2010-12-01"
+    headers:
+      Content-Length:
+      - "46"
+      Content-Type:
+      - application/x-www-form-urlencoded; charset=utf-8
+      User-Agent:
+      - aws-sdk-go/1.33.7 (go1.14.5; darwin; amd64)
+    url: https://elasticbeanstalk.us-west-2.amazonaws.com/
+    method: POST
+  response:
+    body: |
+      <DescribeEnvironmentsResponse xmlns="http://elasticbeanstalk.amazonaws.com/docs/2010-12-01/">
+        <DescribeEnvironmentsResult>
+          <Environments>
+            <member>
+              <SolutionStackName>64bit Amazon Linux 2018.03 v4.14.3 running Node.js</SolutionStackName>
+              <EnvironmentArn>arn:aws:elasticbeanstalk:us-west-2:000000000000:environment/TestApplicationName/test-environment-name</EnvironmentArn>
+              <Health>Green</Health>
+              <MinCapacityEnabled>false</MinCapacityEnabled>
+              <AbortableOperationInProgress>false</AbortableOperationInProgress>
+              <DateUpdated>2020-01-01T00:00:00.000Z</DateUpdated>
+              <Alerts/>
+              <VersionLabel>00000000</VersionLabel>
+              <DateUpdated>2020-02-01T00:00:00.000Z</DateUpdated>
+              <EnvironmentId>e-aaaaaaaaaa</EnvironmentId>
+              <Tier>
+                <Name>WebServer</Name>
+                <Type>Standard</Type>
+                <Version>1.0</Version>
+              </Tier>
+              <PlatformArn>arn:aws:elasticbeanstalk:us-west-2::platform/Node.js running on 64bit Amazon Linux/4.14.3</PlatformArn>
+              <HealthStatus>Ok</HealthStatus>
+              <EndpointURL>subdomain.us-west-2.elb.amazonaws.com</EndpointURL>
+              <EnvironmentName>test-environment-name</EnvironmentName>
+              <CNAME>subdomain.us-west-2.elasticbeanstalk.com</CNAME>
+              <EnvironmentLinks/>
+              <ApplicationName>TestApplicationName</ApplicationName>
+              <Status>Ready</Status>
+            </member>
+            <member>
+              <SolutionStackName>64bit Amazon Linux 2018.03 v4.14.3 running Node.js</SolutionStackName>
+              <EnvironmentArn>arn:aws:elasticbeanstalk:us-west-2:000000000000:environment/AnotherApplicationName/another-environment-name</EnvironmentArn>
+              <Health>Grey</Health>
+              <MinCapacityEnabled>false</MinCapacityEnabled>
+              <DateUpdated>2020-07-22T02:05:32.172Z</DateUpdated>
+              <AbortableOperationInProgress>false</AbortableOperationInProgress>
+              <Alerts/>
+              <VersionLabel>94832eb8</VersionLabel>
+              <DateCreated>2020-07-22T00:32:13.833Z</DateCreated>
+              <EnvironmentId>e-aaaaaaaaaa</EnvironmentId>
+              <Tier>
+                <Name>WebServer</Name>
+                <Type>Standard</Type>
+                <Version>1.0</Version>
+              </Tier>
+              <PlatformArn>arn:aws:elasticbeanstalk:us-west-2::platform/Node.js running on 64bit Amazon Linux/4.14.3</PlatformArn>
+              <HealthStatus>Unknown</HealthStatus>
+              <EnvironmentName>another-environment-name</EnvironmentName>
+              <EndpointURL>subdomain.us-west-2.elb.amazonaws.com</EndpointURL>
+              <CNAME>subdomain.us-west-2.elasticbeanstalk.com</CNAME>
+              <EnvironmentLinks/>
+              <ApplicationName>AnotherApplicationName</ApplicationName>
+              <Status>Terminated</Status>
+            </member>
+            <member>
+              <SolutionStackName>64bit Amazon Linux 2018.03 v4.12.0 running Node.js</SolutionStackName>
+              <Description>this is the environment's description</Description>
+              <EnvironmentArn>arn:aws:elasticbeanstalk:us-west-2:000000000000:environment/Server/server</EnvironmentArn>
+              <Health>Red</Health>
+              <MinCapacityEnabled>false</MinCapacityEnabled>
+              <DateUpdated>2020-07-16T06:09:11.324Z</DateUpdated>
+              <AbortableOperationInProgress>false</AbortableOperationInProgress>
+              <Alerts/>
+              <VersionLabel>Sample Application</VersionLabel>
+              <DateCreated>2019-12-14T20:03:32.666Z</DateCreated>
+              <EnvironmentId>e-aaaaaaaaaa</EnvironmentId>
+              <Tier>
+                <Name>WebServer</Name>
+                <Type>Standard</Type>
+                <Version>1.0</Version>
+              </Tier>
+              <PlatformArn>arn:aws:elasticbeanstalk:us-west-2::platform/Node.js running on 64bit Amazon Linux/4.12.0</PlatformArn>
+              <HealthStatus>Severe</HealthStatus>
+              <EnvironmentName>server</EnvironmentName>
+              <EndpointURL>subdomain.us-west-2.elb.amazonaws.com</EndpointURL>
+              <CNAME>subdomain.us-west-2.elasticbeanstalk.com</CNAME>
+              <EnvironmentLinks/>
+              <ApplicationName>Server</ApplicationName>
+              <Status>Ready</Status>
+            </member>
+          </Environments>
+        </DescribeEnvironmentsResult>
+        <ResponseMetadata>
+          <RequestId>00000000-0000-0000-0000-000000000000</RequestId>
+        </ResponseMetadata>
+      </DescribeEnvironmentsResponse>
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - text/xml
+      Vary:
+      - accept-encoding
+    status: 200 OK
+    code: 200
+    duration: ""

@@ -2,6 +2,7 @@ package searchers
 
 import (
 	"fmt"
+	"net/http"
 	"time"
 
 	"github.com/aws/aws-sdk-go/service/s3"
@@ -9,8 +10,8 @@ import (
 	"github.com/rkoval/alfred-aws-console-services-workflow/core"
 )
 
-func SearchS3Buckets(wf *aw.Workflow, query string) error {
-	sess, cfg := core.LoadAWSConfig()
+func SearchS3Buckets(wf *aw.Workflow, query string, transport http.RoundTripper) error {
+	sess, cfg := core.LoadAWSConfig(transport)
 	svc := s3.New(sess, cfg)
 
 	resp, err := svc.ListBuckets(&s3.ListBucketsInput{})

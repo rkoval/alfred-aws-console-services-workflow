@@ -2,6 +2,7 @@ package searchers
 
 import (
 	"fmt"
+	"net/http"
 	"strings"
 
 	"github.com/aws/aws-sdk-go/aws"
@@ -10,8 +11,8 @@ import (
 	"github.com/rkoval/alfred-aws-console-services-workflow/core"
 )
 
-func SearchEC2SecurityGroups(wf *aw.Workflow, query string) error {
-	sess, cfg := core.LoadAWSConfig()
+func SearchEC2SecurityGroups(wf *aw.Workflow, query string, transport http.RoundTripper) error {
+	sess, cfg := core.LoadAWSConfig(transport)
 	svc := ec2.New(sess, cfg)
 
 	values := []*string{
