@@ -8,14 +8,14 @@ import (
 	"github.com/dnaeon/go-vcr/recorder"
 )
 
-func NewAWSRecorder(fixtureLocation string) *recorder.Recorder {
+func NewAWSRecorder(fixtureName string) *recorder.Recorder {
 	var mode recorder.Mode
 	if os.Getenv("RECORD_VCR") != "" {
 		mode = recorder.ModeRecording
 	} else {
 		mode = recorder.ModeReplaying
 	}
-	r, err := recorder.NewAsMode(fixtureLocation, mode, nil)
+	r, err := recorder.NewAsMode(fixtureName+"_aws_fixture", mode, nil)
 	if err != nil {
 		panic(err)
 	}

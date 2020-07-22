@@ -11,7 +11,7 @@ import (
 func TestSearchEC2SecurityGroups(t *testing.T) {
 	wf := aw.New()
 
-	r := tests.NewAWSRecorder("ec2_security_groups_fixture")
+	r := tests.NewAWSRecorder("ec2_security_groups_test")
 	defer r.Stop()
 	SearchEC2SecurityGroups(wf, "", r)
 

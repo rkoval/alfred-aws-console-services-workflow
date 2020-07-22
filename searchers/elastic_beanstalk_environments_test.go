@@ -11,7 +11,7 @@ import (
 func TestSearchElasticBeanstalkEnvironments(t *testing.T) {
 	wf := aw.New()
 
-	r := tests.NewAWSRecorder("elastic_beanstalk_environments_fixture")
+	r := tests.NewAWSRecorder("elastic_beanstalk_environments_test")
 	defer r.Stop()
 	SearchElasticBeanstalkEnvironments(wf, "elasticbeanstalk", r)
 

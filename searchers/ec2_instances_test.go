@@ -11,7 +11,7 @@ import (
 func TestSearchEC2Instances(t *testing.T) {
 	wf := aw.New()
 
-	r := tests.NewAWSRecorder("ec2_instances_fixture")
+	r := tests.NewAWSRecorder("ec2_instances_test")
 	defer r.Stop()
 	SearchEC2Instances(wf, "", r)
 
