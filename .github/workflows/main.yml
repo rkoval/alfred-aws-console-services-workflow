@@ -27,3 +27,10 @@ jobs:
 
           # Optional: show only new issues if it's a pull request. The default value is `false`.
           # only-new-issues: true
+  test:
+    name: go test
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: go test
+        run: ./test-ci.sh
