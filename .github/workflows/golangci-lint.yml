@@ -5,6 +5,7 @@ on:
       - v*
     branches:
       - master
+      - v3.x
   pull_request:
 jobs:
   golangci:
