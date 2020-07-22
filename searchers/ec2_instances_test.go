@@ -12,8 +12,11 @@ func TestSearchEC2Instances(t *testing.T) {
 	wf := aw.New()
 
 	r := tests.NewAWSRecorder("ec2_instances_test")
-	defer r.Stop()
-	SearchEC2Instances(wf, "", r)
+	defer tests.PanicOnError(r.Stop)
+	err := SearchEC2Instances(wf, "", r)
+	if err != nil {
+		t.Errorf("got error from search: %v", err)
+	}
 
 	cupaloy.SnapshotT(t, wf.Feedback.Items)
 }

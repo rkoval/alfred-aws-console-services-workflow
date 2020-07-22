@@ -12,8 +12,11 @@ func TestSearchElasticBeanstalkEnvironments(t *testing.T) {
 	wf := aw.New()
 
 	r := tests.NewAWSRecorder("elastic_beanstalk_environments_test")
-	defer r.Stop()
-	SearchElasticBeanstalkEnvironments(wf, "elasticbeanstalk", r)
+	defer tests.PanicOnError(r.Stop)
+	err := SearchElasticBeanstalkEnvironments(wf, "elasticbeanstalk", r)
+	if err != nil {
+		t.Errorf("got error from search: %v", err)
+	}
 
 	cupaloy.SnapshotT(t, wf.Feedback.Items)
 }

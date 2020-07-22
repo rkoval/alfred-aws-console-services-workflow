@@ -12,8 +12,11 @@ func TestSearchEC2SecurityGroups(t *testing.T) {
 	wf := aw.New()
 
 	r := tests.NewAWSRecorder("ec2_security_groups_test")
-	defer r.Stop()
-	SearchEC2SecurityGroups(wf, "", r)
+	defer tests.PanicOnError(r.Stop)
+	err := SearchEC2SecurityGroups(wf, "", r)
+	if err != nil {
+		t.Errorf("got error from search: %v", err)
+	}
 
 	cupaloy.SnapshotT(t, wf.Feedback.Items)
 }

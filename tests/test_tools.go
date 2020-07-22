@@ -39,6 +39,12 @@ func NewAWSRecorder(fixtureName string) *recorder.Recorder {
 	return r
 }
 
+func PanicOnError(f func() error) {
+	if err := f(); err != nil {
+		panic(err)
+	}
+}
+
 var environmentIdRegex *regexp.Regexp = regexp.MustCompile(`e-[a-zA-Z0-9]{8,}`)
 var instanceIdRegex *regexp.Regexp = regexp.MustCompile(`i-[a-zA-Z0-9]{8,}`)
 var amiIdRegex *regexp.Regexp = regexp.MustCompile(`ami-[a-zA-Z0-9]{8,}`)

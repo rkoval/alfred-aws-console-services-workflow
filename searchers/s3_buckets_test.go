@@ -12,8 +12,11 @@ func TestSearchS3Buckets(t *testing.T) {
 	wf := aw.New()
 
 	r := tests.NewAWSRecorder("s3_buckets_test")
-	defer r.Stop()
-	SearchS3Buckets(wf, "", r)
+	defer tests.PanicOnError(r.Stop)
+	err := SearchS3Buckets(wf, "", r)
+	if err != nil {
+		t.Errorf("got error from search: %v", err)
+	}
 
 	cupaloy.SnapshotT(t, wf.Feedback.Items)
 }
