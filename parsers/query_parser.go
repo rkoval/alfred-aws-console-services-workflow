@@ -35,7 +35,7 @@ func ParseQueryAndPopulateItems(wf *aw.Workflow, awsServices []core.AwsService, 
 				if err != nil {
 					return "", err
 				}
-				return "", nil
+				return query, nil
 			} else {
 				// prepend the home to the sub-service list so that it's still accessible
 				awsServiceHome := *awsService
@@ -69,7 +69,7 @@ func ParseQueryAndPopulateItems(wf *aw.Workflow, awsServices []core.AwsService, 
 								if err != nil {
 									return "", err
 								}
-								return "", nil
+								return query, nil
 							}
 						}
 					}

@@ -28,34 +28,36 @@ func SearchEC2Instances(wf *aw.Workflow, query string, transport http.RoundTripp
 	sess, cfg := core.LoadAWSConfig(transport)
 	svc := ec2.New(sess, cfg)
 
-	values := []*string{
-		aws.String(strings.Join([]string{"*", query, "*"}, "")),
+	NextToken := ""
+	for {
+		params := &ec2.DescribeInstancesInput{
+			MaxResults: aws.Int64(1000), // get as many as we can
+			NextToken:  aws.String(NextToken),
+		}
+		if NextToken != "" {
+			params.NextToken = aws.String(NextToken)
+		}
+		resp, err := svc.DescribeInstances(params)
+		if err != nil {
+			wf.NewItem(err.Error()).
+				Icon(aw.IconError)
+			return err
+		}
+		// log.Println("resp", resp)
+
+		addInstancesToWorkflow(wf, query, cfg, resp)
+
+		if resp.NextToken != nil {
+			NextToken = *resp.NextToken
+		} else {
+			break
+		}
 	}
 
-	var name string
-	if strings.HasPrefix(query, "i-") {
-		// assume we're querying by ID here
-		name = "instance-id"
-	} else {
-		name = "tag:Name"
-	}
-	params := &ec2.DescribeInstancesInput{
-		Filters: []*ec2.Filter{
-			{
-				Name:   aws.String(name),
-				Values: values,
-			},
-		},
-	}
+	return nil
+}
 
-	resp, err := svc.DescribeInstances(params)
-	if err != nil {
-		wf.NewItem(err.Error()).
-			Icon(aw.IconError)
-		return err
-	}
-	// log.Printf("%+v\n", *resp)
-
+func addInstancesToWorkflow(wf *aw.Workflow, query string, cfg *aws.Config, resp *ec2.DescribeInstancesOutput) {
 	for _, reservation := range resp.Reservations {
 		for _, instance := range reservation.Instances {
 			var title string
@@ -69,15 +71,17 @@ func SearchEC2Instances(wf *aw.Workflow, query string, transport http.RoundTripp
 			}
 			subtitle += " " + *instance.InstanceType
 
-			wf.NewItem(title).
+			item := wf.NewItem(title).
 				Subtitle(subtitle).
 				Arg(fmt.Sprintf("https://%s.console.aws.amazon.com/ec2/v2/home?region=%s#Instances:search=%s", *cfg.Region, *cfg.Region, *instance.InstanceId)).
 				Icon(core.GetImageIcon("ec2")).
 				Valid(true)
+
+			if strings.HasPrefix(query, "i-") {
+				item.Match(*instance.InstanceId)
+			}
 		}
 	}
-
-	return nil
 }
 
 func GetTagValue(tags []*ec2.Tag, key string) string {
