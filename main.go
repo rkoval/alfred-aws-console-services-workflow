@@ -12,10 +12,12 @@ import (
 var wf *aw.Workflow
 var forceFetch bool
 var query string
+var ymlPath string
 
 func init() {
 	flag.BoolVar(&forceFetch, "fetch", false, "force fetch via AWS instead of cache")
 	flag.StringVar(&query, "query", "", "query to use")
+	flag.StringVar(&ymlPath, "yml_path", "console-services.yml", "query to use")
 	flag.Parse()
 	wf = aw.New()
 }
@@ -25,7 +27,8 @@ func main() {
 	wf.Run(func() {
 		log.Printf("running workflow with query: `%s`", query)
 		query = strings.TrimLeft(query, " ")
+		log.Println("query", query)
 
-		workflow.Run(wf, query, nil, forceFetch, "console-services.yml")
+		workflow.Run(wf, query, nil, forceFetch, ymlPath)
 	})
 }
