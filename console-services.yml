@@ -228,7 +228,7 @@
   short_name: EC2
   description: Virtual Servers in the Cloud
   url: https://console.aws.amazon.com/ec2/home
-  sections:
+  sub_services:
     - id: instances
       name: Instances
       url: "https://console.aws.amazon.com/ec2/v2/home#Instances:"
@@ -272,7 +272,7 @@
   name: Elastic Beanstalk
   description: Run and Manage Web Apps
   url: https://console.aws.amazon.com/elasticbeanstalk/home
-  sections:
+  sub_services:
     - id: environments
       name: Environments
       url: "https://console.aws.amazon.com/elasticbeanstalk/home#/environments"
@@ -542,7 +542,7 @@
   short_name: RDS
   description: Managed Relational Database Service
   url: https://console.aws.amazon.com/rds/home
-  sections:
+  sub_services:
     - id: databases
       name: Databases
       url: "https://console.aws.amazon.com/rds/home#databases:"
@@ -613,7 +613,7 @@
   short_name: S3
   description: Scalable Storage in the Cloud
   url: https://console.aws.amazon.com/s3/home
-  sections:
+  sub_services:
     - id: buckets
       name: Buckets
       url: "https://console.aws.amazon.com/s3/home"
@@ -747,7 +747,7 @@
   short_name: WAF
   description: Protects Against DDoS Attacks and Malicious Web Traffic
   url: https://console.aws.amazon.com/wafv2/homev2
-  sections:
+  sub_services:
     - id: webacls
       name: Web ACLs
       url: "https://console.aws.amazon.com/wafv2/homev2/web-acls"

@@ -3,6 +3,8 @@ package main
 import (
 	"io/ioutil"
 	"log"
+	"net/http"
+	"strings"
 
 	aw "github.com/deanishe/awgo"
 	"github.com/rkoval/alfred-aws-console-services-workflow/core"
@@ -16,7 +18,7 @@ func init() {
 	wf = aw.New()
 }
 
-func ReadConsoleServicesYml() []core.AwsService {
+func readConsoleServicesYml() []core.AwsService {
 	awsServices := []core.AwsService{}
 	yamlFile, err := ioutil.ReadFile("console-services.yml")
 	if err != nil {
@@ -29,9 +31,9 @@ func ReadConsoleServicesYml() []core.AwsService {
 	return awsServices
 }
 
-func run() {
-	awsServices := ReadConsoleServicesYml()
-	query, err := parsers.ParseQueryAndPopulateItems(wf, awsServices)
+func Run(wf *aw.Workflow, query string, transport http.RoundTripper) {
+	awsServices := readConsoleServicesYml()
+	query, err := parsers.ParseQueryAndPopulateItems(wf, awsServices, query, transport)
 
 	if err != nil {
 		wf.FatalError(err)
@@ -52,5 +54,14 @@ func run() {
 }
 
 func main() {
-	wf.Run(run)
+	var query string
+	args := wf.Args()
+	log.Printf("running workflow with %d arg(s): %v", len(args), args)
+	if len(args) > 0 {
+		query = strings.TrimLeft(args[0], " ")
+	}
+
+	wf.Run(func() {
+		Run(wf, query, nil)
+	})
 }

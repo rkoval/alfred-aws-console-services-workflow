@@ -1,0 +1,23 @@
+([]*aw.Item) (len=1) {
+  (*aw.Item)({
+    title: (string) (len=18) "Alexa for Business",
+    subtitle: (*string)((len=36) "Empower your organization with voice"),
+    match: (*string)((len=18) "Alexa for Business"),
+    uid: (*string)((len=5) "alexa"),
+    autocomplete: (*string)((len=6) "alexa "),
+    arg: (*string)((len=39) "https://console.aws.amazon.com/a4b/home"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=16) "images/alexa.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  })
+}

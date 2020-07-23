@@ -9,17 +9,17 @@ Powerful workflow for quickly opening up AWS Console Services in your browser or
 - Open the downloaded file in Finder
 
 ## Usage
-To use, activate Alfred and type in `aws`. From there, type to query any of the services offered on the AWS homepage dashboard. You can hit `Tab` to populate service sections, if they exist (for example, navigate to the "Security Groups" section within the "EC2" service). At any time, hit `Enter` to navigate to your result or `Cmd+Enter` to copy the URL to clipboard.
+To use, activate Alfred and type in `aws`. From there, type to query any of the services offered on the AWS homepage dashboard. You can hit `Tab` to populate sub-services, if they exist (for example, navigate to "Security Groups" within the "EC2" service). At any time, hit `Enter` to navigate to your result or `Cmd+Enter` to copy the URL to clipboard.
 
-*Note that you must be logged in for the page to open directly to your service*. Your region will automatically be populated to the default tied to your account. See [this config file](console-services.yml) for the full list of supported services and their sections.
+*Note that you must be logged in for the page to open directly to your service*. Your region will automatically be populated to the default tied to your account. See [this config file](console-services.yml) for the full list of supported services and their sub-services.
 
 ## Contributing
 
 ![build](https://github.com/rkoval/alfred-aws-console-services-workflow/workflows/build/badge.svg)
 
-### Adding services or service sections
+### Adding services or sub-services
 
-If you're just wanting to add/modify/remove services or service sections, you shouldn't need to make changes to any of the go files. You can simply update [the .yml config file](console-services.yml) with your modifications. This file is used by the executable to populate entries in Alfred (for a list of valid properties, see [the models file](core/aws_service.go))
+If you're just wanting to add/modify/remove services or sub-services, you shouldn't need to make changes to any of the go files. You can simply update [the .yml config file](console-services.yml) with your modifications. This file is used by the executable to populate entries in Alfred (for a list of valid properties, see [the models file](core/aws_service.go))
 
 You can then simply submit a pull request with your changes to the .yml file for it to be reviewed and accepted.
 

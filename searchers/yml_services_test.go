@@ -21,11 +21,11 @@ var awsServices []core.AwsService = []core.AwsService{
 		Name:        "Service 2",
 		Description: "Description of the second service",
 		Url:         "https://ryankoval.com",
-		Sections: []core.AwsServiceSection{
+		SubServices: []core.AwsService{
 			{
-				Id:          "section1",
-				Name:        "Section 1",
-				Description: "Description of the first section",
+				Id:          "sub-service1",
+				Name:        "Sub-service 1",
+				Description: "Description of the first sub-service",
 				Url:         "https://bookmarks.ryankoval.com",
 			},
 		},
@@ -47,10 +47,10 @@ func TestSearchServices(t *testing.T) {
 	cupaloy.SnapshotT(t, wf.Feedback.Items)
 }
 
-func TestSearchServiceSections(t *testing.T) {
+func TestSearchSubServices(t *testing.T) {
 	wf := aw.New()
 
-	SearchServiceSections(wf, awsServices[1])
+	SearchSubServices(wf, awsServices[1])
 
 	cupaloy.SnapshotT(t, wf.Feedback.Items)
 }
