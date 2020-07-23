@@ -1,4 +1,4 @@
-package core
+package workflow
 
 import (
 	"log"
@@ -7,15 +7,17 @@ import (
 	"os/exec"
 	"time"
 
+	"github.com/aws/aws-sdk-go/service/ec2"
+	"github.com/cheekybits/genny/generic"
 	aw "github.com/deanishe/awgo"
 )
 
-var maxCacheAge = 5 * time.Minute
-var jobName = "fetch"
+//go:generate genny -in=$GOFILE -out=gen-$GOFILE gen "Entity=ec2.Instance"
+type Entity = generic.Type
+type KeepImportEc2Entity ec2.Instance // hack
 
-type Fetcher func(http.RoundTripper) ([]interface{}, error)
-
-func HandleCache(wf *aw.Workflow, transport http.RoundTripper, cacheName string, results *[]interface{}, fetcher Fetcher, forceFetch bool, fullQuery string) {
+func HandleCacheForEntity(wf *aw.Workflow, transport http.RoundTripper, cacheName string, results *[]Entity, fetcher func(http.RoundTripper) ([]Entity, error), forceFetch bool, fullQuery string) {
+	var jobName = "fetch"
 	if forceFetch {
 		wf.Configure(aw.TextErrors(true))
 		log.Printf("fetching from aws ...")
@@ -42,6 +44,7 @@ func HandleCache(wf *aw.Workflow, transport http.RoundTripper, cacheName string,
 		}
 	}
 
+	maxCacheAge := 5 * time.Minute
 	if wf.Cache.Expired(cacheName, maxCacheAge) {
 		wf.Rerun(0.2)
 		if !wf.IsRunning(jobName) {

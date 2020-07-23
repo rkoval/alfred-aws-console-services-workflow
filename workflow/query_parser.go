@@ -1,4 +1,4 @@
-package parsers
+package workflow
 
 import (
 	"log"
@@ -7,7 +7,6 @@ import (
 
 	aw "github.com/deanishe/awgo"
 	"github.com/rkoval/alfred-aws-console-services-workflow/core"
-	"github.com/rkoval/alfred-aws-console-services-workflow/searchers"
 )
 
 func ParseQueryAndPopulateItems(wf *aw.Workflow, awsServices []core.AwsService, query string, transport http.RoundTripper, forceFetch bool) string {
@@ -29,7 +28,7 @@ func ParseQueryAndPopulateItems(wf *aw.Workflow, awsServices []core.AwsService, 
 
 		if awsService != nil {
 			query = strings.Join(splitQuery[1:], " ")
-			searcher := searchers.SearchersByServiceId[id]
+			searcher := SearchersByServiceId[id]
 			if strings.HasPrefix(query, "$") && searcher != nil {
 				query = query[1:]
 				log.Printf("using searcher associated with %s", id)
@@ -64,7 +63,7 @@ func ParseQueryAndPopulateItems(wf *aw.Workflow, awsServices []core.AwsService, 
 							query = strings.Join(splitQuery[1:], " ")
 							id = id + "_" + subServiceId
 							log.Println("id", id)
-							searcher := searchers.SearchersByServiceId[id]
+							searcher := SearchersByServiceId[id]
 							if searcher != nil {
 								log.Printf("using searcher associated with %s", id)
 								err := searcher(wf, query, transport, forceFetch, fullQuery)
@@ -78,12 +77,12 @@ func ParseQueryAndPopulateItems(wf *aw.Workflow, awsServices []core.AwsService, 
 				}
 				log.Printf("filtering on subServices for %s", id)
 				query = strings.TrimSpace(strings.Join(splitQuery, " "))
-				searchers.SearchSubServices(wf, *awsService)
+				SearchSubServices(wf, *awsService)
 				return query
 			}
 		}
 	}
 
-	searchers.SearchServices(wf, awsServices)
+	SearchServices(wf, awsServices)
 	return query
 }

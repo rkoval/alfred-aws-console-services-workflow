@@ -1,0 +1,23 @@
+([]*aw.Item) (len=1) {
+  (*aw.Item)({
+    title: (string) (len=18) "environment-name-1",
+    subtitle: (*string)((len=27) "🟢 i-aaaaaaaaaa t3.medium"),
+    match: (*string)(<nil>),
+    uid: (*string)(<nil>),
+    autocomplete: (*string)(<nil>),
+    arg: (*string)((len=99) "https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Instances:search=i-aaaaaaaaaa"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=14) "images/ec2.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  })
+}

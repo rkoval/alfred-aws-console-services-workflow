@@ -2,7 +2,7 @@
   (*aw.Item)({
     title: (string) (len=18) "environment-name-1",
     subtitle: (*string)((len=27) "🟢 i-aaaaaaaaaa t3.medium"),
-    match: (*string)(<nil>),
+    match: (*string)((len=12) "i-aaaaaaaaaa"),
     uid: (*string)(<nil>),
     autocomplete: (*string)(<nil>),
     arg: (*string)((len=99) "https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Instances:search=i-aaaaaaaaaa"),
@@ -23,7 +23,7 @@
   (*aw.Item)({
     title: (string) (len=18) "environment-name-2",
     subtitle: (*string)((len=26) "🟢 i-aaaaaaaaaa t2.micro"),
-    match: (*string)(<nil>),
+    match: (*string)((len=12) "i-aaaaaaaaaa"),
     uid: (*string)(<nil>),
     autocomplete: (*string)(<nil>),
     arg: (*string)((len=99) "https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Instances:search=i-aaaaaaaaaa"),
@@ -44,7 +44,7 @@
   (*aw.Item)({
     title: (string) (len=19) "terminated-instance",
     subtitle: (*string)((len=26) "🔴 i-aaaaaaaaaa c5.large"),
-    match: (*string)(<nil>),
+    match: (*string)((len=12) "i-aaaaaaaaaa"),
     uid: (*string)(<nil>),
     autocomplete: (*string)(<nil>),
     arg: (*string)((len=99) "https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Instances:search=i-aaaaaaaaaa"),

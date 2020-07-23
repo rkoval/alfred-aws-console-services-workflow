@@ -1,4 +1,4 @@
-package main
+package workflow
 
 import (
 	"testing"
@@ -17,7 +17,7 @@ func testWorkflow(t *testing.T, tc testCase) {
 	wf := aw.New()
 	r := tests.NewAWSRecorder(tc.fixtureName)
 	defer tests.PanicOnError(r.Stop)
-	Run(wf, tc.query, r)
+	Run(wf, tc.query, r, true, "../console-services.yml")
 
 	cupaloy.SnapshotT(t, wf.Feedback.Items)
 }
@@ -62,7 +62,7 @@ func TestRun(t *testing.T) {
 		},
 		{
 			query:       "ec2 securitygroups ",
-			fixtureName: "searchers/ec2_security_groups_test", // reuse test fixture from this other test
+			fixtureName: "ec2_security_groups_test", // reuse test fixture from this other test
 		},
 		{
 			query: "ec2 inst",
@@ -72,31 +72,31 @@ func TestRun(t *testing.T) {
 		},
 		{
 			query:       "ec2 instances ",
-			fixtureName: "searchers/ec2_instances_test", // reuse test fixture from this other test
+			fixtureName: "ec2_instances_test", // reuse test fixture from this other test
 		},
 		{
 			query:       "ec2 instances environment-name-1",
-			fixtureName: "searchers/ec2_instances_test", // reuse test fixture from this other test
+			fixtureName: "ec2_instances_test", // reuse test fixture from this other test
 		},
 		{
 			query:       "ec2 instances i-aaaaaaaaaa",
-			fixtureName: "searchers/ec2_instances_test", // reuse test fixture from this other test
+			fixtureName: "ec2_instances_test", // reuse test fixture from this other test
 		},
 		{
 			query:       "ec2 $",
-			fixtureName: "searchers/ec2_instances_test", // reuse test fixture from this other test
+			fixtureName: "ec2_instances_test", // reuse test fixture from this other test
 		},
 		{
 			query:       "ec2 $ ",
-			fixtureName: "searchers/ec2_instances_test", // reuse test fixture from this other test
+			fixtureName: "ec2_instances_test", // reuse test fixture from this other test
 		},
 		{
 			query:       "ec2 $environment-name-1",
-			fixtureName: "searchers/ec2_instances_test", // reuse test fixture from this other test
+			fixtureName: "ec2_instances_test", // reuse test fixture from this other test
 		},
 		{
 			query:       "ec2 $i-aaaaaaaaaa",
-			fixtureName: "searchers/ec2_instances_test", // reuse test fixture from this other test
+			fixtureName: "ec2_instances_test", // reuse test fixture from this other test
 		},
 	}
 

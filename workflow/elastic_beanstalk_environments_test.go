@@ -1,4 +1,4 @@
-package searchers
+package workflow
 
 import (
 	"testing"

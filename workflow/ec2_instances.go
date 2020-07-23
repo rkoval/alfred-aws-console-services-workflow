@@ -1,4 +1,4 @@
-package searchers
+package workflow
 
 import (
 	"fmt"
@@ -27,21 +27,20 @@ func GetInstanceStateEmoji(instanceState string) string {
 var cacheName string = "ec2_instances"
 
 func PopulateEC2Instances(wf *aw.Workflow, query string, transport http.RoundTripper, forceFetch bool, fullQuery string) error {
-	var instances []interface{}
-	core.HandleCache(wf, transport, cacheName, &instances, fetchEC2Instances, forceFetch, fullQuery)
+	var instances []ec2.Instance
+	HandleCacheForEc2Instance(wf, transport, cacheName, &instances, fetchEC2Instances, forceFetch, fullQuery)
 	for _, instance := range instances {
-		i := instance.(ec2.Instance)
-		addInstanceToWorkflow(wf, query, "us-west-2" /* TODO make this read from config */, &i)
+		addInstanceToWorkflow(wf, query, "us-west-2" /* TODO make this read from config */, instance)
 	}
 	return nil
 }
 
-func fetchEC2Instances(transport http.RoundTripper) ([]interface{}, error) {
+func fetchEC2Instances(transport http.RoundTripper) ([]ec2.Instance, error) {
 	sess, cfg := core.LoadAWSConfig(transport)
 	svc := ec2.New(sess, cfg)
 
 	NextToken := ""
-	var instances []interface{}
+	instances := []ec2.Instance{}
 	for {
 		params := &ec2.DescribeInstancesInput{
 			MaxResults: aws.Int64(1000), // get as many as we can
@@ -71,7 +70,7 @@ func fetchEC2Instances(transport http.RoundTripper) ([]interface{}, error) {
 	return instances, nil
 }
 
-func addInstanceToWorkflow(wf *aw.Workflow, query, region string, instance *ec2.Instance) {
+func addInstanceToWorkflow(wf *aw.Workflow, query, region string, instance ec2.Instance) {
 	var title string
 	subtitle := GetInstanceStateEmoji(*instance.State.Name)
 	name := GetTagValue(instance.Tags, "Name")

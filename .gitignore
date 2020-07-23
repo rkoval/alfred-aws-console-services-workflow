@@ -86,3 +86,4 @@ info.plist.*
 
 alfred-aws-console-services-workflow
 .alfred
+gen-*.go
