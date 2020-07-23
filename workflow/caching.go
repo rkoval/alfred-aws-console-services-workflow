@@ -14,9 +14,11 @@ import (
 
 //go:generate genny -in=$GOFILE -out=gen-$GOFILE gen "Entity=ec2.Instance"
 type Entity = generic.Type
-type KeepImportEc2Entity ec2.Instance // hack
+type KeepImportEc2Entity ec2.Instance // hack to keep the import in scope
 
-func LoadFromCacheForEntity(wf *aw.Workflow, transport http.RoundTripper, cacheName string, fetcher func(http.RoundTripper) ([]Entity, error), forceFetch bool, fullQuery string) []Entity {
+type EntityArrayFetcher = func(http.RoundTripper) ([]Entity, error)
+
+func LoadEntityArrayFromCache(wf *aw.Workflow, transport http.RoundTripper, cacheName string, fetcher EntityArrayFetcher, forceFetch bool, fullQuery string) []Entity {
 	results := []Entity{}
 	var jobName = "fetch"
 	if forceFetch {
