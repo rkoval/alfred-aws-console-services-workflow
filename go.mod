@@ -8,5 +8,6 @@ require (
 	github.com/cheekybits/genny v1.0.0
 	github.com/deanishe/awgo v0.25.0
 	github.com/dnaeon/go-vcr v1.0.1
+	github.com/go-test/deep v1.0.7
 	gopkg.in/yaml.v2 v2.2.2
 )

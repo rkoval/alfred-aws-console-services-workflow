@@ -11,7 +11,7 @@ import (
 
 func ParseQueryAndPopulateItems(wf *aw.Workflow, awsServices []core.AwsService, query string, transport http.RoundTripper, forceFetch bool) string {
 	// TODO break apart this function
-	// TODO add better lexing here to route searchers
+	// TODO add better lexing here to route populators
 
 	fullQuery := query
 
@@ -28,11 +28,11 @@ func ParseQueryAndPopulateItems(wf *aw.Workflow, awsServices []core.AwsService, 
 
 		if awsService != nil {
 			query = strings.Join(splitQuery[1:], " ")
-			searcher := SearchersByServiceId[id]
-			if strings.HasPrefix(query, "$") && searcher != nil {
+			populater := PopulatersByServiceId[id]
+			if strings.HasPrefix(query, "$") && populater != nil {
 				query = query[1:]
-				log.Printf("using searcher associated with %s", id)
-				err := searcher(wf, query, transport, forceFetch, fullQuery)
+				log.Printf("using populater associated with %s", id)
+				err := populater(wf, query, transport, forceFetch, fullQuery)
 				if err != nil {
 					wf.FatalError(err)
 				}
@@ -63,10 +63,10 @@ func ParseQueryAndPopulateItems(wf *aw.Workflow, awsServices []core.AwsService, 
 							query = strings.Join(splitQuery[1:], " ")
 							id = id + "_" + subServiceId
 							log.Println("id", id)
-							searcher := SearchersByServiceId[id]
-							if searcher != nil {
-								log.Printf("using searcher associated with %s", id)
-								err := searcher(wf, query, transport, forceFetch, fullQuery)
+							populater := PopulatersByServiceId[id]
+							if populater != nil {
+								log.Printf("using populater associated with %s", id)
+								err := populater(wf, query, transport, forceFetch, fullQuery)
 								if err != nil {
 									wf.FatalError(err)
 								}

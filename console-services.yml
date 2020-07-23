@@ -614,9 +614,6 @@
   description: Scalable Storage in the Cloud
   url: https://console.aws.amazon.com/s3/home
   sub_services:
-    - id: buckets
-      name: Buckets
-      url: "https://console.aws.amazon.com/s3/home"
     - id: batchoperations
       name: Batch Operations
       url: "https://console.aws.amazon.com/s3/jobs"

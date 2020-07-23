@@ -8,12 +8,12 @@ import (
 	"github.com/rkoval/alfred-aws-console-services-workflow/tests"
 )
 
-func TestSearchS3Buckets(t *testing.T) {
+func TestPopulateS3Buckets(t *testing.T) {
 	wf := aw.New()
 
 	r := tests.NewAWSRecorder("s3_buckets_test")
 	defer tests.PanicOnError(r.Stop)
-	err := SearchS3Buckets(wf, "", r)
+	err := PopulateS3Buckets(wf, "", r, true, "")
 	if err != nil {
 		t.Errorf("got error from search: %v", err)
 	}

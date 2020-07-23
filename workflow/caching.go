@@ -8,13 +8,15 @@ import (
 	"time"
 
 	"github.com/aws/aws-sdk-go/service/ec2"
+	"github.com/aws/aws-sdk-go/service/s3"
 	"github.com/cheekybits/genny/generic"
 	aw "github.com/deanishe/awgo"
 )
 
-//go:generate genny -in=$GOFILE -out=gen-$GOFILE gen "Entity=ec2.Instance"
+//go:generate genny -in=$GOFILE -out=gen-$GOFILE gen "Entity=ec2.Instance,s3.Bucket"
 type Entity = generic.Type
 type KeepImportEc2Entity ec2.Instance // hack to keep the import in scope
+type KeepImportS3Entity s3.Bucket     // hack to keep the import in scope
 
 type EntityArrayFetcher = func(http.RoundTripper) ([]Entity, error)
 
