@@ -1,7 +1,7 @@
-package parsers
+package main
 
 import "testing"
 
 func TestParseConsoleServicesYml(t *testing.T) {
-	ParseConsoleServicesYml()
+	ReadConsoleServicesYml()
 }

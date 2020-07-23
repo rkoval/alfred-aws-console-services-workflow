@@ -1,10 +1,13 @@
 package main
 
 import (
+	"io/ioutil"
 	"log"
 
 	aw "github.com/deanishe/awgo"
+	"github.com/rkoval/alfred-aws-console-services-workflow/core"
 	"github.com/rkoval/alfred-aws-console-services-workflow/parsers"
+	"gopkg.in/yaml.v2"
 )
 
 var wf *aw.Workflow
@@ -13,8 +16,21 @@ func init() {
 	wf = aw.New()
 }
 
+func ReadConsoleServicesYml() []core.AwsService {
+	awsServices := []core.AwsService{}
+	yamlFile, err := ioutil.ReadFile("console-services.yml")
+	if err != nil {
+		log.Fatal(err)
+	}
+	err = yaml.Unmarshal(yamlFile, &awsServices)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return awsServices
+}
+
 func run() {
-	awsServices := parsers.ParseConsoleServicesYml()
+	awsServices := ReadConsoleServicesYml()
 	query, err := parsers.ParseQueryAndPopulateItems(wf, awsServices)
 
 	if err != nil {
