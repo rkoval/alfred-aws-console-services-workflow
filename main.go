@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -13,8 +14,13 @@ import (
 )
 
 var wf *aw.Workflow
+var forceFetch bool
+var query string
 
 func init() {
+	flag.BoolVar(&forceFetch, "fetch", false, "force fetch via AWS instead of cache")
+	flag.StringVar(&query, "query", "", "query to use")
+	flag.Parse()
 	wf = aw.New()
 }
 
@@ -33,11 +39,9 @@ func readConsoleServicesYml() []core.AwsService {
 
 func Run(wf *aw.Workflow, query string, transport http.RoundTripper) {
 	awsServices := readConsoleServicesYml()
-	query, err := parsers.ParseQueryAndPopulateItems(wf, awsServices, query, transport)
+	query = parsers.ParseQueryAndPopulateItems(wf, awsServices, query, transport, forceFetch)
 
-	if err != nil {
-		wf.FatalError(err)
-	} else if query != "" {
+	if query != "" {
 		log.Printf("filtering with query %s", query)
 		res := wf.Filter(query)
 
@@ -54,14 +58,10 @@ func Run(wf *aw.Workflow, query string, transport http.RoundTripper) {
 }
 
 func main() {
-	var query string
-	args := wf.Args()
-	log.Printf("running workflow with %d arg(s): %v", len(args), args)
-	if len(args) > 0 {
-		query = strings.TrimLeft(args[0], " ")
-	}
-
 	wf.Run(func() {
+		log.Printf("running workflow with query: `%s`", query)
+		query = strings.TrimLeft(query, " ")
+
 		Run(wf, query, nil)
 	})
 }

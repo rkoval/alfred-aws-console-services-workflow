@@ -10,9 +10,11 @@ import (
 	"github.com/rkoval/alfred-aws-console-services-workflow/searchers"
 )
 
-func ParseQueryAndPopulateItems(wf *aw.Workflow, awsServices []core.AwsService, query string, transport http.RoundTripper) (string, error) {
+func ParseQueryAndPopulateItems(wf *aw.Workflow, awsServices []core.AwsService, query string, transport http.RoundTripper, forceFetch bool) string {
 	// TODO break apart this function
 	// TODO add better lexing here to route searchers
+
+	fullQuery := query
 
 	splitQuery := strings.Split(query, " ")
 	if len(splitQuery) > 1 {
@@ -31,11 +33,11 @@ func ParseQueryAndPopulateItems(wf *aw.Workflow, awsServices []core.AwsService, 
 			if strings.HasPrefix(query, "$") && searcher != nil {
 				query = query[1:]
 				log.Printf("using searcher associated with %s", id)
-				err := searcher(wf, query, transport)
+				err := searcher(wf, query, transport, forceFetch, fullQuery)
 				if err != nil {
-					return "", err
+					wf.FatalError(err)
 				}
-				return query, nil
+				return query
 			} else {
 				// prepend the home to the sub-service list so that it's still accessible
 				awsServiceHome := *awsService
@@ -65,11 +67,11 @@ func ParseQueryAndPopulateItems(wf *aw.Workflow, awsServices []core.AwsService, 
 							searcher := searchers.SearchersByServiceId[id]
 							if searcher != nil {
 								log.Printf("using searcher associated with %s", id)
-								err := searcher(wf, query, transport)
+								err := searcher(wf, query, transport, forceFetch, fullQuery)
 								if err != nil {
-									return "", err
+									wf.FatalError(err)
 								}
-								return query, nil
+								return query
 							}
 						}
 					}
@@ -77,11 +79,11 @@ func ParseQueryAndPopulateItems(wf *aw.Workflow, awsServices []core.AwsService, 
 				log.Printf("filtering on subServices for %s", id)
 				query = strings.TrimSpace(strings.Join(splitQuery, " "))
 				searchers.SearchSubServices(wf, *awsService)
-				return query, nil
+				return query
 			}
 		}
 	}
 
 	searchers.SearchServices(wf, awsServices)
-	return query, nil
+	return query
 }

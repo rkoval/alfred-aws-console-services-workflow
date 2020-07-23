@@ -121,7 +121,7 @@
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>./alfred-aws-console-services-workflow "$1"</string>
+				<string>./alfred-aws-console-services-workflow -query "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>

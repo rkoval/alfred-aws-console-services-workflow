@@ -24,11 +24,24 @@ func GetInstanceStateEmoji(instanceState string) string {
 	return "❔"
 }
 
-func SearchEC2Instances(wf *aw.Workflow, query string, transport http.RoundTripper) error {
+var cacheName string = "ec2_instances"
+
+func PopulateEC2Instances(wf *aw.Workflow, query string, transport http.RoundTripper, forceFetch bool, fullQuery string) error {
+	var instances []interface{}
+	core.HandleCache(wf, transport, cacheName, &instances, fetchEC2Instances, forceFetch, fullQuery)
+	for _, instance := range instances {
+		i := instance.(ec2.Instance)
+		addInstanceToWorkflow(wf, query, "us-west-2" /* TODO make this read from config */, &i)
+	}
+	return nil
+}
+
+func fetchEC2Instances(transport http.RoundTripper) ([]interface{}, error) {
 	sess, cfg := core.LoadAWSConfig(transport)
 	svc := ec2.New(sess, cfg)
 
 	NextToken := ""
+	var instances []interface{}
 	for {
 		params := &ec2.DescribeInstancesInput{
 			MaxResults: aws.Int64(1000), // get as many as we can
@@ -39,13 +52,14 @@ func SearchEC2Instances(wf *aw.Workflow, query string, transport http.RoundTripp
 		}
 		resp, err := svc.DescribeInstances(params)
 		if err != nil {
-			wf.NewItem(err.Error()).
-				Icon(aw.IconError)
-			return err
+			return nil, err
 		}
-		// log.Println("resp", resp)
 
-		addInstancesToWorkflow(wf, query, cfg, resp)
+		for _, reservation := range resp.Reservations {
+			for i, _ := range reservation.Instances {
+				instances = append(instances, *reservation.Instances[i])
+			}
+		}
 
 		if resp.NextToken != nil {
 			NextToken = *resp.NextToken
@@ -54,33 +68,29 @@ func SearchEC2Instances(wf *aw.Workflow, query string, transport http.RoundTripp
 		}
 	}
 
-	return nil
+	return instances, nil
 }
 
-func addInstancesToWorkflow(wf *aw.Workflow, query string, cfg *aws.Config, resp *ec2.DescribeInstancesOutput) {
-	for _, reservation := range resp.Reservations {
-		for _, instance := range reservation.Instances {
-			var title string
-			subtitle := GetInstanceStateEmoji(*instance.State.Name)
-			name := GetTagValue(instance.Tags, "Name")
-			if name != "" {
-				title = name
-				subtitle += " " + *instance.InstanceId
-			} else {
-				title = *instance.InstanceId
-			}
-			subtitle += " " + *instance.InstanceType
+func addInstanceToWorkflow(wf *aw.Workflow, query, region string, instance *ec2.Instance) {
+	var title string
+	subtitle := GetInstanceStateEmoji(*instance.State.Name)
+	name := GetTagValue(instance.Tags, "Name")
+	if name != "" {
+		title = name
+		subtitle += " " + *instance.InstanceId
+	} else {
+		title = *instance.InstanceId
+	}
+	subtitle += " " + *instance.InstanceType
 
-			item := wf.NewItem(title).
-				Subtitle(subtitle).
-				Arg(fmt.Sprintf("https://%s.console.aws.amazon.com/ec2/v2/home?region=%s#Instances:search=%s", *cfg.Region, *cfg.Region, *instance.InstanceId)).
-				Icon(core.GetImageIcon("ec2")).
-				Valid(true)
+	item := wf.NewItem(title).
+		Subtitle(subtitle).
+		Arg(fmt.Sprintf("https://%s.console.aws.amazon.com/ec2/v2/home?region=%s#Instances:search=%s", region, region, *instance.InstanceId)).
+		Icon(core.GetImageIcon("ec2")).
+		Valid(true)
 
-			if strings.HasPrefix(query, "i-") {
-				item.Match(*instance.InstanceId)
-			}
-		}
+	if strings.HasPrefix(query, "i-") {
+		item.Match(*instance.InstanceId)
 	}
 }
 
