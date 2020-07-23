@@ -21,6 +21,7 @@ func init() {
 }
 
 func main() {
+	wf.Configure(aw.TextErrors(true))
 	wf.Run(func() {
 		log.Printf("running workflow with query: `%s`", query)
 		query = strings.TrimLeft(query, " ")

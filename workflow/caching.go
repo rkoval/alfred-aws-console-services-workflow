@@ -22,14 +22,13 @@ func LoadEntityArrayFromCache(wf *aw.Workflow, transport http.RoundTripper, cach
 	results := []Entity{}
 	var jobName = "fetch"
 	if forceFetch {
-		wf.Configure(aw.TextErrors(true))
 		log.Printf("fetching from aws ...")
 		results, err := fetcher(transport)
-		log.Printf("fetched %d results from aws", len(results))
-
 		if err != nil {
 			panic(err)
 		}
+		log.Printf("fetched %d results from aws", len(results))
+
 		log.Printf("storing %d results in cache key `%s` ...", len(results), cacheName)
 		if err := wf.Cache.StoreJSON(cacheName, results); err != nil {
 			panic(err)
