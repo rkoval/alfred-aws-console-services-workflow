@@ -27,8 +27,7 @@ func GetInstanceStateEmoji(instanceState string) string {
 var cacheName string = "ec2_instances"
 
 func PopulateEC2Instances(wf *aw.Workflow, query string, transport http.RoundTripper, forceFetch bool, fullQuery string) error {
-	var instances []ec2.Instance
-	HandleCacheForEc2Instance(wf, transport, cacheName, &instances, fetchEC2Instances, forceFetch, fullQuery)
+	instances := LoadFromCacheForEc2Instance(wf, transport, cacheName, fetchEC2Instances, forceFetch, fullQuery)
 	for _, instance := range instances {
 		addInstanceToWorkflow(wf, query, "us-west-2" /* TODO make this read from config */, instance)
 	}

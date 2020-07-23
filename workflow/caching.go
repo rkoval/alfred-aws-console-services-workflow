@@ -16,30 +16,28 @@ import (
 type Entity = generic.Type
 type KeepImportEc2Entity ec2.Instance // hack
 
-func HandleCacheForEntity(wf *aw.Workflow, transport http.RoundTripper, cacheName string, results *[]Entity, fetcher func(http.RoundTripper) ([]Entity, error), forceFetch bool, fullQuery string) {
+func LoadFromCacheForEntity(wf *aw.Workflow, transport http.RoundTripper, cacheName string, fetcher func(http.RoundTripper) ([]Entity, error), forceFetch bool, fullQuery string) []Entity {
+	results := []Entity{}
 	var jobName = "fetch"
 	if forceFetch {
 		wf.Configure(aw.TextErrors(true))
 		log.Printf("fetching from aws ...")
-		rs, err := fetcher(transport)
-		log.Printf("fetched %d results from aws", len(rs))
+		results, err := fetcher(transport)
+		log.Printf("fetched %d results from aws", len(results))
 
 		if err != nil {
 			panic(err)
 		}
-		log.Printf("storing %d results in cache key `%s` ...", len(rs), cacheName)
-		if err := wf.Cache.StoreJSON(cacheName, rs); err != nil {
+		log.Printf("storing %d results in cache key `%s` ...", len(results), cacheName)
+		if err := wf.Cache.StoreJSON(cacheName, results); err != nil {
 			panic(err)
 		}
-		for i := range rs {
-			*results = append(*results, rs[i])
-		}
-		return
+		return results
 	}
 
 	if wf.Cache.Exists(cacheName) {
 		log.Printf("using cache with key `%s` ...", cacheName)
-		if err := wf.Cache.LoadJSON(cacheName, results); err != nil {
+		if err := wf.Cache.LoadJSON(cacheName, &results); err != nil {
 			panic(err)
 		}
 	}
@@ -58,10 +56,11 @@ func HandleCacheForEntity(wf *aw.Workflow, transport http.RoundTripper, cacheNam
 		}
 		// Cache is also "expired" if it doesn't exist. So if there are no
 		// cached data, show a corresponding message and exit.
-		if len(*results) == 0 {
+		if len(results) == 0 {
 			wf.NewItem("Fetching ...").
 				Icon(aw.IconInfo)
-			return
+			return nil
 		}
 	}
+	return results
 }
