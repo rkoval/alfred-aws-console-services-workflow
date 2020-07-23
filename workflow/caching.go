@@ -42,6 +42,7 @@ func LoadEntityArrayFromCache(wf *aw.Workflow, transport http.RoundTripper, cach
 		if err := wf.Cache.LoadJSON(cacheName, &results); err != nil {
 			panic(err)
 		}
+		return results
 	}
 
 	maxCacheAge := 1 * time.Minute
