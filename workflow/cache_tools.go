@@ -44,7 +44,7 @@ func HandleCacheForEntity(wf *aw.Workflow, transport http.RoundTripper, cacheNam
 		}
 	}
 
-	maxCacheAge := 5 * time.Minute
+	maxCacheAge := 1 * time.Minute
 	if wf.Cache.Expired(cacheName, maxCacheAge) {
 		wf.Rerun(0.2)
 		if !wf.IsRunning(jobName) {
