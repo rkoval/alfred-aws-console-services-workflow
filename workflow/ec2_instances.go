@@ -55,7 +55,7 @@ func fetchEC2Instances(transport http.RoundTripper) ([]ec2.Instance, error) {
 		}
 
 		for _, reservation := range resp.Reservations {
-			for i, _ := range reservation.Instances {
+			for i := range reservation.Instances {
 				instances = append(instances, *reservation.Instances[i])
 			}
 		}
