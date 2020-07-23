@@ -27,7 +27,6 @@ func main() {
 	wf.Run(func() {
 		log.Printf("running workflow with query: `%s`", query)
 		query = strings.TrimLeft(query, " ")
-		log.Println("query", query)
 
 		workflow.Run(wf, query, nil, forceFetch, ymlPath)
 	})
