@@ -61,7 +61,6 @@ func LoadEntityArrayFromCache(wf *aw.Workflow, transport http.RoundTripper, cach
 		if len(results) == 0 {
 			wf.NewItem("Fetching ...").
 				Icon(aw.IconInfo)
-			return nil
 		}
 	}
 	return results
