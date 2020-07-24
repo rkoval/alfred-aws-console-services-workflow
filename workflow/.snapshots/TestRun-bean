@@ -1,0 +1,23 @@
+([]*aw.Item) (len=1) {
+  (*aw.Item)({
+    title: (string) (len=17) "Elastic Beanstalk",
+    subtitle: (*string)((len=23) "Run and Manage Web Apps"),
+    match: (*string)((len=17) "Elastic Beanstalk"),
+    uid: (*string)((len=16) "elasticbeanstalk"),
+    autocomplete: (*string)((len=17) "elasticbeanstalk "),
+    arg: (*string)((len=52) "https://console.aws.amazon.com/elasticbeanstalk/home"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=27) "images/elasticbeanstalk.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  })
+}

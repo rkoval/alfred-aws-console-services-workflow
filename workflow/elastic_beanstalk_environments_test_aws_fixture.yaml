@@ -57,7 +57,7 @@ interactions:
               <Alerts/>
               <VersionLabel>94832eb8</VersionLabel>
               <DateCreated>2020-07-22T00:32:13.833Z</DateCreated>
-              <EnvironmentId>e-aaaaaaaaaa</EnvironmentId>
+              <EnvironmentId>e-bbbbbbbbbb</EnvironmentId>
               <Tier>
                 <Name>WebServer</Name>
                 <Type>Standard</Type>
@@ -83,7 +83,7 @@ interactions:
               <Alerts/>
               <VersionLabel>Sample Application</VersionLabel>
               <DateCreated>2019-12-14T20:03:32.666Z</DateCreated>
-              <EnvironmentId>e-aaaaaaaaaa</EnvironmentId>
+              <EnvironmentId>e-cccccccccc</EnvironmentId>
               <Tier>
                 <Name>WebServer</Name>
                 <Type>Standard</Type>

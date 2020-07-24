@@ -1,0 +1,23 @@
+([]*aw.Item) (len=1) {
+  (*aw.Item)({
+    title: (string) (len=6) "server",
+    subtitle: (*string)((len=24) "🔴 e-cccccccccc Server"),
+    match: (*string)((len=12) "e-cccccccccc"),
+    uid: (*string)(<nil>),
+    autocomplete: (*string)(<nil>),
+    arg: (*string)((len=152) "https://us-west-2.console.aws.amazon.com/elasticbeanstalk/home?region=us-west-2#/environment/dashboard?applicationName=Server&environmentId=e-cccccccccc"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=27) "images/elasticbeanstalk.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  })
+}

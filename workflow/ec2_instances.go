@@ -43,9 +43,6 @@ func fetchEC2Instances(transport http.RoundTripper) ([]ec2.Instance, error) {
 			MaxResults: aws.Int64(1000), // get as many as we can
 			NextToken:  aws.String(NextToken),
 		}
-		if NextToken != "" {
-			params.NextToken = aws.String(NextToken)
-		}
 		resp, err := svc.DescribeInstances(params)
 		if err != nil {
 			return nil, err

@@ -68,6 +68,24 @@ var tcs []testCase = []testCase{
 		fixtureName: "ec2_security_groups_test", // reuse test fixture from this other test
 	},
 	{
+		query: "bean",
+	},
+	{
+		query: "elasticbeanstalk",
+	},
+	{
+		query:       "elasticbeanstalk ",
+		fixtureName: "elastic_beanstalk_environments_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "elasticbeanstalk $",
+		fixtureName: "elastic_beanstalk_environments_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "elasticbeanstalk environments e-cccccc",
+		fixtureName: "elastic_beanstalk_environments_test", // reuse test fixture from this other test
+	},
+	{
 		query: "ec2 inst",
 	},
 	{

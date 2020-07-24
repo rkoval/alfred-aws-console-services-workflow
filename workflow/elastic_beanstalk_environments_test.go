@@ -8,12 +8,12 @@ import (
 	"github.com/rkoval/alfred-aws-console-services-workflow/tests"
 )
 
-func TestSearchElasticBeanstalkEnvironments(t *testing.T) {
+func TestPopulateElasticBeanstalkEnvironments(t *testing.T) {
 	wf := aw.New()
 
 	r := tests.NewAWSRecorder("elastic_beanstalk_environments_test")
 	defer tests.PanicOnError(r.Stop)
-	err := SearchElasticBeanstalkEnvironments(wf, "elasticbeanstalk", r)
+	err := PopulateElasticBeanstalkEnvironments(wf, "elasticbeanstalk", r, true, "")
 	if err != nil {
 		t.Errorf("got error from search: %v", err)
 	}
