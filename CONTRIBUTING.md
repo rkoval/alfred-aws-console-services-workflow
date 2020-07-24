@@ -2,7 +2,7 @@
 
 ## Adding services or sub-services
 
-If you're just wanting to add/modify/remove services or sub-services, you shouldn't need to make changes to any of the go files. You can simply update [the .yml config file](console-services.yml) with your modifications. This file is used by the executable to populate entries in Alfred (for a list of valid properties, see [the models file](core/aws_service.go))
+If you're just wanting to add/modify/remove services or sub-services, you shouldn't need to make changes to any of the go files. You can simply update [the .yml config file](console-services.yml) with your modifications. This file is used by the executable to populate entries in Alfred (for a list of valid properties, see [the models file](awsworkflow/aws_service.go))
 
 You can then simply submit a pull request with your changes to the .yml file for it to be reviewed and accepted.
 
