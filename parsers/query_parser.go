@@ -1,6 +1,7 @@
 package parsers
 
 import (
+	"os"
 	"strings"
 
 	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
@@ -9,6 +10,11 @@ import (
 
 func ParseQuery(awsServices []awsworkflow.AwsService, query string) (string, searchtypes.SearchType, *awsworkflow.AwsService) {
 	// TODO add better lexing here to route populators
+
+	searchAlias := os.Getenv("ALFRED_AWS_CONSOLE_SERVICES_WORKFLOW_SEARCH_ALIAS")
+	if searchAlias == "" {
+		searchAlias = ","
+	}
 
 	splitQuery := strings.Split(query, " ")
 	if len(splitQuery) > 1 {
@@ -24,8 +30,8 @@ func ParseQuery(awsServices []awsworkflow.AwsService, query string) (string, sea
 		if awsService != nil {
 			query = strings.Join(splitQuery[1:], " ")
 			searchType := searchtypes.SearchTypesByServiceId[id]
-			if strings.HasPrefix(query, "$") && searchType != 0 {
-				query = query[1:]
+			if strings.HasPrefix(query, searchAlias) && searchType != 0 {
+				query = query[len(searchAlias):]
 				return query, searchType, awsService
 			} else {
 				// prepend the home to the sub-service list so that it's still accessible

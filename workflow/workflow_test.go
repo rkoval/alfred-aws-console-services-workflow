@@ -78,7 +78,7 @@ var tcs []testCase = []testCase{
 		fixtureName: "../searchers/elastic_beanstalk_environments_test", // reuse test fixture from this other test
 	},
 	{
-		query:       "elasticbeanstalk $",
+		query:       "elasticbeanstalk ,",
 		fixtureName: "../searchers/elastic_beanstalk_environments_test", // reuse test fixture from this other test
 	},
 	{
@@ -104,19 +104,19 @@ var tcs []testCase = []testCase{
 		fixtureName: "../searchers/ec2_instances_test", // reuse test fixture from this other test
 	},
 	{
-		query:       "ec2 $",
+		query:       "ec2 ,",
 		fixtureName: "../searchers/ec2_instances_test", // reuse test fixture from this other test
 	},
 	{
-		query:       "ec2 $ ",
+		query:       "ec2 , ",
 		fixtureName: "../searchers/ec2_instances_test", // reuse test fixture from this other test
 	},
 	{
-		query:       "ec2 $environment-name-1",
+		query:       "ec2 ,environment-name-1",
 		fixtureName: "../searchers/ec2_instances_test", // reuse test fixture from this other test
 	},
 	{
-		query:       "ec2 $i-aaaaaaaaaa",
+		query:       "ec2 ,i-aaaaaaaaaa",
 		fixtureName: "../searchers/ec2_instances_test", // reuse test fixture from this other test
 	},
 }

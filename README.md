@@ -19,7 +19,7 @@ To use, activate Alfred and type `aws ` to trigger this workflow. From there:
 - press <kbd>Tab</kbd> to autocomplete into sub-services, if they exist (for example, navigate to "Security Groups" within the "EC2" service)
 - keep typing after autocompleting to filter sub-services
 - press <kbd>Tab</kbd> again within sub-services to autocomplete the sub-service and start searching for its entities (for example, you can search for EC2 Instances when tabbed to `aws ec2 instances `)
-  - `$` is a sub-section alias to start searching for the default entity type associated with a service (for example, in this workflow, the EC2 service's default entity is an EC2 instance, so `aws ec2 $searchterm` is a shorter alias for `aws ec2 instances searchterm`)
+  - `,` is a sub-section alias to start searching for the default entity type associated with a service (for example, in this workflow, the EC2 service's default entity is an EC2 instance, so `aws ec2 ,searchterm` is a shorter alias for `aws ec2 instances searchterm`). You can customize this alias by setting the `ALFRED_AWS_CONSOLE_SERVICES_WORKFLOW_SEARCH_ALIAS` environment variable to any other string.
 
 At any time:
 - press <kbd>Enter</kbd> to navigate to your result
