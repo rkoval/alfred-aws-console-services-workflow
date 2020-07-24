@@ -6,6 +6,7 @@ import (
 	"os/exec"
 	"time"
 
+	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
 	aw "github.com/deanishe/awgo"
 
@@ -18,6 +19,11 @@ type Entity = generic.Type
 type EntityArrayFetcher = func(*session.Session) ([]Entity, error)
 
 func LoadEntityArrayFromCache(wf *aw.Workflow, session *session.Session, cacheName string, fetcher EntityArrayFetcher, forceFetch bool, fullQuery string) []Entity {
+	if *session.Config.Region == "" {
+		panic(aws.ErrMissingRegion)
+	}
+	cacheName += "_" + *session.Config.Region
+
 	results := []Entity{}
 	var jobName = "fetch"
 	if forceFetch {
