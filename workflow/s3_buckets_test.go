@@ -11,9 +11,9 @@ import (
 func TestPopulateS3Buckets(t *testing.T) {
 	wf := aw.New()
 
-	r := tests.NewAWSRecorder("s3_buckets_test")
+	session, r := tests.NewAWSRecorderSession("s3_buckets_test")
 	defer tests.PanicOnError(r.Stop)
-	err := PopulateS3Buckets(wf, "", r, true, "")
+	err := PopulateS3Buckets(wf, "", session, true, "")
 	if err != nil {
 		t.Errorf("got error from search: %v", err)
 	}

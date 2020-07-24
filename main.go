@@ -6,6 +6,7 @@ import (
 	"strings"
 
 	aw "github.com/deanishe/awgo"
+	"github.com/rkoval/alfred-aws-console-services-workflow/core"
 	"github.com/rkoval/alfred-aws-console-services-workflow/workflow"
 )
 
@@ -23,11 +24,11 @@ func init() {
 }
 
 func main() {
-	wf.Configure(aw.TextErrors(true))
 	wf.Run(func() {
 		log.Printf("running workflow with query: `%s`", query)
+		session := core.LoadAWSConfig(nil)
 		query = strings.TrimLeft(query, " ")
 
-		workflow.Run(wf, query, nil, forceFetch, ymlPath)
+		workflow.Run(wf, query, session, forceFetch, ymlPath)
 	})
 }

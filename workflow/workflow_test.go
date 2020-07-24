@@ -123,9 +123,9 @@ var tcs []testCase = []testCase{
 
 func testWorkflow(t *testing.T, tc testCase, forceFetch, snapshot bool) []*aw.Item {
 	wf := aw.New()
-	r := tests.NewAWSRecorder(tc.fixtureName)
+	session, r := tests.NewAWSRecorderSession(tc.fixtureName)
 	defer tests.PanicOnError(r.Stop)
-	Run(wf, tc.query, r, forceFetch, "../console-services.yml")
+	Run(wf, tc.query, session, forceFetch, "../console-services.yml")
 
 	if snapshot {
 		cupaloy.SnapshotT(t, wf.Feedback.Items)

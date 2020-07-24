@@ -2,27 +2,25 @@ package workflow
 
 import (
 	"fmt"
-	"log"
-	"net/http"
 	"strings"
 
 	"github.com/aws/aws-sdk-go/aws"
+	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/ec2"
 	aw "github.com/deanishe/awgo"
 	"github.com/rkoval/alfred-aws-console-services-workflow/core"
 )
 
-func PopulateEC2SecurityGroups(wf *aw.Workflow, query string, transport http.RoundTripper, forceFetch bool, fullQuery string) error {
-	securityGroups := LoadEc2SecurityGroupArrayFromCache(wf, transport, "ec2_security_groups", fetchEC2SecurityGroups, forceFetch, fullQuery)
+func PopulateEC2SecurityGroups(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
+	securityGroups := LoadEc2SecurityGroupArrayFromCache(wf, session, "ec2_security_groups", fetchEC2SecurityGroups, forceFetch, fullQuery)
 	for _, securityGroup := range securityGroups {
 		addSecurityGroupToWorkflow(wf, query, "us-west-2" /* TODO make this read from config */, securityGroup)
 	}
 	return nil
 }
 
-func fetchEC2SecurityGroups(transport http.RoundTripper) ([]ec2.SecurityGroup, error) {
-	sess, cfg := core.LoadAWSConfig(transport)
-	svc := ec2.New(sess, cfg)
+func fetchEC2SecurityGroups(session *session.Session) ([]ec2.SecurityGroup, error) {
+	svc := ec2.New(session)
 
 	NextToken := ""
 	securityGroups := []ec2.SecurityGroup{}
@@ -34,7 +32,7 @@ func fetchEC2SecurityGroups(transport http.RoundTripper) ([]ec2.SecurityGroup, e
 		if err != nil {
 			return nil, err
 		}
-		log.Println("resp", resp)
+		// log.Println("resp", resp)
 
 		for i := range resp.SecurityGroups {
 			securityGroups = append(securityGroups, *resp.SecurityGroups[i])

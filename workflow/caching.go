@@ -2,11 +2,11 @@ package workflow
 
 import (
 	"log"
-	"net/http"
 	"os"
 	"os/exec"
 	"time"
 
+	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/ec2"
 	"github.com/aws/aws-sdk-go/service/elasticbeanstalk"
 	"github.com/aws/aws-sdk-go/service/s3"
@@ -20,14 +20,14 @@ type KeepImportEc2Entity ec2.Instance                                         //
 type KeepImportS3Entity s3.Bucket                                             // hack to keep the import in scope
 type KeepImportElasticBeanstalkEntity elasticbeanstalk.EnvironmentDescription // hack to keep the import in scope
 
-type EntityArrayFetcher = func(http.RoundTripper) ([]Entity, error)
+type EntityArrayFetcher = func(*session.Session) ([]Entity, error)
 
-func LoadEntityArrayFromCache(wf *aw.Workflow, transport http.RoundTripper, cacheName string, fetcher EntityArrayFetcher, forceFetch bool, fullQuery string) []Entity {
+func LoadEntityArrayFromCache(wf *aw.Workflow, session *session.Session, cacheName string, fetcher EntityArrayFetcher, forceFetch bool, fullQuery string) []Entity {
 	results := []Entity{}
 	var jobName = "fetch"
 	if forceFetch {
 		log.Printf("fetching from aws ...")
-		results, err := fetcher(transport)
+		results, err := fetcher(session)
 		if err != nil {
 			panic(err)
 		}

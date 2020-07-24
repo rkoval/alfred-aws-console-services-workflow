@@ -3,8 +3,8 @@ package workflow
 import (
 	"io/ioutil"
 	"log"
-	"net/http"
 
+	"github.com/aws/aws-sdk-go/aws/session"
 	aw "github.com/deanishe/awgo"
 	"github.com/rkoval/alfred-aws-console-services-workflow/core"
 	"gopkg.in/yaml.v2"
@@ -23,9 +23,9 @@ func readConsoleServicesYml(ymlPath string) []core.AwsService {
 	return awsServices
 }
 
-func Run(wf *aw.Workflow, query string, transport http.RoundTripper, forceFetch bool, ymlPath string) {
+func Run(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, ymlPath string) {
 	awsServices := readConsoleServicesYml(ymlPath)
-	query = ParseQueryAndPopulateItems(wf, awsServices, query, transport, forceFetch)
+	query = ParseQueryAndPopulateItems(wf, awsServices, query, session, forceFetch)
 
 	if query != "" {
 		log.Printf("filtering with query %s", query)

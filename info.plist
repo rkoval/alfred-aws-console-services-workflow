@@ -223,6 +223,11 @@ To add entries to the Alfred Workflow, modify [the .yml config file](src/console
 			<integer>230</integer>
 		</dict>
 	</dict>
+	<key>variables</key>
+	<dict>
+		<key>AWS_SDK_LOAD_CONFIG</key>
+		<string>true</string>
+	</dict>
 	<key>version</key>
 	<string>3.x</string>
 	<key>webaddress</key>

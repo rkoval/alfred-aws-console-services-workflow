@@ -2,14 +2,14 @@ package workflow
 
 import (
 	"log"
-	"net/http"
 	"strings"
 
+	"github.com/aws/aws-sdk-go/aws/session"
 	aw "github.com/deanishe/awgo"
 	"github.com/rkoval/alfred-aws-console-services-workflow/core"
 )
 
-func ParseQueryAndPopulateItems(wf *aw.Workflow, awsServices []core.AwsService, query string, transport http.RoundTripper, forceFetch bool) string {
+func ParseQueryAndPopulateItems(wf *aw.Workflow, awsServices []core.AwsService, query string, session *session.Session, forceFetch bool) string {
 	// TODO break apart this function
 	// TODO add better lexing here to route populators
 
@@ -32,7 +32,7 @@ func ParseQueryAndPopulateItems(wf *aw.Workflow, awsServices []core.AwsService, 
 			if strings.HasPrefix(query, "$") && populater != nil {
 				query = query[1:]
 				log.Printf("using populater associated with %s", id)
-				err := populater(wf, query, transport, forceFetch, fullQuery)
+				err := populater(wf, query, session, forceFetch, fullQuery)
 				if err != nil {
 					wf.FatalError(err)
 				}
@@ -66,7 +66,7 @@ func ParseQueryAndPopulateItems(wf *aw.Workflow, awsServices []core.AwsService, 
 							populater := PopulatersByServiceId[id]
 							if populater != nil {
 								log.Printf("using populater associated with %s", id)
-								err := populater(wf, query, transport, forceFetch, fullQuery)
+								err := populater(wf, query, session, forceFetch, fullQuery)
 								if err != nil {
 									wf.FatalError(err)
 								}

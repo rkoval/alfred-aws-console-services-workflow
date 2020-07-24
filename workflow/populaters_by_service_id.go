@@ -1,12 +1,11 @@
 package workflow
 
 import (
-	"net/http"
-
+	"github.com/aws/aws-sdk-go/aws/session"
 	aw "github.com/deanishe/awgo"
 )
 
-type populater = func(*aw.Workflow, string, http.RoundTripper, bool, string) error
+type populater = func(*aw.Workflow, string, *session.Session, bool, string) error
 
 var PopulatersByServiceId map[string]populater = map[string]populater{
 	"ec2":                           PopulateEC2Instances,

@@ -2,10 +2,10 @@ package workflow
 
 import (
 	"fmt"
-	"net/http"
 	"strings"
 
 	"github.com/aws/aws-sdk-go/aws"
+	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/ec2"
 	aw "github.com/deanishe/awgo"
 	"github.com/rkoval/alfred-aws-console-services-workflow/core"
@@ -24,17 +24,16 @@ func GetInstanceStateEmoji(instanceState string) string {
 	return "❔"
 }
 
-func PopulateEC2Instances(wf *aw.Workflow, query string, transport http.RoundTripper, forceFetch bool, fullQuery string) error {
-	instances := LoadEc2InstanceArrayFromCache(wf, transport, "ec2_instances", fetchEC2Instances, forceFetch, fullQuery)
+func PopulateEC2Instances(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
+	instances := LoadEc2InstanceArrayFromCache(wf, session, "ec2_instances", fetchEC2Instances, forceFetch, fullQuery)
 	for _, instance := range instances {
 		addInstanceToWorkflow(wf, query, "us-west-2" /* TODO make this read from config */, instance)
 	}
 	return nil
 }
 
-func fetchEC2Instances(transport http.RoundTripper) ([]ec2.Instance, error) {
-	sess, cfg := core.LoadAWSConfig(transport)
-	svc := ec2.New(sess, cfg)
+func fetchEC2Instances(session *session.Session) ([]ec2.Instance, error) {
+	svc := ec2.New(session)
 
 	NextToken := ""
 	instances := []ec2.Instance{}

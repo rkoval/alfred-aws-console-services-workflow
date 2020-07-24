@@ -4,11 +4,13 @@ import (
 	"os"
 	"regexp"
 
+	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/dnaeon/go-vcr/cassette"
 	"github.com/dnaeon/go-vcr/recorder"
+	"github.com/rkoval/alfred-aws-console-services-workflow/core"
 )
 
-func NewAWSRecorder(fixtureName string) *recorder.Recorder {
+func NewAWSRecorderSession(fixtureName string) (*session.Session, *recorder.Recorder) {
 	var mode recorder.Mode
 	if os.Getenv("RECORD_VCR") != "" {
 		mode = recorder.ModeRecording
@@ -36,7 +38,9 @@ func NewAWSRecorder(fixtureName string) *recorder.Recorder {
 		return nil
 	})
 
-	return r
+	session := core.LoadAWSConfig(r)
+
+	return session, r
 }
 
 func PanicOnError(f func() error) {

@@ -2,25 +2,24 @@ package workflow
 
 import (
 	"fmt"
-	"net/http"
 	"time"
 
+	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/s3"
 	aw "github.com/deanishe/awgo"
 	"github.com/rkoval/alfred-aws-console-services-workflow/core"
 )
 
-func PopulateS3Buckets(wf *aw.Workflow, query string, transport http.RoundTripper, forceFetch bool, fullQuery string) error {
-	es := LoadS3BucketArrayFromCache(wf, transport, "s3_buckets", fetchS3Buckets, forceFetch, fullQuery)
+func PopulateS3Buckets(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
+	es := LoadS3BucketArrayFromCache(wf, session, "s3_buckets", fetchS3Buckets, forceFetch, fullQuery)
 	for _, e := range es {
 		addS3BucketToWorkflow(wf, query, "us-west-2" /* TODO make this read from config */, e)
 	}
 	return nil
 }
 
-func fetchS3Buckets(transport http.RoundTripper) ([]s3.Bucket, error) {
-	sess, cfg := core.LoadAWSConfig(transport)
-	svc := s3.New(sess, cfg)
+func fetchS3Buckets(session *session.Session) ([]s3.Bucket, error) {
+	svc := s3.New(session)
 
 	resp, err := svc.ListBuckets(&s3.ListBucketsInput{})
 	if err != nil {

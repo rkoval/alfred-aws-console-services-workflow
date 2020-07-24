@@ -2,10 +2,10 @@ package workflow
 
 import (
 	"fmt"
-	"net/http"
 	"strings"
 
 	"github.com/aws/aws-sdk-go/aws"
+	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/elasticbeanstalk"
 	aw "github.com/deanishe/awgo"
 	"github.com/rkoval/alfred-aws-console-services-workflow/core"
@@ -25,17 +25,16 @@ func getHealthEmoji(environmentHealth string) string {
 	return "❔"
 }
 
-func PopulateElasticBeanstalkEnvironments(wf *aw.Workflow, query string, transport http.RoundTripper, forceFetch bool, fullQuery string) error {
-	instances := LoadElasticbeanstalkEnvironmentDescriptionArrayFromCache(wf, transport, "ec2_instances", fetchElasticBeanstalkEnvironments, forceFetch, fullQuery)
+func PopulateElasticBeanstalkEnvironments(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
+	instances := LoadElasticbeanstalkEnvironmentDescriptionArrayFromCache(wf, session, "ec2_instances", fetchElasticBeanstalkEnvironments, forceFetch, fullQuery)
 	for _, instance := range instances {
 		addEnvironmentToWorkflow(wf, query, "us-west-2" /* TODO make this read from config */, instance)
 	}
 	return nil
 }
 
-func fetchElasticBeanstalkEnvironments(transport http.RoundTripper) ([]elasticbeanstalk.EnvironmentDescription, error) {
-	sess, cfg := core.LoadAWSConfig(transport)
-	svc := elasticbeanstalk.New(sess, cfg)
+func fetchElasticBeanstalkEnvironments(session *session.Session) ([]elasticbeanstalk.EnvironmentDescription, error) {
+	svc := elasticbeanstalk.New(session)
 
 	NextToken := ""
 	environments := []elasticbeanstalk.EnvironmentDescription{}

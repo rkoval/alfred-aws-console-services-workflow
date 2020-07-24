@@ -11,9 +11,9 @@ import (
 func TestPopulateElasticBeanstalkEnvironments(t *testing.T) {
 	wf := aw.New()
 
-	r := tests.NewAWSRecorder("elastic_beanstalk_environments_test")
+	session, r := tests.NewAWSRecorderSession("elastic_beanstalk_environments_test")
 	defer tests.PanicOnError(r.Stop)
-	err := PopulateElasticBeanstalkEnvironments(wf, "elasticbeanstalk", r, true, "")
+	err := PopulateElasticBeanstalkEnvironments(wf, "elasticbeanstalk", session, true, "")
 	if err != nil {
 		t.Errorf("got error from search: %v", err)
 	}

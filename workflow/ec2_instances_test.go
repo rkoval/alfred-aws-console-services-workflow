@@ -11,9 +11,9 @@ import (
 func TestPopulateEC2Instances(t *testing.T) {
 	wf := aw.New()
 
-	r := tests.NewAWSRecorder("ec2_instances_test")
+	session, r := tests.NewAWSRecorderSession("ec2_instances_test")
 	defer tests.PanicOnError(r.Stop)
-	err := PopulateEC2Instances(wf, "", r, true, "")
+	err := PopulateEC2Instances(wf, "", session, true, "")
 	if err != nil {
 		t.Errorf("got error from search: %v", err)
 	}

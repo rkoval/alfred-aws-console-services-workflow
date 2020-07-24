@@ -11,9 +11,9 @@ import (
 func TestPopulateEC2SecurityGroups(t *testing.T) {
 	wf := aw.New()
 
-	r := tests.NewAWSRecorder("ec2_security_groups_test")
+	session, r := tests.NewAWSRecorderSession("ec2_security_groups_test")
 	defer tests.PanicOnError(r.Stop)
-	err := PopulateEC2SecurityGroups(wf, "", r, true, "")
+	err := PopulateEC2SecurityGroups(wf, "", session, true, "")
 	if err != nil {
 		t.Errorf("got error from search: %v", err)
 	}
