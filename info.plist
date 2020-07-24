@@ -21,7 +21,7 @@
 				<false/>
 			</dict>
 		</array>
-		<key>ED4983E7-5D59-45C5-AE7F-5D5570D0B499</key>
+		<key>AF35FF92-C508-4668-94C5-7273AD3D044C</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -33,13 +33,62 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+		</array>
+		<key>AFEFC10A-5C4F-4626-9FEA-7CA4E296F289</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4E86DEC9-680A-49AF-A2EB-76C5B1D275A7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>B1464BC3-45FF-4FB7-B676-F0A03A0EA7EA</key>
+		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>9B470580-6D68-4E96-8948-95193A9A9BF9</string>
 				<key>modifiers</key>
-				<integer>1048576</integer>
+				<integer>0</integer>
 				<key>modifiersubtext</key>
-				<string>Copy URL to clipboard</string>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>ED4983E7-5D59-45C5-AE7F-5D5570D0B499</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AF35FF92-C508-4668-94C5-7273AD3D044C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>B1464BC3-45FF-4FB7-B676-F0A03A0EA7EA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>AFEFC10A-5C4F-4626-9FEA-7CA4E296F289</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -77,6 +126,25 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>inputstring</key>
+				<string>{var:action}</string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>open-url</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>AF35FF92-C508-4668-94C5-7273AD3D044C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -94,6 +162,23 @@
 			<string>A87D451E-A378-49ED-9500-216A6EDFC8F9</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>9B470580-6D68-4E96-8948-95193A9A9BF9</string>
+			<key>version</key>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -142,24 +227,60 @@
 			<key>uid</key>
 			<string>ED4983E7-5D59-45C5-AE7F-5D5570D0B499</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>transient</key>
-				<false/>
+				<key>inputstring</key>
+				<string>{var:action}</string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>copy-to-clipboard</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
+			<string>alfred.workflow.utility.filter</string>
 			<key>uid</key>
-			<string>9B470580-6D68-4E96-8948-95193A9A9BF9</string>
+			<string>B1464BC3-45FF-4FB7-B676-F0A03A0EA7EA</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.terminalcommand</string>
+			<key>uid</key>
+			<string>4E86DEC9-680A-49AF-A2EB-76C5B1D275A7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{var:action}</string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>execute-terminal</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>AFEFC10A-5C4F-4626-9FEA-7CA4E296F289</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -196,6 +317,13 @@ npm install
 To add entries to the Alfred Workflow, modify [the .yml config file](src/console-services.yml) and then run [this script](src/generate_items.js) from its directory. It will parse the .yml file and add elements in-place to the info.plist file, which Alfred reads.</string>
 	<key>uidata</key>
 	<dict>
+		<key>4E86DEC9-680A-49AF-A2EB-76C5B1D275A7</key>
+		<dict>
+			<key>xpos</key>
+			<integer>520</integer>
+			<key>ypos</key>
+			<integer>380</integer>
+		</dict>
 		<key>9B470580-6D68-4E96-8948-95193A9A9BF9</key>
 		<dict>
 			<key>xpos</key>
@@ -210,12 +338,33 @@ To add entries to the Alfred Workflow, modify [the .yml config file](src/console
 			<key>ypos</key>
 			<integer>230</integer>
 		</dict>
+		<key>AF35FF92-C508-4668-94C5-7273AD3D044C</key>
+		<dict>
+			<key>xpos</key>
+			<integer>370</integer>
+			<key>ypos</key>
+			<integer>115</integer>
+		</dict>
+		<key>AFEFC10A-5C4F-4626-9FEA-7CA4E296F289</key>
+		<dict>
+			<key>xpos</key>
+			<integer>370</integer>
+			<key>ypos</key>
+			<integer>410</integer>
+		</dict>
+		<key>B1464BC3-45FF-4FB7-B676-F0A03A0EA7EA</key>
+		<dict>
+			<key>xpos</key>
+			<integer>370</integer>
+			<key>ypos</key>
+			<integer>260</integer>
+		</dict>
 		<key>D1D5721F-0D3B-42C3-95D8-8996D9725E0C</key>
 		<dict>
 			<key>xpos</key>
 			<integer>520</integer>
 			<key>ypos</key>
-			<integer>60</integer>
+			<integer>85</integer>
 		</dict>
 		<key>ED4983E7-5D59-45C5-AE7F-5D5570D0B499</key>
 		<dict>

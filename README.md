@@ -13,7 +13,7 @@ Powerful workflow for quickly opening up AWS Console Services in your browser or
   - You can override any/all configuration values in [the workflow environment variables](https://www.alfredapp.com/help/workflows/advanced/variables/#environment). See [the official AWS docs](https://docs.aws.amazon.com/sdk-for-go/v1/developer-guide/configuring-sdk.html#specifying-the-region) for more info on how to configure these
 
 ## Usage
-To use, activate Alfred and type `aws ` to trigger this workflow. From there:
+To use, activate Alfred and type `aws` to trigger this workflow. From there:
 
 - type any search term to search for services
 - press <kbd>Tab</kbd> to autocomplete into sub-services, if they exist (for example, navigate to "Security Groups" within the "EC2" service)

@@ -5,6 +5,7 @@ import (
 
 	aw "github.com/deanishe/awgo"
 	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
+	"github.com/rkoval/alfred-aws-console-services-workflow/util"
 )
 
 func AddServiceToWorkflow(wf *aw.Workflow, awsService awsworkflow.AwsService) {
@@ -20,13 +21,12 @@ func AddServiceToWorkflow(wf *aw.Workflow, awsService awsworkflow.AwsService) {
 		match += " " + strings.Join(awsService.ExtraSearchTerms, " ")
 	}
 
-	item := wf.NewItem(title).
+	item := util.NewURLItem(wf, title).
 		Autocomplete(awsService.Id + " ").
 		UID(awsService.Id).
 		Arg(awsService.Url).
 		Subtitle(awsService.Description).
-		Match(match).
-		Valid(true)
+		Match(match)
 
 	item.Icon(awsworkflow.GetImageIcon(awsService.Id))
 }
@@ -48,12 +48,11 @@ func SearchSubServices(wf *aw.Workflow, awsService awsworkflow.AwsService) {
 			title = awsService.GetName() + " – " + subService.Name
 		}
 
-		item := wf.NewItem(title).
+		item := util.NewURLItem(wf, title).
 			Autocomplete(awsService.Id + " " + subService.Id + " ").
 			UID(subService.Id).
 			Arg(subService.Url).
-			Subtitle(subService.Description).
-			Valid(true)
+			Subtitle(subService.Description)
 
 		item.Icon(awsworkflow.GetImageIcon(awsService.Id))
 	}

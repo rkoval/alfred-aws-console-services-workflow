@@ -65,11 +65,10 @@ func addInstanceToWorkflow(wf *aw.Workflow, query string, config *aws.Config, in
 	}
 	subtitle += " " + *instance.InstanceType
 
-	item := wf.NewItem(title).
+	item := util.NewURLItem(wf, title).
 		Subtitle(subtitle).
 		Arg(fmt.Sprintf("https://%s.console.aws.amazon.com/ec2/v2/home?region=%s#Instances:search=%s", *config.Region, *config.Region, *instance.InstanceId)).
-		Icon(awsworkflow.GetImageIcon("ec2")).
-		Valid(true)
+		Icon(awsworkflow.GetImageIcon("ec2"))
 
 	if strings.HasPrefix(query, "i-") {
 		item.Match(*instance.InstanceId)

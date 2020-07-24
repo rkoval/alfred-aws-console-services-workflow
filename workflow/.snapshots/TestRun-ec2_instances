@@ -1,4 +1,4 @@
-([]*aw.Item) (len=2) {
+([]*aw.Item) (len=4) {
   (*aw.Item)({
     title: (string) (len=17) "EC2 – Instances",
     subtitle: (*string)(""),
@@ -11,9 +11,21 @@
     copytext: (*string)(<nil>),
     largetype: (*string)(<nil>),
     ql: (*string)(<nil>),
-    vars: (map[string]string) {
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/ec2.png",
       Type: (aw.IconType) ""
@@ -32,9 +44,87 @@
     copytext: (*string)(<nil>),
     largetype: (*string)(<nil>),
     ql: (*string)(<nil>),
-    vars: (map[string]string) {
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    icon: (*aw.Icon)({
+      Value: (string) (len=14) "images/ec2.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=26) "EC2 – Reserved Instances",
+    subtitle: (*string)(""),
+    match: (*string)(<nil>),
+    uid: (*string)((len=8) "reserved"),
+    autocomplete: (*string)((len=13) "ec2 reserved "),
+    arg: (*string)((len=58) "https://console.aws.amazon.com/ec2/home#ReservedInstances:"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    icon: (*aw.Icon)({
+      Value: (string) (len=14) "images/ec2.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=27) "EC2 – Scheduled Instances",
+    subtitle: (*string)(""),
+    match: (*string)(<nil>),
+    uid: (*string)((len=9) "scheduled"),
+    autocomplete: (*string)((len=14) "ec2 scheduled "),
+    arg: (*string)((len=47) "https://console.aws.amazon.com/ec2sp/v2/si/home"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/ec2.png",
       Type: (aw.IconType) ""

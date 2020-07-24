@@ -229,15 +229,81 @@
   description: Virtual Servers in the Cloud
   url: https://console.aws.amazon.com/ec2/home
   sub_services:
+    - id: events
+      name: Events
+      url: 'https://console.aws.amazon.com/ec2/home#Events:'
+    - id: tags
+      name: Tags
+      url: 'https://console.aws.amazon.com/ec2/home#Tags:'
+    - id: limits
+      name: Limits
+      url: 'https://console.aws.amazon.com/ec2/home#Limits:'
     - id: instances
       name: Instances
       url: "https://console.aws.amazon.com/ec2/v2/home#Instances:"
     - id: instancetypes
       name: Instance Types
       url: "https://console.aws.amazon.com/ec2/v2/home#InstanceTypes:"
+    - id: launchtemplates
+      name: Launch Templates
+      url: 'https://console.aws.amazon.com/ec2/home#LaunchTemplates:'
+    - id: spotrequests
+      name: Spot Requests
+      url: 'https://console.aws.amazon.com/ec2sp'
+    - id: savingsplans
+      name: Savings Plans
+      url: 'https://console.aws.amazon.com/ec2/home#SavingsPlans:'
+    - id: reserved
+      name: Reserved Instances
+      url: 'https://console.aws.amazon.com/ec2/home#ReservedInstances:'
+    - id: hosts
+      name: Dedicated Hosts
+      url: 'https://console.aws.amazon.com/ec2/home#Hosts:'
+    - id: scheduled
+      name: Scheduled Instances
+      url: 'https://console.aws.amazon.com/ec2sp/v2/si/home'
+    - id: capacityreservations
+      name: Capacity Reservations
+      url: 'https://console.aws.amazon.com/ec2sp/v2/home/#/cr/reservations'
+    - id: amis
+      name: AMIs
+      url: 'https://console.aws.amazon.com/ec2/home#Images:'
+    - id: volumes
+      name: Volume
+      url: 'https://console.aws.amazon.com/ec2/home#Volumes:'
+    - id: snapshots
+      name: Snapshots
+      url: 'https://console.aws.amazon.com/ec2/home#Snapshots:'
+    - id: lifecyclemanager
+      name: Lifecycle Manager
+      url: 'https://console.aws.amazon.com/ec2/home#Lifecycle:'
     - id: securitygroups
       name: Security Groups
       url: "https://console.aws.amazon.com/ec2/v2/home#SecurityGroups:"
+    - id: elasticips
+      name: Elastic IPs
+      url: 'https://console.aws.amazon.com/ec2/home#Addresses:'
+    - id: placementgroups
+      name: Placement Groups
+      url: 'https://console.aws.amazon.com/ec2/home#PlacementGroups:'
+    - id: keypairs
+      name: Key Pairs
+      url: 'https://console.aws.amazon.com/ec2/home#KeyPairs:'
+    - id: networkinterfaces
+      name: Network Interfaces
+      url: 'https://console.aws.amazon.com/ec2/home#NIC:'
+    - id: loadbalancers
+      name: Load Balancers
+      url: 'https://console.aws.amazon.com/ec2/home#LoadBalancers:'
+    - id: targetgroups
+      name: Target Groups
+      url: 'https://console.aws.amazon.com/ec2/home#TargetGroups:'
+    - id: launchconfigs
+      name: Launch Configurations
+      url: 'https://console.aws.amazon.com/ec2autoscaling/home#/lc'
+    - id: autoscalinggroups
+      name: Auto Scaling Groups
+      url: 'https://console.aws.amazon.com/ec2autoscaling/home#/details'
 
 - id: ecr
   name: Elastic Container Registry

@@ -42,7 +42,7 @@ func addS3BucketToWorkflow(wf *aw.Workflow, query string, config *aws.Config, bu
 	title := *bucket.Name
 	subtitle := "Created " + bucket.CreationDate.Format(time.UnixDate)
 
-	wf.NewItem(title).
+	util.NewURLItem(wf, title).
 		Subtitle(subtitle).
 		Arg(fmt.Sprintf(
 			"https://console.aws.amazon.com/s3/buckets/%s/?region=%s&tab=overview",

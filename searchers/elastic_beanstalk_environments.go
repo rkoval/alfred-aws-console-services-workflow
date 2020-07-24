@@ -60,7 +60,7 @@ func addEnvironmentToWorkflow(wf *aw.Workflow, query string, config *aws.Config,
 	} else {
 		page = "dashboard"
 	}
-	item := wf.NewItem(title).
+	item := util.NewURLItem(wf, title).
 		Subtitle(subtitle).
 		Arg(fmt.Sprintf(
 			"https://%s.console.aws.amazon.com/elasticbeanstalk/home?region=%s#/environment/%s?applicationName=%s&environmentId=%s",
@@ -70,8 +70,7 @@ func addEnvironmentToWorkflow(wf *aw.Workflow, query string, config *aws.Config,
 			*environment.ApplicationName,
 			*environment.EnvironmentId,
 		)).
-		Icon(awsworkflow.GetImageIcon("elasticbeanstalk")).
-		Valid(true)
+		Icon(awsworkflow.GetImageIcon("elasticbeanstalk"))
 
 	if strings.HasPrefix(query, "e-") {
 		item.Match(*environment.EnvironmentId)

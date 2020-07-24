@@ -11,9 +11,21 @@
     copytext: (*string)(<nil>),
     largetype: (*string)(<nil>),
     ql: (*string)(<nil>),
-    vars: (map[string]string) {
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
     icon: (*aw.Icon)({
       Value: (string) (len=13) "images/s3.png",
       Type: (aw.IconType) ""

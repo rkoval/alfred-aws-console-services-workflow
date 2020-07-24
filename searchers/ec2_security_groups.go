@@ -66,11 +66,10 @@ func addSecurityGroupToWorkflow(wf *aw.Workflow, query string, config *aws.Confi
 	}
 	subtitle += *securityGroup.Description
 
-	item := wf.NewItem(title).
+	item := util.NewURLItem(wf, title).
 		Subtitle(subtitle).
 		Arg(fmt.Sprintf("https://%s.console.aws.amazon.com/ec2/v2/home?region=%s#SecurityGroups:group-id=%s", *config.Region, *config.Region, *securityGroup.GroupId)).
-		Icon(awsworkflow.GetImageIcon("ec2")).
-		Valid(true)
+		Icon(awsworkflow.GetImageIcon("ec2"))
 
 	if strings.HasPrefix(query, "sg-") {
 		item.Match(*securityGroup.GroupId)
