@@ -1,4 +1,4 @@
-package core
+package awsworkflow
 
 import (
 	"net/http"
@@ -7,7 +7,7 @@ import (
 	aw "github.com/deanishe/awgo"
 )
 
-func LoadAWSConfig(transport http.RoundTripper) *session.Session {
+func NewWorkflowSession(transport http.RoundTripper) *session.Session {
 	sess := session.Must(session.NewSession())
 
 	if transport != nil {

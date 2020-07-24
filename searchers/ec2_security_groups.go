@@ -1,4 +1,4 @@
-package workflow
+package searchers
 
 import (
 	"fmt"
@@ -8,11 +8,12 @@ import (
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/ec2"
 	aw "github.com/deanishe/awgo"
-	"github.com/rkoval/alfred-aws-console-services-workflow/core"
+	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
+	"github.com/rkoval/alfred-aws-console-services-workflow/caching"
 )
 
 func SearchEC2SecurityGroups(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
-	securityGroups := LoadEc2SecurityGroupArrayFromCache(wf, session, "ec2_security_groups", fetchEC2SecurityGroups, forceFetch, fullQuery)
+	securityGroups := caching.LoadEc2SecurityGroupArrayFromCache(wf, session, "ec2_security_groups", fetchEC2SecurityGroups, forceFetch, fullQuery)
 	for _, securityGroup := range securityGroups {
 		addSecurityGroupToWorkflow(wf, query, "us-west-2" /* TODO make this read from config */, securityGroup)
 	}
@@ -66,7 +67,7 @@ func addSecurityGroupToWorkflow(wf *aw.Workflow, query, region string, securityG
 	item := wf.NewItem(title).
 		Subtitle(subtitle).
 		Arg(fmt.Sprintf("https://%s.console.aws.amazon.com/ec2/v2/home?region=%s#SecurityGroups:group-id=%s", region, region, *securityGroup.GroupId)).
-		Icon(core.GetImageIcon("ec2")).
+		Icon(awsworkflow.GetImageIcon("ec2")).
 		Valid(true)
 
 	if strings.HasPrefix(query, "sg-") {

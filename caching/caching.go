@@ -1,4 +1,4 @@
-package workflow
+package caching
 
 import (
 	"log"
@@ -7,18 +7,13 @@ import (
 	"time"
 
 	"github.com/aws/aws-sdk-go/aws/session"
-	"github.com/aws/aws-sdk-go/service/ec2"
-	"github.com/aws/aws-sdk-go/service/elasticbeanstalk"
-	"github.com/aws/aws-sdk-go/service/s3"
-	"github.com/cheekybits/genny/generic"
 	aw "github.com/deanishe/awgo"
+
+	"github.com/cheekybits/genny/generic"
 )
 
 //go:generate genny -in=$GOFILE -out=gen-$GOFILE gen "Entity=ec2.Instance,s3.Bucket,ec2.SecurityGroup,elasticbeanstalk.EnvironmentDescription"
 type Entity = generic.Type
-type KeepImportEc2Entity ec2.Instance                                         // hack to keep the import in scope
-type KeepImportS3Entity s3.Bucket                                             // hack to keep the import in scope
-type KeepImportElasticBeanstalkEntity elasticbeanstalk.EnvironmentDescription // hack to keep the import in scope
 
 type EntityArrayFetcher = func(*session.Session) ([]Entity, error)
 

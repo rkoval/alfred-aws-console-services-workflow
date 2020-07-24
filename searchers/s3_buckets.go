@@ -1,4 +1,4 @@
-package workflow
+package searchers
 
 import (
 	"fmt"
@@ -7,11 +7,12 @@ import (
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/s3"
 	aw "github.com/deanishe/awgo"
-	"github.com/rkoval/alfred-aws-console-services-workflow/core"
+	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
+	"github.com/rkoval/alfred-aws-console-services-workflow/caching"
 )
 
 func SearchS3Buckets(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
-	es := LoadS3BucketArrayFromCache(wf, session, "s3_buckets", fetchS3Buckets, forceFetch, fullQuery)
+	es := caching.LoadS3BucketArrayFromCache(wf, session, "s3_buckets", fetchS3Buckets, forceFetch, fullQuery)
 	for _, e := range es {
 		addS3BucketToWorkflow(wf, query, "us-west-2" /* TODO make this read from config */, e)
 	}
@@ -45,6 +46,6 @@ func addS3BucketToWorkflow(wf *aw.Workflow, query, region string, bucket s3.Buck
 			*bucket.Name,
 			region,
 		)).
-		Icon(core.GetImageIcon("s3")).
+		Icon(awsworkflow.GetImageIcon("s3")).
 		Valid(true)
 }

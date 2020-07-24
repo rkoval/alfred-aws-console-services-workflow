@@ -1,4 +1,4 @@
-package workflow
+package searchers
 
 import (
 	"fmt"
@@ -8,7 +8,8 @@ import (
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/ec2"
 	aw "github.com/deanishe/awgo"
-	"github.com/rkoval/alfred-aws-console-services-workflow/core"
+	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
+	"github.com/rkoval/alfred-aws-console-services-workflow/caching"
 )
 
 func GetInstanceStateEmoji(instanceState string) string {
@@ -25,7 +26,7 @@ func GetInstanceStateEmoji(instanceState string) string {
 }
 
 func SearchEC2Instances(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
-	instances := LoadEc2InstanceArrayFromCache(wf, session, "ec2_instances", fetchEC2Instances, forceFetch, fullQuery)
+	instances := caching.LoadEc2InstanceArrayFromCache(wf, session, "ec2_instances", fetchEC2Instances, forceFetch, fullQuery)
 	for _, instance := range instances {
 		addInstanceToWorkflow(wf, query, "us-west-2" /* TODO make this read from config */, instance)
 	}
@@ -78,7 +79,7 @@ func addInstanceToWorkflow(wf *aw.Workflow, query, region string, instance ec2.I
 	item := wf.NewItem(title).
 		Subtitle(subtitle).
 		Arg(fmt.Sprintf("https://%s.console.aws.amazon.com/ec2/v2/home?region=%s#Instances:search=%s", region, region, *instance.InstanceId)).
-		Icon(core.GetImageIcon("ec2")).
+		Icon(awsworkflow.GetImageIcon("ec2")).
 		Valid(true)
 
 	if strings.HasPrefix(query, "i-") {

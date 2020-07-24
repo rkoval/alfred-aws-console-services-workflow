@@ -5,10 +5,10 @@ import (
 
 	"github.com/bradleyjkemp/cupaloy"
 	aw "github.com/deanishe/awgo"
-	"github.com/rkoval/alfred-aws-console-services-workflow/core"
+	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
 )
 
-var awsServices []core.AwsService = []core.AwsService{
+var awsServices []awsworkflow.AwsService = []awsworkflow.AwsService{
 	{
 		Id:          "service1",
 		Name:        "Service 1",
@@ -21,7 +21,7 @@ var awsServices []core.AwsService = []core.AwsService{
 		Name:        "Service 2",
 		Description: "Description of the second service",
 		Url:         "https://ryankoval.com",
-		SubServices: []core.AwsService{
+		SubServices: []awsworkflow.AwsService{
 			{
 				Id:          "sub-service1",
 				Name:        "Sub-service 1",

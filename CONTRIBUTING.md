@@ -33,7 +33,7 @@ This will build and run a single execution of the workflow and log any relevant 
 
 ### Guidelines
 
-Generally, if you're just wanting to add a searcher, you can follow the patterns/examples from already implemented searchers (like [the EC2 Instance searcher](https://github.com/rkoval/alfred-aws-console-services-workflow/blob/master/workflow/ec2_instances.go)). Some notes to keep in mind:
+Generally, if you're just wanting to add a searcher, you can follow the patterns/examples from already implemented searchers (like [the EC2 Instance searcher](https://github.com/rkoval/alfred-aws-console-services-workflow/blob/master/searchers/ec2_instances.go)). Some notes to keep in mind:
 
 - **Each new searcher must have tests**. The tests in this repo use the following libraries/patterns:
   - [go-vcr](https://github.com/dnaeon/go-vcr) for recording AWS requests to be re-used deterministically in CI. **Ensure that any new AWS fixtures that you add are purged of any sensitive information related to your account.** There are [sanitizers](https://github.com/rkoval/alfred-aws-console-services-workflow/blob/1178d7c9ff81e763e4898dd1450f642974e3b5c7/tests/test_tools.go#L52-L112) implemented to scrub some of this data (please feel free to add to them), though this is hard to exhaustively do automatically.

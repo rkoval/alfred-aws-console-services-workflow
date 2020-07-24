@@ -1,4 +1,4 @@
-package core
+package awsworkflow
 
 type AwsService struct {
 	Id               string       `yaml:"id"`

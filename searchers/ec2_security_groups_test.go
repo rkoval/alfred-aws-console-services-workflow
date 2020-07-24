@@ -1,4 +1,4 @@
-package workflow
+package searchers
 
 import (
 	"testing"
@@ -8,12 +8,12 @@ import (
 	"github.com/rkoval/alfred-aws-console-services-workflow/tests"
 )
 
-func TestSearchElasticBeanstalkEnvironments(t *testing.T) {
+func TestSearchEC2SecurityGroups(t *testing.T) {
 	wf := aw.New()
 
-	session, r := tests.NewAWSRecorderSession("elastic_beanstalk_environments_test")
+	session, r := tests.NewAWSRecorderSession("ec2_security_groups_test")
 	defer tests.PanicOnError(r.Stop)
-	err := SearchElasticBeanstalkEnvironments(wf, "elasticbeanstalk", session, true, "")
+	err := SearchEC2SecurityGroups(wf, "", session, true, "")
 	if err != nil {
 		t.Errorf("got error from search: %v", err)
 	}

@@ -7,7 +7,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/dnaeon/go-vcr/cassette"
 	"github.com/dnaeon/go-vcr/recorder"
-	"github.com/rkoval/alfred-aws-console-services-workflow/core"
+	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
 )
 
 func NewAWSRecorderSession(fixtureName string) (*session.Session, *recorder.Recorder) {
@@ -38,7 +38,7 @@ func NewAWSRecorderSession(fixtureName string) (*session.Session, *recorder.Reco
 		return nil
 	})
 
-	session := core.LoadAWSConfig(r)
+	session := awsworkflow.NewWorkflowSession(r)
 
 	return session, r
 }

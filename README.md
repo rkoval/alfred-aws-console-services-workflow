@@ -15,7 +15,7 @@ Powerful workflow for quickly opening up AWS Console Services in your browser or
 ## Usage
 To use, activate Alfred and type in `aws`. From there, type to query any of the services offered on the AWS homepage dashboard. You can hit `Tab` to populate sub-services, if they exist (for example, navigate to "Security Groups" within the "EC2" service). If the service is configured At any time, hit `Enter` to navigate to your result or `Cmd+Enter` to copy the URL to clipboard.
 
-*Note that you must be logged in for the page to open directly to your service*. See [this config file](console-services.yml) for the full list of supported services and their sub-services and [this file](https://github.com/rkoval/alfred-aws-console-services-workflow/blob/master/workflow/searchers_by_service_id.go) for the list of supported searchers.
+*Note that you must be logged in for the page to open directly to your service*. See [this config file](console-services.yml) for the full list of supported services and their sub-services and [this file](https://github.com/rkoval/alfred-aws-console-services-workflow/blob/master/searchtypes/search_types.go) for the list of supported searchers.
 
 ## Contributing
 

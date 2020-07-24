@@ -38,11 +38,11 @@ var tcs []testCase = []testCase{
 	},
 	{
 		query:       "s3 home ",
-		fixtureName: "s3_buckets_test", // reuse test fixture from this other test
+		fixtureName: "../searchers/s3_buckets_test", // reuse test fixture from this other test
 	},
 	{
 		query:       "s3 home bucket-1",
-		fixtureName: "s3_buckets_test", // reuse test fixture from this other test
+		fixtureName: "../searchers/s3_buckets_test", // reuse test fixture from this other test
 	},
 	{
 		query: "eec2",
@@ -61,11 +61,11 @@ var tcs []testCase = []testCase{
 	},
 	{
 		query:       "ec2 securitygroups ",
-		fixtureName: "ec2_security_groups_test", // reuse test fixture from this other test
+		fixtureName: "../searchers/ec2_security_groups_test", // reuse test fixture from this other test
 	},
 	{
 		query:       "ec2 securitygroups sg-000000",
-		fixtureName: "ec2_security_groups_test", // reuse test fixture from this other test
+		fixtureName: "../searchers/ec2_security_groups_test", // reuse test fixture from this other test
 	},
 	{
 		query: "bean",
@@ -75,15 +75,15 @@ var tcs []testCase = []testCase{
 	},
 	{
 		query:       "elasticbeanstalk ",
-		fixtureName: "elastic_beanstalk_environments_test", // reuse test fixture from this other test
+		fixtureName: "../searchers/elastic_beanstalk_environments_test", // reuse test fixture from this other test
 	},
 	{
 		query:       "elasticbeanstalk $",
-		fixtureName: "elastic_beanstalk_environments_test", // reuse test fixture from this other test
+		fixtureName: "../searchers/elastic_beanstalk_environments_test", // reuse test fixture from this other test
 	},
 	{
 		query:       "elasticbeanstalk environments e-cccccc",
-		fixtureName: "elastic_beanstalk_environments_test", // reuse test fixture from this other test
+		fixtureName: "../searchers/elastic_beanstalk_environments_test", // reuse test fixture from this other test
 	},
 	{
 		query: "ec2 inst",
@@ -93,31 +93,31 @@ var tcs []testCase = []testCase{
 	},
 	{
 		query:       "ec2 instances ",
-		fixtureName: "ec2_instances_test", // reuse test fixture from this other test
+		fixtureName: "../searchers/ec2_instances_test", // reuse test fixture from this other test
 	},
 	{
 		query:       "ec2 instances environment-name-1",
-		fixtureName: "ec2_instances_test", // reuse test fixture from this other test
+		fixtureName: "../searchers/ec2_instances_test", // reuse test fixture from this other test
 	},
 	{
 		query:       "ec2 instances i-aaaaaaaaaa",
-		fixtureName: "ec2_instances_test", // reuse test fixture from this other test
+		fixtureName: "../searchers/ec2_instances_test", // reuse test fixture from this other test
 	},
 	{
 		query:       "ec2 $",
-		fixtureName: "ec2_instances_test", // reuse test fixture from this other test
+		fixtureName: "../searchers/ec2_instances_test", // reuse test fixture from this other test
 	},
 	{
 		query:       "ec2 $ ",
-		fixtureName: "ec2_instances_test", // reuse test fixture from this other test
+		fixtureName: "../searchers/ec2_instances_test", // reuse test fixture from this other test
 	},
 	{
 		query:       "ec2 $environment-name-1",
-		fixtureName: "ec2_instances_test", // reuse test fixture from this other test
+		fixtureName: "../searchers/ec2_instances_test", // reuse test fixture from this other test
 	},
 	{
 		query:       "ec2 $i-aaaaaaaaaa",
-		fixtureName: "ec2_instances_test", // reuse test fixture from this other test
+		fixtureName: "../searchers/ec2_instances_test", // reuse test fixture from this other test
 	},
 }
 

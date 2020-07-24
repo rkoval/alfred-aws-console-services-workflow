@@ -1,4 +1,4 @@
-package workflow
+package searchers
 
 import (
 	"testing"
@@ -8,12 +8,12 @@ import (
 	"github.com/rkoval/alfred-aws-console-services-workflow/tests"
 )
 
-func TestSearchS3Buckets(t *testing.T) {
+func TestSearchEC2Instances(t *testing.T) {
 	wf := aw.New()
 
-	session, r := tests.NewAWSRecorderSession("s3_buckets_test")
+	session, r := tests.NewAWSRecorderSession("ec2_instances_test")
 	defer tests.PanicOnError(r.Stop)
-	err := SearchS3Buckets(wf, "", session, true, "")
+	err := SearchEC2Instances(wf, "", session, true, "")
 	if err != nil {
 		t.Errorf("got error from search: %v", err)
 	}

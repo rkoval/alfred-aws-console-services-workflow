@@ -1,4 +1,4 @@
-package workflow
+package searchers
 
 import (
 	"fmt"
@@ -8,7 +8,8 @@ import (
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/elasticbeanstalk"
 	aw "github.com/deanishe/awgo"
-	"github.com/rkoval/alfred-aws-console-services-workflow/core"
+	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
+	"github.com/rkoval/alfred-aws-console-services-workflow/caching"
 )
 
 func getHealthEmoji(environmentHealth string) string {
@@ -26,7 +27,7 @@ func getHealthEmoji(environmentHealth string) string {
 }
 
 func SearchElasticBeanstalkEnvironments(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
-	instances := LoadElasticbeanstalkEnvironmentDescriptionArrayFromCache(wf, session, "ec2_instances", fetchElasticBeanstalkEnvironments, forceFetch, fullQuery)
+	instances := caching.LoadElasticbeanstalkEnvironmentDescriptionArrayFromCache(wf, session, "ec2_instances", fetchElasticBeanstalkEnvironments, forceFetch, fullQuery)
 	for _, instance := range instances {
 		addEnvironmentToWorkflow(wf, query, "us-west-2" /* TODO make this read from config */, instance)
 	}
@@ -81,7 +82,7 @@ func addEnvironmentToWorkflow(wf *aw.Workflow, query, region string, environment
 			*environment.ApplicationName,
 			*environment.EnvironmentId,
 		)).
-		Icon(core.GetImageIcon("elasticbeanstalk")).
+		Icon(awsworkflow.GetImageIcon("elasticbeanstalk")).
 		Valid(true)
 
 	if strings.HasPrefix(query, "e-") {

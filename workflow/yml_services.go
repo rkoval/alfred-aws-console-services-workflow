@@ -4,10 +4,10 @@ import (
 	"strings"
 
 	aw "github.com/deanishe/awgo"
-	"github.com/rkoval/alfred-aws-console-services-workflow/core"
+	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
 )
 
-func AddServiceToWorkflow(wf *aw.Workflow, awsService core.AwsService) {
+func AddServiceToWorkflow(wf *aw.Workflow, awsService awsworkflow.AwsService) {
 	title := awsService.GetName()
 	var match string
 	if awsService.ShortName != "" {
@@ -28,16 +28,16 @@ func AddServiceToWorkflow(wf *aw.Workflow, awsService core.AwsService) {
 		Match(match).
 		Valid(true)
 
-	item.Icon(core.GetImageIcon(awsService.Id))
+	item.Icon(awsworkflow.GetImageIcon(awsService.Id))
 }
 
-func SearchServices(wf *aw.Workflow, awsServices []core.AwsService) {
+func SearchServices(wf *aw.Workflow, awsServices []awsworkflow.AwsService) {
 	for _, awsService := range awsServices {
 		AddServiceToWorkflow(wf, awsService)
 	}
 }
 
-func SearchSubServices(wf *aw.Workflow, awsService core.AwsService) {
+func SearchSubServices(wf *aw.Workflow, awsService awsworkflow.AwsService) {
 	for _, subService := range awsService.SubServices {
 		var title string
 		if subService.Id == "home" {
@@ -55,6 +55,6 @@ func SearchSubServices(wf *aw.Workflow, awsService core.AwsService) {
 			Subtitle(subService.Description).
 			Valid(true)
 
-		item.Icon(core.GetImageIcon(awsService.Id))
+		item.Icon(awsworkflow.GetImageIcon(awsService.Id))
 	}
 }

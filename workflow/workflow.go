@@ -1,31 +1,36 @@
 package workflow
 
 import (
-	"io/ioutil"
 	"log"
 
 	"github.com/aws/aws-sdk-go/aws/session"
 	aw "github.com/deanishe/awgo"
-	"github.com/rkoval/alfred-aws-console-services-workflow/core"
-	"gopkg.in/yaml.v2"
+	"github.com/rkoval/alfred-aws-console-services-workflow/parsers"
+	"github.com/rkoval/alfred-aws-console-services-workflow/searchers"
+	"github.com/rkoval/alfred-aws-console-services-workflow/searchtypes"
 )
 
-func readConsoleServicesYml(ymlPath string) []core.AwsService {
-	awsServices := []core.AwsService{}
-	yamlFile, err := ioutil.ReadFile(ymlPath)
-	if err != nil {
-		log.Fatal(err)
-	}
-	err = yaml.Unmarshal(yamlFile, &awsServices)
-	if err != nil {
-		log.Fatal(err)
-	}
-	return awsServices
-}
-
 func Run(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, ymlPath string) {
-	awsServices := readConsoleServicesYml(ymlPath)
-	query = ParseQueryAndSearchItems(wf, awsServices, query, session, forceFetch)
+	awsServices := parsers.ParseConsoleServicesYml(ymlPath)
+	fullQuery := query
+	query, searchType, awsService := parsers.ParseQuery(awsServices, query)
+
+	var err error
+	if searchType == searchtypes.Services {
+		log.Println("using searcher associated with services")
+		SearchServices(wf, awsServices)
+	} else if searchType == searchtypes.SubServices {
+		log.Println("using searcher associated with sub-services")
+		SearchSubServices(wf, *awsService)
+	} else {
+		log.Printf("using searcher associated with %d", searchType)
+		searcher := searchers.SearchersBySearchType[searchType]
+		err = searcher(wf, query, session, forceFetch, fullQuery)
+	}
+
+	if err != nil {
+		wf.FatalError(err)
+	}
 
 	if query != "" {
 		log.Printf("filtering with query %s", query)
