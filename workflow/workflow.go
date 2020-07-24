@@ -43,7 +43,11 @@ func Run(wf *aw.Workflow, query string, session *session.Session, forceFetch boo
 		}
 	}
 
-	wf.WarnEmpty("No matching services found", "Try a different query?")
+	if wf.IsEmpty() {
+		wf.NewItem("No matching services found").
+			Subtitle("Try another query (example: `aws ec2 instances`)").
+			Icon(aw.IconNote)
+	}
 
 	wf.SendFeedback()
 }

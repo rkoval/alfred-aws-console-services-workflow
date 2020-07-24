@@ -1,7 +1,7 @@
 ([]*aw.Item) (len=1) {
   (*aw.Item)({
     title: (string) (len=26) "No matching services found",
-    subtitle: (*string)((len=22) "Try a different query?"),
+    subtitle: (*string)((len=48) "Try another query (example: `aws ec2 instances`)"),
     match: (*string)(<nil>),
     uid: (*string)(<nil>),
     autocomplete: (*string)(<nil>),
@@ -15,7 +15,7 @@
     },
     mods: (map[aw.ModKey]*aw.Modifier) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=86) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/AlertCautionIcon.icns",
+      Value: (string) (len=83) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/AlertNoteIcon.icns",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
