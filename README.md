@@ -13,7 +13,17 @@ Powerful workflow for quickly opening up AWS Console Services in your browser or
   - You can override any/all configuration values in [the workflow environment variables](https://www.alfredapp.com/help/workflows/advanced/variables/#environment). See [the official AWS docs](https://docs.aws.amazon.com/sdk-for-go/v1/developer-guide/configuring-sdk.html#specifying-the-region) for more info on how to configure these
 
 ## Usage
-To use, activate Alfred and type in `aws`. From there, type to query any of the services offered on the AWS homepage dashboard. You can hit `Tab` to populate sub-services, if they exist (for example, navigate to "Security Groups" within the "EC2" service). If the service is configured At any time, hit `Enter` to navigate to your result or `Cmd+Enter` to copy the URL to clipboard.
+To use, activate Alfred and type `aws ` to trigger this workflow. From there:
+
+- type any search term to search for services
+- press <kbd>Tab</kbd> to autocomplete into sub-services, if they exist (for example, navigate to "Security Groups" within the "EC2" service)
+- keep typing after autocompleting to filter sub-services
+- press <kbd>Tab</kbd> again within sub-services to autocomplete the sub-service and start searching for its entities (for example, you can search for EC2 Instances when tabbed to `aws ec2 instances `)
+  - `$` is a sub-section alias to start searching for the default entity type associated with a service (for example, in this workflow, the EC2 service's default entity is an EC2 instance, so `aws ec2 $searchterm` is a shorter alias for `aws ec2 instances searchterm`)
+
+At any time:
+- press <kbd>Enter</kbd> to navigate to your result
+- press <kbd>⌘</kbd>+<kbd>Enter</kbd> to copy the URL to clipboard.
 
 *Note that you must be logged in for the page to open directly to your service*. See [this config file](console-services.yml) for the full list of supported services and their sub-services and [this file](https://github.com/rkoval/alfred-aws-console-services-workflow/blob/master/searchtypes/search_types.go) for the list of supported searchers.
 
