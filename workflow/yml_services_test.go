@@ -39,18 +39,18 @@ var awsServices []core.AwsService = []core.AwsService{
 	},
 }
 
-func TestSearchServices(t *testing.T) {
+func TestPopulateServices(t *testing.T) {
 	wf := aw.New()
 
-	SearchServices(wf, awsServices)
+	PopulateServices(wf, awsServices)
 
 	cupaloy.SnapshotT(t, wf.Feedback.Items)
 }
 
-func TestSearchSubServices(t *testing.T) {
+func TestPopulateSubServices(t *testing.T) {
 	wf := aw.New()
 
-	SearchSubServices(wf, awsServices[1])
+	PopulateSubServices(wf, awsServices[1])
 
 	cupaloy.SnapshotT(t, wf.Feedback.Items)
 }

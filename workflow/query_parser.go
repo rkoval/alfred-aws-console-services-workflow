@@ -77,12 +77,12 @@ func ParseQueryAndPopulateItems(wf *aw.Workflow, awsServices []core.AwsService, 
 				}
 				log.Printf("filtering on subServices for %s", id)
 				query = strings.TrimSpace(strings.Join(splitQuery, " "))
-				SearchSubServices(wf, *awsService)
+				PopulateSubServices(wf, *awsService)
 				return query
 			}
 		}
 	}
 
-	SearchServices(wf, awsServices)
+	PopulateServices(wf, awsServices)
 	return query
 }

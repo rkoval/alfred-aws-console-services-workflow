@@ -28,17 +28,16 @@ func AddServiceToWorkflow(wf *aw.Workflow, awsService core.AwsService) {
 		Match(match).
 		Valid(true)
 
-	icon := &aw.Icon{Value: "images/" + awsService.Id + ".png"}
-	item.Icon(icon)
+	item.Icon(core.GetImageIcon(awsService.Id))
 }
 
-func SearchServices(wf *aw.Workflow, awsServices []core.AwsService) {
+func PopulateServices(wf *aw.Workflow, awsServices []core.AwsService) {
 	for _, awsService := range awsServices {
 		AddServiceToWorkflow(wf, awsService)
 	}
 }
 
-func SearchSubServices(wf *aw.Workflow, awsService core.AwsService) {
+func PopulateSubServices(wf *aw.Workflow, awsService core.AwsService) {
 	for _, subService := range awsService.SubServices {
 		var title string
 		if subService.Id == "home" {
