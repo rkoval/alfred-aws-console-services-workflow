@@ -10,26 +10,14 @@ import (
 	aw "github.com/deanishe/awgo"
 	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
 	"github.com/rkoval/alfred-aws-console-services-workflow/caching"
+	"github.com/rkoval/alfred-aws-console-services-workflow/util"
 )
 
-func getHealthEmoji(environmentHealth string) string {
-	if environmentHealth == elasticbeanstalk.EnvironmentHealthGreen {
-		return "🟢"
-	} else if environmentHealth == elasticbeanstalk.EnvironmentHealthYellow {
-		return "🟡"
-	} else if environmentHealth == elasticbeanstalk.EnvironmentHealthRed {
-		return "🔴"
-	} else if environmentHealth == elasticbeanstalk.EnvironmentHealthGrey {
-		return "⚪️"
-	}
-
-	return "❔"
-}
-
 func SearchElasticBeanstalkEnvironments(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
-	instances := caching.LoadElasticbeanstalkEnvironmentDescriptionArrayFromCache(wf, session, "ec2_instances", fetchElasticBeanstalkEnvironments, forceFetch, fullQuery)
+	cacheName := util.GetCurrentFilename()
+	instances := caching.LoadElasticbeanstalkEnvironmentDescriptionArrayFromCache(wf, session, cacheName, fetchElasticBeanstalkEnvironments, forceFetch, fullQuery)
 	for _, instance := range instances {
-		addEnvironmentToWorkflow(wf, query, "us-west-2" /* TODO make this read from config */, instance)
+		addEnvironmentToWorkflow(wf, query, session.Config, instance)
 	}
 	return nil
 }
@@ -62,9 +50,9 @@ func fetchElasticBeanstalkEnvironments(session *session.Session) ([]elasticbeans
 	return environments, nil
 }
 
-func addEnvironmentToWorkflow(wf *aw.Workflow, query, region string, environment elasticbeanstalk.EnvironmentDescription) {
+func addEnvironmentToWorkflow(wf *aw.Workflow, query string, config *aws.Config, environment elasticbeanstalk.EnvironmentDescription) {
 	title := *environment.EnvironmentName
-	subtitle := getHealthEmoji(*environment.Health) + " " + *environment.EnvironmentId + " " + *environment.ApplicationName
+	subtitle := util.GetElasticBeanstalkHealthEmoji(*environment.Health) + " " + *environment.EnvironmentId + " " + *environment.ApplicationName
 	var page string
 	if *environment.Status == elasticbeanstalk.EnvironmentStatusTerminated {
 		// "dashboard" page does not exist for terminated instances
@@ -76,8 +64,8 @@ func addEnvironmentToWorkflow(wf *aw.Workflow, query, region string, environment
 		Subtitle(subtitle).
 		Arg(fmt.Sprintf(
 			"https://%s.console.aws.amazon.com/elasticbeanstalk/home?region=%s#/environment/%s?applicationName=%s&environmentId=%s",
-			region,
-			region,
+			*config.Region,
+			*config.Region,
 			page,
 			*environment.ApplicationName,
 			*environment.EnvironmentId,

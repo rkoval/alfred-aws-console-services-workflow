@@ -10,12 +10,14 @@ import (
 	aw "github.com/deanishe/awgo"
 	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
 	"github.com/rkoval/alfred-aws-console-services-workflow/caching"
+	"github.com/rkoval/alfred-aws-console-services-workflow/util"
 )
 
 func SearchEC2SecurityGroups(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
-	securityGroups := caching.LoadEc2SecurityGroupArrayFromCache(wf, session, "ec2_security_groups", fetchEC2SecurityGroups, forceFetch, fullQuery)
+	cacheName := util.GetCurrentFilename()
+	securityGroups := caching.LoadEc2SecurityGroupArrayFromCache(wf, session, cacheName, fetchEC2SecurityGroups, forceFetch, fullQuery)
 	for _, securityGroup := range securityGroups {
-		addSecurityGroupToWorkflow(wf, query, "us-west-2" /* TODO make this read from config */, securityGroup)
+		addSecurityGroupToWorkflow(wf, query, session.Config, securityGroup)
 	}
 	return nil
 }
@@ -48,10 +50,10 @@ func fetchEC2SecurityGroups(session *session.Session) ([]ec2.SecurityGroup, erro
 	return securityGroups, nil
 }
 
-func addSecurityGroupToWorkflow(wf *aw.Workflow, query, region string, securityGroup ec2.SecurityGroup) {
+func addSecurityGroupToWorkflow(wf *aw.Workflow, query string, config *aws.Config, securityGroup ec2.SecurityGroup) {
 	var title string
 	var subtitle string
-	name := GetTagValue(securityGroup.Tags, "Name")
+	name := util.GetEC2TagValue(securityGroup.Tags, "Name")
 	if name != "" {
 		title = name
 		subtitle = *securityGroup.GroupId
@@ -66,7 +68,7 @@ func addSecurityGroupToWorkflow(wf *aw.Workflow, query, region string, securityG
 
 	item := wf.NewItem(title).
 		Subtitle(subtitle).
-		Arg(fmt.Sprintf("https://%s.console.aws.amazon.com/ec2/v2/home?region=%s#SecurityGroups:group-id=%s", region, region, *securityGroup.GroupId)).
+		Arg(fmt.Sprintf("https://%s.console.aws.amazon.com/ec2/v2/home?region=%s#SecurityGroups:group-id=%s", *config.Region, *config.Region, *securityGroup.GroupId)).
 		Icon(awsworkflow.GetImageIcon("ec2")).
 		Valid(true)
 

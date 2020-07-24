@@ -10,25 +10,14 @@ import (
 	aw "github.com/deanishe/awgo"
 	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
 	"github.com/rkoval/alfred-aws-console-services-workflow/caching"
+	"github.com/rkoval/alfred-aws-console-services-workflow/util"
 )
 
-func GetInstanceStateEmoji(instanceState string) string {
-	if instanceState == ec2.InstanceStateNamePending {
-		return "⚪️"
-	} else if instanceState == ec2.InstanceStateNameRunning {
-		return "🟢"
-	} else if instanceState == ec2.InstanceStateNameShuttingDown || instanceState == ec2.InstanceStateNameStopping {
-		return "🟡"
-	} else if instanceState == ec2.InstanceStateNameTerminated || instanceState == ec2.InstanceStateNameStopped {
-		return "🔴"
-	}
-	return "❔"
-}
-
 func SearchEC2Instances(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
-	instances := caching.LoadEc2InstanceArrayFromCache(wf, session, "ec2_instances", fetchEC2Instances, forceFetch, fullQuery)
+	cacheName := util.GetCurrentFilename()
+	instances := caching.LoadEc2InstanceArrayFromCache(wf, session, cacheName, fetchEC2Instances, forceFetch, fullQuery)
 	for _, instance := range instances {
-		addInstanceToWorkflow(wf, query, "us-west-2" /* TODO make this read from config */, instance)
+		addInstanceToWorkflow(wf, query, session.Config, instance)
 	}
 	return nil
 }
@@ -64,10 +53,10 @@ func fetchEC2Instances(session *session.Session) ([]ec2.Instance, error) {
 	return instances, nil
 }
 
-func addInstanceToWorkflow(wf *aw.Workflow, query, region string, instance ec2.Instance) {
+func addInstanceToWorkflow(wf *aw.Workflow, query string, config *aws.Config, instance ec2.Instance) {
 	var title string
-	subtitle := GetInstanceStateEmoji(*instance.State.Name)
-	name := GetTagValue(instance.Tags, "Name")
+	subtitle := util.GetEC2InstanceStateEmoji(*instance.State)
+	name := util.GetEC2TagValue(instance.Tags, "Name")
 	if name != "" {
 		title = name
 		subtitle += " " + *instance.InstanceId
@@ -78,20 +67,11 @@ func addInstanceToWorkflow(wf *aw.Workflow, query, region string, instance ec2.I
 
 	item := wf.NewItem(title).
 		Subtitle(subtitle).
-		Arg(fmt.Sprintf("https://%s.console.aws.amazon.com/ec2/v2/home?region=%s#Instances:search=%s", region, region, *instance.InstanceId)).
+		Arg(fmt.Sprintf("https://%s.console.aws.amazon.com/ec2/v2/home?region=%s#Instances:search=%s", *config.Region, *config.Region, *instance.InstanceId)).
 		Icon(awsworkflow.GetImageIcon("ec2")).
 		Valid(true)
 
 	if strings.HasPrefix(query, "i-") {
 		item.Match(*instance.InstanceId)
 	}
-}
-
-func GetTagValue(tags []*ec2.Tag, key string) string {
-	for _, tag := range tags {
-		if *tag.Key == key {
-			return *tag.Value
-		}
-	}
-	return ""
 }
