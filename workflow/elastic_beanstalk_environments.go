@@ -25,7 +25,7 @@ func getHealthEmoji(environmentHealth string) string {
 	return "❔"
 }
 
-func PopulateElasticBeanstalkEnvironments(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
+func SearchElasticBeanstalkEnvironments(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
 	instances := LoadElasticbeanstalkEnvironmentDescriptionArrayFromCache(wf, session, "ec2_instances", fetchElasticBeanstalkEnvironments, forceFetch, fullQuery)
 	for _, instance := range instances {
 		addEnvironmentToWorkflow(wf, query, "us-west-2" /* TODO make this read from config */, instance)

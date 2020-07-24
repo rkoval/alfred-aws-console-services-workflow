@@ -24,7 +24,7 @@ func GetInstanceStateEmoji(instanceState string) string {
 	return "❔"
 }
 
-func PopulateEC2Instances(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
+func SearchEC2Instances(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
 	instances := LoadEc2InstanceArrayFromCache(wf, session, "ec2_instances", fetchEC2Instances, forceFetch, fullQuery)
 	for _, instance := range instances {
 		addInstanceToWorkflow(wf, query, "us-west-2" /* TODO make this read from config */, instance)

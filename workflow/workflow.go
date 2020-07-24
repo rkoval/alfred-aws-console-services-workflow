@@ -25,7 +25,7 @@ func readConsoleServicesYml(ymlPath string) []core.AwsService {
 
 func Run(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, ymlPath string) {
 	awsServices := readConsoleServicesYml(ymlPath)
-	query = ParseQueryAndPopulateItems(wf, awsServices, query, session, forceFetch)
+	query = ParseQueryAndSearchItems(wf, awsServices, query, session, forceFetch)
 
 	if query != "" {
 		log.Printf("filtering with query %s", query)

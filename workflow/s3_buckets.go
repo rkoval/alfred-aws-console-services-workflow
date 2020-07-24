@@ -10,7 +10,7 @@ import (
 	"github.com/rkoval/alfred-aws-console-services-workflow/core"
 )
 
-func PopulateS3Buckets(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
+func SearchS3Buckets(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
 	es := LoadS3BucketArrayFromCache(wf, session, "s3_buckets", fetchS3Buckets, forceFetch, fullQuery)
 	for _, e := range es {
 		addS3BucketToWorkflow(wf, query, "us-west-2" /* TODO make this read from config */, e)

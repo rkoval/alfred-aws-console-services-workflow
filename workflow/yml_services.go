@@ -31,13 +31,13 @@ func AddServiceToWorkflow(wf *aw.Workflow, awsService core.AwsService) {
 	item.Icon(core.GetImageIcon(awsService.Id))
 }
 
-func PopulateServices(wf *aw.Workflow, awsServices []core.AwsService) {
+func SearchServices(wf *aw.Workflow, awsServices []core.AwsService) {
 	for _, awsService := range awsServices {
 		AddServiceToWorkflow(wf, awsService)
 	}
 }
 
-func PopulateSubServices(wf *aw.Workflow, awsService core.AwsService) {
+func SearchSubServices(wf *aw.Workflow, awsService core.AwsService) {
 	for _, subService := range awsService.SubServices {
 		var title string
 		if subService.Id == "home" {

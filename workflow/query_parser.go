@@ -9,7 +9,7 @@ import (
 	"github.com/rkoval/alfred-aws-console-services-workflow/core"
 )
 
-func ParseQueryAndPopulateItems(wf *aw.Workflow, awsServices []core.AwsService, query string, session *session.Session, forceFetch bool) string {
+func ParseQueryAndSearchItems(wf *aw.Workflow, awsServices []core.AwsService, query string, session *session.Session, forceFetch bool) string {
 	// TODO break apart this function
 	// TODO add better lexing here to route populators
 
@@ -28,11 +28,11 @@ func ParseQueryAndPopulateItems(wf *aw.Workflow, awsServices []core.AwsService, 
 
 		if awsService != nil {
 			query = strings.Join(splitQuery[1:], " ")
-			populater := PopulatersByServiceId[id]
-			if strings.HasPrefix(query, "$") && populater != nil {
+			searcher := SearchersByServiceId[id]
+			if strings.HasPrefix(query, "$") && searcher != nil {
 				query = query[1:]
-				log.Printf("using populater associated with %s", id)
-				err := populater(wf, query, session, forceFetch, fullQuery)
+				log.Printf("using searcher associated with %s", id)
+				err := searcher(wf, query, session, forceFetch, fullQuery)
 				if err != nil {
 					wf.FatalError(err)
 				}
@@ -63,10 +63,10 @@ func ParseQueryAndPopulateItems(wf *aw.Workflow, awsServices []core.AwsService, 
 							query = strings.Join(splitQuery[1:], " ")
 							id = id + "_" + subServiceId
 							log.Println("id", id)
-							populater := PopulatersByServiceId[id]
-							if populater != nil {
-								log.Printf("using populater associated with %s", id)
-								err := populater(wf, query, session, forceFetch, fullQuery)
+							searcher := SearchersByServiceId[id]
+							if searcher != nil {
+								log.Printf("using searcher associated with %s", id)
+								err := searcher(wf, query, session, forceFetch, fullQuery)
 								if err != nil {
 									wf.FatalError(err)
 								}
@@ -77,12 +77,12 @@ func ParseQueryAndPopulateItems(wf *aw.Workflow, awsServices []core.AwsService, 
 				}
 				log.Printf("filtering on subServices for %s", id)
 				query = strings.TrimSpace(strings.Join(splitQuery, " "))
-				PopulateSubServices(wf, *awsService)
+				SearchSubServices(wf, *awsService)
 				return query
 			}
 		}
 	}
 
-	PopulateServices(wf, awsServices)
+	SearchServices(wf, awsServices)
 	return query
 }

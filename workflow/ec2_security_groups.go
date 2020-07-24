@@ -11,7 +11,7 @@ import (
 	"github.com/rkoval/alfred-aws-console-services-workflow/core"
 )
 
-func PopulateEC2SecurityGroups(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
+func SearchEC2SecurityGroups(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
 	securityGroups := LoadEc2SecurityGroupArrayFromCache(wf, session, "ec2_security_groups", fetchEC2SecurityGroups, forceFetch, fullQuery)
 	for _, securityGroup := range securityGroups {
 		addSecurityGroupToWorkflow(wf, query, "us-west-2" /* TODO make this read from config */, securityGroup)
