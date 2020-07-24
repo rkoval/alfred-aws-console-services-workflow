@@ -22,6 +22,7 @@ func LoadEntityArrayFromCache(wf *aw.Workflow, session *session.Session, cacheNa
 	if *session.Config.Region == "" {
 		panic(aws.ErrMissingRegion)
 	}
+	// TODO optimization: not all services have sa region associated with them, so cache can be reused across regions (e.g., s3 buckets are global)
 	cacheName += "_" + *session.Config.Region
 
 	results := []Entity{}
