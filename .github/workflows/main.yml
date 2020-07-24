@@ -16,7 +16,7 @@ jobs:
       - uses: actions/setup-go@v2
         with:
           go-version: '1.14.0'
-      - run: ./build.sh
+      - run: ./generate.sh
       - name: golangci-lint
         run: |
           go get github.com/golangci/golangci-lint/cmd/golangci-lint@v1.28.3
