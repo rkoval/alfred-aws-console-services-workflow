@@ -13,7 +13,7 @@ import (
 	aw "github.com/deanishe/awgo"
 )
 
-//go:generate genny -in=$GOFILE -out=gen-$GOFILE gen "Entity=ec2.Instance,s3.Bucket"
+//go:generate genny -in=$GOFILE -out=gen-$GOFILE gen "Entity=ec2.Instance,s3.Bucket,ec2.SecurityGroup"
 type Entity = generic.Type
 type KeepImportEc2Entity ec2.Instance // hack to keep the import in scope
 type KeepImportS3Entity s3.Bucket     // hack to keep the import in scope

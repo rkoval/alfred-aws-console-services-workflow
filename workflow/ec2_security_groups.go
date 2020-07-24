@@ -2,6 +2,7 @@ package workflow
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 	"strings"
 
@@ -11,60 +12,66 @@ import (
 	"github.com/rkoval/alfred-aws-console-services-workflow/core"
 )
 
-func SearchEC2SecurityGroups(wf *aw.Workflow, query string, transport http.RoundTripper) error {
+func PopulateEC2SecurityGroups(wf *aw.Workflow, query string, transport http.RoundTripper, forceFetch bool, fullQuery string) error {
+	securityGroups := LoadEc2SecurityGroupArrayFromCache(wf, transport, "ec2_security_groups", fetchEC2SecurityGroups, forceFetch, fullQuery)
+	for _, securityGroup := range securityGroups {
+		addSecurityGroupToWorkflow(wf, query, "us-west-2" /* TODO make this read from config */, securityGroup)
+	}
+	return nil
+}
+
+func fetchEC2SecurityGroups(transport http.RoundTripper) ([]ec2.SecurityGroup, error) {
 	sess, cfg := core.LoadAWSConfig(transport)
 	svc := ec2.New(sess, cfg)
 
-	values := []*string{
-		aws.String(strings.Join([]string{"*", query, "*"}, "")),
-	}
+	NextToken := ""
+	securityGroups := []ec2.SecurityGroup{}
+	for {
+		resp, err := svc.DescribeSecurityGroups(&ec2.DescribeSecurityGroupsInput{
+			MaxResults: aws.Int64(1000), // get as many as we can
+			NextToken:  aws.String(NextToken),
+		})
+		if err != nil {
+			return nil, err
+		}
+		log.Println("resp", resp)
 
-	var name string
-	if strings.HasPrefix(query, "sg-") {
-		// assume we're querying by ID here
-		name = "group-id"
-	} else {
-		name = "tag:Name"
-	}
-	params := &ec2.DescribeSecurityGroupsInput{
-		Filters: []*ec2.Filter{
-			{
-				Name:   aws.String(name),
-				Values: values,
-			},
-		},
-	}
+		for i := range resp.SecurityGroups {
+			securityGroups = append(securityGroups, *resp.SecurityGroups[i])
+		}
 
-	resp, err := svc.DescribeSecurityGroups(params)
-	if err != nil {
-		wf.NewItem(err.Error()).
-			Icon(aw.IconError)
-		return err
-	}
-	// log.Printf("%+v\n", *resp)
-
-	for _, securityGroup := range resp.SecurityGroups {
-		var title string
-		var subtitle string
-		name := GetTagValue(securityGroup.Tags, "Name")
-		if name != "" {
-			title = name
-			subtitle = *securityGroup.GroupId
+		if resp.NextToken != nil {
+			NextToken = *resp.NextToken
 		} else {
-			title = *securityGroup.GroupId
+			break
 		}
+	}
+	return securityGroups, nil
+}
 
-		if subtitle != "" {
-			subtitle += " "
-		}
-		subtitle += *securityGroup.Description
-
-		wf.NewItem(title).
-			Subtitle(subtitle).
-			Arg(fmt.Sprintf("https://%s.console.aws.amazon.com/ec2/v2/home?region=%s#SecurityGroups:group-id=%s", *cfg.Region, *cfg.Region, *securityGroup.GroupId)).
-			Icon(core.GetImageIcon("ec2")).
-			Valid(true)
+func addSecurityGroupToWorkflow(wf *aw.Workflow, query, region string, securityGroup ec2.SecurityGroup) {
+	var title string
+	var subtitle string
+	name := GetTagValue(securityGroup.Tags, "Name")
+	if name != "" {
+		title = name
+		subtitle = *securityGroup.GroupId
+	} else {
+		title = *securityGroup.GroupId
 	}
 
-	return nil
+	if subtitle != "" {
+		subtitle += " "
+	}
+	subtitle += *securityGroup.Description
+
+	item := wf.NewItem(title).
+		Subtitle(subtitle).
+		Arg(fmt.Sprintf("https://%s.console.aws.amazon.com/ec2/v2/home?region=%s#SecurityGroups:group-id=%s", region, region, *securityGroup.GroupId)).
+		Icon(core.GetImageIcon("ec2")).
+		Valid(true)
+
+	if strings.HasPrefix(query, "sg-") {
+		item.Match(*securityGroup.GroupId)
+	}
 }

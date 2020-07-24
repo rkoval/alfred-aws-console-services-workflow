@@ -96,7 +96,7 @@ interactions:
               </item>
               <item>
                   <ownerId>000000000000</ownerId>
-                  <groupId>sg-00000000000000000</groupId>
+                  <groupId>sg-11111111111111111</groupId>
                   <groupName>awseb-e-0000000000-stack-AWSEBSecurityGroup-AAAAAAAAAAAA</groupName>
                   <groupDescription>SecurityGroup for ElasticBeanstalk environment.</groupDescription>
                   <vpcId>vpc-00000000</vpcId>
@@ -108,7 +108,7 @@ interactions:
                           <groups>
                               <item>
                                   <userId>000000000000</userId>
-                                  <groupId>sg-00000000000000000</groupId>
+                                  <groupId>sg-11111111111111111</groupId>
                               </item>
                           </groups>
                           <ipRanges>
@@ -176,7 +176,7 @@ interactions:
               </item>
               <item>
                   <ownerId>000000000000</ownerId>
-                  <groupId>sg-00000000000000000</groupId>
+                  <groupId>sg-22222222222222222</groupId>
                   <groupName>awseb-e-0000000000-stack-AWSEBSecurityGroup-AAAAAAAAAAAAA</groupName>
                   <groupDescription>SecurityGroup for ElasticBeanstalk environment.</groupDescription>
                   <vpcId>vpc-00000000</vpcId>
@@ -188,7 +188,7 @@ interactions:
                           <groups>
                               <item>
                                   <userId>000000000000</userId>
-                                  <groupId>sg-00000000000000000</groupId>
+                                  <groupId>sg-22222222222222222</groupId>
                               </item>
                           </groups>
                           <ipRanges>

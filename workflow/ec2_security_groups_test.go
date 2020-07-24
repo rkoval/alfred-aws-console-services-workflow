@@ -8,12 +8,12 @@ import (
 	"github.com/rkoval/alfred-aws-console-services-workflow/tests"
 )
 
-func TestSearchEC2SecurityGroups(t *testing.T) {
+func TestPopulateEC2SecurityGroups(t *testing.T) {
 	wf := aw.New()
 
 	r := tests.NewAWSRecorder("ec2_security_groups_test")
 	defer tests.PanicOnError(r.Stop)
-	err := SearchEC2SecurityGroups(wf, "", r)
+	err := PopulateEC2SecurityGroups(wf, "", r, true, "")
 	if err != nil {
 		t.Errorf("got error from search: %v", err)
 	}

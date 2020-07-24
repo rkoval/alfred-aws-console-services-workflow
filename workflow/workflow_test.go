@@ -64,6 +64,10 @@ var tcs []testCase = []testCase{
 		fixtureName: "ec2_security_groups_test", // reuse test fixture from this other test
 	},
 	{
+		query:       "ec2 securitygroups sg-000000",
+		fixtureName: "ec2_security_groups_test", // reuse test fixture from this other test
+	},
+	{
 		query: "ec2 inst",
 	},
 	{
