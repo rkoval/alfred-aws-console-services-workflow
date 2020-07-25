@@ -10,8 +10,9 @@ import (
 )
 
 type testCase struct {
-	query       string
-	fixtureName string
+	query                       string
+	fixtureName                 string
+	deleteItemArgBeforeSnapshot bool
 }
 
 var tcs []testCase = []testCase{
@@ -45,6 +46,15 @@ var tcs []testCase = []testCase{
 		fixtureName: "../searchers/s3_buckets_test", // reuse test fixture from this other test
 	},
 	{
+		query: "OPEN_ALL",
+	},
+	{
+		query: "ec OPEN_ALL",
+	},
+	{
+		query: "ec OPEN_ALL ",
+	},
+	{
 		query: "eec2",
 	},
 	{
@@ -52,6 +62,10 @@ var tcs []testCase = []testCase{
 	},
 	{
 		query: "ec2 ",
+	},
+	{
+		query:                       "ec2 OPEN_ALL",
+		deleteItemArgBeforeSnapshot: true,
 	},
 	{
 		query: "ec2 secur",
@@ -125,13 +139,20 @@ func testWorkflow(t *testing.T, tc testCase, forceFetch, snapshot bool) []*aw.It
 	wf := aw.New()
 	session, r := tests.NewAWSRecorderSession(tc.fixtureName)
 	defer tests.PanicOnError(r.Stop)
-	Run(wf, tc.query, session, forceFetch, "../console-services.yml")
+	Run(wf, tc.query, session, forceFetch, false, "../console-services.yml")
+
+	if tc.deleteItemArgBeforeSnapshot {
+		for i := range wf.Feedback.Items {
+			wf.Feedback.Items[i] = wf.Feedback.Items[i].Arg("[redacted]")
+		}
+	}
 
 	if snapshot {
 		cupaloy.SnapshotT(t, wf.Feedback.Items)
 	}
 	return wf.Feedback.Items
 }
+
 func TestRun(t *testing.T) {
 	for _, tc := range tcs {
 		t.Run(tc.query, func(t *testing.T) {

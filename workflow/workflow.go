@@ -1,19 +1,42 @@
 package workflow
 
 import (
+	"fmt"
 	"log"
+	"os"
+	"os/exec"
+	"time"
 
 	"github.com/aws/aws-sdk-go/aws/session"
 	aw "github.com/deanishe/awgo"
+	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
 	"github.com/rkoval/alfred-aws-console-services-workflow/parsers"
 	"github.com/rkoval/alfred-aws-console-services-workflow/searchers"
 	"github.com/rkoval/alfred-aws-console-services-workflow/searchtypes"
 )
 
-func Run(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, ymlPath string) {
+func Run(wf *aw.Workflow, query string, session *session.Session, forceFetch, openAll bool, ymlPath string) {
 	awsServices := parsers.ParseConsoleServicesYml(ymlPath)
 	fullQuery := query
-	query, searchType, awsService := parsers.ParseQuery(awsServices, query)
+	query, searchType, awsService, promptOpenAll := parsers.ParseQuery(awsServices, query)
+
+	if promptOpenAll && awsService != nil {
+		if openAll {
+			for i := range awsService.SubServices {
+				OpenServiceInBrowser(wf, &awsService.SubServices[i])
+			}
+		} else {
+			cmd := fmt.Sprintf(`%s -query="%s" -open_all`, os.Args[0], fullQuery)
+			wf.NewItem(fmt.Sprintf("Open the %d %s sub-services in browser", len(awsService.SubServices)+1, awsService.Id)).
+				Subtitle("Fair warning: this may briefly overload your system").
+				Icon(aw.IconWarning).
+				Arg(cmd).
+				Var("action", "run-script").
+				Valid(true)
+		}
+		wf.SendFeedback()
+		return
+	}
 
 	var err error
 	if searchType == searchtypes.Services {
@@ -50,4 +73,12 @@ func Run(wf *aw.Workflow, query string, session *session.Session, forceFetch boo
 	}
 
 	wf.SendFeedback()
+}
+
+func OpenServiceInBrowser(wf *aw.Workflow, awsService *awsworkflow.AwsService) {
+	cmd := exec.Command("open", awsService.Url)
+	if err := wf.RunInBackground("open-sub-service-in-browser-"+awsService.Id, cmd); err != nil {
+		panic(err)
+	}
+	time.Sleep(250 * time.Millisecond) // sleep so that tabs are more-or-less opened in the order by which this function is called
 }

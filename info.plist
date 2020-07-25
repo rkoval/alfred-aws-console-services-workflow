@@ -38,7 +38,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>4E86DEC9-680A-49AF-A2EB-76C5B1D275A7</string>
+				<string>F351AC9D-188B-4EB6-A883-2B6CA506BF34</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -208,7 +208,7 @@
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>./alfred-aws-console-services-workflow -query "{query}"</string>
+				<string>./alfred-aws-console-services-workflow -query='{query}'</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -251,17 +251,25 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
 				<string>{query}</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.terminalcommand</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>4E86DEC9-680A-49AF-A2EB-76C5B1D275A7</string>
+			<string>F351AC9D-188B-4EB6-A883-2B6CA506BF34</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -273,7 +281,7 @@
 				<key>matchmode</key>
 				<integer>0</integer>
 				<key>matchstring</key>
-				<string>execute-terminal</string>
+				<string>run-script</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.filter</string>
@@ -317,13 +325,6 @@ npm install
 To add entries to the Alfred Workflow, modify [the .yml config file](src/console-services.yml) and then run [this script](src/generate_items.js) from its directory. It will parse the .yml file and add elements in-place to the info.plist file, which Alfred reads.</string>
 	<key>uidata</key>
 	<dict>
-		<key>4E86DEC9-680A-49AF-A2EB-76C5B1D275A7</key>
-		<dict>
-			<key>xpos</key>
-			<integer>520</integer>
-			<key>ypos</key>
-			<integer>380</integer>
-		</dict>
 		<key>9B470580-6D68-4E96-8948-95193A9A9BF9</key>
 		<dict>
 			<key>xpos</key>
@@ -372,6 +373,13 @@ To add entries to the Alfred Workflow, modify [the .yml config file](src/console
 			<integer>60</integer>
 			<key>ypos</key>
 			<integer>230</integer>
+		</dict>
+		<key>F351AC9D-188B-4EB6-A883-2B6CA506BF34</key>
+		<dict>
+			<key>xpos</key>
+			<integer>525</integer>
+			<key>ypos</key>
+			<integer>380</integer>
 		</dict>
 	</dict>
 	<key>variables</key>

@@ -14,9 +14,11 @@ var wf *aw.Workflow
 var forceFetch bool
 var query string
 var ymlPath string
+var openAll bool
 
 func init() {
 	flag.BoolVar(&forceFetch, "fetch", false, "force fetch via AWS instead of cache")
+	flag.BoolVar(&openAll, "open_all", false, "open all URLs in a browser for the matching query")
 	flag.StringVar(&query, "query", "", "query to use")
 	flag.StringVar(&ymlPath, "yml_path", "console-services.yml", "query to use")
 	flag.Parse()
@@ -29,6 +31,6 @@ func main() {
 		session := awsworkflow.NewWorkflowSession(nil)
 		query = strings.TrimLeft(query, " ")
 
-		workflow.Run(wf, query, session, forceFetch, ymlPath)
+		workflow.Run(wf, query, session, forceFetch, openAll, ymlPath)
 	})
 }

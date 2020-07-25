@@ -8,7 +8,7 @@ import (
 	"github.com/rkoval/alfred-aws-console-services-workflow/searchtypes"
 )
 
-func ParseQuery(awsServices []awsworkflow.AwsService, query string) (string, searchtypes.SearchType, *awsworkflow.AwsService) {
+func ParseQuery(awsServices []awsworkflow.AwsService, query string) (string, searchtypes.SearchType, *awsworkflow.AwsService, bool) {
 	// TODO add better lexing here to route populators
 
 	searchAlias := os.Getenv("ALFRED_AWS_CONSOLE_SERVICES_WORKFLOW_SEARCH_ALIAS")
@@ -32,7 +32,7 @@ func ParseQuery(awsServices []awsworkflow.AwsService, query string) (string, sea
 			searchType := searchtypes.SearchTypesByServiceId[id]
 			if strings.HasPrefix(query, searchAlias) && searchType != 0 {
 				query = query[len(searchAlias):]
-				return query, searchType, awsService
+				return query, searchType, awsService, false
 			} else {
 				// prepend the home to the sub-service list so that it's still accessible
 				awsServiceHome := *awsService
@@ -45,6 +45,9 @@ func ParseQuery(awsServices []awsworkflow.AwsService, query string) (string, sea
 				)
 
 				if len(awsService.SubServices) > 1 {
+					if query == "OPEN_ALL" {
+						return query, searchtypes.SubServices, awsService, true
+					}
 					splitQuery = strings.Split(query, " ")
 					if len(splitQuery) > 1 {
 						subServiceId := splitQuery[0]
@@ -60,16 +63,16 @@ func ParseQuery(awsServices []awsworkflow.AwsService, query string) (string, sea
 							id = id + "_" + subServiceId
 							searchType := searchtypes.SearchTypesByServiceId[id]
 							if searchType != 0 {
-								return query, searchType, subService
+								return query, searchType, subService, false
 							}
 						}
 					}
 				}
 				query = strings.TrimSpace(strings.Join(splitQuery, " "))
-				return query, searchtypes.SubServices, awsService
+				return query, searchtypes.SubServices, awsService, false
 			}
 		}
 	}
 
-	return query, searchtypes.Services, nil
+	return query, searchtypes.Services, nil, false
 }

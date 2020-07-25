@@ -1,0 +1,24 @@
+([]*aw.Item) (len=1) {
+  (*aw.Item)({
+    title: (string) (len=39) "Open the 27 ec2 sub-services in browser",
+    subtitle: (*string)((len=51) "Fair warning: this may briefly overload your system"),
+    match: (*string)(<nil>),
+    uid: (*string)(<nil>),
+    autocomplete: (*string)(<nil>),
+    arg: (*string)((len=10) "[redacted]"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=10) "run-script"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=86) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/AlertCautionIcon.icns",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  })
+}
