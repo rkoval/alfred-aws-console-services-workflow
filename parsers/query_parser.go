@@ -11,6 +11,10 @@ import (
 func ParseQuery(awsServices []awsworkflow.AwsService, query string) (string, searchtypes.SearchType, *awsworkflow.AwsService, bool) {
 	// TODO add better lexing here to route populators
 
+	if strings.TrimSpace(query) == "" {
+		return "", searchtypes.None, nil, false
+	}
+
 	searchAlias := os.Getenv("ALFRED_AWS_CONSOLE_SERVICES_WORKFLOW_SEARCH_ALIAS")
 	if searchAlias == "" {
 		searchAlias = ","
@@ -30,7 +34,7 @@ func ParseQuery(awsServices []awsworkflow.AwsService, query string) (string, sea
 		if awsService != nil {
 			query = strings.Join(splitQuery[1:], " ")
 			searchType := searchtypes.SearchTypesByServiceId[id]
-			if strings.HasPrefix(query, searchAlias) && searchType != 0 {
+			if strings.HasPrefix(query, searchAlias) && searchType != searchtypes.None {
 				query = query[len(searchAlias):]
 				return query, searchType, awsService, false
 			} else if len(awsService.SubServices) > 0 {
@@ -64,7 +68,7 @@ func ParseQuery(awsServices []awsworkflow.AwsService, query string) (string, sea
 							query = strings.Join(splitQuery[1:], " ")
 							id = id + "_" + subServiceId
 							searchType := searchtypes.SearchTypesByServiceId[id]
-							if searchType != 0 {
+							if searchType != searchtypes.None {
 								return query, searchType, subService, false
 							}
 						}

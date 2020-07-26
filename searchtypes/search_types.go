@@ -3,7 +3,8 @@ package searchtypes
 type SearchType int
 
 const (
-	Services SearchType = iota + 1
+	None SearchType = iota
+	Services
 	SubServices
 
 	EC2Instances

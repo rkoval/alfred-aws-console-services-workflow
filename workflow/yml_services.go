@@ -49,7 +49,7 @@ func SearchSubServices(wf *aw.Workflow, awsService awsworkflow.AwsService) {
 		subtitle := ""
 
 		searchType := searchtypes.SearchTypesByServiceId[awsService.Id+"_"+subService.Id]
-		if searchType != 0 {
+		if searchType != searchtypes.None {
 			// this subservice has a searcher, so denote that in the result
 			if searchType == searchtypes.SearchTypesByServiceId[awsService.Id] {
 				// this sub-service is the default searcher

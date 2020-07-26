@@ -39,7 +39,10 @@ func Run(wf *aw.Workflow, query string, session *session.Session, forceFetch, op
 	}
 
 	var err error
-	if searchType == searchtypes.Services {
+	if searchType == searchtypes.None {
+		wf.NewItem("Search for an AWS Service ...").
+			Subtitle("e.g., cloudformation, ec2, s3 ...")
+	} else if searchType == searchtypes.Services {
 		log.Println("using searcher associated with services")
 		if awsService == nil {
 			SearchServices(wf, awsServices)

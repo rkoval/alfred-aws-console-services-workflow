@@ -17,6 +17,12 @@ type testCase struct {
 
 var tcs []testCase = []testCase{
 	{
+		query: "",
+	},
+	{
+		query: " ",
+	},
+	{
 		query: "alex",
 	},
 	{
