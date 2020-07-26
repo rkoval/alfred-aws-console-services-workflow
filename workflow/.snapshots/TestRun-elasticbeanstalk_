@@ -1,41 +1,8 @@
-([]*aw.Item) (len=3) {
+([]*aw.Item) (len=2) {
   (*aw.Item)({
-    title: (string) (len=26) "Elastic Beanstalk – Home",
-    subtitle: (*string)((len=23) "Run and Manage Web Apps"),
-    match: (*string)(<nil>),
-    uid: (*string)((len=4) "home"),
-    autocomplete: (*string)((len=22) "elasticbeanstalk home "),
-    arg: (*string)((len=52) "https://console.aws.amazon.com/elasticbeanstalk/home"),
-    valid: (bool) true,
-    file: (bool) false,
-    copytext: (*string)(<nil>),
-    largetype: (*string)(<nil>),
-    ql: (*string)(<nil>),
-    vars: (map[string]string) (len=1) {
-      (string) (len=6) "action": (string) (len=8) "open-url"
-    },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
-        subtitle: (*string)((len=21) "Copy URL to clipboard"),
-        valid: (bool) false,
-        icon: (*aw.Icon)(<nil>),
-        vars: (map[string]string) (len=1) {
-          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
-        }
-      })
-    },
-    icon: (*aw.Icon)({
-      Value: (string) (len=27) "images/elasticbeanstalk.png",
-      Type: (aw.IconType) ""
-    }),
-    noUID: (bool) false
-  }),
-  (*aw.Item)({
-    title: (string) (len=34) "Elastic Beanstalk – Environments",
-    subtitle: (*string)(""),
-    match: (*string)(<nil>),
+    title: (string) (len=29) "elasticbeanstalk environments",
+    subtitle: (*string)((len=45) "🔎⭐️ Elastic Beanstalk – Environments"),
+    match: (*string)((len=25) "environments Environments"),
     uid: (*string)((len=12) "environments"),
     autocomplete: (*string)((len=30) "elasticbeanstalk environments "),
     arg: (*string)((len=66) "https://console.aws.amazon.com/elasticbeanstalk/home#/environments"),
@@ -66,9 +33,9 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=34) "Elastic Beanstalk – Applications",
-    subtitle: (*string)(""),
-    match: (*string)(<nil>),
+    title: (string) (len=29) "elasticbeanstalk applications",
+    subtitle: (*string)((len=34) "Elastic Beanstalk – Applications"),
+    match: (*string)((len=25) "applications Applications"),
     uid: (*string)((len=12) "applications"),
     autocomplete: (*string)((len=30) "elasticbeanstalk applications "),
     arg: (*string)((len=66) "https://console.aws.amazon.com/elasticbeanstalk/home#/applications"),

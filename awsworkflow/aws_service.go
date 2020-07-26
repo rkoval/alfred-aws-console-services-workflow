@@ -6,6 +6,7 @@ type AwsService struct {
 	ShortName        string       `yaml:"short_name"`
 	Description      string       `yaml:"description"`
 	Url              string       `yaml:"url"`
+	HomeID           string       `yaml:"home_id"`
 	ExtraSearchTerms []string     `yaml:"extra_search_terms"`
 	SubServices      []AwsService `yaml:"sub_services"`
 }

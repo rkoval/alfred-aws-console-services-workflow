@@ -33,16 +33,18 @@ func ParseQuery(awsServices []awsworkflow.AwsService, query string) (string, sea
 			if strings.HasPrefix(query, searchAlias) && searchType != 0 {
 				query = query[len(searchAlias):]
 				return query, searchType, awsService, false
-			} else {
+			} else if len(awsService.SubServices) > 0 {
 				// prepend the home to the sub-service list so that it's still accessible
-				awsServiceHome := *awsService
-				awsServiceHome.Id = "home"
-				awsService.SubServices = append(
-					[]awsworkflow.AwsService{
-						awsServiceHome,
-					},
-					awsService.SubServices...,
-				)
+				if awsService.HomeID == "" {
+					awsServiceHome := *awsService
+					awsServiceHome.Id = "home"
+					awsService.SubServices = append(
+						[]awsworkflow.AwsService{
+							awsServiceHome,
+						},
+						awsService.SubServices...,
+					)
+				}
 
 				if len(awsService.SubServices) > 1 {
 					if query == "OPEN_ALL" {
@@ -68,8 +70,11 @@ func ParseQuery(awsServices []awsworkflow.AwsService, query string) (string, sea
 						}
 					}
 				}
+
 				query = strings.TrimSpace(strings.Join(splitQuery, " "))
 				return query, searchtypes.SubServices, awsService, false
+			} else {
+				return "", searchtypes.Services, awsService, false
 			}
 		}
 	}

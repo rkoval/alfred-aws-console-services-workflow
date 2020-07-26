@@ -1,33 +1,21 @@
 ([]*aw.Item) (len=1) {
   (*aw.Item)({
-    title: (string) (len=8) "bucket-1",
-    subtitle: (*string)((len=36) "Created Wed Jan  1 00:00:00 UTC 2020"),
+    title: (string) (len=26) "No matching services found",
+    subtitle: (*string)((len=48) "Try another query (example: `aws ec2 instances`)"),
     match: (*string)(<nil>),
     uid: (*string)(<nil>),
     autocomplete: (*string)(<nil>),
-    arg: (*string)((len=81) "https://console.aws.amazon.com/s3/buckets/bucket-1/?region=us-west-2&tab=overview"),
-    valid: (bool) true,
+    arg: (*string)(<nil>),
+    valid: (bool) false,
     file: (bool) false,
     copytext: (*string)(<nil>),
     largetype: (*string)(<nil>),
     ql: (*string)(<nil>),
-    vars: (map[string]string) (len=1) {
-      (string) (len=6) "action": (string) (len=8) "open-url"
+    vars: (map[string]string) {
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
-        subtitle: (*string)((len=21) "Copy URL to clipboard"),
-        valid: (bool) false,
-        icon: (*aw.Icon)(<nil>),
-        vars: (map[string]string) (len=1) {
-          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
-        }
-      })
-    },
+    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=13) "images/s3.png",
+      Value: (string) (len=83) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/AlertNoteIcon.icns",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false

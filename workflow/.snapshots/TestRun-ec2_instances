@@ -1,8 +1,8 @@
 ([]*aw.Item) (len=4) {
   (*aw.Item)({
-    title: (string) (len=17) "EC2 – Instances",
-    subtitle: (*string)(""),
-    match: (*string)(<nil>),
+    title: (string) (len=13) "ec2 instances",
+    subtitle: (*string)((len=28) "🔎⭐️ EC2 – Instances"),
+    match: (*string)((len=19) "instances Instances"),
     uid: (*string)((len=9) "instances"),
     autocomplete: (*string)((len=14) "ec2 instances "),
     arg: (*string)((len=53) "https://console.aws.amazon.com/ec2/v2/home#Instances:"),
@@ -33,9 +33,9 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=22) "EC2 – Instance Types",
-    subtitle: (*string)(""),
-    match: (*string)(<nil>),
+    title: (string) (len=17) "ec2 instancetypes",
+    subtitle: (*string)((len=22) "EC2 – Instance Types"),
+    match: (*string)((len=28) "instancetypes Instance Types"),
     uid: (*string)((len=13) "instancetypes"),
     autocomplete: (*string)((len=18) "ec2 instancetypes "),
     arg: (*string)((len=57) "https://console.aws.amazon.com/ec2/v2/home#InstanceTypes:"),
@@ -66,12 +66,12 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=26) "EC2 – Reserved Instances",
-    subtitle: (*string)(""),
-    match: (*string)(<nil>),
-    uid: (*string)((len=8) "reserved"),
-    autocomplete: (*string)((len=13) "ec2 reserved "),
-    arg: (*string)((len=58) "https://console.aws.amazon.com/ec2/home#ReservedInstances:"),
+    title: (string) (len=22) "ec2 scheduledinstances",
+    subtitle: (*string)((len=27) "EC2 – Scheduled Instances"),
+    match: (*string)((len=38) "scheduledinstances Scheduled Instances"),
+    uid: (*string)((len=18) "scheduledinstances"),
+    autocomplete: (*string)((len=23) "ec2 scheduledinstances "),
+    arg: (*string)((len=47) "https://console.aws.amazon.com/ec2sp/v2/si/home"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -99,12 +99,12 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=27) "EC2 – Scheduled Instances",
-    subtitle: (*string)(""),
-    match: (*string)(<nil>),
-    uid: (*string)((len=9) "scheduled"),
-    autocomplete: (*string)((len=14) "ec2 scheduled "),
-    arg: (*string)((len=47) "https://console.aws.amazon.com/ec2sp/v2/si/home"),
+    title: (string) (len=21) "ec2 reservedinstances",
+    subtitle: (*string)((len=26) "EC2 – Reserved Instances"),
+    match: (*string)((len=36) "reservedinstances Reserved Instances"),
+    uid: (*string)((len=17) "reservedinstances"),
+    autocomplete: (*string)((len=22) "ec2 reservedinstances "),
+    arg: (*string)((len=58) "https://console.aws.amazon.com/ec2/home#ReservedInstances:"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

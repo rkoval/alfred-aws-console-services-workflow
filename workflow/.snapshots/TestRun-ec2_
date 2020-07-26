@@ -1,8 +1,8 @@
 ([]*aw.Item) (len=26) {
   (*aw.Item)({
-    title: (string) (len=38) "EC2 – Elastic Cloud Compute – Home",
-    subtitle: (*string)((len=28) "Virtual Servers in the Cloud"),
-    match: (*string)(<nil>),
+    title: (string) (len=8) "ec2 home",
+    subtitle: (*string)((len=45) "EC2 – Home – Virtual Servers in the Cloud"),
+    match: (*string)((len=4) "home"),
     uid: (*string)((len=4) "home"),
     autocomplete: (*string)((len=9) "ec2 home "),
     arg: (*string)((len=39) "https://console.aws.amazon.com/ec2/home"),
@@ -33,9 +33,9 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=14) "EC2 – Events",
-    subtitle: (*string)(""),
-    match: (*string)(<nil>),
+    title: (string) (len=10) "ec2 events",
+    subtitle: (*string)((len=14) "EC2 – Events"),
+    match: (*string)((len=13) "events Events"),
     uid: (*string)((len=6) "events"),
     autocomplete: (*string)((len=11) "ec2 events "),
     arg: (*string)((len=47) "https://console.aws.amazon.com/ec2/home#Events:"),
@@ -66,9 +66,9 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=12) "EC2 – Tags",
-    subtitle: (*string)(""),
-    match: (*string)(<nil>),
+    title: (string) (len=8) "ec2 tags",
+    subtitle: (*string)((len=12) "EC2 – Tags"),
+    match: (*string)((len=9) "tags Tags"),
     uid: (*string)((len=4) "tags"),
     autocomplete: (*string)((len=9) "ec2 tags "),
     arg: (*string)((len=45) "https://console.aws.amazon.com/ec2/home#Tags:"),
@@ -99,9 +99,9 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=14) "EC2 – Limits",
-    subtitle: (*string)(""),
-    match: (*string)(<nil>),
+    title: (string) (len=10) "ec2 limits",
+    subtitle: (*string)((len=14) "EC2 – Limits"),
+    match: (*string)((len=13) "limits Limits"),
     uid: (*string)((len=6) "limits"),
     autocomplete: (*string)((len=11) "ec2 limits "),
     arg: (*string)((len=47) "https://console.aws.amazon.com/ec2/home#Limits:"),
@@ -132,9 +132,9 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=17) "EC2 – Instances",
-    subtitle: (*string)(""),
-    match: (*string)(<nil>),
+    title: (string) (len=13) "ec2 instances",
+    subtitle: (*string)((len=28) "🔎⭐️ EC2 – Instances"),
+    match: (*string)((len=19) "instances Instances"),
     uid: (*string)((len=9) "instances"),
     autocomplete: (*string)((len=14) "ec2 instances "),
     arg: (*string)((len=53) "https://console.aws.amazon.com/ec2/v2/home#Instances:"),
@@ -165,9 +165,9 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=22) "EC2 – Instance Types",
-    subtitle: (*string)(""),
-    match: (*string)(<nil>),
+    title: (string) (len=17) "ec2 instancetypes",
+    subtitle: (*string)((len=22) "EC2 – Instance Types"),
+    match: (*string)((len=28) "instancetypes Instance Types"),
     uid: (*string)((len=13) "instancetypes"),
     autocomplete: (*string)((len=18) "ec2 instancetypes "),
     arg: (*string)((len=57) "https://console.aws.amazon.com/ec2/v2/home#InstanceTypes:"),
@@ -198,9 +198,9 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=24) "EC2 – Launch Templates",
-    subtitle: (*string)(""),
-    match: (*string)(<nil>),
+    title: (string) (len=19) "ec2 launchtemplates",
+    subtitle: (*string)((len=24) "EC2 – Launch Templates"),
+    match: (*string)((len=32) "launchtemplates Launch Templates"),
     uid: (*string)((len=15) "launchtemplates"),
     autocomplete: (*string)((len=20) "ec2 launchtemplates "),
     arg: (*string)((len=56) "https://console.aws.amazon.com/ec2/home#LaunchTemplates:"),
@@ -231,9 +231,9 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=21) "EC2 – Spot Requests",
-    subtitle: (*string)(""),
-    match: (*string)(<nil>),
+    title: (string) (len=16) "ec2 spotrequests",
+    subtitle: (*string)((len=21) "EC2 – Spot Requests"),
+    match: (*string)((len=26) "spotrequests Spot Requests"),
     uid: (*string)((len=12) "spotrequests"),
     autocomplete: (*string)((len=17) "ec2 spotrequests "),
     arg: (*string)((len=36) "https://console.aws.amazon.com/ec2sp"),
@@ -264,9 +264,9 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=21) "EC2 – Savings Plans",
-    subtitle: (*string)(""),
-    match: (*string)(<nil>),
+    title: (string) (len=16) "ec2 savingsplans",
+    subtitle: (*string)((len=21) "EC2 – Savings Plans"),
+    match: (*string)((len=26) "savingsplans Savings Plans"),
     uid: (*string)((len=12) "savingsplans"),
     autocomplete: (*string)((len=17) "ec2 savingsplans "),
     arg: (*string)((len=53) "https://console.aws.amazon.com/ec2/home#SavingsPlans:"),
@@ -297,11 +297,11 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=26) "EC2 – Reserved Instances",
-    subtitle: (*string)(""),
-    match: (*string)(<nil>),
-    uid: (*string)((len=8) "reserved"),
-    autocomplete: (*string)((len=13) "ec2 reserved "),
+    title: (string) (len=21) "ec2 reservedinstances",
+    subtitle: (*string)((len=26) "EC2 – Reserved Instances"),
+    match: (*string)((len=36) "reservedinstances Reserved Instances"),
+    uid: (*string)((len=17) "reservedinstances"),
+    autocomplete: (*string)((len=22) "ec2 reservedinstances "),
     arg: (*string)((len=58) "https://console.aws.amazon.com/ec2/home#ReservedInstances:"),
     valid: (bool) true,
     file: (bool) false,
@@ -330,11 +330,11 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=23) "EC2 – Dedicated Hosts",
-    subtitle: (*string)(""),
-    match: (*string)(<nil>),
-    uid: (*string)((len=5) "hosts"),
-    autocomplete: (*string)((len=10) "ec2 hosts "),
+    title: (string) (len=18) "ec2 dedicatedhosts",
+    subtitle: (*string)((len=23) "EC2 – Dedicated Hosts"),
+    match: (*string)((len=30) "dedicatedhosts Dedicated Hosts"),
+    uid: (*string)((len=14) "dedicatedhosts"),
+    autocomplete: (*string)((len=19) "ec2 dedicatedhosts "),
     arg: (*string)((len=46) "https://console.aws.amazon.com/ec2/home#Hosts:"),
     valid: (bool) true,
     file: (bool) false,
@@ -363,11 +363,11 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=27) "EC2 – Scheduled Instances",
-    subtitle: (*string)(""),
-    match: (*string)(<nil>),
-    uid: (*string)((len=9) "scheduled"),
-    autocomplete: (*string)((len=14) "ec2 scheduled "),
+    title: (string) (len=22) "ec2 scheduledinstances",
+    subtitle: (*string)((len=27) "EC2 – Scheduled Instances"),
+    match: (*string)((len=38) "scheduledinstances Scheduled Instances"),
+    uid: (*string)((len=18) "scheduledinstances"),
+    autocomplete: (*string)((len=23) "ec2 scheduledinstances "),
     arg: (*string)((len=47) "https://console.aws.amazon.com/ec2sp/v2/si/home"),
     valid: (bool) true,
     file: (bool) false,
@@ -396,9 +396,9 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=29) "EC2 – Capacity Reservations",
-    subtitle: (*string)(""),
-    match: (*string)(<nil>),
+    title: (string) (len=24) "ec2 capacityreservations",
+    subtitle: (*string)((len=29) "EC2 – Capacity Reservations"),
+    match: (*string)((len=42) "capacityreservations Capacity Reservations"),
     uid: (*string)((len=20) "capacityreservations"),
     autocomplete: (*string)((len=25) "ec2 capacityreservations "),
     arg: (*string)((len=62) "https://console.aws.amazon.com/ec2sp/v2/home/#/cr/reservations"),
@@ -429,9 +429,9 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=12) "EC2 – AMIs",
-    subtitle: (*string)(""),
-    match: (*string)(<nil>),
+    title: (string) (len=8) "ec2 amis",
+    subtitle: (*string)((len=12) "EC2 – AMIs"),
+    match: (*string)((len=9) "amis AMIs"),
     uid: (*string)((len=4) "amis"),
     autocomplete: (*string)((len=9) "ec2 amis "),
     arg: (*string)((len=47) "https://console.aws.amazon.com/ec2/home#Images:"),
@@ -462,9 +462,9 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=14) "EC2 – Volume",
-    subtitle: (*string)(""),
-    match: (*string)(<nil>),
+    title: (string) (len=11) "ec2 volumes",
+    subtitle: (*string)((len=14) "EC2 – Volume"),
+    match: (*string)((len=14) "volumes Volume"),
     uid: (*string)((len=7) "volumes"),
     autocomplete: (*string)((len=12) "ec2 volumes "),
     arg: (*string)((len=48) "https://console.aws.amazon.com/ec2/home#Volumes:"),
@@ -495,9 +495,9 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=17) "EC2 – Snapshots",
-    subtitle: (*string)(""),
-    match: (*string)(<nil>),
+    title: (string) (len=13) "ec2 snapshots",
+    subtitle: (*string)((len=17) "EC2 – Snapshots"),
+    match: (*string)((len=19) "snapshots Snapshots"),
     uid: (*string)((len=9) "snapshots"),
     autocomplete: (*string)((len=14) "ec2 snapshots "),
     arg: (*string)((len=50) "https://console.aws.amazon.com/ec2/home#Snapshots:"),
@@ -528,9 +528,9 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=25) "EC2 – Lifecycle Manager",
-    subtitle: (*string)(""),
-    match: (*string)(<nil>),
+    title: (string) (len=20) "ec2 lifecyclemanager",
+    subtitle: (*string)((len=25) "EC2 – Lifecycle Manager"),
+    match: (*string)((len=34) "lifecyclemanager Lifecycle Manager"),
     uid: (*string)((len=16) "lifecyclemanager"),
     autocomplete: (*string)((len=21) "ec2 lifecyclemanager "),
     arg: (*string)((len=50) "https://console.aws.amazon.com/ec2/home#Lifecycle:"),
@@ -561,9 +561,9 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=23) "EC2 – Security Groups",
-    subtitle: (*string)(""),
-    match: (*string)(<nil>),
+    title: (string) (len=18) "ec2 securitygroups",
+    subtitle: (*string)((len=28) "🔎 EC2 – Security Groups"),
+    match: (*string)((len=30) "securitygroups Security Groups"),
     uid: (*string)((len=14) "securitygroups"),
     autocomplete: (*string)((len=19) "ec2 securitygroups "),
     arg: (*string)((len=58) "https://console.aws.amazon.com/ec2/v2/home#SecurityGroups:"),
@@ -594,9 +594,9 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=19) "EC2 – Elastic IPs",
-    subtitle: (*string)(""),
-    match: (*string)(<nil>),
+    title: (string) (len=14) "ec2 elasticips",
+    subtitle: (*string)((len=19) "EC2 – Elastic IPs"),
+    match: (*string)((len=22) "elasticips Elastic IPs"),
     uid: (*string)((len=10) "elasticips"),
     autocomplete: (*string)((len=15) "ec2 elasticips "),
     arg: (*string)((len=50) "https://console.aws.amazon.com/ec2/home#Addresses:"),
@@ -627,9 +627,9 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=24) "EC2 – Placement Groups",
-    subtitle: (*string)(""),
-    match: (*string)(<nil>),
+    title: (string) (len=19) "ec2 placementgroups",
+    subtitle: (*string)((len=24) "EC2 – Placement Groups"),
+    match: (*string)((len=32) "placementgroups Placement Groups"),
     uid: (*string)((len=15) "placementgroups"),
     autocomplete: (*string)((len=20) "ec2 placementgroups "),
     arg: (*string)((len=56) "https://console.aws.amazon.com/ec2/home#PlacementGroups:"),
@@ -660,9 +660,9 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=17) "EC2 – Key Pairs",
-    subtitle: (*string)(""),
-    match: (*string)(<nil>),
+    title: (string) (len=12) "ec2 keypairs",
+    subtitle: (*string)((len=17) "EC2 – Key Pairs"),
+    match: (*string)((len=18) "keypairs Key Pairs"),
     uid: (*string)((len=8) "keypairs"),
     autocomplete: (*string)((len=13) "ec2 keypairs "),
     arg: (*string)((len=49) "https://console.aws.amazon.com/ec2/home#KeyPairs:"),
@@ -693,9 +693,9 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=26) "EC2 – Network Interfaces",
-    subtitle: (*string)(""),
-    match: (*string)(<nil>),
+    title: (string) (len=21) "ec2 networkinterfaces",
+    subtitle: (*string)((len=26) "EC2 – Network Interfaces"),
+    match: (*string)((len=36) "networkinterfaces Network Interfaces"),
     uid: (*string)((len=17) "networkinterfaces"),
     autocomplete: (*string)((len=22) "ec2 networkinterfaces "),
     arg: (*string)((len=44) "https://console.aws.amazon.com/ec2/home#NIC:"),
@@ -726,9 +726,9 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=22) "EC2 – Load Balancers",
-    subtitle: (*string)(""),
-    match: (*string)(<nil>),
+    title: (string) (len=17) "ec2 loadbalancers",
+    subtitle: (*string)((len=22) "EC2 – Load Balancers"),
+    match: (*string)((len=28) "loadbalancers Load Balancers"),
     uid: (*string)((len=13) "loadbalancers"),
     autocomplete: (*string)((len=18) "ec2 loadbalancers "),
     arg: (*string)((len=54) "https://console.aws.amazon.com/ec2/home#LoadBalancers:"),
@@ -759,9 +759,9 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=21) "EC2 – Target Groups",
-    subtitle: (*string)(""),
-    match: (*string)(<nil>),
+    title: (string) (len=16) "ec2 targetgroups",
+    subtitle: (*string)((len=21) "EC2 – Target Groups"),
+    match: (*string)((len=26) "targetgroups Target Groups"),
     uid: (*string)((len=12) "targetgroups"),
     autocomplete: (*string)((len=17) "ec2 targetgroups "),
     arg: (*string)((len=53) "https://console.aws.amazon.com/ec2/home#TargetGroups:"),
@@ -792,9 +792,9 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=29) "EC2 – Launch Configurations",
-    subtitle: (*string)(""),
-    match: (*string)(<nil>),
+    title: (string) (len=17) "ec2 launchconfigs",
+    subtitle: (*string)((len=29) "EC2 – Launch Configurations"),
+    match: (*string)((len=35) "launchconfigs Launch Configurations"),
     uid: (*string)((len=13) "launchconfigs"),
     autocomplete: (*string)((len=18) "ec2 launchconfigs "),
     arg: (*string)((len=54) "https://console.aws.amazon.com/ec2autoscaling/home#/lc"),
@@ -825,9 +825,9 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=27) "EC2 – Auto Scaling Groups",
-    subtitle: (*string)(""),
-    match: (*string)(<nil>),
+    title: (string) (len=21) "ec2 autoscalinggroups",
+    subtitle: (*string)((len=27) "EC2 – Auto Scaling Groups"),
+    match: (*string)((len=37) "autoscalinggroups Auto Scaling Groups"),
     uid: (*string)((len=17) "autoscalinggroups"),
     autocomplete: (*string)((len=22) "ec2 autoscalinggroups "),
     arg: (*string)((len=59) "https://console.aws.amazon.com/ec2autoscaling/home#/details"),

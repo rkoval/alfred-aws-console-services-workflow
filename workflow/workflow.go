@@ -41,7 +41,13 @@ func Run(wf *aw.Workflow, query string, session *session.Session, forceFetch, op
 	var err error
 	if searchType == searchtypes.Services {
 		log.Println("using searcher associated with services")
-		SearchServices(wf, awsServices)
+		if awsService == nil {
+			SearchServices(wf, awsServices)
+		} else {
+			awsServices = []awsworkflow.AwsService{}
+			awsServices = append(awsServices, *awsService)
+			SearchServices(wf, awsServices)
+		}
 	} else if searchType == searchtypes.SubServices {
 		log.Println("using searcher associated with sub-services")
 		SearchSubServices(wf, *awsService)

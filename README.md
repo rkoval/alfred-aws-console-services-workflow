@@ -16,12 +16,12 @@ Powerful workflow for quickly opening up AWS Console Services in your browser or
 To use, activate Alfred and type `aws` to trigger this workflow. From there:
 
 - type any search term to search for services
-- press <kbd>Tab</kbd> to autocomplete into sub-services, if they exist (for example, navigate to "Security Groups" within the "EC2" service)
+- if the current service result has a 🗂 in the subtitle, press <kbd>Tab</kbd> to autocomplete into sub-services (for example, navigate to "Security Groups" within the "EC2" service)
 - keep typing after autocompleting to filter sub-services
-- press <kbd>Tab</kbd> again within sub-services to autocomplete the sub-service and start searching for its entities (for example, you can search for EC2 Instances when tabbed to `aws ec2 instances `)
+- if the current sub-service result has a 🔎 in the subtitle, press <kbd>Tab</kbd> again to start searching for its entities (for example, you can search for EC2 Instances when tabbed to `aws ec2 instances `)
 
 At any time:
-- press <kbd>Enter</kbd> to open the result in your default browser
+- press <kbd>Enter</kbd> to open the current result in your default browser
 - press <kbd>⌘</kbd>+<kbd>Enter</kbd> to copy the result's URL to clipboard.
 
 *Note that you must be logged in for the page to open directly to your service*. See [this config file](console-services.yml) for the full list of supported services and their sub-services and [this file](https://github.com/rkoval/alfred-aws-console-services-workflow/blob/master/searchtypes/search_types.go) for the list of supported searchers.
@@ -29,7 +29,7 @@ At any time:
 ## Advanced Usage
 
 - [Fuzzy filtering](https://godoc.org/github.com/deanishe/awgo/fuzzy) a la Sublime Text is supported
-- `,` is a sub-section alias to start searching for the default entity type associated with a service. For example, in this workflow, the EC2 service's default entity is an EC2 instance, so `aws ec2 ,searchterm` is a shorter alias for `aws ec2 instances searchterm`. You can customize this alias by setting the `ALFRED_AWS_CONSOLE_SERVICES_WORKFLOW_SEARCH_ALIAS` environment variable to any other string.
+- If a sub-service has a ⭐ in the subtitle, you can use `,` as an alias for it to more quickly search for that entity. For example, in this workflow, the EC2 service's default entity is an EC2 instance, so `aws ec2 ,searchterm` is a shorter alias for `aws ec2 instances searchterm`. You can customize this alias by setting the `ALFRED_AWS_CONSOLE_SERVICES_WORKFLOW_SEARCH_ALIAS` environment variable to any other string.
 
 ## Contributing
 

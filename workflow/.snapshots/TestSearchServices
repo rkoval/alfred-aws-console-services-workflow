@@ -1,8 +1,8 @@
 ([]*aw.Item) (len=3) {
   (*aw.Item)({
-    title: (string) (len=16) "S1 – Service 1",
-    subtitle: (*string)((len=32) "Description of the first service"),
-    match: (*string)((len=2) "S1"),
+    title: (string) (len=8) "service1",
+    subtitle: (*string)((len=51) "Service 1 (S1) – Description of the first service"),
+    match: (*string)((len=21) "service1 S1 Service 1"),
     uid: (*string)((len=8) "service1"),
     autocomplete: (*string)((len=9) "service1 "),
     arg: (*string)((len=23) "https://ryankoval.pizza"),
@@ -33,9 +33,9 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=9) "Service 2",
-    subtitle: (*string)((len=33) "Description of the second service"),
-    match: (*string)((len=9) "Service 2"),
+    title: (string) (len=8) "service2",
+    subtitle: (*string)((len=52) "🗂 Service 2 – Description of the second service"),
+    match: (*string)((len=19) "service2  Service 2"),
     uid: (*string)((len=8) "service2"),
     autocomplete: (*string)((len=9) "service2 "),
     arg: (*string)((len=21) "https://ryankoval.com"),
@@ -66,9 +66,9 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=10) "W – Whoa",
-    subtitle: (*string)((len=8) "Whoa!!!!"),
-    match: (*string)((len=1) "W"),
+    title: (string) (len=4) "whoa",
+    subtitle: (*string)((len=21) "Whoa (W) – Whoa!!!!"),
+    match: (*string)((len=11) "whoa W Whoa"),
     uid: (*string)((len=4) "whoa"),
     autocomplete: (*string)((len=5) "whoa "),
     arg: (*string)((len=28) "https://github.ryankoval.com"),

@@ -1,11 +1,11 @@
 ([]*aw.Item) (len=3) {
   (*aw.Item)({
-    title: (string) (len=10) "transcribe",
-    subtitle: (*string)((len=42) "Transcribe – Powerful Speech Recognition"),
-    match: (*string)((len=22) "transcribe  Transcribe"),
-    uid: (*string)((len=10) "transcribe"),
-    autocomplete: (*string)((len=11) "transcribe "),
-    arg: (*string)((len=46) "https://console.aws.amazon.com/transcribe/home"),
+    title: (string) (len=8) "bucket-1",
+    subtitle: (*string)((len=36) "Created Wed Jan  1 00:00:00 UTC 2020"),
+    match: (*string)(<nil>),
+    uid: (*string)(<nil>),
+    autocomplete: (*string)(<nil>),
+    arg: (*string)((len=81) "https://console.aws.amazon.com/s3/buckets/bucket-1/?region=us-west-2&tab=overview"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -27,18 +27,18 @@
       })
     },
     icon: (*aw.Icon)({
-      Value: (string) (len=21) "images/transcribe.png",
+      Value: (string) (len=13) "images/s3.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=16) "elasticbeanstalk",
-    subtitle: (*string)((len=50) "🗂 Elastic Beanstalk – Run and Manage Web Apps"),
-    match: (*string)((len=35) "elasticbeanstalk  Elastic Beanstalk"),
-    uid: (*string)((len=16) "elasticbeanstalk"),
-    autocomplete: (*string)((len=17) "elasticbeanstalk "),
-    arg: (*string)((len=52) "https://console.aws.amazon.com/elasticbeanstalk/home"),
+    title: (string) (len=8) "bucket-2",
+    subtitle: (*string)((len=36) "Created Wed Jan  1 00:00:00 UTC 2020"),
+    match: (*string)(<nil>),
+    uid: (*string)(<nil>),
+    autocomplete: (*string)(<nil>),
+    arg: (*string)((len=81) "https://console.aws.amazon.com/s3/buckets/bucket-2/?region=us-west-2&tab=overview"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -60,18 +60,18 @@
       })
     },
     icon: (*aw.Icon)({
-      Value: (string) (len=27) "images/elasticbeanstalk.png",
+      Value: (string) (len=13) "images/s3.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=3) "dms",
-    subtitle: (*string)((len=70) "Database Migation Service (DMS) – Managed Database Migration Service"),
-    match: (*string)((len=33) "dms DMS Database Migation Service"),
-    uid: (*string)((len=3) "dms"),
-    autocomplete: (*string)((len=4) "dms "),
-    arg: (*string)((len=39) "https://console.aws.amazon.com/dms/home"),
+    title: (string) (len=8) "bucket-3",
+    subtitle: (*string)((len=36) "Created Wed Jan  1 00:00:00 UTC 2020"),
+    match: (*string)(<nil>),
+    uid: (*string)(<nil>),
+    autocomplete: (*string)(<nil>),
+    arg: (*string)((len=81) "https://console.aws.amazon.com/s3/buckets/bucket-3/?region=us-west-2&tab=overview"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -93,7 +93,7 @@
       })
     },
     icon: (*aw.Icon)({
-      Value: (string) (len=14) "images/dms.png",
+      Value: (string) (len=13) "images/s3.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false

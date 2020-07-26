@@ -46,6 +46,14 @@ var tcs []testCase = []testCase{
 		fixtureName: "../searchers/s3_buckets_test", // reuse test fixture from this other test
 	},
 	{
+		query:       "s3 buckets ",
+		fixtureName: "../searchers/s3_buckets_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "s3 buckets bucket-1",
+		fixtureName: "../searchers/s3_buckets_test", // reuse test fixture from this other test
+	},
+	{
 		query: "OPEN_ALL",
 	},
 	{

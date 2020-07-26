@@ -253,13 +253,13 @@
     - id: savingsplans
       name: Savings Plans
       url: 'https://console.aws.amazon.com/ec2/home#SavingsPlans:'
-    - id: reserved
+    - id: reservedinstances
       name: Reserved Instances
       url: 'https://console.aws.amazon.com/ec2/home#ReservedInstances:'
-    - id: hosts
+    - id: dedicatedhosts
       name: Dedicated Hosts
       url: 'https://console.aws.amazon.com/ec2/home#Hosts:'
-    - id: scheduled
+    - id: scheduledinstances
       name: Scheduled Instances
       url: 'https://console.aws.amazon.com/ec2sp/v2/si/home'
     - id: capacityreservations
@@ -338,6 +338,7 @@
   name: Elastic Beanstalk
   description: Run and Manage Web Apps
   url: https://console.aws.amazon.com/elasticbeanstalk/home
+  home_id: environments
   sub_services:
     - id: environments
       name: Environments
@@ -679,7 +680,11 @@
   short_name: S3
   description: Scalable Storage in the Cloud
   url: https://console.aws.amazon.com/s3/home
+  home_id: buckets
   sub_services:
+    - id: buckets
+      name: Buckets
+      url: "https://console.aws.amazon.com/s3/home"
     - id: batchoperations
       name: Batch Operations
       url: "https://console.aws.amazon.com/s3/jobs"

@@ -1,8 +1,8 @@
 ([]*aw.Item) (len=1) {
   (*aw.Item)({
-    title: (string) (len=23) "EC2 – Security Groups",
-    subtitle: (*string)(""),
-    match: (*string)(<nil>),
+    title: (string) (len=18) "ec2 securitygroups",
+    subtitle: (*string)((len=28) "🔎 EC2 – Security Groups"),
+    match: (*string)((len=30) "securitygroups Security Groups"),
     uid: (*string)((len=14) "securitygroups"),
     autocomplete: (*string)((len=19) "ec2 securitygroups "),
     arg: (*string)((len=58) "https://console.aws.amazon.com/ec2/v2/home#SecurityGroups:"),
