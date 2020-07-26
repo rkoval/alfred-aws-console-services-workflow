@@ -178,7 +178,7 @@
 			<key>uid</key>
 			<string>9B470580-6D68-4E96-8948-95193A9A9BF9</string>
 			<key>version</key>
-			<integer>3</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -187,8 +187,6 @@
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<false/>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -227,7 +225,7 @@
 			<key>uid</key>
 			<string>ED4983E7-5D59-45C5-AE7F-5D5570D0B499</string>
 			<key>version</key>
-			<integer>3</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -377,7 +375,7 @@ To add entries to the Alfred Workflow, modify [the .yml config file](src/console
 		<key>F351AC9D-188B-4EB6-A883-2B6CA506BF34</key>
 		<dict>
 			<key>xpos</key>
-			<integer>525</integer>
+			<integer>520</integer>
 			<key>ypos</key>
 			<integer>380</integer>
 		</dict>
