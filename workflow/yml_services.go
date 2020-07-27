@@ -11,7 +11,11 @@ import (
 
 func AddServiceToWorkflow(wf *aw.Workflow, awsService awsworkflow.AwsService) {
 	title := awsService.Id
-	match := awsService.Id + " " + awsService.ShortName + " " + awsService.Name
+	match := awsService.Id
+	if awsService.ShortName == "" {
+		match += awsService.Name
+	}
+
 	subtitle := ""
 	if len(awsService.SubServices) > 0 {
 		subtitle += "🗂 "
