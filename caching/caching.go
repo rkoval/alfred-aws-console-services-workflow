@@ -4,6 +4,7 @@ import (
 	"log"
 	"os"
 	"os/exec"
+	"strconv"
 	"time"
 
 	"github.com/aws/aws-sdk-go/aws"
@@ -42,7 +43,20 @@ func LoadEntityArrayFromCache(wf *aw.Workflow, session *session.Session, cacheNa
 		return results
 	}
 
-	maxCacheAge := 180 * time.Second
+	maxCacheAgeSeconds := 180
+	m := os.Getenv("ALFRED_AWS_CONSOLE_SERVICES_WORKFLOW_MAX_CACHE_AGE_SECONDS")
+	if m != "" {
+		converted, err := strconv.Atoi(m)
+		if err != nil {
+			panic(err)
+		}
+		if converted != 0 {
+			log.Printf("using custom max cache age of %v seconds", converted)
+			maxCacheAgeSeconds = converted
+		}
+	}
+
+	maxCacheAge := time.Duration(maxCacheAgeSeconds) * time.Second
 	if wf.Cache.Exists(cacheName) {
 		log.Printf("using cache with key `%s` in %s ...", cacheName, wf.CacheDir())
 		if err := wf.Cache.LoadJSON(cacheName, &results); err != nil {
@@ -55,7 +69,7 @@ func LoadEntityArrayFromCache(wf *aw.Workflow, session *session.Session, cacheNa
 	}
 
 	if wf.Cache.Expired(cacheName, maxCacheAge) {
-		log.Printf("cache with key `%s` was expired in %s", cacheName, wf.CacheDir())
+		log.Printf("cache with key `%s` was expired (older than %d seconds) in %s", cacheName, maxCacheAge, wf.CacheDir())
 		wf.Rerun(0.4)
 		if !wf.IsRunning(jobName) {
 			cmd := exec.Command(os.Args[0], "-query="+fullQuery+"", "-fetch")
