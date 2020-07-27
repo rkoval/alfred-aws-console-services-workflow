@@ -33,7 +33,7 @@ func handleExpiredCache(wf *aw.Workflow, cacheName string, lastFetchErrPath stri
 	maxCacheAge := time.Duration(maxCacheAgeSeconds) * time.Second
 	if wf.Cache.Expired(cacheName, maxCacheAge) {
 		log.Printf("cache with key `%s` was expired (older than %d seconds) in %s", cacheName, maxCacheAgeSeconds, wf.CacheDir())
-		wf.Rerun(0.4)
+		wf.Rerun(0.5)
 		if !wf.IsRunning(jobName) {
 			cmd := exec.Command(os.Args[0], "-query="+fullQuery+"", "-fetch")
 			log.Printf("running `%s` in background as job `%s` ...", cmd, jobName)
