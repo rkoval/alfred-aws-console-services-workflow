@@ -28,7 +28,7 @@ func LoadEntityArrayFromCache(wf *aw.Workflow, session *session.Session, cacheNa
 
 		if err != nil {
 			log.Printf("fetch error occurred. writing to %s ...", lastFetchErrPath)
-			ioutil.WriteFile(lastFetchErrPath, []byte(err.Error()), 0600)
+			_ = ioutil.WriteFile(lastFetchErrPath, []byte(err.Error()), 0600)
 			panic(err)
 		} else {
 			os.Remove(lastFetchErrPath)
