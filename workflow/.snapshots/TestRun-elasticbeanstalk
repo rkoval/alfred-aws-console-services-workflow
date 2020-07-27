@@ -2,7 +2,7 @@
   (*aw.Item)({
     title: (string) (len=16) "elasticbeanstalk",
     subtitle: (*string)((len=50) "🗂 Elastic Beanstalk – Run and Manage Web Apps"),
-    match: (*string)((len=35) "elasticbeanstalk  Elastic Beanstalk"),
+    match: (*string)((len=34) "elasticbeanstalk Elastic Beanstalk"),
     uid: (*string)((len=16) "elasticbeanstalk"),
     autocomplete: (*string)((len=17) "elasticbeanstalk "),
     arg: (*string)((len=52) "https://console.aws.amazon.com/elasticbeanstalk/home"),

@@ -2,7 +2,7 @@
   (*aw.Item)({
     title: (string) (len=8) "service1",
     subtitle: (*string)((len=51) "Service 1 (S1) – Description of the first service"),
-    match: (*string)((len=21) "service1 S1 Service 1"),
+    match: (*string)((len=8) "service1"),
     uid: (*string)((len=8) "service1"),
     autocomplete: (*string)((len=9) "service1 "),
     arg: (*string)((len=23) "https://ryankoval.pizza"),
@@ -35,7 +35,7 @@
   (*aw.Item)({
     title: (string) (len=8) "service2",
     subtitle: (*string)((len=52) "🗂 Service 2 – Description of the second service"),
-    match: (*string)((len=19) "service2  Service 2"),
+    match: (*string)((len=18) "service2 Service 2"),
     uid: (*string)((len=8) "service2"),
     autocomplete: (*string)((len=9) "service2 "),
     arg: (*string)((len=21) "https://ryankoval.com"),
@@ -68,7 +68,7 @@
   (*aw.Item)({
     title: (string) (len=4) "whoa",
     subtitle: (*string)((len=21) "Whoa (W) – Whoa!!!!"),
-    match: (*string)((len=11) "whoa W Whoa"),
+    match: (*string)((len=4) "whoa"),
     uid: (*string)((len=4) "whoa"),
     autocomplete: (*string)((len=5) "whoa "),
     arg: (*string)((len=28) "https://github.ryankoval.com"),

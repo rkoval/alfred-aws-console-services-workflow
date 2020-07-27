@@ -1,8 +1,8 @@
-([]*aw.Item) (len=3) {
+([]*aw.Item) (len=2) {
   (*aw.Item)({
     title: (string) (len=10) "transcribe",
     subtitle: (*string)((len=42) "Transcribe – Powerful Speech Recognition"),
-    match: (*string)((len=22) "transcribe  Transcribe"),
+    match: (*string)((len=21) "transcribe Transcribe"),
     uid: (*string)((len=10) "transcribe"),
     autocomplete: (*string)((len=11) "transcribe "),
     arg: (*string)((len=46) "https://console.aws.amazon.com/transcribe/home"),
@@ -35,7 +35,7 @@
   (*aw.Item)({
     title: (string) (len=16) "elasticbeanstalk",
     subtitle: (*string)((len=50) "🗂 Elastic Beanstalk – Run and Manage Web Apps"),
-    match: (*string)((len=35) "elasticbeanstalk  Elastic Beanstalk"),
+    match: (*string)((len=34) "elasticbeanstalk Elastic Beanstalk"),
     uid: (*string)((len=16) "elasticbeanstalk"),
     autocomplete: (*string)((len=17) "elasticbeanstalk "),
     arg: (*string)((len=52) "https://console.aws.amazon.com/elasticbeanstalk/home"),
@@ -61,39 +61,6 @@
     },
     icon: (*aw.Icon)({
       Value: (string) (len=27) "images/elasticbeanstalk.png",
-      Type: (aw.IconType) ""
-    }),
-    noUID: (bool) false
-  }),
-  (*aw.Item)({
-    title: (string) (len=3) "dms",
-    subtitle: (*string)((len=70) "Database Migation Service (DMS) – Managed Database Migration Service"),
-    match: (*string)((len=33) "dms DMS Database Migation Service"),
-    uid: (*string)((len=3) "dms"),
-    autocomplete: (*string)((len=4) "dms "),
-    arg: (*string)((len=39) "https://console.aws.amazon.com/dms/home"),
-    valid: (bool) true,
-    file: (bool) false,
-    copytext: (*string)(<nil>),
-    largetype: (*string)(<nil>),
-    ql: (*string)(<nil>),
-    vars: (map[string]string) (len=1) {
-      (string) (len=6) "action": (string) (len=8) "open-url"
-    },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
-        subtitle: (*string)((len=21) "Copy URL to clipboard"),
-        valid: (bool) false,
-        icon: (*aw.Icon)(<nil>),
-        vars: (map[string]string) (len=1) {
-          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
-        }
-      })
-    },
-    icon: (*aw.Icon)({
-      Value: (string) (len=14) "images/dms.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false

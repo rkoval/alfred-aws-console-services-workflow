@@ -13,7 +13,7 @@ func AddServiceToWorkflow(wf *aw.Workflow, awsService awsworkflow.AwsService) {
 	title := awsService.Id
 	match := awsService.Id
 	if awsService.ShortName == "" {
-		match += awsService.Name
+		match += " " + awsService.Name
 	}
 
 	subtitle := ""
