@@ -13,7 +13,7 @@ Supports Alfred 3 and 4
 - Open the downloaded file in Finder
 - Make sure your AWS Credentials and Region are set in your `~/.aws/credentials` and `~/.aws/config` files, respectively. This workflow will use your `default` profile by default within these files.
   - You can override any/all configuration values in [the workflow environment variables](https://www.alfredapp.com/help/workflows/advanced/variables/#environment). See [the official AWS docs](https://docs.aws.amazon.com/sdk-for-go/v1/developer-guide/configuring-sdk.html#specifying-the-region) for more info on how to configure these
-- If running on macOS Catalina or later, you _*MUST*_ add Alfred to the list of security exceptions for running unsigned software. See [this guide](https://github.com/deanishe/awgo/wiki/Catalina) for instructions on how to do this.
+- If running on macOS Catalina or later, you _**MUST**_ add Alfred to the list of security exceptions for running unsigned software. See [this guide](https://github.com/deanishe/awgo/wiki/Catalina) for instructions on how to do this.
 
 ## Usage
 To use, activate Alfred and type `aws` to trigger this workflow. From there:
@@ -49,6 +49,6 @@ See [this README](release_tools/README.md)
 
   ![image](https://user-images.githubusercontent.com/1282943/88503823-6eda4b80-cf98-11ea-9a4b-f2a5bdb8a1cc.png)
 
-  Per [the installation steps](https://github.com/rkoval/alfred-aws-console-services-workflow#installation), you *_MUST_* add Alfred to the list of Developer Tool exceptions for Alfred to run any workflow that contains an executable (like this one)
+  Per [the installation steps](https://github.com/rkoval/alfred-aws-console-services-workflow#installation), you **_MUST_** add Alfred to the list of Developer Tool exceptions for Alfred to run any workflow that contains an executable (like this one)
 
 
