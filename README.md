@@ -41,3 +41,13 @@ See [this README](CONTRIBUTING.md)
 ## Packaging for Release
 
 See [this README](release_tools/README.md)
+
+## Troubleshooting
+
+- "I'm seeing the following dialog when running the workflow"
+
+![image](https://user-images.githubusercontent.com/1282943/88503823-6eda4b80-cf98-11ea-9a4b-f2a5bdb8a1cc.png)
+
+  You must add Alfred 3/4 to the list of Developer Tool exceptions for Alfred to run any workflow that contains an executable (like this one)
+
+
