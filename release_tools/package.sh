@@ -8,7 +8,7 @@ read -r VERSION
 VERSION="v${VERSION//v/}"
 
 install_package() {
-  go build
+  ./build.sh
 }
 
 bump_version_and_tag() {
