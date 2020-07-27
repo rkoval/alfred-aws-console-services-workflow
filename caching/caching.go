@@ -53,7 +53,7 @@ func LoadEntityArrayFromCache(wf *aw.Workflow, session *session.Session, cacheNa
 	maxCacheAge := 1 * time.Minute
 	if wf.Cache.Expired(cacheName, maxCacheAge) {
 		log.Printf("cache with key `%s` did not exist or was expired in %s", cacheName, wf.CacheDir())
-		wf.Rerun(0.2)
+		wf.Rerun(0.4)
 		if !wf.IsRunning(jobName) {
 			cmd := exec.Command(os.Args[0], "-query="+fullQuery+"", "-fetch")
 			log.Printf("running `%s` in background as job `%s` ...", cmd, jobName)
