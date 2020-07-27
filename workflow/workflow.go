@@ -83,12 +83,7 @@ func Run(wf *aw.Workflow, query string, session *session.Session, forceFetch, op
 	if query != "" {
 		log.Printf("filtering with query %s", query)
 		res := wf.Filter(query)
-
 		log.Printf("%d results match %q", len(res), query)
-
-		for i, r := range res {
-			log.Printf("%02d. score=%0.1f sortkey=%s", i+1, r.Score, wf.Feedback.Keywords(i))
-		}
 	}
 
 	if wf.IsEmpty() {
