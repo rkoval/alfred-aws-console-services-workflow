@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 export alfred_workflow_bundleid="com.ryankoval.awsconsoleservices"
-export alfred_version=
+export alfred_version=3.8
+export alfred_workflow_version=1.0
 
 if [ "$(uname)" == "Darwin" ] && [ -z "$TEST" ]; then
   # make this mirror where alfred stores cache/data

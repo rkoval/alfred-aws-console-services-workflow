@@ -13,9 +13,12 @@ import (
 	"github.com/rkoval/alfred-aws-console-services-workflow/parsers"
 	"github.com/rkoval/alfred-aws-console-services-workflow/searchers"
 	"github.com/rkoval/alfred-aws-console-services-workflow/searchtypes"
+	"github.com/rkoval/alfred-aws-console-services-workflow/util"
 )
 
 func Run(wf *aw.Workflow, query string, session *session.Session, forceFetch, openAll bool, ymlPath string) {
+	log.Println("using workflow cacheDir: " + wf.CacheDir())
+	log.Println("using workflow dataDir: " + wf.DataDir())
 	awsServices := parsers.ParseConsoleServicesYml(ymlPath)
 	fullQuery := query
 	query, searchType, awsService, promptOpenAll := parsers.ParseQuery(awsServices, query)
@@ -40,8 +43,21 @@ func Run(wf *aw.Workflow, query string, session *session.Session, forceFetch, op
 
 	var err error
 	if searchType == searchtypes.None {
+		log.Println("no search type parsed")
 		wf.NewItem("Search for an AWS Service ...").
 			Subtitle("e.g., cloudformation, ec2, s3 ...")
+
+		if wf.UpdateCheckDue() {
+			if err := wf.CheckForUpdate(); err != nil {
+				wf.FatalError(err)
+			}
+		}
+		if wf.UpdateAvailable() {
+			util.NewURLItem(wf, "Update available").
+				Subtitle("Select this result to navigate to download").
+				Arg("https://github.com/rkoval/alfred-aws-console-services-workflow/releases").
+				Icon(aw.IconInfo)
+		}
 	} else if searchType == searchtypes.Services {
 		log.Println("using searcher associated with services")
 		if awsService == nil {

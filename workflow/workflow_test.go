@@ -5,8 +5,8 @@ import (
 
 	"github.com/bradleyjkemp/cupaloy"
 	aw "github.com/deanishe/awgo"
-	"github.com/go-test/deep"
 	"github.com/rkoval/alfred-aws-console-services-workflow/tests"
+	"github.com/stretchr/testify/assert"
 )
 
 type testCase struct {
@@ -150,7 +150,9 @@ var tcs []testCase = []testCase{
 }
 
 func testWorkflow(t *testing.T, tc testCase, forceFetch, snapshot bool) []*aw.Item {
-	wf := aw.New()
+	updater := &tests.MockAlfredUpdater{}
+	wf := aw.New(aw.Update(updater))
+
 	session, r := tests.NewAWSRecorderSession(tc.fixtureName)
 	defer tests.PanicOnError(r.Stop)
 	Run(wf, tc.query, session, forceFetch, false, "../console-services.yml")
@@ -180,9 +182,7 @@ func TestRunWithCache(t *testing.T) {
 		t.Run(tc.query+"_cached", func(t *testing.T) {
 			fetchedItems := testWorkflow(t, tc, true, false)
 			cachedItems := testWorkflow(t, tc, false, false)
-			if diff := deep.Equal(fetchedItems, cachedItems); diff != nil {
-				t.Error(diff)
-			}
+			assert.Equal(t, cachedItems, fetchedItems)
 		})
 	}
 }

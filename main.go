@@ -6,6 +6,7 @@ import (
 	"strings"
 
 	aw "github.com/deanishe/awgo"
+	"github.com/deanishe/awgo/update"
 	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
 	"github.com/rkoval/alfred-aws-console-services-workflow/workflow"
 )
@@ -22,7 +23,7 @@ func init() {
 	flag.StringVar(&query, "query", "", "query to use")
 	flag.StringVar(&ymlPath, "yml_path", "console-services.yml", "query to use")
 	flag.Parse()
-	wf = aw.New()
+	wf = aw.New(update.GitHub("rkoval/alfred-aws-console-services-workflow"))
 }
 
 func main() {

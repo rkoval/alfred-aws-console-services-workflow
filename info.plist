@@ -386,7 +386,7 @@ To add entries to the Alfred Workflow, modify [the .yml config file](src/console
 		<string>true</string>
 	</dict>
 	<key>version</key>
-	<string>3.x</string>
+	<string>3.0</string>
 	<key>webaddress</key>
 	<string>https://ryankoval.com</string>
 </dict>
