@@ -42,17 +42,20 @@ func LoadEntityArrayFromCache(wf *aw.Workflow, session *session.Session, cacheNa
 		return results
 	}
 
+	maxCacheAge := 180 * time.Second
 	if wf.Cache.Exists(cacheName) {
-		log.Printf("using cache with key `%s` from %s ...", cacheName, wf.CacheDir())
+		log.Printf("using cache with key `%s` in %s ...", cacheName, wf.CacheDir())
 		if err := wf.Cache.LoadJSON(cacheName, &results); err != nil {
 			panic(err)
 		}
-		return results
+	} else {
+		log.Printf("cache with key `%s` did not exist in %s ...", cacheName, wf.CacheDir())
+		wf.NewItem("Fetching ...").
+			Icon(aw.IconInfo)
 	}
 
-	maxCacheAge := 1 * time.Minute
 	if wf.Cache.Expired(cacheName, maxCacheAge) {
-		log.Printf("cache with key `%s` did not exist or was expired in %s", cacheName, wf.CacheDir())
+		log.Printf("cache with key `%s` was expired in %s", cacheName, wf.CacheDir())
 		wf.Rerun(0.4)
 		if !wf.IsRunning(jobName) {
 			cmd := exec.Command(os.Args[0], "-query="+fullQuery+"", "-fetch")
@@ -63,8 +66,7 @@ func LoadEntityArrayFromCache(wf *aw.Workflow, session *session.Session, cacheNa
 		} else {
 			log.Printf("background job `%s` already running", jobName)
 		}
-		wf.NewItem("Fetching ...").
-			Icon(aw.IconInfo)
 	}
+
 	return results
 }
