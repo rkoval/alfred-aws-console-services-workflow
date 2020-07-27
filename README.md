@@ -11,10 +11,9 @@ Supports Alfred 3 and 4
 ## Installation
 - [Download the latest release](https://github.com/rkoval/alfred-aws-console-services-workflow/releases)
 - Open the downloaded file in Finder
-- Make sure your AWS Credentials and Region are set in your `~/.aws/credentials` and `~/.aws/config` files, respectively. This workflow will use your `default` profile by default within these files.
-  - You can override any/all configuration values in [the workflow environment variables](https://www.alfredapp.com/help/workflows/advanced/variables/#environment). See [the official AWS docs](https://docs.aws.amazon.com/sdk-for-go/v1/developer-guide/configuring-sdk.html#specifying-the-region) for more info on how to configure these
+- Make sure your AWS Credentials and Region are set in your `~/.aws/credentials` and `~/.aws/config` files, respectively. This workflow will use your `default` profile by default within these files. See [the official AWS docs](https://docs.aws.amazon.com/sdk-for-go/v1/developer-guide/configuring-sdk.html#specifying-the-region) for more info on how to configure these
 - If running on macOS Catalina or later, you _**MUST**_ add Alfred to the list of security exceptions for running unsigned software. See [this guide](https://github.com/deanishe/awgo/wiki/Catalina) for instructions on how to do this.
-  - <small>Yes, this sucks and is annoying, but there is unfortunately is no easy way around this. macOS requires a paying Developer account for proper app notarization. I'm afraid I'm not willing to pay a yearly subscription fee to Apple just so that this (free and open source) project doesn't pester macOS Gatekeeper.</small>
+  - <sub>Yes, this sucks and is annoying, but there is unfortunately is no easy way around this. macOS requires a paying Developer account for proper app notarization. I'm afraid I'm not willing to pay a yearly subscription fee to Apple just so that this (free and open source) project doesn't pester macOS Gatekeeper.</sub>
 
 ## Usage
 To use, activate Alfred and type `aws` to trigger this workflow. From there:
@@ -33,8 +32,10 @@ At any time:
 ## Advanced Features
 
 - [Fuzzy filtering](https://godoc.org/github.com/deanishe/awgo/fuzzy) a la Sublime Text is supported
-- Configurable search alias – If a sub-service has a ⭐ in the subtitle, you can use `,` as an alias for it to more quickly search for that entity. For example, in this workflow, the EC2 service's default entity is an EC2 instance, so `aws ec2 ,searchterm` is a shorter alias for `aws ec2 instances searchterm`. You can customize this alias by setting the `ALFRED_AWS_CONSOLE_SERVICES_WORKFLOW_SEARCH_ALIAS` environment variable to any other string.
-- Configurable cache expiration age – Sub-service entity searching makes heavy use of caching to make filtering performant and to prevent handling big requests/responses to/from AWS on every execution. The cache expiration age for each entity is set to 3 minutes by default. If you find that this is too short/long for your usage, you can set the `ALFRED_AWS_CONSOLE_SERVICES_WORKFLOW_MAX_CACHE_AGE_SECONDS` environment variable to the number of seconds that better suits your need.
+- Configurable [workflow environment variables](https://www.alfredapp.com/help/workflows/advanced/variables/#environment)
+  - Search alias – If a sub-service has a ⭐ in the subtitle, you can use `,` as an alias for it to more quickly search for that entity. For example, in this workflow, the EC2 service's default entity is an EC2 instance, so `aws ec2 ,searchterm` is a shorter alias for `aws ec2 instances searchterm`. You can customize this alias by setting the `ALFRED_AWS_CONSOLE_SERVICES_WORKFLOW_SEARCH_ALIAS` environment variable to any other string.
+  - Cache expiration age – Sub-service entity searching makes heavy use of caching to make filtering performant and to prevent handling big requests/responses to/from AWS on every execution. The cache expiration age for each entity is set to 3 minutes by default. If you find that this is too short/long for your usage, you can set the `ALFRED_AWS_CONSOLE_SERVICES_WORKFLOW_MAX_CACHE_AGE_SECONDS` environment variable to the number of seconds that better suits your need.
+  - AWS settings – You can override any/all AWS configuration values which the underlying AWS library should respect.
 
 ## Contributing
 
