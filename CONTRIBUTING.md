@@ -30,7 +30,7 @@ Generally, if you're just wanting to add a searcher, you can follow the patterns
 - **Each new searcher must have tests**. The tests in this repo use the following libraries/patterns:
   - [go-vcr](https://github.com/dnaeon/go-vcr) for recording AWS requests to be re-used deterministically in CI. **Ensure that any new AWS fixtures that you add are purged of any sensitive information related to your account.** There are [sanitizers](https://github.com/rkoval/alfred-aws-console-services-workflow/blob/1178d7c9ff81e763e4898dd1450f642974e3b5c7/tests/test_tools.go#L52-L112) implemented to scrub some of this data (please feel free to add to them), though this is hard to exhaustively do automatically.
   - [cupaloy](https://github.com/bradleyjkemp/cupaloy) for snapshot testing to assert results in the Alfred Workflow. The `./test.sh` script should automatically update snapshots on every run, so make sure that the snapshots look the way that they should before committing them.
-- Each new searcher should have a test case in [this file](https://github.com/rkoval/alfred-aws-console-services-workflow/blob/1178d7c9ff81e763e4898dd1450f642974e3b5c7/workflow/workflow_test.go). This file is an integration-style test that will massage logic across the entire workflow. The new test case should have a query that matches the searcher that you added.
+- Each new searcher should have a test case in [this file](https://github.com/rkoval/alfred-aws-console-services-workflow/blob/master/workflow/workflow_test.go). This file is an integration-style test that will massage logic across the entire workflow. The new test case should have a query that matches the searcher that you added.
 
 
 ## Advanced
