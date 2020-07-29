@@ -12,16 +12,18 @@ import (
 	"github.com/rkoval/alfred-aws-console-services-workflow/util"
 )
 
-func SearchWAFWebACLs(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
+type WAFWebACLSearcher struct{}
+
+func (s WAFWebACLSearcher) Search(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
 	cacheName := util.GetCurrentFilename()
-	entities := caching.LoadWafv2WebACLSummaryArrayFromCache(wf, session, cacheName, fetchWebACLs, forceFetch, fullQuery)
+	entities := caching.LoadWafv2WebACLSummaryArrayFromCache(wf, session, cacheName, s.fetch, forceFetch, fullQuery)
 	for _, entity := range entities {
-		addWebACLToWorkflow(wf, query, session.Config, entity)
+		s.addToWorkflow(wf, query, session.Config, entity)
 	}
 	return nil
 }
 
-func fetchWebACLs(session *session.Session) ([]wafv2.WebACLSummary, error) {
+func (s WAFWebACLSearcher) fetch(session *session.Session) ([]wafv2.WebACLSummary, error) {
 	client := wafv2.New(session)
 
 	NextMarker := ""
@@ -54,7 +56,7 @@ func fetchWebACLs(session *session.Session) ([]wafv2.WebACLSummary, error) {
 	return entities, nil
 }
 
-func addWebACLToWorkflow(wf *aw.Workflow, query string, config *aws.Config, entity wafv2.WebACLSummary) {
+func (s WAFWebACLSearcher) addToWorkflow(wf *aw.Workflow, query string, config *aws.Config, entity wafv2.WebACLSummary) {
 	title := *entity.Name
 	subtitle := *entity.Description
 

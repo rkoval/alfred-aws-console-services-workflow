@@ -6,6 +6,6 @@ import (
 	"github.com/rkoval/alfred-aws-console-services-workflow/util"
 )
 
-func TestSearchS3Buckets(t *testing.T) {
-	TestSearcher(t, SearchS3Buckets, util.GetCurrentFilename())
+func TestS3BucketSearcher(t *testing.T) {
+	TestSearcher(t, S3BucketSearcher{}, util.GetCurrentFilename())
 }

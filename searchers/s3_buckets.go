@@ -13,16 +13,18 @@ import (
 	"github.com/rkoval/alfred-aws-console-services-workflow/util"
 )
 
-func SearchS3Buckets(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
+type S3BucketSearcher struct{}
+
+func (s S3BucketSearcher) Search(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
 	cacheName := util.GetCurrentFilename()
-	es := caching.LoadS3BucketArrayFromCache(wf, session, cacheName, fetchS3Buckets, forceFetch, fullQuery)
+	es := caching.LoadS3BucketArrayFromCache(wf, session, cacheName, s.fetch, forceFetch, fullQuery)
 	for _, e := range es {
-		addS3BucketToWorkflow(wf, query, session.Config, e)
+		s.addToWorkflow(wf, query, session.Config, e)
 	}
 	return nil
 }
 
-func fetchS3Buckets(session *session.Session) ([]s3.Bucket, error) {
+func (s S3BucketSearcher) fetch(session *session.Session) ([]s3.Bucket, error) {
 	svc := s3.New(session)
 
 	resp, err := svc.ListBuckets(&s3.ListBucketsInput{})
@@ -38,7 +40,7 @@ func fetchS3Buckets(session *session.Session) ([]s3.Bucket, error) {
 	return buckets, nil
 }
 
-func addS3BucketToWorkflow(wf *aw.Workflow, query string, config *aws.Config, bucket s3.Bucket) {
+func (s S3BucketSearcher) addToWorkflow(wf *aw.Workflow, query string, config *aws.Config, bucket s3.Bucket) {
 	title := *bucket.Name
 	subtitle := "Created " + bucket.CreationDate.Format(time.UnixDate)
 

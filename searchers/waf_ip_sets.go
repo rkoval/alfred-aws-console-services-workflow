@@ -12,20 +12,22 @@ import (
 	"github.com/rkoval/alfred-aws-console-services-workflow/util"
 )
 
-func SearchWAFIPSets(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
+type WAFIPSetSearcher struct{}
+
+func (s WAFIPSetSearcher) Search(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
 	cacheName := util.GetCurrentFilename()
-	entities := caching.LoadWafv2IPSetSummaryArrayFromCache(wf, session, cacheName, fetchIPSets, forceFetch, fullQuery)
+	entities := caching.LoadWafv2IPSetSummaryArrayFromCache(wf, session, cacheName, s.fetch, forceFetch, fullQuery)
 	for _, entity := range entities {
-		addIPSetToWorkflow(wf, query, session.Config, entity)
+		s.addToWorkflow(wf, query, session.Config, entity)
 	}
 	return nil
 }
 
-func fetchIPSets(session *session.Session) ([]wafv2.IPSetSummary, error) {
+func (s WAFIPSetSearcher) fetch(session *session.Session) ([]wafv2.IPSetSummary, error) {
 	client := wafv2.New(session)
 
 	NextMarker := ""
-	ipSets := []wafv2.IPSetSummary{}
+	entities := []wafv2.IPSetSummary{}
 	for {
 		params := &wafv2.ListIPSetsInput{
 			Limit: aws.Int64(100),         // get as many as we can
@@ -40,8 +42,8 @@ func fetchIPSets(session *session.Session) ([]wafv2.IPSetSummary, error) {
 			return nil, err
 		}
 
-		for _, ipSet := range resp.IPSets {
-			ipSets = append(ipSets, *ipSet)
+		for _, entity := range resp.IPSets {
+			entities = append(entities, *entity)
 		}
 
 		if resp.NextMarker != nil {
@@ -51,15 +53,15 @@ func fetchIPSets(session *session.Session) ([]wafv2.IPSetSummary, error) {
 		}
 	}
 
-	return ipSets, nil
+	return entities, nil
 }
 
-func addIPSetToWorkflow(wf *aw.Workflow, query string, config *aws.Config, ipSet wafv2.IPSetSummary) {
-	title := *ipSet.Name
-	subtitle := *ipSet.Description
+func (s WAFIPSetSearcher) addToWorkflow(wf *aw.Workflow, query string, config *aws.Config, entity wafv2.IPSetSummary) {
+	title := *entity.Name
+	subtitle := *entity.Description
 
 	util.NewURLItem(wf, title).
 		Subtitle(subtitle).
-		Arg(fmt.Sprintf("https://console.aws.amazon.com/wafv2/homev2/ip-set/%s/%s?region=%s", *ipSet.Name, *ipSet.Id, *config.Region)).
+		Arg(fmt.Sprintf("https://console.aws.amazon.com/wafv2/homev2/ip-set/%s/%s?region=%s", *entity.Name, *entity.Id, *config.Region)).
 		Icon(awsworkflow.GetImageIcon("waf"))
 }

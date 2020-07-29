@@ -6,6 +6,6 @@ import (
 	"github.com/rkoval/alfred-aws-console-services-workflow/util"
 )
 
-func TestSearchEC2SecurityGroups(t *testing.T) {
-	TestSearcher(t, SearchEC2SecurityGroups, util.GetCurrentFilename())
+func TestEC2SecurityGroupSearcher(t *testing.T) {
+	TestSearcher(t, EC2SecurityGroupSearcher{}, util.GetCurrentFilename())
 }

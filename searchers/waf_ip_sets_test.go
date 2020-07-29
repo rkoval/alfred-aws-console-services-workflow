@@ -6,6 +6,6 @@ import (
 	"github.com/rkoval/alfred-aws-console-services-workflow/util"
 )
 
-func TestSearchWAFIPSets(t *testing.T) {
-	TestSearcher(t, SearchWAFIPSets, util.GetCurrentFilename())
+func TestWAFIPSetSearcher(t *testing.T) {
+	TestSearcher(t, WAFIPSetSearcher{}, util.GetCurrentFilename())
 }

@@ -73,7 +73,7 @@ func Run(wf *aw.Workflow, query string, session *session.Session, forceFetch, op
 	} else {
 		log.Printf("using searcher associated with %d", searchType)
 		searcher := searchers.SearchersBySearchType[searchType]
-		err = searcher(wf, query, session, forceFetch, fullQuery)
+		err = searcher.Search(wf, query, session, forceFetch, fullQuery)
 	}
 
 	if err != nil {

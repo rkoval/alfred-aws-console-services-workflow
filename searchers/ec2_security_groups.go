@@ -13,16 +13,18 @@ import (
 	"github.com/rkoval/alfred-aws-console-services-workflow/util"
 )
 
-func SearchEC2SecurityGroups(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
+type EC2SecurityGroupSearcher struct{}
+
+func (s EC2SecurityGroupSearcher) Search(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
 	cacheName := util.GetCurrentFilename()
-	securityGroups := caching.LoadEc2SecurityGroupArrayFromCache(wf, session, cacheName, fetchEC2SecurityGroups, forceFetch, fullQuery)
+	securityGroups := caching.LoadEc2SecurityGroupArrayFromCache(wf, session, cacheName, s.fetch, forceFetch, fullQuery)
 	for _, securityGroup := range securityGroups {
-		addSecurityGroupToWorkflow(wf, query, session.Config, securityGroup)
+		s.addToWorkflow(wf, query, session.Config, securityGroup)
 	}
 	return nil
 }
 
-func fetchEC2SecurityGroups(session *session.Session) ([]ec2.SecurityGroup, error) {
+func (s EC2SecurityGroupSearcher) fetch(session *session.Session) ([]ec2.SecurityGroup, error) {
 	svc := ec2.New(session)
 
 	NextToken := ""
@@ -50,7 +52,7 @@ func fetchEC2SecurityGroups(session *session.Session) ([]ec2.SecurityGroup, erro
 	return securityGroups, nil
 }
 
-func addSecurityGroupToWorkflow(wf *aw.Workflow, query string, config *aws.Config, securityGroup ec2.SecurityGroup) {
+func (s EC2SecurityGroupSearcher) addToWorkflow(wf *aw.Workflow, query string, config *aws.Config, securityGroup ec2.SecurityGroup) {
 	var title string
 	var subtitle string
 	name := util.GetEC2TagValue(securityGroup.Tags, "Name")

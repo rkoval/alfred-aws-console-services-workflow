@@ -13,16 +13,18 @@ import (
 	"github.com/rkoval/alfred-aws-console-services-workflow/util"
 )
 
-func SearchEC2Instances(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
+type EC2InstanceSearcher struct{}
+
+func (s EC2InstanceSearcher) Search(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
 	cacheName := util.GetCurrentFilename()
-	instances := caching.LoadEc2InstanceArrayFromCache(wf, session, cacheName, fetchEC2Instances, forceFetch, fullQuery)
+	instances := caching.LoadEc2InstanceArrayFromCache(wf, session, cacheName, s.fetch, forceFetch, fullQuery)
 	for _, instance := range instances {
-		addInstanceToWorkflow(wf, query, session.Config, instance)
+		s.addToWorkflow(wf, query, session.Config, instance)
 	}
 	return nil
 }
 
-func fetchEC2Instances(session *session.Session) ([]ec2.Instance, error) {
+func (s EC2InstanceSearcher) fetch(session *session.Session) ([]ec2.Instance, error) {
 	svc := ec2.New(session)
 
 	NextToken := ""
@@ -53,7 +55,7 @@ func fetchEC2Instances(session *session.Session) ([]ec2.Instance, error) {
 	return instances, nil
 }
 
-func addInstanceToWorkflow(wf *aw.Workflow, query string, config *aws.Config, instance ec2.Instance) {
+func (s EC2InstanceSearcher) addToWorkflow(wf *aw.Workflow, query string, config *aws.Config, instance ec2.Instance) {
 	var title string
 	subtitle := util.GetEC2InstanceStateEmoji(*instance.State)
 	name := util.GetEC2TagValue(instance.Tags, "Name")

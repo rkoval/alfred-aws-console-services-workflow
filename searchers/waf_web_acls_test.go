@@ -6,6 +6,6 @@ import (
 	"github.com/rkoval/alfred-aws-console-services-workflow/util"
 )
 
-func TestSearchWAFWebACLs(t *testing.T) {
-	TestSearcher(t, SearchWAFWebACLs, util.GetCurrentFilename())
+func TestWAFWebACLSearcher(t *testing.T) {
+	TestSearcher(t, WAFWebACLSearcher{}, util.GetCurrentFilename())
 }

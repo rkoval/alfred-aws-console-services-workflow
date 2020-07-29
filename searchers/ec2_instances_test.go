@@ -6,6 +6,6 @@ import (
 	"github.com/rkoval/alfred-aws-console-services-workflow/util"
 )
 
-func TestSearchEC2Instances(t *testing.T) {
-	TestSearcher(t, SearchEC2Instances, util.GetCurrentFilename())
+func TestEC2InstanceSearcher(t *testing.T) {
+	TestSearcher(t, EC2InstanceSearcher{}, util.GetCurrentFilename())
 }

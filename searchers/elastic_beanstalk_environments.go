@@ -13,16 +13,18 @@ import (
 	"github.com/rkoval/alfred-aws-console-services-workflow/util"
 )
 
-func SearchElasticBeanstalkEnvironments(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
+type ElasticBeanstalkEnvironmentSearcher struct{}
+
+func (s ElasticBeanstalkEnvironmentSearcher) Search(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
 	cacheName := util.GetCurrentFilename()
-	instances := caching.LoadElasticbeanstalkEnvironmentDescriptionArrayFromCache(wf, session, cacheName, fetchElasticBeanstalkEnvironments, forceFetch, fullQuery)
+	instances := caching.LoadElasticbeanstalkEnvironmentDescriptionArrayFromCache(wf, session, cacheName, s.fetch, forceFetch, fullQuery)
 	for _, instance := range instances {
-		addEnvironmentToWorkflow(wf, query, session.Config, instance)
+		s.addToWorkflow(wf, query, session.Config, instance)
 	}
 	return nil
 }
 
-func fetchElasticBeanstalkEnvironments(session *session.Session) ([]elasticbeanstalk.EnvironmentDescription, error) {
+func (s ElasticBeanstalkEnvironmentSearcher) fetch(session *session.Session) ([]elasticbeanstalk.EnvironmentDescription, error) {
 	svc := elasticbeanstalk.New(session)
 
 	NextToken := ""
@@ -50,7 +52,7 @@ func fetchElasticBeanstalkEnvironments(session *session.Session) ([]elasticbeans
 	return environments, nil
 }
 
-func addEnvironmentToWorkflow(wf *aw.Workflow, query string, config *aws.Config, environment elasticbeanstalk.EnvironmentDescription) {
+func (s ElasticBeanstalkEnvironmentSearcher) addToWorkflow(wf *aw.Workflow, query string, config *aws.Config, environment elasticbeanstalk.EnvironmentDescription) {
 	title := *environment.EnvironmentName
 	subtitle := util.GetElasticBeanstalkHealthEmoji(*environment.Health) + " " + *environment.EnvironmentId + " " + *environment.ApplicationName
 	var page string

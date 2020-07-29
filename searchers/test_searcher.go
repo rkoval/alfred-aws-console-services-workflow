@@ -13,7 +13,7 @@ func TestSearcher(t *testing.T, searcher Searcher, fixtureFilename string) {
 
 	session, r := tests.NewAWSRecorderSession(fixtureFilename)
 	defer tests.PanicOnError(r.Stop)
-	err := searcher(wf, "", session, true, "")
+	err := searcher.Search(wf, "", session, true, "")
 	if err != nil {
 		t.Errorf("got error from search: %v", err)
 	}
