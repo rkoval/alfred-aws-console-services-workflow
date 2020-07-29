@@ -11,5 +11,6 @@ const (
 	EC2SecurityGroups
 	ElasticBeanstalkEnvironments
 	S3Buckets
+	WAFWebACLs
 	WAFIPSets
 )

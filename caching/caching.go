@@ -11,7 +11,7 @@ import (
 	"github.com/cheekybits/genny/generic"
 )
 
-//go:generate genny -in=$GOFILE -out=gen-$GOFILE gen "Entity=ec2.Instance,s3.Bucket,ec2.SecurityGroup,elasticbeanstalk.EnvironmentDescription,wafv2.IPSetSummary"
+//go:generate genny -in=$GOFILE -out=gen-$GOFILE gen "Entity=ec2.Instance,s3.Bucket,ec2.SecurityGroup,elasticbeanstalk.EnvironmentDescription,wafv2.IPSetSummary,wafv2.WebACLSummary"
 type Entity = generic.Type
 
 type EntityArrayFetcher = func(*session.Session) ([]Entity, error)

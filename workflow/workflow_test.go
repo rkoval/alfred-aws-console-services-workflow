@@ -159,6 +159,18 @@ var tcs []testCase = []testCase{
 		query:       "waf ipsets ipset-3",
 		fixtureName: "../searchers/waf_ip_sets_test", // reuse test fixture from this other test
 	},
+	{
+		query:       "waf webacls ",
+		fixtureName: "../searchers/waf_web_acls_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "waf webacls webacl-2",
+		fixtureName: "../searchers/waf_web_acls_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "waf ,webacl-2",
+		fixtureName: "../searchers/waf_web_acls_test", // reuse test fixture from this other test
+	},
 }
 
 func testWorkflow(t *testing.T, tc testCase, forceFetch, snapshot bool) []*aw.Item {

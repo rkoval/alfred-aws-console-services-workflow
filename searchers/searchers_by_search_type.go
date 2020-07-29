@@ -14,4 +14,5 @@ var SearchersBySearchType map[searchtypes.SearchType]Searcher = map[searchtypes.
 	searchtypes.S3Buckets:                    SearchS3Buckets,
 	searchtypes.ElasticBeanstalkEnvironments: SearchElasticBeanstalkEnvironments,
 	searchtypes.WAFIPSets:                    SearchWAFIPSets,
+	searchtypes.WAFWebACLs:                   SearchWAFWebACLs,
 }

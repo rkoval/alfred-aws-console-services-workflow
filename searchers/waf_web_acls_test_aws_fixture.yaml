@@ -1,0 +1,77 @@
+---
+version: 1
+interactions:
+- request:
+    body: '{"Limit":100,"Scope":"REGIONAL"}'
+    form: {}
+    headers:
+      Content-Length:
+      - "32"
+      Content-Type:
+      - application/x-amz-json-1.1
+      User-Agent:
+      - aws-sdk-go/1.33.7 (go1.14.5; darwin; amd64)
+      X-Amz-Target:
+      - AWSWAF_20190729.ListWebACLs
+    url: https://wafv2.us-west-2.amazonaws.com/
+    method: POST
+  response:
+    body: |-
+      {
+        "NextMarker": "web-acl-3",
+        "WebACLs": [
+          {
+            "ARN": "arn:aws:wafv2:us-west-2:0000000000:regional/webacl/web-acl-1/00000000-0000-0000-0000-000000000000",
+            "Description": "description for web-acl-1",
+            "Id": "00000000-0000-0000-0000-000000000000",
+            "LockToken": "00000000-0000-0000-0000-000000000000",
+            "Name": "web-acl-1"
+          },
+          {
+            "ARN": "arn:aws:wafv2:us-west-2:0000000000:regional/webacl/web-acl-2/00000000-0000-0000-0000-000000000000",
+            "Description": "",
+            "Id": "00000000-0000-0000-0000-000000000000",
+            "LockToken": "00000000-0000-0000-0000-000000000000",
+            "Name": "web-acl-2"
+          },
+          {
+            "ARN": "arn:aws:wafv2:us-west-2:0000000000:regional/webacl/web-acl-3/00000000-0000-0000-0000-000000000000",
+            "Description": "",
+            "Id": "00000000-0000-0000-0000-000000000000",
+            "LockToken": "00000000-0000-0000-0000-000000000000",
+            "Name": "web-acl-3"
+          }
+        ]
+      }
+    headers:
+      Content-Length:
+      - "798"
+      Content-Type:
+      - application/x-amz-json-1.1
+    status: 200 OK
+    code: 200
+    duration: ""
+- request:
+    body: '{"Limit":100,"NextMarker":"web-acl-3","Scope":"REGIONAL"}'
+    form: {}
+    headers:
+      Content-Length:
+      - "62"
+      Content-Type:
+      - application/x-amz-json-1.1
+      User-Agent:
+      - aws-sdk-go/1.33.7 (go1.14.5; darwin; amd64)
+      X-Amz-Target:
+      - AWSWAF_20190729.ListWebACLs
+    url: https://wafv2.us-west-2.amazonaws.com/
+    method: POST
+  response:
+    body: '{"WebACLs":[]}'
+    headers:
+      Content-Length:
+      - "14"
+      Content-Type:
+      - application/x-amz-json-1.1
+    status: 200 OK
+    code: 200
+    duration: ""
