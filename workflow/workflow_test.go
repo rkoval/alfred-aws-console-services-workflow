@@ -147,6 +147,18 @@ var tcs []testCase = []testCase{
 		query:       "ec2 ,i-aaaaaaaaaa",
 		fixtureName: "../searchers/ec2_instances_test", // reuse test fixture from this other test
 	},
+	{
+		query:       "waf ",
+		fixtureName: "../searchers/waf_ip_sets_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "waf ipsets ",
+		fixtureName: "../searchers/waf_ip_sets_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "waf ipsets ipset-3",
+		fixtureName: "../searchers/waf_ip_sets_test", // reuse test fixture from this other test
+	},
 }
 
 func testWorkflow(t *testing.T, tc testCase, forceFetch, snapshot bool) []*aw.Item {

@@ -1,0 +1,200 @@
+([]*aw.Item) (len=6) {
+  (*aw.Item)({
+    title: (string) (len=8) "waf home",
+    subtitle: (*string)((len=72) "WAF – Home – Protects Against DDoS Attacks and Malicious Web Traffic"),
+    match: (*string)((len=4) "home"),
+    uid: (*string)((len=4) "home"),
+    autocomplete: (*string)((len=9) "waf home "),
+    arg: (*string)((len=43) "https://console.aws.amazon.com/wafv2/homev2"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    icon: (*aw.Icon)({
+      Value: (string) (len=14) "images/waf.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=11) "waf webacls",
+    subtitle: (*string)((len=27) "🔎⭐️ WAF – Web ACLs"),
+    match: (*string)((len=16) "webacls Web ACLs"),
+    uid: (*string)((len=7) "webacls"),
+    autocomplete: (*string)((len=12) "waf webacls "),
+    arg: (*string)((len=52) "https://console.aws.amazon.com/wafv2/homev2/web-acls"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    icon: (*aw.Icon)({
+      Value: (string) (len=14) "images/waf.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=10) "waf ipsets",
+    subtitle: (*string)((len=20) "🔎 WAF – IP sets"),
+    match: (*string)((len=14) "ipsets IP sets"),
+    uid: (*string)((len=6) "ipsets"),
+    autocomplete: (*string)((len=11) "waf ipsets "),
+    arg: (*string)((len=51) "https://console.aws.amazon.com/wafv2/homev2/ip-sets"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    icon: (*aw.Icon)({
+      Value: (string) (len=14) "images/waf.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=20) "waf regexpatternsets",
+    subtitle: (*string)((len=26) "WAF – Regex pattern sets"),
+    match: (*string)((len=35) "regexpatternsets Regex pattern sets"),
+    uid: (*string)((len=16) "regexpatternsets"),
+    autocomplete: (*string)((len=21) "waf regexpatternsets "),
+    arg: (*string)((len=62) "https://console.aws.amazon.com/wafv2/homev2/regex-pattern-sets"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    icon: (*aw.Icon)({
+      Value: (string) (len=14) "images/waf.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=14) "waf rulegroups",
+    subtitle: (*string)((len=19) "WAF – Rule groups"),
+    match: (*string)((len=22) "rulegroups Rule groups"),
+    uid: (*string)((len=10) "rulegroups"),
+    autocomplete: (*string)((len=15) "waf rulegroups "),
+    arg: (*string)((len=55) "https://console.aws.amazon.com/wafv2/homev2/rule-groups"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    icon: (*aw.Icon)({
+      Value: (string) (len=14) "images/waf.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=15) "waf marketplace",
+    subtitle: (*string)((len=23) "WAF – AWS Marketplace"),
+    match: (*string)((len=27) "marketplace AWS Marketplace"),
+    uid: (*string)((len=11) "marketplace"),
+    autocomplete: (*string)((len=16) "waf marketplace "),
+    arg: (*string)((len=55) "https://console.aws.amazon.com/wafv2/homev2/marketplace"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    icon: (*aw.Icon)({
+      Value: (string) (len=14) "images/waf.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  })
+}
