@@ -28,7 +28,7 @@ func (s EC2InstanceSearcher) fetch(session *session.Session) ([]ec2.Instance, er
 	svc := ec2.New(session)
 
 	NextToken := ""
-	instances := []ec2.Instance{}
+	var instances []ec2.Instance
 	for {
 		params := &ec2.DescribeInstancesInput{
 			MaxResults: aws.Int64(1000), // get as many as we can

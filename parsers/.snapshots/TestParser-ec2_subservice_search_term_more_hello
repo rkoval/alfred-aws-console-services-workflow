@@ -1,0 +1,12 @@
+(*parsers.Query)({
+  ServiceId: (string) (len=3) "ec2",
+  SubServiceId: (string) (len=10) "subservice",
+  HasTrailingWhitespace: (bool) false,
+  HasOpenAll: (bool) false,
+  SearchTerms: ([]string) (len=4) {
+    (string) (len=6) "search",
+    (string) (len=4) "term",
+    (string) (len=4) "more",
+    (string) (len=5) "hello"
+  }
+})

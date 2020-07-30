@@ -1,0 +1,7 @@
+(*parsers.Query)({
+  ServiceId: (string) (len=4) "asdf",
+  SubServiceId: (string) (len=4) "asdf",
+  HasTrailingWhitespace: (bool) false,
+  HasOpenAll: (bool) false,
+  SearchTerms: ([]string) <nil>
+})
