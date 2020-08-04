@@ -49,46 +49,44 @@ func SearchServices(wf *aw.Workflow, awsServices []awsworkflow.AwsService) {
 
 func SearchSubServices(wf *aw.Workflow, awsService awsworkflow.AwsService) {
 	for _, subService := range awsService.SubServices {
-		title := awsService.Id + " " + subService.Id
-		subtitle := ""
-
-		searcher := searchers.SearchersByServiceId[awsService.Id+"_"+subService.Id]
-		if searcher != nil {
-			// this subservice has a searcher, so denote that in the result
-			if searcher == searchers.SearchersByServiceId[awsService.Id] {
-				// this sub-service is the default searcher
-				subtitle += "🔎⭐️ "
-			} else {
-				subtitle += "🔎 "
-			}
-		}
-
-		if awsService.ShortName != "" {
-			subtitle += awsService.ShortName + " – "
-		} else {
-			subtitle += awsService.GetName() + " – "
-		}
-
-		var match string
-		if subService.Id == "home" {
-			subtitle += "Home"
-			match = subService.Id
-		} else {
-			subtitle += subService.Name
-			match = subService.Id + " " + subService.Name
-		}
-
-		if subService.Description != "" {
-			subtitle += " – " + subService.Description
-		}
-
-		item := util.NewURLItem(wf, title).
-			Subtitle(subtitle).
-			Match(match).
-			Autocomplete(awsService.Id + " " + subService.Id + " ").
-			UID(subService.Id).
-			Arg(subService.Url)
-
-		item.Icon(awsworkflow.GetImageIcon(awsService.Id))
+		AddSubServiceToWorkflow(wf, awsService, subService)
 	}
+}
+
+func AddSubServiceToWorkflow(wf *aw.Workflow, awsService, subService awsworkflow.AwsService) {
+	title := awsService.Id + " " + subService.Id
+	subtitle := ""
+
+	searcher := searchers.SearchersByServiceId[awsService.Id+"_"+subService.Id]
+	if searcher != nil {
+		// this subservice has a searcher, so denote that in the result
+		if searcher == searchers.SearchersByServiceId[awsService.Id] {
+			// this sub-service is the default searcher
+			subtitle += "🔎⭐️ "
+		} else {
+			subtitle += "🔎 "
+		}
+	}
+
+	if awsService.ShortName != "" {
+		subtitle += awsService.ShortName + " – "
+	} else {
+		subtitle += awsService.GetName() + " – "
+	}
+
+	subtitle += subService.Name
+	match := subService.Id + " " + subService.Name
+
+	if subService.Description != "" {
+		subtitle += " – " + subService.Description
+	}
+
+	item := util.NewURLItem(wf, title).
+		Subtitle(subtitle).
+		Match(match).
+		Autocomplete(awsService.Id + " " + subService.Id + " ").
+		UID(subService.Id).
+		Arg(subService.Url)
+
+	item.Icon(awsworkflow.GetImageIcon(awsService.Id))
 }
