@@ -362,7 +362,7 @@ Please see https://github.com/rkoval/alfred-aws-console-services-workflow for mo
 		<string>true</string>
 	</dict>
 	<key>version</key>
-	<string>3.1.1</string>
+	<string>3.2.0</string>
 	<key>webaddress</key>
 	<string>https://ryankoval.com</string>
 </dict>
