@@ -5,7 +5,7 @@ import (
 
 	aw "github.com/deanishe/awgo"
 	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
-	"github.com/rkoval/alfred-aws-console-services-workflow/searchtypes"
+	"github.com/rkoval/alfred-aws-console-services-workflow/searchers"
 	"github.com/rkoval/alfred-aws-console-services-workflow/util"
 )
 
@@ -52,10 +52,10 @@ func SearchSubServices(wf *aw.Workflow, awsService awsworkflow.AwsService) {
 		title := awsService.Id + " " + subService.Id
 		subtitle := ""
 
-		searchType := searchtypes.SearchTypesByServiceId[awsService.Id+"_"+subService.Id]
-		if searchType != searchtypes.None {
+		searcher := searchers.SearchersByServiceId[awsService.Id+"_"+subService.Id]
+		if searcher != nil {
 			// this subservice has a searcher, so denote that in the result
-			if searchType == searchtypes.SearchTypesByServiceId[awsService.Id] {
+			if searcher == searchers.SearchersByServiceId[awsService.Id] {
 				// this sub-service is the default searcher
 				subtitle += "🔎⭐️ "
 			} else {

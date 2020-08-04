@@ -1,7 +1,7 @@
-([]*aw.Item) (len=1) {
+([]*aw.Item) (len=2) {
   (*aw.Item)({
-    title: (string) (len=26) "No matching services found",
-    subtitle: (*string)((len=48) "Try another query (example: `aws ec2 instances`)"),
+    title: (string) (len=29) "Search for an AWS Service ...",
+    subtitle: (*string)((len=33) "e.g., cloudformation, ec2, s3 ..."),
     match: (*string)(<nil>),
     uid: (*string)(<nil>),
     autocomplete: (*string)(<nil>),
@@ -14,8 +14,38 @@
     vars: (map[string]string) {
     },
     mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    icon: (*aw.Icon)(<nil>),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=16) "Update available",
+    subtitle: (*string)((len=42) "Select this result to navigate to download"),
+    match: (*string)(<nil>),
+    uid: (*string)(<nil>),
+    autocomplete: (*string)(<nil>),
+    arg: (*string)((len=71) "https://github.com/rkoval/alfred-aws-console-services-workflow/releases"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
     icon: (*aw.Icon)({
-      Value: (string) (len=83) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/AlertNoteIcon.icns",
+      Value: (string) (len=81) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/ToolbarInfo.icns",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false

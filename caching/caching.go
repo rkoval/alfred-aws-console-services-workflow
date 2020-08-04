@@ -16,7 +16,7 @@ type Entity = generic.Type
 
 type EntityArrayFetcher = func(*session.Session) ([]Entity, error)
 
-func LoadEntityArrayFromCache(wf *aw.Workflow, session *session.Session, cacheName string, fetcher EntityArrayFetcher, forceFetch bool, fullQuery string) []Entity {
+func LoadEntityArrayFromCache(wf *aw.Workflow, session *session.Session, cacheName string, fetcher EntityArrayFetcher, forceFetch bool, rawQuery string) []Entity {
 	// TODO optimization: not all services have sa region associated with them, so cache can be reused across regions (e.g., s3 buckets are global)
 	cacheName += "_" + *session.Config.Region
 
@@ -42,7 +42,7 @@ func LoadEntityArrayFromCache(wf *aw.Workflow, session *session.Session, cacheNa
 		return results
 	}
 
-	err := handleExpiredCache(wf, cacheName, lastFetchErrPath, fullQuery)
+	err := handleExpiredCache(wf, cacheName, lastFetchErrPath, rawQuery)
 	if err != nil {
 		return []Entity{}
 	}

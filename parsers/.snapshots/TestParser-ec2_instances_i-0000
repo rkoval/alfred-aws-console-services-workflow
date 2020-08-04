@@ -3,7 +3,6 @@
   SubServiceId: (string) (len=9) "instances",
   HasTrailingWhitespace: (bool) false,
   HasOpenAll: (bool) false,
-  SearchTerms: ([]string) (len=1) {
-    (string) (len=6) "i-0000"
-  }
+  HasDefaultSearchAlias: (bool) false,
+  RemainingQuery: (string) (len=6) "i-0000"
 })

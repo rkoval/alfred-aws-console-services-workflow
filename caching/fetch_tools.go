@@ -16,7 +16,7 @@ import (
 
 var jobName = "fetch"
 
-func handleExpiredCache(wf *aw.Workflow, cacheName string, lastFetchErrPath string, fullQuery string) error {
+func handleExpiredCache(wf *aw.Workflow, cacheName string, lastFetchErrPath string, rawQuery string) error {
 	maxCacheAgeSeconds := 180
 	m := os.Getenv("ALFRED_AWS_CONSOLE_SERVICES_WORKFLOW_MAX_CACHE_AGE_SECONDS")
 	if m != "" {
@@ -35,7 +35,7 @@ func handleExpiredCache(wf *aw.Workflow, cacheName string, lastFetchErrPath stri
 		log.Printf("cache with key `%s` was expired (older than %d seconds) in %s", cacheName, maxCacheAgeSeconds, wf.CacheDir())
 		wf.Rerun(0.5)
 		if !wf.IsRunning(jobName) {
-			cmd := exec.Command(os.Args[0], "-query="+fullQuery+"", "-fetch")
+			cmd := exec.Command(os.Args[0], "-query="+rawQuery+"", "-fetch")
 			log.Printf("running `%s` in background as job `%s` ...", cmd, jobName)
 			if err := wf.RunInBackground(jobName, cmd); err != nil {
 				panic(err)

@@ -33,18 +33,20 @@ func (s *Scanner) read() rune {
 func (s *Scanner) unread() { _ = s.reader.UnreadRune() }
 
 // Scan returns the next token and literal value.
-func (s *Scanner) Scan() (Token, string) {
+func (s *Scanner) Scan() (Token, string, bool) {
 	ch := s.read()
 
 	if ch == eof {
-		return EOF, ""
+		return EOF, "", false
 	}
 
 	s.unread()
 	if isWhitespace(ch) {
-		return s.scanWhitespace()
+		token, literal := s.scanWhitespace()
+		return token, literal, true
 	}
-	return s.scanWord()
+	token, literal, hasTrailingWhitespace := s.scanWord()
+	return token, literal, hasTrailingWhitespace
 }
 
 // scanWhitespace consumes the current rune and all contiguous whitespace.
@@ -54,7 +56,7 @@ func (s *Scanner) scanWhitespace() (tok Token, lit string) {
 
 	var i int
 	for {
-		if i >= 300 {
+		if i >= 1000 {
 			// prevent against accidental infinite loop
 			log.Println("infinite loop in scanner.scanWord detected")
 			break
@@ -79,13 +81,14 @@ func isWhitespace(ch rune) bool {
 }
 
 // scanWord consumes the current rune and all contiguous ident runes.
-func (s *Scanner) scanWord() (tok Token, lit string) {
+func (s *Scanner) scanWord() (Token, string, bool) {
 	var buf bytes.Buffer
 	buf.WriteRune(s.read())
 
 	var i int
+	var hasTrailingWhitespace bool
 	for {
-		if i >= 300 {
+		if i >= 1000 {
 			// prevent against accidental infinite loop
 			log.Println("infinite loop in scanner.scanWord detected")
 			break
@@ -95,6 +98,7 @@ func (s *Scanner) scanWord() (tok Token, lit string) {
 		if ch == eof {
 			break
 		} else if isWhitespace(ch) {
+			hasTrailingWhitespace = true
 			s.unread()
 			break
 		} else {
@@ -105,8 +109,8 @@ func (s *Scanner) scanWord() (tok Token, lit string) {
 	stringBuf := buf.String()
 	switch stringBuf {
 	case "OPEN_ALL":
-		return OPEN_ALL, stringBuf
+		return OPEN_ALL, stringBuf, hasTrailingWhitespace
 	}
 
-	return WORD, stringBuf
+	return WORD, stringBuf, hasTrailingWhitespace
 }

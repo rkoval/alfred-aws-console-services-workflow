@@ -3,5 +3,6 @@
   SubServiceId: (string) (len=9) "instances",
   HasTrailingWhitespace: (bool) true,
   HasOpenAll: (bool) false,
-  SearchTerms: ([]string) <nil>
+  HasDefaultSearchAlias: (bool) false,
+  RemainingQuery: (string) ""
 })

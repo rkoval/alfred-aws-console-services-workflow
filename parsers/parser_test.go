@@ -16,10 +16,25 @@ var tcs []testCase = []testCase{
 		rawQuery: "",
 	},
 	{
+		rawQuery: " ",
+	},
+	{
+		rawQuery: "   ",
+	},
+	{
 		rawQuery: "e",
 	},
 	{
 		rawQuery: "ec2 ",
+	},
+	{
+		rawQuery: " ec2",
+	},
+	{
+		rawQuery: " ec2 ",
+	},
+	{
+		rawQuery: "      ec2      ",
 	},
 	{
 		rawQuery: "ec2 instances ",
@@ -49,7 +64,22 @@ var tcs []testCase = []testCase{
 		rawQuery: "ec2 ,search term more hello",
 	},
 	{
+		rawQuery: "ec2 ,search term more hello ",
+	},
+	{
+		rawQuery: " ec2 ,search term more hello ",
+	},
+	{
 		rawQuery: "ec2 subservice search term more hello",
+	},
+	{
+		rawQuery: " ec2 subservice search term more hello",
+	},
+	{
+		rawQuery: "ec2 subservice search term more hello ",
+	},
+	{
+		rawQuery: " ec2 subservice search term more hello ",
 	},
 }
 

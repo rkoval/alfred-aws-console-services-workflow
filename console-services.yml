@@ -338,7 +338,6 @@
   name: Elastic Beanstalk
   description: Run and Manage Web Apps
   url: https://console.aws.amazon.com/elasticbeanstalk/home
-  home_id: environments
   sub_services:
     - id: environments
       name: Environments
@@ -680,7 +679,6 @@
   short_name: S3
   description: Scalable Storage in the Cloud
   url: https://console.aws.amazon.com/s3/home
-  home_id: buckets
   sub_services:
     - id: buckets
       name: Buckets

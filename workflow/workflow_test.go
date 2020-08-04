@@ -69,6 +69,10 @@ var tcs []testCase = []testCase{
 		query: "ec OPEN_ALL ",
 	},
 	{
+		query:                       "OPEN_ALL ec2",
+		deleteItemArgBeforeSnapshot: true,
+	},
+	{
 		query: "eec2",
 	},
 	{
@@ -94,6 +98,12 @@ var tcs []testCase = []testCase{
 	{
 		query:       "ec2 securitygroups sg-000000",
 		fixtureName: "../searchers/ec2_security_groups_test", // reuse test fixture from this other test
+	},
+	{
+		query: "ec2 tags ",
+	},
+	{
+		query: "ec2 tags asdf",
 	},
 	{
 		query: "bean",

@@ -1,7 +1,7 @@
 (*parsers.Query)({
   ServiceId: (string) (len=3) "ec2",
   SubServiceId: (string) "",
-  HasTrailingWhitespace: (bool) true,
+  HasTrailingWhitespace: (bool) false,
   HasOpenAll: (bool) false,
   HasDefaultSearchAlias: (bool) false,
   RemainingQuery: (string) ""

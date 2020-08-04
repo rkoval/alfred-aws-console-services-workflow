@@ -3,7 +3,6 @@
   SubServiceId: (string) "",
   HasTrailingWhitespace: (bool) false,
   HasOpenAll: (bool) false,
-  SearchTerms: ([]string) (len=1) {
-    (string) (len=6) "search"
-  }
+  HasDefaultSearchAlias: (bool) true,
+  RemainingQuery: (string) (len=6) "search"
 })
