@@ -114,6 +114,49 @@
   name: CloudWatch
   description: Monitor Resources and Applications
   url: https://console.aws.amazon.com/cloudwatch/home
+  sub_services:
+    - id: home
+      name: Home
+      url: 'https://console.aws.amazon.com/cloudwatch/home#cw:dashboard=Home'
+    - id: dashboards
+      name: Dashboards
+      url: 'https://console.aws.amazon.com/cloudwatch/home#dashboards:'
+    - id: alarms
+      name: Alarms
+      url: 'https://console.aws.amazon.com/cloudwatch/home#alarmsV2:'
+    - id: loggroups
+      name: Log groups
+      url: 'https://console.aws.amazon.com/cloudwatch/home#logsV2:log-groups'
+    - id: loginsights
+      name: Log insights
+      url: 'https://console.aws.amazon.com/cloudwatch/home#logsV2:logs-insights'
+    - id: metrics
+      name: Metrics
+      url: 'https://console.aws.amazon.com/cloudwatch/home#metricsV2:graph=~()'
+    - id: servicelensmap
+      name: ServiceLens – Service Map
+      url: 'https://console.aws.amazon.com/cloudwatch/home#servicelens:map'
+    - id: servicelenstracing
+      name: ServiceLens – Tracing
+      url: 'https://console.aws.amazon.com/cloudwatch/home#servicelens:traces'
+    - id: containerinsightsresources
+      name: Container Insights – Resources
+      url: 'https://console.aws.amazon.com/cloudwatch/home#container-insights:infrastructure'
+    - id: containerinsightsperformance
+      name: Container Insights – Performance
+      url: 'https://console.aws.amazon.com/cloudwatch/home#container-insights:performance'
+    - id: syntheticscanaries
+      name: Synthetics – Canaries
+      url: 'https://console.aws.amazon.com/cloudwatch/home#synthetics:canary/list'
+    - id: contributorinsights
+      name: Contributor Insights
+      url: 'https://console.aws.amazon.com/cloudwatch/home#contributorinsights:'
+    - id: settings
+      name: Settings
+      url: 'https://console.aws.amazon.com/cloudwatch/home#settings:'
+    - id: dashboards
+      name: Dashboards
+      url: 'https://console.aws.amazon.com/cloudwatch/home#dashboards:'
 
 - id: codebuild
   name: CodeBuild
