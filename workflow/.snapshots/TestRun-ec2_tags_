@@ -1,6 +1,39 @@
-([]*aw.Item) (len=2) {
+([]*aw.Item) (len=3) {
   (*aw.Item)({
-    title: (string) (len=44) "No searcher implemented for `ec2 tags` (yet)",
+    title: (string) (len=8) "ec2 tags",
+    subtitle: (*string)((len=12) "EC2 – Tags"),
+    match: (*string)((len=9) "tags Tags"),
+    uid: (*string)((len=4) "tags"),
+    autocomplete: (*string)((len=9) "ec2 tags "),
+    arg: (*string)((len=45) "https://console.aws.amazon.com/ec2/home#Tags:"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    icon: (*aw.Icon)({
+      Value: (string) (len=14) "images/ec2.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=32) "No searcher for `ec2 tags` (yet)",
     subtitle: (*string)((len=69) "Select this result to open the contributing guide to easily add them!"),
     match: (*string)(<nil>),
     uid: (*string)(<nil>),

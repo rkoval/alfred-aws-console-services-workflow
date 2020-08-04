@@ -50,7 +50,7 @@ func Run(wf *aw.Workflow, rawQuery string, session *session.Session, forceFetch,
 		SearchServices(wf, awsServices)
 	} else {
 		if !query.HasDefaultSearchAlias && (awsService.SubServices == nil || len(awsService.SubServices) <= 0) {
-			handleUnimplemented(wf, awsService, fmt.Sprintf("%s doesn't have sub-services configured (yet)", awsService.Id))
+			handleUnimplemented(wf, awsService, nil, fmt.Sprintf("%s doesn't have sub-services configured (yet)", awsService.Id))
 			return
 		}
 
@@ -76,7 +76,7 @@ func Run(wf *aw.Workflow, rawQuery string, session *session.Session, forceFetch,
 					wf.FatalError(err)
 				}
 			} else {
-				handleUnimplemented(wf, nil, fmt.Sprintf("No searcher implemented for `%s %s` (yet)", query.ServiceId, query.SubServiceId))
+				handleUnimplemented(wf, awsService, subService, fmt.Sprintf("No searcher for `%s %s` (yet)", query.ServiceId, query.SubServiceId))
 				return
 			}
 		} else {
@@ -116,9 +116,11 @@ func handleEmptyQuery(wf *aw.Workflow) {
 	handleUpdateAvailable(wf)
 }
 
-func handleUnimplemented(wf *aw.Workflow, awsService *awsworkflow.AwsService, header string) {
-	if awsService != nil {
+func handleUnimplemented(wf *aw.Workflow, awsService, subService *awsworkflow.AwsService, header string) {
+	if subService == nil {
 		AddServiceToWorkflow(wf, *awsService)
+	} else {
+		AddSubServiceToWorkflow(wf, *awsService, *subService)
 	}
 	util.NewURLItem(wf, header).
 		Subtitle("Select this result to open the contributing guide to easily add them!").
