@@ -761,7 +761,7 @@
   name: Simple Queue Service
   short_name: SQS
   description: SQS Managed Message Queues
-  url: https://console.aws.amazon.com/sqs/home
+  url: https://console.aws.amazon.com/sqs/v2/home
 
 - id: stepfunctions
   name: Step Functions
