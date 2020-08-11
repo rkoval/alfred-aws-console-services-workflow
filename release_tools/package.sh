@@ -30,7 +30,7 @@ package_release() {
 
 open_github() {
   echo "opening github releases page ..."
-  open "https://github.com/rkoval/alfred-aws-console-services-workflow/releases/new?tag=${VERSION}&title=${VERSION}&body=Fill out the release"
+  open "https://github.com/rkoval/alfred-aws-console-services-workflow/releases/new?tag=${VERSION}&title=${VERSION}&body=**_If%20you%20missed%20it%20and%20you're%20upgrading%20from%202.x%2C%20you'll%20need%20to%20see%20%5Bthe%203.0.0%20release%5D(https%3A%2F%2Fgithub.com%2Frkoval%2Falfred-aws-console-services-workflow%2Freleases%2Ftag%2Fv3.0.0)%20for%20upgrade%20information_**%0A%0A%23%23%20Changes%0A%0AUser-facing%0A-%20TODO"
 }
 
 install_package
