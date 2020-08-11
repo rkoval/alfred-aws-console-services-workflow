@@ -1,0 +1,35 @@
+([]*aw.Item) (len=1) {
+  (*aw.Item)({
+    title: (string) (len=20) "cloudwatch loggroups",
+    subtitle: (*string)((len=36) "🔎⭐️ CloudWatch – Log groups"),
+    match: (*string)((len=20) "loggroups Log groups"),
+    uid: (*string)((len=9) "loggroups"),
+    autocomplete: (*string)((len=21) "cloudwatch loggroups "),
+    arg: (*string)((len=64) "https://console.aws.amazon.com/cloudwatch/home#logsV2:log-groups"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    icon: (*aw.Icon)({
+      Value: (string) (len=21) "images/cloudwatch.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  })
+}

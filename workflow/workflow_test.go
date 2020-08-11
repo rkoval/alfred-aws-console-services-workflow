@@ -44,6 +44,26 @@ var tcs []testCase = []testCase{
 		query: "alexa home ",
 	},
 	{
+		query:       "cloudwatch loggroups",
+		fixtureName: "../searchers/cloudwatch_log_groups_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "cloudwatch loggroups ",
+		fixtureName: "../searchers/cloudwatch_log_groups_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "cloudwatch loggroups log-group-aaa",
+		fixtureName: "../searchers/cloudwatch_log_groups_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "cloudwatch ,",
+		fixtureName: "../searchers/cloudwatch_log_groups_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "cloudwatch ,log-group-bbb",
+		fixtureName: "../searchers/cloudwatch_log_groups_test", // reuse test fixture from this other test
+	},
+	{
 		query:       "s3 home ",
 		fixtureName: "../searchers/s3_buckets_test", // reuse test fixture from this other test
 	},

@@ -1,0 +1,103 @@
+---
+version: 1
+interactions:
+- request:
+    body: '{"limit":50}'
+    form: {}
+    headers:
+      Content-Length:
+      - "12"
+      Content-Type:
+      - application/x-amz-json-1.1
+      User-Agent:
+      - aws-sdk-go/1.33.7 (go1.14.5; darwin; amd64)
+      X-Amz-Target:
+      - Logs_20140328.DescribeLogGroups
+    url: https://logs.us-west-2.amazonaws.com/
+    method: POST
+  response:
+    body: |-
+      {
+        "logGroups": [
+          {
+            "arn": "arn:aws:logs:us-west-2:0000000000:log-group:/aws/cloudfront/LambdaEdge/AAAAAAAAAAAAAA:*",
+            "creationTime": 1111111111111,
+            "logGroupName": "/aws/cloudfront/LambdaEdge/AAAAAAAAAAAAAA",
+            "metricFilterCount": 0,
+            "retentionInDays": 1,
+            "storedBytes": 0
+          },
+          {
+            "arn": "arn:aws:logs:us-west-2:0000000000:log-group:/aws/elasticbeanstalk/log-group-aaa/var/log/httpd/access.log:*",
+            "creationTime": 1111111111111,
+            "logGroupName": "/aws/elasticbeanstalk/log-group-aaa/var/log/httpd/access.log",
+            "metricFilterCount": 0,
+            "retentionInDays": 7,
+            "storedBytes": 0
+          },
+          {
+            "arn": "arn:aws:logs:us-west-2:0000000000:log-group:/aws/elasticbeanstalk/log-group-bbb/var/log/apache/error.log:*",
+            "creationTime": 1111111111111,
+            "logGroupName": "/aws/elasticbeanstalk/log-group-bbb/var/log/apache/error.log",
+            "metricFilterCount": 0,
+            "storedBytes": 97530
+          }
+        ],
+        "nextToken": "/aws/elasticbeanstalk/log-group-bbb/var/log/apache/error.log"
+      }
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.1
+    status: 200 OK
+    code: 200
+    duration: ""
+- request:
+    body: '{"limit":50,"nextToken":"/aws/elasticbeanstalk/log-group-bbb/var/log/apache/error.log"}'
+    form: {}
+    headers:
+      Content-Length:
+      - "95"
+      Content-Type:
+      - application/x-amz-json-1.1
+      User-Agent:
+      - aws-sdk-go/1.33.7 (go1.14.5; darwin; amd64)
+      X-Amz-Target:
+      - Logs_20140328.DescribeLogGroups
+    url: https://logs.us-west-2.amazonaws.com/
+    method: POST
+  response:
+    body: |-
+      {
+        "logGroups": [
+          {
+            "arn": "arn:aws:logs:us-west-2:0000000000:log-group:/aws/elasticbeanstalk/log-group-bbb/var/log/application/application.log:*",
+            "creationTime": 1111111111111,
+            "logGroupName": "/aws/elasticbeanstalk/log-group-bbb/var/log/application/application.log",
+            "metricFilterCount": 0,
+            "retentionInDays": 14,
+            "storedBytes": 62664
+          },
+          {
+            "arn": "arn:aws:logs:us-west-2:0000000000:log-group:/aws/elasticbeanstalk/log-group-aaa/var/log/eb-activity.log:*",
+            "creationTime": 1111111111111,
+            "logGroupName": "/aws/elasticbeanstalk/log-group-aaa/var/log/eb-activity.log",
+            "metricFilterCount": 0,
+            "retentionInDays": 5,
+            "storedBytes": 754289
+          },
+          {
+            "arn": "arn:aws:logs:us-west-2:0000000000:log-group:/aws/elasticbeanstalk/log-group-aaa/var/log/application/application.log:*",
+            "creationTime": 1111111111111,
+            "logGroupName": "/aws/elasticbeanstalk/log-group-aaa/var/log/application/application.log",
+            "metricFilterCount": 0,
+            "retentionInDays": 5,
+            "storedBytes": 483982
+          }
+        ]
+      }
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.1
+    status: 200 OK
+    code: 200
+    duration: ""
