@@ -89,6 +89,43 @@
   name: CloudFront
   description: Global Content Delivery Network
   url: https://console.aws.amazon.com/cloudfront/home
+  sub_services:
+    - id: distributions
+      name: Distributions
+      url: 'https://console.aws.amazon.com/cloudfront/home?#'
+    - id: policies
+      name: Policies
+      url: 'https://console.aws.amazon.com/cloudfront/v2/home#/policies'
+    - id: cachestatistics
+      name: Cache statistics
+      url: 'https://console.aws.amazon.com/cloudfront/home?#cache_stat_reports:'
+    - id: monitoring
+      name: Monitoring
+      url: 'https://console.aws.amazon.com/cloudfront/v2/home#/monitoring'
+    - id: alarms
+      name: Alarms
+      url: 'https://console.aws.amazon.com/cloudfront/home?#alarms:'
+    - id: popularobjects
+      name: Popular objects
+      url: 'https://console.aws.amazon.com/cloudfront/home?#popular_urls:'
+    - id: referrers
+      name: Top referrers
+      url: 'https://console.aws.amazon.com/cloudfront/home?#referers_report:'
+    - id: usage
+      name: Usage
+      url: 'https://console.aws.amazon.com/cloudfront/home?#usage_reports:'
+    - id: viewers
+      name: Viewers
+      url: 'https://console.aws.amazon.com/cloudfront/home?#viewers_reports:'
+    - id: oai
+      name: Origin access identity
+      url: 'https://console.aws.amazon.com/cloudfront/home?#oai:'
+    - id: publickey
+      name: Public key
+      url: 'https://console.aws.amazon.com/cloudfront/home?#publickey:'
+    - id: fle
+      name: Field-level encryption
+      url: 'https://console.aws.amazon.com/cloudfront/home?#fle:'
 
 - id: cloudhsm
   name: CloudHSM

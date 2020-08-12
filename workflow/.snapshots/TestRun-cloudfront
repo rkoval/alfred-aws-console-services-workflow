@@ -1,0 +1,68 @@
+([]*aw.Item) (len=2) {
+  (*aw.Item)({
+    title: (string) (len=10) "cloudfront",
+    subtitle: (*string)((len=51) "🗂 CloudFront – Global Content Delivery Network"),
+    match: (*string)((len=21) "cloudfront CloudFront"),
+    uid: (*string)((len=10) "cloudfront"),
+    autocomplete: (*string)((len=11) "cloudfront "),
+    arg: (*string)((len=46) "https://console.aws.amazon.com/cloudfront/home"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    icon: (*aw.Icon)({
+      Value: (string) (len=21) "images/cloudfront.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=14) "cloudformation",
+    subtitle: (*string)((len=61) "CloudFormation – Create and Manage Resources with Templates"),
+    match: (*string)((len=29) "cloudformation CloudFormation"),
+    uid: (*string)((len=14) "cloudformation"),
+    autocomplete: (*string)((len=15) "cloudformation "),
+    arg: (*string)((len=50) "https://console.aws.amazon.com/cloudformation/home"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    icon: (*aw.Icon)({
+      Value: (string) (len=25) "images/cloudformation.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  })
+}
