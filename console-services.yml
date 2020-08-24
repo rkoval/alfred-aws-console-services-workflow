@@ -570,6 +570,19 @@
   name: Lambda
   description: Run Code without Thinking about Servers
   url: https://console.aws.amazon.com/lambda/home
+  sub_services:
+    - id: dashboard
+      name: Dashboard
+      url: "https://console.aws.amazon.com/lambda/home#/discover"
+    - id: applications
+      name: Applications
+      url: "https://console.aws.amazon.com/lambda/home#/applications"
+    - id: functions
+      name: Functions
+      url: "https://console.aws.amazon.com/lambda/home#/functions"
+    - id: layers
+      name: Layers
+      url: "https://console.aws.amazon.com/lambda/home#/layers"
 
 - id: lex
   name: Lex

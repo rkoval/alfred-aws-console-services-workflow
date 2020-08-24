@@ -80,6 +80,15 @@ var tcs []testCase = []testCase{
 		fixtureName: "../searchers/s3_buckets_test", // reuse test fixture from this other test
 	},
 	{
+		query: "lambda",
+	},
+	{
+		query: "lambda ",
+	},
+	{
+		query: "lambda func",
+	},
+	{
 		query: "cloudfront",
 	},
 	{
