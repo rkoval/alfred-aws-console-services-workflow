@@ -2,7 +2,6 @@ package searchers
 
 import (
 	"fmt"
-	"log"
 	"net/url"
 	"strings"
 
@@ -59,7 +58,6 @@ func (s CloudWatchLogGroupSearcher) fetch(session *session.Session) ([]cloudwatc
 
 func (s CloudWatchLogGroupSearcher) addToWorkflow(wf *aw.Workflow, query string, config *aws.Config, entity cloudwatchlogs.LogGroup) {
 	title := *entity.LogGroupName
-	log.Println("entity", entity)
 	subtitleArray := []string{}
 	if entity.StoredBytes != nil {
 		subtitleArray = append(subtitleArray, fmt.Sprintf("%s stored", util.ByteFormat(*entity.StoredBytes, 2)))

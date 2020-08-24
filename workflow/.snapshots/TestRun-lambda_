@@ -67,7 +67,7 @@
   }),
   (*aw.Item)({
     title: (string) (len=16) "lambda functions",
-    subtitle: (*string)((len=20) "Lambda – Functions"),
+    subtitle: (*string)((len=31) "🔎⭐️ Lambda – Functions"),
     match: (*string)((len=19) "functions Functions"),
     uid: (*string)((len=9) "functions"),
     autocomplete: (*string)((len=17) "lambda functions "),

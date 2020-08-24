@@ -89,6 +89,14 @@ var tcs []testCase = []testCase{
 		query: "lambda func",
 	},
 	{
+		query:       "lambda ,",
+		fixtureName: "../searchers/lambda_functions_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "lambda ,Function2",
+		fixtureName: "../searchers/lambda_functions_test", // reuse test fixture from this other test
+	},
+	{
 		query: "cloudfront",
 	},
 	{

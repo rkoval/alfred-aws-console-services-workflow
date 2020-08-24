@@ -1,0 +1,92 @@
+---
+version: 1
+interactions:
+- request:
+    body: ""
+    form: {}
+    headers:
+      Content-Type:
+      - application/json
+    url: https://lambda.us-west-2.amazonaws.com/2015-03-31/functions/?MaxItems=200
+    method: GET
+  response:
+    body: |-
+      {
+        "Functions": [
+          {
+            "Description": "",
+            "TracingConfig": {
+              "Mode": "PassThrough"
+            },
+            "VpcConfig": null,
+            "SigningJobArn": null,
+            "RevisionId": "00000000-0000-0000-0000-000000000000",
+            "LastModified": "2020-01-01T00:00:00.000Z+0000",
+            "FileSystemConfigs": null,
+            "FunctionName": "LambdaFunction1",
+            "Runtime": "python3.3",
+            "Version": "$LATEST",
+            "LastUpdateStatus": null,
+            "Layers": null,
+            "FunctionArn": "arn:aws:lambda:us-west-2:0000000000:function:LambdaFunction1",
+            "KMSKeyArn": null,
+            "MemorySize": 128,
+            "LastUpdateStatusReason": null,
+            "DeadLetterConfig": null,
+            "Timeout": 3,
+            "Handler": "index.handler",
+            "CodeSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=",
+            "Role": "arn:aws:iam::0000000000:role/IamRole",
+            "SigningProfileVersionArn": null,
+            "MasterArn": null,
+            "CodeSize": 10,
+            "State": null,
+            "StateReason": null,
+            "Environment": null,
+            "StateReasonCode": null,
+            "LastUpdateStatusReasonCode": null
+          },
+          {
+            "Description": "This is the lambda description",
+            "TracingConfig": {
+              "Mode": "PassThrough"
+            },
+            "VpcConfig": null,
+            "SigningJobArn": null,
+            "RevisionId": "00000000-0000-0000-0000-000000000000",
+            "LastModified": "2020-01-01T00:00:00.000Z+0000",
+            "FileSystemConfigs": null,
+            "FunctionName": "LambdaFunction2",
+            "Runtime": "nodejs12.x",
+            "Version": "$LATEST",
+            "LastUpdateStatus": null,
+            "Layers": null,
+            "FunctionArn": "arn:aws:lambda:us-west-2:0000000000:function:LambdaFunction2",
+            "KMSKeyArn": null,
+            "MemorySize": 128,
+            "LastUpdateStatusReason": null,
+            "DeadLetterConfig": null,
+            "Timeout": 3,
+            "Handler": "index.handler",
+            "CodeSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=",
+            "Role": "arn:aws:iam::0000000000:role/service-role/LambdaFunction2-role-aaaaaaaaaa",
+            "SigningProfileVersionArn": null,
+            "MasterArn": null,
+            "CodeSize": 200000,
+            "State": null,
+            "StateReason": null,
+            "Environment": null,
+            "StateReasonCode": null,
+            "LastUpdateStatusReasonCode": null
+          }
+        ],
+        "NextMarker": null
+      }
+    headers:
+      Content-Length:
+      - "1811"
+      Content-Type:
+      - application/json
+    status: 200 OK
+    code: 200
+    duration: ""
