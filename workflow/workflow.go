@@ -145,7 +145,7 @@ func handleOpenAll(wf *aw.Workflow, awsService *awsworkflow.AwsService, openAll 
 		}
 	} else if awsService != nil {
 		cmd := fmt.Sprintf(`%s -query="%s" -open_all`, os.Args[0], rawQuery)
-		wf.NewItem(fmt.Sprintf("Open the %d %s sub-services in browser", len(awsService.SubServices)+1, awsService.Id)).
+		wf.NewItem(fmt.Sprintf("Open the %d %s sub-services in browser", len(awsService.SubServices), awsService.Id)).
 			Subtitle("Fair warning: this may briefly overload your system").
 			Icon(aw.IconWarning).
 			Arg(cmd).
