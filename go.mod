@@ -3,7 +3,7 @@ module github.com/rkoval/alfred-aws-console-services-workflow
 go 1.14
 
 require (
-	github.com/aws/aws-sdk-go v1.33.7
+	github.com/aws/aws-sdk-go v1.34.10
 	github.com/bradleyjkemp/cupaloy v2.3.0+incompatible
 	github.com/cheekybits/genny v1.0.0
 	github.com/deanishe/awgo v0.25.0

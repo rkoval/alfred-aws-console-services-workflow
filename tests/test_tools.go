@@ -26,6 +26,7 @@ func NewAWSRecorderSession(fixtureName string) (*session.Session, *recorder.Reco
 		delete(i.Request.Headers, "Authorization")
 		delete(i.Request.Headers, "X-Amz-Date")
 		delete(i.Request.Headers, "X-Amz-Content-Sha256")
+		delete(i.Request.Headers, "User-Agent")
 		delete(i.Response.Headers, "X-Amzn-Requestid")
 		delete(i.Response.Headers, "Date")
 		delete(i.Response.Headers, "X-Amz-Id-2")

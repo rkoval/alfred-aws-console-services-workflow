@@ -9,8 +9,6 @@ interactions:
       - "32"
       Content-Type:
       - application/x-amz-json-1.1
-      User-Agent:
-      - aws-sdk-go/1.33.7 (go1.14.5; darwin; amd64)
       X-Amz-Target:
       - AWSWAF_20190729.ListWebACLs
     url: https://wafv2.us-west-2.amazonaws.com/

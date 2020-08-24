@@ -9,8 +9,6 @@ interactions:
       - "12"
       Content-Type:
       - application/x-amz-json-1.1
-      User-Agent:
-      - aws-sdk-go/1.33.7 (go1.14.5; darwin; amd64)
       X-Amz-Target:
       - Logs_20140328.DescribeLogGroups
     url: https://logs.us-west-2.amazonaws.com/
@@ -59,8 +57,6 @@ interactions:
       - "95"
       Content-Type:
       - application/x-amz-json-1.1
-      User-Agent:
-      - aws-sdk-go/1.33.7 (go1.14.5; darwin; amd64)
       X-Amz-Target:
       - Logs_20140328.DescribeLogGroups
     url: https://logs.us-west-2.amazonaws.com/

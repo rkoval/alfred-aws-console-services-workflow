@@ -17,8 +17,6 @@ interactions:
       - "92"
       Content-Type:
       - application/x-www-form-urlencoded; charset=utf-8
-      User-Agent:
-      - aws-sdk-go/1.33.7 (go1.14.5; darwin; amd64)
     url: https://ec2.us-west-2.amazonaws.com/
     method: POST
   response:
