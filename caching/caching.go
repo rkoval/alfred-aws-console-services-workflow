@@ -1,10 +1,12 @@
 package caching
 
 import (
+	"errors"
 	"io/ioutil"
 	"log"
 	"os"
 
+	"github.com/aws/aws-sdk-go/aws/awserr"
 	"github.com/aws/aws-sdk-go/aws/session"
 	aw "github.com/deanishe/awgo"
 
@@ -29,6 +31,15 @@ func LoadEntityArrayFromCache(wf *aw.Workflow, session *session.Session, cacheNa
 		if err != nil {
 			log.Printf("fetch error occurred. writing to %s ...", lastFetchErrPath)
 			_ = ioutil.WriteFile(lastFetchErrPath, []byte(err.Error()), 0600)
+			if aerr, ok := err.(awserr.Error); ok {
+				message := aerr.Message()
+				if message != "" {
+					panic(message)
+				}
+				if aerr.Code() == "AccessDeniedException" {
+					panic(errors.New("You do not have access to fetch these. Check your IAM permissions"))
+				}
+			}
 			panic(err)
 		} else {
 			os.Remove(lastFetchErrPath)
