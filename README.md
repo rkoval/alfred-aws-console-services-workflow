@@ -27,7 +27,7 @@ At any time:
 - press <kbd>Enter</kbd> to open the current result in your default browser
 - press <kbd>⌘</kbd>+<kbd>Enter</kbd> to copy the result's URL to clipboard.
 
-*Note that you must be logged in for the page to open directly to your service*. See [this config file](console-services.yml) for the full list of supported services and their sub-services and [this file](https://github.com/rkoval/alfred-aws-console-services-workflow/blob/master/searchtypes/search_types.go) for the list of supported searchers.
+*Note that you must be logged in for the page to open directly to your service*. See [this config file](console-services.yml) for the full list of supported services and their sub-services and [this file](searchers/searchers_by_service_id.go) for the list of supported searchers.
 
 ## Advanced Features
 
