@@ -399,7 +399,7 @@
 
 - id: efs
   name: Elastic File Storage
-  short_naem: EFS
+  short_name: EFS
   description: Managed File Storage for EC2
   url: https://console.aws.amazon.com/efs/home
 
