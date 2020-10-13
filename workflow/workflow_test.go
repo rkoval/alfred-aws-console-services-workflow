@@ -44,6 +44,18 @@ var tcs []testCase = []testCase{
 		query: "alexa home ",
 	},
 	{
+		query: "elasticache",
+	},
+	{
+		query: "elasticache ",
+	},
+	{
+		query: "elasticache redis",
+	},
+	{
+		query: "elasticache redis ",
+	},
+	{
 		query:       "cloudwatch loggroups",
 		fixtureName: "../searchers/cloudwatch_log_groups_test", // reuse test fixture from this other test
 	},

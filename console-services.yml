@@ -413,6 +413,46 @@
   name: ElastiCache
   description: In-Memory Cache
   url: https://console.aws.amazon.com/elasticache/home
+  sub_services:
+    - id: home
+      name: Home
+      url: "https://us-west-2.console.aws.amazon.com/elasticache/home"
+    - id: memcached
+      name: Memcached
+      url: "https://us-west-2.console.aws.amazon.com/elasticache/home#memcached:"
+    - id: redis
+      name: Redis
+      url: "https://us-west-2.console.aws.amazon.com/elasticache/home#redis:"
+    - id: globalcluster
+      name: Global Datastore
+      url: "https://us-west-2.console.aws.amazon.com/elasticache/home#global-cluster:"
+    - id: serviceupdates
+      name: Service Updates
+      url: "https://us-west-2.console.aws.amazon.com/elasticache/home#service-updates:"
+    - id: reservedcachenodes
+      name: Reserved Cache Nodes
+      url: "https://us-west-2.console.aws.amazon.com/elasticache/home#reserved-cache-nodes:"
+    - id: snapshots
+      name: Backups
+      url: "https://us-west-2.console.aws.amazon.com/elasticache/home#snapshots:"
+    - id: parametergroups
+      name: Parameter Groups
+      url: "https://us-west-2.console.aws.amazon.com/elasticache/home#param-groups:"
+    - id: users
+      name: User Management
+      url: "https://us-west-2.console.aws.amazon.com/elasticache/home#users:"
+    - id: usergroups
+      name: User Group Management
+      url: "https://us-west-2.console.aws.amazon.com/elasticache/home#user-groups:"
+    - id: subnetgroups
+      name: Subnet Groups
+      url: "https://us-west-2.console.aws.amazon.com/elasticache/home#cache-subnet-groups:"
+    - id: events
+      name: Events
+      url: "https://us-west-2.console.aws.amazon.com/elasticache/home#events:"
+    - id: clientdownload
+      name: ElastiCache Cluster Client
+      url: "https://us-west-2.console.aws.amazon.com/elasticache/home#client-download:"
 
 - id: elasticbeanstalk
   name: Elastic Beanstalk

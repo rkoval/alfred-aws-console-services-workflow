@@ -1,0 +1,68 @@
+([]*aw.Item) (len=2) {
+  (*aw.Item)({
+    title: (string) (len=17) "elasticache redis",
+    subtitle: (*string)((len=21) "ElastiCache – Redis"),
+    match: (*string)((len=11) "redis Redis"),
+    uid: (*string)((len=5) "redis"),
+    autocomplete: (*string)((len=18) "elasticache redis "),
+    arg: (*string)((len=64) "https://us-west-2.console.aws.amazon.com/elasticache/home#redis:"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    icon: (*aw.Icon)({
+      Value: (string) (len=22) "images/elasticache.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=26) "elasticache serviceupdates",
+    subtitle: (*string)((len=31) "ElastiCache – Service Updates"),
+    match: (*string)((len=30) "serviceupdates Service Updates"),
+    uid: (*string)((len=14) "serviceupdates"),
+    autocomplete: (*string)((len=27) "elasticache serviceupdates "),
+    arg: (*string)((len=74) "https://us-west-2.console.aws.amazon.com/elasticache/home#service-updates:"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    icon: (*aw.Icon)({
+      Value: (string) (len=22) "images/elasticache.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  })
+}
