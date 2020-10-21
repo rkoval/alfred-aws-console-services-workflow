@@ -1,7 +1,7 @@
 ([]*aw.Item) (len=2) {
   (*aw.Item)({
     title: (string) (len=21) "cloudformation stacks",
-    subtitle: (*string)((len=25) "CloudFormation – Stacks"),
+    subtitle: (*string)((len=36) "🔎⭐️ CloudFormation – Stacks"),
     match: (*string)((len=13) "stacks Stacks"),
     uid: (*string)((len=6) "stacks"),
     autocomplete: (*string)((len=22) "cloudformation stacks "),

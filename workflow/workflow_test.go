@@ -110,6 +110,18 @@ var tcs []testCase = []testCase{
 		query: "cloudformation stacks",
 	},
 	{
+		query:       "cloudformation ,",
+		fixtureName: "../searchers/cloudformation_stacks_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "cloudformation stacks awseb-e-aaaaaaaaaa-",
+		fixtureName: "../searchers/cloudformation_stacks_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "cloudformation ,Custom",
+		fixtureName: "../searchers/cloudformation_stacks_test", // reuse test fixture from this other test
+	},
+	{
 		query:       "lambda ,",
 		fixtureName: "../searchers/lambda_functions_test", // reuse test fixture from this other test
 	},

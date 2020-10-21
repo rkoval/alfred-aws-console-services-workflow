@@ -1,11 +1,21 @@
 package util
 
 import (
+	"github.com/aws/aws-sdk-go/service/cloudformation"
 	"github.com/aws/aws-sdk-go/service/ec2"
 	"github.com/aws/aws-sdk-go/service/elasticbeanstalk"
 )
 
 func GetEC2TagValue(tags []*ec2.Tag, key string) string {
+	for _, tag := range tags {
+		if *tag.Key == key {
+			return *tag.Value
+		}
+	}
+	return ""
+}
+
+func GetCloudFormationTagValue(tags []*cloudformation.Tag, key string) string {
 	for _, tag := range tags {
 		if *tag.Key == key {
 			return *tag.Value

@@ -1,0 +1,116 @@
+---
+version: 1
+interactions:
+- request:
+    body: Action=DescribeStacks&Version=2010-05-15
+    form:
+      Action:
+      - DescribeStacks
+      Version:
+      - "2010-05-15"
+    headers:
+      Content-Length:
+      - "40"
+      Content-Type:
+      - application/x-www-form-urlencoded; charset=utf-8
+    url: https://cloudformation.us-west-2.amazonaws.com/
+    method: POST
+  response:
+    body: |
+      <DescribeStacksResponse xmlns="http://cloudformation.amazonaws.com/doc/2010-05-15/">
+        <DescribeStacksResult>
+          <Stacks>
+            <member>
+              <Capabilities>
+                <member>CAPABILITY_IAM</member>
+              </Capabilities>
+              <CreationTime>2020-01-01T00:00:00.000Z</CreationTime>
+              <NotificationARNs/>
+              <StackId>arn:aws:cloudformation:us-west-2:0000000000:stack/awseb-e-aaaaaaaaaa-stack/00000000-0000-0000-0000-000000000000</StackId>
+              <StackName>awseb-e-aaaaaaaaaa-stack</StackName>
+              <Description>AWS Elastic Beanstalk environment (Name: 'elasticbeanstalk-env-1'  Id: 'e-aaaaaaaaaa')</Description>
+              <StackStatus>CREATE_COMPLETE</StackStatus>
+              <DisableRollback>true</DisableRollback>
+              <Tags>
+                <member>
+                  <Value>elasticbeanstalk-env-1</Value>
+                  <Key>elasticbeanstalk:environment-name</Key>
+                </member>
+                <member>
+                  <Value>e-aaaaaaaaaa</Value>
+                  <Key>elasticbeanstalk:environment-id</Key>
+                </member>
+                <member>
+                  <Value>elasticbeanstalk-env-1</Value>
+                  <Key>Name</Key>
+                </member>
+              </Tags>
+              <RollbackConfiguration/>
+              <DriftInformation>
+                <StackDriftStatus>NOT_CHECKED</StackDriftStatus>
+              </DriftInformation>
+              <Parameters></Parameters>
+            </member>
+            <member>
+              <Capabilities>
+                <member>CAPABILITY_IAM</member>
+              </Capabilities>
+              <CreationTime>2020-01-01T00:00:00.000Z</CreationTime>
+              <NotificationARNs/>
+              <StackId>arn:aws:cloudformation:us-west-2:0000000000:stack/awseb-e-bbbbbbbbbb-stack/00000000-0000-0000-0000-000000000000</StackId>
+              <StackName>awseb-e-bbbbbbbbbb-stack</StackName>
+              <Description>AWS Elastic Beanstalk environment (Name: 'elasticbeanstalk-env-2'  Id: 'e-bbbbbbbbbb')</Description>
+              <StackStatus>CREATE_COMPLETE</StackStatus>
+              <DisableRollback>true</DisableRollback>
+              <Tags>
+                <member>
+                  <Value>elasticbeanstalk-env-2</Value>
+                  <Key>elasticbeanstalk:environment-name</Key>
+                </member>
+                <member>
+                  <Value>e-bbbbbbbbbb</Value>
+                  <Key>elasticbeanstalk:environment-id</Key>
+                </member>
+                <member>
+                  <Value>elasticbeanstalk-env-2</Value>
+                  <Key>Name</Key>
+                </member>
+              </Tags>
+              <RollbackConfiguration/>
+              <DriftInformation>
+                <StackDriftStatus>NOT_CHECKED</StackDriftStatus>
+              </DriftInformation>
+              <Parameters></Parameters>
+            </member>
+            <member>
+              <Capabilities>
+                <member>CAPABILITY_IAM</member>
+              </Capabilities>
+              <CreationTime>2020-01-01T00:00:00.000Z</CreationTime>
+              <NotificationARNs/>
+              <StackId>arn:aws:cloudformation:us-west-2:0000000000:stack/custom-stack-1/00000000-0000-0000-0000-000000000000</StackId>
+              <StackName>Custom Stack 1</StackName>
+              <Description>Custom Stack 1 Description</Description>
+              <StackStatus>CREATE_COMPLETE</StackStatus>
+              <DisableRollback>true</DisableRollback>
+              <Tags></Tags>
+              <RollbackConfiguration/>
+              <DriftInformation>
+                <StackDriftStatus>NOT_CHECKED</StackDriftStatus>
+              </DriftInformation>
+              <Parameters></Parameters>
+            </member>
+          </Stacks>
+        </DescribeStacksResult>
+        <ResponseMetadata>
+          <RequestId>00000000-0000-0000-0000-000000000000</RequestId>
+        </ResponseMetadata>
+      </DescribeStacksResponse>
+    headers:
+      Content-Type:
+      - text/xml
+      Vary:
+      - accept-encoding
+    status: 200 OK
+    code: 200
+    duration: ""
