@@ -84,6 +84,19 @@
   name: CloudFormation
   description: Create and Manage Resources with Templates
   url: https://console.aws.amazon.com/cloudformation/home
+  sub_services:
+    - id: stacks
+      name: Stacks
+      url: 'https://console.aws.amazon.com/cloudformation/home#/stacks'
+    - id: stacksets
+      name: StackSets
+      url: 'https://console.aws.amazon.com/cloudformation/home#/stacksets'
+    - id: designer
+      name: Designer
+      url: 'https://console.aws.amazon.com/cloudformation/designer/home'
+    - id: resourcetypes
+      name: Resource Types
+      url: 'https://console.aws.amazon.com/cloudformation/home#/registry/resourceTypes'
 
 - id: cloudfront
   name: CloudFront

@@ -1,11 +1,11 @@
 ([]*aw.Item) (len=2) {
   (*aw.Item)({
-    title: (string) (len=10) "cloudfront",
-    subtitle: (*string)((len=51) "🗂 CloudFront – Global Content Delivery Network"),
-    match: (*string)((len=21) "cloudfront CloudFront"),
-    uid: (*string)((len=10) "cloudfront"),
-    autocomplete: (*string)((len=11) "cloudfront "),
-    arg: (*string)((len=46) "https://console.aws.amazon.com/cloudfront/home"),
+    title: (string) (len=21) "cloudformation stacks",
+    subtitle: (*string)((len=25) "CloudFormation – Stacks"),
+    match: (*string)((len=13) "stacks Stacks"),
+    uid: (*string)((len=6) "stacks"),
+    autocomplete: (*string)((len=22) "cloudformation stacks "),
+    arg: (*string)((len=58) "https://console.aws.amazon.com/cloudformation/home#/stacks"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -27,18 +27,18 @@
       })
     },
     icon: (*aw.Icon)({
-      Value: (string) (len=21) "images/cloudfront.png",
+      Value: (string) (len=25) "images/cloudformation.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=14) "cloudformation",
-    subtitle: (*string)((len=66) "🗂 CloudFormation – Create and Manage Resources with Templates"),
-    match: (*string)((len=29) "cloudformation CloudFormation"),
-    uid: (*string)((len=14) "cloudformation"),
-    autocomplete: (*string)((len=15) "cloudformation "),
-    arg: (*string)((len=50) "https://console.aws.amazon.com/cloudformation/home"),
+    title: (string) (len=24) "cloudformation stacksets",
+    subtitle: (*string)((len=28) "CloudFormation – StackSets"),
+    match: (*string)((len=19) "stacksets StackSets"),
+    uid: (*string)((len=9) "stacksets"),
+    autocomplete: (*string)((len=25) "cloudformation stacksets "),
+    arg: (*string)((len=61) "https://console.aws.amazon.com/cloudformation/home#/stacksets"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

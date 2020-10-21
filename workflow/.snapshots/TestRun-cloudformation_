@@ -1,0 +1,134 @@
+([]*aw.Item) (len=4) {
+  (*aw.Item)({
+    title: (string) (len=21) "cloudformation stacks",
+    subtitle: (*string)((len=25) "CloudFormation – Stacks"),
+    match: (*string)((len=13) "stacks Stacks"),
+    uid: (*string)((len=6) "stacks"),
+    autocomplete: (*string)((len=22) "cloudformation stacks "),
+    arg: (*string)((len=58) "https://console.aws.amazon.com/cloudformation/home#/stacks"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    icon: (*aw.Icon)({
+      Value: (string) (len=25) "images/cloudformation.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=24) "cloudformation stacksets",
+    subtitle: (*string)((len=28) "CloudFormation – StackSets"),
+    match: (*string)((len=19) "stacksets StackSets"),
+    uid: (*string)((len=9) "stacksets"),
+    autocomplete: (*string)((len=25) "cloudformation stacksets "),
+    arg: (*string)((len=61) "https://console.aws.amazon.com/cloudformation/home#/stacksets"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    icon: (*aw.Icon)({
+      Value: (string) (len=25) "images/cloudformation.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=23) "cloudformation designer",
+    subtitle: (*string)((len=27) "CloudFormation – Designer"),
+    match: (*string)((len=17) "designer Designer"),
+    uid: (*string)((len=8) "designer"),
+    autocomplete: (*string)((len=24) "cloudformation designer "),
+    arg: (*string)((len=59) "https://console.aws.amazon.com/cloudformation/designer/home"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    icon: (*aw.Icon)({
+      Value: (string) (len=25) "images/cloudformation.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=28) "cloudformation resourcetypes",
+    subtitle: (*string)((len=33) "CloudFormation – Resource Types"),
+    match: (*string)((len=28) "resourcetypes Resource Types"),
+    uid: (*string)((len=13) "resourcetypes"),
+    autocomplete: (*string)((len=29) "cloudformation resourcetypes "),
+    arg: (*string)((len=74) "https://console.aws.amazon.com/cloudformation/home#/registry/resourceTypes"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    icon: (*aw.Icon)({
+      Value: (string) (len=25) "images/cloudformation.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  })
+}

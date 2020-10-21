@@ -101,6 +101,15 @@ var tcs []testCase = []testCase{
 		query: "lambda func",
 	},
 	{
+		query: "cloudformation",
+	},
+	{
+		query: "cloudformation ",
+	},
+	{
+		query: "cloudformation stacks",
+	},
+	{
 		query:       "lambda ,",
 		fixtureName: "../searchers/lambda_functions_test", // reuse test fixture from this other test
 	},
