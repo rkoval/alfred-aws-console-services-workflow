@@ -529,7 +529,7 @@
 - id: globalaccelerator
   name: Global Accelerator
   description: Improve your application’s availability and performance using the AWS Global Network
-  url: https://console.aws.amazon.com/ec2/GlobalAccelerator/home
+  url: https://console.aws.amazon.com/ec2/home#GlobalAccelerator
 
 - id: glue
   name: Glue
