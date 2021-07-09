@@ -304,7 +304,7 @@
   name: Database Migation Service
   short_name: DMS
   description: Managed Database Migration Service
-  url: https://console.aws.amazon.com/dms/home
+  url: https://console.aws.amazon.com/dms/v2/home
 
 - id: documentdb
   name: DocumentDB
