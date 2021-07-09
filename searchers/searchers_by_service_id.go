@@ -1,5 +1,7 @@
 package searchers
 
+//go:generate go run ../generators/searchers_by_service_id_sorter/main.go
+
 var cloudFormationStackSearcher = &CloudFormationStackSearcher{}
 var cloudWatchLogGroupSearcher = &CloudWatchLogGroupSearcher{}
 var ec2InstanceSearcher = &EC2InstanceSearcher{}
@@ -7,8 +9,8 @@ var ec2SecurityGroupSearcher = &EC2SecurityGroupSearcher{}
 var elasticBeanstalkEnvironmentSearcher = &ElasticBeanstalkEnvironmentSearcher{}
 var lambdaFunctionSearcher = &LambdaFunctionSearcher{}
 var s3BucketSearcher = &S3BucketSearcher{}
-var wafWebACLSearcher = &WAFWebACLSearcher{}
 var wafIPSetSearcher = &WAFIPSetSearcher{}
+var wafWebACLSearcher = &WAFWebACLSearcher{}
 
 var SearchersByServiceId map[string]Searcher = map[string]Searcher{
 	"cloudformation":                cloudFormationStackSearcher,
@@ -25,6 +27,6 @@ var SearchersByServiceId map[string]Searcher = map[string]Searcher{
 	"s3":                            s3BucketSearcher,
 	"s3_buckets":                    s3BucketSearcher,
 	"waf":                           wafWebACLSearcher,
-	"waf_webacls":                   wafWebACLSearcher,
 	"waf_ipsets":                    wafIPSetSearcher,
+	"waf_webacls":                   wafWebACLSearcher,
 }
