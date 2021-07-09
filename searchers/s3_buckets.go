@@ -31,7 +31,6 @@ func (s S3BucketSearcher) fetch(session *session.Session) ([]s3.Bucket, error) {
 	if err != nil {
 		return nil, err
 	}
-	// log.Println("resp", resp)
 
 	buckets := []s3.Bucket{}
 	for i := range resp.Buckets {

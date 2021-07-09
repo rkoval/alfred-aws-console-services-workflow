@@ -23,6 +23,13 @@ func RoundUp(input float64, places int) (newVal float64) {
 	return
 }
 
+func AppendString(arr []string, str *string) []string {
+	if str != nil && *str != "" {
+		arr = append(arr, *str)
+	}
+	return arr
+}
+
 // adapted from https://www.socketloop.com/tutorials/golang-byte-format-example
 func ByteFormat(inputNum int64, precision int) string {
 

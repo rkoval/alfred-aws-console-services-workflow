@@ -130,6 +130,18 @@ var tcs []testCase = []testCase{
 		fixtureName: "../searchers/lambda_functions_test", // reuse test fixture from this other test
 	},
 	{
+		query:       "rds databases",
+		fixtureName: "../searchers/rds_databases_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "rds databases ",
+		fixtureName: "../searchers/rds_databases_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "rds ,instance",
+		fixtureName: "../searchers/rds_databases_test", // reuse test fixture from this other test
+	},
+	{
 		query: "cloudfront",
 	},
 	{

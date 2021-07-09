@@ -52,10 +52,12 @@ func PanicOnError(f func() error) {
 
 var environmentIdRegex *regexp.Regexp = regexp.MustCompile(`e-[a-zA-Z0-9]{8,}`)
 var instanceIdRegex *regexp.Regexp = regexp.MustCompile(`i-[a-zA-Z0-9]{8,}`)
+var dbIdRegex *regexp.Regexp = regexp.MustCompile(`db-[a-zA-Z0-9]{8,}`)
 var amiIdRegex *regexp.Regexp = regexp.MustCompile(`ami-[a-zA-Z0-9]{8,}`)
 var vpcIdRegex *regexp.Regexp = regexp.MustCompile(`vpc-[a-zA-Z0-9]{8,}`)
 var subnetIdRegex *regexp.Regexp = regexp.MustCompile(`subnet-[a-zA-Z0-9]{8,}`)
 var securityGroupIdRegex *regexp.Regexp = regexp.MustCompile(`sg-[a-zA-Z0-9]{8,}`)
+var expandedSecurityGroupIdRegex *regexp.Regexp = regexp.MustCompile(`securitygroup-[a-zA-Z0-9]{8,}`)
 var volumeIdRegex *regexp.Regexp = regexp.MustCompile(`vol-[a-zA-Z0-9]{8,}`)
 var attachmentIdRegex *regexp.Regexp = regexp.MustCompile(`eni-attach-[a-zA-Z0-9]{8,}`)
 var reservationIdRegex *regexp.Regexp = regexp.MustCompile(`r-[a-zA-Z0-9]{8,}`)
@@ -65,8 +67,9 @@ var longNumberInXmlTag *regexp.Regexp = regexp.MustCompile(`>[0-9]{8,}<`) // we'
 var uuidv2Regex *regexp.Regexp = regexp.MustCompile(`[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}`)
 var iso8601Regex *regexp.Regexp = regexp.MustCompile(`\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(\.\d+)?(([+-]\d\d:\d\d)|Z)?`)
 
-var idTagRegex *regexp.Regexp = regexp.MustCompile(`<(id|ID)>.+</(id|ID)>`)
+var idTagRegex *regexp.Regexp = regexp.MustCompile(`<(id|ID|DbiResourceId|HostedZoneId)>.+</(id|ID|DbiResourceId|HostedZoneId)>`)
 var keyNameTagRegex *regexp.Regexp = regexp.MustCompile(`<keyName>.+</keyName>`)
+var masterUsernameTagRegex *regexp.Regexp = regexp.MustCompile(`<MasterUsername>.+</MasterUsername>`)
 
 var ipv4Regex *regexp.Regexp = regexp.MustCompile(`((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)`)
 var macAddressRegex *regexp.Regexp = regexp.MustCompile(`([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})`)
@@ -80,22 +83,25 @@ var beanstalkUrlSubdomainRegex *regexp.Regexp = regexp.MustCompile(`[a-zA-Z0-9-]
 var internalUrlRegex *regexp.Regexp = regexp.MustCompile(`[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+\.[a-zA-Z0-9]+\.internal`)
 
 func sanitizeBody(body string) string {
+	body = uuidv2Regex.ReplaceAllString(body, "00000000-0000-0000-0000-000000000000")
 	body = environmentIdRegex.ReplaceAllString(body, "e-aaaaaaaaaa")
 	body = instanceIdRegex.ReplaceAllString(body, "i-aaaaaaaaaa")
+	body = dbIdRegex.ReplaceAllString(body, "db-AAAAAAAAAA")
 	body = amiIdRegex.ReplaceAllString(body, "ami-aaaaaaaaaa")
 	body = vpcIdRegex.ReplaceAllString(body, "vpc-aaaaaaaaaa")
 	body = subnetIdRegex.ReplaceAllString(body, "subnet-aaaaaaaaaa")
 	body = securityGroupIdRegex.ReplaceAllString(body, "sg-aaaaaaaaaa")
+	body = expandedSecurityGroupIdRegex.ReplaceAllString(body, "securitygroup-aaaaaaaaaa")
 	body = volumeIdRegex.ReplaceAllString(body, "vol-aaaaaaaaaa")
 	body = attachmentIdRegex.ReplaceAllString(body, "eni-attach-aaaaaaaaaa")
 	body = reservationIdRegex.ReplaceAllString(body, "r-aaaaaaaaaa")
 
 	body = accountIdInArn.ReplaceAllString(body, ":0000000000:")
 	body = longNumberInXmlTag.ReplaceAllString(body, ">00000000<")
-	body = uuidv2Regex.ReplaceAllString(body, "00000000-0000-0000-0000-000000000000")
 	body = iso8601Regex.ReplaceAllString(body, "2020-01-01T00:00:00.000Z")
 
 	body = idTagRegex.ReplaceAllString(body, "<id>000000000000</id>")
+	body = masterUsernameTagRegex.ReplaceAllString(body, "<MasterUsername>aaaaaaaaaaaa</MasterUsername>")
 	body = keyNameTagRegex.ReplaceAllString(body, "<keyName>aaaaaaaaaa</keyName>")
 
 	body = ipv4Regex.ReplaceAllString(body, "0.0.0.0")
