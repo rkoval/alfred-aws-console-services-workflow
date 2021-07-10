@@ -18,7 +18,7 @@ jobs:
       - run: ./generate.sh
       - name: golangci-lint
         run: |
-          go get github.com/golangci/golangci-lint/cmd/golangci-lint@v1.28.3
+          go get github.com/golangci/golangci-lint/cmd/golangci-lint@v1.41.1
           golangci-lint run
   test:
     name: go test
