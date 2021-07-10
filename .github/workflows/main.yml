@@ -4,8 +4,7 @@ on:
     tags:
       - v*
     branches:
-      - master
-      - v3.x
+      - '**'
   pull_request:
 jobs:
   lint:
