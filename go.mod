@@ -1,6 +1,6 @@
 module github.com/rkoval/alfred-aws-console-services-workflow
 
-go 1.14
+go 1.16
 
 require (
 	github.com/aws/aws-sdk-go v1.34.10
