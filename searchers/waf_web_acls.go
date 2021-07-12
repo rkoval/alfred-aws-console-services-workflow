@@ -1,11 +1,12 @@
 package searchers
 
 import (
+	"context"
 	"fmt"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/session"
-	"github.com/aws/aws-sdk-go/service/wafv2"
+	"github.com/aws/aws-sdk-go-v2/aws"
+	"github.com/aws/aws-sdk-go-v2/service/wafv2"
+	"github.com/aws/aws-sdk-go-v2/service/wafv2/types"
 	aw "github.com/deanishe/awgo"
 	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
 	"github.com/rkoval/alfred-aws-console-services-workflow/caching"
@@ -14,36 +15,36 @@ import (
 
 type WAFWebACLSearcher struct{}
 
-func (s WAFWebACLSearcher) Search(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
+func (s WAFWebACLSearcher) Search(wf *aw.Workflow, query string, cfg aws.Config, forceFetch bool, fullQuery string) error {
 	cacheName := util.GetCurrentFilename()
-	entities := caching.LoadWafv2WebACLSummaryArrayFromCache(wf, session, cacheName, s.fetch, forceFetch, fullQuery)
+	entities := caching.LoadWafv2WebACLSummaryArrayFromCache(wf, cfg, cacheName, s.fetch, forceFetch, fullQuery)
 	for _, entity := range entities {
-		s.addToWorkflow(wf, query, session.Config, entity)
+		s.addToWorkflow(wf, query, cfg, entity)
 	}
 	return nil
 }
 
-func (s WAFWebACLSearcher) fetch(session *session.Session) ([]wafv2.WebACLSummary, error) {
-	client := wafv2.New(session)
+func (s WAFWebACLSearcher) fetch(cfg aws.Config) ([]types.WebACLSummary, error) {
+	client := wafv2.NewFromConfig(cfg)
 
 	NextMarker := ""
-	entities := []wafv2.WebACLSummary{}
+	entities := []types.WebACLSummary{}
 	for {
 		params := &wafv2.ListWebACLsInput{
-			Limit: aws.Int64(100),         // get as many as we can
-			Scope: aws.String("REGIONAL"), // TODO support CLOUDFRONT Scope somehow
+			Limit: aws.Int32(100),          // get as many as we can
+			Scope: types.Scope("REGIONAL"), // TODO support CLOUDFRONT Scope somehow
 		}
 		if NextMarker != "" {
-			params.SetNextMarker(NextMarker)
+			params.NextMarker = &NextMarker
 		}
-		resp, err := client.ListWebACLs(params)
+		resp, err := client.ListWebACLs(context.TODO(), params)
 
 		if err != nil {
 			return nil, err
 		}
 
 		for _, entity := range resp.WebACLs {
-			entities = append(entities, *entity)
+			entities = append(entities, entity)
 		}
 
 		if resp.NextMarker != nil {
@@ -56,12 +57,12 @@ func (s WAFWebACLSearcher) fetch(session *session.Session) ([]wafv2.WebACLSummar
 	return entities, nil
 }
 
-func (s WAFWebACLSearcher) addToWorkflow(wf *aw.Workflow, query string, config *aws.Config, entity wafv2.WebACLSummary) {
+func (s WAFWebACLSearcher) addToWorkflow(wf *aw.Workflow, query string, config aws.Config, entity types.WebACLSummary) {
 	title := *entity.Name
 	subtitle := *entity.Description
 
 	util.NewURLItem(wf, title).
 		Subtitle(subtitle).
-		Arg(fmt.Sprintf("https://console.aws.amazon.com/wafv2/homev2/web-acl/%s/%s/overview?region=%s", *entity.Name, *entity.Id, *config.Region)).
+		Arg(fmt.Sprintf("https://console.aws.amazon.com/wafv2/homev2/web-acl/%s/%s/overview?region=%s", *entity.Name, *entity.Id, config.Region)).
 		Icon(awsworkflow.GetImageIcon("waf"))
 }

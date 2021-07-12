@@ -1,12 +1,13 @@
 package searchers
 
 import (
+	"context"
 	"fmt"
 	"strings"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/session"
-	"github.com/aws/aws-sdk-go/service/ec2"
+	"github.com/aws/aws-sdk-go-v2/aws"
+	"github.com/aws/aws-sdk-go-v2/service/ec2"
+	"github.com/aws/aws-sdk-go-v2/service/ec2/types"
 	aw "github.com/deanishe/awgo"
 	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
 	"github.com/rkoval/alfred-aws-console-services-workflow/caching"
@@ -15,33 +16,33 @@ import (
 
 type EC2InstanceSearcher struct{}
 
-func (s EC2InstanceSearcher) Search(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
+func (s EC2InstanceSearcher) Search(wf *aw.Workflow, query string, cfg aws.Config, forceFetch bool, fullQuery string) error {
 	cacheName := util.GetCurrentFilename()
-	instances := caching.LoadEc2InstanceArrayFromCache(wf, session, cacheName, s.fetch, forceFetch, fullQuery)
-	for _, instance := range instances {
-		s.addToWorkflow(wf, query, session.Config, instance)
+	entities := caching.LoadEc2InstanceArrayFromCache(wf, cfg, cacheName, s.fetch, forceFetch, fullQuery)
+	for _, entity := range entities {
+		s.addToWorkflow(wf, query, cfg, entity)
 	}
 	return nil
 }
 
-func (s EC2InstanceSearcher) fetch(session *session.Session) ([]ec2.Instance, error) {
-	svc := ec2.New(session)
+func (s EC2InstanceSearcher) fetch(cfg aws.Config) ([]types.Instance, error) {
+	svc := ec2.NewFromConfig(cfg)
 
 	NextToken := ""
-	var instances []ec2.Instance
+	var instances []types.Instance
 	for {
 		params := &ec2.DescribeInstancesInput{
-			MaxResults: aws.Int64(1000), // get as many as we can
+			MaxResults: aws.Int32(1000), // get as many as we can
 			NextToken:  aws.String(NextToken),
 		}
-		resp, err := svc.DescribeInstances(params)
+		resp, err := svc.DescribeInstances(context.TODO(), params)
 		if err != nil {
 			return nil, err
 		}
 
 		for _, reservation := range resp.Reservations {
 			for i := range reservation.Instances {
-				instances = append(instances, *reservation.Instances[i])
+				instances = append(instances, reservation.Instances[i])
 			}
 		}
 
@@ -55,7 +56,7 @@ func (s EC2InstanceSearcher) fetch(session *session.Session) ([]ec2.Instance, er
 	return instances, nil
 }
 
-func (s EC2InstanceSearcher) addToWorkflow(wf *aw.Workflow, query string, config *aws.Config, instance ec2.Instance) {
+func (s EC2InstanceSearcher) addToWorkflow(wf *aw.Workflow, query string, config aws.Config, instance types.Instance) {
 	var title string
 	subtitle := util.GetEC2InstanceStateEmoji(*instance.State)
 	name := util.GetEC2TagValue(instance.Tags, "Name")
@@ -65,11 +66,11 @@ func (s EC2InstanceSearcher) addToWorkflow(wf *aw.Workflow, query string, config
 	} else {
 		title = *instance.InstanceId
 	}
-	subtitle += " " + *instance.InstanceType
+	subtitle += " " + string(instance.InstanceType)
 
 	item := util.NewURLItem(wf, title).
 		Subtitle(subtitle).
-		Arg(fmt.Sprintf("https://%s.console.aws.amazon.com/ec2/v2/home?region=%s#Instances:search=%s", *config.Region, *config.Region, *instance.InstanceId)).
+		Arg(fmt.Sprintf("https://%s.console.aws.amazon.com/ec2/v2/home?region=%s#Instances:search=%s", config.Region, config.Region, *instance.InstanceId)).
 		Icon(awsworkflow.GetImageIcon("ec2"))
 
 	if strings.HasPrefix(query, "i-") {

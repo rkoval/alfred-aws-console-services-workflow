@@ -60,18 +60,20 @@ func handleFetchErr(wf *aw.Workflow, lastFetchErrPath string) error {
 		return nil
 	}
 
+	// TODO need to fix "no results" display when there's really a fetch error
+
 	errString := string(data)
 	wf.Configure(aw.SuppressUIDs(true))
 	if strings.HasPrefix(errString, "NoCredentialProviders") {
 		util.NewURLItem(wf, "AWS credentials not configured in ~/.aws/credentials").
 			Subtitle("Press enter to open AWS docs for how to configure").
-			Arg("https://docs.aws.amazon.com/sdk-for-go/v1/developer-guide/configuring-sdk.html#specifying-credentials").
+			Arg("https://aws.github.io/aws-sdk-go-v2/docs/configuring-sdk/#creating-the-credentials-file").
 			Icon(aw.IconError).
 			Valid(true)
 	} else if strings.HasPrefix(errString, "MissingRegion") {
 		util.NewURLItem(wf, "AWS default region not configured in ~/.aws/config").
 			Subtitle("Press enter to open AWS docs for how to configure").
-			Arg("https://docs.aws.amazon.com/sdk-for-go/v1/developer-guide/configuring-sdk.html#specifying-the-region").
+			Arg("https://aws.github.io/aws-sdk-go-v2/docs/configuring-sdk/#creating-the-config-file").
 			Icon(aw.IconError).
 			Valid(true)
 	} else {

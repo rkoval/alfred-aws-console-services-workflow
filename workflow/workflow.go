@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/aws/aws-sdk-go/aws/session"
+	"github.com/aws/aws-sdk-go-v2/aws"
 	aw "github.com/deanishe/awgo"
 	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
 	"github.com/rkoval/alfred-aws-console-services-workflow/parsers"
@@ -16,7 +16,7 @@ import (
 	"github.com/rkoval/alfred-aws-console-services-workflow/util"
 )
 
-func Run(wf *aw.Workflow, rawQuery string, session *session.Session, forceFetch, openAll bool, ymlPath string) {
+func Run(wf *aw.Workflow, rawQuery string, cfg aws.Config, forceFetch, openAll bool, ymlPath string) {
 	log.Println("using workflow cacheDir: " + wf.CacheDir())
 	log.Println("using workflow dataDir: " + wf.DataDir())
 
@@ -71,7 +71,7 @@ func Run(wf *aw.Workflow, rawQuery string, session *session.Session, forceFetch,
 			searcher := searchers.SearchersByServiceId[serviceId]
 			if searcher != nil {
 				filterQuery = query.RemainingQuery
-				err := searcher.Search(wf, filterQuery, session, forceFetch, rawQuery)
+				err := searcher.Search(wf, filterQuery, cfg, forceFetch, rawQuery)
 				if err != nil {
 					wf.FatalError(err)
 				}

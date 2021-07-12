@@ -9,10 +9,8 @@ interactions:
       Version:
       - "2010-05-15"
     headers:
-      Content-Length:
-      - "40"
       Content-Type:
-      - application/x-www-form-urlencoded; charset=utf-8
+      - application/x-www-form-urlencoded
     url: https://cloudformation.us-west-2.amazonaws.com/
     method: POST
   response:

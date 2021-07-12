@@ -4,10 +4,8 @@ interactions:
 - request:
     body: ""
     form: {}
-    headers:
-      Content-Type:
-      - application/json
-    url: https://lambda.us-west-2.amazonaws.com/2015-03-31/functions/?MaxItems=200
+    headers: {}
+    url: https://lambda.us-west-2.amazonaws.com/2015-03-31/functions?MaxItems=200
     method: GET
   response:
     body: |-

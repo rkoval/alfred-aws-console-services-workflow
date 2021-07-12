@@ -11,9 +11,9 @@ import (
 func TestSearcher(t *testing.T, searcher Searcher, fixtureFilename string) {
 	wf := aw.New()
 
-	session, r := tests.NewAWSRecorderSession(fixtureFilename)
+	cfg, r := tests.NewAWSRecorderSession(fixtureFilename)
 	defer tests.PanicOnError(r.Stop)
-	err := searcher.Search(wf, "", session, true, "")
+	err := searcher.Search(wf, "", cfg, true, "")
 	if err != nil {
 		t.Errorf("got error from search: %v", err)
 	}

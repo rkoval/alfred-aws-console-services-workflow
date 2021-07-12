@@ -5,6 +5,8 @@ interactions:
     body: ""
     form: {}
     headers:
+      Accept-Encoding:
+      - identity
     url: https://s3.us-west-2.amazonaws.com/
     method: GET
   response:

@@ -2,17 +2,19 @@
 version: 1
 interactions:
 - request:
-    body: Action=DescribeEnvironments&Version=2010-12-01
+    body: Action=DescribeEnvironments&MaxRecords=1000&NextToken=&Version=2010-12-01
     form:
       Action:
       - DescribeEnvironments
+      MaxRecords:
+      - "1000"
+      NextToken:
+      - ""
       Version:
       - "2010-12-01"
     headers:
-      Content-Length:
-      - "46"
       Content-Type:
-      - application/x-www-form-urlencoded; charset=utf-8
+      - application/x-www-form-urlencoded
     url: https://elasticbeanstalk.us-west-2.amazonaws.com/
     method: POST
   response:

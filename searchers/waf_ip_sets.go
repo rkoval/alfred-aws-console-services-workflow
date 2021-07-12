@@ -1,11 +1,12 @@
 package searchers
 
 import (
+	"context"
 	"fmt"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/session"
-	"github.com/aws/aws-sdk-go/service/wafv2"
+	"github.com/aws/aws-sdk-go-v2/aws"
+	"github.com/aws/aws-sdk-go-v2/service/wafv2"
+	"github.com/aws/aws-sdk-go-v2/service/wafv2/types"
 	aw "github.com/deanishe/awgo"
 	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
 	"github.com/rkoval/alfred-aws-console-services-workflow/caching"
@@ -14,36 +15,36 @@ import (
 
 type WAFIPSetSearcher struct{}
 
-func (s WAFIPSetSearcher) Search(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
+func (s WAFIPSetSearcher) Search(wf *aw.Workflow, query string, cfg aws.Config, forceFetch bool, fullQuery string) error {
 	cacheName := util.GetCurrentFilename()
-	entities := caching.LoadWafv2IPSetSummaryArrayFromCache(wf, session, cacheName, s.fetch, forceFetch, fullQuery)
+	entities := caching.LoadWafv2IPSetSummaryArrayFromCache(wf, cfg, cacheName, s.fetch, forceFetch, fullQuery)
 	for _, entity := range entities {
-		s.addToWorkflow(wf, query, session.Config, entity)
+		s.addToWorkflow(wf, query, cfg, entity)
 	}
 	return nil
 }
 
-func (s WAFIPSetSearcher) fetch(session *session.Session) ([]wafv2.IPSetSummary, error) {
-	client := wafv2.New(session)
+func (s WAFIPSetSearcher) fetch(cfg aws.Config) ([]types.IPSetSummary, error) {
+	client := wafv2.NewFromConfig(cfg)
 
 	NextMarker := ""
-	entities := []wafv2.IPSetSummary{}
+	entities := []types.IPSetSummary{}
 	for {
 		params := &wafv2.ListIPSetsInput{
-			Limit: aws.Int64(100),         // get as many as we can
-			Scope: aws.String("REGIONAL"), // TODO support CLOUDFRONT Scope somehow
+			Limit: aws.Int32(100),          // get as many as we can
+			Scope: types.Scope("REGIONAL"), // TODO support CLOUDFRONT Scope somehow
 		}
 		if NextMarker != "" {
-			params.SetNextMarker(NextMarker)
+			params.NextMarker = &NextMarker
 		}
-		resp, err := client.ListIPSets(params)
+		resp, err := client.ListIPSets(context.TODO(), params)
 
 		if err != nil {
 			return nil, err
 		}
 
 		for _, entity := range resp.IPSets {
-			entities = append(entities, *entity)
+			entities = append(entities, entity)
 		}
 
 		if resp.NextMarker != nil {
@@ -56,12 +57,15 @@ func (s WAFIPSetSearcher) fetch(session *session.Session) ([]wafv2.IPSetSummary,
 	return entities, nil
 }
 
-func (s WAFIPSetSearcher) addToWorkflow(wf *aw.Workflow, query string, config *aws.Config, entity wafv2.IPSetSummary) {
+func (s WAFIPSetSearcher) addToWorkflow(wf *aw.Workflow, query string, config aws.Config, entity types.IPSetSummary) {
 	title := *entity.Name
-	subtitle := *entity.Description
+	var subtitle string
+	if entity.Description != nil {
+		subtitle = *entity.Description
+	}
 
 	util.NewURLItem(wf, title).
 		Subtitle(subtitle).
-		Arg(fmt.Sprintf("https://console.aws.amazon.com/wafv2/homev2/ip-set/%s/%s?region=%s", *entity.Name, *entity.Id, *config.Region)).
+		Arg(fmt.Sprintf("https://console.aws.amazon.com/wafv2/homev2/ip-set/%s/%s?region=%s", *entity.Name, *entity.Id, config.Region)).
 		Icon(awsworkflow.GetImageIcon("waf"))
 }

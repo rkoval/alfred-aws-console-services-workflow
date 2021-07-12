@@ -29,9 +29,9 @@ func init() {
 func main() {
 	wf.Run(func() {
 		log.Printf("running workflow with query: `%s`", query)
-		session := awsworkflow.NewWorkflowSession(nil)
+		cfg := awsworkflow.NewWorkflowConfig(nil)
 		query = strings.TrimLeft(query, " ")
 
-		workflow.Run(wf, query, session, forceFetch, openAll, ymlPath)
+		workflow.Run(wf, query, cfg, forceFetch, openAll, ymlPath)
 	})
 }

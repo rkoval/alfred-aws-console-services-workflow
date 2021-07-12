@@ -1,12 +1,13 @@
 package searchers
 
 import (
+	"context"
 	"fmt"
 	"strings"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/session"
-	"github.com/aws/aws-sdk-go/service/rds"
+	"github.com/aws/aws-sdk-go-v2/aws"
+	"github.com/aws/aws-sdk-go-v2/service/rds"
+	"github.com/aws/aws-sdk-go-v2/service/rds/types"
 	aw "github.com/deanishe/awgo"
 	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
 	"github.com/rkoval/alfred-aws-console-services-workflow/caching"
@@ -15,31 +16,31 @@ import (
 
 type RDSDatabaseSearcher struct{}
 
-func (s RDSDatabaseSearcher) Search(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
+func (s RDSDatabaseSearcher) Search(wf *aw.Workflow, query string, cfg aws.Config, forceFetch bool, fullQuery string) error {
 	cacheName := util.GetCurrentFilename()
-	es := caching.LoadRdsDBInstanceArrayFromCache(wf, session, cacheName, s.fetch, forceFetch, fullQuery)
-	for _, e := range es {
-		s.addToWorkflow(wf, query, session.Config, e)
+	es := caching.LoadRdsDBInstanceArrayFromCache(wf, cfg, cacheName, s.fetch, forceFetch, fullQuery)
+	for _, entity := range es {
+		s.addToWorkflow(wf, query, cfg, entity)
 	}
 	return nil
 }
 
-func (s RDSDatabaseSearcher) fetch(session *session.Session) ([]rds.DBInstance, error) {
-	svc := rds.New(session)
+func (s RDSDatabaseSearcher) fetch(cfg aws.Config) ([]types.DBInstance, error) {
+	svc := rds.NewFromConfig(cfg)
 
-	resp, err := svc.DescribeDBInstances(&rds.DescribeDBInstancesInput{})
+	resp, err := svc.DescribeDBInstances(context.TODO(), &rds.DescribeDBInstancesInput{})
 	if err != nil {
 		return nil, err
 	}
 
-	databases := []rds.DBInstance{}
+	databases := []types.DBInstance{}
 	for i := range resp.DBInstances {
-		databases = append(databases, *resp.DBInstances[i])
+		databases = append(databases, resp.DBInstances[i])
 	}
 	return databases, nil
 }
 
-func (s RDSDatabaseSearcher) addToWorkflow(wf *aw.Workflow, query string, config *aws.Config, entity rds.DBInstance) {
+func (s RDSDatabaseSearcher) addToWorkflow(wf *aw.Workflow, query string, config aws.Config, entity types.DBInstance) {
 	subtitleArray := []string{}
 	var engineString string
 	if entity.Engine != nil && *entity.Engine != "" {
@@ -62,8 +63,8 @@ func (s RDSDatabaseSearcher) addToWorkflow(wf *aw.Workflow, query string, config
 		Subtitle(subtitle).
 		Arg(fmt.Sprintf(
 			"https://%s.console.aws.amazon.com/rds/home?region=%s#database:id=%s;is-cluster=false",
-			*config.Region,
-			*config.Region,
+			config.Region,
+			config.Region,
 			*entity.DBInstanceIdentifier,
 		)).
 		Icon(awsworkflow.GetImageIcon("rds")).

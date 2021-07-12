@@ -1,13 +1,14 @@
 package searchers
 
 import (
+	"context"
 	"fmt"
 	"net/url"
 	"strings"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/session"
-	"github.com/aws/aws-sdk-go/service/lambda"
+	"github.com/aws/aws-sdk-go-v2/aws"
+	"github.com/aws/aws-sdk-go-v2/service/lambda"
+	"github.com/aws/aws-sdk-go-v2/service/lambda/types"
 	aw "github.com/deanishe/awgo"
 	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
 	"github.com/rkoval/alfred-aws-console-services-workflow/caching"
@@ -16,34 +17,34 @@ import (
 
 type LambdaFunctionSearcher struct{}
 
-func (s LambdaFunctionSearcher) Search(wf *aw.Workflow, query string, session *session.Session, forceFetch bool, fullQuery string) error {
+func (s LambdaFunctionSearcher) Search(wf *aw.Workflow, query string, cfg aws.Config, forceFetch bool, fullQuery string) error {
 	cacheName := util.GetCurrentFilename()
-	entities := caching.LoadLambdaFunctionConfigurationArrayFromCache(wf, session, cacheName, s.fetch, forceFetch, fullQuery)
+	entities := caching.LoadLambdaFunctionConfigurationArrayFromCache(wf, cfg, cacheName, s.fetch, forceFetch, fullQuery)
 	for _, entity := range entities {
-		s.addToWorkflow(wf, query, session.Config, entity)
+		s.addToWorkflow(wf, query, cfg, entity)
 	}
 	return nil
 }
 
-func (s LambdaFunctionSearcher) fetch(session *session.Session) ([]lambda.FunctionConfiguration, error) {
-	svc := lambda.New(session)
+func (s LambdaFunctionSearcher) fetch(cfg aws.Config) ([]types.FunctionConfiguration, error) {
+	svc := lambda.NewFromConfig(cfg)
 
 	NextMarker := ""
-	var entities []lambda.FunctionConfiguration
+	var entities []types.FunctionConfiguration
 	for {
 		params := &lambda.ListFunctionsInput{
-			MaxItems: aws.Int64(200), // get as many as we can
+			MaxItems: aws.Int32(200), // get as many as we can
 		}
 		if NextMarker != "" {
 			params.Marker = aws.String(NextMarker)
 		}
-		resp, err := svc.ListFunctions(params)
+		resp, err := svc.ListFunctions(context.TODO(), params)
 		if err != nil {
 			return nil, err
 		}
 
 		for _, entity := range resp.Functions {
-			entities = append(entities, *entity)
+			entities = append(entities, entity)
 		}
 
 		if resp.NextMarker != nil {
@@ -56,22 +57,22 @@ func (s LambdaFunctionSearcher) fetch(session *session.Session) ([]lambda.Functi
 	return entities, nil
 }
 
-func (s LambdaFunctionSearcher) addToWorkflow(wf *aw.Workflow, query string, config *aws.Config, entity lambda.FunctionConfiguration) {
+func (s LambdaFunctionSearcher) addToWorkflow(wf *aw.Workflow, query string, config aws.Config, entity types.FunctionConfiguration) {
 	title := *entity.FunctionName
 	subtitleArray := []string{}
 	if entity.Description != nil && *entity.Description != "" {
 		subtitleArray = append(subtitleArray, *entity.Description)
 	}
-	if entity.Runtime != nil {
-		subtitleArray = append(subtitleArray, *entity.Runtime)
+	if entity.Runtime != "" {
+		subtitleArray = append(subtitleArray, string(entity.Runtime))
 	}
-	if entity.CodeSize != nil {
-		subtitleArray = append(subtitleArray, util.ByteFormat(*entity.CodeSize, 2))
+	if entity.CodeSize != 0 {
+		subtitleArray = append(subtitleArray, util.ByteFormat(entity.CodeSize, 2))
 	}
 	subtitle := strings.Join(subtitleArray, " – ")
 
 	util.NewURLItem(wf, title).
 		Subtitle(subtitle).
-		Arg(fmt.Sprintf("https://%s.console.aws.amazon.com/lambda/home?region=%s#/functions/%s?tab=configuration", *config.Region, *config.Region, url.PathEscape(*entity.FunctionName))).
+		Arg(fmt.Sprintf("https://%s.console.aws.amazon.com/lambda/home?region=%s#/functions/%s?tab=configuration", config.Region, config.Region, url.PathEscape(*entity.FunctionName))).
 		Icon(awsworkflow.GetImageIcon("lambda"))
 }

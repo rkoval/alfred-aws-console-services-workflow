@@ -5,9 +5,10 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
+	"strings"
 
-	"github.com/aws/aws-sdk-go/aws/awserr"
-	"github.com/aws/aws-sdk-go/aws/session"
+	"github.com/aws/aws-sdk-go-v2/aws"
+	"github.com/aws/smithy-go"
 	aw "github.com/deanishe/awgo"
 
 	"github.com/cheekybits/genny/generic"
@@ -16,30 +17,49 @@ import (
 //go:generate genny -in=$GOFILE -out=gen-$GOFILE gen "Entity=cloudwatchlogs.LogGroup,ec2.Instance,s3.Bucket,ec2.SecurityGroup,elasticbeanstalk.EnvironmentDescription,wafv2.IPSetSummary,wafv2.WebACLSummary,lambda.FunctionConfiguration,cloudformation.Stack,rds.DBInstance"
 type Entity = generic.Type
 
-type EntityArrayFetcher = func(*session.Session) ([]Entity, error)
+type EntityArrayFetcher = func(aws.Config) ([]Entity, error)
 
-func LoadEntityArrayFromCache(wf *aw.Workflow, session *session.Session, cacheName string, fetcher EntityArrayFetcher, forceFetch bool, rawQuery string) []Entity {
+func LoadEntityArrayFromCache(wf *aw.Workflow, cfg aws.Config, cacheName string, fetcher EntityArrayFetcher, forceFetch bool, rawQuery string) []Entity {
 	// TODO optimization: not all services have sa region associated with them, so cache can be reused across regions (e.g., s3 buckets are global)
-	cacheName += "_" + *session.Config.Region
+	cacheName += "_" + cfg.Region
 
 	results := []Entity{}
 	lastFetchErrPath := wf.CacheDir() + "/last-fetch-err.txt"
 	if forceFetch {
 		log.Printf("fetching from aws ...")
-		results, err := fetcher(session)
+		results, err := fetcher(cfg)
 
 		if err != nil {
 			log.Printf("fetch error occurred. writing to %s ...", lastFetchErrPath)
-			_ = ioutil.WriteFile(lastFetchErrPath, []byte(err.Error()), 0600)
-			if aerr, ok := err.(awserr.Error); ok {
-				message := aerr.Message()
-				if message != "" {
-					panic(message)
-				}
-				if aerr.Code() == "AccessDeniedException" {
-					panic(errors.New("You do not have access to fetch these. Check your IAM permissions"))
+			var errString string
+			var missingRegionError *aws.MissingRegionError
+			if errors.As(err, &missingRegionError) {
+				errString = "MissingRegion"
+			} else {
+				var apiErr smithy.APIError
+				if errors.As(err, &apiErr) {
+					errCode := apiErr.ErrorCode()
+					if errCode == "AccessDeniedException" {
+						errString = "You do not have access to fetch these. Check your IAM permissions"
+					} else {
+						errString = errCode
+
+						message := apiErr.ErrorMessage()
+						if message != "" {
+							errString += ": " + message
+						}
+					}
 				}
 			}
+			if errString == "" {
+				errString = err.Error()
+			}
+			if strings.Contains(errString, "failed to retrieve credentials") {
+				// workaround hack; aws-sdk-go-v2 will automatically attempt to get credentials from the metadata service URL if file not specified,
+				// but that's bad given that we will never be run in AWS. as a result, just populate an error string that informs users better
+				errString = "NoCredentialProviders"
+			}
+			_ = ioutil.WriteFile(lastFetchErrPath, []byte(errString), 0600)
 			panic(err)
 		} else {
 			os.Remove(lastFetchErrPath)

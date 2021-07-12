@@ -2,21 +2,19 @@
 version: 1
 interactions:
 - request:
-    body: Action=DescribeInstances&Filter.1.Name=tag%3AName&Filter.1.Value.1=%2A%2A&Version=2016-11-15
+    body: Action=DescribeInstances&MaxResults=1000&NextToken=&Version=2016-11-15
     form:
       Action:
       - DescribeInstances
-      Filter.1.Name:
-      - tag:Name
-      Filter.1.Value.1:
-      - '**'
+      MaxResults:
+      - "1000"
+      NextToken:
+      - ""
       Version:
       - "2016-11-15"
     headers:
-      Content-Length:
-      - "92"
       Content-Type:
-      - application/x-www-form-urlencoded; charset=utf-8
+      - application/x-www-form-urlencoded
     url: https://ec2.us-west-2.amazonaws.com/
     method: POST
   response:
@@ -474,10 +472,14 @@ interactions:
           </reservationSet>
       </DescribeInstancesResponse>
     headers:
+      Cache-Control:
+      - no-cache, no-store
       Content-Type:
       - text/xml;charset=UTF-8
       Server:
       - AmazonEC2
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
       Vary:
       - accept-encoding
     status: 200 OK

@@ -4,13 +4,13 @@ import (
 	"os"
 	"regexp"
 
-	"github.com/aws/aws-sdk-go/aws/session"
+	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/dnaeon/go-vcr/cassette"
 	"github.com/dnaeon/go-vcr/recorder"
 	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
 )
 
-func NewAWSRecorderSession(fixtureName string) (*session.Session, *recorder.Recorder) {
+func NewAWSRecorderSession(fixtureName string) (aws.Config, *recorder.Recorder) {
 	var mode recorder.Mode
 	if os.Getenv("RECORD_VCR") != "" {
 		mode = recorder.ModeRecording
@@ -27,6 +27,8 @@ func NewAWSRecorderSession(fixtureName string) (*session.Session, *recorder.Reco
 		delete(i.Request.Headers, "X-Amz-Date")
 		delete(i.Request.Headers, "X-Amz-Content-Sha256")
 		delete(i.Request.Headers, "User-Agent")
+		delete(i.Request.Headers, "Amz-Sdk-Request")
+		delete(i.Request.Headers, "Amz-Sdk-Invocation-Id")
 		delete(i.Response.Headers, "X-Amzn-Requestid")
 		delete(i.Response.Headers, "Date")
 		delete(i.Response.Headers, "X-Amz-Id-2")
@@ -39,9 +41,9 @@ func NewAWSRecorderSession(fixtureName string) (*session.Session, *recorder.Reco
 		return nil
 	})
 
-	session := awsworkflow.NewWorkflowSession(r)
+	cfg := awsworkflow.NewWorkflowConfig(r)
 
-	return session, r
+	return cfg, r
 }
 
 func PanicOnError(f func() error) {

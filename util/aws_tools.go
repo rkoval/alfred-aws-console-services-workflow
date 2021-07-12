@@ -1,12 +1,12 @@
 package util
 
 import (
-	"github.com/aws/aws-sdk-go/service/cloudformation"
-	"github.com/aws/aws-sdk-go/service/ec2"
-	"github.com/aws/aws-sdk-go/service/elasticbeanstalk"
+	cloudformationTypes "github.com/aws/aws-sdk-go-v2/service/cloudformation/types"
+	ec2Types "github.com/aws/aws-sdk-go-v2/service/ec2/types"
+	elasticbeanstalkTypes "github.com/aws/aws-sdk-go-v2/service/elasticbeanstalk/types"
 )
 
-func GetEC2TagValue(tags []*ec2.Tag, key string) string {
+func GetEC2TagValue(tags []ec2Types.Tag, key string) string {
 	for _, tag := range tags {
 		if *tag.Key == key {
 			return *tag.Value
@@ -15,7 +15,7 @@ func GetEC2TagValue(tags []*ec2.Tag, key string) string {
 	return ""
 }
 
-func GetCloudFormationTagValue(tags []*cloudformation.Tag, key string) string {
+func GetCloudFormationTagValue(tags []cloudformationTypes.Tag, key string) string {
 	for _, tag := range tags {
 		if *tag.Key == key {
 			return *tag.Value
@@ -24,34 +24,34 @@ func GetCloudFormationTagValue(tags []*cloudformation.Tag, key string) string {
 	return ""
 }
 
-func GetEC2InstanceStateEmoji(instanceState ec2.InstanceState) string {
-	switch name := *instanceState.Name; name {
-	case ec2.InstanceStateNameRunning:
+func GetEC2InstanceStateEmoji(instanceState ec2Types.InstanceState) string {
+	switch name := instanceState.Name; name {
+	case ec2Types.InstanceStateNameRunning:
 		return "🟢"
-	case ec2.InstanceStateNameShuttingDown:
+	case ec2Types.InstanceStateNameShuttingDown:
 		return "🟡"
-	case ec2.InstanceStateNameStopping:
+	case ec2Types.InstanceStateNameStopping:
 		return "🟡"
-	case ec2.InstanceStateNameStopped:
+	case ec2Types.InstanceStateNameStopped:
 		return "🔴"
-	case ec2.InstanceStateNameTerminated:
+	case ec2Types.InstanceStateNameTerminated:
 		return "🔴"
-	case ec2.InstanceStateNamePending:
+	case ec2Types.InstanceStateNamePending:
 		return "⚪️"
 	}
 
 	return "❔"
 }
 
-func GetElasticBeanstalkHealthEmoji(environmentHealth string) string {
+func GetElasticBeanstalkHealthEmoji(environmentHealth elasticbeanstalkTypes.EnvironmentHealth) string {
 	switch environmentHealth {
-	case elasticbeanstalk.EnvironmentHealthGreen:
+	case elasticbeanstalkTypes.EnvironmentHealthGreen:
 		return "🟢"
-	case elasticbeanstalk.EnvironmentHealthYellow:
+	case elasticbeanstalkTypes.EnvironmentHealthYellow:
 		return "🟡"
-	case elasticbeanstalk.EnvironmentHealthRed:
+	case elasticbeanstalkTypes.EnvironmentHealthRed:
 		return "🔴"
-	case elasticbeanstalk.EnvironmentHealthGrey:
+	case elasticbeanstalkTypes.EnvironmentHealthGrey:
 		return "⚪️"
 	}
 

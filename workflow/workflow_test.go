@@ -278,9 +278,9 @@ func testWorkflow(t *testing.T, tc testCase, forceFetch, snapshot bool) []*aw.It
 	updater := &tests.MockAlfredUpdater{}
 	wf := aw.New(aw.Update(updater))
 
-	session, r := tests.NewAWSRecorderSession(tc.fixtureName)
+	cfg, r := tests.NewAWSRecorderSession(tc.fixtureName)
 	defer tests.PanicOnError(r.Stop)
-	Run(wf, tc.query, session, forceFetch, false, "../console-services.yml")
+	Run(wf, tc.query, cfg, forceFetch, false, "../console-services.yml")
 
 	if tc.deleteItemArgBeforeSnapshot {
 		for i := range wf.Feedback.Items {

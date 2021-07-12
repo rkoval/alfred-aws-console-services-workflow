@@ -1,23 +1,26 @@
 package awsworkflow
 
 import (
+	"context"
 	"net/http"
 
-	"github.com/aws/aws-sdk-go/aws/session"
+	"github.com/aws/aws-sdk-go-v2/aws"
+	"github.com/aws/aws-sdk-go-v2/config"
 	aw "github.com/deanishe/awgo"
 )
 
-func NewWorkflowSession(transport http.RoundTripper) *session.Session {
-	sess := session.Must(session.NewSession())
+func NewWorkflowConfig(transport http.RoundTripper) aws.Config {
+	cfg, err := config.LoadDefaultConfig(context.TODO())
+	if err != nil {
+		panic(err)
+	}
 
 	if transport != nil {
-		client := &http.Client{
+		cfg.HTTPClient = &http.Client{
 			Transport: transport,
 		}
-		sess.Config.WithHTTPClient(client)
 	}
-	// cfg.WithLogLevel(aws.LogDebugWithHTTPBody)
-	return sess
+	return cfg
 }
 
 func GetImageIcon(id string) *aw.Icon {
