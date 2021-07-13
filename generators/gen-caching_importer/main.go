@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"os"
 	"regexp"
 	"strings"
@@ -18,16 +19,24 @@ func main() {
 
 	lines := strings.Split(string(content[:]), "\n")
 
+	extraImports := []string{
+		"github.com/aws/aws-sdk-go-v2/aws",
+		"github.com/aws/smithy-go",
+	}
 	for i, line := range lines {
-		if strings.Contains(line, "\"github.com/aws/aws-sdk-go-v2/aws\"") {
-			lines = append(lines[:i+1+len(importLines)], lines[i+1:]...) // i < len(a)
+		if strings.Contains(line, "\"github.com/deanishe/awgo\"") {
+			lines = append(lines[:i+1+len(importLines)+len(extraImports)], lines[i+1:]...)
 			for j, importLine := range importLines {
 				lines[i+1+j] = importLine
+			}
+			for k, extraImportLine := range extraImports {
+				lines[i+1+len(importLines)+k] = "\t\"" + extraImportLine + "\""
 			}
 			break
 		}
 	}
 
+	log.Printf("strings.Join(lines %s", strings.Join(lines, "\n"))
 	err = os.WriteFile(filename, []byte(strings.Join(lines, "\n")), 0600)
 	if err != nil {
 		panic(err)
@@ -44,9 +53,13 @@ func getImportLines() []string {
 	entities := strings.Split(matches[1], ",")
 
 	importLines := []string{}
+	seenPackages := map[string]bool{}
 	for _, entity := range entities {
 		pkg := strings.Split(entity, ".")[0]
-		importLines = append(importLines, fmt.Sprintf("\t%s \"github.com/aws/aws-sdk-go-v2/service/%s/types\"", pkg, pkg))
+		if !seenPackages[pkg] {
+			importLines = append(importLines, fmt.Sprintf("\t%s \"github.com/aws/aws-sdk-go-v2/service/%s/types\"", pkg, pkg))
+		}
+		seenPackages[pkg] = true
 	}
 
 	return importLines
