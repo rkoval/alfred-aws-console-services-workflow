@@ -25,7 +25,7 @@ func appendToSearchers(searcherNamer SearcherNamer) {
 	}
 
 	regex = regexp.MustCompile(`(,\n)(})`)
-	replacement = fmt.Sprintf("$1\t\"%ss\": %s$1$2", searcherNamer.NameSnakeCase, searcherNamer.StructInstanceName)
+	replacement = fmt.Sprintf("$1\t\"%s\": %s$1$2", searcherNamer.NameSnakeCasePlural, searcherNamer.StructInstanceName)
 	replacedContent = util.ModifyFileWithRegexReplace("searchers/searchers_by_service_id.go", regex, replacement, "")
 
 	if !strings.Contains(replacedContent, fmt.Sprintf("\"%s\"", searcherNamer.ServiceLower)) {
@@ -107,7 +107,7 @@ func (s {{ .StructName }}) addToWorkflow(wf *aw.Workflow, query string, config a
 	util.NewURLItem(wf, title).
 		Subtitle(subtitle).
 		Arg(fmt.Sprintf(
-			"https://%s.console.aws.amazon.com/{{ .ServiceLower }}/{{ .EntityLower }}s/?region=%s&tab=overview",
+			"https://%s.console.aws.amazon.com/{{ .ServiceLower }}/{{ .EntityLowerPlural }}/?region=%s&tab=overview",
 			config.Region,
 			config.Region,
 		)).
@@ -115,7 +115,7 @@ func (s {{ .StructName }}) addToWorkflow(wf *aw.Workflow, query string, config a
 		Valid(true)
 }`
 
-	util.WriteTemplateToFile("searcher_file", templateString, fmt.Sprintf("searchers/%ss.go", searcherNamer.NameSnakeCase), searcherNamer)
+	util.WriteTemplateToFile("searcher_file", templateString, fmt.Sprintf("searchers/%s.go", searcherNamer.NameSnakeCasePlural), searcherNamer)
 }
 
 func writeSearcherTestFile(searcherNamer SearcherNamer) {
@@ -131,5 +131,5 @@ func Test{{ .StructName }}(t *testing.T) {
 	TestSearcher(t, {{ .StructName }}{}, util.GetCurrentFilename())
 }`
 
-	util.WriteTemplateToFile("searcher_test_file", templateString, fmt.Sprintf("searchers/%ss_test.go", searcherNamer.NameSnakeCase), searcherNamer)
+	util.WriteTemplateToFile("searcher_test_file", templateString, fmt.Sprintf("searchers/%s_test.go", searcherNamer.NameSnakeCasePlural), searcherNamer)
 }

@@ -44,10 +44,12 @@ type SearcherNamer struct {
 	ServiceLower       string
 	EntityTitle        string
 	EntityLower        string
+	EntityLowerPlural   string
 	Name               string
 	NameLower          string
 	NameCamelCase      string
 	NameSnakeCase      string
+	NameSnakeCasePlural string
 	StructName         string
 	StructInstanceName string
 	OperationDefinition
@@ -68,10 +70,12 @@ func NewSearcherNamer(service, entity string, operationDefinition OperationDefin
 		ServiceLower:        serviceLower,
 		EntityTitle:         entityTitle,
 		EntityLower:         strings.ToLower(entity),
+		EntityLowerPlural:   strings.ToLower(entity) + "s", // TODO make this proper english
 		Name:                name,
 		NameLower:           strings.ToLower(name),
 		NameCamelCase:       strcase.ToCamel(name),
 		NameSnakeCase:       strcase.ToSnake(name),
+		NameSnakeCasePlural: strcase.ToSnake(name) + "s", // TODO make this proper english
 		StructName:          name + "Searcher",
 		StructInstanceName:  serviceLower + entityTitle + "Searcher",
 		OperationDefinition: operationDefinition,
