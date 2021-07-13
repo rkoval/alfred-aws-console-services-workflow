@@ -43,9 +43,7 @@ func (s LambdaFunctionSearcher) fetch(cfg aws.Config) ([]types.FunctionConfigura
 			return nil, err
 		}
 
-		for _, entity := range resp.Functions {
-			entities = append(entities, entity)
-		}
+		entities = append(entities, resp.Functions...)
 
 		if resp.NextMarker != nil {
 			NextMarker = *resp.NextMarker

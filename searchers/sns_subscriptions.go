@@ -41,9 +41,7 @@ func (s SNSSubscriptionSearcher) fetch(cfg aws.Config) ([]types.Subscription, er
 			return nil, err
 		}
 
-		for _, entity := range resp.Subscriptions {
-			entities = append(entities, entity)
-		}
+		entities = append(entities, resp.Subscriptions...)
 
 		if resp.NextToken != nil {
 			pageToken = *resp.NextToken

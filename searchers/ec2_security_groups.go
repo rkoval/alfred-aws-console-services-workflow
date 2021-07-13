@@ -38,11 +38,8 @@ func (s EC2SecurityGroupSearcher) fetch(cfg aws.Config) ([]types.SecurityGroup, 
 		if err != nil {
 			return nil, err
 		}
-		// log.Println("resp", resp)
 
-		for i := range resp.SecurityGroups {
-			securityGroups = append(securityGroups, resp.SecurityGroups[i])
-		}
+		securityGroups = append(securityGroups, resp.SecurityGroups...)
 
 		if resp.NextToken != nil {
 			NextToken = *resp.NextToken

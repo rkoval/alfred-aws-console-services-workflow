@@ -43,9 +43,7 @@ func (s WAFIPSetSearcher) fetch(cfg aws.Config) ([]types.IPSetSummary, error) {
 			return nil, err
 		}
 
-		for _, entity := range resp.IPSets {
-			entities = append(entities, entity)
-		}
+		entities = append(entities, resp.IPSets...)
 
 		if resp.NextMarker != nil {
 			NextMarker = *resp.NextMarker

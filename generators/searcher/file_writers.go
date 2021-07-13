@@ -101,9 +101,7 @@ func (s {{ .StructName }}) fetch(cfg aws.Config) ([]types.{{ .OperationDefinitio
 			return nil, err
 		}
 
-		for _, entity := range resp.{{ .OperationDefinition.Items }} {
-			entities = append(entities, entity)
-		}
+		entities = append(entities, resp.{{ .OperationDefinition.Items }}...)
 
 		{{if .OperationDefinition.PageOutputToken }}if resp.{{ .OperationDefinition.PageOutputToken }} != nil {
 			pageToken = *resp.{{ .OperationDefinition.PageOutputToken }}

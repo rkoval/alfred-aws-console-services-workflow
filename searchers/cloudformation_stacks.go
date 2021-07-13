@@ -40,9 +40,7 @@ func (s CloudFormationStackSearcher) fetch(cfg aws.Config) ([]types.Stack, error
 			return nil, err
 		}
 
-		for _, entity := range resp.Stacks {
-			entities = append(entities, entity)
-		}
+		entities = append(entities, resp.Stacks...)
 
 		if resp.NextToken != nil {
 			NextToken = *resp.NextToken

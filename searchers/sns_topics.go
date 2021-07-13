@@ -40,9 +40,7 @@ func (s SNSTopicSearcher) fetch(cfg aws.Config) ([]types.Topic, error) {
 			return nil, err
 		}
 
-		for _, entity := range resp.Topics {
-			entities = append(entities, entity)
-		}
+		entities = append(entities, resp.Topics...)
 
 		if resp.NextToken != nil {
 			pageToken = *resp.NextToken

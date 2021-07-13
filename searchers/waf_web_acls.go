@@ -43,9 +43,7 @@ func (s WAFWebACLSearcher) fetch(cfg aws.Config) ([]types.WebACLSummary, error) 
 			return nil, err
 		}
 
-		for _, entity := range resp.WebACLs {
-			entities = append(entities, entity)
-		}
+		entities = append(entities, resp.WebACLs...)
 
 		if resp.NextMarker != nil {
 			NextMarker = *resp.NextMarker

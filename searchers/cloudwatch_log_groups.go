@@ -43,9 +43,7 @@ func (s CloudWatchLogGroupSearcher) fetch(cfg aws.Config) ([]types.LogGroup, err
 			return nil, err
 		}
 
-		for _, entity := range resp.LogGroups {
-			entities = append(entities, entity)
-		}
+		entities = append(entities, resp.LogGroups...)
 
 		if resp.NextToken != nil {
 			NextToken = *resp.NextToken
