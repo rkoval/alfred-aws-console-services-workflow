@@ -28,12 +28,12 @@ func (s CloudFormationStackSearcher) Search(wf *aw.Workflow, query string, cfg a
 func (s CloudFormationStackSearcher) fetch(cfg aws.Config) ([]types.Stack, error) {
 	svc := cloudformation.NewFromConfig(cfg)
 
-	NextToken := ""
+	pageToken := ""
 	var entities []types.Stack
 	for {
 		params := &cloudformation.DescribeStacksInput{}
-		if NextToken != "" {
-			params.NextToken = aws.String(NextToken)
+		if pageToken != "" {
+			params.NextToken = aws.String(pageToken)
 		}
 		resp, err := svc.DescribeStacks(context.TODO(), params)
 		if err != nil {
@@ -43,7 +43,7 @@ func (s CloudFormationStackSearcher) fetch(cfg aws.Config) ([]types.Stack, error
 		entities = append(entities, resp.Stacks...)
 
 		if resp.NextToken != nil {
-			NextToken = *resp.NextToken
+			pageToken = *resp.NextToken
 		} else {
 			break
 		}

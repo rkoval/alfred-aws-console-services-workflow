@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"os"
 	"regexp"
 	"strings"
@@ -36,7 +35,6 @@ func main() {
 		}
 	}
 
-	log.Printf("strings.Join(lines %s", strings.Join(lines, "\n"))
 	err = os.WriteFile(filename, []byte(strings.Join(lines, "\n")), 0600)
 	if err != nil {
 		panic(err)
