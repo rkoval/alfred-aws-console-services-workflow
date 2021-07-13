@@ -28,16 +28,30 @@ func (s RDSDatabaseSearcher) Search(wf *aw.Workflow, query string, cfg aws.Confi
 func (s RDSDatabaseSearcher) fetch(cfg aws.Config) ([]types.DBInstance, error) {
 	svc := rds.NewFromConfig(cfg)
 
-	resp, err := svc.DescribeDBInstances(context.TODO(), &rds.DescribeDBInstancesInput{})
-	if err != nil {
-		return nil, err
+	pageToken := ""
+	var entities []types.DBInstance
+	for {
+		params := &rds.DescribeDBInstancesInput{
+			MaxRecords: aws.Int32(100),
+		}
+		if pageToken != "" {
+			params.Marker = aws.String(pageToken)
+		}
+		resp, err := svc.DescribeDBInstances(context.TODO(), params)
+		if err != nil {
+			return nil, err
+		}
+
+		entities = append(entities, resp.DBInstances...)
+
+		if resp.Marker != nil {
+			pageToken = *resp.Marker
+		} else {
+			break
+		}
 	}
 
-	databases := []types.DBInstance{}
-	for i := range resp.DBInstances {
-		databases = append(databases, resp.DBInstances[i])
-	}
-	return databases, nil
+	return entities, nil
 }
 
 func (s RDSDatabaseSearcher) addToWorkflow(wf *aw.Workflow, query string, config aws.Config, entity types.DBInstance) {

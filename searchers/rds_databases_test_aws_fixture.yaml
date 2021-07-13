@@ -2,10 +2,12 @@
 version: 1
 interactions:
 - request:
-    body: Action=DescribeDBInstances&Version=2014-10-31
+    body: Action=DescribeDBInstances&MaxRecords=100&Version=2014-10-31
     form:
       Action:
       - DescribeDBInstances
+      MaxRecords:
+      - "100"
       Version:
       - "2014-10-31"
     headers:
