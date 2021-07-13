@@ -902,6 +902,22 @@
   short_name: SNS
   description: SNS Pub/Sub, Mobile Push and SMS
   url: https://console.aws.amazon.com/sns/home
+  sub_services:
+    - id: topics
+      name: Topics
+      url: "https://console.aws.amazon.com/sns/v3/home#/topics"
+    - id: subscriptions
+      name: Subscriptions
+      url: "https://console.aws.amazon.com/sns/v3/home#/subscriptions"
+    - id: pushnotifications
+      name: Push Notifications
+      url: "https://console.aws.amazon.com/sns/v3/home#/mobile/push-notifications"
+    - id: textmessaging
+      name: Text Messaging (SMS)
+      url: "https://console.aws.amazon.com/sns/v3/home#/mobile/text-messaging"
+    - id: originationnumbers
+      name: Origination numbers
+      url: "https://console.aws.amazon.com/sns/v3/home#/mobile/origination-identities"
 
 - id: sqs
   name: Simple Queue Service
