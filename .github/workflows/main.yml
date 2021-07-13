@@ -16,6 +16,13 @@ jobs:
         with:
           go-version: '1.16.5'
       - run: ./generate.sh
+      - name: Cache go.sum dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-
       - name: golangci-lint
         run: |
           go get github.com/golangci/golangci-lint/cmd/golangci-lint@v1.41.1
