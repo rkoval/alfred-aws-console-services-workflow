@@ -12,6 +12,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/lambda v1.4.0
 	github.com/aws/aws-sdk-go-v2/service/rds v1.5.0
 	github.com/aws/aws-sdk-go-v2/service/s3 v1.11.0
+	github.com/aws/aws-sdk-go-v2/service/sns v1.6.0
 	github.com/aws/aws-sdk-go-v2/service/wafv2 v1.6.0
 	github.com/aws/smithy-go v1.5.0
 	github.com/bradleyjkemp/cupaloy v2.3.0+incompatible

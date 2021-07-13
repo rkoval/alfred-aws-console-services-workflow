@@ -1,0 +1,46 @@
+---
+version: 1
+interactions:
+- request:
+    body: Action=ListTopics&Version=2010-03-31
+    form:
+      Action:
+      - ListTopics
+      Version:
+      - "2010-03-31"
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+    url: https://sns.us-west-2.amazonaws.com/
+    method: POST
+  response:
+    body: |
+      <ListTopicsResponse xmlns="http://sns.amazonaws.com/doc/2010-03-31/">
+        <ListTopicsResult>
+          <Topics>
+            <member>
+              <TopicArn>arn:aws:sns:us-west-2:0000000000:sns-topic-name-1</TopicArn>
+            </member>
+            <member>
+              <TopicArn>arn:aws:sns:us-west-2:0000000000:sns-topic-name-2</TopicArn>
+            </member>
+            <member>
+              <TopicArn>arn:aws:sns:us-west-2:0000000000:sns-topic-name-3</TopicArn>
+            </member>
+            <member>
+              <TopicArn>arn:aws:sns:us-west-2:0000000000:sns-topic-name-4</TopicArn>
+            </member>
+          </Topics>
+        </ListTopicsResult>
+        <ResponseMetadata>
+          <RequestId>00000000-0000-0000-0000-000000000000</RequestId>
+        </ResponseMetadata>
+      </ListTopicsResponse>
+    headers:
+      Content-Type:
+      - text/xml
+      Vary:
+      - Accept-Encoding
+    status: 200 OK
+    code: 200
+    duration: ""

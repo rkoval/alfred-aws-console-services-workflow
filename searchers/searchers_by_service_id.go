@@ -10,6 +10,7 @@ var elasticBeanstalkEnvironmentSearcher = &ElasticBeanstalkEnvironmentSearcher{}
 var lambdaFunctionSearcher = &LambdaFunctionSearcher{}
 var rdsDatabaseSearcher = &RDSDatabaseSearcher{}
 var s3BucketSearcher = &S3BucketSearcher{}
+var snsTopicSearcher = &SNSTopicSearcher{}
 var wafIPSetSearcher = &WAFIPSetSearcher{}
 var wafWebACLSearcher = &WAFWebACLSearcher{}
 
@@ -29,6 +30,8 @@ var SearchersByServiceId map[string]Searcher = map[string]Searcher{
 	"rds_databases":                 rdsDatabaseSearcher,
 	"s3":                            s3BucketSearcher,
 	"s3_buckets":                    s3BucketSearcher,
+	"sns":                           snsTopicSearcher,
+	"sns_topics":                    snsTopicSearcher,
 	"waf":                           wafWebACLSearcher,
 	"waf_ipsets":                    wafIPSetSearcher,
 	"waf_webacls":                   wafWebACLSearcher,

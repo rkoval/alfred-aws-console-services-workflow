@@ -272,6 +272,26 @@ var tcs []testCase = []testCase{
 		query:       "waf ,webacl-2",
 		fixtureName: "../searchers/waf_web_acls_test", // reuse test fixture from this other test
 	},
+	{
+		query:       "sns",
+		fixtureName: "../searchers/sns_topics_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "sns ",
+		fixtureName: "../searchers/sns_topics_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "sns topics",
+		fixtureName: "../searchers/sns_topics_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "sns topics ",
+		fixtureName: "../searchers/sns_topics_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "sns topics sns-topic-name-1",
+		fixtureName: "../searchers/sns_topics_test", // reuse test fixture from this other test
+	},
 }
 
 func testWorkflow(t *testing.T, tc testCase, forceFetch, snapshot bool) []*aw.Item {
