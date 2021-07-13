@@ -1,7 +1,6 @@
 package util
 
 import (
-	"io/ioutil"
 	"os"
 	"regexp"
 	"strings"
@@ -27,7 +26,7 @@ func WriteTemplateToFile(templateName, templateString, fileName string, data int
 }
 
 func ModifyFileWithRegexReplace(filename string, regex *regexp.Regexp, replacement string, ignoreIfContains string) string {
-	c, err := ioutil.ReadFile(filename)
+	c, err := os.ReadFile(filename)
 	if err != nil {
 		panic(err)
 	}
@@ -38,7 +37,7 @@ func ModifyFileWithRegexReplace(filename string, regex *regexp.Regexp, replaceme
 	}
 
 	replacedContent := regex.ReplaceAllString(content, replacement)
-	err = ioutil.WriteFile(filename, []byte(replacedContent), 0600)
+	err = os.WriteFile(filename, []byte(replacedContent), 0600)
 	if err != nil {
 		panic(err)
 	}
