@@ -1,6 +1,8 @@
 package util
 
 import (
+	"strings"
+
 	cloudformationTypes "github.com/aws/aws-sdk-go-v2/service/cloudformation/types"
 	ec2Types "github.com/aws/aws-sdk-go-v2/service/ec2/types"
 	elasticbeanstalkTypes "github.com/aws/aws-sdk-go-v2/service/elasticbeanstalk/types"
@@ -13,6 +15,11 @@ func GetEC2TagValue(tags []ec2Types.Tag, key string) string {
 		}
 	}
 	return ""
+}
+
+func GetEndOfArn(arn string) string {
+	splitArn := strings.Split(arn, ":")
+	return splitArn[len(splitArn)-1]
 }
 
 func GetCloudFormationTagValue(tags []cloudformationTypes.Tag, key string) string {

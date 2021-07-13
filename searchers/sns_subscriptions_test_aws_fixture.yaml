@@ -1,0 +1,108 @@
+---
+version: 1
+interactions:
+- request:
+    body: Action=ListSubscriptions&Version=2010-03-31
+    form:
+      Action:
+      - ListSubscriptions
+      Version:
+      - "2010-03-31"
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+    url: https://sns.us-west-2.amazonaws.com/
+    method: POST
+  response:
+    body: |
+      <ListSubscriptionsResponse xmlns="http://sns.amazonaws.com/doc/2010-03-31/">
+        <ListSubscriptionsResult>
+          <Subscriptions>
+            <member>
+              <Owner>00000000</Owner>
+              <Endpoint>google@gmail.com</Endpoint>
+              <Protocol>email</Protocol>
+              <SubscriptionArn>PendingConfirmation</SubscriptionArn>
+              <TopicArn>arn:aws:sns:us-west-2:0000000000:topic-1</TopicArn>
+            </member>
+            <member>
+              <Owner>00000000</Owner>
+              <Endpoint>http://www.google.com</Endpoint>
+              <Protocol>http</Protocol>
+              <SubscriptionArn>arn:aws:sns:us-west-2:0000000000:topic-2:00000000-0000-0000-0000-000000000000</SubscriptionArn>
+              <TopicArn>arn:aws:sns:us-west-2:0000000000:topic-2</TopicArn>
+            </member>
+            <member>
+              <Owner>00000000</Owner>
+              <Endpoint>google@gmail.com</Endpoint>
+              <Protocol>email</Protocol>
+              <SubscriptionArn>PendingConfirmation</SubscriptionArn>
+              <TopicArn>arn:aws:sns:us-west-2:0000000000:topic-3</TopicArn>
+            </member>
+            <member>
+              <Owner>00000000</Owner>
+              <Endpoint>google@gmail.com</Endpoint>
+              <Protocol>email</Protocol>
+              <SubscriptionArn>PendingConfirmation</SubscriptionArn>
+              <TopicArn>arn:aws:sns:us-west-2:0000000000:topic-4</TopicArn>
+            </member>
+            <member>
+              <Owner>00000000</Owner>
+              <Endpoint>google@gmail.com</Endpoint>
+              <Protocol>email</Protocol>
+              <SubscriptionArn>PendingConfirmation</SubscriptionArn>
+              <TopicArn>arn:aws:sns:us-west-2:0000000000:topic-5</TopicArn>
+            </member>
+          </Subscriptions>
+          <NextToken>BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB</NextToken>
+        </ListSubscriptionsResult>
+        <ResponseMetadata>
+          <RequestId>00000000-0000-0000-0000-000000000000</RequestId>
+        </ResponseMetadata>
+      </ListSubscriptionsResponse>
+    headers:
+      Content-Type:
+      - text/xml
+      Vary:
+      - Accept-Encoding
+    status: 200 OK
+    code: 200
+    duration: ""
+- request:
+    body: Action=ListSubscriptions&NextToken=BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB&Version=2010-03-31
+    form:
+      Action:
+      - ListSubscriptions
+      NextToken:
+      - BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+      Version:
+      - "2010-03-31"
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+    url: https://sns.us-west-2.amazonaws.com/
+    method: POST
+  response:
+    body: |
+      <ListSubscriptionsResponse xmlns="http://sns.amazonaws.com/doc/2010-03-31/">
+        <ListSubscriptionsResult>
+          <Subscriptions>
+            <member>
+              <Owner>00000000</Owner>
+              <Endpoint>http://www.google.com</Endpoint>
+              <Protocol>http</Protocol>
+              <SubscriptionArn>arn:aws:sns:us-west-2:0000000000:paginated-result:00000000-0000-0000-0000-000000000000</SubscriptionArn>
+              <TopicArn>arn:aws:sns:us-west-2:0000000000:paginated-result</TopicArn>
+            </member>
+          </Subscriptions>
+        </ListSubscriptionsResult>
+        <ResponseMetadata>
+          <RequestId>00000000-0000-0000-0000-000000000000</RequestId>
+        </ResponseMetadata>
+      </ListSubscriptionsResponse>
+    headers:
+      Content-Type:
+      - text/xml
+    status: 200 OK
+    code: 200
+    duration: ""

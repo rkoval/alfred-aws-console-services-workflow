@@ -33,6 +33,7 @@ func NewAWSRecorderSession(fixtureName string) (aws.Config, *recorder.Recorder) 
 		delete(i.Response.Headers, "Date")
 		delete(i.Response.Headers, "X-Amz-Id-2")
 		delete(i.Response.Headers, "X-Amz-Request-Id")
+		delete(i.Response.Headers, "Content-Length")
 		return nil
 	})
 

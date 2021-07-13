@@ -116,12 +116,8 @@ func (s {{ .StructName }}) fetch(cfg aws.Config) ([]types.{{ .OperationDefinitio
 }
 
 func (s {{ .StructName }}) addToWorkflow(wf *aw.Workflow, query string, config aws.Config, entity types.{{ .OperationDefinition.Item }}) {
-	log.Println("entity", entity) // TODO remove me
-
-	title := entity.Name
+	title := entity.TODO
 	subtitle := ""
-
-	// TODO fill me out
 
 	util.NewURLItem(wf, title).
 		Subtitle(subtitle).

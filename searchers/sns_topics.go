@@ -3,8 +3,6 @@ package searchers
 import (
 	"context"
 	"fmt"
-	"log"
-	"strings"
 
 	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/service/sns"
@@ -57,11 +55,8 @@ func (s SNSTopicSearcher) fetch(cfg aws.Config) ([]types.Topic, error) {
 }
 
 func (s SNSTopicSearcher) addToWorkflow(wf *aw.Workflow, query string, config aws.Config, entity types.Topic) {
-	log.Println("entity", entity) // TODO remove me
-
 	subtitle := *entity.TopicArn
-	splitSubtitle := strings.Split(subtitle, ":")
-	title := splitSubtitle[len(splitSubtitle)-1]
+	title := util.GetEndOfArn(*entity.TopicArn)
 
 	util.NewURLItem(wf, title).
 		Subtitle(subtitle).

@@ -1,11 +1,11 @@
-([]*aw.Item) (len=5) {
+([]*aw.Item) (len=6) {
   (*aw.Item)({
-    title: (string) (len=10) "sns topics",
-    subtitle: (*string)((len=25) "🔎⭐️ SNS – Topics"),
-    match: (*string)((len=13) "topics Topics"),
-    uid: (*string)((len=6) "topics"),
-    autocomplete: (*string)((len=11) "sns topics "),
-    arg: (*string)((len=50) "https://console.aws.amazon.com/sns/v3/home#/topics"),
+    title: (string) (len=7) "topic-1",
+    subtitle: (*string)((len=31) "🕘 email – google@gmail.com"),
+    match: (*string)(<nil>),
+    uid: (*string)(<nil>),
+    autocomplete: (*string)(<nil>),
+    arg: (*string)((len=84) "https://us-west-2.console.aws.amazon.com/sns/v3/home?region=us-west-2#/subscriptions"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -33,12 +33,12 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=17) "sns subscriptions",
-    subtitle: (*string)((len=26) "🔎 SNS – Subscriptions"),
-    match: (*string)((len=27) "subscriptions Subscriptions"),
-    uid: (*string)((len=13) "subscriptions"),
-    autocomplete: (*string)((len=18) "sns subscriptions "),
-    arg: (*string)((len=57) "https://console.aws.amazon.com/sns/v3/home#/subscriptions"),
+    title: (string) (len=7) "topic-2",
+    subtitle: (*string)((len=75) "✅ http – http://www.google.com – 00000000-0000-0000-0000-000000000000"),
+    match: (*string)(<nil>),
+    uid: (*string)(<nil>),
+    autocomplete: (*string)(<nil>),
+    arg: (*string)((len=161) "https://us-west-2.console.aws.amazon.com/sns/v3/home?region=us-west-2#/subscription/arn:aws:sns:us-west-2:0000000000:topic-2:00000000-0000-0000-0000-000000000000"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -66,12 +66,12 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=21) "sns pushnotifications",
-    subtitle: (*string)((len=26) "SNS – Push Notifications"),
-    match: (*string)((len=36) "pushnotifications Push Notifications"),
-    uid: (*string)((len=17) "pushnotifications"),
-    autocomplete: (*string)((len=22) "sns pushnotifications "),
-    arg: (*string)((len=69) "https://console.aws.amazon.com/sns/v3/home#/mobile/push-notifications"),
+    title: (string) (len=7) "topic-3",
+    subtitle: (*string)((len=31) "🕘 email – google@gmail.com"),
+    match: (*string)(<nil>),
+    uid: (*string)(<nil>),
+    autocomplete: (*string)(<nil>),
+    arg: (*string)((len=84) "https://us-west-2.console.aws.amazon.com/sns/v3/home?region=us-west-2#/subscriptions"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -99,12 +99,12 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=17) "sns textmessaging",
-    subtitle: (*string)((len=28) "SNS – Text Messaging (SMS)"),
-    match: (*string)((len=34) "textmessaging Text Messaging (SMS)"),
-    uid: (*string)((len=13) "textmessaging"),
-    autocomplete: (*string)((len=18) "sns textmessaging "),
-    arg: (*string)((len=65) "https://console.aws.amazon.com/sns/v3/home#/mobile/text-messaging"),
+    title: (string) (len=7) "topic-4",
+    subtitle: (*string)((len=31) "🕘 email – google@gmail.com"),
+    match: (*string)(<nil>),
+    uid: (*string)(<nil>),
+    autocomplete: (*string)(<nil>),
+    arg: (*string)((len=84) "https://us-west-2.console.aws.amazon.com/sns/v3/home?region=us-west-2#/subscriptions"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -132,12 +132,45 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=22) "sns originationnumbers",
-    subtitle: (*string)((len=27) "SNS – Origination numbers"),
-    match: (*string)((len=38) "originationnumbers Origination numbers"),
-    uid: (*string)((len=18) "originationnumbers"),
-    autocomplete: (*string)((len=23) "sns originationnumbers "),
-    arg: (*string)((len=73) "https://console.aws.amazon.com/sns/v3/home#/mobile/origination-identities"),
+    title: (string) (len=7) "topic-5",
+    subtitle: (*string)((len=31) "🕘 email – google@gmail.com"),
+    match: (*string)(<nil>),
+    uid: (*string)(<nil>),
+    autocomplete: (*string)(<nil>),
+    arg: (*string)((len=84) "https://us-west-2.console.aws.amazon.com/sns/v3/home?region=us-west-2#/subscriptions"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    icon: (*aw.Icon)({
+      Value: (string) (len=14) "images/sns.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=16) "paginated-result",
+    subtitle: (*string)((len=75) "✅ http – http://www.google.com – 00000000-0000-0000-0000-000000000000"),
+    match: (*string)(<nil>),
+    uid: (*string)(<nil>),
+    autocomplete: (*string)(<nil>),
+    arg: (*string)((len=170) "https://us-west-2.console.aws.amazon.com/sns/v3/home?region=us-west-2#/subscription/arn:aws:sns:us-west-2:0000000000:paginated-result:00000000-0000-0000-0000-000000000000"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

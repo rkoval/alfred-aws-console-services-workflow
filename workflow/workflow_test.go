@@ -292,6 +292,18 @@ var tcs []testCase = []testCase{
 		query:       "sns topics sns-topic-name-1",
 		fixtureName: "../searchers/sns_topics_test", // reuse test fixture from this other test
 	},
+	{
+		query:       "sns subscriptions",
+		fixtureName: "../searchers/sns_subscriptions_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "sns subscriptions ",
+		fixtureName: "../searchers/sns_subscriptions_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "sns subscriptions paginated",
+		fixtureName: "../searchers/sns_subscriptions_test", // reuse test fixture from this other test
+	},
 }
 
 func testWorkflow(t *testing.T, tc testCase, forceFetch, snapshot bool) []*aw.Item {

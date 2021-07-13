@@ -1,0 +1,194 @@
+---
+version: 1
+interactions:
+- request:
+    body: Action=ListSubscriptions&Version=2010-03-31
+    form:
+      Action:
+      - ListSubscriptions
+      Version:
+      - "2010-03-31"
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+    url: https://sns.us-west-2.amazonaws.com/
+    method: POST
+  response:
+    body: |
+      <ListSubscriptionsResponse xmlns="http://sns.amazonaws.com/doc/2010-03-31/">
+        <ListSubscriptionsResult>
+          <Subscriptions>
+            <member>
+              <Owner>00000000</Owner>
+              <Endpoint>ebrown.wsu@gmail.com</Endpoint>
+              <Protocol>email</Protocol>
+              <SubscriptionArn>PendingConfirmation</SubscriptionArn>
+              <TopicArn>arn:aws:sns:us-west-2:0000000000:ElasticBeanstalkNotifications-Environment-Apiserver-prod</TopicArn>
+            </member>
+            <member>
+              <Owner>00000000</Owner>
+              <Endpoint>http://api.tarobi-dev-test.com/aws/deployment?isProd=true</Endpoint>
+              <Protocol>http</Protocol>
+              <SubscriptionArn>arn:aws:sns:us-west-2:0000000000:ElasticBeanstalkNotifications-Environment-guilded-server:00000000-0000-0000-0000-000000000000</SubscriptionArn>
+              <TopicArn>arn:aws:sns:us-west-2:0000000000:ElasticBeanstalkNotifications-Environment-guilded-server</TopicArn>
+            </member>
+            <member>
+              <Owner>00000000</Owner>
+              <Endpoint>ebrown.wsu@gmail.com</Endpoint>
+              <Protocol>email</Protocol>
+              <SubscriptionArn>PendingConfirmation</SubscriptionArn>
+              <TopicArn>arn:aws:sns:us-west-2:0000000000:ElasticBeanstalkNotifications-Environment-guilded-worker</TopicArn>
+            </member>
+            <member>
+              <Owner>00000000</Owner>
+              <Endpoint>deployments@guilded.gg</Endpoint>
+              <Protocol>email</Protocol>
+              <SubscriptionArn>PendingConfirmation</SubscriptionArn>
+              <TopicArn>arn:aws:sns:us-west-2:0000000000:ElasticBeanstalkNotifications-Environment-guilded-media-server</TopicArn>
+            </member>
+            <member>
+              <Owner>00000000</Owner>
+              <Endpoint>deployments@guilded.gg</Endpoint>
+              <Protocol>email</Protocol>
+              <SubscriptionArn>PendingConfirmation</SubscriptionArn>
+              <TopicArn>arn:aws:sns:us-west-2:0000000000:ElasticBeanstalkNotifications-Environment-guilded-media-server-preprod</TopicArn>
+            </member>
+            <member>
+              <Owner>00000000</Owner>
+              <Endpoint>ebrown.wsu@gmail.com</Endpoint>
+              <Protocol>email</Protocol>
+              <SubscriptionArn>PendingConfirmation</SubscriptionArn>
+              <TopicArn>arn:aws:sns:us-west-2:0000000000:ElasticBeanstalkNotifications-Environment-guilded-server</TopicArn>
+            </member>
+            <member>
+              <Owner>00000000</Owner>
+              <Endpoint>deployments@guilded.gg</Endpoint>
+              <Protocol>email</Protocol>
+              <SubscriptionArn>PendingConfirmation</SubscriptionArn>
+              <TopicArn>arn:aws:sns:us-west-2:0000000000:ElasticBeanstalkNotifications-Environment-guilded-media-server-dev</TopicArn>
+            </member>
+            <member>
+              <Owner>00000000</Owner>
+              <Endpoint>https://api.guilded.gg/aws/email_bounce</Endpoint>
+              <Protocol>https</Protocol>
+              <SubscriptionArn>arn:aws:sns:us-west-2:0000000000:bounced_emails:00000000-0000-0000-0000-000000000000</SubscriptionArn>
+              <TopicArn>arn:aws:sns:us-west-2:0000000000:bounced_emails</TopicArn>
+            </member>
+            <member>
+              <Owner>00000000</Owner>
+              <Endpoint>http://api.tarobi-dev-test.com/aws/alert</Endpoint>
+              <Protocol>http</Protocol>
+              <SubscriptionArn>arn:aws:sns:us-west-2:0000000000:alerts:00000000-0000-0000-0000-000000000000</SubscriptionArn>
+              <TopicArn>arn:aws:sns:us-west-2:0000000000:alerts</TopicArn>
+            </member>
+            <member>
+              <Owner>00000000</Owner>
+              <Endpoint>http://api.guilded.gg/aws/email_complaint</Endpoint>
+              <Protocol>http</Protocol>
+              <SubscriptionArn>arn:aws:sns:us-west-2:0000000000:email_complaints:00000000-0000-0000-0000-000000000000</SubscriptionArn>
+              <TopicArn>arn:aws:sns:us-west-2:0000000000:email_complaints</TopicArn>
+            </member>
+            <member>
+              <Owner>00000000</Owner>
+              <Endpoint>http://api.tarobi-dev-test.com/aws/deployment</Endpoint>
+              <Protocol>http</Protocol>
+              <SubscriptionArn>arn:aws:sns:us-west-2:0000000000:deployment:00000000-0000-0000-0000-000000000000</SubscriptionArn>
+              <TopicArn>arn:aws:sns:us-west-2:0000000000:deployment</TopicArn>
+            </member>
+            <member>
+              <Owner>00000000</Owner>
+              <Endpoint>deployments@guilded.gg</Endpoint>
+              <Protocol>email</Protocol>
+              <SubscriptionArn>PendingConfirmation</SubscriptionArn>
+              <TopicArn>arn:aws:sns:us-west-2:0000000000:ElasticBeanstalkNotifications-Environment-guilded-image-server</TopicArn>
+            </member>
+            <member>
+              <Owner>00000000</Owner>
+              <Endpoint>ebrown.wsu@gmail.com</Endpoint>
+              <Protocol>email</Protocol>
+              <SubscriptionArn>PendingConfirmation</SubscriptionArn>
+              <TopicArn>arn:aws:sns:us-west-2:0000000000:ElasticBeanstalkNotifications-Environment-guilded-server-preprod</TopicArn>
+            </member>
+            <member>
+              <Owner>00000000</Owner>
+              <Endpoint>ebrown.wsu@gmail.com</Endpoint>
+              <Protocol>email</Protocol>
+              <SubscriptionArn>arn:aws:sns:us-west-2:0000000000:ElasticBeanstalkNotifications-Environment-tarobi-server:00000000-0000-0000-0000-000000000000</SubscriptionArn>
+              <TopicArn>arn:aws:sns:us-west-2:0000000000:ElasticBeanstalkNotifications-Environment-tarobi-server</TopicArn>
+            </member>
+            <member>
+              <Owner>00000000</Owner>
+              <Endpoint>deployments@guilded.gg</Endpoint>
+              <Protocol>email</Protocol>
+              <SubscriptionArn>PendingConfirmation</SubscriptionArn>
+              <TopicArn>arn:aws:sns:us-west-2:0000000000:ElasticBeanstalkNotifications-Environment-Apiserver-preprod</TopicArn>
+            </member>
+          </Subscriptions>
+          <NextToken>AAGpdfeu+Jhen7gAuxfbxAb2RFtmTwUZcdx9e35m1yVQgg==</NextToken>
+        </ListSubscriptionsResult>
+        <ResponseMetadata>
+          <RequestId>00000000-0000-0000-0000-000000000000</RequestId>
+        </ResponseMetadata>
+      </ListSubscriptionsResponse>
+    headers:
+      Content-Type:
+      - text/xml
+      Vary:
+      - Accept-Encoding
+    status: 200 OK
+    code: 200
+    duration: ""
+- request:
+    body: Action=ListSubscriptions&NextToken=AAGpdfeu%2BJhen7gAuxfbxAb2RFtmTwUZcdx9e35m1yVQgg%3D%3D&Version=2010-03-31
+    form:
+      Action:
+      - ListSubscriptions
+      NextToken:
+      - AAGpdfeu+Jhen7gAuxfbxAb2RFtmTwUZcdx9e35m1yVQgg==
+      Version:
+      - "2010-03-31"
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+    url: https://sns.us-west-2.amazonaws.com/
+    method: POST
+  response:
+    body: |
+      <ListSubscriptionsResponse xmlns="http://sns.amazonaws.com/doc/2010-03-31/">
+        <ListSubscriptionsResult>
+          <Subscriptions>
+            <member>
+              <Owner>00000000</Owner>
+              <Endpoint>http://api.tarobi-dev-test.com/aws/deployment</Endpoint>
+              <Protocol>http</Protocol>
+              <SubscriptionArn>arn:aws:sns:us-west-2:0000000000:ElasticBeanstalkNotifications-Environment-tarobi-server:00000000-0000-0000-0000-000000000000</SubscriptionArn>
+              <TopicArn>arn:aws:sns:us-west-2:0000000000:ElasticBeanstalkNotifications-Environment-tarobi-server</TopicArn>
+            </member>
+            <member>
+              <Owner>00000000</Owner>
+              <Endpoint>http://api.tarobi-dev-test.com/aws/deployment</Endpoint>
+              <Protocol>http</Protocol>
+              <SubscriptionArn>arn:aws:sns:us-west-2:0000000000:ElasticBeanstalkNotifications-Environment-guilded-server-dev:00000000-0000-0000-0000-000000000000</SubscriptionArn>
+              <TopicArn>arn:aws:sns:us-west-2:0000000000:ElasticBeanstalkNotifications-Environment-guilded-server-dev</TopicArn>
+            </member>
+            <member>
+              <Owner>00000000</Owner>
+              <Endpoint>http://api.guilded.gg/aws/email_send</Endpoint>
+              <Protocol>http</Protocol>
+              <SubscriptionArn>arn:aws:sns:us-west-2:0000000000:email_deliveries:00000000-0000-0000-0000-000000000000</SubscriptionArn>
+              <TopicArn>arn:aws:sns:us-west-2:0000000000:email_deliveries</TopicArn>
+            </member>
+          </Subscriptions>
+        </ListSubscriptionsResult>
+        <ResponseMetadata>
+          <RequestId>00000000-0000-0000-0000-000000000000</RequestId>
+        </ResponseMetadata>
+      </ListSubscriptionsResponse>
+    headers:
+      Content-Length:
+      - "1635"
+      Content-Type:
+      - text/xml
+    status: 200 OK
+    code: 200
+    duration: ""
