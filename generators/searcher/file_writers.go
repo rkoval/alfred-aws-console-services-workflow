@@ -36,6 +36,25 @@ func appendToSearchers(searcherNamer SearcherNamer) {
 	}
 }
 
+func appendToWorkflowTest(searcherNamer SearcherNamer) {
+	filename := "workflow/workflow_test.go"
+	regex := regexp.MustCompile(`(\t},)(\n})`)
+
+	addWorkflowTestCaseString := func(query string) string {
+		testCaseString := fmt.Sprintf(`	{
+		query:       "%s",
+		fixtureName: "../searchers/%s_test", // reuse test fixture from this other test
+	},`, query, searcherNamer.NameSnakeCasePlural)
+		replacement := fmt.Sprintf("$1\n%s$2", testCaseString)
+		return util.ModifyFileWithRegexReplace(filename, regex, replacement, "\""+query+"\"")
+	}
+
+	addWorkflowTestCaseString(searcherNamer.ServiceLower)
+	addWorkflowTestCaseString(searcherNamer.ServiceLower + " ")
+	addWorkflowTestCaseString(searcherNamer.ServiceLower + " " + searcherNamer.EntityLowerPlural)
+	addWorkflowTestCaseString(searcherNamer.ServiceLower + " " + searcherNamer.EntityLowerPlural + " ")
+}
+
 func writeSearcherFile(searcherNamer SearcherNamer) {
 	templateString := `package searchers
 

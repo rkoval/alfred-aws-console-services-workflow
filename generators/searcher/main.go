@@ -40,18 +40,18 @@ type OperationDefinition struct {
 }
 
 type SearcherNamer struct {
-	ServiceTitle       string
-	ServiceLower       string
-	EntityTitle        string
-	EntityLower        string
+	ServiceTitle        string
+	ServiceLower        string
+	EntityTitle         string
+	EntityLower         string
 	EntityLowerPlural   string
-	Name               string
-	NameLower          string
-	NameCamelCase      string
-	NameSnakeCase      string
+	Name                string
+	NameLower           string
+	NameCamelCase       string
+	NameSnakeCase       string
 	NameSnakeCasePlural string
-	StructName         string
-	StructInstanceName string
+	StructName          string
+	StructInstanceName  string
 	OperationDefinition
 }
 
@@ -97,6 +97,7 @@ func main() {
 
 	appendToGenny(searcherNamer)
 	appendToSearchers(searcherNamer)
+	appendToWorkflowTest(searcherNamer)
 	writeSearcherFile(searcherNamer)
 	writeSearcherTestFile(searcherNamer)
 }
