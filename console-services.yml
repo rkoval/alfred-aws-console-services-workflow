@@ -73,7 +73,7 @@
 - id: chime
   name: Chime
   description: Amazon Chime is a communications service that transforms online meetings
-  url: https://chime.aws.amazon.com/
+  url: https://console.chime.aws.amazon.com
 
 - id: cloud9
   name: Cloud9
