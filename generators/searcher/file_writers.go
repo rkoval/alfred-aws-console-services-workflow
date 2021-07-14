@@ -69,16 +69,17 @@ import (
 	aw "github.com/deanishe/awgo"
 	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
 	"github.com/rkoval/alfred-aws-console-services-workflow/caching"
+	"github.com/rkoval/alfred-aws-console-services-workflow/searchers/searchutil"
 	"github.com/rkoval/alfred-aws-console-services-workflow/util"
 )
 
 type {{ .StructName }} struct{}
 
-func (s {{ .StructName }}) Search(wf *aw.Workflow, query string, cfg aws.Config, forceFetch bool, fullQuery string) error {
+func (s {{ .StructName }}) Search(searchArgs searchutil.SearchArgs) error {
 	cacheName := util.GetCurrentFilename()
-	entities := caching.Load{{ .OperationDefinition.PackageTitle }}{{ .OperationDefinition.Item }}ArrayFromCache(wf, cfg, cacheName, s.fetch, forceFetch, fullQuery)
+	entities := caching.Load{{ .OperationDefinition.PackageTitle }}{{ .OperationDefinition.Item }}ArrayFromCache(wf, searchArgs, cacheName, s.fetch)
 	for _, entity := range entities {
-		s.addToWorkflow(wf, query, cfg, entity)
+		s.addToWorkflow(wf, searchArgs, entity)
 	}
 	return nil
 }
@@ -113,14 +114,14 @@ func (s {{ .StructName }}) fetch(cfg aws.Config) ([]types.{{ .OperationDefinitio
 	return entities, nil
 }
 
-func (s {{ .StructName }}) addToWorkflow(wf *aw.Workflow, query string, config aws.Config, entity types.{{ .OperationDefinition.Item }}) {
+func (s {{ .StructName }}) addToWorkflow(searchArgs searchutil.SearchArgs, entity types.{{ .OperationDefinition.Item }}) {
 	title := entity.TODO
 	subtitle := ""
 
-	path := fmt.Sprintf("/{{ .ServiceLower }}/{{ .EntityLowerPlural }}/?region=%s", config.Region)
+	path := fmt.Sprintf("/{{ .ServiceLower }}/{{ .EntityLowerPlural }}/?region=%s", searchArgs.Cfg.Region)
 	util.NewURLItem(wf, title).
 		Subtitle(subtitle).
-		Arg(util.ConstructAWSConsoleUrl(path, config.Region)).
+		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.Cfg.Region)).
 		Icon(awsworkflow.GetImageIcon("{{ .ServiceLower }}")).
 		Valid(true)
 }`

@@ -1,10 +1,10 @@
 package searchers
 
 import (
-	"github.com/aws/aws-sdk-go-v2/aws"
 	aw "github.com/deanishe/awgo"
+	"github.com/rkoval/alfred-aws-console-services-workflow/searchers/searchutil"
 )
 
 type Searcher interface {
-	Search(wf *aw.Workflow, query string, cfg aws.Config, forceFetch bool, fullQuery string) error
+	Search(wf *aw.Workflow, searchArgs searchutil.SearchArgs) error
 }

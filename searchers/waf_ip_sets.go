@@ -10,16 +10,17 @@ import (
 	aw "github.com/deanishe/awgo"
 	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
 	"github.com/rkoval/alfred-aws-console-services-workflow/caching"
+	"github.com/rkoval/alfred-aws-console-services-workflow/searchers/searchutil"
 	"github.com/rkoval/alfred-aws-console-services-workflow/util"
 )
 
 type WAFIPSetSearcher struct{}
 
-func (s WAFIPSetSearcher) Search(wf *aw.Workflow, query string, cfg aws.Config, forceFetch bool, fullQuery string) error {
+func (s WAFIPSetSearcher) Search(wf *aw.Workflow, searchArgs searchutil.SearchArgs) error {
 	cacheName := util.GetCurrentFilename()
-	entities := caching.LoadWafv2IPSetSummaryArrayFromCache(wf, cfg, cacheName, s.fetch, forceFetch, fullQuery)
+	entities := caching.LoadWafv2IPSetSummaryArrayFromCache(wf, searchArgs, cacheName, s.fetch)
 	for _, entity := range entities {
-		s.addToWorkflow(wf, query, cfg, entity)
+		s.addToWorkflow(wf, searchArgs, entity)
 	}
 	return nil
 }
@@ -55,16 +56,16 @@ func (s WAFIPSetSearcher) fetch(cfg aws.Config) ([]types.IPSetSummary, error) {
 	return entities, nil
 }
 
-func (s WAFIPSetSearcher) addToWorkflow(wf *aw.Workflow, query string, config aws.Config, entity types.IPSetSummary) {
+func (s WAFIPSetSearcher) addToWorkflow(wf *aw.Workflow, searchArgs searchutil.SearchArgs, entity types.IPSetSummary) {
 	title := *entity.Name
 	var subtitle string
 	if entity.Description != nil {
 		subtitle = *entity.Description
 	}
 
-	path := fmt.Sprintf("/wafv2/homev2/ip-set/%s/%s?region=%s", *entity.Name, *entity.Id, config.Region)
+	path := fmt.Sprintf("/wafv2/homev2/ip-set/%s/%s?region=%s", *entity.Name, *entity.Id, searchArgs.Cfg.Region)
 	util.NewURLItem(wf, title).
 		Subtitle(subtitle).
-		Arg(util.ConstructAWSConsoleUrl(path, config.Region)).
+		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.Cfg.Region)).
 		Icon(awsworkflow.GetImageIcon("waf"))
 }

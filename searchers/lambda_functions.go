@@ -12,16 +12,17 @@ import (
 	aw "github.com/deanishe/awgo"
 	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
 	"github.com/rkoval/alfred-aws-console-services-workflow/caching"
+	"github.com/rkoval/alfred-aws-console-services-workflow/searchers/searchutil"
 	"github.com/rkoval/alfred-aws-console-services-workflow/util"
 )
 
 type LambdaFunctionSearcher struct{}
 
-func (s LambdaFunctionSearcher) Search(wf *aw.Workflow, query string, cfg aws.Config, forceFetch bool, fullQuery string) error {
+func (s LambdaFunctionSearcher) Search(wf *aw.Workflow, searchArgs searchutil.SearchArgs) error {
 	cacheName := util.GetCurrentFilename()
-	entities := caching.LoadLambdaFunctionConfigurationArrayFromCache(wf, cfg, cacheName, s.fetch, forceFetch, fullQuery)
+	entities := caching.LoadLambdaFunctionConfigurationArrayFromCache(wf, searchArgs, cacheName, s.fetch)
 	for _, entity := range entities {
-		s.addToWorkflow(wf, query, cfg, entity)
+		s.addToWorkflow(wf, searchArgs, entity)
 	}
 	return nil
 }
@@ -55,7 +56,7 @@ func (s LambdaFunctionSearcher) fetch(cfg aws.Config) ([]types.FunctionConfigura
 	return entities, nil
 }
 
-func (s LambdaFunctionSearcher) addToWorkflow(wf *aw.Workflow, query string, config aws.Config, entity types.FunctionConfiguration) {
+func (s LambdaFunctionSearcher) addToWorkflow(wf *aw.Workflow, searchArgs searchutil.SearchArgs, entity types.FunctionConfiguration) {
 	title := *entity.FunctionName
 	subtitleArray := []string{}
 	if entity.Description != nil && *entity.Description != "" {
@@ -69,9 +70,9 @@ func (s LambdaFunctionSearcher) addToWorkflow(wf *aw.Workflow, query string, con
 	}
 	subtitle := strings.Join(subtitleArray, " – ")
 
-	path := fmt.Sprintf("/lambda/home?region=%s#/functions/%s?tab=configuration", config.Region, url.PathEscape(*entity.FunctionName))
+	path := fmt.Sprintf("/lambda/home?region=%s#/functions/%s?tab=configuration", searchArgs.Cfg.Region, url.PathEscape(*entity.FunctionName))
 	util.NewURLItem(wf, title).
 		Subtitle(subtitle).
-		Arg(util.ConstructAWSConsoleUrl(path, config.Region)).
+		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.Cfg.Region)).
 		Icon(awsworkflow.GetImageIcon("lambda"))
 }

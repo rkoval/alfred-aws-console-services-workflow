@@ -10,16 +10,17 @@ import (
 	aw "github.com/deanishe/awgo"
 	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
 	"github.com/rkoval/alfred-aws-console-services-workflow/caching"
+	"github.com/rkoval/alfred-aws-console-services-workflow/searchers/searchutil"
 	"github.com/rkoval/alfred-aws-console-services-workflow/util"
 )
 
 type SNSTopicSearcher struct{}
 
-func (s SNSTopicSearcher) Search(wf *aw.Workflow, query string, cfg aws.Config, forceFetch bool, fullQuery string) error {
+func (s SNSTopicSearcher) Search(wf *aw.Workflow, searchArgs searchutil.SearchArgs) error {
 	cacheName := util.GetCurrentFilename()
-	entities := caching.LoadSnsTopicArrayFromCache(wf, cfg, cacheName, s.fetch, forceFetch, fullQuery)
+	entities := caching.LoadSnsTopicArrayFromCache(wf, searchArgs, cacheName, s.fetch)
 	for _, entity := range entities {
-		s.addToWorkflow(wf, query, cfg, entity)
+		s.addToWorkflow(wf, searchArgs, entity)
 	}
 	return nil
 }
@@ -52,14 +53,14 @@ func (s SNSTopicSearcher) fetch(cfg aws.Config) ([]types.Topic, error) {
 	return entities, nil
 }
 
-func (s SNSTopicSearcher) addToWorkflow(wf *aw.Workflow, query string, config aws.Config, entity types.Topic) {
+func (s SNSTopicSearcher) addToWorkflow(wf *aw.Workflow, searchArgs searchutil.SearchArgs, entity types.Topic) {
 	subtitle := *entity.TopicArn
 	title := util.GetEndOfArn(*entity.TopicArn)
 
-	path := fmt.Sprintf("/sns/v3/home?region=%s#/topic/%s", config.Region, *entity.TopicArn)
+	path := fmt.Sprintf("/sns/v3/home?region=%s#/topic/%s", searchArgs.Cfg.Region, *entity.TopicArn)
 	util.NewURLItem(wf, title).
 		Subtitle(subtitle).
-		Arg(util.ConstructAWSConsoleUrl(path, config.Region)).
+		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.Cfg.Region)).
 		Icon(awsworkflow.GetImageIcon("sns")).
 		Valid(true)
 }

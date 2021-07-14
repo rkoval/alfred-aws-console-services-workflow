@@ -13,6 +13,7 @@ import (
 	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
 	"github.com/rkoval/alfred-aws-console-services-workflow/parsers"
 	"github.com/rkoval/alfred-aws-console-services-workflow/searchers"
+	"github.com/rkoval/alfred-aws-console-services-workflow/searchers/searchutil"
 	"github.com/rkoval/alfred-aws-console-services-workflow/util"
 )
 
@@ -73,7 +74,15 @@ func Run(wf *aw.Workflow, rawQuery string, cfg aws.Config, forceFetch, openAll b
 			searcher := searchers.SearchersByServiceId[serviceId]
 			if searcher != nil {
 				filterQuery = query.RemainingQuery
-				err := searcher.Search(wf, filterQuery, cfg, forceFetch, rawQuery)
+				err := searcher.Search(
+					wf,
+					searchutil.SearchArgs{
+						Query:      filterQuery,
+						Cfg:        cfg,
+						ForceFetch: forceFetch,
+						FullQuery:  rawQuery,
+					},
+				)
 				if err != nil {
 					wf.FatalError(err)
 				}

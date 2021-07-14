@@ -11,16 +11,17 @@ import (
 	aw "github.com/deanishe/awgo"
 	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
 	"github.com/rkoval/alfred-aws-console-services-workflow/caching"
+	"github.com/rkoval/alfred-aws-console-services-workflow/searchers/searchutil"
 	"github.com/rkoval/alfred-aws-console-services-workflow/util"
 )
 
 type EC2SecurityGroupSearcher struct{}
 
-func (s EC2SecurityGroupSearcher) Search(wf *aw.Workflow, query string, cfg aws.Config, forceFetch bool, fullQuery string) error {
+func (s EC2SecurityGroupSearcher) Search(wf *aw.Workflow, searchArgs searchutil.SearchArgs) error {
 	cacheName := util.GetCurrentFilename()
-	entities := caching.LoadEc2SecurityGroupArrayFromCache(wf, cfg, cacheName, s.fetch, forceFetch, fullQuery)
+	entities := caching.LoadEc2SecurityGroupArrayFromCache(wf, searchArgs, cacheName, s.fetch)
 	for _, entity := range entities {
-		s.addToWorkflow(wf, query, cfg, entity)
+		s.addToWorkflow(wf, searchArgs, entity)
 	}
 	return nil
 }
@@ -29,7 +30,7 @@ func (s EC2SecurityGroupSearcher) fetch(cfg aws.Config) ([]types.SecurityGroup, 
 	svc := ec2.NewFromConfig(cfg)
 
 	NextToken := ""
-	securityGroups := []types.SecurityGroup{}
+	entities := []types.SecurityGroup{}
 	for {
 		resp, err := svc.DescribeSecurityGroups(context.TODO(), &ec2.DescribeSecurityGroupsInput{
 			MaxResults: aws.Int32(1000), // get as many as we can
@@ -39,7 +40,7 @@ func (s EC2SecurityGroupSearcher) fetch(cfg aws.Config) ([]types.SecurityGroup, 
 			return nil, err
 		}
 
-		securityGroups = append(securityGroups, resp.SecurityGroups...)
+		entities = append(entities, resp.SecurityGroups...)
 
 		if resp.NextToken != nil {
 			NextToken = *resp.NextToken
@@ -47,32 +48,32 @@ func (s EC2SecurityGroupSearcher) fetch(cfg aws.Config) ([]types.SecurityGroup, 
 			break
 		}
 	}
-	return securityGroups, nil
+	return entities, nil
 }
 
-func (s EC2SecurityGroupSearcher) addToWorkflow(wf *aw.Workflow, query string, config aws.Config, securityGroup types.SecurityGroup) {
+func (s EC2SecurityGroupSearcher) addToWorkflow(wf *aw.Workflow, searchArgs searchutil.SearchArgs, entity types.SecurityGroup) {
 	var title string
 	var subtitle string
-	name := util.GetEC2TagValue(securityGroup.Tags, "Name")
+	name := util.GetEC2TagValue(entity.Tags, "Name")
 	if name != "" {
 		title = name
-		subtitle = *securityGroup.GroupId
+		subtitle = *entity.GroupId
 	} else {
-		title = *securityGroup.GroupId
+		title = *entity.GroupId
 	}
 
 	if subtitle != "" {
 		subtitle += " "
 	}
-	subtitle += *securityGroup.Description
+	subtitle += *entity.Description
 
-	path := fmt.Sprintf("/ec2/v2/home?region=%s#SecurityGroups:group-id=%s", config.Region, *securityGroup.GroupId)
+	path := fmt.Sprintf("/ec2/v2/home?region=%s#SecurityGroups:group-id=%s", searchArgs.Cfg.Region, *entity.GroupId)
 	item := util.NewURLItem(wf, title).
 		Subtitle(subtitle).
-		Arg(util.ConstructAWSConsoleUrl(path, config.Region)).
+		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.Cfg.Region)).
 		Icon(awsworkflow.GetImageIcon("ec2"))
 
-	if strings.HasPrefix(query, "sg-") {
-		item.Match(*securityGroup.GroupId)
+	if strings.HasPrefix(searchArgs.Query, "sg-") {
+		item.Match(*entity.GroupId)
 	}
 }

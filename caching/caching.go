@@ -10,6 +10,7 @@ import (
 	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/smithy-go"
 	aw "github.com/deanishe/awgo"
+	"github.com/rkoval/alfred-aws-console-services-workflow/searchers/searchutil"
 
 	"github.com/cheekybits/genny/generic"
 )
@@ -19,15 +20,15 @@ type Entity = generic.Type
 
 type EntityArrayFetcher = func(aws.Config) ([]Entity, error)
 
-func LoadEntityArrayFromCache(wf *aw.Workflow, cfg aws.Config, cacheName string, fetcher EntityArrayFetcher, forceFetch bool, rawQuery string) []Entity {
+func LoadEntityArrayFromCache(wf *aw.Workflow, searchArgs searchutil.SearchArgs, cacheName string, fetcher EntityArrayFetcher) []Entity {
 	// TODO optimization: not all services have sa region associated with them, so cache can be reused across regions (e.g., s3 buckets are global)
-	cacheName += "_" + cfg.Region
+	cacheName += "_" + searchArgs.Cfg.Region
 
 	results := []Entity{}
 	lastFetchErrPath := wf.CacheDir() + "/last-fetch-err.txt"
-	if forceFetch {
+	if searchArgs.ForceFetch {
 		log.Printf("fetching from aws ...")
-		results, err := fetcher(cfg)
+		results, err := fetcher(searchArgs.Cfg)
 
 		if err != nil {
 			log.Printf("fetch error occurred. writing to %s ...", lastFetchErrPath)
@@ -73,7 +74,7 @@ func LoadEntityArrayFromCache(wf *aw.Workflow, cfg aws.Config, cacheName string,
 		return results
 	}
 
-	err := handleExpiredCache(wf, cacheName, lastFetchErrPath, rawQuery)
+	err := handleExpiredCache(wf, cacheName, lastFetchErrPath, searchArgs.FullQuery)
 	if err != nil {
 		return []Entity{}
 	}

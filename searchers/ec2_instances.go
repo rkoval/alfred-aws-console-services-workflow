@@ -11,16 +11,17 @@ import (
 	aw "github.com/deanishe/awgo"
 	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
 	"github.com/rkoval/alfred-aws-console-services-workflow/caching"
+	"github.com/rkoval/alfred-aws-console-services-workflow/searchers/searchutil"
 	"github.com/rkoval/alfred-aws-console-services-workflow/util"
 )
 
 type EC2InstanceSearcher struct{}
 
-func (s EC2InstanceSearcher) Search(wf *aw.Workflow, query string, cfg aws.Config, forceFetch bool, fullQuery string) error {
+func (s EC2InstanceSearcher) Search(wf *aw.Workflow, searchArgs searchutil.SearchArgs) error {
 	cacheName := util.GetCurrentFilename()
-	entities := caching.LoadEc2InstanceArrayFromCache(wf, cfg, cacheName, s.fetch, forceFetch, fullQuery)
+	entities := caching.LoadEc2InstanceArrayFromCache(wf, searchArgs, cacheName, s.fetch)
 	for _, entity := range entities {
-		s.addToWorkflow(wf, query, cfg, entity)
+		s.addToWorkflow(wf, searchArgs, entity)
 	}
 	return nil
 }
@@ -56,7 +57,7 @@ func (s EC2InstanceSearcher) fetch(cfg aws.Config) ([]types.Instance, error) {
 	return instances, nil
 }
 
-func (s EC2InstanceSearcher) addToWorkflow(wf *aw.Workflow, query string, config aws.Config, instance types.Instance) {
+func (s EC2InstanceSearcher) addToWorkflow(wf *aw.Workflow, searchArgs searchutil.SearchArgs, instance types.Instance) {
 	var title string
 	subtitle := util.GetEC2InstanceStateEmoji(*instance.State)
 	name := util.GetEC2TagValue(instance.Tags, "Name")
@@ -68,13 +69,13 @@ func (s EC2InstanceSearcher) addToWorkflow(wf *aw.Workflow, query string, config
 	}
 	subtitle += " " + string(instance.InstanceType)
 
-	path := fmt.Sprintf("/ec2/v2/home?region=%s#Instances:search=%s", config.Region, *instance.InstanceId)
+	path := fmt.Sprintf("/ec2/v2/home?region=%s#Instances:search=%s", searchArgs.Cfg.Region, *instance.InstanceId)
 	item := util.NewURLItem(wf, title).
 		Subtitle(subtitle).
-		Arg(util.ConstructAWSConsoleUrl(path, config.Region)).
+		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.Cfg.Region)).
 		Icon(awsworkflow.GetImageIcon("ec2"))
 
-	if strings.HasPrefix(query, "i-") {
+	if strings.HasPrefix(searchArgs.Query, "i-") {
 		item.Match(*instance.InstanceId)
 	}
 }

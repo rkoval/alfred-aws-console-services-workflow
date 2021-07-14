@@ -11,16 +11,17 @@ import (
 	aw "github.com/deanishe/awgo"
 	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
 	"github.com/rkoval/alfred-aws-console-services-workflow/caching"
+	"github.com/rkoval/alfred-aws-console-services-workflow/searchers/searchutil"
 	"github.com/rkoval/alfred-aws-console-services-workflow/util"
 )
 
 type RDSDatabaseSearcher struct{}
 
-func (s RDSDatabaseSearcher) Search(wf *aw.Workflow, query string, cfg aws.Config, forceFetch bool, fullQuery string) error {
+func (s RDSDatabaseSearcher) Search(wf *aw.Workflow, searchArgs searchutil.SearchArgs) error {
 	cacheName := util.GetCurrentFilename()
-	es := caching.LoadRdsDBInstanceArrayFromCache(wf, cfg, cacheName, s.fetch, forceFetch, fullQuery)
+	es := caching.LoadRdsDBInstanceArrayFromCache(wf, searchArgs, cacheName, s.fetch)
 	for _, entity := range es {
-		s.addToWorkflow(wf, query, cfg, entity)
+		s.addToWorkflow(wf, searchArgs, entity)
 	}
 	return nil
 }
@@ -54,7 +55,7 @@ func (s RDSDatabaseSearcher) fetch(cfg aws.Config) ([]types.DBInstance, error) {
 	return entities, nil
 }
 
-func (s RDSDatabaseSearcher) addToWorkflow(wf *aw.Workflow, query string, config aws.Config, entity types.DBInstance) {
+func (s RDSDatabaseSearcher) addToWorkflow(wf *aw.Workflow, searchArgs searchutil.SearchArgs, entity types.DBInstance) {
 	subtitleArray := []string{}
 	var engineString string
 	if entity.Engine != nil && *entity.Engine != "" {
@@ -73,10 +74,10 @@ func (s RDSDatabaseSearcher) addToWorkflow(wf *aw.Workflow, query string, config
 
 	subtitle := strings.Join(subtitleArray, " – ")
 
-	path := fmt.Sprintf("/rds/home?region=%s#database:id=%s;is-cluster=false", config.Region, *entity.DBInstanceIdentifier)
+	path := fmt.Sprintf("/rds/home?region=%s#database:id=%s;is-cluster=false", searchArgs.Cfg.Region, *entity.DBInstanceIdentifier)
 	util.NewURLItem(wf, title).
 		Subtitle(subtitle).
-		Arg(util.ConstructAWSConsoleUrl(path, config.Region)).
+		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.Cfg.Region)).
 		Icon(awsworkflow.GetImageIcon("rds")).
 		Valid(true)
 }

@@ -10,16 +10,17 @@ import (
 	aw "github.com/deanishe/awgo"
 	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
 	"github.com/rkoval/alfred-aws-console-services-workflow/caching"
+	"github.com/rkoval/alfred-aws-console-services-workflow/searchers/searchutil"
 	"github.com/rkoval/alfred-aws-console-services-workflow/util"
 )
 
 type WAFWebACLSearcher struct{}
 
-func (s WAFWebACLSearcher) Search(wf *aw.Workflow, query string, cfg aws.Config, forceFetch bool, fullQuery string) error {
+func (s WAFWebACLSearcher) Search(wf *aw.Workflow, searchArgs searchutil.SearchArgs) error {
 	cacheName := util.GetCurrentFilename()
-	entities := caching.LoadWafv2WebACLSummaryArrayFromCache(wf, cfg, cacheName, s.fetch, forceFetch, fullQuery)
+	entities := caching.LoadWafv2WebACLSummaryArrayFromCache(wf, searchArgs, cacheName, s.fetch)
 	for _, entity := range entities {
-		s.addToWorkflow(wf, query, cfg, entity)
+		s.addToWorkflow(wf, searchArgs, entity)
 	}
 	return nil
 }
@@ -55,13 +56,13 @@ func (s WAFWebACLSearcher) fetch(cfg aws.Config) ([]types.WebACLSummary, error) 
 	return entities, nil
 }
 
-func (s WAFWebACLSearcher) addToWorkflow(wf *aw.Workflow, query string, config aws.Config, entity types.WebACLSummary) {
+func (s WAFWebACLSearcher) addToWorkflow(wf *aw.Workflow, searchArgs searchutil.SearchArgs, entity types.WebACLSummary) {
 	title := *entity.Name
 	subtitle := *entity.Description
 
-	path := fmt.Sprintf("/wafv2/homev2/web-acl/%s/%s/overview?region=%s", *entity.Name, *entity.Id, config.Region)
+	path := fmt.Sprintf("/wafv2/homev2/web-acl/%s/%s/overview?region=%s", *entity.Name, *entity.Id, searchArgs.Cfg.Region)
 	util.NewURLItem(wf, title).
 		Subtitle(subtitle).
-		Arg(util.ConstructAWSConsoleUrl(path, config.Region)).
+		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.Cfg.Region)).
 		Icon(awsworkflow.GetImageIcon("waf"))
 }
