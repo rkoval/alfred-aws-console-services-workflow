@@ -71,7 +71,7 @@
     match: (*string)((len=17) "sumerian Sumerian"),
     uid: (*string)((len=8) "sumerian"),
     autocomplete: (*string)((len=9) "sumerian "),
-    arg: (*string)((len=54) "https://us-west-2.console.aws.amazon.com/sumerian/home"),
+    arg: (*string)((len=56) "https://us-west-2.console.aws.amazon.com/sumerianv2/home"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

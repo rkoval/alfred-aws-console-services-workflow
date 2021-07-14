@@ -938,7 +938,7 @@
 - id: sumerian
   name: Sumerian
   description: Build VR, AR, and 3D applications
-  url: /sumerian/home
+  url: /sumerianv2/home
 
 - id: systemsmanager
   name: Systems Manager
