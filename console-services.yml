@@ -309,7 +309,7 @@
 - id: documentdb
   name: DocumentDB
   description: Fully-managed MongoDB-compatible database service
-  url: /documentdb/home
+  url: /docdb/home
 
 - id: dynamodb
   name: DynamoDB
