@@ -288,7 +288,7 @@
 - id: directconnect
   name: Direct Connect
   description: Dedicated Network Connection to AWS
-  url: /directconnect/home
+  url: /directconnect/v2/home
 
 - id: directoryservice
   name: Directory Service
