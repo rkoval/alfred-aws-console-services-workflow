@@ -69,7 +69,7 @@ func (s EC2InstanceSearcher) addToWorkflow(wf *aw.Workflow, searchArgs searchuti
 	}
 	subtitle += " " + string(instance.InstanceType)
 
-	path := fmt.Sprintf("/ec2/v2/home?region=%s#Instances:search=%s", searchArgs.Cfg.Region, *instance.InstanceId)
+	path := fmt.Sprintf("/ec2/v2/home?region=%s#InstanceDetails:instanceId=%s", searchArgs.Cfg.Region, *instance.InstanceId)
 	item := util.NewURLItem(wf, title).
 		Subtitle(subtitle).
 		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.Cfg.Region)).
