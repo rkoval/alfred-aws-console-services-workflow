@@ -567,10 +567,10 @@
   description: Collect, preprocess, store, analyze and visualize data of IoT devices
   url: /iotanalytics/home
 
-- id: iotcore
+- id: iot
   name: IoT Core
   description: Connect Devices to the Cloud
-  url: /iotcore/home
+  url: /iot/home
 
 - id: iotdevicedefender
   name: IoT Device Defender
