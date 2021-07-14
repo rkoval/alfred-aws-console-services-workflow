@@ -27,6 +27,7 @@
 - id: artifact
   name: Artifact
   description: AWS Compliance Reports and Agreements
+  has_global_region: true
   url: /artifact/home
 
 - id: athena
@@ -57,6 +58,7 @@
 - id: billing
   name: Billing
   description: Access, analyze, and control your AWS costs and usage
+  has_global_region: true
   url: /billing/home
 
 - id: budgets
@@ -74,6 +76,7 @@
   name: Chime
   description: Amazon Chime is a communications service that transforms online meetings
   url: https://console.chime.aws.amazon.com
+  has_global_region: true
 
 - id: cloud9
   name: Cloud9
@@ -102,6 +105,7 @@
   name: CloudFront
   description: Global Content Delivery Network
   url: /cloudfront/home
+  has_global_region: true
   sub_services:
     - id: distributions
       name: Distributions
@@ -283,6 +287,7 @@
 - id: devicefarm
   name: Device Farm
   description: Test Android, iOS, and Web Apps on Real Devices in the Cloud
+  has_global_region: true
   url: /devicefarm/home
 
 - id: directconnect
@@ -550,6 +555,7 @@
   name: Identity and Access Management
   short_name: IAM
   description: Manage User Access and Encryption Keys
+  has_global_region: true
   url: /iam/home
 
 - id: inspector
@@ -557,6 +563,7 @@
   description: Analyze Application Security
   url: /inspector/home
 
+# TODO consolidate IoT services into sub-services
 - id: iot1click
   name: IoT 1-Click
   description:  Trigger AWS Lambda functions from simple devices
@@ -665,6 +672,7 @@
 - id: marketplace
   name: Marketplace Subscriptions
   description: Digital catalog where you can find, buy, and deploy software
+  has_global_region: true
   url: /marketplace/home
 
 - id: mediaconnect
@@ -722,11 +730,13 @@
 - id: opsworks
   name: OpsWorks
   description: Configuration Management with Chef and Puppet
+  has_global_region: true
   url: /opsworks/home
 
 - id: organizations
   name: Organizations
   description: Policy-based management for multiple AWS accounts.
+  has_global_region: true
   url: /organizations/home
 
 - id: personalize
@@ -818,12 +828,15 @@
 - id: route53
   name: Route 53
   description: Scalable DNS and Domain Name Registration
+  has_global_region: true
   url: /route53/home
 
 - id: s3
   name: Simple Storage Service
   short_name: S3
   description: Scalable Storage in the Cloud
+  # s3 is technically has_global_region, but it still will populate region as query param
+  has_global_region: false
   url: /s3/home
   sub_services:
     - id: buckets
@@ -948,6 +961,7 @@
 - id: support
   name: Support
   description: Support the success and operational health of your AWS solutions
+  has_global_region: true
   url: /support/home
 
 - id: transcribe
@@ -963,6 +977,7 @@
 - id: trustedadvisor
   name: Trusted Advisor
   description: Optimize Performance and Security
+  has_global_region: true
   url: /trustedadvisor/home
 
 - id: vpc
@@ -974,6 +989,7 @@
   name: Web Application Firewall & Shield
   short_name: WAF
   description: Protects Against DDoS Attacks and Malicious Web Traffic
+  has_global_region: true
   url: /wafv2/homev2
   sub_services:
     - id: webacls
@@ -1045,6 +1061,7 @@
 - id: computeoptimizer
   name: Compute Optimizer
   description: Recommend optimal AWS Compute resources for your workloads
+  has_global_region: true
   url: /compute-optimizer/home
 
 - id: deepracer
@@ -1090,6 +1107,7 @@
 - id: chatbot
   name: Chatbot
   description: ChatOps for AWS
+  has_global_region: true
   url: /chatbot/home
 
 - id: launchwizard

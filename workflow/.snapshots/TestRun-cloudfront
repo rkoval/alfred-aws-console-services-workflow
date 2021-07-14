@@ -5,7 +5,7 @@
     match: (*string)((len=21) "cloudfront CloudFront"),
     uid: (*string)((len=10) "cloudfront"),
     autocomplete: (*string)((len=11) "cloudfront "),
-    arg: (*string)((len=56) "https://us-west-2.console.aws.amazon.com/cloudfront/home"),
+    arg: (*string)((len=46) "https://console.aws.amazon.com/cloudfront/home"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

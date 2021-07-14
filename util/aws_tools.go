@@ -2,7 +2,6 @@ package util
 
 import (
 	"errors"
-	"fmt"
 	"strings"
 
 	cloudformationTypes "github.com/aws/aws-sdk-go-v2/service/cloudformation/types"
@@ -25,7 +24,12 @@ func ConstructAWSConsoleUrl(path, region string) string {
 
 	// TODO append region query param dynamically here to avoid page redirections and facilitate faster loading
 
-	return fmt.Sprintf("https://%s.%s%s", region, AWSConsoleDomain, path)
+	url := "https://"
+	if region != "" {
+		url += region + "."
+	}
+	url += AWSConsoleDomain + path
+	return url
 }
 
 func GetEC2TagValue(tags []ec2Types.Tag, key string) string {

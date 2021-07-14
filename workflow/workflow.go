@@ -174,8 +174,8 @@ func handleOpenAll(wf *aw.Workflow, awsService *awsworkflow.AwsService, allAwsSe
 }
 
 func openServiceInBrowser(wf *aw.Workflow, awsService *awsworkflow.AwsService, cfg aws.Config) {
-	cmd := exec.Command("open", util.ConstructAWSConsoleUrl(awsService.Url, cfg.Region))
-	if err := wf.RunInBackground("open-sub-service-in-browser-"+awsService.Id, cmd); err != nil {
+	cmd := exec.Command("open", util.ConstructAWSConsoleUrl(awsService.Url, awsService.GetRegion(cfg)))
+	if err := wf.RunInBackground("open-service-in-browser-"+awsService.Id, cmd); err != nil {
 		panic(err)
 	}
 	time.Sleep(250 * time.Millisecond) // sleep so that tabs are more-or-less opened in the order by which this function is called

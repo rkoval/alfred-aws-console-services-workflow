@@ -37,7 +37,7 @@ func AddServiceToWorkflow(wf *aw.Workflow, awsService awsworkflow.AwsService, cf
 		Match(match).
 		Autocomplete(awsService.Id + " ").
 		UID(awsService.Id).
-		Arg(util.ConstructAWSConsoleUrl(awsService.Url, cfg.Region))
+		Arg(util.ConstructAWSConsoleUrl(awsService.Url, awsService.GetRegion(cfg)))
 
 	item.Icon(awsworkflow.GetImageIcon(awsService.Id))
 }
@@ -87,7 +87,7 @@ func AddSubServiceToWorkflow(wf *aw.Workflow, awsService, subService awsworkflow
 		Match(match).
 		Autocomplete(awsService.Id + " " + subService.Id + " ").
 		UID(subService.Id).
-		Arg(util.ConstructAWSConsoleUrl(subService.Url, cfg.Region))
+		Arg(util.ConstructAWSConsoleUrl(subService.Url, awsService.GetRegion(cfg)))
 
 	item.Icon(awsworkflow.GetImageIcon(awsService.Id))
 }
