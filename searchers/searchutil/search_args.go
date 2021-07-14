@@ -7,4 +7,5 @@ type SearchArgs struct {
 	Cfg        aws.Config
 	ForceFetch bool
 	FullQuery  string
+	Profile    string
 }

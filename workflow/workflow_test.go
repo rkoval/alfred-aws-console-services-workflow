@@ -1,6 +1,7 @@
 package workflow
 
 import (
+	"os"
 	"testing"
 
 	"github.com/bradleyjkemp/cupaloy"
@@ -345,4 +346,23 @@ func TestRunWithCache(t *testing.T) {
 			assert.Equal(t, cachedItems, fetchedItems)
 		})
 	}
+}
+
+func TestRunWithoutRegion(t *testing.T) {
+	tcs := []testCase{
+		{
+			query: "",
+		},
+	}
+	awsProfile := os.Getenv("AWS_PROFILE")
+	awsRegion := os.Getenv("AWS_REGION")
+	os.Setenv("AWS_PROFILE", "bogus-test-profile")
+	os.Setenv("AWS_REGION", "")
+	for _, tc := range tcs {
+		t.Run(tc.query, func(t *testing.T) {
+			testWorkflow(t, tc, true, true)
+		})
+	}
+	os.Setenv("AWS_PROFILE", awsProfile)
+	os.Setenv("AWS_REGION", awsRegion)
 }

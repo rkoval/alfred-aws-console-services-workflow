@@ -74,7 +74,7 @@ func LoadEntityArrayFromCache(wf *aw.Workflow, searchArgs searchutil.SearchArgs,
 		return results
 	}
 
-	err := handleExpiredCache(wf, cacheName, lastFetchErrPath, searchArgs.FullQuery)
+	err := handleExpiredCache(wf, cacheName, lastFetchErrPath, searchArgs)
 	if err != nil {
 		return []Entity{}
 	}

@@ -26,8 +26,15 @@ func Run(wf *aw.Workflow, rawQuery string, cfg aws.Config, forceFetch, openAll b
 	query := parser.Parse()
 	defer finalize(wf)
 
+	searchArgs := searchutil.SearchArgs{
+		Cfg:        cfg,
+		ForceFetch: forceFetch,
+		FullQuery:  rawQuery,
+		Profile:    util.GetProfile(cfg),
+	}
+
 	if query.IsEmpty() {
-		handleEmptyQuery(wf)
+		handleEmptyQuery(wf, searchArgs)
 		return
 	}
 
@@ -46,10 +53,9 @@ func Run(wf *aw.Workflow, rawQuery string, cfg aws.Config, forceFetch, openAll b
 		return
 	}
 
-	var filterQuery string
 	if awsService == nil || (!query.HasTrailingWhitespace && query.SubServiceId == "" && !query.HasDefaultSearchAlias) {
 		log.Println("using searcher associated with services")
-		filterQuery = query.ServiceId
+		searchArgs.Query = query.ServiceId
 		SearchServices(wf, awsServices, cfg)
 	} else {
 		if !query.HasDefaultSearchAlias && (awsService.SubServices == nil || len(awsService.SubServices) <= 0) {
@@ -73,16 +79,8 @@ func Run(wf *aw.Workflow, rawQuery string, cfg aws.Config, forceFetch, openAll b
 			log.Println("using searcher associated with " + serviceId)
 			searcher := searchers.SearchersByServiceId[serviceId]
 			if searcher != nil {
-				filterQuery = query.RemainingQuery
-				err := searcher.Search(
-					wf,
-					searchutil.SearchArgs{
-						Query:      filterQuery,
-						Cfg:        cfg,
-						ForceFetch: forceFetch,
-						FullQuery:  rawQuery,
-					},
-				)
+				searchArgs.Query = query.RemainingQuery
+				err := searcher.Search(wf, searchArgs)
 				if err != nil {
 					wf.FatalError(err)
 				}
@@ -92,15 +90,15 @@ func Run(wf *aw.Workflow, rawQuery string, cfg aws.Config, forceFetch, openAll b
 			}
 		} else {
 			log.Println("using searcher associated with sub-services")
-			filterQuery = query.SubServiceId
+			searchArgs.Query = query.SubServiceId
 			SearchSubServices(wf, *awsService, cfg)
 		}
 	}
 
-	if filterQuery != "" {
-		log.Printf("filtering with query %s", filterQuery)
-		res := wf.Filter(filterQuery)
-		log.Printf("%d results match %q", len(res), filterQuery)
+	if searchArgs.Query != "" {
+		log.Printf("filtering with query %s", searchArgs.Query)
+		res := wf.Filter(searchArgs.Query)
+		log.Printf("%d results match %q", len(res), searchArgs.Query)
 	}
 }
 
@@ -114,10 +112,25 @@ func finalize(wf *aw.Workflow) {
 	wf.SendFeedback()
 }
 
-func handleEmptyQuery(wf *aw.Workflow) {
+func handleEmptyQuery(wf *aw.Workflow, searchArgs searchutil.SearchArgs) {
 	log.Println("no search type parsed")
 	wf.NewItem("Search for an AWS Service ...").
 		Subtitle("e.g., cloudformation, ec2, s3 ...")
+
+	if searchArgs.Profile != "" {
+		wf.NewItem("Using profile \"" + searchArgs.Profile + "\"").
+			Icon(aw.IconAccount)
+	}
+
+	if searchArgs.Cfg.Region == "" {
+		wf.NewItem("No region configured for this profile").
+			Subtitle("Select this option to open AWS docs on how to configure").
+			Arg("https://aws.github.io/aws-sdk-go-v2/docs/configuring-sdk/#creating-the-config-file").
+			Icon(aw.IconWarning)
+	} else {
+		wf.NewItem("Using region \"" + searchArgs.Cfg.Region + "\"").
+			Icon(aw.IconWeb)
+	}
 
 	if wf.UpdateCheckDue() {
 		if err := wf.CheckForUpdate(); err != nil {

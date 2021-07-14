@@ -4,6 +4,8 @@ import (
 	"errors"
 	"strings"
 
+	"github.com/aws/aws-sdk-go-v2/aws"
+	"github.com/aws/aws-sdk-go-v2/config"
 	cloudformationTypes "github.com/aws/aws-sdk-go-v2/service/cloudformation/types"
 	ec2Types "github.com/aws/aws-sdk-go-v2/service/ec2/types"
 	elasticbeanstalkTypes "github.com/aws/aws-sdk-go-v2/service/elasticbeanstalk/types"
@@ -30,6 +32,16 @@ func ConstructAWSConsoleUrl(path, region string) string {
 	}
 	url += AWSConsoleDomain + path
 	return url
+}
+
+func GetProfile(cfg aws.Config) string {
+	for _, configSource := range cfg.ConfigSources {
+		switch cs := configSource.(type) {
+		case config.SharedConfig:
+			return cs.Profile
+		}
+	}
+	return ""
 }
 
 func GetEC2TagValue(tags []ec2Types.Tag, key string) string {

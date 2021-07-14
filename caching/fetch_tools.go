@@ -11,12 +11,13 @@ import (
 	"time"
 
 	aw "github.com/deanishe/awgo"
+	"github.com/rkoval/alfred-aws-console-services-workflow/searchers/searchutil"
 	"github.com/rkoval/alfred-aws-console-services-workflow/util"
 )
 
 var jobName = "fetch"
 
-func handleExpiredCache(wf *aw.Workflow, cacheName string, lastFetchErrPath string, rawQuery string) error {
+func handleExpiredCache(wf *aw.Workflow, cacheName string, lastFetchErrPath string, searchArgs searchutil.SearchArgs) error {
 	maxCacheAgeSeconds := 180
 	m := os.Getenv("ALFRED_AWS_CONSOLE_SERVICES_WORKFLOW_MAX_CACHE_AGE_SECONDS")
 	if m != "" {
@@ -35,7 +36,7 @@ func handleExpiredCache(wf *aw.Workflow, cacheName string, lastFetchErrPath stri
 		log.Printf("cache with key `%s` was expired (older than %d seconds) in %s", cacheName, maxCacheAgeSeconds, wf.CacheDir())
 		wf.Rerun(0.5)
 		if !wf.IsRunning(jobName) {
-			cmd := exec.Command(os.Args[0], "-query="+rawQuery+"", "-fetch")
+			cmd := exec.Command(os.Args[0], "-query="+searchArgs.FullQuery+"", "-fetch")
 			log.Printf("running `%s` in background as job `%s` ...", cmd, jobName)
 			if err := wf.RunInBackground(jobName, cmd); err != nil {
 				panic(err)
@@ -44,13 +45,13 @@ func handleExpiredCache(wf *aw.Workflow, cacheName string, lastFetchErrPath stri
 			log.Printf("background job `%s` already running", jobName)
 		}
 
-		return handleFetchErr(wf, lastFetchErrPath)
+		return handleFetchErr(wf, lastFetchErrPath, searchArgs)
 	}
 
 	return nil
 }
 
-func handleFetchErr(wf *aw.Workflow, lastFetchErrPath string) error {
+func handleFetchErr(wf *aw.Workflow, lastFetchErrPath string, searchArgs searchutil.SearchArgs) error {
 	data, err := ioutil.ReadFile(lastFetchErrPath)
 	if err != nil {
 		if !os.IsNotExist(err) {
@@ -65,14 +66,14 @@ func handleFetchErr(wf *aw.Workflow, lastFetchErrPath string) error {
 	errString := string(data)
 	wf.Configure(aw.SuppressUIDs(true))
 	if strings.HasPrefix(errString, "NoCredentialProviders") {
-		util.NewURLItem(wf, "AWS credentials not configured in ~/.aws/credentials").
-			Subtitle("Press enter to open AWS docs for how to configure").
+		util.NewURLItem(wf, "AWS credentials not set in ~/.aws/credentials for profile \""+searchArgs.Profile+"\"").
+			Subtitle("Press enter to open AWS docs on how to configure").
 			Arg("https://aws.github.io/aws-sdk-go-v2/docs/configuring-sdk/#creating-the-credentials-file").
 			Icon(aw.IconError).
 			Valid(true)
 	} else if strings.HasPrefix(errString, "MissingRegion") {
-		util.NewURLItem(wf, "AWS default region not configured in ~/.aws/config").
-			Subtitle("Press enter to open AWS docs for how to configure").
+		util.NewURLItem(wf, "AWS region not set in ~/.aws/config for profile \""+searchArgs.Profile+"\"").
+			Subtitle("Press enter to open AWS docs on how to configure").
 			Arg("https://aws.github.io/aws-sdk-go-v2/docs/configuring-sdk/#creating-the-config-file").
 			Icon(aw.IconError).
 			Valid(true)
