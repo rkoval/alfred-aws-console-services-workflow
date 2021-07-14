@@ -52,7 +52,7 @@
 - id: blockchain
   name: Blockchain
   description: Easily create and manage scalable blockchain networks
-  url: /blockchain/home
+  url: /managedblockchain/home
 
 - id: billing
   name: Billing
