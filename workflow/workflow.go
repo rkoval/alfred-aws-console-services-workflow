@@ -39,7 +39,7 @@ func Run(wf *aw.Workflow, rawQuery string, cfg aws.Config, forceFetch, openAll b
 	}
 
 	if query.HasOpenAll {
-		handleOpenAll(wf, awsService, openAll, rawQuery)
+		handleOpenAll(wf, awsService, openAll, rawQuery, cfg)
 		return
 	}
 
@@ -47,10 +47,10 @@ func Run(wf *aw.Workflow, rawQuery string, cfg aws.Config, forceFetch, openAll b
 	if awsService == nil || (!query.HasTrailingWhitespace && query.SubServiceId == "" && !query.HasDefaultSearchAlias) {
 		log.Println("using searcher associated with services")
 		filterQuery = query.ServiceId
-		SearchServices(wf, awsServices)
+		SearchServices(wf, awsServices, cfg)
 	} else {
 		if !query.HasDefaultSearchAlias && (awsService.SubServices == nil || len(awsService.SubServices) <= 0) {
-			handleUnimplemented(wf, awsService, nil, fmt.Sprintf("%s doesn't have sub-services configured (yet)", awsService.Id))
+			handleUnimplemented(wf, awsService, nil, fmt.Sprintf("%s doesn't have sub-services configured (yet)", awsService.Id), cfg)
 			return
 		}
 
@@ -76,13 +76,13 @@ func Run(wf *aw.Workflow, rawQuery string, cfg aws.Config, forceFetch, openAll b
 					wf.FatalError(err)
 				}
 			} else {
-				handleUnimplemented(wf, awsService, subService, fmt.Sprintf("No searcher for `%s %s` (yet)", query.ServiceId, query.SubServiceId))
+				handleUnimplemented(wf, awsService, subService, fmt.Sprintf("No searcher for `%s %s` (yet)", query.ServiceId, query.SubServiceId), cfg)
 				return
 			}
 		} else {
 			log.Println("using searcher associated with sub-services")
 			filterQuery = query.SubServiceId
-			SearchSubServices(wf, *awsService)
+			SearchSubServices(wf, *awsService, cfg)
 		}
 	}
 
@@ -116,11 +116,11 @@ func handleEmptyQuery(wf *aw.Workflow) {
 	handleUpdateAvailable(wf)
 }
 
-func handleUnimplemented(wf *aw.Workflow, awsService, subService *awsworkflow.AwsService, header string) {
+func handleUnimplemented(wf *aw.Workflow, awsService, subService *awsworkflow.AwsService, header string, cfg aws.Config) {
 	if subService == nil {
-		AddServiceToWorkflow(wf, *awsService)
+		AddServiceToWorkflow(wf, *awsService, cfg)
 	} else {
-		AddSubServiceToWorkflow(wf, *awsService, *subService)
+		AddSubServiceToWorkflow(wf, *awsService, *subService, cfg)
 	}
 	util.NewURLItem(wf, header).
 		Subtitle("Select this result to open the contributing guide to easily add them!").
@@ -138,10 +138,10 @@ func handleUpdateAvailable(wf *aw.Workflow) {
 	}
 }
 
-func handleOpenAll(wf *aw.Workflow, awsService *awsworkflow.AwsService, openAll bool, rawQuery string) {
+func handleOpenAll(wf *aw.Workflow, awsService *awsworkflow.AwsService, openAll bool, rawQuery string, cfg aws.Config) {
 	if openAll {
 		for i := range awsService.SubServices {
-			openServiceInBrowser(wf, &awsService.SubServices[i])
+			openServiceInBrowser(wf, &awsService.SubServices[i], cfg)
 		}
 	} else if awsService != nil {
 		cmd := fmt.Sprintf(`%s -query="%s" -open_all`, os.Args[0], rawQuery)
@@ -154,8 +154,8 @@ func handleOpenAll(wf *aw.Workflow, awsService *awsworkflow.AwsService, openAll 
 	}
 }
 
-func openServiceInBrowser(wf *aw.Workflow, awsService *awsworkflow.AwsService) {
-	cmd := exec.Command("open", awsService.Url)
+func openServiceInBrowser(wf *aw.Workflow, awsService *awsworkflow.AwsService, cfg aws.Config) {
+	cmd := exec.Command("open", util.ConstructAWSConsoleUrl(awsService.Url, cfg.Region))
 	if err := wf.RunInBackground("open-sub-service-in-browser-"+awsService.Id, cmd); err != nil {
 		panic(err)
 	}

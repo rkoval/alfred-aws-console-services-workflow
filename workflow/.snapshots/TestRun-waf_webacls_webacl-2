@@ -5,7 +5,7 @@
     match: (*string)(<nil>),
     uid: (*string)(<nil>),
     autocomplete: (*string)(<nil>),
-    arg: (*string)((len=124) "https://console.aws.amazon.com/wafv2/homev2/web-acl/web-acl-2/00000000-0000-0000-0000-000000000000/overview?region=us-west-2"),
+    arg: (*string)((len=134) "https://us-west-2.console.aws.amazon.com/wafv2/homev2/web-acl/web-acl-2/00000000-0000-0000-0000-000000000000/overview?region=us-west-2"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

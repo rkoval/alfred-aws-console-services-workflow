@@ -3,13 +3,14 @@ package workflow
 import (
 	"strings"
 
+	"github.com/aws/aws-sdk-go-v2/aws"
 	aw "github.com/deanishe/awgo"
 	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
 	"github.com/rkoval/alfred-aws-console-services-workflow/searchers"
 	"github.com/rkoval/alfred-aws-console-services-workflow/util"
 )
 
-func AddServiceToWorkflow(wf *aw.Workflow, awsService awsworkflow.AwsService) {
+func AddServiceToWorkflow(wf *aw.Workflow, awsService awsworkflow.AwsService, cfg aws.Config) {
 	title := awsService.Id
 	match := awsService.Id
 	if awsService.ShortName == "" {
@@ -36,24 +37,24 @@ func AddServiceToWorkflow(wf *aw.Workflow, awsService awsworkflow.AwsService) {
 		Match(match).
 		Autocomplete(awsService.Id + " ").
 		UID(awsService.Id).
-		Arg(awsService.Url)
+		Arg(util.ConstructAWSConsoleUrl(awsService.Url, cfg.Region))
 
 	item.Icon(awsworkflow.GetImageIcon(awsService.Id))
 }
 
-func SearchServices(wf *aw.Workflow, awsServices []awsworkflow.AwsService) {
+func SearchServices(wf *aw.Workflow, awsServices []awsworkflow.AwsService, cfg aws.Config) {
 	for _, awsService := range awsServices {
-		AddServiceToWorkflow(wf, awsService)
+		AddServiceToWorkflow(wf, awsService, cfg)
 	}
 }
 
-func SearchSubServices(wf *aw.Workflow, awsService awsworkflow.AwsService) {
+func SearchSubServices(wf *aw.Workflow, awsService awsworkflow.AwsService, cfg aws.Config) {
 	for _, subService := range awsService.SubServices {
-		AddSubServiceToWorkflow(wf, awsService, subService)
+		AddSubServiceToWorkflow(wf, awsService, subService, cfg)
 	}
 }
 
-func AddSubServiceToWorkflow(wf *aw.Workflow, awsService, subService awsworkflow.AwsService) {
+func AddSubServiceToWorkflow(wf *aw.Workflow, awsService, subService awsworkflow.AwsService, cfg aws.Config) {
 	title := awsService.Id + " " + subService.Id
 	subtitle := ""
 
@@ -86,7 +87,7 @@ func AddSubServiceToWorkflow(wf *aw.Workflow, awsService, subService awsworkflow
 		Match(match).
 		Autocomplete(awsService.Id + " " + subService.Id + " ").
 		UID(subService.Id).
-		Arg(subService.Url)
+		Arg(util.ConstructAWSConsoleUrl(subService.Url, cfg.Region))
 
 	item.Icon(awsworkflow.GetImageIcon(awsService.Id))
 }

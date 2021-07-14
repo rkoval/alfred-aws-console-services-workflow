@@ -117,13 +117,10 @@ func (s {{ .StructName }}) addToWorkflow(wf *aw.Workflow, query string, config a
 	title := entity.TODO
 	subtitle := ""
 
+	path := fmt.Sprintf("/{{ .ServiceLower }}/{{ .EntityLowerPlural }}/?region=%s", config.Region)
 	util.NewURLItem(wf, title).
 		Subtitle(subtitle).
-		Arg(fmt.Sprintf(
-			"https://%s.console.aws.amazon.com/{{ .ServiceLower }}/{{ .EntityLowerPlural }}/?region=%s&tab=overview",
-			config.Region,
-			config.Region,
-		)).
+		Arg(util.ConstructAWSConsoleUrl(path, config.Region)).
 		Icon(awsworkflow.GetImageIcon("{{ .ServiceLower }}")).
 		Valid(true)
 }`

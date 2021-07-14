@@ -5,7 +5,7 @@
     match: (*string)((len=29) "cloudformation CloudFormation"),
     uid: (*string)((len=14) "cloudformation"),
     autocomplete: (*string)((len=15) "cloudformation "),
-    arg: (*string)((len=50) "https://console.aws.amazon.com/cloudformation/home"),
+    arg: (*string)((len=60) "https://us-west-2.console.aws.amazon.com/cloudformation/home"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

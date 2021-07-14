@@ -42,7 +42,7 @@ func NewAWSRecorderSession(fixtureName string) (aws.Config, *recorder.Recorder) 
 		return nil
 	})
 
-	cfg := awsworkflow.NewWorkflowConfig(r)
+	cfg := awsworkflow.InitAWS(r)
 
 	return cfg, r
 }

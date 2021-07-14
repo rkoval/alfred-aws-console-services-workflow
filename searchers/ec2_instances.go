@@ -68,9 +68,10 @@ func (s EC2InstanceSearcher) addToWorkflow(wf *aw.Workflow, query string, config
 	}
 	subtitle += " " + string(instance.InstanceType)
 
+	path := fmt.Sprintf("/ec2/v2/home?region=%s#Instances:search=%s", config.Region, *instance.InstanceId)
 	item := util.NewURLItem(wf, title).
 		Subtitle(subtitle).
-		Arg(fmt.Sprintf("https://%s.console.aws.amazon.com/ec2/v2/home?region=%s#Instances:search=%s", config.Region, config.Region, *instance.InstanceId)).
+		Arg(util.ConstructAWSConsoleUrl(path, config.Region)).
 		Icon(awsworkflow.GetImageIcon("ec2"))
 
 	if strings.HasPrefix(query, "i-") {

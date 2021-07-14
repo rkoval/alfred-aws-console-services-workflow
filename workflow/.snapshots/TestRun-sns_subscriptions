@@ -5,7 +5,7 @@
     match: (*string)((len=27) "subscriptions Subscriptions"),
     uid: (*string)((len=13) "subscriptions"),
     autocomplete: (*string)((len=18) "sns subscriptions "),
-    arg: (*string)((len=57) "https://console.aws.amazon.com/sns/v3/home#/subscriptions"),
+    arg: (*string)((len=67) "https://us-west-2.console.aws.amazon.com/sns/v3/home#/subscriptions"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

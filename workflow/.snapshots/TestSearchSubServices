@@ -5,7 +5,7 @@
     match: (*string)((len=26) "sub-service1 Sub-service 1"),
     uid: (*string)((len=12) "sub-service1"),
     autocomplete: (*string)((len=22) "service2 sub-service1 "),
-    arg: (*string)((len=31) "https://bookmarks.ryankoval.com"),
+    arg: (*string)((len=50) "https://us-west-2.console.aws.amazon.com/bookmarks"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

@@ -59,8 +59,9 @@ func (s WAFWebACLSearcher) addToWorkflow(wf *aw.Workflow, query string, config a
 	title := *entity.Name
 	subtitle := *entity.Description
 
+	path := fmt.Sprintf("/wafv2/homev2/web-acl/%s/%s/overview?region=%s", *entity.Name, *entity.Id, config.Region)
 	util.NewURLItem(wf, title).
 		Subtitle(subtitle).
-		Arg(fmt.Sprintf("https://console.aws.amazon.com/wafv2/homev2/web-acl/%s/%s/overview?region=%s", *entity.Name, *entity.Id, config.Region)).
+		Arg(util.ConstructAWSConsoleUrl(path, config.Region)).
 		Icon(awsworkflow.GetImageIcon("waf"))
 }

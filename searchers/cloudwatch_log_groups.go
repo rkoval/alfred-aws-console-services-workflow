@@ -66,8 +66,9 @@ func (s CloudWatchLogGroupSearcher) addToWorkflow(wf *aw.Workflow, query string,
 	}
 	subtitle := strings.Join(subtitleArray, " – ")
 
+	path := fmt.Sprintf("/cloudwatch/home?region=%s#logsV2:log-groups/log-group/%s/log-events", config.Region, url.PathEscape(*entity.LogGroupName))
 	util.NewURLItem(wf, title).
 		Subtitle(subtitle).
-		Arg(fmt.Sprintf("https://%s.console.aws.amazon.com/cloudwatch/home?region=%s#logsV2:log-groups/log-group/%s/log-events", config.Region, config.Region, url.PathEscape(*entity.LogGroupName))).
+		Arg(util.ConstructAWSConsoleUrl(path, config.Region)).
 		Icon(awsworkflow.GetImageIcon("cloudwatch"))
 }

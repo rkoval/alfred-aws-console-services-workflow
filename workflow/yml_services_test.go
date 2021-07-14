@@ -14,7 +14,7 @@ var awsServices []awsworkflow.AwsService = []awsworkflow.AwsService{
 		Name:        "Service 1",
 		ShortName:   "S1",
 		Description: "Description of the first service",
-		Url:         "https://ryankoval.pizza",
+		Url:         "/pizza",
 	},
 	{
 		Id:          "service2",
@@ -26,7 +26,7 @@ var awsServices []awsworkflow.AwsService = []awsworkflow.AwsService{
 				Id:          "sub-service1",
 				Name:        "Sub-service 1",
 				Description: "Description of the first sub-service",
-				Url:         "https://bookmarks.ryankoval.com",
+				Url:         "/bookmarks",
 			},
 		},
 	},
@@ -35,14 +35,15 @@ var awsServices []awsworkflow.AwsService = []awsworkflow.AwsService{
 		Name:        "Whoa",
 		ShortName:   "W",
 		Description: "Whoa!!!!",
-		Url:         "https://github.ryankoval.com",
+		Url:         "/github",
 	},
 }
 
 func TestSearchServices(t *testing.T) {
 	wf := aw.New()
 
-	SearchServices(wf, awsServices)
+	cfg := awsworkflow.InitAWS(nil)
+	SearchServices(wf, awsServices, cfg)
 
 	cupaloy.SnapshotT(t, wf.Feedback.Items)
 }
@@ -50,7 +51,9 @@ func TestSearchServices(t *testing.T) {
 func TestSearchSubServices(t *testing.T) {
 	wf := aw.New()
 
-	SearchSubServices(wf, awsServices[1])
+	cfg := awsworkflow.InitAWS(nil)
+
+	SearchSubServices(wf, awsServices[1], cfg)
 
 	cupaloy.SnapshotT(t, wf.Feedback.Items)
 }

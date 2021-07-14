@@ -2,73 +2,73 @@
 - id: alexa
   name: Alexa for Business
   description: Empower your organization with voice
-  url: https://console.aws.amazon.com/a4b/home
+  url: /a4b/home
 
 - id: amplify
   name: Amplify
   description: Develop & deploy cloud-powered mobile and web apps
-  url: https://console.aws.amazon.com/amplify/home
+  url: /amplify/home
 
 - id: apigateway
   name: API Gateway
   description: Build, Deploy and Manage APIs
-  url: https://console.aws.amazon.com/apigateway/home
+  url: /apigateway/home
 
 - id: appstream
   name: AppStream 2.0
   description: Stream desktop applications securely to any web browser
-  url: https://console.aws.amazon.com/appstream2/home
+  url: /appstream2/home
 
 - id: appsync
   name: AppSync
   description: Real-Time Data Sync Using GraphQL for Mobile & Web Apps, Online or Offline
-  url: https://console.aws.amazon.com/appsync/home
+  url: /appsync/home
 
 - id: artifact
   name: Artifact
   description: AWS Compliance Reports and Agreements
-  url: https://console.aws.amazon.com/artifact/home
+  url: /artifact/home
 
 - id: athena
   name: Athena
   description: Query Data in S3 using SQL
-  url: https://console.aws.amazon.com/athena/home
+  url: /athena/home
 
 - id: autoscaling
   name: Auto Scaling
   description: AWS Auto Scaling enables you to quickly scale your entire application on AWS
-  url: https://console.aws.amazon.com/awsautoscaling/home
+  url: /awsautoscaling/home
 
 - id: backup
   name: Backup
   description: centrally manage and automate backups across AWS services
-  url: https://console.aws.amazon.com/backup/home
+  url: /backup/home
 
 - id: batch
   name: Batch
   description: Run Batch Jobs at Any Scale
-  url: https://console.aws.amazon.com/batch/home
+  url: /batch/home
 
 - id: blockchain
   name: Blockchain
   description: Easily create and manage scalable blockchain networks
-  url: https://console.aws.amazon.com/blockchain/home
+  url: /blockchain/home
 
 - id: billing
   name: Billing
   description: Access, analyze, and control your AWS costs and usage
-  url: https://console.aws.amazon.com/billing/home
+  url: /billing/home
 
 - id: budgets
   name: Budgets
   description: Set Custom Budgets and Receive Alerts
-  url: https://console.aws.amazon.com/billing/home#/budgets#/home
+  url: /billing/home#/budgets#/home
 
 - id: acm
   name: Certificate Manager
   short_name: ACM
   description: Provision, Manage, and Deploy SSL/TLS Certificates
-  url: https://console.aws.amazon.com/acm/home
+  url: /acm/home
 
 - id: chime
   name: Chime
@@ -78,574 +78,574 @@
 - id: cloud9
   name: Cloud9
   description: A Cloud IDE for Writing, Running, and Debugging Code
-  url: https://console.aws.amazon.com/cloud9/home
+  url: /cloud9/home
 
 - id: cloudformation
   name: CloudFormation
   description: Create and Manage Resources with Templates
-  url: https://console.aws.amazon.com/cloudformation/home
+  url: /cloudformation/home
   sub_services:
     - id: stacks
       name: Stacks
-      url: 'https://console.aws.amazon.com/cloudformation/home#/stacks'
+      url: '/cloudformation/home#/stacks'
     - id: stacksets
       name: StackSets
-      url: 'https://console.aws.amazon.com/cloudformation/home#/stacksets'
+      url: '/cloudformation/home#/stacksets'
     - id: designer
       name: Designer
-      url: 'https://console.aws.amazon.com/cloudformation/designer/home'
+      url: '/cloudformation/designer/home'
     - id: resourcetypes
       name: Resource Types
-      url: 'https://console.aws.amazon.com/cloudformation/home#/registry/resourceTypes'
+      url: '/cloudformation/home#/registry/resourceTypes'
 
 - id: cloudfront
   name: CloudFront
   description: Global Content Delivery Network
-  url: https://console.aws.amazon.com/cloudfront/home
+  url: /cloudfront/home
   sub_services:
     - id: distributions
       name: Distributions
-      url: 'https://console.aws.amazon.com/cloudfront/home?#'
+      url: '/cloudfront/home?#'
     - id: policies
       name: Policies
-      url: 'https://console.aws.amazon.com/cloudfront/v2/home#/policies'
+      url: '/cloudfront/v2/home#/policies'
     - id: cachestatistics
       name: Cache statistics
-      url: 'https://console.aws.amazon.com/cloudfront/home?#cache_stat_reports:'
+      url: '/cloudfront/home?#cache_stat_reports:'
     - id: monitoring
       name: Monitoring
-      url: 'https://console.aws.amazon.com/cloudfront/v2/home#/monitoring'
+      url: '/cloudfront/v2/home#/monitoring'
     - id: alarms
       name: Alarms
-      url: 'https://console.aws.amazon.com/cloudfront/home?#alarms:'
+      url: '/cloudfront/home?#alarms:'
     - id: popularobjects
       name: Popular objects
-      url: 'https://console.aws.amazon.com/cloudfront/home?#popular_urls:'
+      url: '/cloudfront/home?#popular_urls:'
     - id: referrers
       name: Top referrers
-      url: 'https://console.aws.amazon.com/cloudfront/home?#referers_report:'
+      url: '/cloudfront/home?#referers_report:'
     - id: usage
       name: Usage
-      url: 'https://console.aws.amazon.com/cloudfront/home?#usage_reports:'
+      url: '/cloudfront/home?#usage_reports:'
     - id: viewers
       name: Viewers
-      url: 'https://console.aws.amazon.com/cloudfront/home?#viewers_reports:'
+      url: '/cloudfront/home?#viewers_reports:'
     - id: oai
       name: Origin access identity
-      url: 'https://console.aws.amazon.com/cloudfront/home?#oai:'
+      url: '/cloudfront/home?#oai:'
     - id: publickey
       name: Public key
-      url: 'https://console.aws.amazon.com/cloudfront/home?#publickey:'
+      url: '/cloudfront/home?#publickey:'
     - id: fle
       name: Field-level encryption
-      url: 'https://console.aws.amazon.com/cloudfront/home?#fle:'
+      url: '/cloudfront/home?#fle:'
 
 - id: cloudhsm
   name: CloudHSM
   description: Managed Hardware Security Modules in the Cloud
-  url: https://console.aws.amazon.com/cloudhsm/home
+  url: /cloudhsm/home
 
 - id: cloudmap
   name: Cloud Map
   description: Build a dynamic map of your cloud
-  url: https://console.aws.amazon.com/cloudmap/home
+  url: /cloudmap/home
 
 - id: cloudsearch
   name: CloudSearch
   description: Managed Search Service
-  url: https://console.aws.amazon.com/cloudsearch/home
+  url: /cloudsearch/home
 
 - id: cloudtrail
   name: CloudTrail
   description: Track User Activity and API Usage
-  url: https://console.aws.amazon.com/cloudtrail/home
+  url: /cloudtrail/home
 
 - id: cloudwatch
   name: CloudWatch
   description: Monitor Resources and Applications
-  url: https://console.aws.amazon.com/cloudwatch/home
+  url: /cloudwatch/home
   sub_services:
     - id: home
       name: Home
-      url: 'https://console.aws.amazon.com/cloudwatch/home#cw:dashboard=Home'
+      url: '/cloudwatch/home#cw:dashboard=Home'
     - id: dashboards
       name: Dashboards
-      url: 'https://console.aws.amazon.com/cloudwatch/home#dashboards:'
+      url: '/cloudwatch/home#dashboards:'
     - id: alarms
       name: Alarms
-      url: 'https://console.aws.amazon.com/cloudwatch/home#alarmsV2:'
+      url: '/cloudwatch/home#alarmsV2:'
     - id: loggroups
       name: Log groups
-      url: 'https://console.aws.amazon.com/cloudwatch/home#logsV2:log-groups'
+      url: '/cloudwatch/home#logsV2:log-groups'
     - id: loginsights
       name: Log insights
-      url: 'https://console.aws.amazon.com/cloudwatch/home#logsV2:logs-insights'
+      url: '/cloudwatch/home#logsV2:logs-insights'
     - id: metrics
       name: Metrics
-      url: 'https://console.aws.amazon.com/cloudwatch/home#metricsV2:graph=~()'
+      url: '/cloudwatch/home#metricsV2:graph=~()'
     - id: servicelensmap
       name: ServiceLens – Service Map
-      url: 'https://console.aws.amazon.com/cloudwatch/home#servicelens:map'
+      url: '/cloudwatch/home#servicelens:map'
     - id: servicelenstracing
       name: ServiceLens – Tracing
-      url: 'https://console.aws.amazon.com/cloudwatch/home#servicelens:traces'
+      url: '/cloudwatch/home#servicelens:traces'
     - id: containerinsightsresources
       name: Container Insights – Resources
-      url: 'https://console.aws.amazon.com/cloudwatch/home#container-insights:infrastructure'
+      url: '/cloudwatch/home#container-insights:infrastructure'
     - id: containerinsightsperformance
       name: Container Insights – Performance
-      url: 'https://console.aws.amazon.com/cloudwatch/home#container-insights:performance'
+      url: '/cloudwatch/home#container-insights:performance'
     - id: syntheticscanaries
       name: Synthetics – Canaries
-      url: 'https://console.aws.amazon.com/cloudwatch/home#synthetics:canary/list'
+      url: '/cloudwatch/home#synthetics:canary/list'
     - id: contributorinsights
       name: Contributor Insights
-      url: 'https://console.aws.amazon.com/cloudwatch/home#contributorinsights:'
+      url: '/cloudwatch/home#contributorinsights:'
     - id: settings
       name: Settings
-      url: 'https://console.aws.amazon.com/cloudwatch/home#settings:'
+      url: '/cloudwatch/home#settings:'
     - id: dashboards
       name: Dashboards
-      url: 'https://console.aws.amazon.com/cloudwatch/home#dashboards:'
+      url: '/cloudwatch/home#dashboards:'
 
 - id: codebuild
   name: CodeBuild
   description: Build and Test Code
-  url: https://console.aws.amazon.com/codebuild/home
+  url: /codebuild/home
 
 - id: codecommit
   name: CodeCommit
   description: Store Code in Private Git Repositories
-  url: https://console.aws.amazon.com/codecommit/home
+  url: /codecommit/home
 
 - id: codedeploy
   name: CodeDeploy
   description: Automate Code Deployments
-  url: https://console.aws.amazon.com/codedeploy/home
+  url: /codedeploy/home
 
 - id: codepipeline
   name: CodePipeline
   description: Release Software using Continuous Delivery
-  url: https://console.aws.amazon.com/codepipeline/home
+  url: /codepipeline/home
 
 - id: codestar
   name: Codestar
   description: Develop, build and deploy applications
-  url: https://console.aws.amazon.com/codestar/home
+  url: /codestar/home
 
 - id: cognito
   name: Cognito
   description: User Identity and App Data Synchronization
-  url: https://console.aws.amazon.com/cognito/home
+  url: /cognito/home
 
 - id: comprehend
   name: Comprehend
   description: Analyze Unstructured Text
-  url: https://console.aws.amazon.com/comprehend/home
+  url: /comprehend/home
 
 - id: config
   name: Config
   description: Track Resource Inventory and Changes
-  url: https://console.aws.amazon.com/config/home
+  url: /config/home
 
 - id: connect
   name: Connect
   description: managed contact center that enables engagement at any scale
-  url: https://console.aws.amazon.com/connect/home
+  url: /connect/home
 
 - id: controltower
   name: Control Tower
   description: set up and govern your multi-account AWS environment
-  url: https://console.aws.amazon.com/controltower/home
+  url: /controltower/home
 
 - id: costreports
   name: Cost Explorer
   description: Visualize and Explore Your AWS Costs and Usage
   extra_search_terms:
     - reports
-  url: https://console.aws.amazon.com/cost-reports/home
+  url: /cost-reports/home
 
 - id: datapipeline
   name: Data Pipeline
   description: Orchestration for Data-Driven Workflows
-  url: https://console.aws.amazon.com/datapipeline/home
+  url: /datapipeline/home
 
 - id: datasync
   name: DataSync
   description: DataSync simplifies, automates, and accelerates moving data
-  url: https://console.aws.amazon.com/datasync/home
+  url: /datasync/home
 
 - id: deeplens
   name: DeepLens
   description: Deep Learning Enabled Video Camera
-  url: https://console.aws.amazon.com/deeplens/home
+  url: /deeplens/home
 
 - id: devicefarm
   name: Device Farm
   description: Test Android, iOS, and Web Apps on Real Devices in the Cloud
-  url: https://console.aws.amazon.com/devicefarm/home
+  url: /devicefarm/home
 
 - id: directconnect
   name: Direct Connect
   description: Dedicated Network Connection to AWS
-  url: https://console.aws.amazon.com/directconnect/home
+  url: /directconnect/home
 
 - id: directoryservice
   name: Directory Service
   description: Host and Manage Active Directory
-  url: https://console.aws.amazon.com/directoryservice/home
+  url: /directoryservice/home
 
 - id: discovery
   name: Application Discovery Service
   description: Discover on-premises application inventory and dependencies
-  url: https://console.aws.amazon.com/discovery/home
+  url: /discovery/home
 
 - id: dms
   name: Database Migation Service
   short_name: DMS
   description: Managed Database Migration Service
-  url: https://console.aws.amazon.com/dms/v2/home
+  url: /dms/v2/home
 
 - id: documentdb
   name: DocumentDB
   description: Fully-managed MongoDB-compatible database service
-  url: https://console.aws.amazon.com/documentdb/home
+  url: /documentdb/home
 
 - id: dynamodb
   name: DynamoDB
   description: Managed NoSQL Database
-  url: https://console.aws.amazon.com/dynamodb/home
+  url: /dynamodb/home
 
 - id: ec2
   name: Elastic Cloud Compute
   short_name: EC2
   description: Virtual Servers in the Cloud
-  url: https://console.aws.amazon.com/ec2/home
+  url: /ec2/home
   sub_services:
     - id: events
       name: Events
-      url: 'https://console.aws.amazon.com/ec2/home#Events:'
+      url: '/ec2/home#Events:'
     - id: tags
       name: Tags
-      url: 'https://console.aws.amazon.com/ec2/home#Tags:'
+      url: '/ec2/home#Tags:'
     - id: limits
       name: Limits
-      url: 'https://console.aws.amazon.com/ec2/home#Limits:'
+      url: '/ec2/home#Limits:'
     - id: instances
       name: Instances
-      url: "https://console.aws.amazon.com/ec2/v2/home#Instances:"
+      url: "/ec2/v2/home#Instances:"
     - id: instancetypes
       name: Instance Types
-      url: "https://console.aws.amazon.com/ec2/v2/home#InstanceTypes:"
+      url: "/ec2/v2/home#InstanceTypes:"
     - id: launchtemplates
       name: Launch Templates
-      url: 'https://console.aws.amazon.com/ec2/home#LaunchTemplates:'
+      url: '/ec2/home#LaunchTemplates:'
     - id: spotrequests
       name: Spot Requests
-      url: 'https://console.aws.amazon.com/ec2sp'
+      url: '/ec2sp'
     - id: savingsplans
       name: Savings Plans
-      url: 'https://console.aws.amazon.com/ec2/home#SavingsPlans:'
+      url: '/ec2/home#SavingsPlans:'
     - id: reservedinstances
       name: Reserved Instances
-      url: 'https://console.aws.amazon.com/ec2/home#ReservedInstances:'
+      url: '/ec2/home#ReservedInstances:'
     - id: dedicatedhosts
       name: Dedicated Hosts
-      url: 'https://console.aws.amazon.com/ec2/home#Hosts:'
+      url: '/ec2/home#Hosts:'
     - id: scheduledinstances
       name: Scheduled Instances
-      url: 'https://console.aws.amazon.com/ec2sp/v2/si/home'
+      url: '/ec2sp/v2/si/home'
     - id: capacityreservations
       name: Capacity Reservations
-      url: 'https://console.aws.amazon.com/ec2sp/v2/home/#/cr/reservations'
+      url: '/ec2sp/v2/home/#/cr/reservations'
     - id: amis
       name: AMIs
-      url: 'https://console.aws.amazon.com/ec2/home#Images:'
+      url: '/ec2/home#Images:'
     - id: volumes
       name: Volume
-      url: 'https://console.aws.amazon.com/ec2/home#Volumes:'
+      url: '/ec2/home#Volumes:'
     - id: snapshots
       name: Snapshots
-      url: 'https://console.aws.amazon.com/ec2/home#Snapshots:'
+      url: '/ec2/home#Snapshots:'
     - id: lifecyclemanager
       name: Lifecycle Manager
-      url: 'https://console.aws.amazon.com/ec2/home#Lifecycle:'
+      url: '/ec2/home#Lifecycle:'
     - id: securitygroups
       name: Security Groups
-      url: "https://console.aws.amazon.com/ec2/v2/home#SecurityGroups:"
+      url: "/ec2/v2/home#SecurityGroups:"
     - id: elasticips
       name: Elastic IPs
-      url: 'https://console.aws.amazon.com/ec2/home#Addresses:'
+      url: '/ec2/home#Addresses:'
     - id: placementgroups
       name: Placement Groups
-      url: 'https://console.aws.amazon.com/ec2/home#PlacementGroups:'
+      url: '/ec2/home#PlacementGroups:'
     - id: keypairs
       name: Key Pairs
-      url: 'https://console.aws.amazon.com/ec2/home#KeyPairs:'
+      url: '/ec2/home#KeyPairs:'
     - id: networkinterfaces
       name: Network Interfaces
-      url: 'https://console.aws.amazon.com/ec2/home#NIC:'
+      url: '/ec2/home#NIC:'
     - id: loadbalancers
       name: Load Balancers
-      url: 'https://console.aws.amazon.com/ec2/home#LoadBalancers:'
+      url: '/ec2/home#LoadBalancers:'
     - id: targetgroups
       name: Target Groups
-      url: 'https://console.aws.amazon.com/ec2/home#TargetGroups:'
+      url: '/ec2/home#TargetGroups:'
     - id: launchconfigs
       name: Launch Configurations
-      url: 'https://console.aws.amazon.com/ec2autoscaling/home#/lc'
+      url: '/ec2autoscaling/home#/lc'
     - id: autoscalinggroups
       name: Auto Scaling Groups
-      url: 'https://console.aws.amazon.com/ec2autoscaling/home#/details'
+      url: '/ec2autoscaling/home#/details'
 
 - id: ecr
   name: Elastic Container Registry
   short_name: ECR
   description: Fully-managed Docker container registry
-  url: https://console.aws.amazon.com/ecr/home
+  url: /ecr/home
 
 - id: ecs
   name: Elastic Container Service
   short_name: ECS
   description: Run and Manage Docker Containers
-  url: https://console.aws.amazon.com/ecs/home
+  url: /ecs/home
 
 - id: efs
   name: Elastic File Storage
   short_name: EFS
   description: Managed File Storage for EC2
-  url: https://console.aws.amazon.com/efs/home
+  url: /efs/home
 
 - id: eks
   name: Elastic Kubernetes Service
   short_name: EKS
   description: Managed Kubernetes on AWS
-  url: https://console.aws.amazon.com/eks/home
+  url: /eks/home
 
 - id: elasticache
   name: ElastiCache
   description: In-Memory Cache
-  url: https://console.aws.amazon.com/elasticache/home
+  url: /elasticache/home
   sub_services:
     - id: home
       name: Home
-      url: "https://us-west-2.console.aws.amazon.com/elasticache/home"
+      url: "/elasticache/home"
     - id: memcached
       name: Memcached
-      url: "https://us-west-2.console.aws.amazon.com/elasticache/home#memcached:"
+      url: "/elasticache/home#memcached:"
     - id: redis
       name: Redis
-      url: "https://us-west-2.console.aws.amazon.com/elasticache/home#redis:"
+      url: "/elasticache/home#redis:"
     - id: globalcluster
       name: Global Datastore
-      url: "https://us-west-2.console.aws.amazon.com/elasticache/home#global-cluster:"
+      url: "/elasticache/home#global-cluster:"
     - id: serviceupdates
       name: Service Updates
-      url: "https://us-west-2.console.aws.amazon.com/elasticache/home#service-updates:"
+      url: "/elasticache/home#service-updates:"
     - id: reservedcachenodes
       name: Reserved Cache Nodes
-      url: "https://us-west-2.console.aws.amazon.com/elasticache/home#reserved-cache-nodes:"
+      url: "/elasticache/home#reserved-cache-nodes:"
     - id: snapshots
       name: Backups
-      url: "https://us-west-2.console.aws.amazon.com/elasticache/home#snapshots:"
+      url: "/elasticache/home#snapshots:"
     - id: parametergroups
       name: Parameter Groups
-      url: "https://us-west-2.console.aws.amazon.com/elasticache/home#param-groups:"
+      url: "/elasticache/home#param-groups:"
     - id: users
       name: User Management
-      url: "https://us-west-2.console.aws.amazon.com/elasticache/home#users:"
+      url: "/elasticache/home#users:"
     - id: usergroups
       name: User Group Management
-      url: "https://us-west-2.console.aws.amazon.com/elasticache/home#user-groups:"
+      url: "/elasticache/home#user-groups:"
     - id: subnetgroups
       name: Subnet Groups
-      url: "https://us-west-2.console.aws.amazon.com/elasticache/home#cache-subnet-groups:"
+      url: "/elasticache/home#cache-subnet-groups:"
     - id: events
       name: Events
-      url: "https://us-west-2.console.aws.amazon.com/elasticache/home#events:"
+      url: "/elasticache/home#events:"
     - id: clientdownload
       name: ElastiCache Cluster Client
-      url: "https://us-west-2.console.aws.amazon.com/elasticache/home#client-download:"
+      url: "/elasticache/home#client-download:"
 
 - id: elasticbeanstalk
   name: Elastic Beanstalk
   description: Run and Manage Web Apps
-  url: https://console.aws.amazon.com/elasticbeanstalk/home
+  url: /elasticbeanstalk/home
   sub_services:
     - id: environments
       name: Environments
-      url: "https://console.aws.amazon.com/elasticbeanstalk/home#/environments"
+      url: "/elasticbeanstalk/home#/environments"
     - id: applications
       name: Applications
-      url: "https://console.aws.amazon.com/elasticbeanstalk/home#/applications"
+      url: "/elasticbeanstalk/home#/applications"
 
 - id: ess
   name: Elasticsearch Service
   short_name: ESS
   description: Run and Scale Elasticsearch Clusters
-  url: https://console.aws.amazon.com/es/home
+  url: /es/home
 
 - id: elastictranscoder
   name: Elastic Transcoder
   description: Easy-to-Use Scalable Media Transcoding
-  url: https://console.aws.amazon.com/elastictranscoder/home
+  url: /elastictranscoder/home
 
 - id: emr
   name: Elastic Map Reduce
   short_name: EMR
   description: Managed Hadoop Framework
-  url: https://console.aws.amazon.com/elasticmapreduce/home
+  url: /elasticmapreduce/home
 
 - id: eventbridge
   name: EventBridge
   description: Serverless event bus that connects application data from your own apps, SaaS, and AWS services
-  url: https://console.aws.amazon.com/events/home
+  url: /events/home
 
 - id: forecast
   name: Forecast
   description: fully-managed service for accurate time-series forecasting
-  url: https://console.aws.amazon.com/forecast/home
+  url: /forecast/home
 
 - id: freertos
   name: FreeRTOS
   description: IoT Operating System for Microcontrollers
-  url: https://console.aws.amazon.com/freertos/home
+  url: /freertos/home
 
 - id: fsx
   name: FSx
   description: Fully managed third-party file systems optimized for a variety of workloads
-  url: https://console.aws.amazon.com/fsx/home
+  url: /fsx/home
 
 - id: gamelift
   name: GameLift
   description: Deploy and Scale Session-based Multiplayer Games
-  url: https://console.aws.amazon.com/gamelift/home
+  url: /gamelift/home
 
 - id: glacier
   name: S3 Glacier
   description: Archive Storage in the Cloud
-  url: https://console.aws.amazon.com/glacier/home
+  url: /glacier/home
 
 - id: globalaccelerator
   name: Global Accelerator
   description: Improve your application’s availability and performance using the AWS Global Network
-  url: https://console.aws.amazon.com/ec2/v2/home#GlobalAcceleratorDashboard
+  url: /ec2/v2/home#GlobalAcceleratorDashboard
 
 - id: glue
   name: Glue
   description: fully managed ETL (extract, transform, and load) service
-  url: https://console.aws.amazon.com/glue/home
+  url: /glue/home
 
 - id: groundstation
   name: Ground Station
   description: Communicate with satellites
-  url: https://console.aws.amazon.com/groundstation/home
+  url: /groundstation/home
 
 - id: guardduty
   name: GuardDuty
   description: Intelligent Threat Detection to Protect Your AWS Accounts and Workloads
-  url: https://console.aws.amazon.com/guardduty/home
+  url: /guardduty/home
 
 - id: iam
   name: Identity and Access Management
   short_name: IAM
   description: Manage User Access and Encryption Keys
-  url: https://console.aws.amazon.com/iam/home
+  url: /iam/home
 
 - id: inspector
   name: Inspector
   description: Analyze Application Security
-  url: https://console.aws.amazon.com/inspector/home
+  url: /inspector/home
 
 - id: iot1click
   name: IoT 1-Click
   description:  Trigger AWS Lambda functions from simple devices
-  url: https://console.aws.amazon.com/iot1click/home
+  url: /iot1click/home
 
 - id: iotanalytics
   name: IoT Analytics
   description: Collect, preprocess, store, analyze and visualize data of IoT devices
-  url: https://console.aws.amazon.com/iotanalytics/home
+  url: /iotanalytics/home
 
 - id: iotcore
   name: IoT Core
   description: Connect Devices to the Cloud
-  url: https://console.aws.amazon.com/iotcore/home
+  url: /iotcore/home
 
 - id: iotdevicedefender
   name: IoT Device Defender
   description: Connect Devices to the Cloud
-  url: https://console.aws.amazon.com/devicedefender/home
+  url: /devicedefender/home
 
 - id: iotdevicemanagement
   name: IoT Device Management
   description: Securely Manage Fleets as Small as One Device, or as Broad as Millions of Devices
-  url: https://console.aws.amazon.com/iotdm/home
+  url: /iotdm/home
 
 - id: iotevents
   name: IoT Events
   description: Monitor device fleets for changes and trigger alerts to respond
-  url: https://console.aws.amazon.com/iotevents/home
+  url: /iotevents/home
 
 - id: iotgreengrass
   name: IoT Greengrass
   description: Deploy and run code on your devices
-  url: https://console.aws.amazon.com/iotgreengrass/home
+  url: /iotgreengrass/home
 
 - id: iotsitewise
   name: IoT SiteWise
   description: Data driven decisions in Industrial operations
-  url: https://console.aws.amazon.com/iotsitewise/home
+  url: /iotsitewise/home
 
 - id: iotthingsgraph
   name: IoT Things Graph
   description: Easily connect devices and web services to build IoT applications
-  url: https://console.aws.amazon.com/thingsgraph/home
+  url: /thingsgraph/home
 
 - id: msk
   name: Managed Streaming for Apache Kafka
   short_name: MSK
   description: Fully managed, highly available, and secure service for Apache Kafka
-  url: https://console.aws.amazon.com/msk/home
+  url: /msk/home
 
 - id: kms
   name: Key Management Service
   short_name: KMS
   description: Securely Generate and Manage AWS Encryption Keys
-  url: https://console.aws.amazon.com/kms/home
+  url: /kms/home
 
 - id: kinesis
   name: Kinesis
   description: Work with Real-Time Streaming Data
-  url: https://console.aws.amazon.com/kinesis/home
+  url: /kinesis/home
 
 - id: lambda
   name: Lambda
   description: Run Code without Thinking about Servers
-  url: https://console.aws.amazon.com/lambda/home
+  url: /lambda/home
   sub_services:
     - id: dashboard
       name: Dashboard
-      url: "https://console.aws.amazon.com/lambda/home#/discover"
+      url: "/lambda/home#/discover"
     - id: applications
       name: Applications
-      url: "https://console.aws.amazon.com/lambda/home#/applications"
+      url: "/lambda/home#/applications"
     - id: functions
       name: Functions
-      url: "https://console.aws.amazon.com/lambda/home#/functions"
+      url: "/lambda/home#/functions"
     - id: layers
       name: Layers
-      url: "https://console.aws.amazon.com/lambda/home#/layers"
+      url: "/lambda/home#/layers"
 
 - id: lex
   name: Lex
   description: Build Voice and Text Chatbots
-  url: https://console.aws.amazon.com/lex/home
+  url: /lex/home
 
 - id: licensemanager
   name: License Manager
   description: Set rules to manage, discover, and report third-party license usage proactively
-  url: https://console.aws.amazon.com/license-manager/home
+  url: /license-manager/home
 
 - id: lightsail
   name: Lightsail
@@ -655,94 +655,94 @@
 - id: macie
   name: Macie
   description: Amazon Macie classifies and secures your business-critical content.
-  url: https://us-east-1.redirection.macie.aws.amazon.com/
+  url: /macie/home
 
 - id: managedservices
   name: Managed Services
   description: IT operations management for AWS
-  url: https://console.aws.amazon.com/managedservices/home
+  url: /managedservices/home
 
 - id: marketplace
   name: Marketplace Subscriptions
   description: Digital catalog where you can find, buy, and deploy software
-  url: https://console.aws.amazon.com/marketplace/home
+  url: /marketplace/home
 
 - id: mediaconnect
   name: MediaConnect
   description: Reliable, secure, and flexible transport for live video
-  url: https://console.aws.amazon.com/mediaconnect/home
+  url: /mediaconnect/home
 
 - id: mediaconvert
   name: MediaConvert
   description: Convert file-based content for broadcast and multiscreen delivery
-  url: https://console.aws.amazon.com/mediaconvert/home
+  url: /mediaconvert/home
 
 - id: medialive
   name: MediaLive
   description: Convert video inputs into live outputs for broadcast and streaming delivery
-  url: https://console.aws.amazon.com/medialive/home
+  url: /medialive/home
 
 - id: mediapackage
   name: MediaPackage
   description: Deliver video to many devices using just-in-time format conversion
-  url: https://console.aws.amazon.com/mediapackage/home
+  url: /mediapackage/home
 
 - id: mediastore
   name: MediaStore
   description: Store and deliver video assets for live or on-demand media workflows
-  url: https://console.aws.amazon.com/mediastore/home
+  url: /mediastore/home
 
 - id: mediatailor
   name: MediaTailor
   description: Personalize and monetize multiscreen content with server-side ad insertion
-  url: https://console.aws.amazon.com/mediatailor/home
+  url: /mediatailor/home
 
 - id: migrationhub
   name: Migration Hub
   description: Simplify and accelerate the migration of your data centers to AWS
-  url: https://console.aws.amazon.com/migrationhub/home
+  url: /migrationhub/home
 
 - id: mobilehub
   name: Mobile Hub
   description: Build, Test, and Monitor Mobile Apps
-  url: https://console.aws.amazon.com/mobilehub/home
+  url: /mobilehub/home
 
 - id: mq
   name: MQ
   description: Managed message broker service for Apache ActiveMQ
   extra_search_terms:
     - activemq
-  url: https://console.aws.amazon.com/amazon-mq/home
+  url: /amazon-mq/home
 
 - id: neptune
   name: Neptune
   description: Fast, reliable graph database built for the cloud
-  url: https://console.aws.amazon.com/neptune/home
+  url: /neptune/home
 
 - id: opsworks
   name: OpsWorks
   description: Configuration Management with Chef and Puppet
-  url: https://console.aws.amazon.com/opsworks/home
+  url: /opsworks/home
 
 - id: organizations
   name: Organizations
   description: Policy-based management for multiple AWS accounts.
-  url: https://console.aws.amazon.com/organizations/home
+  url: /organizations/home
 
 - id: personalize
   name: Personalize
   description: easily add real-time recommendations to your apps
-  url: https://console.aws.amazon.com/personalize/home
+  url: /personalize/home
 
 - id: pinpoint
   name: Pinpoint
   description: Engage Users via Email, SMS, Push & Analytics
-  url: https://console.aws.amazon.com/pinpoint/home
+  url: /pinpoint/home
 
 - id: polly
   name: Polly
   description: Turn Text into Lifelike Speech
-  url: https://console.aws.amazon.com/polly/home
+  url: /polly/home
 
 - id: quicksight
   name: QuickSight
@@ -753,334 +753,334 @@
   name: Relational Database Service
   short_name: RDS
   description: Managed Relational Database Service
-  url: https://console.aws.amazon.com/rds/home
+  url: /rds/home
   sub_services:
     - id: databases
       name: Databases
-      url: "https://console.aws.amazon.com/rds/home#databases:"
+      url: "/rds/home#databases:"
     - id: queryeditor
       name: Query Editor
-      url: "https://console.aws.amazon.com/rds/home#query-editor:"
+      url: "/rds/home#query-editor:"
     - id: performanceinsights
       name: Performance Insights
-      url: "https://console.aws.amazon.com/rds/home#performance-insights-v20206:"
+      url: "/rds/home#performance-insights-v20206:"
     - id: snapshots
       name: Snapshots
-      url: "https://console.aws.amazon.com/rds/home#snapshots-list:"
+      url: "/rds/home#snapshots-list:"
     - id: automatedbackups
       name: Automated backups
-      url: "https://console.aws.amazon.com/rds/home#automatedbackups:"
+      url: "/rds/home#automatedbackups:"
     - id: reservedinstances
       name: Reserved instances
-      url: "https://console.aws.amazon.com/rds/home#reserved-instance-list:"
+      url: "/rds/home#reserved-instance-list:"
     - id: proxies
       name: Proxies
-      url: "https://console.aws.amazon.com/rds/home#proxies:"
+      url: "/rds/home#proxies:"
     - id: subnetgroups
       name: Subnet groups
-      url: "https://console.aws.amazon.com/rds/home#db-subnet-groups-list:"
+      url: "/rds/home#db-subnet-groups-list:"
     - id: optiongroups
       name: Option groups
-      url: "https://console.aws.amazon.com/rds/home#option-groups-list:"
+      url: "/rds/home#option-groups-list:"
     - id: events
       name: Events
-      url: "https://console.aws.amazon.com/rds/home#event-list:"
+      url: "/rds/home#event-list:"
     - id: eventsubscriptions
       name: Event subscriptions
-      url: "https://console.aws.amazon.com/rds/home#event-subscriptions:"
+      url: "/rds/home#event-subscriptions:"
     - id: recommendations
       name: Recommendations
-      url: "https://console.aws.amazon.com/rds/home#recommendations:"
+      url: "/rds/home#recommendations:"
     - id: certificateupdate
       name: Certificate update
-      url: "https://console.aws.amazon.com/rds/home#ca-cert-update:"
+      url: "/rds/home#ca-cert-update:"
 
 - id: redshift
   name: Redshift
   description: Fast, Simple, Cost-Effective Data Warehousing
-  url: https://console.aws.amazon.com/redshift/home
+  url: /redshift/home
 
 - id: rekognition
   name: Rekognition
   description: Search and Analyze Images
-  url: https://console.aws.amazon.com/rekognition/home
+  url: /rekognition/home
 
 - id: ram
   name: Resource Access Manager
   description: Share AWS resources with other accounts or AWS Organizations
-  url: https://console.aws.amazon.com/ram/home
+  url: /ram/home
 
 - id: robomaker
   name: RoboMaker
   description: Develop, test, and deploy intelligent robotics applications
-  url: https://console.aws.amazon.com/robomaker/home
+  url: /robomaker/home
 
 - id: route53
   name: Route 53
   description: Scalable DNS and Domain Name Registration
-  url: https://console.aws.amazon.com/route53/home
+  url: /route53/home
 
 - id: s3
   name: Simple Storage Service
   short_name: S3
   description: Scalable Storage in the Cloud
-  url: https://console.aws.amazon.com/s3/home
+  url: /s3/home
   sub_services:
     - id: buckets
       name: Buckets
-      url: "https://console.aws.amazon.com/s3/home"
+      url: "/s3/home"
     - id: batchoperations
       name: Batch Operations
-      url: "https://console.aws.amazon.com/s3/jobs"
+      url: "/s3/jobs"
     - id: accessanalyzer
       name: Access Analyzer
-      url: "https://console.aws.amazon.com/s3/access"
+      url: "/s3/access"
     - id: settings
       name: Account settings
-      url: "https://console.aws.amazon.com/s3/settings"
+      url: "/s3/settings"
 
 - id: sagemaker
   name: SageMaker
   description: Build, Train, and Deploy Machine Learning Models
-  url: https://console.aws.amazon.com/sagemaker/home
+  url: /sagemaker/home
 
 - id: secretsmanager
   name: Secrets Manager
   description: Easily rotate, manage, and retrieve secrets throughout their lifecycle
-  url: https://console.aws.amazon.com/secretsmanager/home
+  url: /secretsmanager/home
 
 - id: securityhub
   name: Security Hub
   description: AWS’s security and compliance center
-  url: https://console.aws.amazon.com/securityhub/home
+  url: /securityhub/home
 
 - id: serverlessrepo
   name: Serverless Application Repository
   description: Assemble, deploy, and share serverless applications within teams or publicly
-  url: https://console.aws.amazon.com/serverlessrepo/home
+  url: /serverlessrepo/home
 
 - id: servermigrationservice
   name: Server Migration Service
   description: Migrate on-premises servers to AWS
-  url: https://console.aws.amazon.com/servermigration/home
+  url: /servermigration/home
 
 - id: servicecatalog
   name: Service Catalog
   description: allows organizations to manage approved catalogs of IT resources and make them available to employees via a personalized portal.
-  url: https://console.aws.amazon.com/servicecatalog/home
+  url: /servicecatalog/home
 
 - id: ses
   name: Simple Email Service
   short_name: SES
   description: Email Sending and Receiving Service
-  url: https://console.aws.amazon.com/ses/home
+  url: /ses/home
 
 - id: swf
   name: Simple Workflow Service
   short_name: SWF
   description: Workflow Service for Coordinating Application Components
-  url: https://console.aws.amazon.com/swf/home
+  url: /swf/home
 
 - id: transfer
   name: Transfer for SFTP
   description: Fully-managed SFTP service for Amazon S3
-  url: https://console.aws.amazon.com/transfer/home
+  url: /transfer/home
 
 - id: singlesignon
   name: Single Sign-On
   short_name: SSO
   description: Manage Single Sign-On (SSO) Access to AWS Accounts and Business Applications
-  url: https://console.aws.amazon.com/singlesignon/home
+  url: /singlesignon/home
 
 - id: snowball
   name: Snowball
   description: Large Scale Data Transport
-  url: https://console.aws.amazon.com/snowball/home
+  url: /snowball/home
 
 - id: sns
   name: Simple Notification Service
   short_name: SNS
   description: SNS Pub/Sub, Mobile Push and SMS
-  url: https://console.aws.amazon.com/sns/home
+  url: /sns/home
   sub_services:
     - id: topics
       name: Topics
-      url: "https://console.aws.amazon.com/sns/v3/home#/topics"
+      url: "/sns/v3/home#/topics"
     - id: subscriptions
       name: Subscriptions
-      url: "https://console.aws.amazon.com/sns/v3/home#/subscriptions"
+      url: "/sns/v3/home#/subscriptions"
     - id: pushnotifications
       name: Push Notifications
-      url: "https://console.aws.amazon.com/sns/v3/home#/mobile/push-notifications"
+      url: "/sns/v3/home#/mobile/push-notifications"
     - id: textmessaging
       name: Text Messaging (SMS)
-      url: "https://console.aws.amazon.com/sns/v3/home#/mobile/text-messaging"
+      url: "/sns/v3/home#/mobile/text-messaging"
     - id: originationnumbers
       name: Origination numbers
-      url: "https://console.aws.amazon.com/sns/v3/home#/mobile/origination-identities"
+      url: "/sns/v3/home#/mobile/origination-identities"
 
 - id: sqs
   name: Simple Queue Service
   short_name: SQS
   description: SQS Managed Message Queues
-  url: https://console.aws.amazon.com/sqs/v2/home
+  url: /sqs/v2/home
 
 - id: stepfunctions
   name: Step Functions
   description: Coordinate Distributed Applications
-  url: https://console.aws.amazon.com/states/home
+  url: /states/home
 
 - id: storagegateway
   name: Storage Gateway
   description: Hybrid Storage Integration
-  url: https://console.aws.amazon.com/storagegateway/home
+  url: /storagegateway/home
 
 - id: sumerian
   name: Sumerian
   description: Build VR, AR, and 3D applications
-  url: https://console.aws.amazon.com/sumerian/home
+  url: /sumerian/home
 
 - id: systemsmanager
   name: Systems Manager
   description: Gain operational insights and take action on AWS resources
-  url: https://console.aws.amazon.com/systems-manager/home
+  url: /systems-manager/home
 
 - id: support
   name: Support
   description: Support the success and operational health of your AWS solutions
-  url: https://console.aws.amazon.com/support/home
+  url: /support/home
 
 - id: transcribe
   name: Transcribe
   description: Powerful Speech Recognition
-  url: https://console.aws.amazon.com/transcribe/home
+  url: /transcribe/home
 
 - id: translate
   name: Translate
   description: Translate Text in Real-time
-  url: https://console.aws.amazon.com/translate/home
+  url: /translate/home
 
 - id: trustedadvisor
   name: Trusted Advisor
   description: Optimize Performance and Security
-  url: https://console.aws.amazon.com/trustedadvisor/home
+  url: /trustedadvisor/home
 
 - id: vpc
   name: Virtual Private Cloud
   description: Isolated Cloud Resources
-  url: https://console.aws.amazon.com/vpc/home
+  url: /vpc/home
 
 - id: waf
   name: Web Application Firewall & Shield
   short_name: WAF
   description: Protects Against DDoS Attacks and Malicious Web Traffic
-  url: https://console.aws.amazon.com/wafv2/homev2
+  url: /wafv2/homev2
   sub_services:
     - id: webacls
       name: Web ACLs
-      url: "https://console.aws.amazon.com/wafv2/homev2/web-acls"
+      url: "/wafv2/homev2/web-acls"
     - id: ipsets
       name: IP sets
-      url: "https://console.aws.amazon.com/wafv2/homev2/ip-sets"
+      url: "/wafv2/homev2/ip-sets"
     - id: regexpatternsets
       name: Regex pattern sets
-      url: "https://console.aws.amazon.com/wafv2/homev2/regex-pattern-sets"
+      url: "/wafv2/homev2/regex-pattern-sets"
     - id: rulegroups
       name: Rule groups
-      url: "https://console.aws.amazon.com/wafv2/homev2/rule-groups"
+      url: "/wafv2/homev2/rule-groups"
     - id: marketplace
       name: AWS Marketplace
-      url: "https://console.aws.amazon.com/wafv2/homev2/marketplace"
+      url: "/wafv2/homev2/marketplace"
 
 - id: wellarchitectedtool
   name: Well-Architected Tool
   description: Learn best practices, measure, and improve your workloads
-  url: https://console.aws.amazon.com/wellarchitected/home
+  url: /wellarchitected/home
 
 - id: worklink
   name: WorkLink
   description: Enable secure mobile access to internal websites and web apps
-  url: https://console.aws.amazon.com/worklink/home
+  url: /worklink/home
 
 - id: workmail
   name: WorkMail
   description: Secure Email and Calendaring Service
-  url: https://console.aws.amazon.com/workmail/home
+  url: /workmail/home
 
 - id: workspaces
   name: WorkSpaces
   description: Desktops in the Cloud
-  url: https://console.aws.amazon.com/workspaces/home
+  url: /workspaces/home
 
 - id: xray
   name: X-Ray
   description: Analyze and Debug Your Applications
-  url: https://console.aws.amazon.com/xray/home
+  url: /xray/home
 
 - id: appmesh
   name: App Mesh
   description: Application-level networking for all your services
-  url: https://console.aws.amazon.com/appmesh/home
+  url: /appmesh/home
 
 - id: augmentedai
   name: Augmented AI
   description: Easy implement human review of machine learning predictions
-  url: https://console.aws.amazon.com/a2i/home
+  url: /a2i/home
 
 - id: bracket
   name: Braket
   description: Explore and experiment with quantum computing
-  url: https://pages.awscloud.com/Amazon-Braket-Preview.html
+  url: /braket/home
 
 - id: mcs
   name: Keyspaces (for Apache Cassandra)
   description: A scalable, highly available, and managed Apache Cassandra–compatible database service
-  url: https://console.aws.amazon.com/keyspaces/home
+  url: /keyspaces/home
 
 - id: codeguru
   name: CodeGuru
   description: Intelligent recommendations for building and running modern applications
-  url: https://console.aws.amazon.com/codeguru/home
+  url: /codeguru/home
 
 - id: computeoptimizer
   name: Compute Optimizer
   description: Recommend optimal AWS Compute resources for your workloads
-  url: https://console.aws.amazon.com/compute-optimizer/home
+  url: /compute-optimizer/home
 
 - id: deepracer
   name: DeepRacer
   description: Fully autonomous 1/18th scale race car, driven by machine learning
-  url: https://console.aws.amazon.com/deepracer/home
+  url: /deepracer/home
 
 - id: detective
   name: Detective
   description: Investigate and analyse possible security issues
-  url: https://console.aws.amazon.com/detective/home
+  url: /detective/home
 
 - id: ec2imagebuilder
   name: EC2 Image Builder
   description: A managed service to automate build, customize and deploy OS images
-  url: https://console.aws.amazon.com/imagebuilder/home
+  url: /imagebuilder/home
 
 - id: frauddetector
   name: Fraud Detector
   description: Detect more online fraud faster with machine learning
-  url: https://console.aws.amazon.com/frauddetector/home
+  url: /frauddetector/home
 
 - id: kendra
   name: Kendra
   description: Highly accurate enterprise search powered by machine learning
-  url: https://console.aws.amazon.com/kendra/home
+  url: /kendra/home
 
 - id: qldb
   name: QLDB
   description: Fully managed ledger database
-  url: https://console.aws.amazon.com/qldb/home
+  url: /qldb/home
 
 - id: outpost
   name: Outposts
   description: Run AWS Services On Premises
-  url: https://console.aws.amazon.com/outposts/home
+  url: /outposts/home
 
 - id: iq
   name: IQ
@@ -1090,12 +1090,12 @@
 - id: chatbot
   name: Chatbot
   description: ChatOps for AWS
-  url: https://console.aws.amazon.com/chatbot/home
+  url: /chatbot/home
 
 - id: launchwizard
   name: Launch Wizard
   description: Size, configure, and deploy third-party applications on AWS
-  url: https://console.aws.amazon.com/launchwizard/home
+  url: /launchwizard/home
 
 - id: status
   name: Status

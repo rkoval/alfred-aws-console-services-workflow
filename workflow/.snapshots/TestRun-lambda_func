@@ -5,7 +5,7 @@
     match: (*string)((len=19) "functions Functions"),
     uid: (*string)((len=9) "functions"),
     autocomplete: (*string)((len=17) "lambda functions "),
-    arg: (*string)((len=53) "https://console.aws.amazon.com/lambda/home#/functions"),
+    arg: (*string)((len=63) "https://us-west-2.console.aws.amazon.com/lambda/home#/functions"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

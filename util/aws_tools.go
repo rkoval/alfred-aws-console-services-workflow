@@ -1,12 +1,32 @@
 package util
 
 import (
+	"errors"
+	"fmt"
 	"strings"
 
 	cloudformationTypes "github.com/aws/aws-sdk-go-v2/service/cloudformation/types"
 	ec2Types "github.com/aws/aws-sdk-go-v2/service/ec2/types"
 	elasticbeanstalkTypes "github.com/aws/aws-sdk-go-v2/service/elasticbeanstalk/types"
 )
+
+// this will be set by init
+var AWSConsoleDomain string
+
+func ConstructAWSConsoleUrl(path, region string) string {
+	if strings.HasPrefix(path, "http") {
+		// some URLs are just global landing pages, so just return it as-is if we detect a protocol
+		return path
+	}
+
+	if AWSConsoleDomain == "" {
+		panic(errors.New("AWSConsoleDomain was not initialized"))
+	}
+
+	// TODO append region query param dynamically here to avoid page redirections and facilitate faster loading
+
+	return fmt.Sprintf("https://%s.%s%s", region, AWSConsoleDomain, path)
+}
 
 func GetEC2TagValue(tags []ec2Types.Tag, key string) string {
 	for _, tag := range tags {

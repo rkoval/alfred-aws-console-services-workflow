@@ -73,14 +73,10 @@ func (s RDSDatabaseSearcher) addToWorkflow(wf *aw.Workflow, query string, config
 
 	subtitle := strings.Join(subtitleArray, " – ")
 
+	path := fmt.Sprintf("/rds/home?region=%s#database:id=%s;is-cluster=false", config.Region, *entity.DBInstanceIdentifier)
 	util.NewURLItem(wf, title).
 		Subtitle(subtitle).
-		Arg(fmt.Sprintf(
-			"https://%s.console.aws.amazon.com/rds/home?region=%s#database:id=%s;is-cluster=false",
-			config.Region,
-			config.Region,
-			*entity.DBInstanceIdentifier,
-		)).
+		Arg(util.ConstructAWSConsoleUrl(path, config.Region)).
 		Icon(awsworkflow.GetImageIcon("rds")).
 		Valid(true)
 }

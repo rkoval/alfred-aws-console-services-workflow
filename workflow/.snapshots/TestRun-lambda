@@ -5,7 +5,7 @@
     match: (*string)((len=13) "lambda Lambda"),
     uid: (*string)((len=6) "lambda"),
     autocomplete: (*string)((len=7) "lambda "),
-    arg: (*string)((len=42) "https://console.aws.amazon.com/lambda/home"),
+    arg: (*string)((len=52) "https://us-west-2.console.aws.amazon.com/lambda/home"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

@@ -44,13 +44,10 @@ func (s S3BucketSearcher) addToWorkflow(wf *aw.Workflow, query string, config aw
 	title := *bucket.Name
 	subtitle := "Created " + bucket.CreationDate.Format(time.UnixDate)
 
+	path := fmt.Sprintf("/s3/buckets/%s/?region=%s&tab=overview", *bucket.Name, config.Region)
 	util.NewURLItem(wf, title).
 		Subtitle(subtitle).
-		Arg(fmt.Sprintf(
-			"https://console.aws.amazon.com/s3/buckets/%s/?region=%s&tab=overview",
-			*bucket.Name,
-			config.Region,
-		)).
+		Arg(util.ConstructAWSConsoleUrl(path, config.Region)).
 		Icon(awsworkflow.GetImageIcon("s3")).
 		Valid(true)
 }

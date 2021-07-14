@@ -69,8 +69,9 @@ func (s LambdaFunctionSearcher) addToWorkflow(wf *aw.Workflow, query string, con
 	}
 	subtitle := strings.Join(subtitleArray, " – ")
 
+	path := fmt.Sprintf("/lambda/home?region=%s#/functions/%s?tab=configuration", config.Region, url.PathEscape(*entity.FunctionName))
 	util.NewURLItem(wf, title).
 		Subtitle(subtitle).
-		Arg(fmt.Sprintf("https://%s.console.aws.amazon.com/lambda/home?region=%s#/functions/%s?tab=configuration", config.Region, config.Region, url.PathEscape(*entity.FunctionName))).
+		Arg(util.ConstructAWSConsoleUrl(path, config.Region)).
 		Icon(awsworkflow.GetImageIcon("lambda"))
 }

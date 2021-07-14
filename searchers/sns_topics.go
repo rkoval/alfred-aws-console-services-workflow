@@ -56,14 +56,10 @@ func (s SNSTopicSearcher) addToWorkflow(wf *aw.Workflow, query string, config aw
 	subtitle := *entity.TopicArn
 	title := util.GetEndOfArn(*entity.TopicArn)
 
+	path := fmt.Sprintf("/sns/v3/home?region=%s#/topic/%s", config.Region, *entity.TopicArn)
 	util.NewURLItem(wf, title).
 		Subtitle(subtitle).
-		Arg(fmt.Sprintf(
-			"https://%s.console.aws.amazon.com/sns/v3/home?region=%s#/topic/%s",
-			config.Region,
-			config.Region,
-			*entity.TopicArn,
-		)).
+		Arg(util.ConstructAWSConsoleUrl(path, config.Region)).
 		Icon(awsworkflow.GetImageIcon("sns")).
 		Valid(true)
 }

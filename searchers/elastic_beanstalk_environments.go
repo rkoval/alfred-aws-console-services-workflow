@@ -63,16 +63,11 @@ func (s ElasticBeanstalkEnvironmentSearcher) addToWorkflow(wf *aw.Workflow, quer
 	} else {
 		page = "dashboard"
 	}
+
+	path := fmt.Sprintf("/elasticbeanstalk/home?region=%s#/environment/%s?applicationName=%s&environmentId=%s", config.Region, page, *environment.ApplicationName, *environment.EnvironmentId)
 	item := util.NewURLItem(wf, title).
 		Subtitle(subtitle).
-		Arg(fmt.Sprintf(
-			"https://%s.console.aws.amazon.com/elasticbeanstalk/home?region=%s#/environment/%s?applicationName=%s&environmentId=%s",
-			config.Region,
-			config.Region,
-			page,
-			*environment.ApplicationName,
-			*environment.EnvironmentId,
-		)).
+		Arg(util.ConstructAWSConsoleUrl(path, config.Region)).
 		Icon(awsworkflow.GetImageIcon("elasticbeanstalk"))
 
 	if strings.HasPrefix(query, "e-") {

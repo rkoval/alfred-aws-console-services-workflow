@@ -5,7 +5,7 @@
     match: (*string)((len=20) "loggroups Log groups"),
     uid: (*string)((len=9) "loggroups"),
     autocomplete: (*string)((len=21) "cloudwatch loggroups "),
-    arg: (*string)((len=64) "https://console.aws.amazon.com/cloudwatch/home#logsV2:log-groups"),
+    arg: (*string)((len=74) "https://us-west-2.console.aws.amazon.com/cloudwatch/home#logsV2:log-groups"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
