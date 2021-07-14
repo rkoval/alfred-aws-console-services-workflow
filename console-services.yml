@@ -892,10 +892,10 @@
   description: Manage Single Sign-On (SSO) Access to AWS Accounts and Business Applications
   url: /singlesignon/home
 
-- id: snowball
-  name: Snowball
-  description: Large Scale Data Transport
-  url: /snowball/home
+- id: snowfamily
+  name: Snow Family
+  description: Process data at the edge and migrate data into and out of AWS
+  url: /snowfamily/home
 
 - id: sns
   name: Simple Notification Service
