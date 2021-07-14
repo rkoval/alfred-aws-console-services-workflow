@@ -908,6 +908,10 @@
 - id: snowfamily
   name: Snow Family
   description: Process data at the edge and migrate data into and out of AWS
+  extra_search_terms:
+    - snowball
+    - snowcone
+    - snowmobile
   url: /snowfamily/home
 
 - id: sns
