@@ -10,5 +10,5 @@ type Query struct {
 }
 
 func (q *Query) IsEmpty() bool {
-	return q.ServiceId == "" && q.SubServiceId == "" && q.RemainingQuery == ""
+	return q.ServiceId == "" && q.SubServiceId == "" && q.RemainingQuery == "" && !q.HasOpenAll
 }

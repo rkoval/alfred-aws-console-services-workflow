@@ -151,13 +151,16 @@ var tcs []testCase = []testCase{
 		query: "cloudfront fle",
 	},
 	{
-		query: "OPEN_ALL",
+		query:                       "OPEN_ALL",
+		deleteItemArgBeforeSnapshot: true,
 	},
 	{
-		query: "ec OPEN_ALL",
+		query:                       "ec OPEN_ALL",
+		deleteItemArgBeforeSnapshot: true,
 	},
 	{
-		query: "ec OPEN_ALL ",
+		query:                       "ec OPEN_ALL ",
+		deleteItemArgBeforeSnapshot: true,
 	},
 	{
 		query:                       "OPEN_ALL ec2",

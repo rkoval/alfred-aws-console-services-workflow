@@ -31,15 +31,17 @@ func Run(wf *aw.Workflow, rawQuery string, cfg aws.Config, forceFetch, openAll b
 	}
 
 	var awsService *awsworkflow.AwsService
-	for i := range awsServices {
-		if awsServices[i].Id == query.ServiceId {
-			awsService = &awsServices[i]
-			break
+	if query.ServiceId != "" {
+		for i := range awsServices {
+			if awsServices[i].Id == query.ServiceId {
+				awsService = &awsServices[i]
+				break
+			}
 		}
 	}
 
 	if query.HasOpenAll {
-		handleOpenAll(wf, awsService, openAll, rawQuery, cfg)
+		handleOpenAll(wf, awsService, awsServices, openAll, rawQuery, cfg)
 		return
 	}
 
@@ -138,14 +140,31 @@ func handleUpdateAvailable(wf *aw.Workflow) {
 	}
 }
 
-func handleOpenAll(wf *aw.Workflow, awsService *awsworkflow.AwsService, openAll bool, rawQuery string, cfg aws.Config) {
+func handleOpenAll(wf *aw.Workflow, awsService *awsworkflow.AwsService, allAwsServices []awsworkflow.AwsService, openAll bool, rawQuery string, cfg aws.Config) {
 	if openAll {
-		for i := range awsService.SubServices {
-			openServiceInBrowser(wf, &awsService.SubServices[i], cfg)
+		if awsService == nil {
+			for _, awsService := range allAwsServices {
+				openServiceInBrowser(wf, &awsService, cfg)
+			}
+		} else {
+			for _, subService := range awsService.SubServices {
+				openServiceInBrowser(wf, &subService, cfg)
+			}
 		}
-	} else if awsService != nil {
+	} else {
+		var length int
+		var entityName string
+		if awsService == nil {
+			length = len(allAwsServices)
+			entityName = "services"
+		} else {
+			length = len(awsService.SubServices)
+			entityName = awsService.Id + " sub-services"
+		}
+
+		title := fmt.Sprintf("Open the %d %s in browser", length, entityName)
 		cmd := fmt.Sprintf(`%s -query="%s" -open_all`, os.Args[0], rawQuery)
-		wf.NewItem(fmt.Sprintf("Open the %d %s sub-services in browser", len(awsService.SubServices), awsService.Id)).
+		wf.NewItem(title).
 			Subtitle("Fair warning: this may briefly overload your system").
 			Icon(aw.IconWarning).
 			Arg(cmd).
