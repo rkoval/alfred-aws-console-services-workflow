@@ -114,7 +114,7 @@ func goGetPkg(pkg string) {
 }
 
 func parseOperation(operation string) (string, string) {
-	operationNameRegex := regexp.MustCompile("com.amazonaws.([a-z]+)#([a-zA-Z]+)")
+	operationNameRegex := regexp.MustCompile("com.amazonaws.([a-z0-9]+)#([a-zA-Z]+)")
 	matches := operationNameRegex.FindStringSubmatch(operation)
 	if len(matches) != 3 {
 		log.Fatalln("operation argument must have the form \"com.amazonaws.pkg#FunctionName\"")
