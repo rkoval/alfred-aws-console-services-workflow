@@ -42,9 +42,7 @@ func (s EC2InstanceSearcher) fetch(cfg aws.Config) ([]types.Instance, error) {
 		}
 
 		for _, reservation := range resp.Reservations {
-			for i := range reservation.Instances {
-				instances = append(instances, reservation.Instances[i])
-			}
+			instances = append(instances, reservation.Instances...)
 		}
 
 		if resp.NextToken != nil {

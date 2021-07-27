@@ -123,7 +123,7 @@ func handleEmptyQuery(wf *aw.Workflow, searchArgs searchutil.SearchArgs) {
 	}
 
 	if searchArgs.Cfg.Region == "" {
-		wf.NewItem("No region configured for this profile").
+		util.NewURLItem(wf, "No region configured for this profile").
 			Subtitle("Select this option to open AWS docs on how to configure").
 			Arg("https://aws.github.io/aws-sdk-go-v2/docs/configuring-sdk/#creating-the-config-file").
 			Icon(aw.IconWarning)
