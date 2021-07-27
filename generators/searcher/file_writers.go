@@ -75,7 +75,7 @@ import (
 
 type {{ .StructName }} struct{}
 
-func (s {{ .StructName }}) Search(searchArgs searchutil.SearchArgs) error {
+func (s {{ .StructName }}) Search(wf *aw.Workflow, searchArgs searchutil.SearchArgs) error {
 	cacheName := util.GetCurrentFilename()
 	entities := caching.Load{{ .OperationDefinition.PackageTitle }}{{ .OperationDefinition.Item }}ArrayFromCache(wf, searchArgs, cacheName, s.fetch)
 	for _, entity := range entities {
@@ -114,9 +114,12 @@ func (s {{ .StructName }}) fetch(cfg aws.Config) ([]types.{{ .OperationDefinitio
 	return entities, nil
 }
 
-func (s {{ .StructName }}) addToWorkflow(searchArgs searchutil.SearchArgs, entity types.{{ .OperationDefinition.Item }}) {
+func (s {{ .StructName }}) addToWorkflow(wf *aw.Workflow, searchArgs searchutil.SearchArgs, entity types.{{ .OperationDefinition.Item }}) {
 	title := entity.TODO
-	subtitle := ""
+
+	subtitleArray := []string{}
+	subtitleArray = util.AppendString(subtitleArray, entity.TODO)
+	subtitle := strings.Join(subtitleArray, " – ")
 
 	path := fmt.Sprintf("/{{ .ServiceLower }}/{{ .EntityLowerPlural }}/?region=%s", searchArgs.Cfg.Region)
 	util.NewURLItem(wf, title).
