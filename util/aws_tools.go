@@ -8,6 +8,7 @@ import (
 	"github.com/aws/aws-sdk-go-v2/config"
 	cloudformationTypes "github.com/aws/aws-sdk-go-v2/service/cloudformation/types"
 	ec2Types "github.com/aws/aws-sdk-go-v2/service/ec2/types"
+	elasticacheTypes "github.com/aws/aws-sdk-go-v2/service/elasticache/types"
 	elasticbeanstalkTypes "github.com/aws/aws-sdk-go-v2/service/elasticbeanstalk/types"
 )
 
@@ -99,4 +100,18 @@ func GetElasticBeanstalkHealthEmoji(environmentHealth elasticbeanstalkTypes.Envi
 	}
 
 	return "❔"
+}
+
+func GetElasticacheCacheClusterSubtitle(entity elasticacheTypes.CacheCluster) string {
+	engineArray := []string{}
+	engineArray = AppendString(engineArray, entity.Engine)
+	engineArray = AppendString(engineArray, entity.EngineVersion)
+	engineString := strings.Join(engineArray, " ")
+	subtitleArray := []string{}
+	subtitleArray = AppendString(subtitleArray, &engineString)
+	subtitleArray = AppendString(subtitleArray, entity.CacheNodeType)
+	subtitleArray = AppendString(subtitleArray, entity.CacheClusterStatus)
+	subtitle := strings.Join(subtitleArray, " – ")
+
+	return subtitle
 }

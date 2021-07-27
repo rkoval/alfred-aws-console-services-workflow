@@ -51,10 +51,12 @@ var tcs []testCase = []testCase{
 		query: "elasticache ",
 	},
 	{
-		query: "elasticache redis",
+		query:       "elasticache redis",
+		fixtureName: "../searchers/elasticache_redis_clusters_test", // reuse test fixture from this other test
 	},
 	{
-		query: "elasticache redis ",
+		query:       "elasticache redis ",
+		fixtureName: "../searchers/elasticache_redis_clusters_test", // reuse test fixture from this other test
 	},
 	{
 		query:       "cloudwatch loggroups",
@@ -307,6 +309,14 @@ var tcs []testCase = []testCase{
 	{
 		query:       "sns subscriptions paginated",
 		fixtureName: "../searchers/sns_subscriptions_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "elasticache memcached",
+		fixtureName: "../searchers/elasticache_memcached_clusters_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "elasticache memcached ",
+		fixtureName: "../searchers/elasticache_memcached_clusters_test", // reuse test fixture from this other test
 	},
 }
 

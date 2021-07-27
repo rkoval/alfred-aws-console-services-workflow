@@ -34,7 +34,7 @@
   }),
   (*aw.Item)({
     title: (string) (len=21) "elasticache memcached",
-    subtitle: (*string)((len=25) "ElastiCache – Memcached"),
+    subtitle: (*string)((len=30) "🔎 ElastiCache – Memcached"),
     match: (*string)((len=19) "memcached Memcached"),
     uid: (*string)((len=9) "memcached"),
     autocomplete: (*string)((len=22) "elasticache memcached "),
@@ -67,7 +67,7 @@
   }),
   (*aw.Item)({
     title: (string) (len=17) "elasticache redis",
-    subtitle: (*string)((len=21) "ElastiCache – Redis"),
+    subtitle: (*string)((len=32) "🔎⭐️ ElastiCache – Redis"),
     match: (*string)((len=11) "redis Redis"),
     uid: (*string)((len=5) "redis"),
     autocomplete: (*string)((len=18) "elasticache redis "),

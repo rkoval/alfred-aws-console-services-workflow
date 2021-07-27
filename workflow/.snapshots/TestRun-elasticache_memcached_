@@ -1,0 +1,35 @@
+([]*aw.Item) (len=1) {
+  (*aw.Item)({
+    title: (string) (len=19) "memcached-cluster-a",
+    subtitle: (*string)((len=48) "memcached 1.6.6 – cache.t2.micro – available"),
+    match: (*string)(<nil>),
+    uid: (*string)(<nil>),
+    autocomplete: (*string)(<nil>),
+    arg: (*string)((len=114) "https://us-west-2.console.aws.amazon.com/elasticache/home?region=us-west-2#memcached-detail:id=memcached-cluster-a"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    icon: (*aw.Icon)({
+      Value: (string) (len=22) "images/elasticache.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  })
+}
