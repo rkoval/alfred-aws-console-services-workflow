@@ -147,6 +147,7 @@ func getOperationDefinition(operation, pkg, functionName string) OperationDefini
 		panic(errors.New("More than one file with glob \"" + globPath + "\""))
 	}
 	filename := matches[0]
+	log.Println("using " + filename + " to derive types ...")
 
 	apiJsonRaw, err := os.ReadFile(filename)
 	if err != nil {
@@ -163,32 +164,38 @@ func getOperationDefinition(operation, pkg, functionName string) OperationDefini
 
 	_, functionInput := parseOperation(getJsonPath(definition, "input", "target").(string))
 	functionOutputShape := getJsonPath(definition, "output", "target").(string)
-	paginated := getJsonPath(definition, "traits", "smithy.api#paginated").(map[string]interface{})
-	items := paginated["items"].(string)
-
-	functionOutputItemsShape := getJsonPath(j, "shapes", functionOutputShape, "members", items, "target").(string)
-	_, item := parseOperation(getJsonPath(j, "shapes", functionOutputItemsShape, "member", "target").(string))
 
 	operationDefinition := OperationDefinition{
 		Package:       pkg,
 		PackageTitle:  strings.Title(pkg),
 		FunctionName:  functionName,
 		FunctionInput: functionInput,
-		Item:          item,
-		Items:         items,
 	}
 
-	pageInputToken := paginated["inputToken"]
-	if pageInputToken != nil {
-		operationDefinition.PageInputToken = pageInputToken.(string)
-	}
-	pageOutputToken := paginated["outputToken"]
-	if pageOutputToken != nil {
-		operationDefinition.PageOutputToken = pageOutputToken.(string)
-	}
-	pageSize := paginated["pageSize"]
-	if pageSize != nil {
-		operationDefinition.PageSize = pageSize.(string)
+	paginatedMaybe := getJsonPath(definition, "traits", "smithy.api#paginated")
+	if paginatedMaybe != nil {
+		paginated := paginatedMaybe.(map[string]interface{})
+		items := paginated["items"].(string)
+
+		operationDefinition.Items = items
+
+		functionOutputItemsShape := getJsonPath(j, "shapes", functionOutputShape, "members", items, "target").(string)
+		_, item := parseOperation(getJsonPath(j, "shapes", functionOutputItemsShape, "member", "target").(string))
+
+		operationDefinition.Item = item
+
+		pageInputToken := paginated["inputToken"]
+		if pageInputToken != nil {
+			operationDefinition.PageInputToken = pageInputToken.(string)
+		}
+		pageOutputToken := paginated["outputToken"]
+		if pageOutputToken != nil {
+			operationDefinition.PageOutputToken = pageOutputToken.(string)
+		}
+		pageSize := paginated["pageSize"]
+		if pageSize != nil {
+			operationDefinition.PageSize = pageSize.(string)
+		}
 	}
 
 	return operationDefinition
