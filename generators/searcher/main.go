@@ -21,7 +21,7 @@ func init() {
 	awsServices := parsers.ParseConsoleServicesYml("./console-services.yml")
 	for _, awsService := range awsServices {
 		if awsService.ShortName != "" {
-			strcase.ConfigureAcronym(awsService.ShortName, awsService.ShortName)
+			strcase.ConfigureAcronym(awsService.ShortName, strings.ToLower(awsService.ShortName))
 		}
 	}
 	flag.Parse()
@@ -55,6 +55,8 @@ type SearcherNamer struct {
 	OperationDefinition
 }
 
+var numberAfterUnderscore *regexp.Regexp = regexp.MustCompile(`_([0-9]+)`)
+
 func NewSearcherNamer(service, entity string, operationDefinition OperationDefinition) SearcherNamer {
 	if "s" == entity[len(entity)-1:] {
 		log.Fatalf("Entity should be singular for casing to work properly")
@@ -64,6 +66,8 @@ func NewSearcherNamer(service, entity string, operationDefinition OperationDefin
 	entityTitle := strings.Title(entity)
 	serviceLower := strings.ToLower(service)
 	name := serviceTitle + entityTitle
+	nameSnakeCase := strcase.ToSnake(name)
+	nameSnakeCase = numberAfterUnderscore.ReplaceAllString(nameSnakeCase, "$1") // strcase will tree numbers as new word; we do not want this for the conventions here
 
 	return SearcherNamer{
 		ServiceTitle:        serviceTitle,
@@ -74,8 +78,8 @@ func NewSearcherNamer(service, entity string, operationDefinition OperationDefin
 		Name:                name,
 		NameLower:           strings.ToLower(name),
 		NameCamelCase:       strcase.ToCamel(name),
-		NameSnakeCase:       strcase.ToSnake(name),
-		NameSnakeCasePlural: strcase.ToSnake(name) + "s", // TODO make this proper english
+		NameSnakeCase:       nameSnakeCase,
+		NameSnakeCasePlural: nameSnakeCase + "s", // TODO make this proper english
 		StructName:          name + "Searcher",
 		StructInstanceName:  serviceLower + entityTitle + "Searcher",
 		OperationDefinition: operationDefinition,
