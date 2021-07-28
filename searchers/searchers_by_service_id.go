@@ -10,6 +10,7 @@ var ec2SecurityGroupSearcher = &EC2SecurityGroupSearcher{}
 var elasticBeanstalkEnvironmentSearcher = &ElasticBeanstalkEnvironmentSearcher{}
 var elasticacheMemcachedClusterSearcher = &ElasticacheMemcachedClusterSearcher{}
 var elasticacheRedisClusterSearcher = &ElasticacheRedisClusterSearcher{}
+var elasticbeanstalkApplicationSearcher = &ElasticBeanstalkApplicationSearcher{}
 var lambdaFunctionSearcher = &LambdaFunctionSearcher{}
 var rdsDatabaseSearcher = &RDSDatabaseSearcher{}
 var s3BucketSearcher = &S3BucketSearcher{}
@@ -31,6 +32,7 @@ var SearchersByServiceId map[string]Searcher = map[string]Searcher{
 	"elasticache_memcached":         elasticacheMemcachedClusterSearcher,
 	"elasticache_redis":             elasticacheRedisClusterSearcher,
 	"elasticbeanstalk":              elasticBeanstalkEnvironmentSearcher,
+	"elasticbeanstalk_applications": elasticbeanstalkApplicationSearcher,
 	"elasticbeanstalk_environments": elasticBeanstalkEnvironmentSearcher,
 	"lambda":                        lambdaFunctionSearcher,
 	"lambda_functions":              lambdaFunctionSearcher,

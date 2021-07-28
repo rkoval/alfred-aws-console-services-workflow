@@ -34,7 +34,7 @@
   }),
   (*aw.Item)({
     title: (string) (len=29) "elasticbeanstalk applications",
-    subtitle: (*string)((len=34) "Elastic Beanstalk – Applications"),
+    subtitle: (*string)((len=39) "🔎 Elastic Beanstalk – Applications"),
     match: (*string)((len=25) "applications Applications"),
     uid: (*string)((len=12) "applications"),
     autocomplete: (*string)((len=30) "elasticbeanstalk applications "),
