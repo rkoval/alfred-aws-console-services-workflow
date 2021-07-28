@@ -1,7 +1,7 @@
 ([]*aw.Item) (len=6) {
   (*aw.Item)({
     title: (string) (len=19) "route53 hostedzones",
-    subtitle: (*string)((len=25) "Route 53 – Hosted zones"),
+    subtitle: (*string)((len=36) "🔎⭐️ Route 53 – Hosted zones"),
     match: (*string)((len=24) "hostedzones Hosted zones"),
     uid: (*string)((len=11) "hostedzones"),
     autocomplete: (*string)((len=20) "route53 hostedzones "),

@@ -1,0 +1,35 @@
+([]*aw.Item) (len=1) {
+  (*aw.Item)({
+    title: (string) (len=19) "route53 hostedzones",
+    subtitle: (*string)((len=36) "🔎⭐️ Route 53 – Hosted zones"),
+    match: (*string)((len=24) "hostedzones Hosted zones"),
+    uid: (*string)((len=11) "hostedzones"),
+    autocomplete: (*string)((len=20) "route53 hostedzones "),
+    arg: (*string)((len=54) "https://console.aws.amazon.com/route53/v2/hostedzones#"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    icon: (*aw.Icon)({
+      Value: (string) (len=18) "images/route53.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  })
+}

@@ -350,6 +350,18 @@ var tcs []testCase = []testCase{
 		query:       "route53 ",
 		fixtureName: "../searchers/route53_hosted_zones_test", // reuse test fixture from this other test
 	},
+	{
+		query:       "route53 hostedzones",
+		fixtureName: "../searchers/route53_hosted_zones_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "route53 hostedzones ",
+		fixtureName: "../searchers/route53_hosted_zones_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "route53 hostedzones ZWWWWWWWWWWWWW",
+		fixtureName: "../searchers/route53_hosted_zones_test", // reuse test fixture from this other test
+	},
 }
 
 func testWorkflow(t *testing.T, tc testCase, forceFetch, snapshot bool) []*aw.Item {

@@ -15,7 +15,7 @@ import (
 	"github.com/cheekybits/genny/generic"
 )
 
-//go:generate genny -in=$GOFILE -out=gen-$GOFILE gen "Entity=cloudwatchlogs.LogGroup,ec2.Instance,s3.Bucket,ec2.SecurityGroup,elasticbeanstalk.EnvironmentDescription,wafv2.IPSetSummary,wafv2.WebACLSummary,lambda.FunctionConfiguration,cloudformation.Stack,rds.DBInstance,sns.Topic,sns.Subscription,elasticache.CacheCluster,elasticloadbalancingv2.LoadBalancer,elasticbeanstalk.ApplicationDescription"
+//go:generate genny -in=$GOFILE -out=gen-$GOFILE gen "Entity=cloudwatchlogs.LogGroup,ec2.Instance,s3.Bucket,ec2.SecurityGroup,elasticbeanstalk.EnvironmentDescription,wafv2.IPSetSummary,wafv2.WebACLSummary,lambda.FunctionConfiguration,cloudformation.Stack,rds.DBInstance,sns.Topic,sns.Subscription,elasticache.CacheCluster,elasticloadbalancingv2.LoadBalancer,elasticbeanstalk.ApplicationDescription,route53.HostedZone"
 type Entity = generic.Type
 
 type EntityArrayFetcher = func(aws.Config) ([]Entity, error)

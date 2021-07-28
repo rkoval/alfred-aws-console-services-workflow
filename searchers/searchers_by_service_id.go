@@ -13,6 +13,7 @@ var elasticacheRedisClusterSearcher = &ElasticacheRedisClusterSearcher{}
 var elasticbeanstalkApplicationSearcher = &ElasticBeanstalkApplicationSearcher{}
 var lambdaFunctionSearcher = &LambdaFunctionSearcher{}
 var rdsDatabaseSearcher = &RDSDatabaseSearcher{}
+var route53HostedZoneSearcher = &Route53HostedZoneSearcher{}
 var s3BucketSearcher = &S3BucketSearcher{}
 var snsSubscriptionSearcher = &SNSSubscriptionSearcher{}
 var snsTopicSearcher = &SNSTopicSearcher{}
@@ -38,6 +39,8 @@ var SearchersByServiceId map[string]Searcher = map[string]Searcher{
 	"lambda_functions":              lambdaFunctionSearcher,
 	"rds":                           rdsDatabaseSearcher,
 	"rds_databases":                 rdsDatabaseSearcher,
+	"route53":                       route53HostedZoneSearcher,
+	"route53_hostedzones":           route53HostedZoneSearcher,
 	"s3":                            s3BucketSearcher,
 	"s3_buckets":                    s3BucketSearcher,
 	"sns":                           snsTopicSearcher,
