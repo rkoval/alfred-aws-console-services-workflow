@@ -19,6 +19,8 @@ github.com/aws/aws-sdk-go-v2/service/elasticache v1.8.0 h1:5i4QuP1r+4tJ1gscHqUPC
 github.com/aws/aws-sdk-go-v2/service/elasticache v1.8.0/go.mod h1:HNFknFCXy4lpYPQxBKMxYFP7QbEwB7dSm7wybxoqysU=
 github.com/aws/aws-sdk-go-v2/service/elasticbeanstalk v1.4.0 h1:aXJdmWyTzo2+uqPhw3MOj2NUMcEi9c5c3VjQT9eUso0=
 github.com/aws/aws-sdk-go-v2/service/elasticbeanstalk v1.4.0/go.mod h1:9YGohXNTEQTmejHJw0Ino8VzSJyg4IwLCqGaeh6VRbI=
+github.com/aws/aws-sdk-go-v2/service/elasticloadbalancingv2 v1.5.0 h1:Ggqp037avEdhuDH/I1eEMzXy1pshYdEsUBu55eMnbs8=
+github.com/aws/aws-sdk-go-v2/service/elasticloadbalancingv2 v1.5.0/go.mod h1:9i05QDt9o7BzbST7BcrnHzgs1bAphi8o5e/H2kM6+BE=
 github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding v1.2.0 h1:wfI4yrOCMAGdHaEreQ65ycSmPLVc2Q82O+r7ZxYTynA=
 github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding v1.2.0/go.mod h1:2Kc2Pybp1Hr2ZCCOz78mWnNSZYEKKBQgNcizVGk9sko=
 github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.2.0 h1:g2npzssI/6XsoQaPYCxliMFeC5iNKKvO0aC+/wWOE0A=

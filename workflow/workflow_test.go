@@ -318,6 +318,18 @@ var tcs []testCase = []testCase{
 		query:       "elasticache memcached ",
 		fixtureName: "../searchers/elasticache_memcached_clusters_test", // reuse test fixture from this other test
 	},
+	{
+		query:       "ec2 loadbalancers",
+		fixtureName: "../searchers/ec2_load_balancers_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "ec2 loadbalancers ",
+		fixtureName: "../searchers/ec2_load_balancers_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "ec2 loadbalancers arn:aws:elasticloadbalancing:us-west-2:0000000000:loadbalancer/net/awseb-AWSEB-BBBBBBBBBBBBB/bbbbbbbbbbbbbbbb",
+		fixtureName: "../searchers/ec2_load_balancers_test", // reuse test fixture from this other test
+	},
 }
 
 func testWorkflow(t *testing.T, tc testCase, forceFetch, snapshot bool) []*aw.Item {

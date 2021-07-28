@@ -5,6 +5,7 @@ package searchers
 var cloudFormationStackSearcher = &CloudFormationStackSearcher{}
 var cloudWatchLogGroupSearcher = &CloudWatchLogGroupSearcher{}
 var ec2InstanceSearcher = &EC2InstanceSearcher{}
+var ec2LoadBalancerSearcher = &EC2LoadBalancerSearcher{}
 var ec2SecurityGroupSearcher = &EC2SecurityGroupSearcher{}
 var elasticBeanstalkEnvironmentSearcher = &ElasticBeanstalkEnvironmentSearcher{}
 var elasticacheMemcachedClusterSearcher = &ElasticacheMemcachedClusterSearcher{}
@@ -24,6 +25,7 @@ var SearchersByServiceId map[string]Searcher = map[string]Searcher{
 	"cloudwatch_loggroups":          cloudWatchLogGroupSearcher,
 	"ec2":                           ec2InstanceSearcher,
 	"ec2_instances":                 ec2InstanceSearcher,
+	"ec2_loadbalancers":             ec2LoadBalancerSearcher,
 	"ec2_securitygroups":            ec2SecurityGroupSearcher,
 	"elasticache":                   elasticacheRedisClusterSearcher,
 	"elasticache_memcached":         elasticacheMemcachedClusterSearcher,

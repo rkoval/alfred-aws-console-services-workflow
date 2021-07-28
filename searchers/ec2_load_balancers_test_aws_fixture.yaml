@@ -1,0 +1,142 @@
+---
+version: 1
+interactions:
+- request:
+    body: Action=DescribeLoadBalancers&Version=2015-12-01
+    form:
+      Action:
+      - DescribeLoadBalancers
+      Version:
+      - "2015-12-01"
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+    url: https://elasticloadbalancing.us-west-2.amazonaws.com/
+    method: POST
+  response:
+    body: |
+      <DescribeLoadBalancersResponse xmlns="http://elasticloadbalancing.amazonaws.com/doc/2015-12-01/">
+        <DescribeLoadBalancersResult>
+          <LoadBalancers>
+            <member>
+              <LoadBalancerArn>arn:aws:elasticloadbalancing:us-west-2:0000000000:loadbalancer/net/awseb-AWSEB-AAAAAAAAAAAA/aaaaaaaaaaaaaaaa</LoadBalancerArn>
+              <Scheme>internal</Scheme>
+              <AvailabilityZones>
+                <member>
+                  <SubnetId>subnet-aaaaaaaaaa</SubnetId>
+                  <ZoneName>us-west-2a</ZoneName>
+                  <LoadBalancerAddresses/>
+                </member>
+                <member>
+                  <SubnetId>subnet-aaaaaaaaaa</SubnetId>
+                  <ZoneName>us-west-2c</ZoneName>
+                  <LoadBalancerAddresses/>
+                </member>
+                <member>
+                  <SubnetId>subnet-aaaaaaaaaa</SubnetId>
+                  <ZoneName>us-west-2d</ZoneName>
+                  <LoadBalancerAddresses/>
+                </member>
+                <member>
+                  <SubnetId>subnet-aaaaaaaaaa</SubnetId>
+                  <ZoneName>us-west-2b</ZoneName>
+                  <LoadBalancerAddresses/>
+                </member>
+              </AvailabilityZones>
+              <DNSName>awseb-AWSEB-AAAAAAAAAAAA-aaaaaaaaaaaaaaaa.elb.us-west-2.amazonaws.com</DNSName>
+              <Type>network</Type>
+              <IpAddressType>ipv4</IpAddressType>
+              <LoadBalancerName>awseb-AWSEB-AAAAAAAAAAAA</LoadBalancerName>
+              <VpcId>vpc-aaaaaaaaaa</VpcId>
+              <CanonicalHostedZoneId>AAAAAAAAAAAAAA</CanonicalHostedZoneId>
+              <CreatedTime>2020-01-01T00:00:00.000Z</CreatedTime>
+              <State>
+                <Code>active</Code>
+              </State>
+            </member>
+            <member>
+              <LoadBalancerArn>arn:aws:elasticloadbalancing:us-west-2:0000000000:loadbalancer/net/awseb-AWSEB-BBBBBBBBBBBBB/bbbbbbbbbbbbbbbb</LoadBalancerArn>
+              <Scheme>internal</Scheme>
+              <AvailabilityZones>
+                <member>
+                  <SubnetId>subnet-aaaaaaaaaa</SubnetId>
+                  <ZoneName>us-west-2d</ZoneName>
+                  <LoadBalancerAddresses/>
+                </member>
+                <member>
+                  <SubnetId>subnet-aaaaaaaaaa</SubnetId>
+                  <ZoneName>us-west-2b</ZoneName>
+                  <LoadBalancerAddresses/>
+                </member>
+                <member>
+                  <SubnetId>subnet-aaaaaaaaaa</SubnetId>
+                  <ZoneName>us-west-2c</ZoneName>
+                  <LoadBalancerAddresses/>
+                </member>
+                <member>
+                  <SubnetId>subnet-aaaaaaaaaa</SubnetId>
+                  <ZoneName>us-west-2a</ZoneName>
+                  <LoadBalancerAddresses/>
+                </member>
+              </AvailabilityZones>
+              <DNSName>awseb-AWSEB-BBBBBBBBBBBBB-bbbbbbbbbbbbbbbb.elb.us-west-2.amazonaws.com</DNSName>
+              <Type>network</Type>
+              <IpAddressType>ipv4</IpAddressType>
+              <LoadBalancerName>awseb-AWSEB-BBBBBBBBBBBBB</LoadBalancerName>
+              <VpcId>vpc-aaaaaaaaaa</VpcId>
+              <CanonicalHostedZoneId>AAAAAAAAAAAAAA</CanonicalHostedZoneId>
+              <CreatedTime>2020-01-01T00:00:00.000Z</CreatedTime>
+              <State>
+                <Code>active</Code>
+              </State>
+            </member>
+            <member>
+              <LoadBalancerArn>arn:aws:elasticloadbalancing:us-west-2:0000000000:loadbalancer/net/awseb-AWSEB-CCCCCCCCCCCCC/cccccccccccccccc</LoadBalancerArn>
+              <Scheme>internal</Scheme>
+              <AvailabilityZones>
+                <member>
+                  <SubnetId>subnet-aaaaaaaaaa</SubnetId>
+                  <ZoneName>us-west-2c</ZoneName>
+                  <LoadBalancerAddresses/>
+                </member>
+                <member>
+                  <SubnetId>subnet-aaaaaaaaaa</SubnetId>
+                  <ZoneName>us-west-2d</ZoneName>
+                  <LoadBalancerAddresses/>
+                </member>
+                <member>
+                  <SubnetId>subnet-aaaaaaaaaa</SubnetId>
+                  <ZoneName>us-west-2a</ZoneName>
+                  <LoadBalancerAddresses/>
+                </member>
+                <member>
+                  <SubnetId>subnet-aaaaaaaaaa</SubnetId>
+                  <ZoneName>us-west-2b</ZoneName>
+                  <LoadBalancerAddresses/>
+                </member>
+              </AvailabilityZones>
+              <DNSName>awseb-AWSEB-CCCCCCCCCCCCC-cccccccccccccccc.elb.us-west-2.amazonaws.com</DNSName>
+              <Type>network</Type>
+              <IpAddressType>ipv4</IpAddressType>
+              <LoadBalancerName>awseb-AWSEB-CCCCCCCCCCCCC</LoadBalancerName>
+              <VpcId>vpc-aaaaaaaaaa</VpcId>
+              <CanonicalHostedZoneId>AAAAAAAAAAAAAA</CanonicalHostedZoneId>
+              <CreatedTime>2020-01-01T00:00:00.000Z</CreatedTime>
+              <State>
+                <Code>active</Code>
+              </State>
+            </member>
+          </LoadBalancers>
+        </DescribeLoadBalancersResult>
+        <ResponseMetadata>
+          <RequestId>00000000-0000-0000-0000-000000000000</RequestId>
+        </ResponseMetadata>
+      </DescribeLoadBalancersResponse>
+    headers:
+      Content-Type:
+      - text/xml
+      Vary:
+      - accept-encoding
+    status: 200 OK
+    code: 200
+    duration: ""

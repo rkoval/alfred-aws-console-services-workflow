@@ -1,0 +1,101 @@
+([]*aw.Item) (len=3) {
+  (*aw.Item)({
+    title: (string) (len=24) "awseb-AWSEB-AAAAAAAAAAAA",
+    subtitle: (*string)((len=81) "network – awseb-AWSEB-AAAAAAAAAAAA-aaaaaaaaaaaaaaaa.elb.us-west-2.amazonaws.com"),
+    match: (*string)(<nil>),
+    uid: (*string)(<nil>),
+    autocomplete: (*string)(<nil>),
+    arg: (*string)((len=218) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#LoadBalancers:search=arn:aws:elasticloadbalancing:us-west-2:0000000000:loadbalancer/net/awseb-AWSEB-AAAAAAAAAAAA/aaaaaaaaaaaaaaaa;sort=loadBalancerName"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    icon: (*aw.Icon)({
+      Value: (string) (len=14) "images/ec2.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=25) "awseb-AWSEB-BBBBBBBBBBBBB",
+    subtitle: (*string)((len=82) "network – awseb-AWSEB-BBBBBBBBBBBBB-bbbbbbbbbbbbbbbb.elb.us-west-2.amazonaws.com"),
+    match: (*string)(<nil>),
+    uid: (*string)(<nil>),
+    autocomplete: (*string)(<nil>),
+    arg: (*string)((len=219) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#LoadBalancers:search=arn:aws:elasticloadbalancing:us-west-2:0000000000:loadbalancer/net/awseb-AWSEB-BBBBBBBBBBBBB/bbbbbbbbbbbbbbbb;sort=loadBalancerName"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    icon: (*aw.Icon)({
+      Value: (string) (len=14) "images/ec2.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=25) "awseb-AWSEB-CCCCCCCCCCCCC",
+    subtitle: (*string)((len=82) "network – awseb-AWSEB-CCCCCCCCCCCCC-cccccccccccccccc.elb.us-west-2.amazonaws.com"),
+    match: (*string)(<nil>),
+    uid: (*string)(<nil>),
+    autocomplete: (*string)(<nil>),
+    arg: (*string)((len=219) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#LoadBalancers:search=arn:aws:elasticloadbalancing:us-west-2:0000000000:loadbalancer/net/awseb-AWSEB-CCCCCCCCCCCCC/cccccccccccccccc;sort=loadBalancerName"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    icon: (*aw.Icon)({
+      Value: (string) (len=14) "images/ec2.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  })
+}
