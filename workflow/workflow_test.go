@@ -342,6 +342,14 @@ var tcs []testCase = []testCase{
 		query:       "elasticbeanstalk applications arn:aws:elasticbeanstalk:us-west-2:0000000000:application/App3",
 		fixtureName: "../searchers/elastic_beanstalk_applications_test", // reuse test fixture from this other test
 	},
+	{
+		query:       "route53",
+		fixtureName: "../searchers/route53_hosted_zones_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "route53 ",
+		fixtureName: "../searchers/route53_hosted_zones_test", // reuse test fixture from this other test
+	},
 }
 
 func testWorkflow(t *testing.T, tc testCase, forceFetch, snapshot bool) []*aw.Item {

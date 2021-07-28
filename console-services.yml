@@ -830,6 +830,25 @@
   description: Scalable DNS and Domain Name Registration
   has_global_region: true
   url: /route53/home
+  sub_services:
+    - id: hostedzones
+      name: "Hosted zones"
+      url: "/route53/v2/hostedzones#"
+    - id: healthchecks
+      name: "Health checks"
+      url: "/route53/healthchecks/home#"
+    - id: trafficpolicies
+      name: "Traffic policies"
+      url: "/route53/trafficflow/home#"
+    - id: policyrecords
+      name: "Policy records"
+      url: "/route53/trafficflow/home#/records"
+    - id: registereddomains
+      name: "Registered domains"
+      url: "/route53/home#DomainListing:"
+    - id: domainrequests
+      name: "Pending requests"
+      url: "/route53/home#DomainRequests:"
 
 - id: s3
   name: Simple Storage Service
