@@ -123,11 +123,15 @@ func (s {{ .StructName }}) addToWorkflow(wf *aw.Workflow, searchArgs searchutil.
 	subtitle := strings.Join(subtitleArray, " – ")
 
 	path := fmt.Sprintf("/{{ .ServiceLower }}/{{ .EntityLowerPlural }}/?region=%s", searchArgs.Cfg.Region)
-	util.NewURLItem(wf, title).
+	item := util.NewURLItem(wf, title).
 		Subtitle(subtitle).
 		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.Cfg.Region)).
 		Icon(awsworkflow.GetImageIcon("{{ .ServiceLower }}")).
 		Valid(true)
+
+	if strings.HasPrefix(searchArgs.Query, "arn:") {
+		item.Match(*entity.TODOArn)
+	}
 }`
 
 	util.WriteTemplateToFile("searcher_file", templateString, fmt.Sprintf("searchers/%s.go", searcherNamer.NameSnakeCasePlural), searcherNamer)
