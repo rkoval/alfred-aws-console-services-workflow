@@ -192,7 +192,7 @@
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
-				<integer>118</integer>
+				<integer>6</integer>
 				<key>keyword</key>
 				<string>aws</string>
 				<key>queuedelaycustom</key>
