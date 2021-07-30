@@ -1,0 +1,35 @@
+([]*aw.Item) (len=1) {
+  (*aw.Item)({
+    title: (string) (len=10) "s3 buckets",
+    subtitle: (*string)((len=25) "🔎⭐️ S3 – Buckets"),
+    match: (*string)((len=15) "buckets Buckets"),
+    uid: (*string)((len=7) "buckets"),
+    autocomplete: (*string)((len=11) "s3 buckets "),
+    arg: (*string)((len=38) "https://console.aws.amazon.com/s3/home"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    icon: (*aw.Icon)({
+      Value: (string) (len=13) "images/s3.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  })
+}

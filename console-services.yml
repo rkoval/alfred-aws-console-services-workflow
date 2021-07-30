@@ -854,8 +854,7 @@
   name: Simple Storage Service
   short_name: S3
   description: Scalable Storage in the Cloud
-  # s3 is technically has_global_region, but it still will populate region as query param
-  has_global_region: false
+  has_global_region: true
   url: /s3/home
   sub_services:
     - id: buckets

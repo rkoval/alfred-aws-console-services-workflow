@@ -1,8 +1,0 @@
-(*parsers.Query)({
-  ServiceId: (string) (len=4) "asdf",
-  SubServiceId: (string) (len=4) "asdf",
-  HasOpenAll: (bool) false,
-  SearchTerms: ([]string) (len=1) {
-    (string) (len=4) "asdf"
-  }
-})

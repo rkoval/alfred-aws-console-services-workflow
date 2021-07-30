@@ -10,6 +10,7 @@ import (
 
 	"github.com/aws/aws-sdk-go-v2/aws"
 	aw "github.com/deanishe/awgo"
+	"github.com/rkoval/alfred-aws-console-services-workflow/aliases"
 	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
 	"github.com/rkoval/alfred-aws-console-services-workflow/parsers"
 	"github.com/rkoval/alfred-aws-console-services-workflow/searchers"
@@ -21,10 +22,9 @@ func Run(wf *aw.Workflow, rawQuery string, cfg aws.Config, forceFetch, openAll b
 	log.Println("using workflow cacheDir: " + wf.CacheDir())
 	log.Println("using workflow dataDir: " + wf.DataDir())
 
-	awsServices := parsers.ParseConsoleServicesYml(ymlPath)
-	parser := parsers.NewParser(strings.NewReader(rawQuery))
-	query := parser.Parse()
-	defer finalize(wf)
+	parser := parsers.NewParser(rawQuery)
+	query, awsServices := parser.Parse(ymlPath)
+	defer finalize(wf, query)
 
 	searchArgs := searchutil.SearchArgs{
 		Cfg:        cfg,
@@ -33,48 +33,58 @@ func Run(wf *aw.Workflow, rawQuery string, cfg aws.Config, forceFetch, openAll b
 		Profile:    util.GetProfile(cfg),
 	}
 
+	log.Printf("using query: %#v", query)
+
 	if query.IsEmpty() {
 		handleEmptyQuery(wf, searchArgs)
 		return
 	}
 
-	var awsService *awsworkflow.AwsService
-	if query.ServiceId != "" {
-		for i := range awsServices {
-			if awsServices[i].Id == query.ServiceId {
-				awsService = &awsServices[i]
-				break
-			}
-		}
-	}
-
 	if query.HasOpenAll {
-		handleOpenAll(wf, awsService, awsServices, openAll, rawQuery, cfg)
+		handleOpenAll(wf, query.Service, awsServices, openAll, rawQuery, cfg)
 		return
 	}
 
-	if awsService == nil || (!query.HasTrailingWhitespace && query.SubServiceId == "" && !query.HasDefaultSearchAlias) {
-		log.Println("using searcher associated with services")
-		searchArgs.Query = query.ServiceId
+	// TODO need to autocomplete correctly within services/subservices/searchers with respect to region
+
+	if query.RegionQuery != nil {
+		for _, region := range awsworkflow.AllAWSRegions {
+			autocomplete := strings.Replace(rawQuery, aliases.OverrideAwsRegion+*query.RegionQuery, aliases.OverrideAwsRegion+region.Name+" ", 1)
+			wf.NewItem(region.Name).
+				Subtitle(region.Description).
+				Icon(aw.IconWeb).
+				Autocomplete(autocomplete).
+				UID(region.Name)
+		}
+		log.Printf("filtering with region override %q", *query.RegionQuery)
+		res := wf.Filter(*query.RegionQuery)
+		log.Printf("%d results match %q", len(res), *query.RegionQuery)
+		return
+	} else if query.RegionOverride != nil && (query.Service == nil || !query.Service.HasGlobalRegion) {
+		cfg.Region = query.RegionOverride.Name
+		searchArgs.Cfg.Region = query.RegionOverride.Name
+	}
+
+	if query.Service == nil || (!query.HasTrailingWhitespace && query.SubService == nil && !query.HasDefaultSearchAlias && query.RemainingQuery == "") {
+		if query.Service == nil {
+			searchArgs.Query = query.RemainingQuery
+		} else if query.Service.ShortName != "" {
+			searchArgs.Query = query.Service.ShortName
+		} else {
+			searchArgs.Query = query.Service.Name
+		}
+		log.Printf("using searcher associated with services with query %q", searchArgs.Query)
 		SearchServices(wf, awsServices, cfg)
 	} else {
-		if !query.HasDefaultSearchAlias && (awsService.SubServices == nil || len(awsService.SubServices) <= 0) {
-			handleUnimplemented(wf, awsService, nil, fmt.Sprintf("%s doesn't have sub-services configured (yet)", awsService.Id), cfg)
+		if !query.HasDefaultSearchAlias && (query.Service.SubServices == nil || len(query.Service.SubServices) <= 0) {
+			handleUnimplemented(wf, query.Service, nil, fmt.Sprintf("%s doesn't have sub-services configured (yet)", query.Service.Id), cfg)
 			return
 		}
 
-		var subService *awsworkflow.AwsService
-		for i := range awsService.SubServices {
-			if awsService.SubServices[i].Id == query.SubServiceId {
-				subService = &awsService.SubServices[i]
-				break
-			}
-		}
-
-		if query.HasDefaultSearchAlias || subService != nil && (query.HasTrailingWhitespace || query.RemainingQuery != "") {
-			serviceId := query.ServiceId
-			if query.SubServiceId != "" {
-				serviceId += "_" + query.SubServiceId
+		if query.HasDefaultSearchAlias || query.SubService != nil && (query.HasTrailingWhitespace || query.RemainingQuery != "") {
+			serviceId := query.Service.Id
+			if query.SubService != nil {
+				serviceId += "_" + query.SubService.Id
 			}
 			log.Println("using searcher associated with " + serviceId)
 			searcher := searchers.SearchersByServiceId[serviceId]
@@ -85,27 +95,40 @@ func Run(wf *aw.Workflow, rawQuery string, cfg aws.Config, forceFetch, openAll b
 					wf.FatalError(err)
 				}
 			} else {
-				handleUnimplemented(wf, awsService, subService, fmt.Sprintf("No searcher for `%s %s` (yet)", query.ServiceId, query.SubServiceId), cfg)
+				handleUnimplemented(wf, query.Service, query.SubService, fmt.Sprintf("No searcher for `%s %s` (yet)", query.Service.Id, query.SubService.Id), cfg)
 				return
 			}
 		} else {
 			log.Println("using searcher associated with sub-services")
-			searchArgs.Query = query.SubServiceId
-			SearchSubServices(wf, *awsService, cfg)
+			if query.SubService != nil {
+				searchArgs.Query = query.SubService.Id
+			} else {
+				searchArgs.Query = query.RemainingQuery
+			}
+			SearchSubServices(wf, *query.Service, cfg)
 		}
 	}
 
 	if searchArgs.Query != "" {
-		log.Printf("filtering with query %s", searchArgs.Query)
+		log.Printf("filtering with query %q", searchArgs.Query)
 		res := wf.Filter(searchArgs.Query)
 		log.Printf("%d results match %q", len(res), searchArgs.Query)
 	}
 }
 
-func finalize(wf *aw.Workflow) {
+func finalize(wf *aw.Workflow, query *parsers.Query) {
 	if wf.IsEmpty() {
-		wf.NewItem("No matching services found").
-			Subtitle("Try another query (example: `aws ec2 instances`)").
+		title := ""
+		subtitle := ""
+		if query.RegionQuery != nil {
+			title = "No matching regions found"
+			subtitle = "Try starting over with `$` again to see the full list"
+		} else {
+			title = "No matching services found"
+			subtitle = "Try another query (example: `aws ec2 instances`)"
+		}
+		wf.NewItem(title).
+			Subtitle(subtitle).
 			Icon(aw.IconNote)
 		handleUpdateAvailable(wf)
 	}
@@ -129,6 +152,7 @@ func handleEmptyQuery(wf *aw.Workflow, searchArgs searchutil.SearchArgs) {
 			Icon(aw.IconWarning)
 	} else {
 		wf.NewItem("Using region \"" + searchArgs.Cfg.Region + "\"").
+			Subtitle("Use \"" + aliases.OverrideAwsRegion + "\" to override for the current query").
 			Icon(aw.IconWeb)
 	}
 

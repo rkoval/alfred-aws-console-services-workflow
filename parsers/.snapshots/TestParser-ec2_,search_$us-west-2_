@@ -286,21 +286,14 @@
     },
     HasGlobalRegion: (bool) false
   }),
-  SubService: (*awsworkflow.AwsService)({
-    Id: (string) (len=9) "instances",
-    Name: (string) (len=9) "Instances",
-    ShortName: (string) "",
-    Description: (string) "",
-    Url: (string) (len=23) "/ec2/v2/home#Instances:",
-    HomeID: (string) "",
-    ExtraSearchTerms: ([]string) <nil>,
-    SubServices: ([]awsworkflow.AwsService) <nil>,
-    HasGlobalRegion: (bool) false
-  }),
-  HasTrailingWhitespace: (bool) false,
+  SubService: (*awsworkflow.AwsService)(<nil>),
+  HasTrailingWhitespace: (bool) true,
   HasOpenAll: (bool) false,
-  HasDefaultSearchAlias: (bool) false,
-  RegionOverride: (*awsworkflow.Region)(<nil>),
+  HasDefaultSearchAlias: (bool) true,
+  RegionOverride: (*awsworkflow.Region)({
+    Name: (string) (len=9) "us-west-2",
+    Description: (string) (len=16) "US West (Oregon)"
+  }),
   RegionQuery: (*string)(<nil>),
-  RemainingQuery: (string) (len=6) "i-0000"
+  RemainingQuery: (string) (len=6) "search"
 })

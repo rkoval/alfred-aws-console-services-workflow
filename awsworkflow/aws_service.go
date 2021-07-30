@@ -28,3 +28,7 @@ func (this AwsService) GetRegion(cfg aws.Config) string {
 	}
 	return region
 }
+
+func (this AwsService) HasSubServices() bool {
+	return this.SubServices != nil && len(this.SubServices) > 0
+}

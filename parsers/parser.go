@@ -2,10 +2,10 @@ package parsers
 
 import (
 	"fmt"
-	"io"
 	"log"
-	"os"
 	"strings"
+
+	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
 )
 
 // Parser represents a parser.
@@ -14,18 +14,20 @@ type Parser struct {
 }
 
 // NewParser returns a new instance of Parser.
-func NewParser(reader io.Reader) *Parser {
+func NewParser(rawQuery string) *Parser {
+	reader := strings.NewReader(rawQuery)
 	return &Parser{scanner: NewScanner(reader)}
 }
 
-func (p *Parser) scanNextWord(query *Query) (string, bool) {
-	var token Token
+func (p *Parser) scanIntoTokens() ([]Token, bool) {
+	tokens := []Token{}
+	var tokenType TokenType
 	var lastReadLiteral string
 	var hasTrailingWhitespace bool
 	var lastHasTrailingWhitespace bool
 	var i int
 Loop:
-	for token != WORD {
+	for tokenType != EOF {
 		if i >= 1000 {
 			// prevent against accidental infinite loop
 			log.Printf("infinite loop in parser.scanNextWord detected")
@@ -33,71 +35,83 @@ Loop:
 		}
 		i++
 		lastHasTrailingWhitespace = hasTrailingWhitespace
-		token, lastReadLiteral, hasTrailingWhitespace = p.scanner.Scan()
-		// TODO add in region and other tokens
-		switch token {
+		tokenType, lastReadLiteral, hasTrailingWhitespace = p.scanner.Scan()
+		switch tokenType {
 		case EOF:
 			break Loop
 		case WHITESPACE:
 			continue
-		case OPEN_ALL:
-			query.HasOpenAll = true
-		case WORD:
-			return lastReadLiteral, hasTrailingWhitespace
 		default:
-			panic(fmt.Errorf("found %q, expected field", lastReadLiteral))
+			tokens = append(tokens, Token{
+				Type:  tokenType,
+				Value: lastReadLiteral,
+			})
 		}
 	}
-	return "", lastHasTrailingWhitespace
+	return tokens, lastHasTrailingWhitespace
 }
 
-func (p *Parser) Parse() *Query {
+func (p *Parser) Parse(ymlPath string) (*Query, []awsworkflow.AwsService) {
+	awsServices := ParseConsoleServicesYml(ymlPath)
 	query := &Query{}
 
-	lastReadLiteral, hasTrailingWhitespace := p.scanNextWord(query)
-	if lastReadLiteral == "" {
-		query.HasTrailingWhitespace = hasTrailingWhitespace
-		return query
-	}
-	query.ServiceId = lastReadLiteral
+	tokens, hasTrailingWhitespace := p.scanIntoTokens()
 
-	defaultSearchAlias := os.Getenv("ALFRED_AWS_CONSOLE_SERVICES_WORKFLOW_SEARCH_ALIAS")
-	if defaultSearchAlias == "" {
-		defaultSearchAlias = ","
-	}
-	lastReadLiteral, hasTrailingWhitespace = p.scanNextWord(query)
 	query.HasTrailingWhitespace = hasTrailingWhitespace
-	if lastReadLiteral == "" {
-		return query
-	} else if strings.HasPrefix(lastReadLiteral, defaultSearchAlias) {
-		lastReadLiteral = lastReadLiteral[len(defaultSearchAlias):]
-		query.HasDefaultSearchAlias = true
-		query.RemainingQuery += lastReadLiteral
-		if hasTrailingWhitespace {
-			query.RemainingQuery += " "
+	var remainingQuery string
+	for i, token := range tokens {
+		switch token.Type {
+		case WORD:
+			if remainingQuery != "" {
+				remainingQuery += " "
+			}
+			remainingQuery += token.Value
+			if query.Service == nil {
+				awsService := getAwsServiceById(remainingQuery, awsServices)
+				if awsService != nil {
+					query.Service = awsService
+					remainingQuery = ""
+				}
+			} else if query.SubService == nil {
+				awsService := getAwsServiceById(remainingQuery, query.Service.SubServices)
+				if awsService != nil {
+					query.SubService = awsService
+					remainingQuery = ""
+				}
+			}
+		case OPEN_ALL:
+			query.HasOpenAll = true
+		case SEARCH_ALIAS:
+			query.HasDefaultSearchAlias = true
+			remainingQuery += token.Value
+		case REGION_OVERRIDE:
+			for _, region := range awsworkflow.AllAWSRegions {
+				if token.Value == region.Name {
+					query.RegionOverride = &region
+					break
+				}
+			}
+
+			if query.RegionOverride == nil || (i >= len(tokens)-1 && !hasTrailingWhitespace) {
+				query.RegionQuery = &token.Value
+			}
+		default:
+			panic(fmt.Errorf("no handler for token: %#v", token))
 		}
-	} else {
-		query.SubServiceId = lastReadLiteral
 	}
 
-	var i int
-	for {
-		if i >= 1000 {
-			// prevent against accidental infinite loop
-			log.Printf("infinite loop in parser.Parse detected")
+	query.RemainingQuery = remainingQuery
+
+	return query, awsServices
+}
+
+func getAwsServiceById(id string, awsServices []awsworkflow.AwsService) *awsworkflow.AwsService {
+	var awsService *awsworkflow.AwsService
+	for i := range awsServices {
+		if awsServices[i].Id == id {
+			awsService = &awsServices[i]
 			break
 		}
-		i++
-		lastReadLiteral, hasTrailingWhitespace := p.scanNextWord(query)
-		query.HasTrailingWhitespace = hasTrailingWhitespace
-		if lastReadLiteral == "" {
-			return query
-		}
-		query.RemainingQuery += lastReadLiteral
-		if hasTrailingWhitespace {
-			query.RemainingQuery += " "
-		}
 	}
-
-	return query
+	return awsService
 }

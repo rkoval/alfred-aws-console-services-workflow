@@ -4,7 +4,10 @@
   HasTrailingWhitespace: (bool) false,
   HasOpenAll: (bool) false,
   HasDefaultSearchAlias: (bool) false,
-  RegionOverride: (*awsworkflow.Region)(<nil>),
-  RegionQuery: (*string)(<nil>),
-  RemainingQuery: (string) (len=9) "asdf asdf"
+  RegionOverride: (*awsworkflow.Region)({
+    Name: (string) (len=9) "us-west-2",
+    Description: (string) (len=16) "US West (Oregon)"
+  }),
+  RegionQuery: (*string)((len=9) "us-west-2"),
+  RemainingQuery: (string) ""
 })

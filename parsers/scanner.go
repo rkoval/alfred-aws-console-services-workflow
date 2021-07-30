@@ -5,6 +5,9 @@ import (
 	"bytes"
 	"io"
 	"log"
+	"strings"
+
+	"github.com/rkoval/alfred-aws-console-services-workflow/aliases"
 )
 
 var eof = rune(0)
@@ -33,7 +36,7 @@ func (s *Scanner) read() rune {
 func (s *Scanner) unread() { _ = s.reader.UnreadRune() }
 
 // Scan returns the next token and literal value.
-func (s *Scanner) Scan() (Token, string, bool) {
+func (s *Scanner) Scan() (TokenType, string, bool) {
 	ch := s.read()
 
 	if ch == eof {
@@ -50,7 +53,7 @@ func (s *Scanner) Scan() (Token, string, bool) {
 }
 
 // scanWhitespace consumes the current rune and all contiguous whitespace.
-func (s *Scanner) scanWhitespace() (tok Token, lit string) {
+func (s *Scanner) scanWhitespace() (tok TokenType, lit string) {
 	var buf bytes.Buffer
 	buf.WriteRune(s.read())
 
@@ -81,7 +84,7 @@ func isWhitespace(ch rune) bool {
 }
 
 // scanWord consumes the current rune and all contiguous ident runes.
-func (s *Scanner) scanWord() (Token, string, bool) {
+func (s *Scanner) scanWord() (TokenType, string, bool) {
 	var buf bytes.Buffer
 	buf.WriteRune(s.read())
 
@@ -107,6 +110,15 @@ func (s *Scanner) scanWord() (Token, string, bool) {
 	}
 
 	stringBuf := buf.String()
+
+	if strings.HasPrefix(stringBuf, aliases.Search) {
+		return SEARCH_ALIAS, stringBuf[len(aliases.Search):], hasTrailingWhitespace
+	}
+
+	if strings.HasPrefix(stringBuf, aliases.OverrideAwsRegion) {
+		return REGION_OVERRIDE, stringBuf[len(aliases.OverrideAwsRegion):], hasTrailingWhitespace
+	}
+
 	switch stringBuf {
 	case "OPEN_ALL":
 		return OPEN_ALL, stringBuf, hasTrailingWhitespace

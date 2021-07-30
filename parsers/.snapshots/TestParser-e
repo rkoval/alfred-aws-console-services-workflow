@@ -1,8 +1,10 @@
 (*parsers.Query)({
-  ServiceId: (string) (len=1) "e",
-  SubServiceId: (string) "",
+  Service: (*awsworkflow.AwsService)(<nil>),
+  SubService: (*awsworkflow.AwsService)(<nil>),
   HasTrailingWhitespace: (bool) false,
   HasOpenAll: (bool) false,
   HasDefaultSearchAlias: (bool) false,
-  RemainingQuery: (string) ""
+  RegionOverride: (*awsworkflow.Region)(<nil>),
+  RegionQuery: (*string)(<nil>),
+  RemainingQuery: (string) (len=1) "e"
 })

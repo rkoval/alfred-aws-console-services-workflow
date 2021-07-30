@@ -1,25 +1,7 @@
-([]*aw.Item) (len=4) {
+([]*aw.Item) (len=2) {
   (*aw.Item)({
-    title: (string) (len=29) "Search for an AWS Service ...",
-    subtitle: (*string)((len=33) "e.g., cloudformation, ec2, s3 ..."),
-    match: (*string)(<nil>),
-    uid: (*string)(<nil>),
-    autocomplete: (*string)(<nil>),
-    arg: (*string)(<nil>),
-    valid: (bool) false,
-    file: (bool) false,
-    copytext: (*string)(<nil>),
-    largetype: (*string)(<nil>),
-    ql: (*string)(<nil>),
-    vars: (map[string]string) {
-    },
-    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
-    icon: (*aw.Icon)(<nil>),
-    noUID: (bool) false
-  }),
-  (*aw.Item)({
-    title: (string) (len=23) "Using profile \"default\"",
-    subtitle: (*string)(<nil>),
+    title: (string) (len=25) "No matching regions found",
+    subtitle: (*string)((len=53) "Try starting over with `$` again to see the full list"),
     match: (*string)(<nil>),
     uid: (*string)(<nil>),
     autocomplete: (*string)(<nil>),
@@ -33,28 +15,7 @@
     },
     mods: (map[aw.ModKey]*aw.Modifier) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=78) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/Accounts.icns",
-      Type: (aw.IconType) ""
-    }),
-    noUID: (bool) false
-  }),
-  (*aw.Item)({
-    title: (string) (len=24) "Using region \"us-west-2\"",
-    subtitle: (*string)((len=41) "Use \"$\" to override for the current query"),
-    match: (*string)(<nil>),
-    uid: (*string)(<nil>),
-    autocomplete: (*string)(<nil>),
-    arg: (*string)(<nil>),
-    valid: (bool) false,
-    file: (bool) false,
-    copytext: (*string)(<nil>),
-    largetype: (*string)(<nil>),
-    ql: (*string)(<nil>),
-    vars: (map[string]string) {
-    },
-    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
-    icon: (*aw.Icon)({
-      Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
+      Value: (string) (len=83) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/AlertNoteIcon.icns",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false

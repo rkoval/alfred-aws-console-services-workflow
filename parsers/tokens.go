@@ -1,10 +1,10 @@
 package parsers
 
 // Token represents a lexical token.
-type Token int
+type TokenType int
 
 const (
-	ILLEGAL Token = iota
+	ILLEGAL TokenType = iota
 
 	EOF
 	WHITESPACE
@@ -12,4 +12,11 @@ const (
 
 	// special tokens
 	OPEN_ALL
+	SEARCH_ALIAS
+	REGION_OVERRIDE
 )
+
+type Token struct {
+	Type  TokenType
+	Value string
+}

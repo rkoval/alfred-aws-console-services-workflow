@@ -1,7 +1,6 @@
 package parsers
 
 import (
-	"strings"
 	"testing"
 
 	"github.com/bradleyjkemp/cupaloy"
@@ -49,6 +48,30 @@ var tcs []testCase = []testCase{
 		rawQuery: "ec2 OPEN_ALL instances",
 	},
 	{
+		rawQuery: "$",
+	},
+	{
+		rawQuery: "$us",
+	},
+	{
+		rawQuery: "$us-west-2",
+	},
+	{
+		rawQuery: "ec2 $us-west-2",
+	},
+	{
+		rawQuery: "ec2 $us-west-2 ",
+	},
+	{
+		rawQuery: "ec2 $us-whoops-2 ",
+	},
+	{
+		rawQuery: "ec2 ,search $us-west-2",
+	},
+	{
+		rawQuery: "ec2 ,search $us-west-2 ",
+	},
+	{
 		rawQuery: "OPEN_ALL ec2 instances",
 	},
 	{
@@ -86,8 +109,8 @@ var tcs []testCase = []testCase{
 func TestParser(t *testing.T) {
 	for _, tc := range tcs {
 		t.Run(tc.rawQuery, func(t *testing.T) {
-			parser := NewParser(strings.NewReader(tc.rawQuery))
-			query := parser.Parse()
+			parser := NewParser(tc.rawQuery)
+			query, _ := parser.Parse("../console-services.yml")
 			cupaloy.SnapshotT(t, query)
 		})
 	}

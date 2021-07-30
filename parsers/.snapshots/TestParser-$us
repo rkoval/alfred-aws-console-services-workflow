@@ -5,6 +5,6 @@
   HasOpenAll: (bool) false,
   HasDefaultSearchAlias: (bool) false,
   RegionOverride: (*awsworkflow.Region)(<nil>),
-  RegionQuery: (*string)(<nil>),
-  RemainingQuery: (string) (len=9) "asdf asdf"
+  RegionQuery: (*string)((len=2) "us"),
+  RemainingQuery: (string) ""
 })

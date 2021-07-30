@@ -24,6 +24,21 @@ var tcs []testCase = []testCase{
 		query: " ",
 	},
 	{
+		query: "$",
+	},
+	{
+		query: "$us-",
+	},
+	{
+		query: "$us-east-1",
+	},
+	{
+		query: "$us-east-1 ",
+	},
+	{
+		query: "$asdf asdf asdf",
+	},
+	{
 		query: "alex",
 	},
 	{
@@ -91,7 +106,23 @@ var tcs []testCase = []testCase{
 		fixtureName: "../searchers/s3_buckets_test", // reuse test fixture from this other test
 	},
 	{
+		query:       "s3 $us-east-1 buckets",
+		fixtureName: "../searchers/s3_buckets_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "s3 buckets $us-east-1",
+		fixtureName: "../searchers/s3_buckets_test", // reuse test fixture from this other test
+	},
+	{
 		query:       "s3 buckets bucket-1",
+		fixtureName: "../searchers/s3_buckets_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "s3 buckets bucket-1 $us-east-1",
+		fixtureName: "../searchers/s3_buckets_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "s3 buckets bucket-1 $us-east-1 ",
 		fixtureName: "../searchers/s3_buckets_test", // reuse test fixture from this other test
 	},
 	{

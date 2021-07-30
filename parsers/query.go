@@ -1,14 +1,20 @@
 package parsers
 
+import (
+	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
+)
+
 type Query struct {
-	ServiceId             string
-	SubServiceId          string
+	Service               *awsworkflow.AwsService
+	SubService            *awsworkflow.AwsService
 	HasTrailingWhitespace bool
 	HasOpenAll            bool
 	HasDefaultSearchAlias bool
+	RegionOverride        *awsworkflow.Region
+	RegionQuery           *string
 	RemainingQuery        string
 }
 
 func (q *Query) IsEmpty() bool {
-	return q.ServiceId == "" && q.SubServiceId == "" && q.RemainingQuery == "" && !q.HasOpenAll
+	return q.Service == nil && q.SubService == nil && q.RemainingQuery == "" && !q.HasOpenAll && q.RegionOverride == nil && q.RegionQuery == nil
 }
