@@ -51,7 +51,7 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=16) "Update available",
+    title: (string) (len=39) "Update available (current version: 1.0)",
     subtitle: (*string)((len=42) "Select this result to navigate to download"),
     match: (*string)(<nil>),
     uid: (*string)(<nil>),

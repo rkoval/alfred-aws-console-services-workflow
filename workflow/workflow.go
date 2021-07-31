@@ -180,7 +180,7 @@ func handleUnimplemented(wf *aw.Workflow, awsService, subService *awsworkflow.Aw
 
 func handleUpdateAvailable(wf *aw.Workflow) {
 	if wf.UpdateAvailable() {
-		util.NewURLItem(wf, "Update available").
+		util.NewURLItem(wf, fmt.Sprintf("Update available (current version: %s)", wf.Version())).
 			Subtitle("Select this result to navigate to download").
 			Arg("https://github.com/rkoval/alfred-aws-console-services-workflow/releases").
 			Icon(aw.IconInfo)
