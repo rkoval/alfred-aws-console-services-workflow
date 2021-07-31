@@ -69,9 +69,9 @@ func Run(wf *aw.Workflow, rawQuery string, cfg aws.Config, forceFetch, openAll b
 		if query.Service == nil {
 			searchArgs.Query = query.RemainingQuery
 		} else if query.Service.ShortName != "" {
-			searchArgs.Query = query.Service.ShortName
+			searchArgs.Query = strings.ToLower(query.Service.ShortName)
 		} else {
-			searchArgs.Query = query.Service.Name
+			searchArgs.Query = query.Service.Id
 		}
 		log.Printf("using searcher associated with services with query %q", searchArgs.Query)
 		SearchServices(wf, awsServices, searchArgs)

@@ -23,7 +23,7 @@ func (s *SearchArgs) GetAutocomplete(replaced string) string {
 	if s.Query == "" {
 		return s.FullQuery + replaced + " "
 	}
-	autocomplete := util.ReplaceRight(s.FullQuery, strings.ToLower(s.Query), replaced, 1)
+	autocomplete := util.ReplaceRight(s.FullQuery, s.Query, replaced, 1)
 	if !strings.HasSuffix(autocomplete, " ") {
 		autocomplete += " "
 	}
