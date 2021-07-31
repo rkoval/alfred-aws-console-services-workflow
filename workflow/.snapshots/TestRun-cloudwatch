@@ -1,0 +1,35 @@
+([]*aw.Item) (len=1) {
+  (*aw.Item)({
+    title: (string) (len=10) "cloudwatch",
+    subtitle: (*string)((len=54) "🗂 CloudWatch – Monitor Resources and Applications"),
+    match: (*string)((len=21) "cloudwatch CloudWatch"),
+    uid: (*string)((len=10) "cloudwatch"),
+    autocomplete: (*string)((len=11) "cloudwatch "),
+    arg: (*string)((len=56) "https://us-west-2.console.aws.amazon.com/cloudwatch/home"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    icon: (*aw.Icon)({
+      Value: (string) (len=21) "images/cloudwatch.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  })
+}

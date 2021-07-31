@@ -4,6 +4,7 @@ package searchers
 
 var cloudFormationStackSearcher = &CloudFormationStackSearcher{}
 var cloudWatchLogGroupSearcher = &CloudWatchLogGroupSearcher{}
+var cloudwatchLogInsightsQuerySearcher = &CloudWatchLogInsightsQuerySearcher{}
 var ec2InstanceSearcher = &EC2InstanceSearcher{}
 var ec2LoadBalancerSearcher = &EC2LoadBalancerSearcher{}
 var ec2SecurityGroupSearcher = &EC2SecurityGroupSearcher{}
@@ -25,6 +26,7 @@ var SearchersByServiceId map[string]Searcher = map[string]Searcher{
 	"cloudformation_stacks":         cloudFormationStackSearcher,
 	"cloudwatch":                    cloudWatchLogGroupSearcher,
 	"cloudwatch_loggroups":          cloudWatchLogGroupSearcher,
+	"cloudwatch_loginsights":        cloudwatchLogInsightsQuerySearcher,
 	"ec2":                           ec2InstanceSearcher,
 	"ec2_instances":                 ec2InstanceSearcher,
 	"ec2_loadbalancers":             ec2LoadBalancerSearcher,

@@ -6,7 +6,7 @@ require (
 	github.com/aws/aws-sdk-go-v2 v1.7.1
 	github.com/aws/aws-sdk-go-v2/config v1.4.1
 	github.com/aws/aws-sdk-go-v2/service/cloudformation v1.6.0
-	github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs v1.5.0
+	github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs v1.5.1
 	github.com/aws/aws-sdk-go-v2/service/ec2 v1.11.0
 	github.com/aws/aws-sdk-go-v2/service/elasticache v1.8.0
 	github.com/aws/aws-sdk-go-v2/service/elasticbeanstalk v1.5.0
