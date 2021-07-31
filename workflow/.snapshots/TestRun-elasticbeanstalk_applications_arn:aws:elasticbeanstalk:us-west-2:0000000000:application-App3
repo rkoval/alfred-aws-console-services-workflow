@@ -4,7 +4,7 @@
     subtitle: (*string)((len=20) "Description for App3"),
     match: (*string)((len=62) "arn:aws:elasticbeanstalk:us-west-2:0000000000:application/App3"),
     uid: (*string)(<nil>),
-    autocomplete: (*string)(<nil>),
+    autocomplete: (*string)((len=93) "elasticbeanstalk applications arn:aws:elasticbeanstalk:us-west-2:0000000000:application/App3 "),
     arg: (*string)((len=122) "https://us-west-2.console.aws.amazon.com/elasticbeanstalk/home?region=us-west-2#/application/overview?applicationName=App3"),
     valid: (bool) true,
     file: (bool) false,

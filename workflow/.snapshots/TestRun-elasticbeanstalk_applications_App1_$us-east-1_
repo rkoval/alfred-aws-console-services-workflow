@@ -4,7 +4,7 @@
     subtitle: (*string)(""),
     match: (*string)(<nil>),
     uid: (*string)(<nil>),
-    autocomplete: (*string)(<nil>),
+    autocomplete: (*string)((len=46) "elasticbeanstalk applications App1 $us-east-1 "),
     arg: (*string)((len=122) "https://us-east-1.console.aws.amazon.com/elasticbeanstalk/home?region=us-east-1#/application/overview?applicationName=App1"),
     valid: (bool) true,
     file: (bool) false,

@@ -164,7 +164,19 @@ var tcs []testCase = []testCase{
 		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
 	},
 	{
+		query:       "elasticbeanstalk applications App1 $us-",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
+	},
+	{
 		query:       "elasticbeanstalk applications App1 $us-east-1 ",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
+	},
+	{
+		query:       "elasticbeanstalk applications $us-east-1 arn:aws:elasticbeanstalk:us-east-1:0000000000:application/Ap",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
+	},
+	{
+		query:       "elasticbeanstalk applications arn:aws:elasticbeanstalk:us-east-1:0000000000:application/Ap $us-east-1 ",
 		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
 	},
 	{
@@ -418,6 +430,10 @@ var tcs []testCase = []testCase{
 	},
 	{
 		query:       "elasticbeanstalk applications ",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "elasticbeanstalk applications Ap p1",
 		fixtureName: "../searchers/elastic_beanstalk_applications_test", // reuse test fixture from this other test
 	},
 	{
