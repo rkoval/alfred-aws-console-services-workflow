@@ -4,7 +4,7 @@
     subtitle: (*string)((len=82) "network – awseb-AWSEB-BBBBBBBBBBBBB-bbbbbbbbbbbbbbbb.elb.us-west-2.amazonaws.com"),
     match: (*string)((len=109) "arn:aws:elasticloadbalancing:us-west-2:0000000000:loadbalancer/net/awseb-AWSEB-BBBBBBBBBBBBB/bbbbbbbbbbbbbbbb"),
     uid: (*string)(<nil>),
-    autocomplete: (*string)(<nil>),
+    autocomplete: (*string)((len=128) "ec2 loadbalancers arn:aws:elasticloadbalancing:us-west-2:0000000000:loadbalancer/net/awseb-AWSEB-BBBBBBBBBBBBB/bbbbbbbbbbbbbbbb "),
     arg: (*string)((len=219) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#LoadBalancers:search=arn:aws:elasticloadbalancing:us-west-2:0000000000:loadbalancer/net/awseb-AWSEB-BBBBBBBBBBBBB/bbbbbbbbbbbbbbbb;sort=loadBalancerName"),
     valid: (bool) true,
     file: (bool) false,

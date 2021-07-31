@@ -4,6 +4,7 @@ import (
 	"strings"
 
 	"github.com/aws/aws-sdk-go-v2/aws"
+	aw "github.com/deanishe/awgo"
 	"github.com/rkoval/alfred-aws-console-services-workflow/util"
 )
 
@@ -28,4 +29,14 @@ func (s *SearchArgs) GetAutocomplete(replaced string) string {
 		autocomplete += " "
 	}
 	return autocomplete
+}
+
+func (s *SearchArgs) AddMatch(item *aw.Item, idPrefix, id, title string) *aw.Item {
+	if idPrefix != "" && id != "" && strings.HasPrefix(s.Query, idPrefix) {
+		item.Match(id).
+			Autocomplete(s.GetAutocomplete(id))
+	} else {
+		item.Autocomplete(s.GetAutocomplete(title))
+	}
+	return item
 }

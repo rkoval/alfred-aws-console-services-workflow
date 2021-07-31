@@ -61,9 +61,11 @@ func AddCacheClusterToWorkflow(engineName string, wf *aw.Workflow, searchArgs se
 		location = engineName + "-group-detail"
 	}
 	path := fmt.Sprintf("/elasticache/home?region=%s#%s:id=%s", searchArgs.Cfg.Region, location, *entity.CacheClusterId)
-	util.NewURLItem(wf, title).
+	item := util.NewURLItem(wf, title).
 		Subtitle(subtitle).
 		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.Cfg.Region)).
 		Icon(awsworkflow.GetImageIcon("elasticache")).
 		Valid(true)
+
+	searchArgs.AddMatch(item, "arn:", *entity.ARN, title)
 }

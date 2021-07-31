@@ -63,10 +63,5 @@ func (s ElasticBeanstalkApplicationSearcher) addToWorkflow(wf *aw.Workflow, sear
 		Icon(awsworkflow.GetImageIcon("elasticbeanstalk")).
 		Valid(true)
 
-	if strings.HasPrefix(searchArgs.Query, "arn:") {
-		item.Match(*entity.ApplicationArn).
-			Autocomplete(searchArgs.GetAutocomplete(*entity.ApplicationArn))
-	} else {
-		item.Autocomplete(searchArgs.GetAutocomplete(title))
-	}
+	searchArgs.AddMatch(item, "arn:", *entity.ApplicationArn, title)
 }

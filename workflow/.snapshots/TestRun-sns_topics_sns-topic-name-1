@@ -4,7 +4,7 @@
     subtitle: (*string)((len=49) "arn:aws:sns:us-west-2:0000000000:sns-topic-name-1"),
     match: (*string)(<nil>),
     uid: (*string)(<nil>),
-    autocomplete: (*string)(<nil>),
+    autocomplete: (*string)((len=28) "sns topics sns-topic-name-1 "),
     arg: (*string)((len=126) "https://us-west-2.console.aws.amazon.com/sns/v3/home?region=us-west-2#/topic/arn:aws:sns:us-west-2:0000000000:sns-topic-name-1"),
     valid: (bool) true,
     file: (bool) false,

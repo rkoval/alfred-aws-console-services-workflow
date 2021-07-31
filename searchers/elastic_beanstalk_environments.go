@@ -3,7 +3,6 @@ package searchers
 import (
 	"context"
 	"fmt"
-	"strings"
 
 	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/service/elasticbeanstalk"
@@ -54,24 +53,22 @@ func (s ElasticBeanstalkEnvironmentSearcher) fetch(cfg aws.Config) ([]types.Envi
 	return environments, nil
 }
 
-func (s ElasticBeanstalkEnvironmentSearcher) addToWorkflow(wf *aw.Workflow, searchArgs searchutil.SearchArgs, environment types.EnvironmentDescription) {
-	title := *environment.EnvironmentName
-	subtitle := util.GetElasticBeanstalkHealthEmoji(environment.Health) + " " + *environment.EnvironmentId + " " + *environment.ApplicationName
+func (s ElasticBeanstalkEnvironmentSearcher) addToWorkflow(wf *aw.Workflow, searchArgs searchutil.SearchArgs, entity types.EnvironmentDescription) {
+	title := *entity.EnvironmentName
+	subtitle := util.GetElasticBeanstalkHealthEmoji(entity.Health) + " " + *entity.EnvironmentId + " " + *entity.ApplicationName
 	var page string
-	if environment.Status == types.EnvironmentStatusTerminated {
+	if entity.Status == types.EnvironmentStatusTerminated {
 		// "dashboard" page does not exist for terminated instances
 		page = "events"
 	} else {
 		page = "dashboard"
 	}
 
-	path := fmt.Sprintf("/elasticbeanstalk/home?region=%s#/environment/%s?applicationName=%s&environmentId=%s", searchArgs.Cfg.Region, page, *environment.ApplicationName, *environment.EnvironmentId)
+	path := fmt.Sprintf("/elasticbeanstalk/home?region=%s#/environment/%s?applicationName=%s&environmentId=%s", searchArgs.Cfg.Region, page, *entity.ApplicationName, *entity.EnvironmentId)
 	item := util.NewURLItem(wf, title).
 		Subtitle(subtitle).
 		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.Cfg.Region)).
 		Icon(awsworkflow.GetImageIcon("elasticbeanstalk"))
 
-	if strings.HasPrefix(searchArgs.Query, "e-") {
-		item.Match(*environment.EnvironmentId)
-	}
+	searchArgs.AddMatch(item, "e-", *entity.EnvironmentId, title)
 }

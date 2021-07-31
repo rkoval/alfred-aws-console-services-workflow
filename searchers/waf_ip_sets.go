@@ -64,8 +64,10 @@ func (s WAFIPSetSearcher) addToWorkflow(wf *aw.Workflow, searchArgs searchutil.S
 	}
 
 	path := fmt.Sprintf("/wafv2/homev2/ip-set/%s/%s?region=%s", *entity.Name, *entity.Id, searchArgs.Cfg.Region)
-	util.NewURLItem(wf, title).
+	item := util.NewURLItem(wf, title).
 		Subtitle(subtitle).
 		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.Cfg.Region)).
 		Icon(awsworkflow.GetImageIcon("waf"))
+
+	searchArgs.AddMatch(item, "arn:", *entity.ARN, title)
 }

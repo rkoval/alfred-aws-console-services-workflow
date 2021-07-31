@@ -77,7 +77,5 @@ func (s EC2LoadBalancerSearcher) addToWorkflow(wf *aw.Workflow, searchArgs searc
 		Icon(awsworkflow.GetImageIcon("ec2")).
 		Valid(true)
 
-	if strings.HasPrefix(searchArgs.Query, "arn:") {
-		item.Match(*entity.LoadBalancerArn)
-	}
+	searchArgs.AddMatch(item, "arn:", *entity.LoadBalancerArn, title)
 }

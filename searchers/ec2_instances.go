@@ -3,7 +3,6 @@ package searchers
 import (
 	"context"
 	"fmt"
-	"strings"
 
 	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/service/ec2"
@@ -55,25 +54,23 @@ func (s EC2InstanceSearcher) fetch(cfg aws.Config) ([]types.Instance, error) {
 	return instances, nil
 }
 
-func (s EC2InstanceSearcher) addToWorkflow(wf *aw.Workflow, searchArgs searchutil.SearchArgs, instance types.Instance) {
+func (s EC2InstanceSearcher) addToWorkflow(wf *aw.Workflow, searchArgs searchutil.SearchArgs, entity types.Instance) {
 	var title string
-	subtitle := util.GetEC2InstanceStateEmoji(*instance.State)
-	name := util.GetEC2TagValue(instance.Tags, "Name")
+	subtitle := util.GetEC2InstanceStateEmoji(*entity.State)
+	name := util.GetEC2TagValue(entity.Tags, "Name")
 	if name != "" {
 		title = name
-		subtitle += " " + *instance.InstanceId
+		subtitle += " " + *entity.InstanceId
 	} else {
-		title = *instance.InstanceId
+		title = *entity.InstanceId
 	}
-	subtitle += " " + string(instance.InstanceType)
+	subtitle += " " + string(entity.InstanceType)
 
-	path := fmt.Sprintf("/ec2/v2/home?region=%s#InstanceDetails:instanceId=%s", searchArgs.Cfg.Region, *instance.InstanceId)
+	path := fmt.Sprintf("/ec2/v2/home?region=%s#InstanceDetails:instanceId=%s", searchArgs.Cfg.Region, *entity.InstanceId)
 	item := util.NewURLItem(wf, title).
 		Subtitle(subtitle).
 		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.Cfg.Region)).
 		Icon(awsworkflow.GetImageIcon("ec2"))
 
-	if strings.HasPrefix(searchArgs.Query, "i-") {
-		item.Match(*instance.InstanceId)
-	}
+	searchArgs.AddMatch(item, "i-", *entity.InstanceId, title)
 }

@@ -1,6 +1,8 @@
 package util
 
-import aw "github.com/deanishe/awgo"
+import (
+	aw "github.com/deanishe/awgo"
+)
 
 func NewURLItem(wf *aw.Workflow, title string) *aw.Item {
 	item := wf.NewItem(title).

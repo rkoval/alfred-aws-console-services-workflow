@@ -90,8 +90,5 @@ func (s Route53HostedZoneSearcher) addToWorkflow(wf *aw.Workflow, searchArgs sea
 		Icon(awsworkflow.GetImageIcon("route53")).
 		Valid(true)
 
-	if strings.HasPrefix(searchArgs.Query, "Z") {
-		item.Match(*entity.Id)
-	}
-
+	searchArgs.AddMatch(item, "Z", *entity.Id, title)
 }

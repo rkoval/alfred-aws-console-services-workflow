@@ -4,7 +4,7 @@
     subtitle: (*string)((len=48) "memcached 1.6.6 – cache.t2.micro – available"),
     match: (*string)(<nil>),
     uid: (*string)(<nil>),
-    autocomplete: (*string)(<nil>),
+    autocomplete: (*string)((len=20) "memcached-cluster-a "),
     arg: (*string)((len=114) "https://us-west-2.console.aws.amazon.com/elasticache/home?region=us-west-2#memcached-detail:id=memcached-cluster-a"),
     valid: (bool) true,
     file: (bool) false,

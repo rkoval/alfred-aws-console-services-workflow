@@ -41,14 +41,16 @@ func (s S3BucketSearcher) fetch(cfg aws.Config) ([]types.Bucket, error) {
 	return buckets, nil
 }
 
-func (s S3BucketSearcher) addToWorkflow(wf *aw.Workflow, searchArgs searchutil.SearchArgs, bucket types.Bucket) {
-	title := *bucket.Name
-	subtitle := "Created " + bucket.CreationDate.Format(time.UnixDate)
+func (s S3BucketSearcher) addToWorkflow(wf *aw.Workflow, searchArgs searchutil.SearchArgs, entity types.Bucket) {
+	title := *entity.Name
+	subtitle := "Created " + entity.CreationDate.Format(time.UnixDate)
 
-	path := fmt.Sprintf("/s3/buckets/%s/?region=%s&tab=overview", *bucket.Name, searchArgs.Cfg.Region)
-	util.NewURLItem(wf, title).
+	path := fmt.Sprintf("/s3/buckets/%s/?region=%s&tab=overview", *entity.Name, searchArgs.Cfg.Region)
+	item := util.NewURLItem(wf, title).
 		Subtitle(subtitle).
 		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.Cfg.Region)).
 		Icon(awsworkflow.GetImageIcon("s3")).
 		Valid(true)
+
+	searchArgs.AddMatch(item, "", "", title)
 }

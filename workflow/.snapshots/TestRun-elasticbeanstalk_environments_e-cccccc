@@ -4,7 +4,7 @@
     subtitle: (*string)((len=24) "🔴 e-cccccccccc Server"),
     match: (*string)((len=12) "e-cccccccccc"),
     uid: (*string)(<nil>),
-    autocomplete: (*string)(<nil>),
+    autocomplete: (*string)((len=43) "elasticbeanstalk environments e-cccccccccc "),
     arg: (*string)((len=152) "https://us-west-2.console.aws.amazon.com/elasticbeanstalk/home?region=us-west-2#/environment/dashboard?applicationName=Server&environmentId=e-cccccccccc"),
     valid: (bool) true,
     file: (bool) false,

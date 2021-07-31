@@ -129,9 +129,7 @@ func (s {{ .StructName }}) addToWorkflow(wf *aw.Workflow, searchArgs searchutil.
 		Icon(awsworkflow.GetImageIcon("{{ .ServiceLower }}")).
 		Valid(true)
 
-	if strings.HasPrefix(searchArgs.Query, "arn:") {
-		item.Match(*entity.TODOArn)
-	}
+	searchArgs.AddMatch(item, "arn:", *entity.TODOArn, title)
 }`
 
 	util.WriteTemplateToFile("searcher_file", templateString, fmt.Sprintf("searchers/%s.go", searcherNamer.NameSnakeCasePlural), searcherNamer)

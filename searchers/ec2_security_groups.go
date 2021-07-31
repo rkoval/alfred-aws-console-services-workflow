@@ -3,7 +3,6 @@ package searchers
 import (
 	"context"
 	"fmt"
-	"strings"
 
 	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/service/ec2"
@@ -73,7 +72,5 @@ func (s EC2SecurityGroupSearcher) addToWorkflow(wf *aw.Workflow, searchArgs sear
 		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.Cfg.Region)).
 		Icon(awsworkflow.GetImageIcon("ec2"))
 
-	if strings.HasPrefix(searchArgs.Query, "sg-") {
-		item.Match(*entity.GroupId)
-	}
+	searchArgs.AddMatch(item, "sg-", *entity.GroupId, title)
 }
