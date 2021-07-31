@@ -24,28 +24,28 @@ var tcs []testCase = []testCase{
 		rawQuery: "e",
 	},
 	{
-		rawQuery: "ec2 ",
+		rawQuery: "elasticbeanstalk ",
 	},
 	{
-		rawQuery: " ec2",
+		rawQuery: " elasticbeanstalk",
 	},
 	{
-		rawQuery: " ec2 ",
+		rawQuery: " elasticbeanstalk ",
 	},
 	{
-		rawQuery: "      ec2      ",
+		rawQuery: "      elasticbeanstalk      ",
 	},
 	{
-		rawQuery: "ec2 instances ",
+		rawQuery: "elasticbeanstalk environments ",
 	},
 	{
-		rawQuery: "ec2 instances i-0000",
+		rawQuery: "elasticbeanstalk environments e-0000",
 	},
 	{
-		rawQuery: "ec2 OPEN_ALL ",
+		rawQuery: "elasticbeanstalk OPEN_ALL ",
 	},
 	{
-		rawQuery: "ec2 OPEN_ALL instances",
+		rawQuery: "elasticbeanstalk OPEN_ALL environments",
 	},
 	{
 		rawQuery: "$",
@@ -57,22 +57,22 @@ var tcs []testCase = []testCase{
 		rawQuery: "$us-west-2",
 	},
 	{
-		rawQuery: "ec2 $us-west-2",
+		rawQuery: "elasticbeanstalk $us-west-2",
 	},
 	{
-		rawQuery: "ec2 $us-west-2 ",
+		rawQuery: "elasticbeanstalk $us-west-2 ",
 	},
 	{
-		rawQuery: "ec2 $us-whoops-2 ",
+		rawQuery: "elasticbeanstalk $us-whoops-2 ",
 	},
 	{
-		rawQuery: "ec2 ,search $us-west-2",
+		rawQuery: "elasticbeanstalk ,search $us-west-2",
 	},
 	{
-		rawQuery: "ec2 ,search $us-west-2 ",
+		rawQuery: "elasticbeanstalk ,search $us-west-2 ",
 	},
 	{
-		rawQuery: "OPEN_ALL ec2 instances",
+		rawQuery: "OPEN_ALL elasticbeanstalk environments",
 	},
 	{
 		rawQuery: "asdf asdf",
@@ -81,28 +81,28 @@ var tcs []testCase = []testCase{
 		rawQuery: "asdf asdf asdf ",
 	},
 	{
-		rawQuery: "ec2 ,search",
+		rawQuery: "elasticbeanstalk ,search",
 	},
 	{
-		rawQuery: "ec2 ,search term more hello",
+		rawQuery: "elasticbeanstalk ,search term more hello",
 	},
 	{
-		rawQuery: "ec2 ,search term more hello ",
+		rawQuery: "elasticbeanstalk ,search term more hello ",
 	},
 	{
-		rawQuery: " ec2 ,search term more hello ",
+		rawQuery: " elasticbeanstalk ,search term more hello ",
 	},
 	{
-		rawQuery: "ec2 subservice search term more hello",
+		rawQuery: "elasticbeanstalk subservice search term more hello",
 	},
 	{
-		rawQuery: " ec2 subservice search term more hello",
+		rawQuery: " elasticbeanstalk subservice search term more hello",
 	},
 	{
-		rawQuery: "ec2 subservice search term more hello ",
+		rawQuery: "elasticbeanstalk subservice search term more hello ",
 	},
 	{
-		rawQuery: " ec2 subservice search term more hello ",
+		rawQuery: " elasticbeanstalk subservice search term more hello ",
 	},
 }
 

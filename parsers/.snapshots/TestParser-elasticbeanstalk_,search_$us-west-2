@@ -1,0 +1,46 @@
+(*parsers.Query)({
+  Service: (*awsworkflow.AwsService)({
+    Id: (string) (len=16) "elasticbeanstalk",
+    Name: (string) (len=17) "Elastic Beanstalk",
+    ShortName: (string) "",
+    Description: (string) (len=23) "Run and Manage Web Apps",
+    Url: (string) (len=22) "/elasticbeanstalk/home",
+    HomeID: (string) "",
+    ExtraSearchTerms: ([]string) <nil>,
+    SubServices: ([]awsworkflow.AwsService) (len=2) {
+      (awsworkflow.AwsService) {
+        Id: (string) (len=12) "environments",
+        Name: (string) (len=12) "Environments",
+        ShortName: (string) "",
+        Description: (string) "",
+        Url: (string) (len=36) "/elasticbeanstalk/home#/environments",
+        HomeID: (string) "",
+        ExtraSearchTerms: ([]string) <nil>,
+        SubServices: ([]awsworkflow.AwsService) <nil>,
+        HasGlobalRegion: (bool) false
+      },
+      (awsworkflow.AwsService) {
+        Id: (string) (len=12) "applications",
+        Name: (string) (len=12) "Applications",
+        ShortName: (string) "",
+        Description: (string) "",
+        Url: (string) (len=36) "/elasticbeanstalk/home#/applications",
+        HomeID: (string) "",
+        ExtraSearchTerms: ([]string) <nil>,
+        SubServices: ([]awsworkflow.AwsService) <nil>,
+        HasGlobalRegion: (bool) false
+      }
+    },
+    HasGlobalRegion: (bool) false
+  }),
+  SubService: (*awsworkflow.AwsService)(<nil>),
+  HasTrailingWhitespace: (bool) false,
+  HasOpenAll: (bool) false,
+  HasDefaultSearchAlias: (bool) true,
+  RegionOverride: (*awsworkflow.Region)({
+    Name: (string) (len=9) "us-west-2",
+    Description: (string) (len=16) "US West (Oregon)"
+  }),
+  RegionQuery: (*string)((len=9) "us-west-2"),
+  RemainingQuery: (string) (len=6) "search"
+})
