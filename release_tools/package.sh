@@ -33,7 +33,12 @@ open_github() {
   open "https://github.com/rkoval/alfred-aws-console-services-workflow/releases/new?tag=${VERSION}&title=${VERSION}&body=%23%23%20Changes%0A%0AUser-facing%0A-%20TODO"
 }
 
+open_finder() {
+  open .
+}
+
 install_package
 bump_version_and_tag
 package_release
 open_github
+open_finder
