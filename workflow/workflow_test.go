@@ -51,6 +51,15 @@ var tcs []testCase = []testCase{
 		query: "alexa ",
 	},
 	{
+		query: "$us-east-1 alexa ",
+	},
+	{
+		query: "alexa $us-east-1",
+	},
+	{
+		query: "alexa $us-east-1 ",
+	},
+	{
 		query: "alexa h",
 	},
 	{
@@ -106,24 +115,57 @@ var tcs []testCase = []testCase{
 		fixtureName: "../searchers/s3_buckets_test", // reuse test fixture from this other test
 	},
 	{
-		query:       "s3 $us-east-1 buckets",
-		fixtureName: "../searchers/s3_buckets_test", // reuse test fixture from this other test
-	},
-	{
-		query:       "s3 buckets $us-east-1",
-		fixtureName: "../searchers/s3_buckets_test", // reuse test fixture from this other test
-	},
-	{
 		query:       "s3 buckets bucket-1",
 		fixtureName: "../searchers/s3_buckets_test", // reuse test fixture from this other test
 	},
 	{
-		query:       "s3 buckets bucket-1 $us-east-1",
-		fixtureName: "../searchers/s3_buckets_test", // reuse test fixture from this other test
+		query: "$us-east-1 elasticbeanstalk",
 	},
 	{
-		query:       "s3 buckets bucket-1 $us-east-1 ",
-		fixtureName: "../searchers/s3_buckets_test", // reuse test fixture from this other test
+		query: "$us-east-1 $us-east-2 elasticbeanstalk",
+	},
+	{
+		query: "$us-east-1 elasticbeanstalk appli",
+	},
+	{
+		query:       "$us-east-1 elasticbeanstalk applications",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
+	},
+	{
+		query:       "$us-east-1 elasticbeanstalk applications ",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
+	},
+	{
+		query:       "elasticbeanstalk $us-east-1 applications",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
+	},
+	{
+		query:       "elasticbeanstalk $us-east-1 applications ",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
+	},
+	{
+		query:       "elasticbeanstalk applications $us-east-1",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
+	},
+	{
+		query:       "elasticbeanstalk applications $us-east-1 ",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
+	},
+	{
+		query:       "elasticbeanstalk applications $us-east-1 Ap",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
+	},
+	{
+		query:       "elasticbeanstalk applications $us-east-1 Ap ",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
+	},
+	{
+		query:       "elasticbeanstalk applications App1 $us-east-1",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
+	},
+	{
+		query:       "elasticbeanstalk applications App1 $us-east-1 ",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
 	},
 	{
 		query: "lambda",
@@ -202,6 +244,15 @@ var tcs []testCase = []testCase{
 	},
 	{
 		query: "eec2",
+	},
+	{
+		query: "eec2 $us-east-1",
+	},
+	{
+		query: "eec2 $us-east-1 ",
+	},
+	{
+		query: "$us-east-1 eec2",
 	},
 	{
 		query: "ec2",

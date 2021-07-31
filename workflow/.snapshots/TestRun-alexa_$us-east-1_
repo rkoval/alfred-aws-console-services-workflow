@@ -1,11 +1,11 @@
 ([]*aw.Item) (len=3) {
   (*aw.Item)({
-    title: (string) (len=8) "ec2 tags",
-    subtitle: (*string)((len=12) "EC2 – Tags"),
-    match: (*string)((len=9) "tags Tags"),
-    uid: (*string)((len=4) "tags"),
-    autocomplete: (*string)((len=13) "ec2 tags asdf"),
-    arg: (*string)((len=55) "https://us-west-2.console.aws.amazon.com/ec2/home#Tags:"),
+    title: (string) (len=5) "alexa",
+    subtitle: (*string)((len=59) "Alexa for Business – Empower your organization with voice"),
+    match: (*string)((len=24) "alexa Alexa for Business"),
+    uid: (*string)((len=5) "alexa"),
+    autocomplete: (*string)((len=17) "alexa $us-east-1 "),
+    arg: (*string)((len=49) "https://us-east-1.console.aws.amazon.com/a4b/home"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -27,13 +27,13 @@
       })
     },
     icon: (*aw.Icon)({
-      Value: (string) (len=14) "images/ec2.png",
+      Value: (string) (len=16) "images/alexa.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=32) "No searcher for `ec2 tags` (yet)",
+    title: (string) (len=48) "alexa doesn't have sub-services configured (yet)",
     subtitle: (*string)((len=69) "Select this result to open the contributing guide to easily add them!"),
     match: (*string)(<nil>),
     uid: (*string)(<nil>),

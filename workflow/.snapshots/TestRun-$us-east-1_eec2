@@ -1,11 +1,11 @@
 ([]*aw.Item) (len=1) {
   (*aw.Item)({
-    title: (string) (len=21) "service2 sub-service1",
-    subtitle: (*string)((len=68) "Service 2 – Sub-service 1 – Description of the first sub-service"),
-    match: (*string)((len=26) "sub-service1 Sub-service 1"),
-    uid: (*string)((len=12) "sub-service1"),
-    autocomplete: (*string)((len=22) "service2 sub-service1 "),
-    arg: (*string)((len=50) "https://us-west-2.console.aws.amazon.com/bookmarks"),
+    title: (string) (len=15) "ec2imagebuilder",
+    subtitle: (*string)((len=89) "EC2 Image Builder – A managed service to automate build, customize and deploy OS images"),
+    match: (*string)((len=33) "ec2imagebuilder EC2 Image Builder"),
+    uid: (*string)((len=15) "ec2imagebuilder"),
+    autocomplete: (*string)((len=27) "$us-east-1 ec2imagebuilder "),
+    arg: (*string)((len=58) "https://us-east-1.console.aws.amazon.com/imagebuilder/home"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -27,7 +27,7 @@
       })
     },
     icon: (*aw.Icon)({
-      Value: (string) (len=19) "images/service2.png",
+      Value: (string) (len=26) "images/ec2imagebuilder.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false

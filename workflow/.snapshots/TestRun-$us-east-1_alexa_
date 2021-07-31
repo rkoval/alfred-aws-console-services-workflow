@@ -1,11 +1,11 @@
 ([]*aw.Item) (len=3) {
   (*aw.Item)({
-    title: (string) (len=8) "service1",
-    subtitle: (*string)((len=51) "Service 1 (S1) – Description of the first service"),
-    match: (*string)((len=8) "service1"),
-    uid: (*string)((len=8) "service1"),
-    autocomplete: (*string)((len=9) "service1 "),
-    arg: (*string)((len=46) "https://us-west-2.console.aws.amazon.com/pizza"),
+    title: (string) (len=5) "alexa",
+    subtitle: (*string)((len=59) "Alexa for Business – Empower your organization with voice"),
+    match: (*string)((len=24) "alexa Alexa for Business"),
+    uid: (*string)((len=5) "alexa"),
+    autocomplete: (*string)((len=17) "$us-east-1 alexa "),
+    arg: (*string)((len=49) "https://us-east-1.console.aws.amazon.com/a4b/home"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -27,18 +27,18 @@
       })
     },
     icon: (*aw.Icon)({
-      Value: (string) (len=19) "images/service1.png",
+      Value: (string) (len=16) "images/alexa.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=8) "service2",
-    subtitle: (*string)((len=52) "🗂 Service 2 – Description of the second service"),
-    match: (*string)((len=18) "service2 Service 2"),
-    uid: (*string)((len=8) "service2"),
-    autocomplete: (*string)((len=9) "service2 "),
-    arg: (*string)((len=21) "https://ryankoval.com"),
+    title: (string) (len=48) "alexa doesn't have sub-services configured (yet)",
+    subtitle: (*string)((len=69) "Select this result to open the contributing guide to easily add them!"),
+    match: (*string)(<nil>),
+    uid: (*string)(<nil>),
+    autocomplete: (*string)(<nil>),
+    arg: (*string)((len=90) "https://github.com/rkoval/alfred-aws-console-services-workflow/blob/master/CONTRIBUTING.md"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -60,18 +60,18 @@
       })
     },
     icon: (*aw.Icon)({
-      Value: (string) (len=19) "images/service2.png",
+      Value: (string) (len=83) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/AlertNoteIcon.icns",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=4) "whoa",
-    subtitle: (*string)((len=21) "Whoa (W) – Whoa!!!!"),
-    match: (*string)((len=4) "whoa"),
-    uid: (*string)((len=4) "whoa"),
-    autocomplete: (*string)((len=5) "whoa "),
-    arg: (*string)((len=47) "https://us-west-2.console.aws.amazon.com/github"),
+    title: (string) (len=16) "Update available",
+    subtitle: (*string)((len=42) "Select this result to navigate to download"),
+    match: (*string)(<nil>),
+    uid: (*string)(<nil>),
+    autocomplete: (*string)(<nil>),
+    arg: (*string)((len=71) "https://github.com/rkoval/alfred-aws-console-services-workflow/releases"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -93,7 +93,7 @@
       })
     },
     icon: (*aw.Icon)({
-      Value: (string) (len=15) "images/whoa.png",
+      Value: (string) (len=81) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/ToolbarInfo.icns",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false

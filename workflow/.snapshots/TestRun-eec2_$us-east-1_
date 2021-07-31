@@ -1,11 +1,11 @@
 ([]*aw.Item) (len=1) {
   (*aw.Item)({
-    title: (string) (len=5) "alexa",
-    subtitle: (*string)((len=59) "Alexa for Business – Empower your organization with voice"),
-    match: (*string)((len=24) "alexa Alexa for Business"),
-    uid: (*string)((len=5) "alexa"),
-    autocomplete: (*string)((len=7) " alexa "),
-    arg: (*string)((len=49) "https://us-west-2.console.aws.amazon.com/a4b/home"),
+    title: (string) (len=15) "ec2imagebuilder",
+    subtitle: (*string)((len=89) "EC2 Image Builder – A managed service to automate build, customize and deploy OS images"),
+    match: (*string)((len=33) "ec2imagebuilder EC2 Image Builder"),
+    uid: (*string)((len=15) "ec2imagebuilder"),
+    autocomplete: (*string)((len=27) "ec2imagebuilder $us-east-1 "),
+    arg: (*string)((len=58) "https://us-east-1.console.aws.amazon.com/imagebuilder/home"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -27,7 +27,7 @@
       })
     },
     icon: (*aw.Icon)({
-      Value: (string) (len=16) "images/alexa.png",
+      Value: (string) (len=26) "images/ec2imagebuilder.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false

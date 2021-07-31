@@ -1,11 +1,11 @@
 ([]*aw.Item) (len=1) {
   (*aw.Item)({
-    title: (string) (len=10) "s3 buckets",
-    subtitle: (*string)((len=25) "🔎⭐️ S3 – Buckets"),
-    match: (*string)((len=15) "buckets Buckets"),
-    uid: (*string)((len=7) "buckets"),
-    autocomplete: (*string)((len=11) "s3 buckets "),
-    arg: (*string)((len=38) "https://console.aws.amazon.com/s3/home"),
+    title: (string) (len=16) "elasticbeanstalk",
+    subtitle: (*string)((len=50) "🗂 Elastic Beanstalk – Run and Manage Web Apps"),
+    match: (*string)((len=34) "elasticbeanstalk Elastic Beanstalk"),
+    uid: (*string)((len=16) "elasticbeanstalk"),
+    autocomplete: (*string)((len=28) "$us-east-1 elasticbeanstalk "),
+    arg: (*string)((len=62) "https://us-east-1.console.aws.amazon.com/elasticbeanstalk/home"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -27,7 +27,7 @@
       })
     },
     icon: (*aw.Icon)({
-      Value: (string) (len=13) "images/s3.png",
+      Value: (string) (len=27) "images/elasticbeanstalk.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false

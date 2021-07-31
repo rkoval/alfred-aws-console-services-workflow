@@ -4,7 +4,7 @@
     subtitle: (*string)((len=21) "US East (N. Virginia)"),
     match: (*string)(<nil>),
     uid: (*string)((len=9) "us-east-1"),
-    autocomplete: (*string)((len=31) "s3 buckets bucket-1 $us-east-1 "),
+    autocomplete: (*string)((len=17) "alexa $us-east-1 "),
     arg: (*string)(<nil>),
     valid: (bool) false,
     file: (bool) false,

@@ -1,11 +1,11 @@
 ([]*aw.Item) (len=1) {
   (*aw.Item)({
-    title: (string) (len=8) "bucket-1",
-    subtitle: (*string)((len=36) "Created Wed Jan  1 00:00:00 UTC 2020"),
+    title: (string) (len=4) "App1",
+    subtitle: (*string)(""),
     match: (*string)(<nil>),
     uid: (*string)(<nil>),
     autocomplete: (*string)(<nil>),
-    arg: (*string)((len=91) "https://us-west-2.console.aws.amazon.com/s3/buckets/bucket-1/?region=us-west-2&tab=overview"),
+    arg: (*string)((len=122) "https://us-east-1.console.aws.amazon.com/elasticbeanstalk/home?region=us-east-1#/application/overview?applicationName=App1"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -27,7 +27,7 @@
       })
     },
     icon: (*aw.Icon)({
-      Value: (string) (len=13) "images/s3.png",
+      Value: (string) (len=27) "images/elasticbeanstalk.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false

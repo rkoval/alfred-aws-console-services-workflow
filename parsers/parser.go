@@ -10,13 +10,17 @@ import (
 
 // Parser represents a parser.
 type Parser struct {
-	scanner *Scanner
+	rawQuery string
+	scanner  *Scanner
 }
 
 // NewParser returns a new instance of Parser.
 func NewParser(rawQuery string) *Parser {
 	reader := strings.NewReader(rawQuery)
-	return &Parser{scanner: NewScanner(reader)}
+	return &Parser{
+		rawQuery: rawQuery,
+		scanner:  NewScanner(reader),
+	}
 }
 
 func (p *Parser) scanIntoTokens() ([]Token, bool) {
@@ -53,11 +57,14 @@ Loop:
 
 func (p *Parser) Parse(ymlPath string) (*Query, []awsworkflow.AwsService) {
 	awsServices := ParseConsoleServicesYml(ymlPath)
-	query := &Query{}
+	query := &Query{
+		RawQuery: p.rawQuery,
+	}
 
 	tokens, hasTrailingWhitespace := p.scanIntoTokens()
 
 	query.HasTrailingWhitespace = hasTrailingWhitespace
+	// TODO make this use string builder?
 	var remainingQuery string
 	for i, token := range tokens {
 		switch token.Type {
@@ -68,12 +75,14 @@ func (p *Parser) Parse(ymlPath string) (*Query, []awsworkflow.AwsService) {
 			remainingQuery += token.Value
 			if query.Service == nil {
 				awsService := getAwsServiceById(remainingQuery, awsServices)
+				// if awsService != nil && (i < len(tokens)-1 && hasTrailingWhitespace) {
 				if awsService != nil {
 					query.Service = awsService
 					remainingQuery = ""
 				}
 			} else if query.SubService == nil {
 				awsService := getAwsServiceById(remainingQuery, query.Service.SubServices)
+				// if awsService != nil && (i < len(tokens)-1 && hasTrailingWhitespace) {
 				if awsService != nil {
 					query.SubService = awsService
 					remainingQuery = ""

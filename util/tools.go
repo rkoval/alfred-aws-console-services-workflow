@@ -64,3 +64,16 @@ func ByteFormat(inputNum int64, precision int) string {
 	return strconv.FormatFloat(returnVal, 'f', -1, 64) + " " + unit
 
 }
+
+func ReverseString(s string) string {
+	var sb strings.Builder
+	runes := []rune(s)
+	for i := len(runes) - 1; 0 <= i; i-- {
+		sb.WriteRune(runes[i])
+	}
+	return sb.String()
+}
+
+func ReplaceRight(s string, old string, new string, n int) string {
+	return ReverseString(strings.Replace(ReverseString(s), ReverseString(old), ReverseString(new), 1))
+}

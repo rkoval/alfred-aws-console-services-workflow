@@ -1,0 +1,23 @@
+([]*aw.Item) (len=1) {
+  (*aw.Item)({
+    title: (string) (len=9) "us-east-1",
+    subtitle: (*string)((len=21) "US East (N. Virginia)"),
+    match: (*string)(<nil>),
+    uid: (*string)((len=9) "us-east-1"),
+    autocomplete: (*string)((len=16) "eec2 $us-east-1 "),
+    arg: (*string)(<nil>),
+    valid: (bool) false,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  })
+}

@@ -5,6 +5,7 @@ import (
 )
 
 type Query struct {
+	RawQuery              string
 	Service               *awsworkflow.AwsService
 	SubService            *awsworkflow.AwsService
 	HasTrailingWhitespace bool

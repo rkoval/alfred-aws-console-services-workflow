@@ -1,4 +1,5 @@
 (*parsers.Query)({
+  RawQuery: (string) (len=35) "elasticbeanstalk ,search $us-west-2",
   Service: (*awsworkflow.AwsService)({
     Id: (string) (len=16) "elasticbeanstalk",
     Name: (string) (len=17) "Elastic Beanstalk",

@@ -74,10 +74,10 @@ func Run(wf *aw.Workflow, rawQuery string, cfg aws.Config, forceFetch, openAll b
 			searchArgs.Query = query.Service.Name
 		}
 		log.Printf("using searcher associated with services with query %q", searchArgs.Query)
-		SearchServices(wf, awsServices, cfg)
+		SearchServices(wf, awsServices, searchArgs)
 	} else {
 		if !query.HasDefaultSearchAlias && (query.Service.SubServices == nil || len(query.Service.SubServices) <= 0) {
-			handleUnimplemented(wf, query.Service, nil, fmt.Sprintf("%s doesn't have sub-services configured (yet)", query.Service.Id), cfg)
+			handleUnimplemented(wf, query.Service, nil, fmt.Sprintf("%s doesn't have sub-services configured (yet)", query.Service.Id), searchArgs)
 			return
 		}
 
@@ -95,7 +95,7 @@ func Run(wf *aw.Workflow, rawQuery string, cfg aws.Config, forceFetch, openAll b
 					wf.FatalError(err)
 				}
 			} else {
-				handleUnimplemented(wf, query.Service, query.SubService, fmt.Sprintf("No searcher for `%s %s` (yet)", query.Service.Id, query.SubService.Id), cfg)
+				handleUnimplemented(wf, query.Service, query.SubService, fmt.Sprintf("No searcher for `%s %s` (yet)", query.Service.Id, query.SubService.Id), searchArgs)
 				return
 			}
 		} else {
@@ -105,7 +105,7 @@ func Run(wf *aw.Workflow, rawQuery string, cfg aws.Config, forceFetch, openAll b
 			} else {
 				searchArgs.Query = query.RemainingQuery
 			}
-			SearchSubServices(wf, *query.Service, cfg)
+			SearchSubServices(wf, *query.Service, searchArgs)
 		}
 	}
 
@@ -164,11 +164,12 @@ func handleEmptyQuery(wf *aw.Workflow, searchArgs searchutil.SearchArgs) {
 	handleUpdateAvailable(wf)
 }
 
-func handleUnimplemented(wf *aw.Workflow, awsService, subService *awsworkflow.AwsService, header string, cfg aws.Config) {
+func handleUnimplemented(wf *aw.Workflow, awsService, subService *awsworkflow.AwsService, header string, searchArgs searchutil.SearchArgs) {
+	searchArgs.IgnoreAutocompleteTerm = true
 	if subService == nil {
-		AddServiceToWorkflow(wf, *awsService, cfg)
+		AddServiceToWorkflow(wf, *awsService, searchArgs)
 	} else {
-		AddSubServiceToWorkflow(wf, *awsService, *subService, cfg)
+		AddSubServiceToWorkflow(wf, *awsService, *subService, searchArgs)
 	}
 	util.NewURLItem(wf, header).
 		Subtitle("Select this result to open the contributing guide to easily add them!").

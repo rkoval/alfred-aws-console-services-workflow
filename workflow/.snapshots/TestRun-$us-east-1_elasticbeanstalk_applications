@@ -1,11 +1,11 @@
 ([]*aw.Item) (len=1) {
   (*aw.Item)({
-    title: (string) (len=5) "alexa",
-    subtitle: (*string)((len=59) "Alexa for Business – Empower your organization with voice"),
-    match: (*string)((len=24) "alexa Alexa for Business"),
-    uid: (*string)((len=5) "alexa"),
-    autocomplete: (*string)((len=7) " alexa "),
-    arg: (*string)((len=49) "https://us-west-2.console.aws.amazon.com/a4b/home"),
+    title: (string) (len=29) "elasticbeanstalk applications",
+    subtitle: (*string)((len=39) "🔎 Elastic Beanstalk – Applications"),
+    match: (*string)((len=25) "applications Applications"),
+    uid: (*string)((len=12) "applications"),
+    autocomplete: (*string)((len=41) "$us-east-1 elasticbeanstalk applications "),
+    arg: (*string)((len=76) "https://us-east-1.console.aws.amazon.com/elasticbeanstalk/home#/applications"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -27,7 +27,7 @@
       })
     },
     icon: (*aw.Icon)({
-      Value: (string) (len=16) "images/alexa.png",
+      Value: (string) (len=27) "images/elasticbeanstalk.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false

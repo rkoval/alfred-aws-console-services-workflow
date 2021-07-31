@@ -188,7 +188,7 @@
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
 				<key>argumenttrimmode</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>

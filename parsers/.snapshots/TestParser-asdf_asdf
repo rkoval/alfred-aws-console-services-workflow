@@ -1,4 +1,5 @@
 (*parsers.Query)({
+  RawQuery: (string) (len=9) "asdf asdf",
   Service: (*awsworkflow.AwsService)(<nil>),
   SubService: (*awsworkflow.AwsService)(<nil>),
   HasTrailingWhitespace: (bool) false,
