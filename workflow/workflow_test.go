@@ -30,6 +30,10 @@ var tcs []testCase = []testCase{
 		query: "$us-",
 	},
 	{
+		// autocomplete for this test is not working properly, but just keep track of it
+		query: "$ us-",
+	},
+	{
 		query: "$us-east-1",
 	},
 	{
@@ -43,6 +47,10 @@ var tcs []testCase = []testCase{
 	},
 	{
 		query: "@prof",
+	},
+	{
+		// autocomplete for this test is not working properly, but just keep track of it
+		query: "@ prof",
 	},
 	{
 		query: "@profile1",
