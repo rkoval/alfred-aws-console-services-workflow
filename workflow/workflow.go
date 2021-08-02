@@ -159,7 +159,12 @@ func handleEmptyQuery(wf *aw.Workflow, searchArgs searchutil.SearchArgs) {
 	wf.NewItem("Search for an AWS Service ...").
 		Subtitle("e.g., cloudformation, ec2, s3 ...")
 
-	if searchArgs.Profile != "" {
+	if searchArgs.Profile == "" {
+		util.NewURLItem(wf, "No profile configured").
+			Subtitle("Select this option to open AWS docs on how to configure").
+			Arg("https://aws.github.io/aws-sdk-go-v2/docs/configuring-sdk/#creating-the-config-file").
+			Icon(aw.IconWarning)
+	} else {
 		wf.NewItem("Using profile \"" + searchArgs.Profile + "\"").
 			Subtitle("Use \"" + aliases.OverrideAwsProfile + "\" to override for the current query").
 			Icon(aw.IconAccount)
