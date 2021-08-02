@@ -22,7 +22,7 @@ type EntityArrayFetcher = func(aws.Config) ([]Entity, error)
 
 func LoadEntityArrayFromCache(wf *aw.Workflow, searchArgs searchutil.SearchArgs, cacheName string, fetcher EntityArrayFetcher) []Entity {
 	// TODO optimization: not all services have sa region associated with them, so cache can be reused across regions (e.g., s3 buckets are global)
-	cacheName += "_" + searchArgs.Cfg.Region
+	cacheName += "_" + searchArgs.Cfg.Region + "_" + searchArgs.Profile
 
 	results := []Entity{}
 	lastFetchErrPath := wf.CacheDir() + "/last-fetch-err.txt"
