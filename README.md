@@ -47,6 +47,12 @@ See [this README](CONTRIBUTING.md)
 
 See [this README](release_tools/README.md)
 
+## Donating
+
+Like this workflow? Consider donating! 😻
+
+- [Patreon](https://www.patreon.com/rkoval_alfred_aws_console_services_workflow)
+
 ## Troubleshooting
 
 - "I'm seeing the following dialog when running the workflow"

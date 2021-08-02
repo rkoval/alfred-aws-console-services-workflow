@@ -14,3 +14,13 @@ func NewURLItem(wf *aw.Workflow, title string) *aw.Item {
 
 	return item
 }
+
+func NewBlankItem(wf *aw.Workflow) *aw.Item {
+	item := wf.NewItem("\n").
+		Icon(&aw.Icon{Value: "blank"})
+
+	item.Cmd().Subtitle("\n")
+	item.Alt().Subtitle("\n")
+	item.Ctrl().Subtitle("\n")
+	return item
+}

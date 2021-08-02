@@ -1,4 +1,4 @@
-([]*aw.Item) (len=4) {
+([]*aw.Item) (len=5) {
   (*aw.Item)({
     title: (string) (len=29) "Search for an AWS Service ...",
     subtitle: (*string)((len=33) "e.g., cloudformation, ec2, s3 ..."),
@@ -55,6 +55,39 @@
     mods: (map[aw.ModKey]*aw.Modifier) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=43) "Like this workflow? Consider donating! 😻",
+    subtitle: (*string)((len=49) "Select this option to open this project's Patreon"),
+    match: (*string)(<nil>),
+    uid: (*string)(<nil>),
+    autocomplete: (*string)(<nil>),
+    arg: (*string)((len=67) "https://www.patreon.com/rkoval_alfred_aws_console_services_workflow"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    icon: (*aw.Icon)({
+      Value: (string) (len=90) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/ToolbarFavoritesIcon.icns",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
