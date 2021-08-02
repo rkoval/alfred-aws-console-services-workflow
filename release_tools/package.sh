@@ -7,6 +7,10 @@ echo -e "Current version: $CURRENT_VERSION\nInput new version: "
 read -r VERSION
 VERSION="v${VERSION//v/}"
 
+test() {
+  ./test.sh
+}
+
 install_package() {
   ./build.sh
 }
@@ -37,6 +41,7 @@ open_finder() {
   open .
 }
 
+test
 install_package
 bump_version_and_tag
 package_release
