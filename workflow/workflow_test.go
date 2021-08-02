@@ -39,6 +39,42 @@ var tcs []testCase = []testCase{
 		query: "$asdf asdf asdf",
 	},
 	{
+		query: "@",
+	},
+	{
+		query: "@prof",
+	},
+	{
+		query: "@profile1",
+	},
+	{
+		query: "@asdf asdf asdf",
+	},
+	{
+		query: "@$",
+	},
+	{
+		query: "@ $",
+	},
+	{
+		query: "$ @",
+	},
+	{
+		query: "$ @ adsf asdf",
+	},
+	{
+		query: "$us-east-1 @",
+	},
+	{
+		query: "$us-east-1 @prof",
+	},
+	{
+		query: "$us-east-1 @prof asdf asdf",
+	},
+	{
+		query: "$us-east-1 @profile3 elasticbeanstalk",
+	},
+	{
 		query: "alex",
 	},
 	{
@@ -180,6 +216,72 @@ var tcs []testCase = []testCase{
 		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
 	},
 	{
+		query: "@profile1 elasticbeanstalk",
+	},
+	{
+		query: "@profile1 $us-east-2 elasticbeanstalk",
+	},
+	{
+		query: "@profile1 elasticbeanstalk appli",
+	},
+	{
+		query:       "@profile1 elasticbeanstalk applications",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
+	},
+	{
+		query:       "@profile1 elasticbeanstalk applications ",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
+	},
+	{
+		query:       "elasticbeanstalk @profile1 applications",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
+	},
+	{
+		query:       "elasticbeanstalk @profile1 applications ",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
+	},
+	{
+		query:       "elasticbeanstalk applications @profile1",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
+	},
+	{
+		query:       "elasticbeanstalk applications @profile1 ",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
+	},
+	{
+		query:       "elasticbeanstalk applications @profile1 Ap",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
+	},
+	{
+		query:       "elasticbeanstalk applications @profile1 Ap ",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
+	},
+	{
+		query:       "elasticbeanstalk applications App1 @profile1",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
+	},
+	{
+		query:       "elasticbeanstalk applications App1 @prof",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
+	},
+	{
+		query:       "elasticbeanstalk applications App1 @profile1 ",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
+	},
+	{
+		query:       "elasticbeanstalk applications @profile1 arn:aws:elasticbeanstalk:us-east-1:0000000000:application/Ap",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
+	},
+	{
+		query:       "elasticbeanstalk applications arn:aws:elasticbeanstalk:us-east-1:0000000000:application/Ap @profile1 ",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
+	},
+
+	{
+		query:       "elasticbeanstalk applications @profile3 $us-east-1 ",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
+	},
+	{
 		query: "lambda",
 	},
 	{
@@ -261,10 +363,19 @@ var tcs []testCase = []testCase{
 		query: "eec2 $us-east-1",
 	},
 	{
+		query: "eec2 @profile1",
+	},
+	{
 		query: "eec2 $us-east-1 ",
 	},
 	{
+		query: "eec2 @profile1 ",
+	},
+	{
 		query: "$us-east-1 eec2",
+	},
+	{
+		query: "@profile1 eec2",
 	},
 	{
 		query: "ec2",
@@ -478,9 +589,9 @@ func testWorkflow(t *testing.T, tc testCase, forceFetch, snapshot bool) []*aw.It
 	updater := &tests.MockAlfredUpdater{}
 	wf := aw.New(aw.Update(updater))
 
-	cfg, r := tests.NewAWSRecorderSession(tc.fixtureName)
+	r := tests.NewAWSRecorderSession(tc.fixtureName)
 	defer tests.PanicOnError(r.Stop)
-	Run(wf, tc.query, cfg, forceFetch, false, "../console-services.yml")
+	Run(wf, tc.query, r, forceFetch, false, "../console-services.yml")
 
 	if tc.deleteItemArgBeforeSnapshot {
 		for i := range wf.Feedback.Items {

@@ -57,6 +57,15 @@ var tcs []testCase = []testCase{
 		rawQuery: "$us-west-2",
 	},
 	{
+		rawQuery: "@",
+	},
+	{
+		rawQuery: "@prof",
+	},
+	{
+		rawQuery: "@profile",
+	},
+	{
 		rawQuery: "elasticbeanstalk $us-west-2",
 	},
 	{

@@ -3,6 +3,7 @@ package workflow
 import (
 	"fmt"
 	"log"
+	"net/http"
 	"os"
 	"os/exec"
 	"strings"
@@ -11,6 +12,7 @@ import (
 	"github.com/aws/aws-sdk-go-v2/aws"
 	aw "github.com/deanishe/awgo"
 	"github.com/rkoval/alfred-aws-console-services-workflow/aliases"
+	"github.com/rkoval/alfred-aws-console-services-workflow/awsconfig"
 	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
 	"github.com/rkoval/alfred-aws-console-services-workflow/parsers"
 	"github.com/rkoval/alfred-aws-console-services-workflow/searchers"
@@ -18,7 +20,7 @@ import (
 	"github.com/rkoval/alfred-aws-console-services-workflow/util"
 )
 
-func Run(wf *aw.Workflow, rawQuery string, cfg aws.Config, forceFetch, openAll bool, ymlPath string) {
+func Run(wf *aw.Workflow, rawQuery string, transport http.RoundTripper, forceFetch, openAll bool, ymlPath string) {
 	log.Println("using workflow cacheDir: " + wf.CacheDir())
 	log.Println("using workflow dataDir: " + wf.DataDir())
 
@@ -26,29 +28,10 @@ func Run(wf *aw.Workflow, rawQuery string, cfg aws.Config, forceFetch, openAll b
 	query, awsServices := parser.Parse(ymlPath)
 	defer finalize(wf, query)
 
-	searchArgs := searchutil.SearchArgs{
-		Cfg:        cfg,
-		ForceFetch: forceFetch,
-		FullQuery:  rawQuery,
-		Profile:    util.GetProfile(cfg),
-	}
-
 	log.Printf("using query: %#v", query)
 
-	if query.IsEmpty() {
-		handleEmptyQuery(wf, searchArgs)
-		return
-	}
-
-	if query.HasOpenAll {
-		handleOpenAll(wf, query.Service, awsServices, openAll, rawQuery, cfg)
-		return
-	}
-
-	// TODO need to autocomplete correctly within services/subservices/searchers with respect to region
-
 	if query.RegionQuery != nil {
-		for _, region := range awsworkflow.AllAWSRegions {
+		for _, region := range awsconfig.AllAWSRegions {
 			autocomplete := strings.Replace(rawQuery, aliases.OverrideAwsRegion+*query.RegionQuery, aliases.OverrideAwsRegion+region.Name+" ", 1)
 			wf.NewItem(region.Name).
 				Subtitle(region.Description).
@@ -60,9 +43,42 @@ func Run(wf *aw.Workflow, rawQuery string, cfg aws.Config, forceFetch, openAll b
 		res := wf.Filter(*query.RegionQuery)
 		log.Printf("%d results match %q", len(res), *query.RegionQuery)
 		return
-	} else if query.RegionOverride != nil && (query.Service == nil || !query.Service.HasGlobalRegion) {
-		cfg.Region = query.RegionOverride.Name
-		searchArgs.Cfg.Region = query.RegionOverride.Name
+	}
+
+	if query.ProfileQuery != nil {
+		for _, profile := range awsconfig.GetAwsProfiles() {
+			autocomplete := strings.Replace(rawQuery, aliases.OverrideAwsProfile+*query.ProfileQuery, aliases.OverrideAwsProfile+profile.Name+" ", 1)
+			item := wf.NewItem(profile.Name).
+				Icon(aw.IconAccount).
+				Autocomplete(autocomplete).
+				UID(profile.Name)
+
+			if profile.Region != "" {
+				item.Subtitle(fmt.Sprintf("🌎 %s", profile.Region))
+			}
+		}
+		log.Printf("filtering with profile override %q", *query.ProfileQuery)
+		res := wf.Filter(*query.ProfileQuery)
+		log.Printf("%d results match %q", len(res), *query.ProfileQuery)
+		return
+	}
+
+	cfg := awsworkflow.InitAWS(transport, query.ProfileOverride, query.GetRegionOverride())
+	searchArgs := searchutil.SearchArgs{
+		Cfg:        cfg,
+		ForceFetch: forceFetch,
+		FullQuery:  rawQuery,
+		Profile:    util.GetProfile(cfg),
+	}
+
+	if query.IsEmpty() {
+		handleEmptyQuery(wf, searchArgs)
+		return
+	}
+
+	if query.HasOpenAll {
+		handleOpenAll(wf, query.Service, awsServices, openAll, rawQuery, cfg)
+		return
 	}
 
 	if query.Service == nil || (!query.HasTrailingWhitespace && query.SubService == nil && !query.HasDefaultSearchAlias && query.RemainingQuery == "") {
@@ -122,7 +138,10 @@ func finalize(wf *aw.Workflow, query *parsers.Query) {
 		subtitle := ""
 		if query.RegionQuery != nil {
 			title = "No matching regions found"
-			subtitle = "Try starting over with `$` again to see the full list"
+			subtitle = fmt.Sprintf("Try starting over with \"%s\" again to see the full list", aliases.OverrideAwsRegion)
+		} else if query.ProfileQuery != nil {
+			title = "No matching profiles found"
+			subtitle = fmt.Sprintf("Try starting over with \"%s\" again to see the full list", aliases.OverrideAwsProfile)
 		} else {
 			title = "No matching services found"
 			subtitle = "Try another query (example: `aws ec2 instances`)"
@@ -142,6 +161,7 @@ func handleEmptyQuery(wf *aw.Workflow, searchArgs searchutil.SearchArgs) {
 
 	if searchArgs.Profile != "" {
 		wf.NewItem("Using profile \"" + searchArgs.Profile + "\"").
+			Subtitle("Use \"" + aliases.OverrideAwsProfile + "\" to override for the current query").
 			Icon(aw.IconAccount)
 	}
 

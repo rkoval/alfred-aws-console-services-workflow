@@ -1,6 +1,9 @@
 package parsers
 
 import (
+	"strings"
+
+	"github.com/rkoval/alfred-aws-console-services-workflow/awsconfig"
 	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
 )
 
@@ -11,11 +14,20 @@ type Query struct {
 	HasTrailingWhitespace bool
 	HasOpenAll            bool
 	HasDefaultSearchAlias bool
-	RegionOverride        *awsworkflow.Region
+	regionOverride        *awsconfig.Region
 	RegionQuery           *string
+	ProfileOverride       *awsconfig.Profile
+	ProfileQuery          *string
 	RemainingQuery        string
 }
 
 func (q *Query) IsEmpty() bool {
-	return q.Service == nil && q.SubService == nil && q.RemainingQuery == "" && !q.HasOpenAll && q.RegionOverride == nil && q.RegionQuery == nil
+	return strings.Trim(q.RawQuery, " ") == ""
+}
+
+func (q *Query) GetRegionOverride() *awsconfig.Region {
+	if q.Service == nil || !q.Service.HasGlobalRegion {
+		return q.regionOverride
+	}
+	return nil
 }

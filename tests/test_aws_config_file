@@ -1,0 +1,14 @@
+[default]
+region = us-west-2
+
+[profile profile1]
+region = us-east-1
+
+[profile profile2]
+region = eu-west-1
+
+[profile profile3]
+region = sa-east-1
+
+[profile bogusprofile]
+region = bogus

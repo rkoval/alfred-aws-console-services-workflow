@@ -38,10 +38,12 @@
   HasTrailingWhitespace: (bool) false,
   HasOpenAll: (bool) false,
   HasDefaultSearchAlias: (bool) false,
-  RegionOverride: (*awsworkflow.Region)({
+  regionOverride: (*awsconfig.Region)({
     Name: (string) (len=9) "us-west-2",
     Description: (string) (len=16) "US West (Oregon)"
   }),
   RegionQuery: (*string)((len=9) "us-west-2"),
+  ProfileOverride: (*awsconfig.Profile)(<nil>),
+  ProfileQuery: (*string)(<nil>),
   RemainingQuery: (string) ""
 })

@@ -1,0 +1,13 @@
+(*parsers.Query)({
+  RawQuery: (string) (len=5) "@prof",
+  Service: (*awsworkflow.AwsService)(<nil>),
+  SubService: (*awsworkflow.AwsService)(<nil>),
+  HasTrailingWhitespace: (bool) false,
+  HasOpenAll: (bool) false,
+  HasDefaultSearchAlias: (bool) false,
+  regionOverride: (*awsconfig.Region)(<nil>),
+  RegionQuery: (*string)(<nil>),
+  ProfileOverride: (*awsconfig.Profile)(<nil>),
+  ProfileQuery: (*string)((len=4) "prof"),
+  RemainingQuery: (string) ""
+})

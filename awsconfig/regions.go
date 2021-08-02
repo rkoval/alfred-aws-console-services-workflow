@@ -1,4 +1,4 @@
-package awsworkflow
+package awsconfig
 
 type Region struct {
 	Name        string

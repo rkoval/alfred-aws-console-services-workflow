@@ -119,6 +119,10 @@ func (s *Scanner) scanWord() (TokenType, string, bool) {
 		return REGION_OVERRIDE, stringBuf[len(aliases.OverrideAwsRegion):], hasTrailingWhitespace
 	}
 
+	if strings.HasPrefix(stringBuf, aliases.OverrideAwsProfile) {
+		return PROFILE_OVERRIDE, stringBuf[len(aliases.OverrideAwsProfile):], hasTrailingWhitespace
+	}
+
 	switch stringBuf {
 	case "OPEN_ALL":
 		return OPEN_ALL, stringBuf, hasTrailingWhitespace

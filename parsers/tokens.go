@@ -14,6 +14,7 @@ const (
 	OPEN_ALL
 	SEARCH_ALIAS
 	REGION_OVERRIDE
+	PROFILE_OVERRIDE
 )
 
 type Token struct {

@@ -19,7 +19,7 @@
   }),
   (*aw.Item)({
     title: (string) (len=23) "Using profile \"default\"",
-    subtitle: (*string)(<nil>),
+    subtitle: (*string)((len=41) "Use \"@\" to override for the current query"),
     match: (*string)(<nil>),
     uid: (*string)(<nil>),
     autocomplete: (*string)(<nil>),

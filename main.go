@@ -7,7 +7,6 @@ import (
 
 	aw "github.com/deanishe/awgo"
 	"github.com/deanishe/awgo/update"
-	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
 	"github.com/rkoval/alfred-aws-console-services-workflow/workflow"
 )
 
@@ -29,9 +28,7 @@ func init() {
 func main() {
 	wf.Run(func() {
 		log.Printf("running workflow with query: `%s`", query)
-		cfg := awsworkflow.InitAWS(nil)
 		query = strings.TrimLeft(query, " ")
-
-		workflow.Run(wf, query, cfg, forceFetch, openAll, ymlPath)
+		workflow.Run(wf, query, nil, forceFetch, openAll, ymlPath)
 	})
 }

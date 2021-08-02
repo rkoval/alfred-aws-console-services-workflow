@@ -9,11 +9,32 @@ import (
 	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/config"
 	aw "github.com/deanishe/awgo"
+	"github.com/rkoval/alfred-aws-console-services-workflow/awsconfig"
 	"github.com/rkoval/alfred-aws-console-services-workflow/util"
 )
 
-func InitAWS(transport http.RoundTripper) aws.Config {
-	cfg, err := config.LoadDefaultConfig(context.TODO())
+func InitAWS(transport http.RoundTripper, profile *awsconfig.Profile, region *awsconfig.Region) aws.Config {
+	profileLoadOptionsFunc := func(o *config.LoadOptions) error {
+		return nil
+	}
+	regionLoadOptionsFunc := func(o *config.LoadOptions) error {
+		return nil
+	}
+	if profile != nil {
+		profileLoadOptionsFunc = config.WithSharedConfigProfile(profile.Name)
+		if profile.Region != "" {
+			regionLoadOptionsFunc = config.WithRegion(profile.Region)
+		}
+	}
+	if region != nil {
+		regionLoadOptionsFunc = config.WithRegion(region.Name)
+	}
+
+	cfg, err := config.LoadDefaultConfig(
+		context.TODO(),
+		profileLoadOptionsFunc,
+		regionLoadOptionsFunc,
+	)
 	if err != nil {
 		panic(err)
 	}

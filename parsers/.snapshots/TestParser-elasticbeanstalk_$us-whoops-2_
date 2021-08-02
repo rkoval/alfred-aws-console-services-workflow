@@ -38,7 +38,9 @@
   HasTrailingWhitespace: (bool) true,
   HasOpenAll: (bool) false,
   HasDefaultSearchAlias: (bool) false,
-  RegionOverride: (*awsworkflow.Region)(<nil>),
+  regionOverride: (*awsconfig.Region)(<nil>),
   RegionQuery: (*string)((len=11) "us-whoops-2"),
+  ProfileOverride: (*awsconfig.Profile)(<nil>),
+  ProfileQuery: (*string)(<nil>),
   RemainingQuery: (string) ""
 })

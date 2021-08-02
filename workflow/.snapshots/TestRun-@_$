@@ -1,0 +1,86 @@
+([]*aw.Item) (len=4) {
+  (*aw.Item)({
+    title: (string) (len=7) "default",
+    subtitle: (*string)((len=14) "🌎 us-west-2"),
+    match: (*string)(<nil>),
+    uid: (*string)((len=7) "default"),
+    autocomplete: (*string)((len=11) "@default  $"),
+    arg: (*string)(<nil>),
+    valid: (bool) false,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=78) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/Accounts.icns",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=8) "profile1",
+    subtitle: (*string)((len=14) "🌎 us-east-1"),
+    match: (*string)(<nil>),
+    uid: (*string)((len=8) "profile1"),
+    autocomplete: (*string)((len=12) "@profile1  $"),
+    arg: (*string)(<nil>),
+    valid: (bool) false,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=78) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/Accounts.icns",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=8) "profile3",
+    subtitle: (*string)((len=14) "🌎 sa-east-1"),
+    match: (*string)(<nil>),
+    uid: (*string)((len=8) "profile3"),
+    autocomplete: (*string)((len=12) "@profile3  $"),
+    arg: (*string)(<nil>),
+    valid: (bool) false,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=78) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/Accounts.icns",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=12) "bogusprofile",
+    subtitle: (*string)((len=10) "🌎 bogus"),
+    match: (*string)(<nil>),
+    uid: (*string)((len=12) "bogusprofile"),
+    autocomplete: (*string)((len=16) "@bogusprofile  $"),
+    arg: (*string)(<nil>),
+    valid: (bool) false,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=78) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/Accounts.icns",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  })
+}

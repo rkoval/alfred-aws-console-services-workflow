@@ -5,6 +5,7 @@ import (
 	"log"
 	"strings"
 
+	"github.com/rkoval/alfred-aws-console-services-workflow/awsconfig"
 	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
 )
 
@@ -94,15 +95,32 @@ func (p *Parser) Parse(ymlPath string) (*Query, []awsworkflow.AwsService) {
 			query.HasDefaultSearchAlias = true
 			remainingQuery += token.Value
 		case REGION_OVERRIDE:
-			for _, region := range awsworkflow.AllAWSRegions {
+			if query.ProfileQuery != nil {
+				continue
+			}
+			for _, region := range awsconfig.AllAWSRegions {
 				if token.Value == region.Name {
-					query.RegionOverride = &region
+					query.regionOverride = &region
 					break
 				}
 			}
 
-			if query.RegionOverride == nil || (i >= len(tokens)-1 && !hasTrailingWhitespace) {
+			if query.regionOverride == nil || (i >= len(tokens)-1 && !hasTrailingWhitespace) {
 				query.RegionQuery = &token.Value
+			}
+		case PROFILE_OVERRIDE:
+			if query.RegionQuery != nil {
+				continue
+			}
+			for _, profile := range awsconfig.GetAwsProfiles() {
+				if token.Value == profile.Name {
+					query.ProfileOverride = &profile
+					break
+				}
+			}
+
+			if query.ProfileOverride == nil || (i >= len(tokens)-1 && !hasTrailingWhitespace) {
+				query.ProfileQuery = &token.Value
 			}
 		default:
 			panic(fmt.Errorf("no handler for token: %#v", token))

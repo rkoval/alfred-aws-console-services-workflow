@@ -1,0 +1,35 @@
+([]*aw.Item) (len=1) {
+  (*aw.Item)({
+    title: (string) (len=15) "ec2imagebuilder",
+    subtitle: (*string)((len=89) "EC2 Image Builder – A managed service to automate build, customize and deploy OS images"),
+    match: (*string)((len=33) "ec2imagebuilder EC2 Image Builder"),
+    uid: (*string)((len=15) "ec2imagebuilder"),
+    autocomplete: (*string)((len=26) "ec2imagebuilder @profile1 "),
+    arg: (*string)((len=58) "https://us-east-1.console.aws.amazon.com/imagebuilder/home"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    icon: (*aw.Icon)({
+      Value: (string) (len=26) "images/ec2imagebuilder.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  })
+}
