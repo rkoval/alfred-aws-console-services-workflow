@@ -237,6 +237,10 @@ var tcs []testCase = []testCase{
 		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
 	},
 	{
+		query:       "@noregion elasticbeanstalk applications",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
+	},
+	{
 		query:       "@profile1 elasticbeanstalk applications ",
 		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
 	},

@@ -66,7 +66,7 @@ func loadAwsProfiles() {
 
 func GetAwsCredentialsFilePath() string {
 	// see https://docs.aws.amazon.com/sdkref/latest/guide/file-location.html
-	path, _ := os.LookupEnv("AWS_SHARED_CREDENTIALS_FILE")
+	path := os.Getenv("AWS_SHARED_CREDENTIALS_FILE")
 	if path == "" {
 		path = config.DefaultSharedCredentialsFilename()
 	}
@@ -75,7 +75,7 @@ func GetAwsCredentialsFilePath() string {
 
 func GetAwsProfileFilePath() string {
 	// see https://docs.aws.amazon.com/sdkref/latest/guide/file-location.html
-	path, _ := os.LookupEnv("AWS_CONFIG_FILE")
+	path := os.Getenv("AWS_CONFIG_FILE")
 	if path == "" {
 		path = config.DefaultSharedConfigFilename()
 	}

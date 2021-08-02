@@ -55,6 +55,8 @@ func Run(wf *aw.Workflow, rawQuery string, transport http.RoundTripper, forceFet
 
 			if profile.Region != "" {
 				item.Subtitle(fmt.Sprintf("🌎 %s", profile.Region))
+			} else {
+				item.Subtitle("⚠️ This profile does not specify a region. Functionality will be limited")
 			}
 		}
 		log.Printf("filtering with profile override %q", *query.ProfileQuery)

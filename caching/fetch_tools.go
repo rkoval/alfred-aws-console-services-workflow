@@ -11,6 +11,7 @@ import (
 	"time"
 
 	aw "github.com/deanishe/awgo"
+	"github.com/rkoval/alfred-aws-console-services-workflow/awsconfig"
 	"github.com/rkoval/alfred-aws-console-services-workflow/searchers/searchutil"
 	"github.com/rkoval/alfred-aws-console-services-workflow/util"
 )
@@ -63,16 +64,19 @@ func handleFetchErr(wf *aw.Workflow, lastFetchErrPath string, searchArgs searchu
 
 	// TODO need to fix "no results" display when there's really a fetch error
 
+	userHomePath := os.Getenv("HOME")
 	errString := string(data)
 	wf.Configure(aw.SuppressUIDs(true))
 	if strings.HasPrefix(errString, "NoCredentialProviders") {
-		util.NewURLItem(wf, "AWS credentials not set in ~/.aws/credentials for profile \""+searchArgs.Profile+"\"").
+		credentialsFilePath := strings.Replace(awsconfig.GetAwsCredentialsFilePath(), userHomePath, "~", 1)
+		util.NewURLItem(wf, "AWS credentials not set in "+credentialsFilePath+" for profile \""+searchArgs.Profile+"\"").
 			Subtitle("Press enter to open AWS docs on how to configure").
 			Arg("https://aws.github.io/aws-sdk-go-v2/docs/configuring-sdk/#creating-the-credentials-file").
 			Icon(aw.IconError).
 			Valid(true)
 	} else if strings.HasPrefix(errString, "MissingRegion") {
-		util.NewURLItem(wf, "AWS region not set in ~/.aws/config for profile \""+searchArgs.Profile+"\"").
+		configFilePath := strings.Replace(awsconfig.GetAwsProfileFilePath(), userHomePath, "~", 1)
+		util.NewURLItem(wf, "AWS region not set in "+configFilePath+" for profile \""+searchArgs.Profile+"\"").
 			Subtitle("Press enter to open AWS docs on how to configure").
 			Arg("https://aws.github.io/aws-sdk-go-v2/docs/configuring-sdk/#creating-the-config-file").
 			Icon(aw.IconError).
