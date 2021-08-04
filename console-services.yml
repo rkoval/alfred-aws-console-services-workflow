@@ -326,7 +326,41 @@
 - id: dynamodb
   name: DynamoDB
   description: Managed NoSQL Database
-  url: /dynamodb/home
+  url: "/dynamodbv2/home#dashboard"
+  sub_services:
+    - id: dashboard
+      name: Dashboard
+      url: "/dynamodbv2/home#dashboard"
+    - id: tables
+      name: Tables
+      url: "/dynamodbv2/home#tables"
+    - id: items
+      name: Items
+      url: "/dynamodbv2/home#item-explorer"
+    - id: partiqleditor
+      name: PartiQL editor
+      url: "/dynamodbv2/home#partiql-editor"
+    - id: backups
+      name: Backups
+      url: "/dynamodbv2/home#list-backups"
+    - id: exportstos3
+      name: Exports to S3
+      url: "/dynamodbv2/home#exports"
+    - id: reservedcapacity
+      name: Reserved capacity
+      url: "/dynamodbv2/home#reserved-capacity"
+    - id: daxclusters
+      name: DAX Clusters
+      url: "/dynamodbv2/home#dax-clusters"
+    - id: daxsubnetgroups
+      name: DAX Subnet groups
+      url: "/dynamodbv2/home#dax-subnet-groups-list"
+    - id: daxparametergroups
+      name: DAX Parameter groups
+      url: "/dynamodbv2/home#dax-parameter-groups-list"
+    - id: daxevents
+      name: DAX Events
+      url: "/dynamodbv2/home#dax-events"
 
 - id: ec2
   name: Elastic Cloud Compute
