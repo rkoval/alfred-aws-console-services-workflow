@@ -1,4 +1,4 @@
-([]*aw.Item) (len=32) {
+([]*aw.Item) (len=33) {
   (*aw.Item)({
     title: (string) (len=3) "sns",
     subtitle: (*string)((len=75) "🗂 Simple Notification Service (SNS) – SNS Pub/Sub, Mobile Push and SMS"),
@@ -397,11 +397,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=7) "kinesis",
-    subtitle: (*string)((len=46) "Kinesis – Work with Real-Time Streaming Data"),
+    subtitle: (*string)((len=51) "🗂 Kinesis – Work with Real-Time Streaming Data"),
     match: (*string)((len=15) "kinesis Kinesis"),
     uid: (*string)((len=7) "kinesis"),
     autocomplete: (*string)((len=8) "kinesis "),
-    arg: (*string)((len=53) "https://us-west-2.console.aws.amazon.com/kinesis/home"),
+    arg: (*string)((len=63) "https://us-west-2.console.aws.amazon.com/kinesis/home#dashboard"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -820,6 +820,39 @@
     },
     icon: (*aw.Icon)({
       Value: (string) (len=22) "images/personalize.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=14) "accessanalyzer",
+    subtitle: (*string)((len=52) "🗂 Access Analyzer – Monitor access to resources"),
+    match: (*string)((len=34) "accessanalyzer Access Analyzer iam"),
+    uid: (*string)((len=14) "accessanalyzer"),
+    autocomplete: (*string)((len=15) "accessanalyzer "),
+    arg: (*string)((len=72) "https://us-west-2.console.aws.amazon.com/access-analyzer/home#/analyzers"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    icon: (*aw.Icon)({
+      Value: (string) (len=25) "images/accessanalyzer.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false

@@ -1,4 +1,4 @@
-([]*aw.Item) (len=153) {
+([]*aw.Item) (len=154) {
   (*aw.Item)({
     title: (string) (len=5) "alexa",
     subtitle: (*string)((len=59) "Alexa for Business – Empower your organization with voice"),
@@ -430,7 +430,7 @@
   }),
   (*aw.Item)({
     title: (string) (len=3) "acm",
-    subtitle: (*string)((len=80) "Certificate Manager (ACM) – Provision, Manage, and Deploy SSL/TLS Certificates"),
+    subtitle: (*string)((len=85) "🗂 Certificate Manager (ACM) – Provision, Manage, and Deploy SSL/TLS Certificates"),
     match: (*string)((len=3) "acm"),
     uid: (*string)((len=3) "acm"),
     autocomplete: (*string)((len=15) "$us-east-1 acm "),
@@ -1420,11 +1420,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=8) "dynamodb",
-    subtitle: (*string)((len=35) "DynamoDB – Managed NoSQL Database"),
+    subtitle: (*string)((len=40) "🗂 DynamoDB – Managed NoSQL Database"),
     match: (*string)((len=17) "dynamodb DynamoDB"),
     uid: (*string)((len=8) "dynamodb"),
     autocomplete: (*string)((len=20) "$us-east-1 dynamodb "),
-    arg: (*string)((len=54) "https://us-east-1.console.aws.amazon.com/dynamodb/home"),
+    arg: (*string)((len=66) "https://us-east-1.console.aws.amazon.com/dynamodbv2/home#dashboard"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -1486,11 +1486,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=3) "ecr",
-    subtitle: (*string)((len=76) "Elastic Container Registry (ECR) – Fully-managed Docker container registry"),
+    subtitle: (*string)((len=81) "🗂 Elastic Container Registry (ECR) – Fully-managed Docker container registry"),
     match: (*string)((len=3) "ecr"),
     uid: (*string)((len=3) "ecr"),
     autocomplete: (*string)((len=15) "$us-east-1 ecr "),
-    arg: (*string)((len=49) "https://us-east-1.console.aws.amazon.com/ecr/home"),
+    arg: (*string)((len=57) "https://us-east-1.console.aws.amazon.com/ecr/repositories"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -1519,11 +1519,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=3) "ecs",
-    subtitle: (*string)((len=68) "Elastic Container Service (ECS) – Run and Manage Docker Containers"),
+    subtitle: (*string)((len=73) "🗂 Elastic Container Service (ECS) – Run and Manage Docker Containers"),
     match: (*string)((len=3) "ecs"),
     uid: (*string)((len=3) "ecs"),
     autocomplete: (*string)((len=15) "$us-east-1 ecs "),
-    arg: (*string)((len=49) "https://us-east-1.console.aws.amazon.com/ecs/home"),
+    arg: (*string)((len=59) "https://us-east-1.console.aws.amazon.com/ecs/home#/clusters"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -1552,11 +1552,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=3) "efs",
-    subtitle: (*string)((len=59) "Elastic File Storage (EFS) – Managed File Storage for EC2"),
+    subtitle: (*string)((len=64) "🗂 Elastic File Storage (EFS) – Managed File Storage for EC2"),
     match: (*string)((len=3) "efs"),
     uid: (*string)((len=3) "efs"),
     autocomplete: (*string)((len=15) "$us-east-1 efs "),
-    arg: (*string)((len=49) "https://us-east-1.console.aws.amazon.com/efs/home"),
+    arg: (*string)((len=63) "https://us-east-1.console.aws.amazon.com/efs/home#/file-systems"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -1585,11 +1585,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=3) "eks",
-    subtitle: (*string)((len=62) "Elastic Kubernetes Service (EKS) – Managed Kubernetes on AWS"),
+    subtitle: (*string)((len=67) "🗂 Elastic Kubernetes Service (EKS) – Managed Kubernetes on AWS"),
     match: (*string)((len=3) "eks"),
     uid: (*string)((len=3) "eks"),
     autocomplete: (*string)((len=15) "$us-east-1 eks "),
-    arg: (*string)((len=49) "https://us-east-1.console.aws.amazon.com/eks/home"),
+    arg: (*string)((len=59) "https://us-east-1.console.aws.amazon.com/eks/home#/clusters"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -2113,7 +2113,7 @@
   }),
   (*aw.Item)({
     title: (string) (len=3) "iam",
-    subtitle: (*string)((len=79) "Identity and Access Management (IAM) – Manage User Access and Encryption Keys"),
+    subtitle: (*string)((len=84) "🗂 Identity and Access Management (IAM) – Manage User Access and Encryption Keys"),
     match: (*string)((len=3) "iam"),
     uid: (*string)((len=3) "iam"),
     autocomplete: (*string)((len=15) "$us-east-1 iam "),
@@ -2140,6 +2140,39 @@
     },
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/iam.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=14) "accessanalyzer",
+    subtitle: (*string)((len=52) "🗂 Access Analyzer – Monitor access to resources"),
+    match: (*string)((len=34) "accessanalyzer Access Analyzer iam"),
+    uid: (*string)((len=14) "accessanalyzer"),
+    autocomplete: (*string)((len=26) "$us-east-1 accessanalyzer "),
+    arg: (*string)((len=72) "https://us-east-1.console.aws.amazon.com/access-analyzer/home#/analyzers"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    icon: (*aw.Icon)({
+      Value: (string) (len=25) "images/accessanalyzer.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
@@ -2542,11 +2575,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=7) "kinesis",
-    subtitle: (*string)((len=46) "Kinesis – Work with Real-Time Streaming Data"),
+    subtitle: (*string)((len=51) "🗂 Kinesis – Work with Real-Time Streaming Data"),
     match: (*string)((len=15) "kinesis Kinesis"),
     uid: (*string)((len=7) "kinesis"),
     autocomplete: (*string)((len=19) "$us-east-1 kinesis "),
-    arg: (*string)((len=53) "https://us-east-1.console.aws.amazon.com/kinesis/home"),
+    arg: (*string)((len=63) "https://us-east-1.console.aws.amazon.com/kinesis/home#dashboard"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -3367,11 +3400,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=8) "redshift",
-    subtitle: (*string)((len=58) "Redshift – Fast, Simple, Cost-Effective Data Warehousing"),
+    subtitle: (*string)((len=63) "🗂 Redshift – Fast, Simple, Cost-Effective Data Warehousing"),
     match: (*string)((len=17) "redshift Redshift"),
     uid: (*string)((len=8) "redshift"),
     autocomplete: (*string)((len=20) "$us-east-1 redshift "),
-    arg: (*string)((len=54) "https://us-east-1.console.aws.amazon.com/redshift/home"),
+    arg: (*string)((len=66) "https://us-east-1.console.aws.amazon.com/redshiftv2/home#dashboard"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -3961,11 +3994,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=3) "sqs",
-    subtitle: (*string)((len=57) "Simple Queue Service (SQS) – SQS Managed Message Queues"),
+    subtitle: (*string)((len=62) "🗂 Simple Queue Service (SQS) – SQS Managed Message Queues"),
     match: (*string)((len=3) "sqs"),
     uid: (*string)((len=3) "sqs"),
     autocomplete: (*string)((len=15) "$us-east-1 sqs "),
-    arg: (*string)((len=52) "https://us-east-1.console.aws.amazon.com/sqs/v2/home"),
+    arg: (*string)((len=60) "https://us-east-1.console.aws.amazon.com/sqs/v2/home#/queues"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -4258,11 +4291,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=3) "vpc",
-    subtitle: (*string)((len=50) "Virtual Private Cloud – Isolated Cloud Resources"),
+    subtitle: (*string)((len=55) "🗂 Virtual Private Cloud – Isolated Cloud Resources"),
     match: (*string)((len=25) "vpc Virtual Private Cloud"),
     uid: (*string)((len=3) "vpc"),
     autocomplete: (*string)((len=15) "$us-east-1 vpc "),
-    arg: (*string)((len=49) "https://us-east-1.console.aws.amazon.com/vpc/home"),
+    arg: (*string)((len=60) "https://us-east-1.console.aws.amazon.com/vpc/home#dashboard:"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
