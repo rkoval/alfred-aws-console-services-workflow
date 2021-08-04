@@ -71,6 +71,13 @@
   short_name: ACM
   description: Provision, Manage, and Deploy SSL/TLS Certificates
   url: /acm/home
+  sub_services:
+    - id: certificatemanager
+      name: Certificate manager
+      url: /acm/home
+    - id: privatecas
+      name: Private certificate authorities
+      url: '/acm-pca/home'
 
 - id: chime
   name: Chime
