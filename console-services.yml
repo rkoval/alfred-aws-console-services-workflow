@@ -1203,7 +1203,114 @@
 - id: vpc
   name: Virtual Private Cloud
   description: Isolated Cloud Resources
-  url: /vpc/home
+  url: "/vpc/home#dashboard:"
+  sub_services:
+    - id: dashboard
+      name: Dashboard
+      url: "/vpc/home#dashboard:"
+    - id: vpcs
+      name: Your VPCs
+      url: "/vpc/home#vpcs:"
+    - id: subnets
+      name: Subnets
+      url: "/vpc/home#subnets:"
+    - id: routetables
+      name: Route Tables
+      url: "/vpc/home#RouteTables:"
+    - id: internetgateways
+      name: Internet Gateways
+      url: "/vpc/home#igws:"
+    - id: egressonlyinternetgateways
+      name: Egress Only Internet Gateways
+      url: "/vpc/home#EgressOnlyInternetGateways:"
+    - id: carrier gateways
+      name: Carrier Gateways
+      url: "/vpc/home#CarrierGateways:"
+    - id: dhcpoptions
+      name: DHCP Options Sets
+      url: "/vpc/home#dhcpOptions:"
+    - id: elasticips
+      name: Elastic IPs
+      url: "/vpc/home#Addresses:"
+    - id: managedprefixlists
+      name: Managed Prefix Lists
+      url: "/vpc/home#ManagedPrefixLists:"
+    - id: endpoints
+      name: Endpoints
+      url: "/vpc/home#Endpoints:"
+    - id: endpointservices
+      name: Endpoint Services
+      url: "/vpc/home#EndpointServices:"
+    - id: natgateways
+      name: NAT Gateways
+      url: "/vpc/home#NatGateways:"
+    - id: peeringconnections
+      name: Peering Connections
+      url: "/vpc/home#PeeringConnections:"
+    - id: networkacls
+      name: Network ACLs
+      url: "/vpc/home#acls:"
+    - id: securitygroups
+      name: Security Groups
+      url: "/vpc/home#SecurityGroups:"
+    - id: reachabilityanalyzer
+      name: Reachability Analyzer
+      url: "/vpc/home#ReachabilityAnalyzer:"
+    - id: rulegroups
+      name: Rule Groups
+      url: "/vpc/home#DNSFirewallRuleGroups:"
+    - id: domainlists
+      name: Domain Lists
+      url: "/vpc/home#DNSFirewallDomainLists:"
+    - id: firewalls
+      name: Firewalls
+      url: "/vpc/home#NetworkFirewalls:"
+    - id: firewallpolicies
+      name: Firewall policies
+      url: "/vpc/home#NetworkFirewallPolicies:"
+    - id: networkfirewallrulegroups
+      name: Network Firewall rule groups
+      url: "/vpc/home#NetworkFirewallRuleGroups:"
+    - id: customergateways
+      name: Customer Gateways
+      url: "/vpc/home#CustomerGateways:"
+    - id: virtualprivategateways
+      name: Virtual Private Gateways
+      url: "/vpc/home#VpnGateways:"
+    - id: vpnconnections
+      name: Site-to-Site VPN Connections
+      url: "/vpc/home#VpnConnections:"
+    - id: clientvpnendpoints
+      name: Client VPN Endpoints
+      url: "/vpc/home#ClientVPNEndpoints:"
+    - id: transitgateways
+      name: Transit Gateways
+      url: "/vpc/home#TransitGateways:"
+    - id: transitgatewayattachments
+      name: Transit Gateway Attachments
+      url: "/vpc/home#TransitGatewayAttachments:"
+    - id: transitgatewayroutetables
+      name: Transit Gateway Route Tables
+      url: "/vpc/home#TransitGatewayRouteTables:"
+    - id: transitgatewaymulticast
+      name: Transit Gateway Multicast
+      url: "/vpc/home#TransitGatewayMulticastDomains:"
+    - id: networkmanager
+      name: Network Manager
+      url: "/vpc/home#networkmanager:"
+    - id: mirrorsessions
+      name: Mirror Sessions
+      url: "/vpc/home#TrafficMirrorSessions:"
+    - id: mirrortargets
+      name: Mirror Targets
+      url: "/vpc/home#TrafficMirrorTargets:"
+    - id: mirrorfilters
+      name: Mirror Filters
+      url: "/vpc/home#TrafficMirrorFilters:"
+    - id: settings
+      name: Settings
+      url: "/vpc/home#Settings:"
+
 
 - id: waf
   name: Web Application Firewall & Shield
