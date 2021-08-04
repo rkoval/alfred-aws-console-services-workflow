@@ -480,7 +480,17 @@
   name: Elastic File Storage
   short_name: EFS
   description: Managed File Storage for EC2
-  url: /efs/home
+  url: "/efs/home#/file-systems"
+  sub_services:
+    - id: filesystems
+      name: File systems
+      url: "/efs/home#/file-systems"
+    - id: accesspoints
+      name: Access points
+      url: "/efs/home#/access-points"
+    - id: settings
+      name: Settings
+      url: "/efs/home#/settings"
 
 - id: eks
   name: Elastic Kubernetes Service
