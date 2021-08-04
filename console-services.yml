@@ -632,6 +632,37 @@
   description: Manage User Access and Encryption Keys
   has_global_region: true
   url: /iam/home
+  sub_services:
+    - id: dashboard
+      name: Dashboard
+      url: "/iam/home#/home"
+    - id: usergroups
+      name: User groups
+      url: "/iamv2/home#/groups"
+    - id: users
+      name: Users
+      url: "/iamv2/home#/users"
+    - id: roles
+      name: Roles
+      url: "/iamv2/home#/roles"
+    - id: policies
+      name: Policies
+      url: "/iamv2/home#/policies"
+    - id: identityproviders
+      name: Identity providers
+      url: "/iamv2/home#/identity_providers"
+    - id: accountsettings
+      name: Account settings
+      url: "/iam/home#/account_settings"
+    - id: credentialreport
+      name: Credential report
+      url: "/iam/home#/credential_report"
+    - id: organizationactivity
+      name: Organization activity
+      url: "/iam/home#/organizations/ServiceActivity"
+    - id: scps
+      name: Service control policies (SCPs)
+      url: "/iam/home#/organizations/ServiceControlPolicies"
 
 - id: inspector
   name: Inspector
