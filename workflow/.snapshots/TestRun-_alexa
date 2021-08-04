@@ -5,7 +5,7 @@
     match: (*string)((len=24) "alexa Alexa for Business"),
     uid: (*string)((len=5) "alexa"),
     autocomplete: (*string)((len=7) " alexa "),
-    arg: (*string)((len=49) "https://us-west-2.console.aws.amazon.com/a4b/home"),
+    arg: (*string)((len=67) "https://us-west-2.console.aws.amazon.com/a4b/home?region=us-west-2#"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

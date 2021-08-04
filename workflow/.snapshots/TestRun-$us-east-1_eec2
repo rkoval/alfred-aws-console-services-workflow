@@ -5,7 +5,7 @@
     match: (*string)((len=33) "ec2imagebuilder EC2 Image Builder"),
     uid: (*string)((len=15) "ec2imagebuilder"),
     autocomplete: (*string)((len=27) "$us-east-1 ec2imagebuilder "),
-    arg: (*string)((len=58) "https://us-east-1.console.aws.amazon.com/imagebuilder/home"),
+    arg: (*string)((len=76) "https://us-east-1.console.aws.amazon.com/imagebuilder/home?region=us-east-1#"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

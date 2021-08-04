@@ -2,27 +2,27 @@
 - id: alexa
   name: Alexa for Business
   description: Empower your organization with voice
-  url: /a4b/home
+  url: "/a4b/home#"
 
 - id: amplify
   name: Amplify
   description: Develop & deploy cloud-powered mobile and web apps
-  url: /amplify/home
+  url: "/amplify/home#"
 
 - id: apigateway
   name: API Gateway
   description: Build, Deploy and Manage APIs
-  url: /apigateway/home
+  url: "/apigateway/home#"
 
 - id: appstream
   name: AppStream 2.0
   description: Stream desktop applications securely to any web browser
-  url: /appstream2/home
+  url: "/appstream2/home#"
 
 - id: appsync
   name: AppSync
   description: Real-Time Data Sync Using GraphQL for Mobile & Web Apps, Online or Offline
-  url: /appsync/home
+  url: "/appsync/home#"
 
 - id: artifact
   name: Artifact
@@ -33,27 +33,27 @@
 - id: athena
   name: Athena
   description: Query Data in S3 using SQL
-  url: /athena/home
+  url: "/athena/home#"
 
 - id: autoscaling
   name: Auto Scaling
   description: AWS Auto Scaling enables you to quickly scale your entire application on AWS
-  url: /awsautoscaling/home
+  url: "/awsautoscaling/home#"
 
 - id: backup
   name: Backup
   description: centrally manage and automate backups across AWS services
-  url: /backup/home
+  url: "/backup/home#"
 
 - id: batch
   name: Batch
   description: Run Batch Jobs at Any Scale
-  url: /batch/home
+  url: "/batch/home#"
 
 - id: blockchain
   name: Blockchain
   description: Easily create and manage scalable blockchain networks
-  url: /managedblockchain/home
+  url: "/managedblockchain/home#"
 
 - id: billing
   name: Billing
@@ -132,205 +132,205 @@
 - id: cloud9
   name: Cloud9
   description: A Cloud IDE for Writing, Running, and Debugging Code
-  url: /cloud9/home
+  url: "/cloud9/home#"
 
 - id: cloudformation
   name: CloudFormation
   description: Create and Manage Resources with Templates
-  url: '/cloudformation/home#/stacks'
+  url: "/cloudformation/home#/stacks"
   sub_services:
     - id: stacks
       name: Stacks
-      url: '/cloudformation/home#/stacks'
+      url: "/cloudformation/home#/stacks"
     - id: stacksets
       name: StackSets
-      url: '/cloudformation/home#/stacksets'
+      url: "/cloudformation/home#/stacksets"
     - id: designer
       name: Designer
-      url: '/cloudformation/designer/home'
+      url: "/cloudformation/designer/home"
 
 - id: cloudfront
   name: CloudFront
   description: Global Content Delivery Network
-  url: '/cloudfront/home#'
   has_global_region: true
+  url: '/cloudfront/home#'
   sub_services:
     - id: distributions
       name: Distributions
-      url: '/cloudfront/home#'
+      url: "/cloudfront/home#"
     - id: policies
       name: Policies
-      url: '/cloudfront/v2/home#/policies'
+      url: "/cloudfront/v2/home#/policies"
     - id: cachestatistics
       name: Cache statistics
-      url: '/cloudfront/home#cache_stat_reports:'
+      url: "/cloudfront/home#cache_stat_reports:"
     - id: monitoring
       name: Monitoring
-      url: '/cloudfront/v2/home#/monitoring'
+      url: "/cloudfront/v2/home#/monitoring"
     - id: alarms
       name: Alarms
-      url: '/cloudfront/home#alarms:'
+      url: "/cloudfront/home#alarms:"
     - id: popularobjects
       name: Popular objects
-      url: '/cloudfront/home#popular_urls:'
+      url: "/cloudfront/home#popular_urls:"
     - id: referrers
       name: Top referrers
-      url: '/cloudfront/home#referers_report:'
+      url: "/cloudfront/home#referers_report:"
     - id: usage
       name: Usage
-      url: '/cloudfront/home#usage_reports:'
+      url: "/cloudfront/home#usage_reports:"
     - id: viewers
       name: Viewers
-      url: '/cloudfront/home#viewers_reports:'
+      url: "/cloudfront/home#viewers_reports:"
     - id: oai
       name: Origin access identity
-      url: '/cloudfront/home#oai:'
+      url: "/cloudfront/home#oai:"
     - id: publickey
       name: Public key
-      url: '/cloudfront/home#publickey:'
+      url: "/cloudfront/home#publickey:"
     - id: fle
       name: Field-level encryption
-      url: '/cloudfront/home#fle:'
+      url: "/cloudfront/home#fle:"
 
 - id: cloudhsm
   name: CloudHSM
   description: Managed Hardware Security Modules in the Cloud
-  url: /cloudhsm/home
+  url: "/cloudhsm/home#"
 
 - id: cloudmap
   name: Cloud Map
   description: Build a dynamic map of your cloud
-  url: /cloudmap/home
+  url: "/cloudmap/home#"
 
 - id: cloudsearch
   name: CloudSearch
   description: Managed Search Service
-  url: /cloudsearch/home
+  url: "/cloudsearch/home#"
 
 - id: cloudtrail
   name: CloudTrail
   description: Track User Activity and API Usage
-  url: /cloudtrail/home
+  url: "/cloudtrail/home#"
 
 - id: cloudwatch
   name: CloudWatch
   description: Monitor Resources and Applications
-  url: '/cloudwatch/home#'
+  url: "/cloudwatch/home#"
   sub_services:
     - id: home
       name: Home
-      url: '/cloudwatch/home#'
+      url: "/cloudwatch/home#"
     - id: dashboards
       name: Dashboards
-      url: '/cloudwatch/home#dashboards:'
+      url: "/cloudwatch/home#dashboards:"
     - id: alarms
       name: Alarms
-      url: '/cloudwatch/home#alarmsV2:'
+      url: "/cloudwatch/home#alarmsV2:"
     - id: loggroups
       name: Log groups
-      url: '/cloudwatch/home#logsV2:log-groups'
+      url: "/cloudwatch/home#logsV2:log-groups"
     - id: loginsights
       name: Log insights
-      url: '/cloudwatch/home#logsV2:logs-insights'
+      url: "/cloudwatch/home#logsV2:logs-insights"
     - id: metrics
       name: Metrics
-      url: '/cloudwatch/home#metricsV2:graph=~()'
+      url: "/cloudwatch/home#metricsV2:graph=~()"
     - id: servicelensmap
       name: ServiceLens – Service Map
-      url: '/cloudwatch/home#servicelens:map'
+      url: "/cloudwatch/home#servicelens:map"
     - id: servicelenstracing
       name: ServiceLens – Tracing
-      url: '/cloudwatch/home#servicelens:traces'
+      url: "/cloudwatch/home#servicelens:traces"
     - id: containerinsightsresources
       name: Container Insights – Resources
-      url: '/cloudwatch/home#container-insights:infrastructure'
+      url: "/cloudwatch/home#container-insights:infrastructure"
     - id: containerinsightsperformance
       name: Container Insights – Performance
-      url: '/cloudwatch/home#container-insights:performance'
+      url: "/cloudwatch/home#container-insights:performance"
     - id: syntheticscanaries
       name: Synthetics – Canaries
-      url: '/cloudwatch/home#synthetics:canary/list'
+      url: "/cloudwatch/home#synthetics:canary/list"
     - id: contributorinsights
       name: Contributor Insights
-      url: '/cloudwatch/home#contributorinsights:'
+      url: "/cloudwatch/home#contributorinsights:"
     - id: settings
       name: Settings
-      url: '/cloudwatch/home#settings:'
+      url: "/cloudwatch/home#settings:"
     - id: dashboards
       name: Dashboards
-      url: '/cloudwatch/home#dashboards:'
+      url: "/cloudwatch/home#dashboards:"
 
 - id: codebuild
   name: CodeBuild
   description: Build and Test Code
-  url: /codebuild/home
+  url: "/codebuild/home#"
 
 - id: codecommit
   name: CodeCommit
   description: Store Code in Private Git Repositories
-  url: /codecommit/home
+  url: "/codecommit/home#"
 
 - id: codedeploy
   name: CodeDeploy
   description: Automate Code Deployments
-  url: /codedeploy/home
+  url: "/codedeploy/home#"
 
 - id: codepipeline
   name: CodePipeline
   description: Release Software using Continuous Delivery
-  url: /codepipeline/home
+  url: "/codepipeline/home#"
 
 - id: codestar
   name: Codestar
   description: Develop, build and deploy applications
-  url: /codestar/home
+  url: "/codestar/home#"
 
 - id: cognito
   name: Cognito
   description: User Identity and App Data Synchronization
-  url: /cognito/home
+  url: "/cognito/home#"
 
 - id: comprehend
   name: Comprehend
   description: Analyze Unstructured Text
-  url: /comprehend/home
+  url: "/comprehend/home#"
 
 - id: config
   name: Config
   description: Track Resource Inventory and Changes
-  url: /config/home
+  url: "/config/home#"
 
 - id: connect
   name: Connect
   description: managed contact center that enables engagement at any scale
-  url: /connect/home
+  url: "/connect/home#"
 
 - id: controltower
   name: Control Tower
   description: set up and govern your multi-account AWS environment
-  url: /controltower/home
+  url: "/controltower/home#"
 
 - id: costreports
   name: Cost Explorer
   description: Visualize and Explore Your AWS Costs and Usage
   extra_search_terms:
     - reports
-  url: /cost-reports/home
+  url: "/cost-reports/home#"
 
 - id: datapipeline
   name: Data Pipeline
   description: Orchestration for Data-Driven Workflows
-  url: /datapipeline/home
+  url: "/datapipeline/home#"
 
 - id: datasync
   name: DataSync
   description: DataSync simplifies, automates, and accelerates moving data
-  url: /datasync/home
+  url: "/datasync/home#"
 
 - id: deeplens
   name: DeepLens
   description: Deep Learning Enabled Video Camera
-  url: /deeplens/home
+  url: "/deeplens/home#"
 
 - id: devicefarm
   name: Device Farm
@@ -341,28 +341,28 @@
 - id: directconnect
   name: Direct Connect
   description: Dedicated Network Connection to AWS
-  url: /directconnect/v2/home
+  url: "/directconnect/v2/home#"
 
 - id: directoryservice
   name: Directory Service
   description: Host and Manage Active Directory
-  url: /directoryservice/home
+  url: "/directoryservice/home#"
 
 - id: discovery
   name: Application Discovery Service
   description: Discover on-premises application inventory and dependencies
-  url: /discovery/home
+  url: "/discovery/home#"
 
 - id: dms
   name: Database Migation Service
   short_name: DMS
   description: Managed Database Migration Service
-  url: /dms/v2/home
+  url: "/dms/v2/home#"
 
 - id: documentdb
   name: DocumentDB
   description: Fully-managed MongoDB-compatible database service
-  url: /docdb/home
+  url: "/docdb/home#"
 
 - id: dynamodb
   name: DynamoDB
@@ -407,20 +407,20 @@
   name: Elastic Cloud Compute
   short_name: EC2
   description: Virtual Servers in the Cloud
-  url: '/ec2/home#Home:'
+  url: "/ec2/home#Home:"
   sub_services:
     - id: dashboard
       name: Dashboard
-      url: '/ec2/home#Home:'
+      url: "/ec2/home#Home:"
     - id: events
       name: Events
-      url: '/ec2/home#Events:'
+      url: "/ec2/home#Events:"
     - id: tags
       name: Tags
-      url: '/ec2/home#Tags:'
+      url: "/ec2/home#Tags:"
     - id: limits
       name: Limits
-      url: '/ec2/home#Limits:'
+      url: "/ec2/home#Limits:"
     - id: instances
       name: Instances
       url: "/ec2/v2/home#Instances:"
@@ -429,64 +429,64 @@
       url: "/ec2/v2/home#InstanceTypes:"
     - id: launchtemplates
       name: Launch Templates
-      url: '/ec2/home#LaunchTemplates:'
+      url: "/ec2/home#LaunchTemplates:"
     - id: spotrequests
       name: Spot Requests
-      url: '/ec2sp'
+      url: "/ec2sp"
     - id: savingsplans
       name: Savings Plans
-      url: '/ec2/home#SavingsPlans:'
+      url: "/ec2/home#SavingsPlans:"
     - id: reservedinstances
       name: Reserved Instances
-      url: '/ec2/home#ReservedInstances:'
+      url: "/ec2/home#ReservedInstances:"
     - id: dedicatedhosts
       name: Dedicated Hosts
-      url: '/ec2/home#Hosts:'
+      url: "/ec2/home#Hosts:"
     - id: scheduledinstances
       name: Scheduled Instances
-      url: '/ec2sp/v2/si/home'
+      url: "/ec2sp/v2/si/home"
     - id: capacityreservations
       name: Capacity Reservations
-      url: '/ec2sp/v2/home/#/cr/reservations'
+      url: "/ec2sp/v2/home/#/cr/reservations"
     - id: amis
       name: AMIs
-      url: '/ec2/home#Images:'
+      url: "/ec2/home#Images:"
     - id: volumes
       name: Volume
-      url: '/ec2/home#Volumes:'
+      url: "/ec2/home#Volumes:"
     - id: snapshots
       name: Snapshots
-      url: '/ec2/home#Snapshots:'
+      url: "/ec2/home#Snapshots:"
     - id: lifecyclemanager
       name: Lifecycle Manager
-      url: '/ec2/home#Lifecycle:'
+      url: "/ec2/home#Lifecycle:"
     - id: securitygroups
       name: Security Groups
       url: "/ec2/v2/home#SecurityGroups:"
     - id: elasticips
       name: Elastic IPs
-      url: '/ec2/home#Addresses:'
+      url: "/ec2/home#Addresses:"
     - id: placementgroups
       name: Placement Groups
-      url: '/ec2/home#PlacementGroups:'
+      url: "/ec2/home#PlacementGroups:"
     - id: keypairs
       name: Key Pairs
-      url: '/ec2/home#KeyPairs:'
+      url: "/ec2/home#KeyPairs:"
     - id: networkinterfaces
       name: Network Interfaces
-      url: '/ec2/home#NIC:'
+      url: "/ec2/home#NIC:"
     - id: loadbalancers
       name: Load Balancers
-      url: '/ec2/home#LoadBalancers:'
+      url: "/ec2/home#LoadBalancers:"
     - id: targetgroups
       name: Target Groups
-      url: '/ec2/home#TargetGroups:'
+      url: "/ec2/home#TargetGroups:"
     - id: launchconfigs
       name: Launch Configurations
-      url: '/ec2autoscaling/home#/lc'
+      url: "/ec2autoscaling/home#/lc"
     - id: autoscalinggroups
       name: Auto Scaling Groups
-      url: '/ec2autoscaling/home#/details'
+      url: "/ec2autoscaling/home#/details"
 
 - id: ecr
   name: Elastic Container Registry
@@ -610,68 +610,68 @@
   name: Elasticsearch Service
   short_name: ESS
   description: Run and Scale Elasticsearch Clusters
-  url: /es/home
+  url: "/es/home#"
 
 - id: elastictranscoder
   name: Elastic Transcoder
   description: Easy-to-Use Scalable Media Transcoding
-  url: /elastictranscoder/home
+  url: "/elastictranscoder/home#"
 
 - id: emr
   name: Elastic Map Reduce
   short_name: EMR
   description: Managed Hadoop Framework
-  url: /elasticmapreduce/home
+  url: "/elasticmapreduce/home#"
 
 - id: eventbridge
   name: EventBridge
   description: Serverless event bus that connects application data from your own apps, SaaS, and AWS services
-  url: /events/home
+  url: "/events/home#"
 
 - id: forecast
   name: Forecast
   description: fully-managed service for accurate time-series forecasting
-  url: /forecast/home
+  url: "/forecast/home#"
 
 - id: freertos
   name: FreeRTOS
   description: IoT Operating System for Microcontrollers
-  url: /freertos/home
+  url: "/freertos/home#"
 
 - id: fsx
   name: FSx
   description: Fully managed third-party file systems optimized for a variety of workloads
-  url: /fsx/home
+  url: "/fsx/home#"
 
 - id: gamelift
   name: GameLift
   description: Deploy and Scale Session-based Multiplayer Games
-  url: /gamelift/home
+  url: "/gamelift/home#"
 
 - id: glacier
   name: S3 Glacier
   description: Archive Storage in the Cloud
-  url: /glacier/home
+  url: "/glacier/home#"
 
 - id: globalaccelerator
   name: Global Accelerator
   description: Improve your application’s availability and performance using the AWS Global Network
-  url: /ec2/v2/home#GlobalAcceleratorDashboard
+  url: "/ec2/v2/home#GlobalAcceleratorDashboard#"
 
 - id: glue
   name: Glue
   description: fully managed ETL (extract, transform, and load) service
-  url: /glue/home
+  url: "/glue/home#"
 
 - id: groundstation
   name: Ground Station
   description: Communicate with satellites
-  url: /groundstation/home
+  url: "/groundstation/home#"
 
 - id: guardduty
   name: GuardDuty
   description: Intelligent Threat Detection to Protect Your AWS Accounts and Workloads
-  url: /guardduty/home
+  url: "/guardduty/home#"
 
 - id: iam
   name: Identity and Access Management
@@ -731,65 +731,65 @@
 - id: inspector
   name: Inspector
   description: Analyze Application Security
-  url: /inspector/home
+  url: "/inspector/home#"
 
 # TODO consolidate IoT services into sub-services
 - id: iot1click
   name: IoT 1-Click
   description:  Trigger AWS Lambda functions from simple devices
-  url: /iot1click/home
+  url: "/iot1click/home#"
 
 - id: iotanalytics
   name: IoT Analytics
   description: Collect, preprocess, store, analyze and visualize data of IoT devices
-  url: /iotanalytics/home
+  url: "/iotanalytics/home#"
 
 - id: iot
   name: IoT Core
   description: Connect Devices to the Cloud
-  url: /iot/home
+  url: "/iot/home#"
 
 - id: iotdevicedefender
   name: IoT Device Defender
   description: Connect Devices to the Cloud
-  url: /devicedefender/home
+  url: "/devicedefender/home#"
 
 - id: iotdevicemanagement
   name: IoT Device Management
   description: Securely Manage Fleets as Small as One Device, or as Broad as Millions of Devices
-  url: /iotdm/home
+  url: "/iotdm/home#"
 
 - id: iotevents
   name: IoT Events
   description: Monitor device fleets for changes and trigger alerts to respond
-  url: /iotevents/home
+  url: "/iotevents/home#"
 
 - id: iotgreengrass
   name: IoT Greengrass
   description: Deploy and run code on your devices
-  url: /iotgreengrass/home
+  url: "/iotgreengrass/home#"
 
 - id: iotsitewise
   name: IoT SiteWise
   description: Data driven decisions in Industrial operations
-  url: /iotsitewise/home
+  url: "/iotsitewise/home#"
 
 - id: iotthingsgraph
   name: IoT Things Graph
   description: Easily connect devices and web services to build IoT applications
-  url: /thingsgraph/home
+  url: "/thingsgraph/home#"
 
 - id: msk
   name: Managed Streaming for Apache Kafka
   short_name: MSK
   description: Fully managed, highly available, and secure service for Apache Kafka
-  url: /msk/home
+  url: "/msk/home#"
 
 - id: kms
   name: Key Management Service
   short_name: KMS
   description: Securely Generate and Manage AWS Encryption Keys
-  url: /kms/home
+  url: "/kms/home#"
 
 - id: kinesis
   name: Kinesis
@@ -833,12 +833,12 @@
 - id: lex
   name: Lex
   description: Build Voice and Text Chatbots
-  url: /lex/home
+  url: "/lex/home#"
 
 - id: licensemanager
   name: License Manager
   description: Set rules to manage, discover, and report third-party license usage proactively
-  url: /license-manager/home
+  url: "/license-manager/home#"
 
 - id: lightsail
   name: Lightsail
@@ -848,12 +848,12 @@
 - id: macie
   name: Macie
   description: Amazon Macie classifies and secures your business-critical content.
-  url: /macie/home
+  url: "/macie/home#"
 
 - id: managedservices
   name: Managed Services
   description: IT operations management for AWS
-  url: /managedservices/home
+  url: "/managedservices/home#"
 
 - id: marketplace
   name: Marketplace Subscriptions
@@ -864,54 +864,54 @@
 - id: mediaconnect
   name: MediaConnect
   description: Reliable, secure, and flexible transport for live video
-  url: /mediaconnect/home
+  url: "/mediaconnect/home#"
 
 - id: mediaconvert
   name: MediaConvert
   description: Convert file-based content for broadcast and multiscreen delivery
-  url: /mediaconvert/home
+  url: "/mediaconvert/home#"
 
 - id: medialive
   name: MediaLive
   description: Convert video inputs into live outputs for broadcast and streaming delivery
-  url: /medialive/home
+  url: "/medialive/home#"
 
 - id: mediapackage
   name: MediaPackage
   description: Deliver video to many devices using just-in-time format conversion
-  url: /mediapackage/home
+  url: "/mediapackage/home#"
 
 - id: mediastore
   name: MediaStore
   description: Store and deliver video assets for live or on-demand media workflows
-  url: /mediastore/home
+  url: "/mediastore/home#"
 
 - id: mediatailor
   name: MediaTailor
   description: Personalize and monetize multiscreen content with server-side ad insertion
-  url: /mediatailor/home
+  url: "/mediatailor/home#"
 
 - id: migrationhub
   name: Migration Hub
   description: Simplify and accelerate the migration of your data centers to AWS
-  url: /migrationhub/home
+  url: "/migrationhub/home#"
 
 - id: mobilehub
   name: Mobile Hub
   description: Build, Test, and Monitor Mobile Apps
-  url: /mobilehub/home
+  url: "/mobilehub/home#"
 
 - id: mq
   name: MQ
   description: Managed message broker service for Apache ActiveMQ
   extra_search_terms:
     - activemq
-  url: /amazon-mq/home
+  url: "/amazon-mq/home#"
 
 - id: neptune
   name: Neptune
   description: Fast, reliable graph database built for the cloud
-  url: /neptune/home
+  url: "/neptune/home#"
 
 - id: opsworks
   name: OpsWorks
@@ -928,17 +928,17 @@
 - id: personalize
   name: Personalize
   description: easily add real-time recommendations to your apps
-  url: /personalize/home
+  url: "/personalize/home#"
 
 - id: pinpoint
   name: Pinpoint
   description: Engage Users via Email, SMS, Push & Analytics
-  url: /pinpoint/home
+  url: "/pinpoint/home#"
 
 - id: polly
   name: Polly
   description: Turn Text into Lifelike Speech
-  url: /polly/home
+  url: "/polly/home#"
 
 - id: quicksight
   name: QuickSight
@@ -1057,17 +1057,17 @@
 - id: rekognition
   name: Rekognition
   description: Search and Analyze Images
-  url: /rekognition/home
+  url: "/rekognition/home#"
 
 - id: ram
   name: Resource Access Manager
   description: Share AWS resources with other accounts or AWS Organizations
-  url: /ram/home
+  url: "/ram/home#"
 
 - id: robomaker
   name: RoboMaker
   description: Develop, test, and deploy intelligent robotics applications
-  url: /robomaker/home
+  url: "/robomaker/home#"
 
 - id: route53
   name: Route 53
@@ -1120,55 +1120,55 @@
 - id: sagemaker
   name: SageMaker
   description: Build, Train, and Deploy Machine Learning Models
-  url: /sagemaker/home
+  url: "/sagemaker/home#"
 
 - id: secretsmanager
   name: Secrets Manager
   description: Easily rotate, manage, and retrieve secrets throughout their lifecycle
-  url: /secretsmanager/home
+  url: "/secretsmanager/home#"
 
 - id: securityhub
   name: Security Hub
   description: AWS’s security and compliance center
-  url: /securityhub/home
+  url: "/securityhub/home#"
 
 - id: serverlessrepo
   name: Serverless Application Repository
   description: Assemble, deploy, and share serverless applications within teams or publicly
-  url: /serverlessrepo/home
+  url: "/serverlessrepo/home#"
 
 - id: servermigrationservice
   name: Server Migration Service
   description: Migrate on-premises servers to AWS
-  url: /servermigration/home
+  url: "/servermigration/home#"
 
 - id: servicecatalog
   name: Service Catalog
   description: allows organizations to manage approved catalogs of IT resources and make them available to employees via a personalized portal.
-  url: /servicecatalog/home
+  url: "/servicecatalog/home#"
 
 - id: ses
   name: Simple Email Service
   short_name: SES
   description: Email Sending and Receiving Service
-  url: /ses/home
+  url: "/ses/home#"
 
 - id: swf
   name: Simple Workflow Service
   short_name: SWF
   description: Workflow Service for Coordinating Application Components
-  url: /swf/home
+  url: "/swf/home#"
 
 - id: transfer
   name: Transfer for SFTP
   description: Fully-managed SFTP service for Amazon S3
-  url: /transfer/home
+  url: "/transfer/home#"
 
 - id: singlesignon
   name: Single Sign-On
   short_name: SSO
   description: Manage Single Sign-On (SSO) Access to AWS Accounts and Business Applications
-  url: /singlesignon/home
+  url: "/singlesignon/home#"
 
 - id: snowfamily
   name: Snow Family
@@ -1177,7 +1177,7 @@
     - snowball
     - snowcone
     - snowmobile
-  url: /snowfamily/home
+  url: "/snowfamily/home#"
 
 - id: sns
   name: Simple Notification Service
@@ -1217,22 +1217,22 @@
 - id: stepfunctions
   name: Step Functions
   description: Coordinate Distributed Applications
-  url: /states/home
+  url: "/states/home#"
 
 - id: storagegateway
   name: Storage Gateway
   description: Hybrid Storage Integration
-  url: /storagegateway/home
+  url: "/storagegateway/home#"
 
 - id: sumerian
   name: Sumerian
   description: Build VR, AR, and 3D applications
-  url: /sumerianv2/home
+  url: "/sumerianv2/home#"
 
 - id: systemsmanager
   name: Systems Manager
   description: Gain operational insights and take action on AWS resources
-  url: /systems-manager/home
+  url: "/systems-manager/home#"
 
 - id: support
   name: Support
@@ -1243,12 +1243,12 @@
 - id: transcribe
   name: Transcribe
   description: Powerful Speech Recognition
-  url: /transcribe/home
+  url: "/transcribe/home#"
 
 - id: translate
   name: Translate
   description: Translate Text in Real-time
-  url: /translate/home
+  url: "/translate/home#"
 
 - id: trustedadvisor
   name: Trusted Advisor
@@ -1394,52 +1394,52 @@
 - id: wellarchitectedtool
   name: Well-Architected Tool
   description: Learn best practices, measure, and improve your workloads
-  url: /wellarchitected/home
+  url: "/wellarchitected/home#"
 
 - id: worklink
   name: WorkLink
   description: Enable secure mobile access to internal websites and web apps
-  url: /worklink/home
+  url: "/worklink/home#"
 
 - id: workmail
   name: WorkMail
   description: Secure Email and Calendaring Service
-  url: /workmail/home
+  url: "/workmail/home#"
 
 - id: workspaces
   name: WorkSpaces
   description: Desktops in the Cloud
-  url: /workspaces/home
+  url: "/workspaces/home#"
 
 - id: xray
   name: X-Ray
   description: Analyze and Debug Your Applications
-  url: /xray/home
+  url: "/xray/home#"
 
 - id: appmesh
   name: App Mesh
   description: Application-level networking for all your services
-  url: /appmesh/home
+  url: "/appmesh/home#"
 
 - id: augmentedai
   name: Augmented AI
   description: Easy implement human review of machine learning predictions
-  url: /a2i/home
+  url: "/a2i/home#"
 
 - id: bracket
   name: Braket
   description: Explore and experiment with quantum computing
-  url: /braket/home
+  url: "/braket/home#"
 
 - id: mcs
   name: Keyspaces (for Apache Cassandra)
   description: A scalable, highly available, and managed Apache Cassandra–compatible database service
-  url: /keyspaces/home
+  url: "/keyspaces/home#"
 
 - id: codeguru
   name: CodeGuru
   description: Intelligent recommendations for building and running modern applications
-  url: /codeguru/home
+  url: "/codeguru/home#"
 
 - id: computeoptimizer
   name: Compute Optimizer
@@ -1450,37 +1450,37 @@
 - id: deepracer
   name: DeepRacer
   description: Fully autonomous 1/18th scale race car, driven by machine learning
-  url: /deepracer/home
+  url: "/deepracer/home#"
 
 - id: detective
   name: Detective
   description: Investigate and analyse possible security issues
-  url: /detective/home
+  url: "/detective/home#"
 
 - id: ec2imagebuilder
   name: EC2 Image Builder
   description: A managed service to automate build, customize and deploy OS images
-  url: /imagebuilder/home
+  url: "/imagebuilder/home#"
 
 - id: frauddetector
   name: Fraud Detector
   description: Detect more online fraud faster with machine learning
-  url: /frauddetector/home
+  url: "/frauddetector/home#"
 
 - id: kendra
   name: Kendra
   description: Highly accurate enterprise search powered by machine learning
-  url: /kendra/home
+  url: "/kendra/home#"
 
 - id: qldb
   name: QLDB
   description: Fully managed ledger database
-  url: /qldb/home
+  url: "/qldb/home#"
 
 - id: outpost
   name: Outposts
   description: Run AWS Services On Premises
-  url: /outposts/home
+  url: "/outposts/home#"
 
 - id: iq
   name: IQ
@@ -1496,7 +1496,7 @@
 - id: launchwizard
   name: Launch Wizard
   description: Size, configure, and deploy third-party applications on AWS
-  url: /launchwizard/home
+  url: "/launchwizard/home#"
 
 - id: status
   name: Status

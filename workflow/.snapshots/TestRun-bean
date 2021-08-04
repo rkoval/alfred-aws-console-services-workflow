@@ -5,7 +5,7 @@
     match: (*string)((len=21) "transcribe Transcribe"),
     uid: (*string)((len=10) "transcribe"),
     autocomplete: (*string)((len=11) "transcribe "),
-    arg: (*string)((len=56) "https://us-west-2.console.aws.amazon.com/transcribe/home"),
+    arg: (*string)((len=74) "https://us-west-2.console.aws.amazon.com/transcribe/home?region=us-west-2#"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
