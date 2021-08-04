@@ -747,7 +747,23 @@
 - id: kinesis
   name: Kinesis
   description: Work with Real-Time Streaming Data
-  url: /kinesis/home
+  url: "/kinesis/home#dashboard"
+  sub_services:
+    - id: dashboard
+      name: Dashboard
+      url: "/kinesis/home#dashboard"
+    - id: datastreams
+      name: Data streams
+      url: "/kinesis/home#/streams/list"
+    - id: firehose
+      name: Firehose delivery streams
+      url: "/firehose/home#/dashboard/list"
+    - id: videostreams
+      name: Video streams
+      url: "/kinesisvideo/home"
+    - id: analytics
+      name: Analytics applications
+      url: "/kinesisanalytics/home#/applications/dashboard"
 
 - id: lambda
   name: Lambda
