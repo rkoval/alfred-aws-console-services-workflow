@@ -83,7 +83,9 @@ func (s Route53HostedZoneSearcher) addToWorkflow(wf *aw.Workflow, searchArgs sea
 	subtitleArray = util.AppendString(subtitleArray, entity.Id)
 	subtitle := strings.Join(subtitleArray, " – ")
 
-	path := fmt.Sprintf("/route53/v2/hostedzones#ListRecordSets/%s", *entity.Id)
+	id := strings.Replace(*entity.Id, "/hostedzone/", "", 1) // aws sdk prepends this for some reason when console links can't have it
+
+	path := fmt.Sprintf("/route53/v2/hostedzones#ListRecordSets/%s", id)
 	item := util.NewURLItem(wf, title).
 		Subtitle(subtitle).
 		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.GetRegion())).
