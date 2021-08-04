@@ -104,9 +104,6 @@
     - id: designer
       name: Designer
       url: '/cloudformation/designer/home'
-    - id: resourcetypes
-      name: Resource Types
-      url: '/cloudformation/home#/registry/resourceTypes'
 
 - id: cloudfront
   name: CloudFront
