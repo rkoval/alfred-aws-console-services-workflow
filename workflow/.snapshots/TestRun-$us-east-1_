@@ -331,7 +331,7 @@
   }),
   (*aw.Item)({
     title: (string) (len=10) "blockchain",
-    subtitle: (*string)((len=68) "Blockchain – Easily create and manage scalable blockchain networks"),
+    subtitle: (*string)((len=73) "🗂 Blockchain – Easily create and manage scalable blockchain networks"),
     match: (*string)((len=21) "blockchain Blockchain"),
     uid: (*string)((len=10) "blockchain"),
     autocomplete: (*string)((len=22) "$us-east-1 blockchain "),

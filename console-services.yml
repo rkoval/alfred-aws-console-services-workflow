@@ -98,6 +98,13 @@
   name: Blockchain
   description: Easily create and manage scalable blockchain networks
   url: "/managedblockchain/home#"
+  sub_services:
+    - id: networks
+      name: Networks
+      url: /managedblockchain/home#networks
+    - id: invitations
+      name: Invitations
+      url: /managedblockchain/home#invitations
 
 - id: billing
   name: Billing
