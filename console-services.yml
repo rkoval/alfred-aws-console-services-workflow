@@ -464,7 +464,17 @@
   name: Elastic Container Service
   short_name: ECS
   description: Run and Manage Docker Containers
-  url: /ecs/home
+  url: "/ecs/home#/clusters"
+  sub_services:
+    - id: clusters
+      name: Clusters
+      url: "/ecs/home#/clusters"
+    - id: taskdefinitions
+      name: Task Definitions
+      url: "/ecs/home#/taskDefinitions"
+    - id: settings
+      name: Account settings
+      url: "/ecs/home#/settings"
 
 - id: efs
   name: Elastic File Storage
