@@ -71,7 +71,7 @@
     match: (*string)((len=22) "apigateway API Gateway"),
     uid: (*string)((len=10) "apigateway"),
     autocomplete: (*string)((len=22) "$us-east-1 apigateway "),
-    arg: (*string)((len=74) "https://us-east-1.console.aws.amazon.com/apigateway/home?region=us-east-1#"),
+    arg: (*string)((len=79) "https://us-east-1.console.aws.amazon.com/apigateway/main/apis?region=us-east-1#"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

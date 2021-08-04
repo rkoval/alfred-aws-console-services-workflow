@@ -12,7 +12,7 @@
 - id: apigateway
   name: API Gateway
   description: Build, Deploy and Manage APIs
-  url: "/apigateway/home#"
+  url: "/apigateway/main/apis#"
 
 - id: appstream
   name: AppStream 2.0
