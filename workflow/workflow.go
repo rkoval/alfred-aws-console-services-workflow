@@ -225,11 +225,11 @@ func handleOpenAll(wf *aw.Workflow, awsService *awsworkflow.AwsService, allAwsSe
 	if openAll {
 		if awsService == nil {
 			for _, awsService := range allAwsServices {
-				openServiceInBrowser(wf, &awsService, cfg)
+				openServiceInBrowser(wf, awsService, awsService, cfg)
 			}
 		} else {
 			for _, subService := range awsService.SubServices {
-				openServiceInBrowser(wf, &subService, cfg)
+				openServiceInBrowser(wf, subService, *awsService, cfg)
 			}
 		}
 	} else {
@@ -254,8 +254,8 @@ func handleOpenAll(wf *aw.Workflow, awsService *awsworkflow.AwsService, allAwsSe
 	}
 }
 
-func openServiceInBrowser(wf *aw.Workflow, awsService *awsworkflow.AwsService, cfg aws.Config) {
-	cmd := exec.Command("open", util.ConstructAWSConsoleUrl(awsService.Url, awsService.GetRegion(cfg)))
+func openServiceInBrowser(wf *aw.Workflow, awsService, awsServiceForRegion awsworkflow.AwsService, cfg aws.Config) {
+	cmd := exec.Command("open", util.ConstructAWSConsoleUrl(awsService.Url, awsServiceForRegion.GetRegion(cfg)))
 	if err := wf.RunInBackground("open-service-in-browser-"+awsService.Id, cmd); err != nil {
 		panic(err)
 	}
