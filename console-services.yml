@@ -1152,7 +1152,11 @@
   name: Simple Queue Service
   short_name: SQS
   description: SQS Managed Message Queues
-  url: /sqs/v2/home
+  url: "/sqs/v2/home#/queues"
+  sub_services:
+    - id: queues
+      name: Queues
+      url: "/sqs/v2/home#/queues"
 
 - id: stepfunctions
   name: Step Functions
