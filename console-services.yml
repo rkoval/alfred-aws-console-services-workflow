@@ -448,7 +448,17 @@
   name: Elastic Container Registry
   short_name: ECR
   description: Fully-managed Docker container registry
-  url: /ecr/home
+  url: /ecr/repositories
+  sub_services:
+    - id: repositories
+      name: Repositories
+      url: /ecr/repositories
+    - id: registries
+      name: Registries
+      url: /ecr/registries
+    - id: publicgallery
+      name: Public gallery
+      url: https://gallery.ecr.aws/
 
 - id: ecs
   name: Elastic Container Service
