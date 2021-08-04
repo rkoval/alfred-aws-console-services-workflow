@@ -14,21 +14,20 @@ type AwsService struct {
 	HasGlobalRegion  bool         `yaml:"has_global_region"`
 }
 
-func (this AwsService) GetName() string {
-	if this.ShortName != "" {
-		return this.ShortName + " – " + this.Name
+func (s *AwsService) GetName() string {
+	if s.ShortName != "" {
+		return s.ShortName + " – " + s.Name
 	}
-	return this.Name
+	return s.Name
 }
 
-func (this AwsService) GetRegion(cfg aws.Config) string {
-	region := cfg.Region
-	if this.HasGlobalRegion {
-		region = ""
+func (s *AwsService) GetRegion(cfg aws.Config) string {
+	if s.HasGlobalRegion {
+		return ""
 	}
-	return region
+	return cfg.Region
 }
 
-func (this AwsService) HasSubServices() bool {
-	return this.SubServices != nil && len(this.SubServices) > 0
+func (s *AwsService) HasSubServices() bool {
+	return s.SubServices != nil && len(s.SubServices) > 0
 }
