@@ -496,7 +496,11 @@
   name: Elastic Kubernetes Service
   short_name: EKS
   description: Managed Kubernetes on AWS
-  url: /eks/home
+  url: /eks/home#/clusters
+  sub_services:
+    - id: clusters
+      name: Clusters
+      url: "/eks/home#/clusters"
 
 - id: elasticache
   name: ElastiCache
