@@ -1,0 +1,35 @@
+([]*aw.Item) (len=1) {
+  (*aw.Item)({
+    title: (string) (len=16) "elasticbeanstalk",
+    subtitle: (*string)((len=50) "🗂 Elastic Beanstalk – Run and Manage Web Apps"),
+    match: (*string)((len=34) "elasticbeanstalk Elastic Beanstalk"),
+    uid: (*string)((len=16) "elasticbeanstalk"),
+    autocomplete: (*string)((len=29) "$cn-north-1 elasticbeanstalk "),
+    arg: (*string)((len=93) "https://cn-north-1.console.amazonaws.cn/elasticbeanstalk/home?region=cn-north-1#/environments"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    icon: (*aw.Icon)({
+      Value: (string) (len=27) "images/elasticbeanstalk.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  })
+}

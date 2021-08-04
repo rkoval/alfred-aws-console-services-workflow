@@ -83,6 +83,15 @@ var tcs []testCase = []testCase{
 		query: "$us-east-1 @profile3 elasticbeanstalk",
 	},
 	{
+		query: "$cn-north-1 elasticbeanstalk",
+	},
+	{
+		query: "@usgov elasticbeanstalk",
+	},
+	{
+		query: "@china elasticbeanstalk",
+	},
+	{
 		query: "alex",
 	},
 	{

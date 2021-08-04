@@ -12,3 +12,9 @@ region = sa-east-1
 
 [profile bogusprofile]
 region = bogus
+
+[profile usgov]
+region = us-gov-east-1
+
+[profile china]
+region = cn-north-1
