@@ -947,7 +947,62 @@
 - id: redshift
   name: Redshift
   description: Fast, Simple, Cost-Effective Data Warehousing
-  url: /redshift/home
+  url: "/redshiftv2/home#dashboard"
+  sub_services:
+    - id: dashboard
+      name: Dashboard
+      url: "/redshiftv2/home#dashboard"
+    - id: clusters
+      name: Clusters
+      url: "/redshiftv2/home#clusters"
+    - id: reservednodes
+      name: Reserved nodes
+      url: "/redshiftv2/home#reserved-nodes"
+    - id: snapshots
+      name: Snapshots
+      url: "/redshiftv2/home#snapshots"
+    - id: queries
+      name: Queries
+      url: "/redshiftv2/home#queries"
+    - id: queryeditor
+      name: Query editor
+      url: "/redshiftv2/home#query-editor:"
+    - id: datashares
+      name: Data shares
+      url: "/redshiftv2/home#data-shares"
+    - id: config
+      name: Configurations
+      url: "/redshiftv2/home#configurations"
+    - id: workloadmanagement
+      name: Workload management
+      url: "/redshiftv2/home#workload-management"
+    - id: subnetgroups
+      name: Subnet groups
+      url: "/redshiftv2/home#subnet-groups"
+    - id: hsm
+      name: HSM connections
+      url: "/redshiftv2/home#hsm?tab=hsmConnections"
+    - id: tags
+      name: Manage tags
+      url: "/redshiftv2/home#manage-tags"
+    - id: marketplace
+      name: Marketplace
+      url: "/redshiftv2/home#marketplace"
+    - id: advisor
+      name: Advisor recommendations
+      url: "/redshiftv2/home#recommendations"
+    - id: alarms
+      name: Alarms
+      url: "/redshiftv2/home#alarms"
+    - id: events
+      name: Events
+      url: "/redshiftv2/home#events"
+    - id: eventsubscriptions
+      name: Event subscriptions
+      url: "/redshiftv2/home#event-subscriptions"
+    - id: alarms
+      name: Alarms
+      url: "/redshiftv2/home#alarms"
 
 - id: rekognition
   name: Rekognition
