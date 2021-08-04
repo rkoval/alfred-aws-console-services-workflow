@@ -1,7 +1,9 @@
 package workflow
 
 import (
+	"encoding/json"
 	"fmt"
+	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
@@ -223,15 +225,27 @@ func handleUpdateAvailable(wf *aw.Workflow) {
 
 func handleOpenAll(wf *aw.Workflow, awsService *awsworkflow.AwsService, allAwsServices []awsworkflow.AwsService, openAll bool, rawQuery string, cfg aws.Config) {
 	if openAll {
+		var urls []string
 		if awsService == nil {
 			for _, awsService := range allAwsServices {
-				openServiceInBrowser(wf, awsService, awsService, cfg)
+				urls = append(urls, openServiceInBrowser(wf, awsService, awsService, cfg))
 			}
 		} else {
 			for _, subService := range awsService.SubServices {
-				openServiceInBrowser(wf, subService, *awsService, cfg)
+				urls = append(urls, openServiceInBrowser(wf, subService, *awsService, cfg))
 			}
 		}
+		// write these to disk so that we can use this file to run automated validation against the pages as they redirect (or error) in AWS
+		lastOpenedUrlsPath := wf.CacheDir() + "/last-opened-urls.json"
+		urlBytes, err := json.Marshal(urls)
+		if err != nil {
+			panic(err)
+		}
+		err = ioutil.WriteFile(lastOpenedUrlsPath, urlBytes, 0600)
+		if err != nil {
+			panic(err)
+		}
+
 	} else {
 		var length int
 		var entityName string
@@ -254,10 +268,13 @@ func handleOpenAll(wf *aw.Workflow, awsService *awsworkflow.AwsService, allAwsSe
 	}
 }
 
-func openServiceInBrowser(wf *aw.Workflow, awsService, awsServiceForRegion awsworkflow.AwsService, cfg aws.Config) {
-	cmd := exec.Command("open", util.ConstructAWSConsoleUrl(awsService.Url, awsServiceForRegion.GetRegion(cfg)))
+func openServiceInBrowser(wf *aw.Workflow, awsService, awsServiceForRegion awsworkflow.AwsService, cfg aws.Config) string {
+	url := util.ConstructAWSConsoleUrl(awsService.Url, awsServiceForRegion.GetRegion(cfg))
+	log.Printf("opening url: %s ...", url)
+	cmd := exec.Command("open", url)
 	if err := wf.RunInBackground("open-service-in-browser-"+awsService.Id, cmd); err != nil {
 		panic(err)
 	}
 	time.Sleep(250 * time.Millisecond) // sleep so that tabs are more-or-less opened in the order by which this function is called
+	return url
 }
