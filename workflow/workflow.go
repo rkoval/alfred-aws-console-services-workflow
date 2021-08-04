@@ -99,6 +99,8 @@ func Run(wf *aw.Workflow, rawQuery string, transport http.RoundTripper, forceFet
 			return
 		}
 
+		searchArgs.GetRegionFunc = query.Service.GetRegion
+
 		if query.HasDefaultSearchAlias || query.SubService != nil && (query.HasTrailingWhitespace || query.RemainingQuery != "") {
 			serviceId := query.Service.Id
 			if query.SubService != nil {

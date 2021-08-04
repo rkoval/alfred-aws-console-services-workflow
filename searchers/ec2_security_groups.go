@@ -66,10 +66,10 @@ func (s EC2SecurityGroupSearcher) addToWorkflow(wf *aw.Workflow, searchArgs sear
 	}
 	subtitle += *entity.Description
 
-	path := fmt.Sprintf("/ec2/v2/home?region=%s#SecurityGroups:group-id=%s", searchArgs.Cfg.Region, *entity.GroupId)
+	path := fmt.Sprintf("/ec2/v2/home#SecurityGroups:group-id=%s", *entity.GroupId)
 	item := util.NewURLItem(wf, title).
 		Subtitle(subtitle).
-		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.Cfg.Region)).
+		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.GetRegion())).
 		Icon(awsworkflow.GetImageIcon("ec2"))
 
 	searchArgs.AddMatch(item, "sg-", *entity.GroupId, title)

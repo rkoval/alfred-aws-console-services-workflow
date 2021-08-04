@@ -63,10 +63,11 @@ func (s WAFIPSetSearcher) addToWorkflow(wf *aw.Workflow, searchArgs searchutil.S
 		subtitle = *entity.Description
 	}
 
+	// must manually append region here because wafv2 is technically a global region, but entities within it are region-specific
 	path := fmt.Sprintf("/wafv2/homev2/ip-set/%s/%s?region=%s", *entity.Name, *entity.Id, searchArgs.Cfg.Region)
 	item := util.NewURLItem(wf, title).
 		Subtitle(subtitle).
-		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.Cfg.Region)).
+		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.GetRegion())).
 		Icon(awsworkflow.GetImageIcon("waf"))
 
 	searchArgs.AddMatch(item, "arn:", *entity.ARN, title)

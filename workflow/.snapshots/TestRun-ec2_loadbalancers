@@ -5,7 +5,7 @@
     match: (*string)((len=28) "loadbalancers Load Balancers"),
     uid: (*string)((len=13) "loadbalancers"),
     autocomplete: (*string)((len=18) "ec2 loadbalancers "),
-    arg: (*string)((len=64) "https://us-west-2.console.aws.amazon.com/ec2/home#LoadBalancers:"),
+    arg: (*string)((len=81) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#LoadBalancers:"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

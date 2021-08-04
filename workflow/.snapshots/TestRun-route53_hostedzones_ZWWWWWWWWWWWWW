@@ -5,7 +5,7 @@
     match: (*string)((len=26) "/hostedzone/ZWWWWWWWWWWWWW"),
     uid: (*string)(<nil>),
     autocomplete: (*string)((len=47) "route53 hostedzones /hostedzone/ZWWWWWWWWWWWWW "),
-    arg: (*string)((len=105) "https://us-west-2.console.aws.amazon.com/route53/v2/hostedzones#ListRecordSets//hostedzone/ZWWWWWWWWWWWWW"),
+    arg: (*string)((len=95) "https://console.aws.amazon.com/route53/v2/hostedzones#ListRecordSets//hostedzone/ZWWWWWWWWWWWWW"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

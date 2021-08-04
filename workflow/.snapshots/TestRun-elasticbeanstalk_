@@ -1,11 +1,11 @@
-([]*aw.Item) (len=2) {
+([]*aw.Item) (len=3) {
   (*aw.Item)({
     title: (string) (len=29) "elasticbeanstalk environments",
     subtitle: (*string)((len=45) "🔎⭐️ Elastic Beanstalk – Environments"),
     match: (*string)((len=25) "environments Environments"),
     uid: (*string)((len=12) "environments"),
     autocomplete: (*string)((len=30) "elasticbeanstalk environments "),
-    arg: (*string)((len=76) "https://us-west-2.console.aws.amazon.com/elasticbeanstalk/home#/environments"),
+    arg: (*string)((len=93) "https://us-west-2.console.aws.amazon.com/elasticbeanstalk/home?region=us-west-2#/environments"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -38,7 +38,40 @@
     match: (*string)((len=25) "applications Applications"),
     uid: (*string)((len=12) "applications"),
     autocomplete: (*string)((len=30) "elasticbeanstalk applications "),
-    arg: (*string)((len=76) "https://us-west-2.console.aws.amazon.com/elasticbeanstalk/home#/applications"),
+    arg: (*string)((len=93) "https://us-west-2.console.aws.amazon.com/elasticbeanstalk/home?region=us-west-2#/applications"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    icon: (*aw.Icon)({
+      Value: (string) (len=27) "images/elasticbeanstalk.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=30) "elasticbeanstalk changehistory",
+    subtitle: (*string)((len=36) "Elastic Beanstalk – Change history"),
+    match: (*string)((len=28) "changehistory Change history"),
+    uid: (*string)((len=13) "changehistory"),
+    autocomplete: (*string)((len=31) "elasticbeanstalk changehistory "),
+    arg: (*string)((len=76) "https://us-west-2.console.aws.amazon.com/elasticbeanstalk/home/changeHistory"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

@@ -5,7 +5,7 @@
     match: (*string)((len=16) "route53 Route 53"),
     uid: (*string)((len=7) "route53"),
     autocomplete: (*string)((len=8) "route53 "),
-    arg: (*string)((len=43) "https://console.aws.amazon.com/route53/home"),
+    arg: (*string)((len=56) "https://console.aws.amazon.com/route53/v2/home#Dashboard"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

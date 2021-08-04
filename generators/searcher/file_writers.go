@@ -122,10 +122,10 @@ func (s {{ .StructName }}) addToWorkflow(wf *aw.Workflow, searchArgs searchutil.
 	subtitleArray = util.AppendString(subtitleArray, entity.TODO)
 	subtitle := strings.Join(subtitleArray, " – ")
 
-	path := fmt.Sprintf("/{{ .ServiceLower }}/{{ .EntityLowerPlural }}/?region=%s", searchArgs.Cfg.Region)
+	path := fmt.Sprintf("/{{ .ServiceLower }}/{{ .EntityLowerPlural }}", searchArgs.TODO)
 	item := util.NewURLItem(wf, title).
 		Subtitle(subtitle).
-		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.Cfg.Region)).
+		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.GetRegion())).
 		Icon(awsworkflow.GetImageIcon("{{ .ServiceLower }}")).
 		Valid(true)
 

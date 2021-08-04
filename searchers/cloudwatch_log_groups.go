@@ -67,10 +67,10 @@ func (s CloudWatchLogGroupSearcher) addToWorkflow(wf *aw.Workflow, searchArgs se
 	}
 	subtitle := strings.Join(subtitleArray, " – ")
 
-	path := fmt.Sprintf("/cloudwatch/home?region=%s#logsV2:log-groups/log-group/%s/log-events", searchArgs.Cfg.Region, url.PathEscape(*entity.LogGroupName))
+	path := fmt.Sprintf("/cloudwatch/home#logsV2:log-groups/log-group/%s/log-events", url.PathEscape(*entity.LogGroupName))
 	item := util.NewURLItem(wf, title).
 		Subtitle(subtitle).
-		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.Cfg.Region)).
+		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.GetRegion())).
 		Icon(awsworkflow.GetImageIcon("cloudwatch"))
 
 	searchArgs.AddMatch(item, "arn:", *entity.Arn, title)

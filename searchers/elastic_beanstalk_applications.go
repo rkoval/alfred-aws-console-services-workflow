@@ -56,10 +56,10 @@ func (s ElasticBeanstalkApplicationSearcher) addToWorkflow(wf *aw.Workflow, sear
 	subtitleArray = util.AppendString(subtitleArray, entity.Description)
 	subtitle := strings.Join(subtitleArray, " – ")
 
-	path := fmt.Sprintf("/elasticbeanstalk/home?region=%s#/application/overview?applicationName=%s", searchArgs.Cfg.Region, *entity.ApplicationName)
+	path := fmt.Sprintf("/elasticbeanstalk/home#/application/overview?applicationName=%s", *entity.ApplicationName)
 	item := util.NewURLItem(wf, title).
 		Subtitle(subtitle).
-		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.Cfg.Region)).
+		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.GetRegion())).
 		Icon(awsworkflow.GetImageIcon("elasticbeanstalk")).
 		Valid(true)
 

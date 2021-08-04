@@ -5,7 +5,7 @@
     match: (*string)((len=23) "elasticache ElastiCache"),
     uid: (*string)((len=11) "elasticache"),
     autocomplete: (*string)((len=12) "elasticache "),
-    arg: (*string)((len=57) "https://us-west-2.console.aws.amazon.com/elasticache/home"),
+    arg: (*string)((len=75) "https://us-west-2.console.aws.amazon.com/elasticache/home?region=us-west-2#"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

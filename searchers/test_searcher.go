@@ -3,6 +3,7 @@ package searchers
 import (
 	"testing"
 
+	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/bradleyjkemp/cupaloy"
 	aw "github.com/deanishe/awgo"
 	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
@@ -22,6 +23,9 @@ func TestSearcher(t *testing.T, searcher Searcher, fixtureFilename string) {
 		searchutil.SearchArgs{
 			Cfg:        cfg,
 			ForceFetch: true,
+			GetRegionFunc: func(cfg aws.Config) string {
+				return cfg.Region
+			},
 		},
 	)
 	if err != nil {

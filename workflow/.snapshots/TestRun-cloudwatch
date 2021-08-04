@@ -5,7 +5,7 @@
     match: (*string)((len=21) "cloudwatch CloudWatch"),
     uid: (*string)((len=10) "cloudwatch"),
     autocomplete: (*string)((len=11) "cloudwatch "),
-    arg: (*string)((len=56) "https://us-west-2.console.aws.amazon.com/cloudwatch/home"),
+    arg: (*string)((len=74) "https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

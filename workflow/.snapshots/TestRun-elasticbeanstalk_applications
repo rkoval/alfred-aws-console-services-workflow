@@ -5,7 +5,7 @@
     match: (*string)((len=25) "applications Applications"),
     uid: (*string)((len=12) "applications"),
     autocomplete: (*string)((len=30) "elasticbeanstalk applications "),
-    arg: (*string)((len=76) "https://us-west-2.console.aws.amazon.com/elasticbeanstalk/home#/applications"),
+    arg: (*string)((len=93) "https://us-west-2.console.aws.amazon.com/elasticbeanstalk/home?region=us-west-2#/applications"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

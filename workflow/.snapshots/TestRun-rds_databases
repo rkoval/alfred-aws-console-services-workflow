@@ -5,7 +5,7 @@
     match: (*string)((len=19) "databases Databases"),
     uid: (*string)((len=9) "databases"),
     autocomplete: (*string)((len=14) "rds databases "),
-    arg: (*string)((len=60) "https://us-west-2.console.aws.amazon.com/rds/home#databases:"),
+    arg: (*string)((len=77) "https://us-west-2.console.aws.amazon.com/rds/home?region=us-west-2#databases:"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

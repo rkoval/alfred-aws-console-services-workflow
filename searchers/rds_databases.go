@@ -74,10 +74,10 @@ func (s RDSDatabaseSearcher) addToWorkflow(wf *aw.Workflow, searchArgs searchuti
 
 	subtitle := strings.Join(subtitleArray, " – ")
 
-	path := fmt.Sprintf("/rds/home?region=%s#database:id=%s;is-cluster=false", searchArgs.Cfg.Region, *entity.DBInstanceIdentifier)
+	path := fmt.Sprintf("/rds/home#database:id=%s;is-cluster=false", *entity.DBInstanceIdentifier)
 	item := util.NewURLItem(wf, title).
 		Subtitle(subtitle).
-		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.Cfg.Region)).
+		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.GetRegion())).
 		Icon(awsworkflow.GetImageIcon("rds")).
 		Valid(true)
 

@@ -5,7 +5,7 @@
     match: (*string)((len=26) "fle Field-level encryption"),
     uid: (*string)((len=3) "fle"),
     autocomplete: (*string)((len=15) "cloudfront fle "),
-    arg: (*string)((len=52) "https://console.aws.amazon.com/cloudfront/home?#fle:"),
+    arg: (*string)((len=51) "https://console.aws.amazon.com/cloudfront/home#fle:"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

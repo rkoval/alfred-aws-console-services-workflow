@@ -86,7 +86,7 @@ func (s Route53HostedZoneSearcher) addToWorkflow(wf *aw.Workflow, searchArgs sea
 	path := fmt.Sprintf("/route53/v2/hostedzones#ListRecordSets/%s", *entity.Id)
 	item := util.NewURLItem(wf, title).
 		Subtitle(subtitle).
-		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.Cfg.Region)).
+		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.GetRegion())).
 		Icon(awsworkflow.GetImageIcon("route53")).
 		Valid(true)
 

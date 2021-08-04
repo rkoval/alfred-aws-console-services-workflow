@@ -14,6 +14,7 @@ type SearchArgs struct {
 	ForceFetch             bool
 	FullQuery              string
 	Profile                string
+	GetRegionFunc          func(cfg aws.Config) string
 	IgnoreAutocompleteTerm bool
 }
 
@@ -29,6 +30,10 @@ func (s *SearchArgs) GetAutocomplete(replaced string) string {
 		autocomplete += " "
 	}
 	return autocomplete
+}
+
+func (s *SearchArgs) GetRegion() string {
+	return s.GetRegionFunc(s.Cfg)
 }
 
 func (s *SearchArgs) AddMatch(item *aw.Item, idPrefix, id, title string) *aw.Item {

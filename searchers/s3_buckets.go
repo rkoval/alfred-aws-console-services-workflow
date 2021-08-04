@@ -45,10 +45,11 @@ func (s S3BucketSearcher) addToWorkflow(wf *aw.Workflow, searchArgs searchutil.S
 	title := *entity.Name
 	subtitle := "Created " + entity.CreationDate.Format(time.UnixDate)
 
-	path := fmt.Sprintf("/s3/buckets/%s/?region=%s&tab=overview", *entity.Name, searchArgs.Cfg.Region)
+	// must manually append region here because wafv2 is technically a global region, but entities within it are region-specific
+	path := fmt.Sprintf("/s3/buckets/%s/?region=%s&tab=objects", *entity.Name, searchArgs.Cfg.Region)
 	item := util.NewURLItem(wf, title).
 		Subtitle(subtitle).
-		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.Cfg.Region)).
+		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.GetRegion())).
 		Icon(awsworkflow.GetImageIcon("s3")).
 		Valid(true)
 

@@ -66,10 +66,10 @@ func (s CloudWatchLogInsightsQuerySearcher) addToWorkflow(wf *aw.Workflow, searc
 	subtitle := strings.Join(subtitleArray, " – ")
 
 	queryDetail := util.ConstructCloudwatchInsightsQueryDetail(entity)
-	path := fmt.Sprintf("/cloudwatch/home?region=%s#logsV2:logs-insights$3FqueryDetail$3D%s", searchArgs.Cfg.Region, queryDetail)
+	path := fmt.Sprintf("/cloudwatch/home#logsV2:logs-insights$3FqueryDetail$3D%s", queryDetail)
 	item := util.NewURLItem(wf, title).
 		Subtitle(subtitle).
-		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.Cfg.Region)).
+		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.GetRegion())).
 		Icon(awsworkflow.GetImageIcon("cloudwatch")).
 		Valid(true)
 

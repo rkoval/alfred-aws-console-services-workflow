@@ -67,15 +67,11 @@ func (s SNSSubscriptionSearcher) addToWorkflow(wf *aw.Workflow, searchArgs searc
 	var path string
 	if isPending {
 		// subscription is still pending, so there's no permalink to it yet
-		path = fmt.Sprintf(
-			"/sns/v3/home?region=%s#/subscriptions",
-			searchArgs.Cfg.Region,
-		)
+		path = "/sns/v3/home#/subscriptions"
 		subtitle = "🕘 " + subtitle
 	} else {
 		path = fmt.Sprintf(
-			"/sns/v3/home?region=%s#/subscription/%s",
-			searchArgs.Cfg.Region,
+			"/sns/v3/home#/subscription/%s",
 			*entity.SubscriptionArn,
 		)
 		subtitle = "✅ " + subtitle
@@ -87,7 +83,7 @@ func (s SNSSubscriptionSearcher) addToWorkflow(wf *aw.Workflow, searchArgs searc
 
 	item := util.NewURLItem(wf, title).
 		Subtitle(subtitle).
-		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.Cfg.Region)).
+		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.GetRegion())).
 		Icon(awsworkflow.GetImageIcon("sns")).
 		Valid(true)
 

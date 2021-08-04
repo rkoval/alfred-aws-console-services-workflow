@@ -64,20 +64,20 @@
 - id: budgets
   name: Budgets
   description: Set Custom Budgets and Receive Alerts
-  url: /billing/home#/budgets#/home
+  url: /billing/home#/budgets
 
 - id: acm
   name: Certificate Manager
   short_name: ACM
   description: Provision, Manage, and Deploy SSL/TLS Certificates
-  url: /acm/home
+  url: "/acm/home#/"
   sub_services:
     - id: certificatemanager
       name: Certificate manager
-      url: /acm/home
+      url: "/acm/home#/"
     - id: privatecas
       name: Private certificate authorities
-      url: '/acm-pca/home'
+      url: "/acm-pca/home#/"
 
 - id: chime
   name: Chime
@@ -93,7 +93,7 @@
 - id: cloudformation
   name: CloudFormation
   description: Create and Manage Resources with Templates
-  url: /cloudformation/home
+  url: '/cloudformation/home#/stacks'
   sub_services:
     - id: stacks
       name: Stacks
@@ -111,45 +111,45 @@
 - id: cloudfront
   name: CloudFront
   description: Global Content Delivery Network
-  url: /cloudfront/home
+  url: '/cloudfront/home#'
   has_global_region: true
   sub_services:
     - id: distributions
       name: Distributions
-      url: '/cloudfront/home?#'
+      url: '/cloudfront/home#'
     - id: policies
       name: Policies
       url: '/cloudfront/v2/home#/policies'
     - id: cachestatistics
       name: Cache statistics
-      url: '/cloudfront/home?#cache_stat_reports:'
+      url: '/cloudfront/home#cache_stat_reports:'
     - id: monitoring
       name: Monitoring
       url: '/cloudfront/v2/home#/monitoring'
     - id: alarms
       name: Alarms
-      url: '/cloudfront/home?#alarms:'
+      url: '/cloudfront/home#alarms:'
     - id: popularobjects
       name: Popular objects
-      url: '/cloudfront/home?#popular_urls:'
+      url: '/cloudfront/home#popular_urls:'
     - id: referrers
       name: Top referrers
-      url: '/cloudfront/home?#referers_report:'
+      url: '/cloudfront/home#referers_report:'
     - id: usage
       name: Usage
-      url: '/cloudfront/home?#usage_reports:'
+      url: '/cloudfront/home#usage_reports:'
     - id: viewers
       name: Viewers
-      url: '/cloudfront/home?#viewers_reports:'
+      url: '/cloudfront/home#viewers_reports:'
     - id: oai
       name: Origin access identity
-      url: '/cloudfront/home?#oai:'
+      url: '/cloudfront/home#oai:'
     - id: publickey
       name: Public key
-      url: '/cloudfront/home?#publickey:'
+      url: '/cloudfront/home#publickey:'
     - id: fle
       name: Field-level encryption
-      url: '/cloudfront/home?#fle:'
+      url: '/cloudfront/home#fle:'
 
 - id: cloudhsm
   name: CloudHSM
@@ -174,11 +174,11 @@
 - id: cloudwatch
   name: CloudWatch
   description: Monitor Resources and Applications
-  url: /cloudwatch/home
+  url: '/cloudwatch/home#'
   sub_services:
     - id: home
       name: Home
-      url: '/cloudwatch/home#cw:dashboard=Home'
+      url: '/cloudwatch/home#'
     - id: dashboards
       name: Dashboards
       url: '/cloudwatch/home#dashboards:'
@@ -366,8 +366,11 @@
   name: Elastic Cloud Compute
   short_name: EC2
   description: Virtual Servers in the Cloud
-  url: /ec2/home
+  url: '/ec2/home#Home:'
   sub_services:
+    - id: dashboard
+      name: Dashboard
+      url: '/ec2/home#Home:'
     - id: events
       name: Events
       url: '/ec2/home#Events:'
@@ -448,14 +451,14 @@
   name: Elastic Container Registry
   short_name: ECR
   description: Fully-managed Docker container registry
-  url: /ecr/repositories
+  url: "/ecr/repositories#"
   sub_services:
     - id: repositories
       name: Repositories
-      url: /ecr/repositories
+      url: "/ecr/repositories#"
     - id: registries
       name: Registries
-      url: /ecr/registries
+      url: "/ecr/registries#"
     - id: publicgallery
       name: Public gallery
       url: https://gallery.ecr.aws/
@@ -505,11 +508,11 @@
 - id: elasticache
   name: ElastiCache
   description: In-Memory Cache
-  url: /elasticache/home
+  url: "/elasticache/home#"
   sub_services:
-    - id: home
-      name: Home
-      url: "/elasticache/home"
+    - id: dashboard
+      name: Dashboard
+      url: "/elasticache/home#"
     - id: memcached
       name: Memcached
       url: "/elasticache/home#memcached:"
@@ -550,7 +553,7 @@
 - id: elasticbeanstalk
   name: Elastic Beanstalk
   description: Run and Manage Web Apps
-  url: /elasticbeanstalk/home
+  url: "/elasticbeanstalk/home#/environments"
   sub_services:
     - id: environments
       name: Environments
@@ -558,6 +561,9 @@
     - id: applications
       name: Applications
       url: "/elasticbeanstalk/home#/applications"
+    - id: changehistory
+      name: Change history
+      url: "/elasticbeanstalk/home/changeHistory"
 
 - id: ess
   name: Elasticsearch Service
@@ -631,7 +637,7 @@
   short_name: IAM
   description: Manage User Access and Encryption Keys
   has_global_region: true
-  url: /iam/home
+  url: "/iam/home#/home"
   sub_services:
     - id: dashboard
       name: Dashboard
@@ -667,7 +673,7 @@
 - id: accessanalyzer
   name: Access Analyzer
   description: Monitor access to resources
-  url: "/access-analyzer/home#/analyzers"
+  url: "/access-analyzer/home#/rules"
   extra_search_terms:
     - iam
   sub_services:
@@ -768,7 +774,7 @@
 - id: lambda
   name: Lambda
   description: Run Code without Thinking about Servers
-  url: /lambda/home
+  url: "/lambda/home#/discover"
   sub_services:
     - id: dashboard
       name: Dashboard
@@ -902,8 +908,11 @@
   name: Relational Database Service
   short_name: RDS
   description: Managed Relational Database Service
-  url: /rds/home
+  url: "/rds/home#"
   sub_services:
+    - id: dashboard
+      name: Dashboard
+      url: "/rds/home#"
     - id: databases
       name: Databases
       url: "/rds/home#databases:"
@@ -1023,8 +1032,11 @@
   name: Route 53
   description: Scalable DNS and Domain Name Registration
   has_global_region: true
-  url: /route53/home
+  url: "/route53/v2/home#Dashboard"
   sub_services:
+    - id: dashboard
+      name: "Dashboard"
+      url: "/route53/v2/home#Dashboard"
     - id: hostedzones
       name: "Hosted zones"
       url: "/route53/v2/hostedzones#"
@@ -1130,8 +1142,11 @@
   name: Simple Notification Service
   short_name: SNS
   description: SNS Pub/Sub, Mobile Push and SMS
-  url: /sns/home
+  url: "/sns/v3/home#/dashboard"
   sub_services:
+    - id: dashboard
+      name: Dashboard
+      url: "/sns/v3/home#/dashboard"
     - id: topics
       name: Topics
       url: "/sns/v3/home#/topics"
@@ -1317,7 +1332,7 @@
   short_name: WAF
   description: Protects Against DDoS Attacks and Malicious Web Traffic
   has_global_region: true
-  url: /wafv2/homev2
+  url: "/wafv2/homev2/web-acls"
   sub_services:
     - id: webacls
       name: Web ACLs

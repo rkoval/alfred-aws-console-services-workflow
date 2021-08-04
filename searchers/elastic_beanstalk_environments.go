@@ -64,10 +64,10 @@ func (s ElasticBeanstalkEnvironmentSearcher) addToWorkflow(wf *aw.Workflow, sear
 		page = "dashboard"
 	}
 
-	path := fmt.Sprintf("/elasticbeanstalk/home?region=%s#/environment/%s?applicationName=%s&environmentId=%s", searchArgs.Cfg.Region, page, *entity.ApplicationName, *entity.EnvironmentId)
+	path := fmt.Sprintf("/elasticbeanstalk/home#/environment/%s?applicationName=%s&environmentId=%s", page, *entity.ApplicationName, *entity.EnvironmentId)
 	item := util.NewURLItem(wf, title).
 		Subtitle(subtitle).
-		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.Cfg.Region)).
+		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.GetRegion())).
 		Icon(awsworkflow.GetImageIcon("elasticbeanstalk"))
 
 	searchArgs.AddMatch(item, "e-", *entity.EnvironmentId, title)

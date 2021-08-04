@@ -5,7 +5,7 @@
     match: (*string)((len=24) "loginsights Log insights"),
     uid: (*string)((len=11) "loginsights"),
     autocomplete: (*string)((len=23) "cloudwatch loginsights "),
-    arg: (*string)((len=77) "https://us-west-2.console.aws.amazon.com/cloudwatch/home#logsV2:logs-insights"),
+    arg: (*string)((len=94) "https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2:logs-insights"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

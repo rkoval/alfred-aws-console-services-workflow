@@ -57,10 +57,10 @@ func (s SNSTopicSearcher) addToWorkflow(wf *aw.Workflow, searchArgs searchutil.S
 	subtitle := *entity.TopicArn
 	title := util.GetEndOfArn(*entity.TopicArn)
 
-	path := fmt.Sprintf("/sns/v3/home?region=%s#/topic/%s", searchArgs.Cfg.Region, *entity.TopicArn)
+	path := fmt.Sprintf("/sns/v3/home#/topic/%s", *entity.TopicArn)
 	item := util.NewURLItem(wf, title).
 		Subtitle(subtitle).
-		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.Cfg.Region)).
+		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.GetRegion())).
 		Icon(awsworkflow.GetImageIcon("sns")).
 		Valid(true)
 

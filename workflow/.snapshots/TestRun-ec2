@@ -5,7 +5,7 @@
     match: (*string)((len=3) "ec2"),
     uid: (*string)((len=3) "ec2"),
     autocomplete: (*string)((len=4) "ec2 "),
-    arg: (*string)((len=49) "https://us-west-2.console.aws.amazon.com/ec2/home"),
+    arg: (*string)((len=72) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#Home:"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

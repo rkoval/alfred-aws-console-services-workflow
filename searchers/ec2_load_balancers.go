@@ -70,10 +70,10 @@ func (s EC2LoadBalancerSearcher) addToWorkflow(wf *aw.Workflow, searchArgs searc
 	subtitleArray = util.AppendString(subtitleArray, entity.DNSName)
 	subtitle := strings.Join(subtitleArray, " – ")
 
-	path := fmt.Sprintf("/ec2/home?region=%s#LoadBalancers:search=%s;sort=loadBalancerName", searchArgs.Cfg.Region, *entity.LoadBalancerArn)
+	path := fmt.Sprintf("/ec2/home#LoadBalancers:search=%s;sort=loadBalancerName", *entity.LoadBalancerArn)
 	item := util.NewURLItem(wf, title).
 		Subtitle(subtitle).
-		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.Cfg.Region)).
+		Arg(util.ConstructAWSConsoleUrl(path, searchArgs.GetRegion())).
 		Icon(awsworkflow.GetImageIcon("ec2")).
 		Valid(true)
 
