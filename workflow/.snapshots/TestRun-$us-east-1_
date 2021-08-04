@@ -1,4 +1,4 @@
-([]*aw.Item) (len=154) {
+([]*aw.Item) (len=153) {
   (*aw.Item)({
     title: (string) (len=5) "alexa",
     subtitle: (*string)((len=59) "Alexa for Business – Empower your organization with voice"),
@@ -364,7 +364,7 @@
   }),
   (*aw.Item)({
     title: (string) (len=7) "billing",
-    subtitle: (*string)((len=65) "Billing – Access, analyze, and control your AWS costs and usage"),
+    subtitle: (*string)((len=70) "🗂 Billing – Access, analyze, and control your AWS costs and usage"),
     match: (*string)((len=15) "billing Billing"),
     uid: (*string)((len=7) "billing"),
     autocomplete: (*string)((len=19) "$us-east-1 billing "),
@@ -391,39 +391,6 @@
     },
     icon: (*aw.Icon)({
       Value: (string) (len=18) "images/billing.png",
-      Type: (aw.IconType) ""
-    }),
-    noUID: (bool) false
-  }),
-  (*aw.Item)({
-    title: (string) (len=7) "budgets",
-    subtitle: (*string)((len=49) "Budgets – Set Custom Budgets and Receive Alerts"),
-    match: (*string)((len=15) "budgets Budgets"),
-    uid: (*string)((len=7) "budgets"),
-    autocomplete: (*string)((len=19) "$us-east-1 budgets "),
-    arg: (*string)((len=79) "https://us-east-1.console.aws.amazon.com/billing/home?region=us-east-1#/budgets"),
-    valid: (bool) true,
-    file: (bool) false,
-    copytext: (*string)(<nil>),
-    largetype: (*string)(<nil>),
-    ql: (*string)(<nil>),
-    vars: (map[string]string) (len=1) {
-      (string) (len=6) "action": (string) (len=8) "open-url"
-    },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
-        subtitle: (*string)((len=21) "Copy URL to clipboard"),
-        valid: (bool) false,
-        icon: (*aw.Icon)(<nil>),
-        vars: (map[string]string) (len=1) {
-          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
-        }
-      })
-    },
-    icon: (*aw.Icon)({
-      Value: (string) (len=18) "images/budgets.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false

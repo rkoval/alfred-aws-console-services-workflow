@@ -1,6 +1,6 @@
 ([]*aw.Item) (len=1) {
   (*aw.Item)({
-    title: (string) (len=32) "Open the 154 services in browser",
+    title: (string) (len=32) "Open the 153 services in browser",
     subtitle: (*string)((len=51) "Fair warning: this may briefly overload your system"),
     match: (*string)(<nil>),
     uid: (*string)(<nil>),

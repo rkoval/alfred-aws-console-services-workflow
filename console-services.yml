@@ -60,11 +60,55 @@
   description: Access, analyze, and control your AWS costs and usage
   has_global_region: true
   url: /billing/home
-
-- id: budgets
-  name: Budgets
-  description: Set Custom Budgets and Receive Alerts
-  url: /billing/home#/budgets
+  sub_services:
+    - id: dashboard
+      name: Dashboard
+      url: "/billing/home#/"
+    - id: bills
+      name: Bills
+      url: "/billing/home#/bills"
+    - id: payments
+      name: Payments
+      url: "/billing/home#/paymentsoverview"
+    - id: credits
+      name: Credits
+      url: "/billing/home#/credits"
+    - id: purchaseorders
+      name: Purchase orders
+      url: "/billing/home#/purchaseorders"
+    - id: reports
+      name: Cost & Usage Reports
+      url: "/billing/home#/reports"
+    - id: costcategories
+      name: Cost Categories
+      url: "/billing/home#/costcategories"
+    - id: tags
+      name: Cost allocation tags
+      url: "/billing/home#/tags"
+    - id: costexplorer
+      name: Cost Explorer
+      url: "/billing/home#/costexplorer"
+    - id: budgets
+      name: Budgets
+      url: "/billing/home#/budgets"
+    - id: budgetsreports
+      name: Budgets Reports
+      url: "/billing/home#/budgets/reports"
+    - id: savingsplans
+      name: Savings Plans
+      url: "/cost-reports/home#/savings-plans/overview"
+    - id: preferences
+      name: Billing preferences
+      url: "/billing/home#/preferences"
+    - id: paymentmethods
+      name: Payment methods
+      url: "/billing/home#/paymentmethods"
+    - id: consolidatedbilling
+      name: Consolidated billing
+      url: "/organizations/home"
+    - id: taxsettings
+      name: Tax settings
+      url: "/billing/home#/tax"
 
 - id: acm
   name: Certificate Manager
