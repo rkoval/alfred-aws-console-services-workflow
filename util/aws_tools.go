@@ -29,12 +29,16 @@ func ConstructAWSConsoleUrl(path, region string) string {
 
 	// TODO append region query param dynamically here to avoid page redirections and facilitate faster loading
 
-	url := "https://"
+	var urlBuilder strings.Builder
+	urlBuilder.WriteString("https://")
 	if region != "" {
-		url += region + "."
+		urlBuilder.WriteString(region)
+		urlBuilder.WriteString(".")
 	}
-	url += AWSConsoleDomain + path
-	return url
+
+	urlBuilder.WriteString(AWSConsoleDomain)
+	urlBuilder.WriteString(path)
+	return urlBuilder.String()
 }
 
 func GetProfile(cfg aws.Config) string {
