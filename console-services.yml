@@ -38,7 +38,7 @@
 - id: autoscaling
   name: Auto Scaling
   description: AWS Auto Scaling enables you to quickly scale your entire application on AWS
-  url: "/awsautoscaling/home#"
+  url: "/awsautoscaling/home#dashboard"
 
 - id: backup
   name: Backup

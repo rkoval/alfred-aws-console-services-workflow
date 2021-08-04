@@ -335,7 +335,7 @@
     match: (*string)((len=24) "autoscaling Auto Scaling"),
     uid: (*string)((len=11) "autoscaling"),
     autocomplete: (*string)((len=12) "autoscaling "),
-    arg: (*string)((len=78) "https://us-west-2.console.aws.amazon.com/awsautoscaling/home?region=us-west-2#"),
+    arg: (*string)((len=87) "https://us-west-2.console.aws.amazon.com/awsautoscaling/home?region=us-west-2#dashboard"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
