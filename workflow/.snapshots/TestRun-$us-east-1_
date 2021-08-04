@@ -298,7 +298,7 @@
   }),
   (*aw.Item)({
     title: (string) (len=5) "batch",
-    subtitle: (*string)((len=37) "Batch – Run Batch Jobs at Any Scale"),
+    subtitle: (*string)((len=42) "🗂 Batch – Run Batch Jobs at Any Scale"),
     match: (*string)((len=11) "batch Batch"),
     uid: (*string)((len=5) "batch"),
     autocomplete: (*string)((len=17) "$us-east-1 batch "),

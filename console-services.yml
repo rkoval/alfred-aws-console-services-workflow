@@ -74,6 +74,25 @@
   name: Batch
   description: Run Batch Jobs at Any Scale
   url: "/batch/home#"
+  sub_services:
+    - id: dashboard
+      name: Dashboard
+      url: /batch/home#dashboard
+    - id: jobs
+      name: Jobs
+      url: /batch/home#jobs
+    - id: jobdefinitions
+      name: Job definitions
+      url: /batch/home#job-definition
+    - id: jobqueues
+      name: Job queues
+      url: /batch/home#queues
+    - id: computeenvironments
+      name: Compute environments
+      url: /batch/home#compute-environments
+    - id: wizard
+      name: Wizard
+      url: /batch/home#wizard
 
 - id: blockchain
   name: Blockchain
