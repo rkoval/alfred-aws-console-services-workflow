@@ -664,6 +664,23 @@
       name: Service control policies (SCPs)
       url: "/iam/home#/organizations/ServiceControlPolicies"
 
+- id: accessanalyzer
+  name: Access Analyzer
+  description: Monitor access to resources
+  url: "/access-analyzer/home#/analyzers"
+  extra_search_terms:
+    - iam
+  sub_services:
+    - id: archiverules
+      name: Archive rules
+      url: "/access-analyzer/home#/rules"
+    - id: analyzers
+      name: Analyzers
+      url: "/access-analyzer/home#/analyzers"
+    - id: settings
+      name: Settings
+      url: "/access-analyzer/home#/settings"
+
 - id: inspector
   name: Inspector
   description: Analyze Application Security
