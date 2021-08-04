@@ -265,11 +265,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=6) "backup",
-    subtitle: (*string)((len=68) "Backup – centrally manage and automate backups across AWS services"),
+    subtitle: (*string)((len=73) "🗂 Backup – centrally manage and automate backups across AWS services"),
     match: (*string)((len=13) "backup Backup"),
     uid: (*string)((len=6) "backup"),
     autocomplete: (*string)((len=18) "$us-east-1 backup "),
-    arg: (*string)((len=70) "https://us-east-1.console.aws.amazon.com/backup/home?region=us-east-1#"),
+    arg: (*string)((len=80) "https://us-east-1.console.aws.amazon.com/backup/home?region=us-east-1#/dashboard"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

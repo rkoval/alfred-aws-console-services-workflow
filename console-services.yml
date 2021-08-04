@@ -43,7 +43,32 @@
 - id: backup
   name: Backup
   description: centrally manage and automate backups across AWS services
-  url: "/backup/home#"
+  url: "/backup/home#/dashboard"
+  sub_services:
+    - id: dashboard
+      name: Dashboard
+      url: "/backup/home#/dashboard"
+    - id: backupvaults
+      name: Backup vaults
+      url: "/backup/home#/backupvaults"
+    - id: backupplans
+      name: Backup plans
+      url: "/backup/home#/backupplan"
+    - id: protectedresources
+      name: Protected resources
+      url: "/backup/home#/resources"
+    - id: jobs
+      name: Jobs
+      url: "/backup/home#/jobs/backup"
+    - id: settings
+      name: Settings
+      url: "/backup/home#/settings"
+    - id: crossaccountmonitoring
+      name: Cross-account monitoring
+      url: "/backup/home#/organization/monitoring/backup"
+    - id: backuppolicies
+      name: Backup policies
+      url: "/backup/home#/organization/policies"
 
 - id: batch
   name: Batch
