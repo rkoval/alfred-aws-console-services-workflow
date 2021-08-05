@@ -2872,11 +2872,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=12) "mediaconvert",
-    subtitle: (*string)((len=82) "MediaConvert – Convert file-based content for broadcast and multiscreen delivery"),
+    subtitle: (*string)((len=87) "🗂 MediaConvert – Convert file-based content for broadcast and multiscreen delivery"),
     match: (*string)((len=25) "mediaconvert MediaConvert"),
     uid: (*string)((len=12) "mediaconvert"),
     autocomplete: (*string)((len=24) "$us-east-1 mediaconvert "),
-    arg: (*string)((len=76) "https://us-east-1.console.aws.amazon.com/mediaconvert/home?region=us-east-1#"),
+    arg: (*string)((len=86) "https://us-east-1.console.aws.amazon.com/mediaconvert/home?region=us-east-1#/jobs/list"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

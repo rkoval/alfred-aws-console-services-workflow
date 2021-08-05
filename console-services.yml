@@ -1406,7 +1406,26 @@
 - id: mediaconvert
   name: MediaConvert
   description: Convert file-based content for broadcast and multiscreen delivery
-  url: "/mediaconvert/home#"
+  url: /mediaconvert/home#/jobs/list
+  sub_services:
+    - id: jobs
+      name: Jobs
+      url: /mediaconvert/home#/jobs/list
+    - id: outputpresets
+      name: Output presets
+      url: /mediaconvert/home#/presets/list
+    - id: jobtemplates
+      name: Job templates
+      url: /mediaconvert/home#/templates/list
+    - id: queues
+      name: Queues
+      url: /mediaconvert/home#/queues/list
+    - id: certificates
+      name: Certificates
+      url: /mediaconvert/home#/certificates
+    - id: account
+      name: Account
+      url: /mediaconvert/home#/account
 
 - id: medialive
   name: MediaLive
