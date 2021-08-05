@@ -1189,11 +1189,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=8) "datasync",
-    subtitle: (*string)((len=72) "DataSync – DataSync simplifies, automates, and accelerates moving data"),
+    subtitle: (*string)((len=77) "🗂 DataSync – DataSync simplifies, automates, and accelerates moving data"),
     match: (*string)((len=17) "datasync DataSync"),
     uid: (*string)((len=8) "datasync"),
     autocomplete: (*string)((len=20) "$us-east-1 datasync "),
-    arg: (*string)((len=72) "https://us-east-1.console.aws.amazon.com/datasync/home?region=us-east-1#"),
+    arg: (*string)((len=78) "https://us-east-1.console.aws.amazon.com/datasync/home?region=us-east-1#/tasks"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

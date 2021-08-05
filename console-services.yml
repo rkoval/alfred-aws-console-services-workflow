@@ -563,7 +563,20 @@
 - id: datasync
   name: DataSync
   description: DataSync simplifies, automates, and accelerates moving data
-  url: "/datasync/home#"
+  url: /datasync/home#/tasks
+  sub_services:
+    - id: tasks
+      name: Tasks
+      url: /datasync/home#/tasks
+    - id: history
+      name: History
+      url: /datasync/home#/history
+    - id: locations
+      name: Locations
+      url: /datasync/home#/locations
+    - id: agents
+      name: Agents
+      url: /datasync/home#/agents
 
 - id: deeplens
   name: DeepLens
