@@ -3268,11 +3268,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=5) "polly",
-    subtitle: (*string)((len=40) "Polly – Turn Text into Lifelike Speech"),
+    subtitle: (*string)((len=45) "🗂 Polly – Turn Text into Lifelike Speech"),
     match: (*string)((len=11) "polly Polly"),
     uid: (*string)((len=5) "polly"),
     autocomplete: (*string)((len=17) "$us-east-1 polly "),
-    arg: (*string)((len=69) "https://us-east-1.console.aws.amazon.com/polly/home?region=us-east-1#"),
+    arg: (*string)((len=68) "https://us-east-1.console.aws.amazon.com/polly/home/SynthesizeSpeech"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

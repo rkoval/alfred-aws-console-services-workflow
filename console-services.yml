@@ -1604,7 +1604,17 @@
 - id: polly
   name: Polly
   description: Turn Text into Lifelike Speech
-  url: "/polly/home#"
+  url: /polly/home/SynthesizeSpeech#
+  sub_services:
+    - id: texttospeech
+      name: Text-to-Speech
+      url: /polly/home/SynthesizeSpeech#
+    - id: lexicons
+      name: Lexicons
+      url: /polly/home/Lexicons#
+    - id: s3synthesistasks
+      name: S3 synthesis tasks
+      url: /polly/home/SynthesisTasks#
 
 - id: quicksight
   name: QuickSight
