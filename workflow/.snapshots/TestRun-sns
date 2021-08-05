@@ -529,11 +529,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=13) "groundstation",
-    subtitle: (*string)((len=46) "Ground Station – Communicate with satellites"),
+    subtitle: (*string)((len=51) "🗂 Ground Station – Communicate with satellites"),
     match: (*string)((len=28) "groundstation Ground Station"),
     uid: (*string)((len=13) "groundstation"),
     autocomplete: (*string)((len=14) "groundstation "),
-    arg: (*string)((len=77) "https://us-west-2.console.aws.amazon.com/groundstation/home?region=us-west-2#"),
+    arg: (*string)((len=86) "https://us-west-2.console.aws.amazon.com/groundstation/home?region=us-west-2#/contacts"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

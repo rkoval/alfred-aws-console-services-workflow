@@ -1150,7 +1150,14 @@
 - id: groundstation
   name: Ground Station
   description: Communicate with satellites
-  url: "/groundstation/home#"
+  url: /groundstation/home#/contacts
+  sub_services:
+    - id: contacts
+      name: Contacts
+      url: /groundstation/home#/contacts
+    - id: satellitesandresources
+      name: Satellites and resources
+      url: /groundstation/home#/resources
 
 - id: guardduty
   name: GuardDuty
