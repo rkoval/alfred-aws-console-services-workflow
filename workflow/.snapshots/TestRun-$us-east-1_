@@ -166,7 +166,7 @@
   }),
   (*aw.Item)({
     title: (string) (len=8) "artifact",
-    subtitle: (*string)((len=50) "Artifact – AWS Compliance Reports and Agreements"),
+    subtitle: (*string)((len=55) "🗂 Artifact – AWS Compliance Reports and Agreements"),
     match: (*string)((len=17) "artifact Artifact"),
     uid: (*string)((len=8) "artifact"),
     autocomplete: (*string)((len=20) "$us-east-1 artifact "),

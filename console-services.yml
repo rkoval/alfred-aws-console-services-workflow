@@ -39,6 +39,13 @@
   description: AWS Compliance Reports and Agreements
   has_global_region: true
   url: /artifact/home
+  sub_services:
+    - id: agreements
+      name: Agreements
+      url: /artifact/agreements/accounts
+    - id: reports
+      name: Reports
+      url: /artifact/reports
 
 - id: athena
   name: Athena
