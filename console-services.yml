@@ -2519,7 +2519,35 @@
 - id: frauddetector
   name: Fraud Detector
   description: Detect more online fraud faster with machine learning
-  url: "/frauddetector/home#"
+  url: /frauddetector/home#getDetectors
+  sub_services:
+    - id: detectors
+      name: Detectors
+      url: /frauddetector/home#getDetectors
+    - id: models
+      name: Models
+      url: /frauddetector/home#getModels
+    - id: events
+      name: Events
+      url: /frauddetector/home#getEventTypes
+    - id: entities
+      name: Entities
+      url: /frauddetector/home#entityTypes
+    - id: outcomes
+      name: Outcomes
+      url: /frauddetector/home#getOutcomes
+    - id: labels
+      name: Labels
+      url: /frauddetector/home#getLabels
+    - id: variables
+      name: Variables
+      url: /frauddetector/home#getVariables
+    - id: searchpastpredictions
+      name: Search past predictions
+      url: /frauddetector/home#auditEvaluations
+    - id: batchpredictions
+      name: Batch predictions
+      url: /frauddetector/home#getBatchPredictions
 
 - id: kendra
   name: Kendra

@@ -4786,11 +4786,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=13) "frauddetector",
-    subtitle: (*string)((len=72) "Fraud Detector – Detect more online fraud faster with machine learning"),
+    subtitle: (*string)((len=77) "🗂 Fraud Detector – Detect more online fraud faster with machine learning"),
     match: (*string)((len=28) "frauddetector Fraud Detector"),
     uid: (*string)((len=13) "frauddetector"),
     autocomplete: (*string)((len=25) "$us-east-1 frauddetector "),
-    arg: (*string)((len=77) "https://us-east-1.console.aws.amazon.com/frauddetector/home?region=us-east-1#"),
+    arg: (*string)((len=89) "https://us-east-1.console.aws.amazon.com/frauddetector/home?region=us-east-1#getDetectors"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
