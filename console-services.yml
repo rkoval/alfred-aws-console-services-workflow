@@ -12,7 +12,17 @@
 - id: apigateway
   name: API Gateway
   description: Build, Deploy and Manage APIs
-  url: "/apigateway/main/apis#"
+  url: /apigateway/main/apis#
+  sub_services:
+    - id: apis
+      name: APIs
+      url: /apigateway/main/apis#
+    - id: customdomainnames
+      name: Custom domain names
+      url: /apigateway/main/publish/domain-names#
+    - id: vpclinks
+      name: VPC links
+      url: /apigateway/main/vpc-links/list#
 
 - id: appstream
   name: AppStream 2.0

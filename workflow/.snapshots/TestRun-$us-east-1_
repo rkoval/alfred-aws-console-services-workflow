@@ -67,7 +67,7 @@
   }),
   (*aw.Item)({
     title: (string) (len=10) "apigateway",
-    subtitle: (*string)((len=45) "API Gateway – Build, Deploy and Manage APIs"),
+    subtitle: (*string)((len=50) "🗂 API Gateway – Build, Deploy and Manage APIs"),
     match: (*string)((len=22) "apigateway API Gateway"),
     uid: (*string)((len=10) "apigateway"),
     autocomplete: (*string)((len=22) "$us-east-1 apigateway "),
