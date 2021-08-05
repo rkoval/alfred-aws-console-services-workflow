@@ -3206,7 +3206,7 @@
     match: (*string)((len=23) "personalize Personalize"),
     uid: (*string)((len=11) "personalize"),
     autocomplete: (*string)((len=23) "$us-east-1 personalize "),
-    arg: (*string)((len=75) "https://us-east-1.console.aws.amazon.com/personalize/home?region=us-east-1#"),
+    arg: (*string)((len=88) "https://us-east-1.console.aws.amazon.com/personalize/home?region=us-east-1#datasetGroups"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

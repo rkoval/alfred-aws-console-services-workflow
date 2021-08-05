@@ -1578,7 +1578,7 @@
 - id: personalize
   name: Personalize
   description: easily add real-time recommendations to your apps
-  url: "/personalize/home#"
+  url: /personalize/home#datasetGroups
 
 - id: pinpoint
   name: Pinpoint

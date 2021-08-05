@@ -797,7 +797,7 @@
     match: (*string)((len=23) "personalize Personalize"),
     uid: (*string)((len=11) "personalize"),
     autocomplete: (*string)((len=12) "personalize "),
-    arg: (*string)((len=75) "https://us-west-2.console.aws.amazon.com/personalize/home?region=us-west-2#"),
+    arg: (*string)((len=88) "https://us-west-2.console.aws.amazon.com/personalize/home?region=us-west-2#datasetGroups"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
