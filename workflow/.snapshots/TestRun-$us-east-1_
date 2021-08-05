@@ -3466,11 +3466,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=9) "robomaker",
-    subtitle: (*string)((len=73) "RoboMaker – Develop, test, and deploy intelligent robotics applications"),
+    subtitle: (*string)((len=78) "🗂 RoboMaker – Develop, test, and deploy intelligent robotics applications"),
     match: (*string)((len=19) "robomaker RoboMaker"),
     uid: (*string)((len=9) "robomaker"),
     autocomplete: (*string)((len=21) "$us-east-1 robomaker "),
-    arg: (*string)((len=73) "https://us-east-1.console.aws.amazon.com/robomaker/home?region=us-east-1#"),
+    arg: (*string)((len=77) "https://us-east-1.console.aws.amazon.com/robomaker/home?region=us-east-1#ides"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

@@ -1799,7 +1799,47 @@
 - id: robomaker
   name: RoboMaker
   description: Develop, test, and deploy intelligent robotics applications
-  url: "/robomaker/home#"
+  url: /robomaker/home#ides
+  sub_services:
+    - id: developmentenvironments
+      name: Development environments
+      url: /robomaker/home#ides
+    - id: robotapplications
+      name: Robot applications
+      url: /robomaker/home#robotApplications
+    - id: simulationapplications
+      name: Simulation applications
+      url: /robomaker/home#simulationApplications
+    - id: worldtemplates
+      name: World templates
+      url: /robomaker/home#worldTemplates
+    - id: worlds
+      name: Worlds
+      url: /robomaker/home#worlds
+    - id: generationjobs
+      name: Generation jobs
+      url: /robomaker/home#worldGenerationJobs
+    - id: exportjobs
+      name: Export jobs
+      url: /robomaker/home#worldExportJobs
+    - id: simulationjobs
+      name: Simulation jobs
+      url: /robomaker/home#simulationJobs
+    - id: simulationjobbatches
+      name: Simulation job batches
+      url: /robomaker/home#simulationJobBatches
+    - id: robots
+      name: Robots
+      url: /robomaker/home#robots
+    - id: fleets
+      name: Fleets
+      url: /robomaker/home#fleets
+    - id: deployments
+      name: Deployments
+      url: /robomaker/home#deployments
+    - id: sampleapplications
+      name: Sample applications
+      url: /robomaker/home#sampleSimulationJobs
 
 - id: route53
   name: Route 53
