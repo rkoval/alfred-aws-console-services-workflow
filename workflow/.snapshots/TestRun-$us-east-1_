@@ -137,7 +137,7 @@
     match: (*string)((len=15) "appsync AppSync"),
     uid: (*string)((len=7) "appsync"),
     autocomplete: (*string)((len=19) "$us-east-1 appsync "),
-    arg: (*string)((len=71) "https://us-east-1.console.aws.amazon.com/appsync/home?region=us-east-1#"),
+    arg: (*string)((len=72) "https://us-east-1.console.aws.amazon.com/appsync/home?region=us-east-1#/"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

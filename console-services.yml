@@ -32,7 +32,7 @@
 - id: appsync
   name: AppSync
   description: Real-Time Data Sync Using GraphQL for Mobile & Web Apps, Online or Offline
-  url: "/appsync/home#"
+  url: "/appsync/home#/"
 
 - id: artifact
   name: Artifact
