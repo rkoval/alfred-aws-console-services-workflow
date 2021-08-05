@@ -3235,11 +3235,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=8) "pinpoint",
-    subtitle: (*string)((len=58) "Pinpoint – Engage Users via Email, SMS, Push & Analytics"),
+    subtitle: (*string)((len=63) "🗂 Pinpoint – Engage Users via Email, SMS, Push & Analytics"),
     match: (*string)((len=17) "pinpoint Pinpoint"),
     uid: (*string)((len=8) "pinpoint"),
     autocomplete: (*string)((len=20) "$us-east-1 pinpoint "),
-    arg: (*string)((len=72) "https://us-east-1.console.aws.amazon.com/pinpoint/home?region=us-east-1#"),
+    arg: (*string)((len=77) "https://us-east-1.console.aws.amazon.com/pinpoint/home?region=us-east-1#/apps"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

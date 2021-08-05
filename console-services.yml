@@ -1583,7 +1583,23 @@
 - id: pinpoint
   name: Pinpoint
   description: Engage Users via Email, SMS, Push & Analytics
-  url: "/pinpoint/home#"
+  url: /pinpoint/home#/apps
+  sub_services:
+    - id: allprojects
+      name: All projects
+      url: /pinpoint/home#/apps
+    - id: messagetemplates
+      name: Message templates
+      url: /pinpoint/home#/templates/overview
+    - id: machinelearningmodels
+      name: Machine learning models
+      url: /pinpoint/home#/recommenders
+    - id: deliverabilitydashboard
+      name: Deliverability dashboard
+      url: /pinpoint/home#/deliverability/overview
+    - id: smsandvoice
+      name: SMS and voice
+      url: /pinpoint/home#/sms-account-settings
 
 - id: polly
   name: Polly
