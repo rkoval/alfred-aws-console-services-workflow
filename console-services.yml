@@ -263,7 +263,14 @@
 - id: cloudhsm
   name: CloudHSM
   description: Managed Hardware Security Modules in the Cloud
-  url: "/cloudhsm/home#"
+  url: /cloudhsm/home#/clusters
+  sub_services:
+    - id: clusters
+      name: Clusters
+      url: /cloudhsm/home#/clusters
+    - id: backups
+      name: Backups
+      url: /cloudhsm/home#/backups
 
 - id: cloudmap
   name: Cloud Map

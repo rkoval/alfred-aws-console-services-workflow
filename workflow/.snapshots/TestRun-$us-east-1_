@@ -562,11 +562,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=8) "cloudhsm",
-    subtitle: (*string)((len=59) "CloudHSM – Managed Hardware Security Modules in the Cloud"),
+    subtitle: (*string)((len=64) "🗂 CloudHSM – Managed Hardware Security Modules in the Cloud"),
     match: (*string)((len=17) "cloudhsm CloudHSM"),
     uid: (*string)((len=8) "cloudhsm"),
     autocomplete: (*string)((len=20) "$us-east-1 cloudhsm "),
-    arg: (*string)((len=72) "https://us-east-1.console.aws.amazon.com/cloudhsm/home?region=us-east-1#"),
+    arg: (*string)((len=81) "https://us-east-1.console.aws.amazon.com/cloudhsm/home?region=us-east-1#/clusters"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
