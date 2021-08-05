@@ -275,7 +275,11 @@
 - id: cloudmap
   name: Cloud Map
   description: Build a dynamic map of your cloud
-  url: "/cloudmap/home#"
+  url: /cloudmap/home#namespaces
+  sub_services:
+    - id: namespaces
+      name: Namespaces
+      url: /cloudmap/home#namespaces
 
 - id: cloudsearch
   name: CloudSearch

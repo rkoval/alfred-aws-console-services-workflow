@@ -595,11 +595,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=8) "cloudmap",
-    subtitle: (*string)((len=47) "Cloud Map – Build a dynamic map of your cloud"),
+    subtitle: (*string)((len=52) "🗂 Cloud Map – Build a dynamic map of your cloud"),
     match: (*string)((len=18) "cloudmap Cloud Map"),
     uid: (*string)((len=8) "cloudmap"),
     autocomplete: (*string)((len=20) "$us-east-1 cloudmap "),
-    arg: (*string)((len=72) "https://us-east-1.console.aws.amazon.com/cloudmap/home?region=us-east-1#"),
+    arg: (*string)((len=82) "https://us-east-1.console.aws.amazon.com/cloudmap/home?region=us-east-1#namespaces"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
