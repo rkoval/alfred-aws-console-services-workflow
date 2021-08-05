@@ -1783,11 +1783,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=11) "eventbridge",
-    subtitle: (*string)((len=110) "EventBridge – Serverless event bus that connects application data from your own apps, SaaS, and AWS services"),
+    subtitle: (*string)((len=115) "🗂 EventBridge – Serverless event bus that connects application data from your own apps, SaaS, and AWS services"),
     match: (*string)((len=23) "eventbridge EventBridge"),
     uid: (*string)((len=11) "eventbridge"),
     autocomplete: (*string)((len=23) "$us-east-1 eventbridge "),
-    arg: (*string)((len=70) "https://us-east-1.console.aws.amazon.com/events/home?region=us-east-1#"),
+    arg: (*string)((len=77) "https://us-east-1.console.aws.amazon.com/events/home?region=us-east-1#/events"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

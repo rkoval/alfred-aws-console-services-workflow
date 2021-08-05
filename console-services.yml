@@ -1017,7 +1017,38 @@
 - id: eventbridge
   name: EventBridge
   description: Serverless event bus that connects application data from your own apps, SaaS, and AWS services
-  url: "/events/home#"
+  url: /events/home#/events
+  sub_services:
+    - id: events
+      name: Events
+      url: /events/home#/events
+    - id: eventbuses
+      name: Event buses
+      url: /events/home#/eventbuses
+    - id: rules
+      name: Rules
+      url: /events/home#/rules
+    - id: archives
+      name: Archives
+      url: /events/home#/archives
+    - id: replays
+      name: Replays
+      url: /events/home#/replays
+    - id: integration
+      name: Integration
+      url: /events/home#/integration
+    - id: partnereventsources
+      name: Partner event sources
+      url: /events/home#/partners
+    - id: apidestinations
+      name: API destinations
+      url: /events/home#/apidestinations
+    - id: schemaregistry
+      name: Schema registry
+      url: /events/home#/schemaregistry
+    - id: schemas
+      name: Schemas
+      url: /events/home#/schemas
 
 - id: forecast
   name: Forecast
