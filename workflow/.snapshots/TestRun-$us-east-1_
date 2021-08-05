@@ -4493,7 +4493,7 @@
     match: (*string)((len=16) "appmesh App Mesh"),
     uid: (*string)((len=7) "appmesh"),
     autocomplete: (*string)((len=19) "$us-east-1 appmesh "),
-    arg: (*string)((len=71) "https://us-east-1.console.aws.amazon.com/appmesh/home?region=us-east-1#"),
+    arg: (*string)((len=73) "https://us-east-1.console.aws.amazon.com/appmesh/meshes?region=us-east-1#"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

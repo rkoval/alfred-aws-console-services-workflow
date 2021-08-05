@@ -2393,7 +2393,7 @@
 - id: appmesh
   name: App Mesh
   description: Application-level networking for all your services
-  url: "/appmesh/home#"
+  url: "/appmesh/meshes#"
 
 - id: augmentedai
   name: Augmented AI
