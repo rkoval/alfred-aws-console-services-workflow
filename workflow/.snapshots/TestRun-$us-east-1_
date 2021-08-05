@@ -4394,7 +4394,7 @@
     match: (*string)((len=17) "workmail WorkMail"),
     uid: (*string)((len=8) "workmail"),
     autocomplete: (*string)((len=20) "$us-east-1 workmail "),
-    arg: (*string)((len=72) "https://us-east-1.console.aws.amazon.com/workmail/home?region=us-east-1#"),
+    arg: (*string)((len=89) "https://us-east-1.console.aws.amazon.com/workmail/v2/home?region=us-east-1#/organizations"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

@@ -2378,7 +2378,7 @@
 - id: workmail
   name: WorkMail
   description: Secure Email and Calendaring Service
-  url: "/workmail/home#"
+  url: "/workmail/v2/home#/organizations"
 
 - id: workspaces
   name: WorkSpaces
