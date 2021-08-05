@@ -3136,11 +3136,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=8) "opsworks",
-    subtitle: (*string)((len=58) "OpsWorks – Configuration Management with Chef and Puppet"),
+    subtitle: (*string)((len=63) "🗂 OpsWorks – Configuration Management with Chef and Puppet"),
     match: (*string)((len=17) "opsworks OpsWorks"),
     uid: (*string)((len=8) "opsworks"),
     autocomplete: (*string)((len=20) "$us-east-1 opsworks "),
-    arg: (*string)((len=44) "https://console.aws.amazon.com/opsworks/home"),
+    arg: (*string)((len=55) "https://console.aws.amazon.com/opsworks/home#/dashboard"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

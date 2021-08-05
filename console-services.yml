@@ -1551,7 +1551,23 @@
   name: OpsWorks
   description: Configuration Management with Chef and Puppet
   has_global_region: true
-  url: /opsworks/home
+  url: /opsworks/home#/dashboard
+  sub_services:
+    - id: stacks
+      name: Stacks
+      url: /opsworks/home#/dashboard
+    - id: users
+      name: Users
+      url: /opsworks/home#/users
+    - id: settings
+      name: Settings
+      url: /opsworks/home#/mysettings
+    - id: chef
+      name: Chef Automate servers
+      url: /opsworks/cm/home?owc=chefautomate#/chef/
+    - id: puppet
+      name: Puppet Enterprise servers
+      url: /opsworks/cm/home?owc=puppet#/puppet/
 
 - id: organizations
   name: Organizations
