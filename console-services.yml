@@ -2620,7 +2620,17 @@
 - id: launchwizard
   name: Launch Wizard
   description: Size, configure, and deploy third-party applications on AWS
-  url: "/launchwizard/home#"
+  url: /launchwizard/home#SqlDeployment
+  sub_services:
+    - id: mssqlserver
+      name: MS SQL Server
+      url: /launchwizard/home#SqlDeployment
+    - id: sap
+      name: SAP
+      url: /launchwizard/home#SapDeployment
+    - id: activedirectory
+      name: Active Directory
+      url: /launchwizard/home#AdDeployment
 
 - id: status
   name: Status

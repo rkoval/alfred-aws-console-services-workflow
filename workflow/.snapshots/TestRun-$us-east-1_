@@ -4984,11 +4984,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=12) "launchwizard",
-    subtitle: (*string)((len=77) "Launch Wizard – Size, configure, and deploy third-party applications on AWS"),
+    subtitle: (*string)((len=82) "🗂 Launch Wizard – Size, configure, and deploy third-party applications on AWS"),
     match: (*string)((len=26) "launchwizard Launch Wizard"),
     uid: (*string)((len=12) "launchwizard"),
     autocomplete: (*string)((len=24) "$us-east-1 launchwizard "),
-    arg: (*string)((len=76) "https://us-east-1.console.aws.amazon.com/launchwizard/home?region=us-east-1#"),
+    arg: (*string)((len=89) "https://us-east-1.console.aws.amazon.com/launchwizard/home?region=us-east-1#SqlDeployment"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
