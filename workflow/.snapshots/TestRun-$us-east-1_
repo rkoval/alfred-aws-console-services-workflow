@@ -4324,11 +4324,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=19) "wellarchitectedtool",
-    subtitle: (*string)((len=83) "Well-Architected Tool – Learn best practices, measure, and improve your workloads"),
+    subtitle: (*string)((len=88) "🗂 Well-Architected Tool – Learn best practices, measure, and improve your workloads"),
     match: (*string)((len=41) "wellarchitectedtool Well-Architected Tool"),
     uid: (*string)((len=19) "wellarchitectedtool"),
     autocomplete: (*string)((len=31) "$us-east-1 wellarchitectedtool "),
-    arg: (*string)((len=79) "https://us-east-1.console.aws.amazon.com/wellarchitected/home?region=us-east-1#"),
+    arg: (*string)((len=89) "https://us-east-1.console.aws.amazon.com/wellarchitected/home?region=us-east-1#/dashboard"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

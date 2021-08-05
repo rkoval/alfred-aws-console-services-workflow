@@ -2358,7 +2358,17 @@
 - id: wellarchitectedtool
   name: Well-Architected Tool
   description: Learn best practices, measure, and improve your workloads
-  url: "/wellarchitected/home#"
+  url: /wellarchitected/home#/dashboard
+  sub_services:
+    - id: dashboard
+      name: Dashboard
+      url: /wellarchitected/home#/dashboard
+    - id: workloadinvitations
+      name: Workload invitations
+      url: /wellarchitected/home#/invitations
+    - id: workloads
+      name: Workloads
+      url: /wellarchitected/home#/workloads
 
 - id: worklink
   name: WorkLink
