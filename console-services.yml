@@ -2578,7 +2578,26 @@
 - id: outpost
   name: Outposts
   description: Run AWS Services On Premises
-  url: "/outposts/home#"
+  url: /outposts/home#Outposts
+  sub_services:
+    - id: outposts
+      name: Outposts
+      url: /outposts/home#Outposts
+    - id: sites
+      name: Sites
+      url: /outposts/home#Sites
+    - id: localgateways
+      name: Local gateways
+      url: /outposts/home#LocalGateways
+    - id: localgatewayroutetables
+      name: Local gateway route tables
+      url: /outposts/home#LocalGatewayRouteTables
+    - id: orders
+      name: Orders
+      url: /outposts/home#Orders
+    - id: outpostscatalog
+      name: Outposts catalog
+      url: /outposts/home#Catalog
 
 - id: iq
   name: IQ

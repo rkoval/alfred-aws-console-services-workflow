@@ -4885,11 +4885,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=7) "outpost",
-    subtitle: (*string)((len=41) "Outposts – Run AWS Services On Premises"),
+    subtitle: (*string)((len=46) "🗂 Outposts – Run AWS Services On Premises"),
     match: (*string)((len=16) "outpost Outposts"),
     uid: (*string)((len=7) "outpost"),
     autocomplete: (*string)((len=19) "$us-east-1 outpost "),
-    arg: (*string)((len=72) "https://us-east-1.console.aws.amazon.com/outposts/home?region=us-east-1#"),
+    arg: (*string)((len=80) "https://us-east-1.console.aws.amazon.com/outposts/home?region=us-east-1#Outposts"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
