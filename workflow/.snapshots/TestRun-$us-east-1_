@@ -3433,11 +3433,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=3) "ram",
-    subtitle: (*string)((len=88) "Resource Access Manager – Share AWS resources with other accounts or AWS Organizations"),
+    subtitle: (*string)((len=93) "🗂 Resource Access Manager – Share AWS resources with other accounts or AWS Organizations"),
     match: (*string)((len=27) "ram Resource Access Manager"),
     uid: (*string)((len=3) "ram"),
     autocomplete: (*string)((len=15) "$us-east-1 ram "),
-    arg: (*string)((len=67) "https://us-east-1.console.aws.amazon.com/ram/home?region=us-east-1#"),
+    arg: (*string)((len=87) "https://us-east-1.console.aws.amazon.com/ram/home?region=us-east-1#OwnedResourceShares:"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

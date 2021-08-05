@@ -1769,7 +1769,32 @@
 - id: ram
   name: Resource Access Manager
   description: Share AWS resources with other accounts or AWS Organizations
-  url: "/ram/home#"
+  url: '/ram/home#OwnedResourceShares:'
+  sub_services:
+    - id: ownedresourceshares
+      name: Owned resource shares
+      url: '/ram/home#OwnedResourceShares:'
+    - id: ownedresources
+      name: Owned resources
+      url: '/ram/home#OwnedResources:'
+    - id: ownedprincipals
+      name: Owned principals
+      url: '/ram/home#OwnedPrincipals:'
+    - id: sharedresourceshares
+      name: Shared resource shares
+      url: '/ram/home#SharedResourceShares:'
+    - id: sharedresources
+      name: Shared resources
+      url: '/ram/home#SharedResources:'
+    - id: sharedprincipals
+      name: Shared principals
+      url: '/ram/home#SharedPrincipals:'
+    - id: permissionslibrary
+      name: Permissions library
+      url: '/ram/home#Permissions:'
+    - id: settings
+      name: Settings
+      url: '/ram/home#Settings:'
 
 - id: robomaker
   name: RoboMaker
