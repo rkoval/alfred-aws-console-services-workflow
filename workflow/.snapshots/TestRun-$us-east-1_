@@ -1122,12 +1122,12 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=11) "costreports",
-    subtitle: (*string)((len=64) "Cost Explorer – Visualize and Explore Your AWS Costs and Usage"),
-    match: (*string)((len=33) "costreports Cost Explorer reports"),
-    uid: (*string)((len=11) "costreports"),
-    autocomplete: (*string)((len=23) "$us-east-1 costreports "),
-    arg: (*string)((len=76) "https://us-east-1.console.aws.amazon.com/cost-reports/home?region=us-east-1#"),
+    title: (string) (len=14) "costmanagement",
+    subtitle: (*string)((len=71) "🗂 Cost Management – Visualize and Explore Your AWS Costs and Usage"),
+    match: (*string)((len=30) "costmanagement Cost Management"),
+    uid: (*string)((len=14) "costmanagement"),
+    autocomplete: (*string)((len=26) "$us-east-1 costmanagement "),
+    arg: (*string)((len=62) "https://console.aws.amazon.com/cost-management/home#/dashboard"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -1149,7 +1149,7 @@
       })
     },
     icon: (*aw.Icon)({
-      Value: (string) (len=22) "images/costreports.png",
+      Value: (string) (len=25) "images/costmanagement.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false

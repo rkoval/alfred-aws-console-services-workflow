@@ -493,12 +493,67 @@
   description: set up and govern your multi-account AWS environment
   url: "/controltower/home#"
 
-- id: costreports
-  name: Cost Explorer
+- id: costmanagement
+  name: Cost Management
   description: Visualize and Explore Your AWS Costs and Usage
-  extra_search_terms:
-    - reports
-  url: "/cost-reports/home#"
+  url: /cost-management/home#/dashboard
+  has_global_region: true
+  sub_services:
+    - id: dashboard
+      name: Dashboard
+      url: /cost-management/home#/dashboard
+    - id: costexplorer
+      name: Cost Explorer
+      url: /cost-management/home#/custom
+    - id: reports
+      name: Reports
+      url: /cost-management/home#/reports/overview
+    - id: budgets
+      name: Budgets
+      url: /billing/home#/budgets
+    - id: costanomalydetection
+      name: Cost Anomaly Detection
+      url: /cost-management/home#/anomaly-detection
+    - id: rightsizingrecommendations
+      name: Rightsizing recommendations
+      url: /cost-management/home#/rightsizing
+    - id: savingsplans
+      name: Savings plans
+      url: /cost-management/home#/savings-plans/overview
+    - id: inventory
+      name: Inventory
+      url: /cost-management/home#/savings-plans/inventory
+    - id: savingsplansrecommendations
+      name: Savings Plans Recommendations
+      url: /cost-management/home#/savings-plans/recommendations
+    - id: purchasesavingsplans
+      name: Purchase Savings Plans
+      url: /cost-management/home#/savings-plans/purchase
+    - id: savingsplansutilizationreport
+      name: Savings Plans Utilization report
+      url: /cost-management/home#/savings-plans/utilization
+    - id: savingsplanscoveragereport
+      name: Savings Plans Coverage report
+      url: /cost-management/home#/savings-plans/coverage
+    - id: savingsplanscart
+      name: Savings Plans Cart
+      url: /cost-management/home#/savings-plans/cart
+    - id: reservations
+      name: Reservations
+      url: /cost-management/home#/ri/dashboard
+    - id: reservationsrecommendations
+      name: Reversations Recommendations
+      url: /cost-management/home#/recommendations
+    - id: reservationsutilizationreport
+      name: Reversations Utilization report
+      url: /cost-management/home#/ri/utilization
+    - id: reservationscoveragereport
+      name: Reversations Coverage report
+      url: /cost-management/home#/ri/coverage
+    - id: preferences
+      name: Preferences
+      url: /cost-management/home#/settings
+
 
 - id: datapipeline
   name: Data Pipeline

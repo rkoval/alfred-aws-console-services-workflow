@@ -1,4 +1,4 @@
-([]*aw.Item) (len=33) {
+([]*aw.Item) (len=34) {
   (*aw.Item)({
     title: (string) (len=3) "sns",
     subtitle: (*string)((len=75) "🗂 Simple Notification Service (SNS) – SNS Pub/Sub, Mobile Push and SMS"),
@@ -985,6 +985,39 @@
     },
     icon: (*aw.Icon)({
       Value: (string) (len=23) "images/iotanalytics.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=14) "costmanagement",
+    subtitle: (*string)((len=71) "🗂 Cost Management – Visualize and Explore Your AWS Costs and Usage"),
+    match: (*string)((len=30) "costmanagement Cost Management"),
+    uid: (*string)((len=14) "costmanagement"),
+    autocomplete: (*string)((len=15) "costmanagement "),
+    arg: (*string)((len=62) "https://console.aws.amazon.com/cost-management/home#/dashboard"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    icon: (*aw.Icon)({
+      Value: (string) (len=25) "images/costmanagement.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
