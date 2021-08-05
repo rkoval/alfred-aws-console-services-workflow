@@ -1457,7 +1457,20 @@
 - id: mediapackage
   name: MediaPackage
   description: Deliver video to many devices using just-in-time format conversion
-  url: "/mediapackage/home#"
+  url: /mediapackage/home#/channels
+  sub_services:
+    - id: channels
+      name: Channels
+      url: /mediapackage/home#/channels
+    - id: harvestjobs
+      name: Harvest jobs
+      url: /mediapackage/home#/harvest-jobs
+    - id: vodpackaginggroups
+      name: Video on demand Packaging groups
+      url: /mediapackagevod/home#/packaging_groups
+    - id: vodassets
+      name: Video on demand Assets
+      url: /mediapackagevod/home#/assets
 
 - id: mediastore
   name: MediaStore

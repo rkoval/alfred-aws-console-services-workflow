@@ -2938,11 +2938,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=12) "mediapackage",
-    subtitle: (*string)((len=83) "MediaPackage – Deliver video to many devices using just-in-time format conversion"),
+    subtitle: (*string)((len=88) "🗂 MediaPackage – Deliver video to many devices using just-in-time format conversion"),
     match: (*string)((len=25) "mediapackage MediaPackage"),
     uid: (*string)((len=12) "mediapackage"),
     autocomplete: (*string)((len=24) "$us-east-1 mediapackage "),
-    arg: (*string)((len=76) "https://us-east-1.console.aws.amazon.com/mediapackage/home?region=us-east-1#"),
+    arg: (*string)((len=85) "https://us-east-1.console.aws.amazon.com/mediapackage/home?region=us-east-1#/channels"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
