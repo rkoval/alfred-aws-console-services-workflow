@@ -1733,7 +1733,38 @@
 - id: rekognition
   name: Rekognition
   description: Search and Analyze Images
-  url: "/rekognition/home#"
+  url: /rekognition/custom-labels#/
+  sub_services:
+    - id: usecustomlabels
+      name: Use Custom Labels
+      url: /rekognition/custom-labels#/
+    - id: labeldetection
+      name: Label detection
+      url: /rekognition/home#/label-detection
+    - id: imagemoderation
+      name: Image moderation
+      url: /rekognition/home#/image-moderation
+    - id: facialanalysis
+      name: Facial analysis
+      url: /rekognition/home#/face-detection
+    - id: celebrityrecognition
+      name: Celebrity recognition
+      url: /rekognition/home#/celebrity-detection
+    - id: facecomparison
+      name: Face comparison
+      url: /rekognition/home#/face-comparison
+    - id: textinimage
+      name: Text in image
+      url: /rekognition/home#/text-detection
+    - id: ppedetection
+      name: PPE detection
+      url: /rekognition/home#/ppe
+    - id: videoanalysis
+      name: Video analysis
+      url: /rekognition/home#/video-analysis
+    - id: metrics
+      name: Metrics
+      url: /rekognition/home#/usage-metrics
 
 - id: ram
   name: Resource Access Manager
