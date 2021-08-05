@@ -2014,11 +2014,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=4) "glue",
-    subtitle: (*string)((len=65) "Glue – fully managed ETL (extract, transform, and load) service"),
+    subtitle: (*string)((len=70) "🗂 Glue – fully managed ETL (extract, transform, and load) service"),
     match: (*string)((len=9) "glue Glue"),
     uid: (*string)((len=4) "glue"),
     autocomplete: (*string)((len=16) "$us-east-1 glue "),
-    arg: (*string)((len=68) "https://us-east-1.console.aws.amazon.com/glue/home?region=us-east-1#"),
+    arg: (*string)((len=89) "https://us-east-1.console.aws.amazon.com/glue/home?region=us-east-1#catalog:tab=databases"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

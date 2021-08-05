@@ -1093,7 +1093,59 @@
 - id: glue
   name: Glue
   description: fully managed ETL (extract, transform, and load) service
-  url: "/glue/home#"
+  url: /glue/home#catalog:tab=databases
+  sub_services:
+    - id: databases
+      name: Databases
+      url: /glue/home#catalog:tab=databases
+    - id: tables
+      name: Tables
+      url: /glue/home#catalog:tab=tables
+    - id: connections
+      name: Connections
+      url: /glue/home#catalog:tab=connections
+    - id: crawlers
+      name: Crawlers
+      url: /glue/home#catalog:tab=crawlers
+    - id: classifiers
+      name: Classifiers
+      url: /glue/home#catalog:tab=classifiers
+    - id: schemaregistries
+      name: Schema registries
+      url: /glue/home#catalog:tab=schemaRegistries
+    - id: schemas
+      name: Schemas
+      url: /glue/home#catalog:tab=schemas
+    - id: settings
+      name: Settings
+      url: /glue/home#catalog:tab=settings
+    - id: awsgluestudio
+      name: AWS Glue Studio
+      url: /gluestudio/home#/
+    - id: blueprints
+      name: Blueprints
+      url: /glue/home#etl:tab=blueprints
+    - id: workflows
+      name: Workflows
+      url: /glue/home#etl:tab=workflows
+    - id: jobs
+      name: Jobs
+      url: /glue/home#etl:tab=jobs
+    - id: mltransforms
+      name: ML Transforms
+      url: /glue/home#etl:tab=mlTransforms
+    - id: triggers
+      name: Triggers
+      url: /glue/home#etl:tab=triggers
+    - id: devendpoints
+      name: Dev endpoints
+      url: /glue/home#etl:tab=devEndpoints
+    - id: notebooks
+      name: Notebooks
+      url: /glue/home#etl:tab=notebooks
+    - id: securityconfigurations
+      name: Security configurations
+      url: '/glue/home#securityConfigurations:'
 
 - id: groundstation
   name: Ground Station
