@@ -1386,7 +1386,17 @@
   name: Marketplace Subscriptions
   description: Digital catalog where you can find, buy, and deploy software
   has_global_region: true
-  url: /marketplace/home
+  url: /marketplace/home#/subscriptions
+  sub_services:
+    - id: subscriptions
+      name: Manage subscriptions
+      url: /marketplace/home#/subscriptions
+    - id: discoverproducts
+      name: Discover products
+      url: /marketplace/home#/search
+    - id: settings
+      name: Settings
+      url: /marketplace/home#/settings
 
 - id: mediaconnect
   name: MediaConnect

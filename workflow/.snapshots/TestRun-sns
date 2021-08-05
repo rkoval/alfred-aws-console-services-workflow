@@ -727,11 +727,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=11) "marketplace",
-    subtitle: (*string)((len=90) "Marketplace Subscriptions – Digital catalog where you can find, buy, and deploy software"),
+    subtitle: (*string)((len=95) "🗂 Marketplace Subscriptions – Digital catalog where you can find, buy, and deploy software"),
     match: (*string)((len=37) "marketplace Marketplace Subscriptions"),
     uid: (*string)((len=11) "marketplace"),
     autocomplete: (*string)((len=12) "marketplace "),
-    arg: (*string)((len=47) "https://console.aws.amazon.com/marketplace/home"),
+    arg: (*string)((len=62) "https://console.aws.amazon.com/marketplace/home#/subscriptions"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
