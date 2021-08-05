@@ -2439,7 +2439,23 @@
 - id: codeguru
   name: CodeGuru
   description: Intelligent recommendations for building and running modern applications
-  url: "/codeguru/home#"
+  url: /codeguru/dashboard#
+  sub_services:
+    - id: dashboard
+      name: Dashboard
+      url: /codeguru/dashboard#
+    - id: ciworkflows
+      name: CI workflows
+      url: /codeguru/reviewer/#/ciworkflows
+    - id: repositories
+      name: Repositories
+      url: /codeguru/reviewer/#/associations
+    - id: codereviews
+      name: Code reviews
+      url: /codeguru/reviewer/#/codereviews
+    - id: profilinggroups
+      name: Profiling groups
+      url: /codeguru/profiler/search#
 
 - id: computeoptimizer
   name: Compute Optimizer

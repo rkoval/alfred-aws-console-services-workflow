@@ -4621,11 +4621,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=8) "codeguru",
-    subtitle: (*string)((len=85) "CodeGuru – Intelligent recommendations for building and running modern applications"),
+    subtitle: (*string)((len=90) "🗂 CodeGuru – Intelligent recommendations for building and running modern applications"),
     match: (*string)((len=17) "codeguru CodeGuru"),
     uid: (*string)((len=8) "codeguru"),
     autocomplete: (*string)((len=20) "$us-east-1 codeguru "),
-    arg: (*string)((len=72) "https://us-east-1.console.aws.amazon.com/codeguru/home?region=us-east-1#"),
+    arg: (*string)((len=77) "https://us-east-1.console.aws.amazon.com/codeguru/dashboard?region=us-east-1#"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
