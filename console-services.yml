@@ -2557,7 +2557,23 @@
 - id: qldb
   name: QLDB
   description: Fully managed ledger database
-  url: "/qldb/home#"
+  url: /qldb/home#ledger-list
+  sub_services:
+    - id: ledgers
+      name: Ledgers
+      url: /qldb/home#ledger-list
+    - id: queryeditor
+      name: Query editor
+      url: /qldb/home#query-editor
+    - id: streams
+      name: Streams
+      url: /qldb/home#stream-list
+    - id: export
+      name: Export
+      url: /qldb/home#export-job-list
+    - id: verification
+      name: Verification
+      url: /qldb/home#verification
 
 - id: outpost
   name: Outposts

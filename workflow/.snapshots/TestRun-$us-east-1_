@@ -4852,11 +4852,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=4) "qldb",
-    subtitle: (*string)((len=38) "QLDB – Fully managed ledger database"),
+    subtitle: (*string)((len=43) "🗂 QLDB – Fully managed ledger database"),
     match: (*string)((len=9) "qldb QLDB"),
     uid: (*string)((len=4) "qldb"),
     autocomplete: (*string)((len=16) "$us-east-1 qldb "),
-    arg: (*string)((len=68) "https://us-east-1.console.aws.amazon.com/qldb/home?region=us-east-1#"),
+    arg: (*string)((len=79) "https://us-east-1.console.aws.amazon.com/qldb/home?region=us-east-1#ledger-list"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
