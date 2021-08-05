@@ -457,7 +457,26 @@
 - id: comprehend
   name: Comprehend
   description: Analyze Unstructured Text
-  url: "/comprehend/home#"
+  url: /comprehend/home#home
+  sub_services:
+    - id: realtimeanalysis
+      name: Real-time analysis
+      url: /comprehend/home#home
+    - id: analysisjobs
+      name: Analysis jobs
+      url: /comprehend/home#analysis
+    - id: customclassification
+      name: Custom classification
+      url: /comprehend/home#classification
+    - id: customentityrecognition
+      name: Custom entity recognition
+      url: /comprehend/home#entity-recognition
+    - id: medicalrealtimeanalysis
+      name: Real-time analysis
+      url: /comprehend/home#try-comprehend-medical
+    - id: medicalanalysisjobs
+      name: Analysis jobs
+      url: /comprehend/home#medical-analysis
 
 - id: config
   name: Config

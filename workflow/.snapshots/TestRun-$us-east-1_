@@ -991,11 +991,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=10) "comprehend",
-    subtitle: (*string)((len=40) "Comprehend – Analyze Unstructured Text"),
+    subtitle: (*string)((len=45) "🗂 Comprehend – Analyze Unstructured Text"),
     match: (*string)((len=21) "comprehend Comprehend"),
     uid: (*string)((len=10) "comprehend"),
     autocomplete: (*string)((len=22) "$us-east-1 comprehend "),
-    arg: (*string)((len=74) "https://us-east-1.console.aws.amazon.com/comprehend/home?region=us-east-1#"),
+    arg: (*string)((len=78) "https://us-east-1.console.aws.amazon.com/comprehend/home?region=us-east-1#home"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
