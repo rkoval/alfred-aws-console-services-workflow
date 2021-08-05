@@ -1360,7 +1360,7 @@
 - id: lex
   name: Lex
   description: Build Voice and Text Chatbots
-  url: "/lex/home#"
+  url: "/lexv2/home#bots"
 
 - id: licensemanager
   name: License Manager

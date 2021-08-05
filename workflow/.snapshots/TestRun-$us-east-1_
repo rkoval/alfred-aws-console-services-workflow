@@ -2645,7 +2645,7 @@
     match: (*string)((len=7) "lex Lex"),
     uid: (*string)((len=3) "lex"),
     autocomplete: (*string)((len=15) "$us-east-1 lex "),
-    arg: (*string)((len=67) "https://us-east-1.console.aws.amazon.com/lex/home?region=us-east-1#"),
+    arg: (*string)((len=73) "https://us-east-1.console.aws.amazon.com/lexv2/home?region=us-east-1#bots"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
