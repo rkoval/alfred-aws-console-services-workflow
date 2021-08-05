@@ -1907,7 +1907,14 @@
 - id: serverlessrepo
   name: Serverless Application Repository
   description: Assemble, deploy, and share serverless applications within teams or publicly
-  url: "/serverlessrepo/home#"
+  url: /serverlessrepo/home#/available-applications
+  sub_services:
+    - id: availableapplications
+      name: Available applications
+      url: /serverlessrepo/home#/available-applications
+    - id: publishedapplications
+      name: Published applications
+      url: /serverlessrepo/home#/published-applications
 
 - id: servermigrationservice
   name: Server Migration Service
