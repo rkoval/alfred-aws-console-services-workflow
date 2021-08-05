@@ -1497,11 +1497,6 @@
   description: Simplify and accelerate the migration of your data centers to AWS
   url: "/migrationhub/home#"
 
-- id: mobilehub
-  name: Mobile Hub
-  description: Build, Test, and Monitor Mobile Apps
-  url: "/mobilehub/home#"
-
 - id: mq
   name: MQ
   description: Managed message broker service for Apache ActiveMQ
