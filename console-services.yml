@@ -695,7 +695,35 @@
 - id: documentdb
   name: DocumentDB
   description: Fully-managed MongoDB-compatible database service
-  url: "/docdb/home#"
+  url: /docdb/home#dashboard
+  sub_services:
+    - id: dashboard
+      name: Dashboard
+      url: /docdb/home#dashboard
+    - id: clusters
+      name: Clusters
+      url: /docdb/home#clusters
+    - id: snapshots
+      name: Snapshots
+      url: /docdb/home#snapshots
+    - id: subnetgroups
+      name: Subnet groups
+      url: /docdb/home#subnetGroups
+    - id: parametergroups
+      name: Parameter groups
+      url: /docdb/home#parameterGroups
+    - id: eventsubscriptions
+      name: Event Subscriptions
+      url: /docdb/home#eventSubscriptions
+    - id: events
+      name: Events
+      url: /docdb/home#events
+    - id: what'snew
+      name: What's New
+      url: /docdb/home#whats-new
+    - id: tutorials
+      name: Tutorials
+      url: /docdb/home#tutorials-page
 
 - id: dynamodb
   name: DynamoDB

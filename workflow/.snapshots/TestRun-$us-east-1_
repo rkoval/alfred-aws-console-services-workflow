@@ -1387,11 +1387,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=10) "documentdb",
-    subtitle: (*string)((len=64) "DocumentDB – Fully-managed MongoDB-compatible database service"),
+    subtitle: (*string)((len=69) "🗂 DocumentDB – Fully-managed MongoDB-compatible database service"),
     match: (*string)((len=21) "documentdb DocumentDB"),
     uid: (*string)((len=10) "documentdb"),
     autocomplete: (*string)((len=22) "$us-east-1 documentdb "),
-    arg: (*string)((len=69) "https://us-east-1.console.aws.amazon.com/docdb/home?region=us-east-1#"),
+    arg: (*string)((len=78) "https://us-east-1.console.aws.amazon.com/docdb/home?region=us-east-1#dashboard"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
