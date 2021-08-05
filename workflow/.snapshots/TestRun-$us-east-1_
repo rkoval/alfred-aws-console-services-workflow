@@ -1985,7 +1985,7 @@
     match: (*string)((len=36) "globalaccelerator Global Accelerator"),
     uid: (*string)((len=17) "globalaccelerator"),
     autocomplete: (*string)((len=29) "$us-east-1 globalaccelerator "),
-    arg: (*string)((len=97) "https://us-east-1.console.aws.amazon.com/ec2/v2/home?region=us-east-1#GlobalAcceleratorDashboard#"),
+    arg: (*string)((len=96) "https://us-east-1.console.aws.amazon.com/ec2/v2/home?region=us-east-1#GlobalAcceleratorDashboard"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

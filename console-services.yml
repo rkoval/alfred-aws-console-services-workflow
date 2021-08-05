@@ -1088,7 +1088,7 @@
 - id: globalaccelerator
   name: Global Accelerator
   description: Improve your application’s availability and performance using the AWS Global Network
-  url: "/ec2/v2/home#GlobalAcceleratorDashboard#"
+  url: "/ec2/v2/home#GlobalAcceleratorDashboard"
 
 - id: glue
   name: Glue
