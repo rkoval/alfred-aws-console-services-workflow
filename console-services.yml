@@ -1306,7 +1306,17 @@
   name: Key Management Service
   short_name: KMS
   description: Securely Generate and Manage AWS Encryption Keys
-  url: "/kms/home#"
+  url: /kms/home#/kms/defaultKeys
+  sub_services:
+    - id: awsmanagedkeys
+      name: AWS managed keys
+      url: /kms/home#/kms/defaultKeys
+    - id: customermanagedkeys
+      name: Customer managed keys
+      url: /kms/home#/kms/keys
+    - id: customkeystores
+      name: Custom key stores
+      url: /kms/home#/kms/customStores
 
 - id: kinesis
   name: Kinesis

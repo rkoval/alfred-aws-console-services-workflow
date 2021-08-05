@@ -2542,11 +2542,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=3) "kms",
-    subtitle: (*string)((len=81) "Key Management Service (KMS) – Securely Generate and Manage AWS Encryption Keys"),
+    subtitle: (*string)((len=86) "🗂 Key Management Service (KMS) – Securely Generate and Manage AWS Encryption Keys"),
     match: (*string)((len=3) "kms"),
     uid: (*string)((len=3) "kms"),
     autocomplete: (*string)((len=15) "$us-east-1 kms "),
-    arg: (*string)((len=67) "https://us-east-1.console.aws.amazon.com/kms/home?region=us-east-1#"),
+    arg: (*string)((len=83) "https://us-east-1.console.aws.amazon.com/kms/home?region=us-east-1#/kms/defaultKeys"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
