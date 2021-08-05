@@ -4753,11 +4753,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=15) "ec2imagebuilder",
-    subtitle: (*string)((len=89) "EC2 Image Builder – A managed service to automate build, customize and deploy OS images"),
+    subtitle: (*string)((len=94) "🗂 EC2 Image Builder – A managed service to automate build, customize and deploy OS images"),
     match: (*string)((len=33) "ec2imagebuilder EC2 Image Builder"),
     uid: (*string)((len=15) "ec2imagebuilder"),
     autocomplete: (*string)((len=27) "$us-east-1 ec2imagebuilder "),
-    arg: (*string)((len=76) "https://us-east-1.console.aws.amazon.com/imagebuilder/home?region=us-east-1#"),
+    arg: (*string)((len=86) "https://us-east-1.console.aws.amazon.com/imagebuilder/home?region=us-east-1#/pipelines"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

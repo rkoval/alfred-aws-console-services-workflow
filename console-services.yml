@@ -2492,7 +2492,29 @@
 - id: ec2imagebuilder
   name: EC2 Image Builder
   description: A managed service to automate build, customize and deploy OS images
-  url: "/imagebuilder/home#"
+  url: /imagebuilder/home#/pipelines
+  sub_services:
+    - id: imagepipelines
+      name: Image pipelines
+      url: /imagebuilder/home#/pipelines
+    - id: images
+      name: Images
+      url: /imagebuilder/home#/images
+    - id: components
+      name: Components
+      url: /imagebuilder/home#/components
+    - id: imagerecipes
+      name: Image recipes
+      url: /imagebuilder/home#/imageRecipes
+    - id: containerrecipes
+      name: Container recipes
+      url: /imagebuilder/home#/containerRecipes
+    - id: infrastructureconfiguration
+      name: Infrastructure configuration
+      url: /imagebuilder/home#/infraConfigurations
+    - id: distributionsettings
+      name: Distribution settings
+      url: /imagebuilder/home#/distributionSettings
 
 - id: frauddetector
   name: Fraud Detector
