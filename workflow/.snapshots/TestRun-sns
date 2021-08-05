@@ -133,11 +133,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=13) "stepfunctions",
-    subtitle: (*string)((len=54) "Step Functions – Coordinate Distributed Applications"),
+    subtitle: (*string)((len=59) "🗂 Step Functions – Coordinate Distributed Applications"),
     match: (*string)((len=28) "stepfunctions Step Functions"),
     uid: (*string)((len=13) "stepfunctions"),
     autocomplete: (*string)((len=14) "stepfunctions "),
-    arg: (*string)((len=70) "https://us-west-2.console.aws.amazon.com/states/home?region=us-west-2#"),
+    arg: (*string)((len=84) "https://us-west-2.console.aws.amazon.com/states/home?region=us-west-2#/statemachines"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

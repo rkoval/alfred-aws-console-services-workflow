@@ -2041,7 +2041,23 @@
 - id: stepfunctions
   name: Step Functions
   description: Coordinate Distributed Applications
-  url: "/states/home#"
+  url: /states/home#/statemachines
+  sub_services:
+    - id: statemachines
+      name: State machines
+      url: /states/home#/statemachines
+    - id: activities
+      name: Activities
+      url: /states/home#/activities
+    - id: dataflowsimulator
+      name: Data flow simulator
+      url: /states/home#/simulator
+    - id: featurespotlight
+      name: Feature spotlight
+      url: /states/home#/spotlight
+    - id: localdevelopment
+      name: Local Development
+      url: /states/home#/local-development
 
 - id: storagegateway
   name: Storage Gateway
