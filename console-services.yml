@@ -658,11 +658,6 @@
       name: Cloud Schemas
       url: /directoryservicev2/home#!/cloud-schemas
 
-- id: discovery
-  name: Application Discovery Service
-  description: Discover on-premises application inventory and dependencies
-  url: "/discovery/home#"
-
 - id: dms
   name: Database Migation Service
   short_name: DMS
