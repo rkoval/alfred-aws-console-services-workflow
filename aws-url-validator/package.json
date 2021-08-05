@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "assert-diff": "^3.0.2",
+    "chalk": "^4.1.2",
+    "diff": "^5.0.0",
+    "prettier": "^2.3.2"
+  },
+  "devDependencies": {}
+}
