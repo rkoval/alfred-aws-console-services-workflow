@@ -1430,7 +1430,29 @@
 - id: medialive
   name: MediaLive
   description: Convert video inputs into live outputs for broadcast and streaming delivery
-  url: "/medialive/home#"
+  url: /medialive/home#!/inputs
+  sub_services:
+    - id: inputs
+      name: Inputs
+      url: /medialive/home#!/inputs
+    - id: inputsecuritygroups
+      name: Input security groups
+      url: /medialive/home#!/inputSecurityGroups
+    - id: channels
+      name: Channels
+      url: /medialive/home#!/channels
+    - id: devices
+      name: Devices
+      url: /medialive/home#!/devices
+    - id: multiplexes
+      name: Multiplexes
+      url: /medialive/multiplex#/
+    - id: reservations
+      name: Reservations
+      url: /medialive/home#!/reservations
+    - id: workflowwizard
+      name: Workflow Wizard
+      url: /medialive/home#!/workflows
 
 - id: mediapackage
   name: MediaPackage

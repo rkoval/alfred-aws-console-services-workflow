@@ -2905,11 +2905,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=9) "medialive",
-    subtitle: (*string)((len=89) "MediaLive – Convert video inputs into live outputs for broadcast and streaming delivery"),
+    subtitle: (*string)((len=94) "🗂 MediaLive – Convert video inputs into live outputs for broadcast and streaming delivery"),
     match: (*string)((len=19) "medialive MediaLive"),
     uid: (*string)((len=9) "medialive"),
     autocomplete: (*string)((len=21) "$us-east-1 medialive "),
-    arg: (*string)((len=73) "https://us-east-1.console.aws.amazon.com/medialive/home?region=us-east-1#"),
+    arg: (*string)((len=81) "https://us-east-1.console.aws.amazon.com/medialive/home?region=us-east-1#!/inputs"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
