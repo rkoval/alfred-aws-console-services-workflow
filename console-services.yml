@@ -1502,7 +1502,15 @@
   description: Managed message broker service for Apache ActiveMQ
   extra_search_terms:
     - activemq
-  url: "/amazon-mq/home#"
+  url: /amazon-mq/home#/brokers
+  sub_services:
+    - id: brokers
+      name: Brokers
+      url: /amazon-mq/home#/brokers
+    - id: configurations
+      name: Configurations
+      url: /amazon-mq/home#/configurations
+
 
 - id: neptune
   name: Neptune

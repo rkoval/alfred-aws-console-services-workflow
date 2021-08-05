@@ -3070,11 +3070,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=2) "mq",
-    subtitle: (*string)((len=57) "MQ – Managed message broker service for Apache ActiveMQ"),
+    subtitle: (*string)((len=62) "🗂 MQ – Managed message broker service for Apache ActiveMQ"),
     match: (*string)((len=14) "mq MQ activemq"),
     uid: (*string)((len=2) "mq"),
     autocomplete: (*string)((len=14) "$us-east-1 mq "),
-    arg: (*string)((len=73) "https://us-east-1.console.aws.amazon.com/amazon-mq/home?region=us-east-1#"),
+    arg: (*string)((len=81) "https://us-east-1.console.aws.amazon.com/amazon-mq/home?region=us-east-1#/brokers"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
