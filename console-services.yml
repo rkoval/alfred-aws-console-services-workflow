@@ -2421,7 +2421,20 @@
 - id: mcs
   name: Keyspaces (for Apache Cassandra)
   description: A scalable, highly available, and managed Apache Cassandra–compatible database service
-  url: "/keyspaces/home#"
+  url: /keyspaces/home#dashboard
+  sub_services:
+    - id: dashboard
+      name: Dashboard
+      url: /keyspaces/home#dashboard
+    - id: keyspaces
+      name: Keyspaces
+      url: /keyspaces/home#keyspaces
+    - id: tables
+      name: Tables
+      url: /keyspaces/home#tables
+    - id: cqleditor
+      name: CQL editor
+      url: /keyspaces/home#cql-editor
 
 - id: codeguru
   name: CodeGuru

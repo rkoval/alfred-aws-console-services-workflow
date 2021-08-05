@@ -4588,11 +4588,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=3) "mcs",
-    subtitle: (*string)((len=125) "Keyspaces (for Apache Cassandra) – A scalable, highly available, and managed Apache Cassandra–compatible database service"),
+    subtitle: (*string)((len=130) "🗂 Keyspaces (for Apache Cassandra) – A scalable, highly available, and managed Apache Cassandra–compatible database service"),
     match: (*string)((len=36) "mcs Keyspaces (for Apache Cassandra)"),
     uid: (*string)((len=3) "mcs"),
     autocomplete: (*string)((len=15) "$us-east-1 mcs "),
-    arg: (*string)((len=73) "https://us-east-1.console.aws.amazon.com/keyspaces/home?region=us-east-1#"),
+    arg: (*string)((len=82) "https://us-east-1.console.aws.amazon.com/keyspaces/home?region=us-east-1#dashboard"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
