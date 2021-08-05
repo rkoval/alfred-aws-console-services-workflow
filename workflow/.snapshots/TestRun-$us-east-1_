@@ -1685,7 +1685,7 @@
   (*aw.Item)({
     title: (string) (len=3) "ess",
     subtitle: (*string)((len=68) "Elasticsearch Service (ESS) – Run and Scale Elasticsearch Clusters"),
-    match: (*string)((len=3) "ess"),
+    match: (*string)((len=17) "ess elasticsearch"),
     uid: (*string)((len=3) "ess"),
     autocomplete: (*string)((len=15) "$us-east-1 ess "),
     arg: (*string)((len=66) "https://us-east-1.console.aws.amazon.com/es/home?region=us-east-1#"),

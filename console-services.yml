@@ -971,6 +971,8 @@
   name: Elasticsearch Service
   short_name: ESS
   description: Run and Scale Elasticsearch Clusters
+  extra_search_terms:
+    - elasticsearch
   url: "/es/home#"
 
 - id: elastictranscoder
