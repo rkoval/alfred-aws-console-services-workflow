@@ -2509,11 +2509,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=3) "msk",
-    subtitle: (*string)((len=113) "Managed Streaming for Apache Kafka (MSK) – Fully managed, highly available, and secure service for Apache Kafka"),
+    subtitle: (*string)((len=118) "🗂 Managed Streaming for Apache Kafka (MSK) – Fully managed, highly available, and secure service for Apache Kafka"),
     match: (*string)((len=3) "msk"),
     uid: (*string)((len=3) "msk"),
     autocomplete: (*string)((len=15) "$us-east-1 msk "),
-    arg: (*string)((len=67) "https://us-east-1.console.aws.amazon.com/msk/home?region=us-east-1#"),
+    arg: (*string)((len=76) "https://us-east-1.console.aws.amazon.com/msk/home?region=us-east-1#/clusters"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

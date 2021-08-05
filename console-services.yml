@@ -1293,7 +1293,14 @@
   name: Managed Streaming for Apache Kafka
   short_name: MSK
   description: Fully managed, highly available, and secure service for Apache Kafka
-  url: "/msk/home#"
+  url: /msk/home#/clusters
+  sub_services:
+    - id: clusters
+      name: Clusters
+      url: /msk/home#/clusters
+    - id: clusterconfigurations
+      name: Cluster configurations
+      url: /msk/home#/configurations
 
 - id: kms
   name: Key Management Service
