@@ -3103,11 +3103,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=7) "neptune",
-    subtitle: (*string)((len=61) "Neptune – Fast, reliable graph database built for the cloud"),
+    subtitle: (*string)((len=66) "🗂 Neptune – Fast, reliable graph database built for the cloud"),
     match: (*string)((len=15) "neptune Neptune"),
     uid: (*string)((len=7) "neptune"),
     autocomplete: (*string)((len=19) "$us-east-1 neptune "),
-    arg: (*string)((len=71) "https://us-east-1.console.aws.amazon.com/neptune/home?region=us-east-1#"),
+    arg: (*string)((len=81) "https://us-east-1.console.aws.amazon.com/neptune/home?region=us-east-1#databases:"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

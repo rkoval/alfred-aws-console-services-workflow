@@ -1511,11 +1511,41 @@
       name: Configurations
       url: /amazon-mq/home#/configurations
 
-
 - id: neptune
   name: Neptune
   description: Fast, reliable graph database built for the cloud
-  url: "/neptune/home#"
+  url: '/neptune/home#databases:'
+  sub_services:
+    - id: databases
+      name: Databases
+      url: '/neptune/home#databases:'
+    - id: clusters
+      name: Clusters
+      url: '/neptune/home#dbclusters:'
+    - id: snapshots
+      name: Snapshots
+      url: '/neptune/home#db-snapshots:'
+    - id: reservedinstances
+      name: Reserved instances
+      url: '/neptune/home#reserved-instance-list:'
+    - id: notebooks
+      name: Notebooks
+      url: '/neptune/home#notebooks:'
+    - id: subnetgroups
+      name: Subnet groups
+      url: '/neptune/home#db-subnet-groups:'
+    - id: parametergroups
+      name: Parameter groups
+      url: '/neptune/home#parameter-groups:'
+    - id: events
+      name: Events
+      url: '/neptune/home#events:'
+    - id: eventsubscriptions
+      name: Event subscriptions
+      url: '/neptune/home#event-subscriptions-list:'
+    - id: notifications
+      name: Notifications
+      url: '/neptune/home#notifications:'
 
 - id: opsworks
   name: OpsWorks
