@@ -1255,11 +1255,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=10) "devicefarm",
-    subtitle: (*string)((len=76) "Device Farm – Test Android, iOS, and Web Apps on Real Devices in the Cloud"),
+    subtitle: (*string)((len=81) "🗂 Device Farm – Test Android, iOS, and Web Apps on Real Devices in the Cloud"),
     match: (*string)((len=22) "devicefarm Device Farm"),
     uid: (*string)((len=10) "devicefarm"),
     autocomplete: (*string)((len=22) "$us-east-1 devicefarm "),
-    arg: (*string)((len=46) "https://console.aws.amazon.com/devicefarm/home"),
+    arg: (*string)((len=63) "https://console.aws.amazon.com/devicefarm/home#/mobile/projects"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

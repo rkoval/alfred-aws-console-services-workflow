@@ -596,12 +596,24 @@
       name: Recipes
       url: /deeplens/home#recipes
 
-
 - id: devicefarm
   name: Device Farm
   description: Test Android, iOS, and Web Apps on Real Devices in the Cloud
   has_global_region: true
-  url: /devicefarm/home
+  url: /devicefarm/home#/mobile/projects
+  sub_services:
+    - id: mobileprojects
+      name: Mobile Projects
+      url: /devicefarm/home#/mobile/projects
+    - id: mobiledeviceslots
+      name: Mobile device slots
+      url: /devicefarm/home#/mobile/deviceslots
+    - id: mobileprivatedevices
+      name: Mobile private devices
+      url: /devicefarm/home#/mobile/privatedevices
+    - id: browserprojects
+      name: Browser projects
+      url: /devicefarm/home#/browser/projects
 
 - id: directconnect
   name: Direct Connect
