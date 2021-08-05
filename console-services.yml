@@ -2062,7 +2062,29 @@
 - id: storagegateway
   name: Storage Gateway
   description: Hybrid Storage Integration
-  url: "/storagegateway/home#"
+  url: /storagegateway/home#/gateways
+  sub_services:
+    - id: gateways
+      name: Gateways
+      url: /storagegateway/home#/gateways
+    - id: fileshares
+      name: File shares
+      url: /storagegateway/home#/file-shares
+    - id: filesystems
+      name: FSx file systems
+      url: /storagegateway/home#/file-systems
+    - id: volumes
+      name: Volumes
+      url: /storagegateway/home#/volumes
+    - id: pools
+      name: Pools
+      url: /storagegateway/home#/pools
+    - id: tapes
+      name: Tapes
+      url: /storagegateway/home#/tapes
+    - id: hardware
+      name: Hardware
+      url: /storagegateway/home#/hardware
 
 - id: sumerian
   name: Sumerian

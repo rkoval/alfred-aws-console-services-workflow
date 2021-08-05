@@ -4027,11 +4027,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=14) "storagegateway",
-    subtitle: (*string)((len=46) "Storage Gateway – Hybrid Storage Integration"),
+    subtitle: (*string)((len=51) "🗂 Storage Gateway – Hybrid Storage Integration"),
     match: (*string)((len=30) "storagegateway Storage Gateway"),
     uid: (*string)((len=14) "storagegateway"),
     autocomplete: (*string)((len=26) "$us-east-1 storagegateway "),
-    arg: (*string)((len=78) "https://us-east-1.console.aws.amazon.com/storagegateway/home?region=us-east-1#"),
+    arg: (*string)((len=87) "https://us-east-1.console.aws.amazon.com/storagegateway/home?region=us-east-1#/gateways"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
