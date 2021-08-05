@@ -4093,11 +4093,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=14) "systemsmanager",
-    subtitle: (*string)((len=78) "Systems Manager – Gain operational insights and take action on AWS resources"),
+    subtitle: (*string)((len=83) "🗂 Systems Manager – Gain operational insights and take action on AWS resources"),
     match: (*string)((len=30) "systemsmanager Systems Manager"),
     uid: (*string)((len=14) "systemsmanager"),
     autocomplete: (*string)((len=26) "$us-east-1 systemsmanager "),
-    arg: (*string)((len=79) "https://us-east-1.console.aws.amazon.com/systems-manager/home?region=us-east-1#"),
+    arg: (*string)((len=83) "https://us-east-1.console.aws.amazon.com/systems-manager/explorer?region=us-east-1#"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

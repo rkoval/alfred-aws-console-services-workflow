@@ -2094,7 +2094,71 @@
 - id: systemsmanager
   name: Systems Manager
   description: Gain operational insights and take action on AWS resources
-  url: "/systems-manager/home#"
+  url: /systems-manager/explorer#
+  sub_services:
+    - id: explorer
+      name: Explorer
+      url: /systems-manager/explorer#
+    - id: opscenter
+      name: OpsCenter
+      url: /systems-manager/opsitems#
+    - id: cloudwatchdashboard
+      name: CloudWatch Dashboard
+      url: /systems-manager/resource-groups/cloudwatch#
+    - id: phd
+      name: PHD
+      url: /systems-manager/insights/personalHealthDashboard#
+    - id: incidentmanager
+      name: Incident Manager
+      url: /systems-manager/incidents/home#
+    - id: applicationmanager
+      name: Application Manager
+      url: /systems-manager/appmanager#
+    - id: appconfig
+      name: AppConfig
+      url: /systems-manager/appconfig#
+    - id: parameterstore
+      name: Parameter Store
+      url: /systems-manager/parameters#
+    - id: changemanager
+      name: Change Manager
+      url: /systems-manager/change-manager#
+    - id: automation
+      name: Automation
+      url: /systems-manager/automation#
+    - id: changecalendar
+      name: Change Calendar
+      url: /systems-manager/change-calendar#
+    - id: maintenancewindows
+      name: Maintenance Windows
+      url: /systems-manager/maintenance-windows#
+    - id: fleetmanager
+      name: Fleet Manager
+      url: /systems-manager/managed-instances#
+    - id: compliance
+      name: Compliance
+      url: /systems-manager/compliance#
+    - id: inventory
+      name: Inventory
+      url: /systems-manager/inventory#
+    - id: hybridactivations
+      name: Hybrid Activations
+      url: /systems-manager/activations#
+    - id: sessionmanager
+      name: Session Manager
+      url: /systems-manager/session-manager#
+    - id: runcommand
+      name: Run Command
+      url: /systems-manager/run-command#
+    - id: statemanager
+      name: State Manager
+      url: /systems-manager/state-manager#
+    - id: patchmanager
+      name: Patch Manager
+      url: /systems-manager/patch-manager#
+    - id: distributor
+      name: Distributor
+      url: /systems-manager/distributor#
 
 - id: support
   name: Support
