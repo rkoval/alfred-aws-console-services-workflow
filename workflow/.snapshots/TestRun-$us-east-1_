@@ -4823,7 +4823,7 @@
     match: (*string)((len=13) "kendra Kendra"),
     uid: (*string)((len=6) "kendra"),
     autocomplete: (*string)((len=18) "$us-east-1 kendra "),
-    arg: (*string)((len=70) "https://us-east-1.console.aws.amazon.com/kendra/home?region=us-east-1#"),
+    arg: (*string)((len=77) "https://us-east-1.console.aws.amazon.com/kendra/home?region=us-east-1#indexes"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

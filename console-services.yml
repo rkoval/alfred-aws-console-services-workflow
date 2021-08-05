@@ -2552,7 +2552,7 @@
 - id: kendra
   name: Kendra
   description: Highly accurate enterprise search powered by machine learning
-  url: "/kendra/home#"
+  url: "/kendra/home#indexes"
 
 - id: qldb
   name: QLDB
