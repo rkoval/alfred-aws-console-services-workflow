@@ -2196,7 +2196,29 @@
   name: Trusted Advisor
   description: Optimize Performance and Security
   has_global_region: true
-  url: /trustedadvisor/home
+  url: /trustedadvisor/home#/dashboard
+  sub_services:
+    - id: dashboard
+      name: Dashboard
+      url: /trustedadvisor/home#/dashboard
+    - id: costoptimization
+      name: Cost Optimization
+      url: /trustedadvisor/home#/category/cost-optimizing
+    - id: performance
+      name: Performance
+      url: /trustedadvisor/home#/category/performance
+    - id: security
+      name: Security
+      url: /trustedadvisor/home#/category/security
+    - id: faulttolerance
+      name: Fault Tolerance
+      url: /trustedadvisor/home#/category/fault-tolerance
+    - id: servicelimits
+      name: Service Limits
+      url: /trustedadvisor/home#/category/service-limits
+    - id: preferences
+      name: Preferences
+      url: /trustedadvisor/home#/preferences
 
 - id: vpc
   name: Virtual Private Cloud

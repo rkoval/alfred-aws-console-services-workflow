@@ -4225,11 +4225,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=14) "trustedadvisor",
-    subtitle: (*string)((len=53) "Trusted Advisor – Optimize Performance and Security"),
+    subtitle: (*string)((len=58) "🗂 Trusted Advisor – Optimize Performance and Security"),
     match: (*string)((len=30) "trustedadvisor Trusted Advisor"),
     uid: (*string)((len=14) "trustedadvisor"),
     autocomplete: (*string)((len=26) "$us-east-1 trustedadvisor "),
-    arg: (*string)((len=50) "https://console.aws.amazon.com/trustedadvisor/home"),
+    arg: (*string)((len=61) "https://console.aws.amazon.com/trustedadvisor/home#/dashboard"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
