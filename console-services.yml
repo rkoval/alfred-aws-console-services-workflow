@@ -1924,7 +1924,41 @@
 - id: servicecatalog
   name: Service Catalog
   description: allows organizations to manage approved catalogs of IT resources and make them available to employees via a personalized portal.
-  url: "/servicecatalog/home#"
+  url: /servicecatalog/home#products
+  sub_services:
+    - id: products
+      name: Products
+      url: /servicecatalog/home#products
+    - id: provisionedproducts
+      name: Provisioned products
+      url: /servicecatalog/home#provisioned-products
+    - id: gettingstartedlibrary
+      name: Getting started library
+      url: /servicecatalog/home#getting-started-library
+    - id: adminproducts
+      name: Admin products
+      url: /servicecatalog/home#admin-products
+    - id: portfolios
+      name: Portfolios
+      url: /servicecatalog/home#portfolios
+    - id: tagoptionslibrary
+      name: TagOptions library
+      url: /servicecatalog/home#tag-options
+    - id: serviceactions
+      name: Service actions
+      url: /servicecatalog/home#service-actions/
+    - id: preferences
+      name: Preferences
+      url: /servicecatalog/home#preferences
+    - id: introduction
+      name: Introduction
+      url: /servicecatalog/home#appregistry
+    - id: applications
+      name: Applications
+      url: /servicecatalog/home#applications/
+    - id: attributegroups
+      name: Attribute groups
+      url: /servicecatalog/home#attribute-groups/
 
 - id: ses
   name: Simple Email Service

@@ -3730,11 +3730,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=14) "servicecatalog",
-    subtitle: (*string)((len=148) "Service Catalog – allows organizations to manage approved catalogs of IT resources and make them available to employees via a personalized portal."),
+    subtitle: (*string)((len=153) "🗂 Service Catalog – allows organizations to manage approved catalogs of IT resources and make them available to employees via a personalized portal."),
     match: (*string)((len=30) "servicecatalog Service Catalog"),
     uid: (*string)((len=14) "servicecatalog"),
     autocomplete: (*string)((len=26) "$us-east-1 servicecatalog "),
-    arg: (*string)((len=78) "https://us-east-1.console.aws.amazon.com/servicecatalog/home?region=us-east-1#"),
+    arg: (*string)((len=86) "https://us-east-1.console.aws.amazon.com/servicecatalog/home?region=us-east-1#products"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
