@@ -661,11 +661,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=10) "cloudtrail",
-    subtitle: (*string)((len=48) "CloudTrail – Track User Activity and API Usage"),
+    subtitle: (*string)((len=53) "🗂 CloudTrail – Track User Activity and API Usage"),
     match: (*string)((len=21) "cloudtrail CloudTrail"),
     uid: (*string)((len=10) "cloudtrail"),
     autocomplete: (*string)((len=22) "$us-east-1 cloudtrail "),
-    arg: (*string)((len=74) "https://us-east-1.console.aws.amazon.com/cloudtrail/home?region=us-east-1#"),
+    arg: (*string)((len=84) "https://us-east-1.console.aws.amazon.com/cloudtrail/home?region=us-east-1#/dashboard"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

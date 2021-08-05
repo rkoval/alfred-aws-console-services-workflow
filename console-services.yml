@@ -289,7 +289,20 @@
 - id: cloudtrail
   name: CloudTrail
   description: Track User Activity and API Usage
-  url: "/cloudtrail/home#"
+  url: /cloudtrail/home#/dashboard
+  sub_services:
+    - id: dashboard
+      name: Dashboard
+      url: /cloudtrail/home#/dashboard
+    - id: eventhistory
+      name: Event history
+      url: /cloudtrail/home#/events
+    - id: insights
+      name: Insights
+      url: /cloudtrail/home#/insights
+    - id: trails
+      name: Trails
+      url: /cloudtrail/home#/trails
 
 - id: cloudwatch
   name: CloudWatch
