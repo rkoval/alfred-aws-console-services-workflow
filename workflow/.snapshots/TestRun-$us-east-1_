@@ -1882,11 +1882,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=3) "fsx",
-    subtitle: (*string)((len=83) "FSx – Fully managed third-party file systems optimized for a variety of workloads"),
+    subtitle: (*string)((len=88) "🗂 FSx – Fully managed third-party file systems optimized for a variety of workloads"),
     match: (*string)((len=7) "fsx FSx"),
     uid: (*string)((len=3) "fsx"),
     autocomplete: (*string)((len=15) "$us-east-1 fsx "),
-    arg: (*string)((len=67) "https://us-east-1.console.aws.amazon.com/fsx/home?region=us-east-1#"),
+    arg: (*string)((len=79) "https://us-east-1.console.aws.amazon.com/fsx/home?region=us-east-1#file-systems"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

@@ -1063,7 +1063,17 @@
 - id: fsx
   name: FSx
   description: Fully managed third-party file systems optimized for a variety of workloads
-  url: "/fsx/home#"
+  url: /fsx/home#file-systems
+  sub_services:
+    - id: filesystems
+      name: File systems
+      url: /fsx/home#file-systems
+    - id: backups
+      name: Backups
+      url: /fsx/home#backups
+    - id: datarepositorytasks
+      name: Data repository tasks
+      url: /fsx/home#data-repository-tasks
 
 - id: gamelift
   name: GameLift
