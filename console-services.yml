@@ -643,7 +643,20 @@
 - id: directoryservice
   name: Directory Service
   description: Host and Manage Active Directory
-  url: "/directoryservice/home#"
+  url: /directoryservicev2/identity#!/directories
+  sub_services:
+    - id: activedirectories
+      name: Active Directories
+      url: /directoryservicev2/identity#!/directories
+    - id: directoriessharedwithme
+      name: Active Directories shared with me
+      url: /directoryservicev2/home#!/directories-shared-with-me
+    - id: clouddirectories
+      name: Cloud Directories
+      url: /directoryservicev2/home#!/cloud-directories
+    - id: cloudschemas
+      name: Cloud Schemas
+      url: /directoryservicev2/home#!/cloud-schemas
 
 - id: discovery
   name: Application Discovery Service

@@ -1321,11 +1321,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=16) "directoryservice",
-    subtitle: (*string)((len=54) "Directory Service – Host and Manage Active Directory"),
+    subtitle: (*string)((len=59) "🗂 Directory Service – Host and Manage Active Directory"),
     match: (*string)((len=34) "directoryservice Directory Service"),
     uid: (*string)((len=16) "directoryservice"),
     autocomplete: (*string)((len=28) "$us-east-1 directoryservice "),
-    arg: (*string)((len=80) "https://us-east-1.console.aws.amazon.com/directoryservice/home?region=us-east-1#"),
+    arg: (*string)((len=99) "https://us-east-1.console.aws.amazon.com/directoryservicev2/identity?region=us-east-1#!/directories"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
