@@ -22,7 +22,8 @@ func init() {
 	flag.StringVar(&query, "query", "", "query to use")
 	flag.StringVar(&ymlPath, "yml_path", "console-services.yml", "query to use")
 	flag.Parse()
-	wf = aw.New(update.GitHub("rkoval/alfred-aws-console-services-workflow"))
+	wf = aw.New(
+		update.GitHub("rkoval/alfred-aws-console-services-workflow"), aw.HelpURL("https://github.com/rkoval/alfred-aws-console-services-workflow/issues"))
 }
 
 func main() {
