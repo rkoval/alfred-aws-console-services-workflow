@@ -1354,11 +1354,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=3) "dms",
-    subtitle: (*string)((len=70) "Database Migation Service (DMS) – Managed Database Migration Service"),
+    subtitle: (*string)((len=75) "🗂 Database Migation Service (DMS) – Managed Database Migration Service"),
     match: (*string)((len=3) "dms"),
     uid: (*string)((len=3) "dms"),
     autocomplete: (*string)((len=15) "$us-east-1 dms "),
-    arg: (*string)((len=70) "https://us-east-1.console.aws.amazon.com/dms/v2/home?region=us-east-1#"),
+    arg: (*string)((len=79) "https://us-east-1.console.aws.amazon.com/dms/v2/home?region=us-east-1#dashboard"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

@@ -662,7 +662,35 @@
   name: Database Migation Service
   short_name: DMS
   description: Managed Database Migration Service
-  url: "/dms/v2/home#"
+  url: /dms/v2/home#dashboard
+  sub_services:
+    - id: dashboard
+      name: Dashboard
+      url: /dms/v2/home#dashboard
+    - id: databasemigrationtasks
+      name: Database migration tasks
+      url: /dms/v2/home#tasks
+    - id: replicationinstances
+      name: Replication instances
+      url: /dms/v2/home#replicationInstances
+    - id: endpoints
+      name: Endpoints
+      url: /dms/v2/home#endpointList
+    - id: certificates
+      name: Certificates
+      url: /dms/v2/home#certificate
+    - id: subnetgroups
+      name: Subnet groups
+      url: /dms/v2/home#subnetGroup
+    - id: events
+      name: Events
+      url: /dms/v2/home#EventList
+    - id: eventsubscriptions
+      name: Event subscriptions
+      url: /dms/v2/home#EventSubscriptionList
+    - id: notifications
+      name: Notifications
+      url: /dms/v2/home#Notifications
 
 - id: documentdb
   name: DocumentDB
