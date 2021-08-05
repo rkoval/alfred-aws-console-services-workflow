@@ -1222,11 +1222,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=8) "deeplens",
-    subtitle: (*string)((len=47) "DeepLens – Deep Learning Enabled Video Camera"),
+    subtitle: (*string)((len=52) "🗂 DeepLens – Deep Learning Enabled Video Camera"),
     match: (*string)((len=17) "deeplens DeepLens"),
     uid: (*string)((len=8) "deeplens"),
     autocomplete: (*string)((len=20) "$us-east-1 deeplens "),
-    arg: (*string)((len=72) "https://us-east-1.console.aws.amazon.com/deeplens/home?region=us-east-1#"),
+    arg: (*string)((len=80) "https://us-east-1.console.aws.amazon.com/deeplens/home?region=us-east-1#projects"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

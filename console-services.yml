@@ -581,7 +581,21 @@
 - id: deeplens
   name: DeepLens
   description: Deep Learning Enabled Video Camera
-  url: "/deeplens/home#"
+  url: /deeplens/home#projects
+  sub_services:
+    - id: projects
+      name: Projects
+      url: /deeplens/home#projects
+    - id: devices
+      name: Devices
+      url: /deeplens/home#devices
+    - id: models
+      name: Models
+      url: /deeplens/home#models
+    - id: recipes
+      name: Recipes
+      url: /deeplens/home#recipes
+
 
 - id: devicefarm
   name: Device Farm
