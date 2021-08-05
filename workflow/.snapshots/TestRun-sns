@@ -764,7 +764,7 @@
     match: (*string)((len=27) "organizations Organizations"),
     uid: (*string)((len=13) "organizations"),
     autocomplete: (*string)((len=14) "organizations "),
-    arg: (*string)((len=49) "https://console.aws.amazon.com/organizations/home"),
+    arg: (*string)((len=64) "https://console.aws.amazon.com/organizations/v2/home/invitations"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

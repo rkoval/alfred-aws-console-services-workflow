@@ -1573,7 +1573,7 @@
   name: Organizations
   description: Policy-based management for multiple AWS accounts.
   has_global_region: true
-  url: /organizations/home
+  url: /organizations/v2/home/invitations
 
 - id: personalize
   name: Personalize
