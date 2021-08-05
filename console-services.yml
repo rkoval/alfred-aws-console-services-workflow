@@ -352,30 +352,102 @@
       name: Dashboards
       url: "/cloudwatch/home#dashboards:"
 
+- id: codeartifact
+  name: CodeArtifact
+  description: Secure, scalable, and cost-effective artifact management
+  url: /codesuite/codeartifact/domains#
+  sub_services:
+    - id: domains
+      name: Domains
+      url: /codesuite/codeartifact/domains#
+    - id: repositories
+      name: Repositories
+      url: /codesuite/codeartifact/repositories#
+
 - id: codebuild
   name: CodeBuild
   description: Build and Test Code
-  url: "/codebuild/home#"
+  url: /codesuite/codebuild/projects#
+  sub_services:
+    - id: projects
+      name: Build projects
+      url: /codesuite/codebuild/projects#
+    - id: buildhistory
+      name: Build history
+      url: /codesuite/codebuild/builds/build-history#
+    - id: reportgroups
+      name: Report groups
+      url: /codesuite/codebuild/testReports/reportGroups#
+    - id: reporthistory
+      name: Report history
+      url: /codesuite/codebuild/testReports/reports#
+    - id: accountmetrics
+      name: Account metrics
+      url: /codesuite/codebuild/metrics#
+
 
 - id: codecommit
   name: CodeCommit
   description: Store Code in Private Git Repositories
-  url: "/codecommit/home#"
+  url: /codesuite/codecommit/repositories#
+  sub_services:
+    - id: repositories
+      name: Repositories
+      url: /codesuite/codecommit/repositories#
+    - id: approvalruletemplates
+      name: Approval rule templates
+      url: /codesuite/codecommit/approval-rule-templates#
 
 - id: codedeploy
   name: CodeDeploy
   description: Automate Code Deployments
-  url: "/codedeploy/home#"
+  url: /codesuite/codedeploy/deployments#
+  sub_services:
+    - id: deployments
+      name: Deployments
+      url: /codesuite/codedeploy/deployments#
+    - id: applications
+      name: Applications
+      url: /codesuite/codedeploy/applications#
+    - id: deploymentconfigurations
+      name: Deployment configurations
+      url: /codesuite/codedeploy/deployment-configs#
+    - id: onpremisesinstances
+      name: On-premises instances
+      url: /codesuite/codedeploy/on-premises-instances#
+
 
 - id: codepipeline
   name: CodePipeline
   description: Release Software using Continuous Delivery
-  url: "/codepipeline/home#"
+  url: /codesuite/codepipeline/pipelines#
+  sub_services:
+    - id: pipelines
+      name: Pipelines
+      url: /codesuite/codepipeline/pipelines#
+
+- id: developertools
+  name: Developer Tools
+  url: /codesuite/settings/notifications#
+  description: Host code, build, test, and deploy your applications to AWS
+  extra_search_terms:
+    - codesuite
+  sub_services:
+    - id: notifications
+      name: Notifications
+      url: /codesuite/settings/notifications#
+    - id: connections
+      name: Connections
+      url: /codesuite/settings/connections#
 
 - id: codestar
   name: Codestar
   description: Develop, build and deploy applications
-  url: "/codestar/home#"
+  url: "/codesuite/codestar/projects#"
+  sub_services:
+    - id: projects
+      name: Projects
+      url: "/codesuite/codestar/projects#"
 
 - id: cognito
   name: Cognito

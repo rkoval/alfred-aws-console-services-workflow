@@ -1,4 +1,4 @@
-([]*aw.Item) (len=153) {
+([]*aw.Item) (len=155) {
   (*aw.Item)({
     title: (string) (len=5) "alexa",
     subtitle: (*string)((len=59) "Alexa for Business – Empower your organization with voice"),
@@ -726,12 +726,45 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
+    title: (string) (len=12) "codeartifact",
+    subtitle: (*string)((len=78) "🗂 CodeArtifact – Secure, scalable, and cost-effective artifact management"),
+    match: (*string)((len=25) "codeartifact CodeArtifact"),
+    uid: (*string)((len=12) "codeartifact"),
+    autocomplete: (*string)((len=24) "$us-east-1 codeartifact "),
+    arg: (*string)((len=89) "https://us-east-1.console.aws.amazon.com/codesuite/codeartifact/domains?region=us-east-1#"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    icon: (*aw.Icon)({
+      Value: (string) (len=23) "images/codeartifact.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
     title: (string) (len=9) "codebuild",
-    subtitle: (*string)((len=33) "CodeBuild – Build and Test Code"),
+    subtitle: (*string)((len=38) "🗂 CodeBuild – Build and Test Code"),
     match: (*string)((len=19) "codebuild CodeBuild"),
     uid: (*string)((len=9) "codebuild"),
     autocomplete: (*string)((len=21) "$us-east-1 codebuild "),
-    arg: (*string)((len=73) "https://us-east-1.console.aws.amazon.com/codebuild/home?region=us-east-1#"),
+    arg: (*string)((len=87) "https://us-east-1.console.aws.amazon.com/codesuite/codebuild/projects?region=us-east-1#"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -760,11 +793,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=10) "codecommit",
-    subtitle: (*string)((len=53) "CodeCommit – Store Code in Private Git Repositories"),
+    subtitle: (*string)((len=58) "🗂 CodeCommit – Store Code in Private Git Repositories"),
     match: (*string)((len=21) "codecommit CodeCommit"),
     uid: (*string)((len=10) "codecommit"),
     autocomplete: (*string)((len=22) "$us-east-1 codecommit "),
-    arg: (*string)((len=74) "https://us-east-1.console.aws.amazon.com/codecommit/home?region=us-east-1#"),
+    arg: (*string)((len=92) "https://us-east-1.console.aws.amazon.com/codesuite/codecommit/repositories?region=us-east-1#"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -793,11 +826,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=10) "codedeploy",
-    subtitle: (*string)((len=40) "CodeDeploy – Automate Code Deployments"),
+    subtitle: (*string)((len=45) "🗂 CodeDeploy – Automate Code Deployments"),
     match: (*string)((len=21) "codedeploy CodeDeploy"),
     uid: (*string)((len=10) "codedeploy"),
     autocomplete: (*string)((len=22) "$us-east-1 codedeploy "),
-    arg: (*string)((len=74) "https://us-east-1.console.aws.amazon.com/codedeploy/home?region=us-east-1#"),
+    arg: (*string)((len=91) "https://us-east-1.console.aws.amazon.com/codesuite/codedeploy/deployments?region=us-east-1#"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -826,11 +859,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=12) "codepipeline",
-    subtitle: (*string)((len=59) "CodePipeline – Release Software using Continuous Delivery"),
+    subtitle: (*string)((len=64) "🗂 CodePipeline – Release Software using Continuous Delivery"),
     match: (*string)((len=25) "codepipeline CodePipeline"),
     uid: (*string)((len=12) "codepipeline"),
     autocomplete: (*string)((len=24) "$us-east-1 codepipeline "),
-    arg: (*string)((len=76) "https://us-east-1.console.aws.amazon.com/codepipeline/home?region=us-east-1#"),
+    arg: (*string)((len=91) "https://us-east-1.console.aws.amazon.com/codesuite/codepipeline/pipelines?region=us-east-1#"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -858,12 +891,45 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
+    title: (string) (len=14) "developertools",
+    subtitle: (*string)((len=84) "🗂 Developer Tools – Host code, build, test, and deploy your applications to AWS"),
+    match: (*string)((len=40) "developertools Developer Tools codesuite"),
+    uid: (*string)((len=14) "developertools"),
+    autocomplete: (*string)((len=26) "$us-east-1 developertools "),
+    arg: (*string)((len=91) "https://us-east-1.console.aws.amazon.com/codesuite/settings/notifications?region=us-east-1#"),
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
+      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
+        Key: (aw.ModKey) (len=3) "cmd",
+        arg: (*string)(<nil>),
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    icon: (*aw.Icon)({
+      Value: (string) (len=25) "images/developertools.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
     title: (string) (len=8) "codestar",
-    subtitle: (*string)((len=51) "Codestar – Develop, build and deploy applications"),
+    subtitle: (*string)((len=56) "🗂 Codestar – Develop, build and deploy applications"),
     match: (*string)((len=17) "codestar Codestar"),
     uid: (*string)((len=8) "codestar"),
     autocomplete: (*string)((len=20) "$us-east-1 codestar "),
-    arg: (*string)((len=72) "https://us-east-1.console.aws.amazon.com/codestar/home?region=us-east-1#"),
+    arg: (*string)((len=86) "https://us-east-1.console.aws.amazon.com/codesuite/codestar/projects?region=us-east-1#"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
