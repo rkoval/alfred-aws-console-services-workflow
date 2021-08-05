@@ -7,7 +7,7 @@
 - id: amplify
   name: Amplify
   description: Develop & deploy cloud-powered mobile and web apps
-  url: "/amplify/home#"
+  url: "/amplify/home#/home"
 
 - id: apigateway
   name: API Gateway
