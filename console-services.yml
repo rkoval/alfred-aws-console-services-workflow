@@ -618,7 +618,27 @@
 - id: directconnect
   name: Direct Connect
   description: Dedicated Network Connection to AWS
-  url: "/directconnect/v2/home#"
+  url: /directconnect/v2/home#/connections
+  has_global_region: true
+  sub_services:
+    - id: connections
+      name: Connections
+      url: /directconnect/v2/home#/connections
+    - id: virtualinterfaces
+      name: Virtual interfaces
+      url: /directconnect/v2/home#/virtual-interfaces
+    - id: lags
+      name: LAGs
+      url: /directconnect/v2/home#/lags
+    - id: directconnectgateways
+      name: Direct Connect gateways
+      url: /directconnect/v2/home#/dxgateways
+    - id: virtualprivategateways
+      name: Virtual private gateways
+      url: /directconnect/v2/home#/virtual-gateways
+    - id: transitgateways
+      name: Transit gateways
+      url: /directconnect/v2/home#/transit-gateways
 
 - id: directoryservice
   name: Directory Service

@@ -1288,11 +1288,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=13) "directconnect",
-    subtitle: (*string)((len=54) "Direct Connect – Dedicated Network Connection to AWS"),
+    subtitle: (*string)((len=59) "🗂 Direct Connect – Dedicated Network Connection to AWS"),
     match: (*string)((len=28) "directconnect Direct Connect"),
     uid: (*string)((len=13) "directconnect"),
     autocomplete: (*string)((len=25) "$us-east-1 directconnect "),
-    arg: (*string)((len=80) "https://us-east-1.console.aws.amazon.com/directconnect/v2/home?region=us-east-1#"),
+    arg: (*string)((len=65) "https://console.aws.amazon.com/directconnect/v2/home#/connections"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
