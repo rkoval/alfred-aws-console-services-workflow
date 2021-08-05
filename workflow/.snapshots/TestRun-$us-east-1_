@@ -4361,7 +4361,7 @@
     match: (*string)((len=17) "worklink WorkLink"),
     uid: (*string)((len=8) "worklink"),
     autocomplete: (*string)((len=20) "$us-east-1 worklink "),
-    arg: (*string)((len=72) "https://us-east-1.console.aws.amazon.com/worklink/home?region=us-east-1#"),
+    arg: (*string)((len=79) "https://us-east-1.console.aws.amazon.com/worklink/home?region=us-east-1#/fleets"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
