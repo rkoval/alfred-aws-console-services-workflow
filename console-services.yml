@@ -984,7 +984,35 @@
   name: Elastic Map Reduce
   short_name: EMR
   description: Managed Hadoop Framework
-  url: "/elasticmapreduce/home#"
+  extra_search_terms:
+    - hadoop
+    - mapreduce
+  url: "/elasticmapreduce/home#cluster-list:"
+  sub_services:
+    - id: clusters
+      name: Clusters
+      url: "/elasticmapreduce/home#cluster-list:"
+    - id: notebooks
+      name: Notebooks
+      url: "/elasticmapreduce/home#notebooks-list:"
+    - id: gitrepositories
+      name: Git repositories
+      url: "/elasticmapreduce/home#git-repositories-list:"
+    - id: securityconfigurations
+      name: Security configurations
+      url: "/elasticmapreduce/home#security-configurations-list:"
+    - id: blockpublicaccess
+      name: Block public access
+      url: "/elasticmapreduce/home#block-public-access:"
+    - id: vpcsubnets
+      name: VPC subnets
+      url: "/elasticmapreduce/home#manage-subnets:"
+    - id: events
+      name: Events
+      url: "/elasticmapreduce/home#events:"
+    - id: virtualclusters
+      name: Virtual clusters
+      url: "/elasticmapreduce/home#virtual-cluster-list:"
 
 - id: eventbridge
   name: EventBridge
