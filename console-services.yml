@@ -1480,7 +1480,17 @@
 - id: mediatailor
   name: MediaTailor
   description: Personalize and monetize multiscreen content with server-side ad insertion
-  url: "/mediatailor/home#"
+  url: /mediatailor/home#/controlpanel
+  sub_services:
+    - id: configurations
+      name: Configurations
+      url: /mediatailor/home#/controlpanel
+    - id: sourcelocations
+      name: Source locations
+      url: /mediatailor/home#/source-locations
+    - id: channels
+      name: Channels
+      url: /mediatailor/home#/channels
 
 - id: migrationhub
   name: Migration Hub

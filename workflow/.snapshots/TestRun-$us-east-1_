@@ -3004,11 +3004,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=11) "mediatailor",
-    subtitle: (*string)((len=90) "MediaTailor – Personalize and monetize multiscreen content with server-side ad insertion"),
+    subtitle: (*string)((len=95) "🗂 MediaTailor – Personalize and monetize multiscreen content with server-side ad insertion"),
     match: (*string)((len=23) "mediatailor MediaTailor"),
     uid: (*string)((len=11) "mediatailor"),
     autocomplete: (*string)((len=23) "$us-east-1 mediatailor "),
-    arg: (*string)((len=75) "https://us-east-1.console.aws.amazon.com/mediatailor/home?region=us-east-1#"),
+    arg: (*string)((len=88) "https://us-east-1.console.aws.amazon.com/mediatailor/home?region=us-east-1#/controlpanel"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
