@@ -4192,11 +4192,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=9) "translate",
-    subtitle: (*string)((len=41) "Translate – Translate Text in Real-time"),
+    subtitle: (*string)((len=46) "🗂 Translate – Translate Text in Real-time"),
     match: (*string)((len=19) "translate Translate"),
     uid: (*string)((len=9) "translate"),
     autocomplete: (*string)((len=21) "$us-east-1 translate "),
-    arg: (*string)((len=73) "https://us-east-1.console.aws.amazon.com/translate/home?region=us-east-1#"),
+    arg: (*string)((len=80) "https://us-east-1.console.aws.amazon.com/translate/home?region=us-east-1#metrics"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

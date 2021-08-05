@@ -2174,7 +2174,23 @@
 - id: translate
   name: Translate
   description: Translate Text in Real-time
-  url: "/translate/home#"
+  url: /translate/home#metrics
+  sub_services:
+    - id: metrics
+      name: Metrics
+      url: /translate/home#metrics
+    - id: realtimetranslation
+      name: Real-time translation
+      url: /translate/home#translation
+    - id: batchtranslation
+      name: Batch translation
+      url: /translate/home#batch-translation
+    - id: customterminology
+      name: Custom terminology
+      url: /translate/home#terminology
+    - id: paralleldata
+      name: Parallel data
+      url: /translate/home#parallel-data
 
 - id: trustedadvisor
   name: Trusted Advisor

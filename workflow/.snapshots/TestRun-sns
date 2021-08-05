@@ -364,11 +364,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=9) "translate",
-    subtitle: (*string)((len=41) "Translate – Translate Text in Real-time"),
+    subtitle: (*string)((len=46) "🗂 Translate – Translate Text in Real-time"),
     match: (*string)((len=19) "translate Translate"),
     uid: (*string)((len=9) "translate"),
     autocomplete: (*string)((len=10) "translate "),
-    arg: (*string)((len=73) "https://us-west-2.console.aws.amazon.com/translate/home?region=us-west-2#"),
+    arg: (*string)((len=80) "https://us-west-2.console.aws.amazon.com/translate/home?region=us-west-2#metrics"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
