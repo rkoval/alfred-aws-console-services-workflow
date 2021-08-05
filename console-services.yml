@@ -2400,10 +2400,23 @@
   description: Easy implement human review of machine learning predictions
   url: "/a2i/home#"
 
-- id: bracket
+- id: braket
   name: Braket
   description: Explore and experiment with quantum computing
-  url: "/braket/home#"
+  url: /braket/home#/devices
+  sub_services:
+    - id: devices
+      name: Devices
+      url: /braket/home#/devices
+    - id: notebooks
+      name: Notebooks
+      url: /braket/home#/notebooks
+    - id: tasks
+      name: Tasks
+      url: /braket/home#/tasks
+    - id: announcements
+      name: Announcements
+      url: /braket/home#/announcements
 
 - id: mcs
   name: Keyspaces (for Apache Cassandra)

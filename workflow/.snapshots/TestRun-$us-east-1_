@@ -4554,12 +4554,12 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=7) "bracket",
-    subtitle: (*string)((len=56) "Braket – Explore and experiment with quantum computing"),
-    match: (*string)((len=14) "bracket Braket"),
-    uid: (*string)((len=7) "bracket"),
-    autocomplete: (*string)((len=19) "$us-east-1 bracket "),
-    arg: (*string)((len=70) "https://us-east-1.console.aws.amazon.com/braket/home?region=us-east-1#"),
+    title: (string) (len=6) "braket",
+    subtitle: (*string)((len=61) "🗂 Braket – Explore and experiment with quantum computing"),
+    match: (*string)((len=13) "braket Braket"),
+    uid: (*string)((len=6) "braket"),
+    autocomplete: (*string)((len=18) "$us-east-1 braket "),
+    arg: (*string)((len=78) "https://us-east-1.console.aws.amazon.com/braket/home?region=us-east-1#/devices"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -4581,7 +4581,7 @@
       })
     },
     icon: (*aw.Icon)({
-      Value: (string) (len=18) "images/bracket.png",
+      Value: (string) (len=17) "images/braket.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
