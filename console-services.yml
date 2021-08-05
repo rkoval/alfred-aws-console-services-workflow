@@ -2466,7 +2466,23 @@
 - id: deepracer
   name: DeepRacer
   description: Fully autonomous 1/18th scale race car, driven by machine learning
-  url: "/deepracer/home#"
+  url: /deepracer/home#league
+  sub_services:
+    - id: awsvirtualcircuit
+      name: AWS Virtual Circuit
+      url: /deepracer/home#league
+    - id: communityraces
+      name: Community races
+      url: /deepracer/home#communityRaces
+    - id: racerprofile
+      name: Your racer profile
+      url: /deepracer/home#racerProfile
+    - id: models
+      name: Your models
+      url: /deepracer/home#models
+    - id: garage
+      name: Your garage
+      url: /deepracer/home#garage
 
 - id: detective
   name: Detective

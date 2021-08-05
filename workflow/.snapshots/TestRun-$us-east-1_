@@ -4687,11 +4687,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=9) "deepracer",
-    subtitle: (*string)((len=80) "DeepRacer – Fully autonomous 1/18th scale race car, driven by machine learning"),
+    subtitle: (*string)((len=85) "🗂 DeepRacer – Fully autonomous 1/18th scale race car, driven by machine learning"),
     match: (*string)((len=19) "deepracer DeepRacer"),
     uid: (*string)((len=9) "deepracer"),
     autocomplete: (*string)((len=21) "$us-east-1 deepracer "),
-    arg: (*string)((len=73) "https://us-east-1.console.aws.amazon.com/deepracer/home?region=us-east-1#"),
+    arg: (*string)((len=79) "https://us-east-1.console.aws.amazon.com/deepracer/home?region=us-east-1#league"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
