@@ -1162,7 +1162,26 @@
 - id: guardduty
   name: GuardDuty
   description: Intelligent Threat Detection to Protect Your AWS Accounts and Workloads
-  url: "/guardduty/home#"
+  url: /guardduty/home#/findings
+  sub_services:
+    - id: findings
+      name: Findings
+      url: /guardduty/home#/findings
+    - id: usage
+      name: Usage
+      url: /guardduty/home#/usage
+    - id: settings
+      name: Settings
+      url: /guardduty/home#/settings
+    - id: lists
+      name: Lists
+      url: /guardduty/home#/lists
+    - id: s3protection
+      name: S3 Protection
+      url: /guardduty/home#/s3-protection
+    - id: accounts
+      name: Accounts
+      url: /guardduty/home#/linked-accounts
 
 - id: iam
   name: Identity and Access Management

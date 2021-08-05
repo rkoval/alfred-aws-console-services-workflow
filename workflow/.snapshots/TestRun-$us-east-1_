@@ -2080,11 +2080,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=9) "guardduty",
-    subtitle: (*string)((len=85) "GuardDuty – Intelligent Threat Detection to Protect Your AWS Accounts and Workloads"),
+    subtitle: (*string)((len=90) "🗂 GuardDuty – Intelligent Threat Detection to Protect Your AWS Accounts and Workloads"),
     match: (*string)((len=19) "guardduty GuardDuty"),
     uid: (*string)((len=9) "guardduty"),
     autocomplete: (*string)((len=21) "$us-east-1 guardduty "),
-    arg: (*string)((len=73) "https://us-east-1.console.aws.amazon.com/guardduty/home?region=us-east-1#"),
+    arg: (*string)((len=82) "https://us-east-1.console.aws.amazon.com/guardduty/home?region=us-east-1#/findings"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
