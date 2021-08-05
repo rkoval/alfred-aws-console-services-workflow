@@ -4951,11 +4951,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=7) "chatbot",
-    subtitle: (*string)((len=27) "Chatbot – ChatOps for AWS"),
+    subtitle: (*string)((len=32) "🗂 Chatbot – ChatOps for AWS"),
     match: (*string)((len=15) "chatbot Chatbot"),
     uid: (*string)((len=7) "chatbot"),
     autocomplete: (*string)((len=19) "$us-east-1 chatbot "),
-    arg: (*string)((len=43) "https://console.aws.amazon.com/chatbot/home"),
+    arg: (*string)((len=57) "https://console.aws.amazon.com/chatbot/home#/chat-clients"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),

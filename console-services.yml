@@ -2608,7 +2608,14 @@
   name: Chatbot
   description: ChatOps for AWS
   has_global_region: true
-  url: /chatbot/home
+  url: /chatbot/home#/chat-clients
+  sub_services:
+    - id: configuredclients
+      name: Configured clients
+      url: /chatbot/home#/chat-clients
+    - id: amazonchime
+      name: Amazon Chime
+      url: /chatbot/home#/chat-clients/chime/configurations
 
 - id: launchwizard
   name: Launch Wizard
