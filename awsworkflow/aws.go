@@ -2,6 +2,7 @@ package awsworkflow
 
 import (
 	"context"
+	"errors"
 	"net/http"
 	"os"
 	"strings"
@@ -55,6 +56,10 @@ var defaultAwsConsoleDomainChina string = "console.amazonaws.cn"
 var defaultAwsConsoleDomainUsGov string = "console.amazonaws-us-gov.com"
 
 func InitAWSConsoleDomain(region string) {
+	oldAwsConsoleDomain := os.Getenv("ALRED_AWS_CONSOLE_SERVICES_WORKFLOW_AWS_CONSOLE_DOMAIN")
+	if oldAwsConsoleDomain != "" {
+		panic(errors.New("`ALRED_AWS_CONSOLE_SERVICES_WORKFLOW_AWS_CONSOLE_DOMAIN` env var was renamed to `ALFRED_AWS_CONSOLE_SERVICES_WORKFLOW_AWS_CONSOLE_DOMAIN` due to the misspelling. Please update your config"))
+	}
 	awsConsoleDomain := os.Getenv("ALFRED_AWS_CONSOLE_SERVICES_WORKFLOW_AWS_CONSOLE_DOMAIN")
 	if awsConsoleDomain == "" {
 		if strings.HasPrefix(region, "cn-") {

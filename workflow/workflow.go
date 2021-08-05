@@ -139,6 +139,10 @@ func Run(wf *aw.Workflow, rawQuery string, transport http.RoundTripper, forceFet
 }
 
 func finalize(wf *aw.Workflow, query *parsers.Query) {
+	if r := recover(); r != nil {
+		// we don't want this deferred function to prevent panics from showing in the workflow
+		panic(r)
+	}
 	if wf.IsEmpty() {
 		title := ""
 		subtitle := ""
