@@ -1990,7 +1990,18 @@
     - snowball
     - snowcone
     - snowmobile
-  url: "/snowfamily/home#"
+  url: /snowfamily/home#/jobs
+  sub_services:
+    - id: jobs
+      name: Jobs
+      url: /snowfamily/home#/jobs
+    - id: createjob
+      name: Create job
+      url: /snowfamily/home#/change-request/create
+    - id: prepaidjobs
+      name: Prepaid jobs
+      url: /snowfamily/home#/prepaidjobs
+
 
 - id: sns
   name: Simple Notification Service

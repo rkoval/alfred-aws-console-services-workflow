@@ -496,11 +496,11 @@
   }),
   (*aw.Item)({
     title: (string) (len=10) "snowfamily",
-    subtitle: (*string)((len=77) "Snow Family – Process data at the edge and migrate data into and out of AWS"),
+    subtitle: (*string)((len=82) "🗂 Snow Family – Process data at the edge and migrate data into and out of AWS"),
     match: (*string)((len=51) "snowfamily Snow Family snowball snowcone snowmobile"),
     uid: (*string)((len=10) "snowfamily"),
     autocomplete: (*string)((len=11) "snowfamily "),
-    arg: (*string)((len=74) "https://us-west-2.console.aws.amazon.com/snowfamily/home?region=us-west-2#"),
+    arg: (*string)((len=79) "https://us-west-2.console.aws.amazon.com/snowfamily/home?region=us-west-2#/jobs"),
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
