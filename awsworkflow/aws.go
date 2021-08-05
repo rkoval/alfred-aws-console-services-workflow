@@ -55,7 +55,7 @@ var defaultAwsConsoleDomainChina string = "console.amazonaws.cn"
 var defaultAwsConsoleDomainUsGov string = "console.amazonaws-us-gov.com"
 
 func InitAWSConsoleDomain(region string) {
-	awsConsoleDomain := os.Getenv("ALRED_AWS_CONSOLE_SERVICES_WORKFLOW_AWS_CONSOLE_DOMAIN")
+	awsConsoleDomain := os.Getenv("ALFRED_AWS_CONSOLE_SERVICES_WORKFLOW_AWS_CONSOLE_DOMAIN")
 	if awsConsoleDomain == "" {
 		if strings.HasPrefix(region, "cn-") {
 			awsConsoleDomain = defaultAwsConsoleDomainChina
