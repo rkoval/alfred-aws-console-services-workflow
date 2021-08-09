@@ -2,6 +2,7 @@
 set -e
 
 cd "$(dirname "$0")/.."
+RELEASE_DIR="$(pwd)/release/"
 CURRENT_VERSION=$(/usr/libexec/PlistBuddy -c "Print :version" info.plist)
 echo -e "Current version: $CURRENT_VERSION\nInput new version: "
 read -r VERSION
@@ -15,6 +16,14 @@ install_package() {
   ./build.sh
 }
 
+sign_binary() {
+  # must cd to release directory because signing takes into account directory contents at time of signing.
+  # if directory contents change between now and notarization (e.g., because we've packaged into an .alfredworkflow file), the signature verification will fail
+  cd "$RELEASE_DIR"
+  gon ../release_tools/sign-binary.hcl
+  cd -
+}
+
 bump_version_and_tag() {
   /usr/libexec/PlistBuddy -c "Set :version ${VERSION//v/}" info.plist
   git add info.plist
@@ -24,12 +33,25 @@ bump_version_and_tag() {
   git push origin "$VERSION"
 }
 
+copy_to_release_dir() {
+  echo "Using directory $RELEASE_DIR to stage release files ..."
+  rm -rf "$RELEASE_DIR"
+  mkdir -p "$RELEASE_DIR"
+  cp -R images alfred-aws-console-services-workflow console-services.yml icon.png info.plist LICENSE README.md "$RELEASE_DIR"
+}
+
+PACKAGE_NAME="AWS Console Services.alfredworkflow"
 package_release() {
-  local tmpdir
-  tmpdir=$(mktemp -d)
-  echo "Using tmp dir $tmpdir to stage release files ..."
-  cp -R images alfred-aws-console-services-workflow console-services.yml icon.png info.plist LICENSE README.md "$tmpdir/"
-  ditto -ck "$tmpdir" "AWS Console Services ${VERSION}.alfredworkflow"
+  ditto -ck "$RELEASE_DIR" "$PACKAGE_NAME"
+}
+
+notarize_package() {
+  gon release_tools/package.hcl
+  rm -f "$PACKAGE_NAME"
+}
+
+add_version_to_package_name() {
+  mv "$PACKAGE_NAME.zip" "AWS Console Services ${VERSION}.alfredworkflow.zip"
 }
 
 open_github() {
@@ -43,7 +65,11 @@ open_finder() {
 
 test
 install_package
-bump_version_and_tag
+copy_to_release_dir
+sign_binary
 package_release
+notarize_package
+add_version_to_package_name
+bump_version_and_tag
 open_github
 open_finder

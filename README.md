@@ -9,11 +9,9 @@ Supports Alfred 3 and 4
 ![AWS Console Services - Alfred Workflow Demo](demo.gif)
 
 ## Installation
-- [Download the latest release](https://github.com/rkoval/alfred-aws-console-services-workflow/releases)
-- Open the downloaded file in Finder
+- [Download and extract the latest release](https://github.com/rkoval/alfred-aws-console-services-workflow/releases)
+- Open the .alfredworkflow file in Finder
 - Make sure your AWS Credentials and Region are set in your `~/.aws/credentials` and `~/.aws/config` files, respectively. This workflow will use your `default` profile by default within these files. See [the official AWS docs](https://docs.aws.amazon.com/sdk-for-go/v1/developer-guide/configuring-sdk.html#specifying-the-region) for more info on how to configure these
-- If running on macOS Catalina or later, you _**MUST**_ add Alfred to the list of security exceptions for running unsigned software. See [this guide](https://github.com/deanishe/awgo/wiki/Catalina) for instructions on how to do this.
-  - <sub>Yes, this sucks and is annoying, but there is unfortunately is no easy way around this. macOS requires a paying Developer account for proper app notarization. I'm afraid I'm not willing to pay a yearly subscription fee to Apple just so that this (free and open source) project doesn't pester macOS Gatekeeper.</sub>
 
 ## Usage
 To use, activate Alfred and type `aws` to trigger this workflow. From there:
@@ -53,13 +51,3 @@ See [this README](release_tools/README.md)
 Like this workflow? Consider donating! 😻
 
 - [Patreon](https://www.patreon.com/rkoval_alfred_aws_console_services_workflow)
-
-## Troubleshooting
-
-- "I'm seeing the following dialog when running the workflow"
-
-  ![image](https://user-images.githubusercontent.com/1282943/88503823-6eda4b80-cf98-11ea-9a4b-f2a5bdb8a1cc.png)
-
-  Per [the installation steps](https://github.com/rkoval/alfred-aws-console-services-workflow#installation), you **_MUST_** add Alfred to the list of Developer Tool exceptions for Alfred to run any workflow that contains an executable (like this one)
-
-

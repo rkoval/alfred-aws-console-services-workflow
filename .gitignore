@@ -88,3 +88,5 @@ alfred-aws-console-services-workflow
 .alfred
 gen-*.go
 test
+release/
+_CodeSignature/
