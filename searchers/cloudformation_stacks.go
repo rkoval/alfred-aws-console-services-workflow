@@ -60,6 +60,9 @@ func (s CloudFormationStackSearcher) addToWorkflow(wf *aw.Workflow, searchArgs s
 	if strings.HasPrefix(title, "awseb-") && tagName != "" {
 		title += fmt.Sprintf(" (%s)", tagName)
 	}
+
+	// This *entity.Description could be undefined, in which case an error occurs.
+	// TODO: fallback to empty string
 	subtitle := *entity.Description
 
 	path := fmt.Sprintf("/cloudformation/home#/stacks/stackinfo?stackId=%s", *entity.StackId)
