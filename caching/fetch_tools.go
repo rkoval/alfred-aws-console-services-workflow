@@ -67,16 +67,22 @@ func handleFetchErr(wf *aw.Workflow, lastFetchErrPath string, searchArgs searchu
 	userHomePath := os.Getenv("HOME")
 	errString := string(data)
 	wf.Configure(aw.SuppressUIDs(true))
+	var profileDescription string
+	if searchArgs.Profile == "" {
+		profileDescription = "for default profile"
+	} else {
+		profileDescription = "for profile \"" + searchArgs.Profile + "\""
+	}
 	if strings.HasPrefix(errString, "NoCredentialProviders") {
 		credentialsFilePath := strings.Replace(awsconfig.GetAwsCredentialsFilePath(), userHomePath, "~", 1)
-		util.NewURLItem(wf, "AWS credentials not set in "+credentialsFilePath+" for profile \""+searchArgs.Profile+"\"").
+		util.NewURLItem(wf, "AWS credentials not set in "+credentialsFilePath+" "+profileDescription).
 			Subtitle("Press enter to open AWS docs on how to configure").
 			Arg("https://aws.github.io/aws-sdk-go-v2/docs/configuring-sdk/#creating-the-credentials-file").
 			Icon(aw.IconError).
 			Valid(true)
 	} else if strings.HasPrefix(errString, "MissingRegion") {
 		configFilePath := strings.Replace(awsconfig.GetAwsProfileFilePath(), userHomePath, "~", 1)
-		util.NewURLItem(wf, "AWS region not set in "+configFilePath+" for profile \""+searchArgs.Profile+"\"").
+		util.NewURLItem(wf, "AWS region not set in "+configFilePath+" "+profileDescription).
 			Subtitle("Press enter to open AWS docs on how to configure").
 			Arg("https://aws.github.io/aws-sdk-go-v2/docs/configuring-sdk/#creating-the-config-file").
 			Icon(aw.IconError).
