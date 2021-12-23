@@ -5,7 +5,9 @@
     match: (*string)(<nil>),
     uid: (*string)(<nil>),
     autocomplete: (*string)((len=12) "google.com. "),
-    arg: (*string)((len=109) "https://us-west-2.console.aws.amazon.com/route53/v2/hostedzones?region=us-west-2#ListRecordSets/ZZZZZZZZZZZZZ"),
+    arg: ([]string) (len=1) {
+      (string) (len=109) "https://us-west-2.console.aws.amazon.com/route53/v2/hostedzones?region=us-west-2#ListRecordSets/ZZZZZZZZZZZZZ"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -14,10 +16,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -26,6 +28,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=18) "images/route53.png",
       Type: (aw.IconType) ""
@@ -38,7 +41,9 @@
     match: (*string)(<nil>),
     uid: (*string)(<nil>),
     autocomplete: (*string)((len=13) "mozilla.com. "),
-    arg: (*string)((len=110) "https://us-west-2.console.aws.amazon.com/route53/v2/hostedzones?region=us-west-2#ListRecordSets/ZYYYYYYYYYYYYY"),
+    arg: ([]string) (len=1) {
+      (string) (len=110) "https://us-west-2.console.aws.amazon.com/route53/v2/hostedzones?region=us-west-2#ListRecordSets/ZYYYYYYYYYYYYY"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -47,10 +52,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -59,6 +64,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=18) "images/route53.png",
       Type: (aw.IconType) ""
@@ -71,7 +77,9 @@
     match: (*string)(<nil>),
     uid: (*string)(<nil>),
     autocomplete: (*string)((len=22) "news.ycombinator.com. "),
-    arg: (*string)((len=110) "https://us-west-2.console.aws.amazon.com/route53/v2/hostedzones?region=us-west-2#ListRecordSets/ZWWWWWWWWWWWWW"),
+    arg: ([]string) (len=1) {
+      (string) (len=110) "https://us-west-2.console.aws.amazon.com/route53/v2/hostedzones?region=us-west-2#ListRecordSets/ZWWWWWWWWWWWWW"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -80,10 +88,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -92,6 +100,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=18) "images/route53.png",
       Type: (aw.IconType) ""

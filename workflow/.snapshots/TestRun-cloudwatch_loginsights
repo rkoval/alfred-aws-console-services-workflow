@@ -5,7 +5,9 @@
     match: (*string)((len=24) "loginsights Log insights"),
     uid: (*string)((len=11) "loginsights"),
     autocomplete: (*string)((len=23) "cloudwatch loginsights "),
-    arg: (*string)((len=94) "https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2:logs-insights"),
+    arg: ([]string) (len=1) {
+      (string) (len=94) "https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2:logs-insights"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -14,10 +16,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -26,6 +28,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=21) "images/cloudwatch.png",
       Type: (aw.IconType) ""

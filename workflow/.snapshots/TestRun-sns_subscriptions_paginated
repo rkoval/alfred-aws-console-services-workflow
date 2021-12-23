@@ -5,7 +5,9 @@
     match: (*string)(<nil>),
     uid: (*string)(<nil>),
     autocomplete: (*string)((len=35) "sns subscriptions paginated-result "),
-    arg: (*string)((len=170) "https://us-west-2.console.aws.amazon.com/sns/v3/home?region=us-west-2#/subscription/arn:aws:sns:us-west-2:0000000000:paginated-result:00000000-0000-0000-0000-000000000000"),
+    arg: ([]string) (len=1) {
+      (string) (len=170) "https://us-west-2.console.aws.amazon.com/sns/v3/home?region=us-west-2#/subscription/arn:aws:sns:us-west-2:0000000000:paginated-result:00000000-0000-0000-0000-000000000000"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -14,10 +16,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -26,6 +28,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/sns.png",
       Type: (aw.IconType) ""

@@ -1,11 +1,11 @@
 ([]*aw.Item) (len=23) {
   (*aw.Item)({
-    title: (string) (len=9) "ap-east-1",
-    subtitle: (*string)((len=24) "Asia Pacific (Hong Kong)"),
+    title: (string) (len=9) "us-east-2",
+    subtitle: (*string)((len=14) "US East (Ohio)"),
     match: (*string)(<nil>),
-    uid: (*string)((len=9) "ap-east-1"),
-    autocomplete: (*string)((len=11) "$ap-east-1 "),
-    arg: (*string)(<nil>),
+    uid: (*string)((len=9) "us-east-2"),
+    autocomplete: (*string)((len=11) "$us-east-2 "),
+    arg: ([]string) <nil>,
     valid: (bool) false,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -13,91 +13,8 @@
     ql: (*string)(<nil>),
     vars: (map[string]string) {
     },
-    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
-    icon: (*aw.Icon)({
-      Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
-      Type: (aw.IconType) ""
-    }),
-    noUID: (bool) false
-  }),
-  (*aw.Item)({
-    title: (string) (len=9) "eu-west-1",
-    subtitle: (*string)((len=16) "Europe (Ireland)"),
-    match: (*string)(<nil>),
-    uid: (*string)((len=9) "eu-west-1"),
-    autocomplete: (*string)((len=11) "$eu-west-1 "),
-    arg: (*string)(<nil>),
-    valid: (bool) false,
-    file: (bool) false,
-    copytext: (*string)(<nil>),
-    largetype: (*string)(<nil>),
-    ql: (*string)(<nil>),
-    vars: (map[string]string) {
-    },
-    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
-    icon: (*aw.Icon)({
-      Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
-      Type: (aw.IconType) ""
-    }),
-    noUID: (bool) false
-  }),
-  (*aw.Item)({
-    title: (string) (len=9) "eu-west-2",
-    subtitle: (*string)((len=15) "Europe (London)"),
-    match: (*string)(<nil>),
-    uid: (*string)((len=9) "eu-west-2"),
-    autocomplete: (*string)((len=11) "$eu-west-2 "),
-    arg: (*string)(<nil>),
-    valid: (bool) false,
-    file: (bool) false,
-    copytext: (*string)(<nil>),
-    largetype: (*string)(<nil>),
-    ql: (*string)(<nil>),
-    vars: (map[string]string) {
-    },
-    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
-    icon: (*aw.Icon)({
-      Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
-      Type: (aw.IconType) ""
-    }),
-    noUID: (bool) false
-  }),
-  (*aw.Item)({
-    title: (string) (len=9) "eu-west-3",
-    subtitle: (*string)((len=14) "Europe (Paris)"),
-    match: (*string)(<nil>),
-    uid: (*string)((len=9) "eu-west-3"),
-    autocomplete: (*string)((len=11) "$eu-west-3 "),
-    arg: (*string)(<nil>),
-    valid: (bool) false,
-    file: (bool) false,
-    copytext: (*string)(<nil>),
-    largetype: (*string)(<nil>),
-    ql: (*string)(<nil>),
-    vars: (map[string]string) {
-    },
-    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
-    icon: (*aw.Icon)({
-      Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
-      Type: (aw.IconType) ""
-    }),
-    noUID: (bool) false
-  }),
-  (*aw.Item)({
-    title: (string) (len=9) "sa-east-1",
-    subtitle: (*string)((len=26) "South America (São Paulo)"),
-    match: (*string)(<nil>),
-    uid: (*string)((len=9) "sa-east-1"),
-    autocomplete: (*string)((len=11) "$sa-east-1 "),
-    arg: (*string)(<nil>),
-    valid: (bool) false,
-    file: (bool) false,
-    copytext: (*string)(<nil>),
-    largetype: (*string)(<nil>),
-    ql: (*string)(<nil>),
-    vars: (map[string]string) {
-    },
-    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
       Type: (aw.IconType) ""
@@ -110,7 +27,7 @@
     match: (*string)(<nil>),
     uid: (*string)((len=9) "us-east-1"),
     autocomplete: (*string)((len=11) "$us-east-1 "),
-    arg: (*string)(<nil>),
+    arg: ([]string) <nil>,
     valid: (bool) false,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -118,28 +35,8 @@
     ql: (*string)(<nil>),
     vars: (map[string]string) {
     },
-    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
-    icon: (*aw.Icon)({
-      Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
-      Type: (aw.IconType) ""
-    }),
-    noUID: (bool) false
-  }),
-  (*aw.Item)({
-    title: (string) (len=9) "us-east-2",
-    subtitle: (*string)((len=14) "US East (Ohio)"),
-    match: (*string)(<nil>),
-    uid: (*string)((len=9) "us-east-2"),
-    autocomplete: (*string)((len=11) "$us-east-2 "),
-    arg: (*string)(<nil>),
-    valid: (bool) false,
-    file: (bool) false,
-    copytext: (*string)(<nil>),
-    largetype: (*string)(<nil>),
-    ql: (*string)(<nil>),
-    vars: (map[string]string) {
-    },
-    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
       Type: (aw.IconType) ""
@@ -152,7 +49,7 @@
     match: (*string)(<nil>),
     uid: (*string)((len=9) "us-west-1"),
     autocomplete: (*string)((len=11) "$us-west-1 "),
-    arg: (*string)(<nil>),
+    arg: ([]string) <nil>,
     valid: (bool) false,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -160,7 +57,8 @@
     ql: (*string)(<nil>),
     vars: (map[string]string) {
     },
-    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
       Type: (aw.IconType) ""
@@ -173,7 +71,7 @@
     match: (*string)(<nil>),
     uid: (*string)((len=9) "us-west-2"),
     autocomplete: (*string)((len=11) "$us-west-2 "),
-    arg: (*string)(<nil>),
+    arg: ([]string) <nil>,
     valid: (bool) false,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -181,7 +79,8 @@
     ql: (*string)(<nil>),
     vars: (map[string]string) {
     },
-    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
       Type: (aw.IconType) ""
@@ -189,12 +88,12 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=10) "af-south-1",
-    subtitle: (*string)((len=18) "Africa (Cape Town)"),
+    title: (string) (len=9) "eu-west-3",
+    subtitle: (*string)((len=14) "Europe (Paris)"),
     match: (*string)(<nil>),
-    uid: (*string)((len=10) "af-south-1"),
-    autocomplete: (*string)((len=12) "$af-south-1 "),
-    arg: (*string)(<nil>),
+    uid: (*string)((len=9) "eu-west-3"),
+    autocomplete: (*string)((len=11) "$eu-west-3 "),
+    arg: ([]string) <nil>,
     valid: (bool) false,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -202,7 +101,96 @@
     ql: (*string)(<nil>),
     vars: (map[string]string) {
     },
-    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=9) "ap-east-1",
+    subtitle: (*string)((len=24) "Asia Pacific (Hong Kong)"),
+    match: (*string)(<nil>),
+    uid: (*string)((len=9) "ap-east-1"),
+    autocomplete: (*string)((len=11) "$ap-east-1 "),
+    arg: ([]string) <nil>,
+    valid: (bool) false,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=9) "eu-west-2",
+    subtitle: (*string)((len=15) "Europe (London)"),
+    match: (*string)(<nil>),
+    uid: (*string)((len=9) "eu-west-2"),
+    autocomplete: (*string)((len=11) "$eu-west-2 "),
+    arg: ([]string) <nil>,
+    valid: (bool) false,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=9) "eu-west-1",
+    subtitle: (*string)((len=16) "Europe (Ireland)"),
+    match: (*string)(<nil>),
+    uid: (*string)((len=9) "eu-west-1"),
+    autocomplete: (*string)((len=11) "$eu-west-1 "),
+    arg: ([]string) <nil>,
+    valid: (bool) false,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=9) "sa-east-1",
+    subtitle: (*string)((len=26) "South America (São Paulo)"),
+    match: (*string)(<nil>),
+    uid: (*string)((len=9) "sa-east-1"),
+    autocomplete: (*string)((len=11) "$sa-east-1 "),
+    arg: ([]string) <nil>,
+    valid: (bool) false,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
       Type: (aw.IconType) ""
@@ -215,7 +203,7 @@
     match: (*string)(<nil>),
     uid: (*string)((len=10) "ap-south-1"),
     autocomplete: (*string)((len=12) "$ap-south-1 "),
-    arg: (*string)(<nil>),
+    arg: ([]string) <nil>,
     valid: (bool) false,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -223,70 +211,8 @@
     ql: (*string)(<nil>),
     vars: (map[string]string) {
     },
-    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
-    icon: (*aw.Icon)({
-      Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
-      Type: (aw.IconType) ""
-    }),
-    noUID: (bool) false
-  }),
-  (*aw.Item)({
-    title: (string) (len=10) "cn-north-1",
-    subtitle: (*string)((len=15) "China (Beijing)"),
-    match: (*string)(<nil>),
-    uid: (*string)((len=10) "cn-north-1"),
-    autocomplete: (*string)((len=12) "$cn-north-1 "),
-    arg: (*string)(<nil>),
-    valid: (bool) false,
-    file: (bool) false,
-    copytext: (*string)(<nil>),
-    largetype: (*string)(<nil>),
-    ql: (*string)(<nil>),
-    vars: (map[string]string) {
-    },
-    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
-    icon: (*aw.Icon)({
-      Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
-      Type: (aw.IconType) ""
-    }),
-    noUID: (bool) false
-  }),
-  (*aw.Item)({
-    title: (string) (len=10) "eu-north-1",
-    subtitle: (*string)((len=18) "Europe (Stockholm)"),
-    match: (*string)(<nil>),
-    uid: (*string)((len=10) "eu-north-1"),
-    autocomplete: (*string)((len=12) "$eu-north-1 "),
-    arg: (*string)(<nil>),
-    valid: (bool) false,
-    file: (bool) false,
-    copytext: (*string)(<nil>),
-    largetype: (*string)(<nil>),
-    ql: (*string)(<nil>),
-    vars: (map[string]string) {
-    },
-    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
-    icon: (*aw.Icon)({
-      Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
-      Type: (aw.IconType) ""
-    }),
-    noUID: (bool) false
-  }),
-  (*aw.Item)({
-    title: (string) (len=10) "eu-south-1",
-    subtitle: (*string)((len=14) "Europe (Milan)"),
-    match: (*string)(<nil>),
-    uid: (*string)((len=10) "eu-south-1"),
-    autocomplete: (*string)((len=12) "$eu-south-1 "),
-    arg: (*string)(<nil>),
-    valid: (bool) false,
-    file: (bool) false,
-    copytext: (*string)(<nil>),
-    largetype: (*string)(<nil>),
-    ql: (*string)(<nil>),
-    vars: (map[string]string) {
-    },
-    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
       Type: (aw.IconType) ""
@@ -299,7 +225,7 @@
     match: (*string)(<nil>),
     uid: (*string)((len=10) "me-south-1"),
     autocomplete: (*string)((len=12) "$me-south-1 "),
-    arg: (*string)(<nil>),
+    arg: ([]string) <nil>,
     valid: (bool) false,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -307,7 +233,96 @@
     ql: (*string)(<nil>),
     vars: (map[string]string) {
     },
-    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=10) "eu-north-1",
+    subtitle: (*string)((len=18) "Europe (Stockholm)"),
+    match: (*string)(<nil>),
+    uid: (*string)((len=10) "eu-north-1"),
+    autocomplete: (*string)((len=12) "$eu-north-1 "),
+    arg: ([]string) <nil>,
+    valid: (bool) false,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=10) "cn-north-1",
+    subtitle: (*string)((len=15) "China (Beijing)"),
+    match: (*string)(<nil>),
+    uid: (*string)((len=10) "cn-north-1"),
+    autocomplete: (*string)((len=12) "$cn-north-1 "),
+    arg: ([]string) <nil>,
+    valid: (bool) false,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=10) "af-south-1",
+    subtitle: (*string)((len=18) "Africa (Cape Town)"),
+    match: (*string)(<nil>),
+    uid: (*string)((len=10) "af-south-1"),
+    autocomplete: (*string)((len=12) "$af-south-1 "),
+    arg: ([]string) <nil>,
+    valid: (bool) false,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=10) "eu-south-1",
+    subtitle: (*string)((len=14) "Europe (Milan)"),
+    match: (*string)(<nil>),
+    uid: (*string)((len=10) "eu-south-1"),
+    autocomplete: (*string)((len=12) "$eu-south-1 "),
+    arg: ([]string) <nil>,
+    valid: (bool) false,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
       Type: (aw.IconType) ""
@@ -320,7 +335,7 @@
     match: (*string)(<nil>),
     uid: (*string)((len=12) "ca-central-1"),
     autocomplete: (*string)((len=14) "$ca-central-1 "),
-    arg: (*string)(<nil>),
+    arg: ([]string) <nil>,
     valid: (bool) false,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -328,7 +343,8 @@
     ql: (*string)(<nil>),
     vars: (map[string]string) {
     },
-    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
       Type: (aw.IconType) ""
@@ -341,7 +357,7 @@
     match: (*string)(<nil>),
     uid: (*string)((len=12) "eu-central-1"),
     autocomplete: (*string)((len=14) "$eu-central-1 "),
-    arg: (*string)(<nil>),
+    arg: ([]string) <nil>,
     valid: (bool) false,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -349,70 +365,8 @@
     ql: (*string)(<nil>),
     vars: (map[string]string) {
     },
-    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
-    icon: (*aw.Icon)({
-      Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
-      Type: (aw.IconType) ""
-    }),
-    noUID: (bool) false
-  }),
-  (*aw.Item)({
-    title: (string) (len=14) "ap-northeast-1",
-    subtitle: (*string)((len=20) "Asia Pacific (Tokyo)"),
-    match: (*string)(<nil>),
-    uid: (*string)((len=14) "ap-northeast-1"),
-    autocomplete: (*string)((len=16) "$ap-northeast-1 "),
-    arg: (*string)(<nil>),
-    valid: (bool) false,
-    file: (bool) false,
-    copytext: (*string)(<nil>),
-    largetype: (*string)(<nil>),
-    ql: (*string)(<nil>),
-    vars: (map[string]string) {
-    },
-    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
-    icon: (*aw.Icon)({
-      Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
-      Type: (aw.IconType) ""
-    }),
-    noUID: (bool) false
-  }),
-  (*aw.Item)({
-    title: (string) (len=14) "ap-northeast-2",
-    subtitle: (*string)((len=20) "Asia Pacific (Seoul)"),
-    match: (*string)(<nil>),
-    uid: (*string)((len=14) "ap-northeast-2"),
-    autocomplete: (*string)((len=16) "$ap-northeast-2 "),
-    arg: (*string)(<nil>),
-    valid: (bool) false,
-    file: (bool) false,
-    copytext: (*string)(<nil>),
-    largetype: (*string)(<nil>),
-    ql: (*string)(<nil>),
-    vars: (map[string]string) {
-    },
-    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
-    icon: (*aw.Icon)({
-      Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
-      Type: (aw.IconType) ""
-    }),
-    noUID: (bool) false
-  }),
-  (*aw.Item)({
-    title: (string) (len=14) "ap-northeast-3",
-    subtitle: (*string)((len=20) "Asia Pacific (Osaka)"),
-    match: (*string)(<nil>),
-    uid: (*string)((len=14) "ap-northeast-3"),
-    autocomplete: (*string)((len=16) "$ap-northeast-3 "),
-    arg: (*string)(<nil>),
-    valid: (bool) false,
-    file: (bool) false,
-    copytext: (*string)(<nil>),
-    largetype: (*string)(<nil>),
-    ql: (*string)(<nil>),
-    vars: (map[string]string) {
-    },
-    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
       Type: (aw.IconType) ""
@@ -425,7 +379,7 @@
     match: (*string)(<nil>),
     uid: (*string)((len=14) "ap-southeast-1"),
     autocomplete: (*string)((len=16) "$ap-southeast-1 "),
-    arg: (*string)(<nil>),
+    arg: ([]string) <nil>,
     valid: (bool) false,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -433,7 +387,8 @@
     ql: (*string)(<nil>),
     vars: (map[string]string) {
     },
-    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
       Type: (aw.IconType) ""
@@ -441,12 +396,12 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=14) "ap-southeast-2",
-    subtitle: (*string)((len=21) "Asia Pacific (Sydney)"),
+    title: (string) (len=14) "ap-northeast-3",
+    subtitle: (*string)((len=20) "Asia Pacific (Osaka)"),
     match: (*string)(<nil>),
-    uid: (*string)((len=14) "ap-southeast-2"),
-    autocomplete: (*string)((len=16) "$ap-southeast-2 "),
-    arg: (*string)(<nil>),
+    uid: (*string)((len=14) "ap-northeast-3"),
+    autocomplete: (*string)((len=16) "$ap-northeast-3 "),
+    arg: ([]string) <nil>,
     valid: (bool) false,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -454,7 +409,8 @@
     ql: (*string)(<nil>),
     vars: (map[string]string) {
     },
-    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
       Type: (aw.IconType) ""
@@ -467,7 +423,7 @@
     match: (*string)(<nil>),
     uid: (*string)((len=14) "cn-northwest-1"),
     autocomplete: (*string)((len=16) "$cn-northwest-1 "),
-    arg: (*string)(<nil>),
+    arg: ([]string) <nil>,
     valid: (bool) false,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -475,7 +431,74 @@
     ql: (*string)(<nil>),
     vars: (map[string]string) {
     },
-    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=14) "ap-northeast-2",
+    subtitle: (*string)((len=20) "Asia Pacific (Seoul)"),
+    match: (*string)(<nil>),
+    uid: (*string)((len=14) "ap-northeast-2"),
+    autocomplete: (*string)((len=16) "$ap-northeast-2 "),
+    arg: ([]string) <nil>,
+    valid: (bool) false,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=14) "ap-southeast-2",
+    subtitle: (*string)((len=21) "Asia Pacific (Sydney)"),
+    match: (*string)(<nil>),
+    uid: (*string)((len=14) "ap-southeast-2"),
+    autocomplete: (*string)((len=16) "$ap-southeast-2 "),
+    arg: ([]string) <nil>,
+    valid: (bool) false,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=14) "ap-northeast-1",
+    subtitle: (*string)((len=20) "Asia Pacific (Tokyo)"),
+    match: (*string)(<nil>),
+    uid: (*string)((len=14) "ap-northeast-1"),
+    autocomplete: (*string)((len=16) "$ap-northeast-1 "),
+    arg: ([]string) <nil>,
+    valid: (bool) false,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
       Type: (aw.IconType) ""

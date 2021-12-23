@@ -5,7 +5,9 @@
     match: (*string)((len=16) "webacls Web ACLs"),
     uid: (*string)((len=7) "webacls"),
     autocomplete: (*string)((len=12) "waf webacls "),
-    arg: (*string)((len=52) "https://console.aws.amazon.com/wafv2/homev2/web-acls"),
+    arg: ([]string) (len=1) {
+      (string) (len=52) "https://console.aws.amazon.com/wafv2/homev2/web-acls"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -14,10 +16,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -26,6 +28,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/waf.png",
       Type: (aw.IconType) ""
@@ -38,7 +41,9 @@
     match: (*string)((len=14) "ipsets IP sets"),
     uid: (*string)((len=6) "ipsets"),
     autocomplete: (*string)((len=11) "waf ipsets "),
-    arg: (*string)((len=51) "https://console.aws.amazon.com/wafv2/homev2/ip-sets"),
+    arg: ([]string) (len=1) {
+      (string) (len=51) "https://console.aws.amazon.com/wafv2/homev2/ip-sets"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -47,10 +52,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -59,6 +64,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/waf.png",
       Type: (aw.IconType) ""
@@ -71,7 +77,9 @@
     match: (*string)((len=35) "regexpatternsets Regex pattern sets"),
     uid: (*string)((len=16) "regexpatternsets"),
     autocomplete: (*string)((len=21) "waf regexpatternsets "),
-    arg: (*string)((len=62) "https://console.aws.amazon.com/wafv2/homev2/regex-pattern-sets"),
+    arg: ([]string) (len=1) {
+      (string) (len=62) "https://console.aws.amazon.com/wafv2/homev2/regex-pattern-sets"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -80,10 +88,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -92,6 +100,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/waf.png",
       Type: (aw.IconType) ""
@@ -104,7 +113,9 @@
     match: (*string)((len=22) "rulegroups Rule groups"),
     uid: (*string)((len=10) "rulegroups"),
     autocomplete: (*string)((len=15) "waf rulegroups "),
-    arg: (*string)((len=55) "https://console.aws.amazon.com/wafv2/homev2/rule-groups"),
+    arg: ([]string) (len=1) {
+      (string) (len=55) "https://console.aws.amazon.com/wafv2/homev2/rule-groups"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -113,10 +124,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -125,6 +136,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/waf.png",
       Type: (aw.IconType) ""
@@ -137,7 +149,9 @@
     match: (*string)((len=27) "marketplace AWS Marketplace"),
     uid: (*string)((len=11) "marketplace"),
     autocomplete: (*string)((len=16) "waf marketplace "),
-    arg: (*string)((len=55) "https://console.aws.amazon.com/wafv2/homev2/marketplace"),
+    arg: ([]string) (len=1) {
+      (string) (len=55) "https://console.aws.amazon.com/wafv2/homev2/marketplace"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -146,10 +160,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -158,6 +172,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/waf.png",
       Type: (aw.IconType) ""

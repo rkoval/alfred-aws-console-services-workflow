@@ -5,7 +5,9 @@
     match: (*string)((len=19) "dashboard Dashboard"),
     uid: (*string)((len=9) "dashboard"),
     autocomplete: (*string)((len=14) "sns dashboard "),
-    arg: (*string)((len=80) "https://us-west-2.console.aws.amazon.com/sns/v3/home?region=us-west-2#/dashboard"),
+    arg: ([]string) (len=1) {
+      (string) (len=80) "https://us-west-2.console.aws.amazon.com/sns/v3/home?region=us-west-2#/dashboard"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -14,10 +16,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -26,6 +28,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/sns.png",
       Type: (aw.IconType) ""
@@ -38,7 +41,9 @@
     match: (*string)((len=13) "topics Topics"),
     uid: (*string)((len=6) "topics"),
     autocomplete: (*string)((len=11) "sns topics "),
-    arg: (*string)((len=77) "https://us-west-2.console.aws.amazon.com/sns/v3/home?region=us-west-2#/topics"),
+    arg: ([]string) (len=1) {
+      (string) (len=77) "https://us-west-2.console.aws.amazon.com/sns/v3/home?region=us-west-2#/topics"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -47,10 +52,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -59,6 +64,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/sns.png",
       Type: (aw.IconType) ""
@@ -71,7 +77,9 @@
     match: (*string)((len=27) "subscriptions Subscriptions"),
     uid: (*string)((len=13) "subscriptions"),
     autocomplete: (*string)((len=18) "sns subscriptions "),
-    arg: (*string)((len=84) "https://us-west-2.console.aws.amazon.com/sns/v3/home?region=us-west-2#/subscriptions"),
+    arg: ([]string) (len=1) {
+      (string) (len=84) "https://us-west-2.console.aws.amazon.com/sns/v3/home?region=us-west-2#/subscriptions"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -80,10 +88,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -92,6 +100,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/sns.png",
       Type: (aw.IconType) ""
@@ -104,7 +113,9 @@
     match: (*string)((len=36) "pushnotifications Push Notifications"),
     uid: (*string)((len=17) "pushnotifications"),
     autocomplete: (*string)((len=22) "sns pushnotifications "),
-    arg: (*string)((len=96) "https://us-west-2.console.aws.amazon.com/sns/v3/home?region=us-west-2#/mobile/push-notifications"),
+    arg: ([]string) (len=1) {
+      (string) (len=96) "https://us-west-2.console.aws.amazon.com/sns/v3/home?region=us-west-2#/mobile/push-notifications"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -113,10 +124,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -125,6 +136,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/sns.png",
       Type: (aw.IconType) ""
@@ -137,7 +149,9 @@
     match: (*string)((len=34) "textmessaging Text Messaging (SMS)"),
     uid: (*string)((len=13) "textmessaging"),
     autocomplete: (*string)((len=18) "sns textmessaging "),
-    arg: (*string)((len=92) "https://us-west-2.console.aws.amazon.com/sns/v3/home?region=us-west-2#/mobile/text-messaging"),
+    arg: ([]string) (len=1) {
+      (string) (len=92) "https://us-west-2.console.aws.amazon.com/sns/v3/home?region=us-west-2#/mobile/text-messaging"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -146,10 +160,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -158,6 +172,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/sns.png",
       Type: (aw.IconType) ""
@@ -170,7 +185,9 @@
     match: (*string)((len=38) "originationnumbers Origination numbers"),
     uid: (*string)((len=18) "originationnumbers"),
     autocomplete: (*string)((len=23) "sns originationnumbers "),
-    arg: (*string)((len=100) "https://us-west-2.console.aws.amazon.com/sns/v3/home?region=us-west-2#/mobile/origination-identities"),
+    arg: ([]string) (len=1) {
+      (string) (len=100) "https://us-west-2.console.aws.amazon.com/sns/v3/home?region=us-west-2#/mobile/origination-identities"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -179,10 +196,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -191,6 +208,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/sns.png",
       Type: (aw.IconType) ""

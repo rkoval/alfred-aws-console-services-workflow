@@ -5,7 +5,7 @@
     match: (*string)(<nil>),
     uid: (*string)(<nil>),
     autocomplete: (*string)(<nil>),
-    arg: (*string)(<nil>),
+    arg: ([]string) <nil>,
     valid: (bool) false,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -13,7 +13,8 @@
     ql: (*string)(<nil>),
     vars: (map[string]string) {
     },
-    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)(<nil>),
     noUID: (bool) false
   }),
@@ -23,7 +24,7 @@
     match: (*string)(<nil>),
     uid: (*string)(<nil>),
     autocomplete: (*string)(<nil>),
-    arg: (*string)(<nil>),
+    arg: ([]string) <nil>,
     valid: (bool) false,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -31,7 +32,8 @@
     ql: (*string)(<nil>),
     vars: (map[string]string) {
     },
-    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=78) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/Accounts.icns",
       Type: (aw.IconType) ""
@@ -44,7 +46,7 @@
     match: (*string)(<nil>),
     uid: (*string)(<nil>),
     autocomplete: (*string)(<nil>),
-    arg: (*string)(<nil>),
+    arg: ([]string) <nil>,
     valid: (bool) false,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -52,7 +54,8 @@
     ql: (*string)(<nil>),
     vars: (map[string]string) {
     },
-    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
       Type: (aw.IconType) ""
@@ -65,7 +68,9 @@
     match: (*string)(<nil>),
     uid: (*string)(<nil>),
     autocomplete: (*string)(<nil>),
-    arg: (*string)((len=67) "https://www.patreon.com/rkoval_alfred_aws_console_services_workflow"),
+    arg: ([]string) (len=1) {
+      (string) (len=67) "https://www.patreon.com/rkoval_alfred_aws_console_services_workflow"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -74,10 +79,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -86,6 +91,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=90) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/ToolbarFavoritesIcon.icns",
       Type: (aw.IconType) ""
@@ -98,7 +104,9 @@
     match: (*string)(<nil>),
     uid: (*string)(<nil>),
     autocomplete: (*string)(<nil>),
-    arg: (*string)((len=71) "https://github.com/rkoval/alfred-aws-console-services-workflow/releases"),
+    arg: ([]string) (len=1) {
+      (string) (len=71) "https://github.com/rkoval/alfred-aws-console-services-workflow/releases"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -107,10 +115,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -119,6 +127,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=81) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/ToolbarInfo.icns",
       Type: (aw.IconType) ""

@@ -5,7 +5,7 @@
     match: (*string)(<nil>),
     uid: (*string)((len=8) "profile1"),
     autocomplete: (*string)((len=15) "eec2 @profile1 "),
-    arg: (*string)(<nil>),
+    arg: ([]string) <nil>,
     valid: (bool) false,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -13,7 +13,8 @@
     ql: (*string)(<nil>),
     vars: (map[string]string) {
     },
-    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=78) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/Accounts.icns",
       Type: (aw.IconType) ""

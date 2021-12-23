@@ -5,7 +5,9 @@
     match: (*string)(<nil>),
     uid: (*string)(<nil>),
     autocomplete: (*string)((len=42) "/aws/cloudfront/LambdaEdge/AAAAAAAAAAAAAA "),
-    arg: (*string)((len=162) "https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2:log-groups/log-group/%2Faws%2Fcloudfront%2FLambdaEdge%2FAAAAAAAAAAAAAA/log-events"),
+    arg: ([]string) (len=1) {
+      (string) (len=162) "https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2:log-groups/log-group/%2Faws%2Fcloudfront%2FLambdaEdge%2FAAAAAAAAAAAAAA/log-events"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -14,10 +16,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -26,6 +28,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=21) "images/cloudwatch.png",
       Type: (aw.IconType) ""
@@ -38,7 +41,9 @@
     match: (*string)(<nil>),
     uid: (*string)(<nil>),
     autocomplete: (*string)((len=61) "/aws/elasticbeanstalk/log-group-aaa/var/log/httpd/access.log "),
-    arg: (*string)((len=187) "https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2:log-groups/log-group/%2Faws%2Felasticbeanstalk%2Flog-group-aaa%2Fvar%2Flog%2Fhttpd%2Faccess.log/log-events"),
+    arg: ([]string) (len=1) {
+      (string) (len=187) "https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2:log-groups/log-group/%2Faws%2Felasticbeanstalk%2Flog-group-aaa%2Fvar%2Flog%2Fhttpd%2Faccess.log/log-events"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -47,10 +52,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -59,6 +64,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=21) "images/cloudwatch.png",
       Type: (aw.IconType) ""
@@ -71,7 +77,9 @@
     match: (*string)(<nil>),
     uid: (*string)(<nil>),
     autocomplete: (*string)((len=61) "/aws/elasticbeanstalk/log-group-bbb/var/log/apache/error.log "),
-    arg: (*string)((len=187) "https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2:log-groups/log-group/%2Faws%2Felasticbeanstalk%2Flog-group-bbb%2Fvar%2Flog%2Fapache%2Ferror.log/log-events"),
+    arg: ([]string) (len=1) {
+      (string) (len=187) "https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2:log-groups/log-group/%2Faws%2Felasticbeanstalk%2Flog-group-bbb%2Fvar%2Flog%2Fapache%2Ferror.log/log-events"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -80,10 +88,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -92,6 +100,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=21) "images/cloudwatch.png",
       Type: (aw.IconType) ""
@@ -104,7 +113,9 @@
     match: (*string)(<nil>),
     uid: (*string)(<nil>),
     autocomplete: (*string)((len=72) "/aws/elasticbeanstalk/log-group-bbb/var/log/application/application.log "),
-    arg: (*string)((len=198) "https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2:log-groups/log-group/%2Faws%2Felasticbeanstalk%2Flog-group-bbb%2Fvar%2Flog%2Fapplication%2Fapplication.log/log-events"),
+    arg: ([]string) (len=1) {
+      (string) (len=198) "https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2:log-groups/log-group/%2Faws%2Felasticbeanstalk%2Flog-group-bbb%2Fvar%2Flog%2Fapplication%2Fapplication.log/log-events"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -113,10 +124,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -125,6 +136,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=21) "images/cloudwatch.png",
       Type: (aw.IconType) ""
@@ -137,7 +149,9 @@
     match: (*string)(<nil>),
     uid: (*string)(<nil>),
     autocomplete: (*string)((len=60) "/aws/elasticbeanstalk/log-group-aaa/var/log/eb-activity.log "),
-    arg: (*string)((len=184) "https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2:log-groups/log-group/%2Faws%2Felasticbeanstalk%2Flog-group-aaa%2Fvar%2Flog%2Feb-activity.log/log-events"),
+    arg: ([]string) (len=1) {
+      (string) (len=184) "https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2:log-groups/log-group/%2Faws%2Felasticbeanstalk%2Flog-group-aaa%2Fvar%2Flog%2Feb-activity.log/log-events"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -146,10 +160,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -158,6 +172,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=21) "images/cloudwatch.png",
       Type: (aw.IconType) ""
@@ -170,7 +185,9 @@
     match: (*string)(<nil>),
     uid: (*string)(<nil>),
     autocomplete: (*string)((len=72) "/aws/elasticbeanstalk/log-group-aaa/var/log/application/application.log "),
-    arg: (*string)((len=198) "https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2:log-groups/log-group/%2Faws%2Felasticbeanstalk%2Flog-group-aaa%2Fvar%2Flog%2Fapplication%2Fapplication.log/log-events"),
+    arg: ([]string) (len=1) {
+      (string) (len=198) "https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2:log-groups/log-group/%2Faws%2Felasticbeanstalk%2Flog-group-aaa%2Fvar%2Flog%2Fapplication%2Fapplication.log/log-events"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -179,10 +196,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -191,6 +208,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=21) "images/cloudwatch.png",
       Type: (aw.IconType) ""

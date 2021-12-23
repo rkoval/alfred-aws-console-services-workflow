@@ -5,7 +5,9 @@
     match: (*string)(<nil>),
     uid: (*string)(<nil>),
     autocomplete: (*string)(<nil>),
-    arg: (*string)((len=10) "[redacted]"),
+    arg: ([]string) (len=1) {
+      (string) (len=10) "[redacted]"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -14,7 +16,8 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=10) "run-script"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) <nil>,
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=83) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/AlertNoteIcon.icns",
       Type: (aw.IconType) ""

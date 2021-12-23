@@ -5,7 +5,9 @@
     match: (*string)((len=30) "securitygroups Security Groups"),
     uid: (*string)((len=14) "securitygroups"),
     autocomplete: (*string)((len=19) "ec2 securitygroups "),
-    arg: (*string)((len=85) "https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#SecurityGroups:"),
+    arg: ([]string) (len=1) {
+      (string) (len=85) "https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#SecurityGroups:"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -14,10 +16,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -26,6 +28,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/ec2.png",
       Type: (aw.IconType) ""

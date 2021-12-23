@@ -5,7 +5,9 @@
     match: (*string)((len=27) "distributions Distributions"),
     uid: (*string)((len=13) "distributions"),
     autocomplete: (*string)((len=25) "cloudfront distributions "),
-    arg: (*string)((len=47) "https://console.aws.amazon.com/cloudfront/home#"),
+    arg: ([]string) (len=1) {
+      (string) (len=47) "https://console.aws.amazon.com/cloudfront/home#"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -14,10 +16,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -26,6 +28,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=21) "images/cloudfront.png",
       Type: (aw.IconType) ""
@@ -38,7 +41,9 @@
     match: (*string)((len=17) "policies Policies"),
     uid: (*string)((len=8) "policies"),
     autocomplete: (*string)((len=20) "cloudfront policies "),
-    arg: (*string)((len=59) "https://console.aws.amazon.com/cloudfront/v2/home#/policies"),
+    arg: ([]string) (len=1) {
+      (string) (len=59) "https://console.aws.amazon.com/cloudfront/v2/home#/policies"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -47,10 +52,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -59,6 +64,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=21) "images/cloudfront.png",
       Type: (aw.IconType) ""
@@ -71,7 +77,9 @@
     match: (*string)((len=32) "cachestatistics Cache statistics"),
     uid: (*string)((len=15) "cachestatistics"),
     autocomplete: (*string)((len=27) "cloudfront cachestatistics "),
-    arg: (*string)((len=66) "https://console.aws.amazon.com/cloudfront/home#cache_stat_reports:"),
+    arg: ([]string) (len=1) {
+      (string) (len=66) "https://console.aws.amazon.com/cloudfront/home#cache_stat_reports:"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -80,10 +88,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -92,6 +100,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=21) "images/cloudfront.png",
       Type: (aw.IconType) ""
@@ -104,7 +113,9 @@
     match: (*string)((len=21) "monitoring Monitoring"),
     uid: (*string)((len=10) "monitoring"),
     autocomplete: (*string)((len=22) "cloudfront monitoring "),
-    arg: (*string)((len=61) "https://console.aws.amazon.com/cloudfront/v2/home#/monitoring"),
+    arg: ([]string) (len=1) {
+      (string) (len=61) "https://console.aws.amazon.com/cloudfront/v2/home#/monitoring"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -113,10 +124,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -125,6 +136,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=21) "images/cloudfront.png",
       Type: (aw.IconType) ""
@@ -137,7 +149,9 @@
     match: (*string)((len=13) "alarms Alarms"),
     uid: (*string)((len=6) "alarms"),
     autocomplete: (*string)((len=18) "cloudfront alarms "),
-    arg: (*string)((len=54) "https://console.aws.amazon.com/cloudfront/home#alarms:"),
+    arg: ([]string) (len=1) {
+      (string) (len=54) "https://console.aws.amazon.com/cloudfront/home#alarms:"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -146,10 +160,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -158,6 +172,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=21) "images/cloudfront.png",
       Type: (aw.IconType) ""
@@ -170,7 +185,9 @@
     match: (*string)((len=30) "popularobjects Popular objects"),
     uid: (*string)((len=14) "popularobjects"),
     autocomplete: (*string)((len=26) "cloudfront popularobjects "),
-    arg: (*string)((len=60) "https://console.aws.amazon.com/cloudfront/home#popular_urls:"),
+    arg: ([]string) (len=1) {
+      (string) (len=60) "https://console.aws.amazon.com/cloudfront/home#popular_urls:"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -179,10 +196,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -191,6 +208,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=21) "images/cloudfront.png",
       Type: (aw.IconType) ""
@@ -203,7 +221,9 @@
     match: (*string)((len=23) "referrers Top referrers"),
     uid: (*string)((len=9) "referrers"),
     autocomplete: (*string)((len=21) "cloudfront referrers "),
-    arg: (*string)((len=63) "https://console.aws.amazon.com/cloudfront/home#referers_report:"),
+    arg: ([]string) (len=1) {
+      (string) (len=63) "https://console.aws.amazon.com/cloudfront/home#referers_report:"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -212,10 +232,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -224,6 +244,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=21) "images/cloudfront.png",
       Type: (aw.IconType) ""
@@ -236,7 +257,9 @@
     match: (*string)((len=11) "usage Usage"),
     uid: (*string)((len=5) "usage"),
     autocomplete: (*string)((len=17) "cloudfront usage "),
-    arg: (*string)((len=61) "https://console.aws.amazon.com/cloudfront/home#usage_reports:"),
+    arg: ([]string) (len=1) {
+      (string) (len=61) "https://console.aws.amazon.com/cloudfront/home#usage_reports:"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -245,10 +268,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -257,6 +280,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=21) "images/cloudfront.png",
       Type: (aw.IconType) ""
@@ -269,7 +293,9 @@
     match: (*string)((len=15) "viewers Viewers"),
     uid: (*string)((len=7) "viewers"),
     autocomplete: (*string)((len=19) "cloudfront viewers "),
-    arg: (*string)((len=63) "https://console.aws.amazon.com/cloudfront/home#viewers_reports:"),
+    arg: ([]string) (len=1) {
+      (string) (len=63) "https://console.aws.amazon.com/cloudfront/home#viewers_reports:"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -278,10 +304,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -290,6 +316,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=21) "images/cloudfront.png",
       Type: (aw.IconType) ""
@@ -302,7 +329,9 @@
     match: (*string)((len=26) "oai Origin access identity"),
     uid: (*string)((len=3) "oai"),
     autocomplete: (*string)((len=15) "cloudfront oai "),
-    arg: (*string)((len=51) "https://console.aws.amazon.com/cloudfront/home#oai:"),
+    arg: ([]string) (len=1) {
+      (string) (len=51) "https://console.aws.amazon.com/cloudfront/home#oai:"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -311,10 +340,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -323,6 +352,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=21) "images/cloudfront.png",
       Type: (aw.IconType) ""
@@ -335,7 +365,9 @@
     match: (*string)((len=20) "publickey Public key"),
     uid: (*string)((len=9) "publickey"),
     autocomplete: (*string)((len=21) "cloudfront publickey "),
-    arg: (*string)((len=57) "https://console.aws.amazon.com/cloudfront/home#publickey:"),
+    arg: ([]string) (len=1) {
+      (string) (len=57) "https://console.aws.amazon.com/cloudfront/home#publickey:"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -344,10 +376,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -356,6 +388,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=21) "images/cloudfront.png",
       Type: (aw.IconType) ""
@@ -368,7 +401,9 @@
     match: (*string)((len=26) "fle Field-level encryption"),
     uid: (*string)((len=3) "fle"),
     autocomplete: (*string)((len=15) "cloudfront fle "),
-    arg: (*string)((len=51) "https://console.aws.amazon.com/cloudfront/home#fle:"),
+    arg: ([]string) (len=1) {
+      (string) (len=51) "https://console.aws.amazon.com/cloudfront/home#fle:"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -377,10 +412,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -389,6 +424,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=21) "images/cloudfront.png",
       Type: (aw.IconType) ""

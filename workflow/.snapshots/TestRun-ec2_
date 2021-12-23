@@ -5,7 +5,9 @@
     match: (*string)((len=19) "dashboard Dashboard"),
     uid: (*string)((len=9) "dashboard"),
     autocomplete: (*string)((len=14) "ec2 dashboard "),
-    arg: (*string)((len=72) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#Home:"),
+    arg: ([]string) (len=1) {
+      (string) (len=72) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#Home:"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -14,10 +16,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -26,6 +28,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/ec2.png",
       Type: (aw.IconType) ""
@@ -38,7 +41,9 @@
     match: (*string)((len=13) "events Events"),
     uid: (*string)((len=6) "events"),
     autocomplete: (*string)((len=11) "ec2 events "),
-    arg: (*string)((len=74) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#Events:"),
+    arg: ([]string) (len=1) {
+      (string) (len=74) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#Events:"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -47,10 +52,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -59,6 +64,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/ec2.png",
       Type: (aw.IconType) ""
@@ -71,7 +77,9 @@
     match: (*string)((len=9) "tags Tags"),
     uid: (*string)((len=4) "tags"),
     autocomplete: (*string)((len=9) "ec2 tags "),
-    arg: (*string)((len=72) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#Tags:"),
+    arg: ([]string) (len=1) {
+      (string) (len=72) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#Tags:"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -80,10 +88,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -92,6 +100,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/ec2.png",
       Type: (aw.IconType) ""
@@ -104,7 +113,9 @@
     match: (*string)((len=13) "limits Limits"),
     uid: (*string)((len=6) "limits"),
     autocomplete: (*string)((len=11) "ec2 limits "),
-    arg: (*string)((len=74) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#Limits:"),
+    arg: ([]string) (len=1) {
+      (string) (len=74) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#Limits:"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -113,10 +124,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -125,6 +136,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/ec2.png",
       Type: (aw.IconType) ""
@@ -137,7 +149,9 @@
     match: (*string)((len=19) "instances Instances"),
     uid: (*string)((len=9) "instances"),
     autocomplete: (*string)((len=14) "ec2 instances "),
-    arg: (*string)((len=80) "https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Instances:"),
+    arg: ([]string) (len=1) {
+      (string) (len=80) "https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Instances:"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -146,10 +160,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -158,6 +172,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/ec2.png",
       Type: (aw.IconType) ""
@@ -170,7 +185,9 @@
     match: (*string)((len=28) "instancetypes Instance Types"),
     uid: (*string)((len=13) "instancetypes"),
     autocomplete: (*string)((len=18) "ec2 instancetypes "),
-    arg: (*string)((len=84) "https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#InstanceTypes:"),
+    arg: ([]string) (len=1) {
+      (string) (len=84) "https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#InstanceTypes:"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -179,10 +196,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -191,6 +208,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/ec2.png",
       Type: (aw.IconType) ""
@@ -203,7 +221,9 @@
     match: (*string)((len=32) "launchtemplates Launch Templates"),
     uid: (*string)((len=15) "launchtemplates"),
     autocomplete: (*string)((len=20) "ec2 launchtemplates "),
-    arg: (*string)((len=83) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#LaunchTemplates:"),
+    arg: ([]string) (len=1) {
+      (string) (len=83) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#LaunchTemplates:"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -212,10 +232,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -224,6 +244,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/ec2.png",
       Type: (aw.IconType) ""
@@ -236,7 +257,9 @@
     match: (*string)((len=26) "spotrequests Spot Requests"),
     uid: (*string)((len=12) "spotrequests"),
     autocomplete: (*string)((len=17) "ec2 spotrequests "),
-    arg: (*string)((len=46) "https://us-west-2.console.aws.amazon.com/ec2sp"),
+    arg: ([]string) (len=1) {
+      (string) (len=46) "https://us-west-2.console.aws.amazon.com/ec2sp"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -245,10 +268,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -257,6 +280,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/ec2.png",
       Type: (aw.IconType) ""
@@ -269,7 +293,9 @@
     match: (*string)((len=26) "savingsplans Savings Plans"),
     uid: (*string)((len=12) "savingsplans"),
     autocomplete: (*string)((len=17) "ec2 savingsplans "),
-    arg: (*string)((len=80) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#SavingsPlans:"),
+    arg: ([]string) (len=1) {
+      (string) (len=80) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#SavingsPlans:"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -278,10 +304,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -290,6 +316,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/ec2.png",
       Type: (aw.IconType) ""
@@ -302,7 +329,9 @@
     match: (*string)((len=36) "reservedinstances Reserved Instances"),
     uid: (*string)((len=17) "reservedinstances"),
     autocomplete: (*string)((len=22) "ec2 reservedinstances "),
-    arg: (*string)((len=85) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#ReservedInstances:"),
+    arg: ([]string) (len=1) {
+      (string) (len=85) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#ReservedInstances:"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -311,10 +340,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -323,6 +352,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/ec2.png",
       Type: (aw.IconType) ""
@@ -335,7 +365,9 @@
     match: (*string)((len=30) "dedicatedhosts Dedicated Hosts"),
     uid: (*string)((len=14) "dedicatedhosts"),
     autocomplete: (*string)((len=19) "ec2 dedicatedhosts "),
-    arg: (*string)((len=73) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#Hosts:"),
+    arg: ([]string) (len=1) {
+      (string) (len=73) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#Hosts:"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -344,10 +376,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -356,6 +388,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/ec2.png",
       Type: (aw.IconType) ""
@@ -368,7 +401,9 @@
     match: (*string)((len=38) "scheduledinstances Scheduled Instances"),
     uid: (*string)((len=18) "scheduledinstances"),
     autocomplete: (*string)((len=23) "ec2 scheduledinstances "),
-    arg: (*string)((len=57) "https://us-west-2.console.aws.amazon.com/ec2sp/v2/si/home"),
+    arg: ([]string) (len=1) {
+      (string) (len=57) "https://us-west-2.console.aws.amazon.com/ec2sp/v2/si/home"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -377,10 +412,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -389,6 +424,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/ec2.png",
       Type: (aw.IconType) ""
@@ -401,7 +437,9 @@
     match: (*string)((len=42) "capacityreservations Capacity Reservations"),
     uid: (*string)((len=20) "capacityreservations"),
     autocomplete: (*string)((len=25) "ec2 capacityreservations "),
-    arg: (*string)((len=89) "https://us-west-2.console.aws.amazon.com/ec2sp/v2/home/?region=us-west-2#/cr/reservations"),
+    arg: ([]string) (len=1) {
+      (string) (len=89) "https://us-west-2.console.aws.amazon.com/ec2sp/v2/home/?region=us-west-2#/cr/reservations"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -410,10 +448,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -422,6 +460,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/ec2.png",
       Type: (aw.IconType) ""
@@ -434,7 +473,9 @@
     match: (*string)((len=9) "amis AMIs"),
     uid: (*string)((len=4) "amis"),
     autocomplete: (*string)((len=9) "ec2 amis "),
-    arg: (*string)((len=74) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#Images:"),
+    arg: ([]string) (len=1) {
+      (string) (len=74) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#Images:"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -443,10 +484,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -455,6 +496,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/ec2.png",
       Type: (aw.IconType) ""
@@ -467,7 +509,9 @@
     match: (*string)((len=14) "volumes Volume"),
     uid: (*string)((len=7) "volumes"),
     autocomplete: (*string)((len=12) "ec2 volumes "),
-    arg: (*string)((len=75) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#Volumes:"),
+    arg: ([]string) (len=1) {
+      (string) (len=75) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#Volumes:"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -476,10 +520,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -488,6 +532,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/ec2.png",
       Type: (aw.IconType) ""
@@ -500,7 +545,9 @@
     match: (*string)((len=19) "snapshots Snapshots"),
     uid: (*string)((len=9) "snapshots"),
     autocomplete: (*string)((len=14) "ec2 snapshots "),
-    arg: (*string)((len=77) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#Snapshots:"),
+    arg: ([]string) (len=1) {
+      (string) (len=77) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#Snapshots:"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -509,10 +556,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -521,6 +568,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/ec2.png",
       Type: (aw.IconType) ""
@@ -533,7 +581,9 @@
     match: (*string)((len=34) "lifecyclemanager Lifecycle Manager"),
     uid: (*string)((len=16) "lifecyclemanager"),
     autocomplete: (*string)((len=21) "ec2 lifecyclemanager "),
-    arg: (*string)((len=77) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#Lifecycle:"),
+    arg: ([]string) (len=1) {
+      (string) (len=77) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#Lifecycle:"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -542,10 +592,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -554,6 +604,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/ec2.png",
       Type: (aw.IconType) ""
@@ -566,7 +617,9 @@
     match: (*string)((len=30) "securitygroups Security Groups"),
     uid: (*string)((len=14) "securitygroups"),
     autocomplete: (*string)((len=19) "ec2 securitygroups "),
-    arg: (*string)((len=85) "https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#SecurityGroups:"),
+    arg: ([]string) (len=1) {
+      (string) (len=85) "https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#SecurityGroups:"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -575,10 +628,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -587,6 +640,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/ec2.png",
       Type: (aw.IconType) ""
@@ -599,7 +653,9 @@
     match: (*string)((len=22) "elasticips Elastic IPs"),
     uid: (*string)((len=10) "elasticips"),
     autocomplete: (*string)((len=15) "ec2 elasticips "),
-    arg: (*string)((len=77) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#Addresses:"),
+    arg: ([]string) (len=1) {
+      (string) (len=77) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#Addresses:"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -608,10 +664,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -620,6 +676,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/ec2.png",
       Type: (aw.IconType) ""
@@ -632,7 +689,9 @@
     match: (*string)((len=32) "placementgroups Placement Groups"),
     uid: (*string)((len=15) "placementgroups"),
     autocomplete: (*string)((len=20) "ec2 placementgroups "),
-    arg: (*string)((len=83) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#PlacementGroups:"),
+    arg: ([]string) (len=1) {
+      (string) (len=83) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#PlacementGroups:"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -641,10 +700,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -653,6 +712,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/ec2.png",
       Type: (aw.IconType) ""
@@ -665,7 +725,9 @@
     match: (*string)((len=18) "keypairs Key Pairs"),
     uid: (*string)((len=8) "keypairs"),
     autocomplete: (*string)((len=13) "ec2 keypairs "),
-    arg: (*string)((len=76) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#KeyPairs:"),
+    arg: ([]string) (len=1) {
+      (string) (len=76) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#KeyPairs:"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -674,10 +736,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -686,6 +748,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/ec2.png",
       Type: (aw.IconType) ""
@@ -698,7 +761,9 @@
     match: (*string)((len=36) "networkinterfaces Network Interfaces"),
     uid: (*string)((len=17) "networkinterfaces"),
     autocomplete: (*string)((len=22) "ec2 networkinterfaces "),
-    arg: (*string)((len=71) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#NIC:"),
+    arg: ([]string) (len=1) {
+      (string) (len=71) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#NIC:"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -707,10 +772,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -719,6 +784,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/ec2.png",
       Type: (aw.IconType) ""
@@ -731,7 +797,9 @@
     match: (*string)((len=28) "loadbalancers Load Balancers"),
     uid: (*string)((len=13) "loadbalancers"),
     autocomplete: (*string)((len=18) "ec2 loadbalancers "),
-    arg: (*string)((len=81) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#LoadBalancers:"),
+    arg: ([]string) (len=1) {
+      (string) (len=81) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#LoadBalancers:"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -740,10 +808,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -752,6 +820,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/ec2.png",
       Type: (aw.IconType) ""
@@ -764,7 +833,9 @@
     match: (*string)((len=26) "targetgroups Target Groups"),
     uid: (*string)((len=12) "targetgroups"),
     autocomplete: (*string)((len=17) "ec2 targetgroups "),
-    arg: (*string)((len=80) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#TargetGroups:"),
+    arg: ([]string) (len=1) {
+      (string) (len=80) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#TargetGroups:"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -773,10 +844,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -785,6 +856,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/ec2.png",
       Type: (aw.IconType) ""
@@ -797,7 +869,9 @@
     match: (*string)((len=35) "launchconfigs Launch Configurations"),
     uid: (*string)((len=13) "launchconfigs"),
     autocomplete: (*string)((len=18) "ec2 launchconfigs "),
-    arg: (*string)((len=81) "https://us-west-2.console.aws.amazon.com/ec2autoscaling/home?region=us-west-2#/lc"),
+    arg: ([]string) (len=1) {
+      (string) (len=81) "https://us-west-2.console.aws.amazon.com/ec2autoscaling/home?region=us-west-2#/lc"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -806,10 +880,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -818,6 +892,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/ec2.png",
       Type: (aw.IconType) ""
@@ -830,7 +905,9 @@
     match: (*string)((len=37) "autoscalinggroups Auto Scaling Groups"),
     uid: (*string)((len=17) "autoscalinggroups"),
     autocomplete: (*string)((len=22) "ec2 autoscalinggroups "),
-    arg: (*string)((len=86) "https://us-west-2.console.aws.amazon.com/ec2autoscaling/home?region=us-west-2#/details"),
+    arg: ([]string) (len=1) {
+      (string) (len=86) "https://us-west-2.console.aws.amazon.com/ec2autoscaling/home?region=us-west-2#/details"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -839,10 +916,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -851,6 +928,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/ec2.png",
       Type: (aw.IconType) ""

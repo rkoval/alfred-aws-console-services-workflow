@@ -5,7 +5,9 @@
     match: (*string)((len=33) "ec2imagebuilder EC2 Image Builder"),
     uid: (*string)((len=15) "ec2imagebuilder"),
     autocomplete: (*string)((len=27) "ec2imagebuilder $us-east-1 "),
-    arg: (*string)((len=86) "https://us-east-1.console.aws.amazon.com/imagebuilder/home?region=us-east-1#/pipelines"),
+    arg: ([]string) (len=1) {
+      (string) (len=86) "https://us-east-1.console.aws.amazon.com/imagebuilder/home?region=us-east-1#/pipelines"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -14,10 +16,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -26,6 +28,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=26) "images/ec2imagebuilder.png",
       Type: (aw.IconType) ""

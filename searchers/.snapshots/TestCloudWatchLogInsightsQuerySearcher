@@ -5,7 +5,9 @@
     match: (*string)(<nil>),
     uid: (*string)(<nil>),
     autocomplete: (*string)((len=8) "Query 1 "),
-    arg: (*string)((len=508) "https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2:logs-insights$3FqueryDetail$3D$257E$2528end$257E0$257Estart$257E-3600$257EtimeType$257E$2527RELATIVE$257Eunit$257E$2527seconds$257EeditorString$257E$2527filter+*40type+*3D+*22REPORT*22*0A+*7C+stats+avg*28*40duration*29*2C+max*28*40duration*29*2C+min*28*40duration*29+by+bin*285m*29$257EisLiveTail$257Efalse$257EqueryId$257E$252700000000-0000-0000-0000-000000000000$257Esource$257E$2528$257E$2527*2Faws*2Floggroup1.log$2529$2529"),
+    arg: ([]string) (len=1) {
+      (string) (len=508) "https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2:logs-insights$3FqueryDetail$3D$257E$2528end$257E0$257Estart$257E-3600$257EtimeType$257E$2527RELATIVE$257Eunit$257E$2527seconds$257EeditorString$257E$2527filter+*40type+*3D+*22REPORT*22*0A+*7C+stats+avg*28*40duration*29*2C+max*28*40duration*29*2C+min*28*40duration*29+by+bin*285m*29$257EisLiveTail$257Efalse$257EqueryId$257E$252700000000-0000-0000-0000-000000000000$257Esource$257E$2528$257E$2527*2Faws*2Floggroup1.log$2529$2529"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -14,10 +16,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -26,6 +28,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=21) "images/cloudwatch.png",
       Type: (aw.IconType) ""
@@ -38,7 +41,9 @@
     match: (*string)(<nil>),
     uid: (*string)(<nil>),
     autocomplete: (*string)((len=8) "Query 2 "),
-    arg: (*string)((len=523) "https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2:logs-insights$3FqueryDetail$3D$257E$2528end$257E0$257Estart$257E-3600$257EtimeType$257E$2527RELATIVE$257Eunit$257E$2527seconds$257EeditorString$257E$2527fields+*40timestamp*2C+*40message*0A+*7C+sort+*40timestamp+desc*0A+*7C+limit+25$257EisLiveTail$257Efalse$257EqueryId$257E$252700000000-0000-0000-0000-000000000000$257Esource$257E$2528$257E$2527*2Faws*2Floggroup1.log$257E$2527*2Faws*2Floggroup2.log$257E$2527*2Faws*2Floggroup3.log$2529$2529"),
+    arg: ([]string) (len=1) {
+      (string) (len=523) "https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2:logs-insights$3FqueryDetail$3D$257E$2528end$257E0$257Estart$257E-3600$257EtimeType$257E$2527RELATIVE$257Eunit$257E$2527seconds$257EeditorString$257E$2527fields+*40timestamp*2C+*40message*0A+*7C+sort+*40timestamp+desc*0A+*7C+limit+25$257EisLiveTail$257Efalse$257EqueryId$257E$252700000000-0000-0000-0000-000000000000$257Esource$257E$2528$257E$2527*2Faws*2Floggroup1.log$257E$2527*2Faws*2Floggroup2.log$257E$2527*2Faws*2Floggroup3.log$2529$2529"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -47,10 +52,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -59,6 +64,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=21) "images/cloudwatch.png",
       Type: (aw.IconType) ""
@@ -71,7 +77,9 @@
     match: (*string)(<nil>),
     uid: (*string)(<nil>),
     autocomplete: (*string)((len=8) "Query 3 "),
-    arg: (*string)((len=474) "https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2:logs-insights$3FqueryDetail$3D$257E$2528end$257E0$257Estart$257E-3600$257EtimeType$257E$2527RELATIVE$257Eunit$257E$2527seconds$257EeditorString$257E$2527stats+count*28*2A*29+as+numRequests+by+resolverIp*0A+*7C+sort+numRequests+desc*0A+*7C+limit+10$257EisLiveTail$257Efalse$257EqueryId$257E$252700000000-0000-0000-0000-000000000000$257Esource$257E$2528$257E$2527*2Faws*2Floggroup3.log$2529$2529"),
+    arg: ([]string) (len=1) {
+      (string) (len=474) "https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2:logs-insights$3FqueryDetail$3D$257E$2528end$257E0$257Estart$257E-3600$257EtimeType$257E$2527RELATIVE$257Eunit$257E$2527seconds$257EeditorString$257E$2527stats+count*28*2A*29+as+numRequests+by+resolverIp*0A+*7C+sort+numRequests+desc*0A+*7C+limit+10$257EisLiveTail$257Efalse$257EqueryId$257E$252700000000-0000-0000-0000-000000000000$257Esource$257E$2528$257E$2527*2Faws*2Floggroup3.log$2529$2529"
+    },
     valid: (bool) true,
     file: (bool) false,
     copytext: (*string)(<nil>),
@@ -80,10 +88,10 @@
     vars: (map[string]string) (len=1) {
       (string) (len=6) "action": (string) (len=8) "open-url"
     },
-    mods: (map[aw.ModKey]*aw.Modifier) (len=1) {
-      (aw.ModKey) (len=3) "cmd": (*aw.Modifier)({
-        Key: (aw.ModKey) (len=3) "cmd",
-        arg: (*string)(<nil>),
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
         subtitle: (*string)((len=21) "Copy URL to clipboard"),
         valid: (bool) false,
         icon: (*aw.Icon)(<nil>),
@@ -92,6 +100,7 @@
         }
       })
     },
+    actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=21) "images/cloudwatch.png",
       Type: (aw.IconType) ""
