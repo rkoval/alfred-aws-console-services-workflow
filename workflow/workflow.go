@@ -173,7 +173,7 @@ func handleEmptyQuery(wf *aw.Workflow, searchArgs searchutil.SearchArgs) {
 		util.NewURLItem(wf, "No profile configured").
 			Subtitle("Select this option to open AWS docs on how to configure").
 			Arg("https://aws.github.io/aws-sdk-go-v2/docs/configuring-sdk/#creating-the-config-file").
-			Icon(aw.IconWarning)
+			Icon(aw.IconNote)
 	} else {
 		wf.NewItem("Using profile \"" + searchArgs.Profile + "\"").
 			Subtitle("Use \"" + aliases.OverrideAwsProfile + "\" to override for the current query").
@@ -184,7 +184,7 @@ func handleEmptyQuery(wf *aw.Workflow, searchArgs searchutil.SearchArgs) {
 		util.NewURLItem(wf, "No region configured for this profile").
 			Subtitle("Select this option to open AWS docs on how to configure").
 			Arg("https://aws.github.io/aws-sdk-go-v2/docs/configuring-sdk/#creating-the-config-file").
-			Icon(aw.IconWarning)
+			Icon(aw.IconNote)
 	} else {
 		wf.NewItem("Using region \"" + searchArgs.Cfg.Region + "\"").
 			Subtitle("Use \"" + aliases.OverrideAwsRegion + "\" to override for the current query").
@@ -265,7 +265,7 @@ func handleOpenAll(wf *aw.Workflow, awsService *awsworkflow.AwsService, allAwsSe
 		cmd := fmt.Sprintf(`%s -query="%s" -open_all`, os.Args[0], rawQuery)
 		wf.NewItem(title).
 			Subtitle("Fair warning: this may briefly overload your system").
-			Icon(aw.IconWarning).
+			Icon(aw.IconNote).
 			Arg(cmd).
 			Var("action", "run-script").
 			Valid(true)
