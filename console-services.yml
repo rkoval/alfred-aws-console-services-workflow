@@ -973,7 +973,8 @@
   description: Run and Scale Elasticsearch Clusters
   extra_search_terms:
     - elasticsearch
-  url: "/es/home#"
+    - opensearch
+  url: "/esv3/home#"
 
 - id: elastictranscoder
   name: Elastic Transcoder
