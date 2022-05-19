@@ -1,7 +1,7 @@
 # Contributing
 
 ## Requirements
-- go 1.16.5 (or later)
+- go 1.18.2 (or later)
 
 ## Installation
 Clone the repository into your `$GOPATH` and add that directory as a workflow within Alfred (make sure to disable any other versions of this workflow in Alfred so that the `aws` keyword doesn't conflict). Then, from the root of this repo, run:
