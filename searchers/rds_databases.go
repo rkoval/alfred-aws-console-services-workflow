@@ -19,7 +19,7 @@ type RDSDatabaseSearcher struct{}
 
 func (s RDSDatabaseSearcher) Search(wf *aw.Workflow, searchArgs searchutil.SearchArgs) error {
 	cacheName := util.GetCurrentFilename()
-	es := caching.LoadRdsDBInstanceArrayFromCache(wf, searchArgs, cacheName, s.fetch)
+	es := caching.LoadEntityArrayFromCache(wf, searchArgs, cacheName, s.fetch)
 	for _, entity := range es {
 		s.addToWorkflow(wf, searchArgs, entity)
 	}

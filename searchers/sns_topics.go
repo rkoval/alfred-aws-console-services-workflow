@@ -18,7 +18,7 @@ type SNSTopicSearcher struct{}
 
 func (s SNSTopicSearcher) Search(wf *aw.Workflow, searchArgs searchutil.SearchArgs) error {
 	cacheName := util.GetCurrentFilename()
-	entities := caching.LoadSnsTopicArrayFromCache(wf, searchArgs, cacheName, s.fetch)
+	entities := caching.LoadEntityArrayFromCache(wf, searchArgs, cacheName, s.fetch)
 	for _, entity := range entities {
 		s.addToWorkflow(wf, searchArgs, entity)
 	}

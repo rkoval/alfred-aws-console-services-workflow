@@ -8,23 +8,32 @@ import (
 	"strings"
 
 	"github.com/aws/aws-sdk-go-v2/aws"
+	cloudformation "github.com/aws/aws-sdk-go-v2/service/cloudformation/types"
+	cloudwatchlogs "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs/types"
+	ec2 "github.com/aws/aws-sdk-go-v2/service/ec2/types"
+	elasticache "github.com/aws/aws-sdk-go-v2/service/elasticache/types"
+	elasticbeanstalk "github.com/aws/aws-sdk-go-v2/service/elasticbeanstalk/types"
+	elasticloadbalancingv2 "github.com/aws/aws-sdk-go-v2/service/elasticloadbalancingv2/types"
+	lambda "github.com/aws/aws-sdk-go-v2/service/lambda/types"
+	rds "github.com/aws/aws-sdk-go-v2/service/rds/types"
+	route53 "github.com/aws/aws-sdk-go-v2/service/route53/types"
+	s3 "github.com/aws/aws-sdk-go-v2/service/s3/types"
+	sns "github.com/aws/aws-sdk-go-v2/service/sns/types"
+	wafv2 "github.com/aws/aws-sdk-go-v2/service/wafv2/types"
 	"github.com/aws/smithy-go"
 	aw "github.com/deanishe/awgo"
 	"github.com/rkoval/alfred-aws-console-services-workflow/searchers/searchutil"
-
-	"github.com/cheekybits/genny/generic"
 )
 
-//go:generate genny -in=$GOFILE -out=gen-$GOFILE gen "Entity=cloudwatchlogs.LogGroup,ec2.Instance,s3.Bucket,ec2.SecurityGroup,elasticbeanstalk.EnvironmentDescription,wafv2.IPSetSummary,wafv2.WebACLSummary,lambda.FunctionConfiguration,cloudformation.Stack,rds.DBInstance,sns.Topic,sns.Subscription,elasticache.CacheCluster,elasticloadbalancingv2.LoadBalancer,elasticbeanstalk.ApplicationDescription,route53.HostedZone,cloudwatchlogs.QueryDefinition"
-type Entity = generic.Type
+type Entity interface {
+	cloudwatchlogs.LogGroup | ec2.Instance | s3.Bucket | ec2.SecurityGroup | elasticbeanstalk.EnvironmentDescription | wafv2.IPSetSummary | wafv2.WebACLSummary | lambda.FunctionConfiguration | cloudformation.Stack | rds.DBInstance | sns.Topic | sns.Subscription | elasticache.CacheCluster | elasticloadbalancingv2.LoadBalancer | elasticbeanstalk.ApplicationDescription | route53.HostedZone | cloudwatchlogs.QueryDefinition
+}
 
-type EntityArrayFetcher = func(aws.Config) ([]Entity, error)
-
-func LoadEntityArrayFromCache(wf *aw.Workflow, searchArgs searchutil.SearchArgs, cacheName string, fetcher EntityArrayFetcher) []Entity {
+func LoadEntityArrayFromCache[K Entity](wf *aw.Workflow, searchArgs searchutil.SearchArgs, cacheName string, fetcher func(aws.Config) ([]K, error)) []K {
 	// TODO optimization: not all services have sa region associated with them, so cache can be reused across regions (e.g., s3 buckets are global)
 	cacheName += "_" + searchArgs.Cfg.Region + "_" + searchArgs.Profile
 
-	results := []Entity{}
+	results := []K{}
 	lastFetchErrPath := wf.CacheDir() + "/last-fetch-err.txt"
 	if searchArgs.ForceFetch {
 		log.Printf("fetching from aws ...")
@@ -76,7 +85,7 @@ func LoadEntityArrayFromCache(wf *aw.Workflow, searchArgs searchutil.SearchArgs,
 
 	err := handleExpiredCache(wf, cacheName, lastFetchErrPath, searchArgs)
 	if err != nil {
-		return []Entity{}
+		return []K{}
 	}
 
 	if wf.Cache.Exists(cacheName) {

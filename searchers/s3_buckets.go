@@ -19,7 +19,7 @@ type S3BucketSearcher struct{}
 
 func (s S3BucketSearcher) Search(wf *aw.Workflow, searchArgs searchutil.SearchArgs) error {
 	cacheName := util.GetCurrentFilename()
-	es := caching.LoadS3BucketArrayFromCache(wf, searchArgs, cacheName, s.fetch)
+	es := caching.LoadEntityArrayFromCache(wf, searchArgs, cacheName, s.fetch)
 	for _, entity := range es {
 		s.addToWorkflow(wf, searchArgs, entity)
 	}

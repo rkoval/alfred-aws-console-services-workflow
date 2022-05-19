@@ -19,7 +19,6 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/wafv2 v1.20.1
 	github.com/aws/smithy-go v1.11.2
 	github.com/bradleyjkemp/cupaloy v2.3.0+incompatible
-	github.com/cheekybits/genny v1.0.0
 	github.com/deanishe/awgo v0.29.1
 	github.com/dnaeon/go-vcr v1.0.1
 	github.com/iancoleman/strcase v0.1.3

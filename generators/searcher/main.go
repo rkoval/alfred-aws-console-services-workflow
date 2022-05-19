@@ -99,7 +99,6 @@ func main() {
 	operationDefinition := getOperationDefinition(operation, pkg, functionName)
 	searcherNamer := NewSearcherNamer(args[0], args[1], operationDefinition)
 
-	appendToGenny(searcherNamer)
 	appendToSearchers(searcherNamer)
 	appendToWorkflowTest(searcherNamer)
 	writeSearcherFile(searcherNamer)

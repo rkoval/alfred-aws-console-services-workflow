@@ -8,13 +8,6 @@ import (
 	"github.com/rkoval/alfred-aws-console-services-workflow/util"
 )
 
-func appendToGenny(searcherNamer SearcherNamer) {
-	regex := regexp.MustCompile(`(go:generate genny.*)(")`)
-	typeName := searcherNamer.OperationDefinition.Package + "." + searcherNamer.OperationDefinition.Item
-	replacement := fmt.Sprintf("$1,%s$2", typeName)
-	util.ModifyFileWithRegexReplace("caching/caching.go", regex, replacement, typeName)
-}
-
 func appendToSearchers(searcherNamer SearcherNamer) {
 	regex := regexp.MustCompile(`(\nvar SearchersByServiceId)`)
 	structInitializer := "&" + searcherNamer.StructName + "{}"
