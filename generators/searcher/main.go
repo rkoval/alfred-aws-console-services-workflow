@@ -62,8 +62,8 @@ func NewSearcherNamer(service, entity string, operationDefinition OperationDefin
 		log.Fatalf("Entity should be singular for casing to work properly")
 	}
 
-	serviceTitle := strings.Title(service)
-	entityTitle := strings.Title(entity)
+	serviceTitle := strings.ToTitle(service)
+	entityTitle := strings.ToTitle(entity)
 	serviceLower := strings.ToLower(service)
 	name := serviceTitle + entityTitle
 	nameSnakeCase := strcase.ToSnake(name)
@@ -166,7 +166,7 @@ func getOperationDefinition(operation, pkg, functionName string) OperationDefini
 
 	operationDefinition := OperationDefinition{
 		Package:       pkg,
-		PackageTitle:  strings.Title(pkg),
+		PackageTitle:  strings.ToTitle(pkg),
 		FunctionName:  functionName,
 		FunctionInput: functionInput,
 	}
