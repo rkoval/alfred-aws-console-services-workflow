@@ -196,6 +196,11 @@ func handleEmptyQuery(wf *aw.Workflow, searchArgs searchutil.SearchArgs) {
 		Arg("https://www.patreon.com/rkoval_alfred_aws_console_services_workflow").
 		Icon(aw.IconFavorite)
 
+	util.NewURLItem(wf, "Developers gotta eat! 🍕").
+		Subtitle("Select this option to buy Ryan a pizza").
+		Arg("https://ryankoval.pizza").
+		Icon(aw.IconColor)
+
 	if wf.UpdateCheckDue() {
 		if err := wf.CheckForUpdate(); err != nil {
 			wf.FatalError(err)

@@ -1,4 +1,4 @@
-([]*aw.Item) (len=5) {
+([]*aw.Item) (len=6) {
   (*aw.Item)({
     title: (string) (len=29) "Search for an AWS Service ...",
     subtitle: (*string)((len=33) "e.g., cloudformation, ec2, s3 ..."),
@@ -122,6 +122,42 @@
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=90) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/ToolbarFavoritesIcon.icns",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=26) "Developers gotta eat! 🍕",
+    subtitle: (*string)((len=38) "Select this option to buy Ryan a pizza"),
+    match: (*string)(<nil>),
+    uid: (*string)(<nil>),
+    autocomplete: (*string)(<nil>),
+    arg: ([]string) (len=1) {
+      (string) (len=23) "https://ryankoval.pizza"
+    },
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=92) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/ProfileBackgroundColor.icns",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
