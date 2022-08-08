@@ -51,3 +51,4 @@ See [this README](release_tools/README.md)
 Like this workflow? Consider donating! 😻
 
 - [Patreon](https://www.patreon.com/rkoval_alfred_aws_console_services_workflow)
+- <a href="https://www.buymeacoffee.com/nOklSpAEHE" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Pizza" style="height: 60px !important;width: 217px !important;" ></a>
