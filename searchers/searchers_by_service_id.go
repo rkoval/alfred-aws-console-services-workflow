@@ -28,6 +28,7 @@ var SearchersByServiceId map[string]Searcher = map[string]Searcher{
 	"cloudwatch":                    cloudWatchLogGroupSearcher,
 	"cloudwatch_loggroups":          cloudWatchLogGroupSearcher,
 	"cloudwatch_loginsights":        cloudwatchLogInsightsQuerySearcher,
+	"codepipeline":                  codePipelinePipelineSearcher,
 	"codepipeline_pipelines":        codePipelinePipelineSearcher,
 	"ec2":                           ec2InstanceSearcher,
 	"ec2_instances":                 ec2InstanceSearcher,
