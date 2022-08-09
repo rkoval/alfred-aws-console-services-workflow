@@ -604,6 +604,22 @@ var tcs []testCase = []testCase{
 		query:       "cloudwatch loginsights ",
 		fixtureName: "../searchers/cloud_watch_log_insights_queries_test", // reuse test fixture from this other test
 	},
+	{
+		query:       "codepipeline",
+		fixtureName: "../searchers/codepipeline_pipelines_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "codepipeline pipelines",
+		fixtureName: "../searchers/codepipeline_pipelines_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "codepipeline pipelines ",
+		fixtureName: "../searchers/codepipeline_pipelines_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "codepipeline pipelines pipeline-name-1",
+		fixtureName: "../searchers/codepipeline_pipelines_test", // reuse test fixture from this other test
+	},
 }
 
 func testWorkflow(t *testing.T, tc testCase, forceFetch, snapshot bool) []*aw.Item {

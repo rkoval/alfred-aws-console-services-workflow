@@ -90,3 +90,4 @@ gen-*.go
 test
 release/
 _CodeSignature/
+vendor

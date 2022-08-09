@@ -1,0 +1,110 @@
+([]*aw.Item) (len=3) {
+  (*aw.Item)({
+    title: (string) (len=15) "pipeline-name-1",
+    subtitle: (*string)((len=50) "Version 3 – Created Mon Jun 13 17:36:50 UTC 2022"),
+    match: (*string)(<nil>),
+    uid: (*string)(<nil>),
+    autocomplete: (*string)((len=16) "pipeline-name-1 "),
+    arg: ([]string) (len=1) {
+      (string) (len=94) "https://us-west-2.console.aws.amazon.com/codesuite/codepipeline/pipelines/pipeline-name-1/view"
+    },
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=23) "images/codepipeline.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=15) "pipeline-name-2",
+    subtitle: (*string)((len=50) "Version 3 – Created Mon Jun 13 15:16:24 UTC 2022"),
+    match: (*string)(<nil>),
+    uid: (*string)(<nil>),
+    autocomplete: (*string)((len=16) "pipeline-name-2 "),
+    arg: ([]string) (len=1) {
+      (string) (len=94) "https://us-west-2.console.aws.amazon.com/codesuite/codepipeline/pipelines/pipeline-name-2/view"
+    },
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=23) "images/codepipeline.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=15) "pipeline-name-3",
+    subtitle: (*string)((len=50) "Version 1 – Created Wed Jul 27 12:51:30 UTC 2022"),
+    match: (*string)(<nil>),
+    uid: (*string)(<nil>),
+    autocomplete: (*string)((len=16) "pipeline-name-3 "),
+    arg: ([]string) (len=1) {
+      (string) (len=94) "https://us-west-2.console.aws.amazon.com/codesuite/codepipeline/pipelines/pipeline-name-3/view"
+    },
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=23) "images/codepipeline.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  })
+}
