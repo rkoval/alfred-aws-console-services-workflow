@@ -1,7 +1,7 @@
 ([]*aw.Item) (len=1) {
   (*aw.Item)({
     title: (string) (len=22) "codepipeline pipelines",
-    subtitle: (*string)((len=31) "🔎 CodePipeline – Pipelines"),
+    subtitle: (*string)((len=37) "🔎⭐️ CodePipeline – Pipelines"),
     match: (*string)((len=19) "pipelines Pipelines"),
     uid: (*string)((len=9) "pipelines"),
     autocomplete: (*string)((len=23) "codepipeline pipelines "),
