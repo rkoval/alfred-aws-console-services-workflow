@@ -1797,6 +1797,12 @@
       name: Settings
       url: '/ram/home#Settings:'
 
+
+- id: resource-explorer
+  name: Resource Explorer
+  description: Find relevant resources across AWS Regions using resource metadata, tags and simple keywords
+  url: /resource-explorer/home#search
+
 - id: robomaker
   name: RoboMaker
   description: Develop, test, and deploy intelligent robotics applications
