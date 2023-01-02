@@ -1797,7 +1797,6 @@
       name: Settings
       url: '/ram/home#Settings:'
 
-
 - id: resource-explorer
   name: Resource Explorer
   description: Find relevant resources across AWS Regions using resource metadata, tags and simple keywords
