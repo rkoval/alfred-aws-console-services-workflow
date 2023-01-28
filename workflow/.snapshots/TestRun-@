@@ -1,10 +1,10 @@
 ([]*aw.Item) (len=7) {
   (*aw.Item)({
-    title: (string) (len=5) "china",
-    subtitle: (*string)((len=15) "🌎 cn-north-1"),
+    title: (string) (len=5) "usgov",
+    subtitle: (*string)((len=18) "🌎 us-gov-east-1"),
     match: (*string)(<nil>),
-    uid: (*string)((len=5) "china"),
-    autocomplete: (*string)((len=7) "@china "),
+    uid: (*string)((len=5) "usgov"),
+    autocomplete: (*string)((len=7) "@usgov "),
     arg: ([]string) <nil>,
     valid: (bool) false,
     file: (bool) false,
@@ -22,11 +22,11 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=5) "usgov",
-    subtitle: (*string)((len=18) "🌎 us-gov-east-1"),
+    title: (string) (len=5) "china",
+    subtitle: (*string)((len=15) "🌎 cn-north-1"),
     match: (*string)(<nil>),
-    uid: (*string)((len=5) "usgov"),
-    autocomplete: (*string)((len=7) "@usgov "),
+    uid: (*string)((len=5) "china"),
+    autocomplete: (*string)((len=7) "@china "),
     arg: ([]string) <nil>,
     valid: (bool) false,
     file: (bool) false,

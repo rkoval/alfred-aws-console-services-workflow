@@ -1,27 +1,5 @@
 ([]*aw.Item) (len=10) {
   (*aw.Item)({
-    title: (string) (len=9) "us-east-2",
-    subtitle: (*string)((len=14) "US East (Ohio)"),
-    match: (*string)(<nil>),
-    uid: (*string)((len=9) "us-east-2"),
-    autocomplete: (*string)((len=46) "elasticbeanstalk applications App1 $us-east-2 "),
-    arg: ([]string) <nil>,
-    valid: (bool) false,
-    file: (bool) false,
-    copytext: (*string)(<nil>),
-    largetype: (*string)(<nil>),
-    ql: (*string)(<nil>),
-    vars: (map[string]string) {
-    },
-    mods: (map[string]*aw.Modifier) <nil>,
-    actions: (map[string][]string) <nil>,
-    icon: (*aw.Icon)({
-      Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
-      Type: (aw.IconType) ""
-    }),
-    noUID: (bool) false
-  }),
-  (*aw.Item)({
     title: (string) (len=9) "us-east-1",
     subtitle: (*string)((len=21) "US East (N. Virginia)"),
     match: (*string)(<nil>),
@@ -71,6 +49,28 @@
     match: (*string)(<nil>),
     uid: (*string)((len=9) "us-west-2"),
     autocomplete: (*string)((len=46) "elasticbeanstalk applications App1 $us-west-2 "),
+    arg: ([]string) <nil>,
+    valid: (bool) false,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=9) "us-east-2",
+    subtitle: (*string)((len=14) "US East (Ohio)"),
+    match: (*string)(<nil>),
+    uid: (*string)((len=9) "us-east-2"),
+    autocomplete: (*string)((len=46) "elasticbeanstalk applications App1 $us-east-2 "),
     arg: ([]string) <nil>,
     valid: (bool) false,
     file: (bool) false,
@@ -176,11 +176,11 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=14) "ap-southeast-1",
-    subtitle: (*string)((len=24) "Asia Pacific (Singapore)"),
+    title: (string) (len=14) "ap-southeast-2",
+    subtitle: (*string)((len=21) "Asia Pacific (Sydney)"),
     match: (*string)(<nil>),
-    uid: (*string)((len=14) "ap-southeast-1"),
-    autocomplete: (*string)((len=51) "elasticbeanstalk applications App1 $ap-southeast-1 "),
+    uid: (*string)((len=14) "ap-southeast-2"),
+    autocomplete: (*string)((len=51) "elasticbeanstalk applications App1 $ap-southeast-2 "),
     arg: ([]string) <nil>,
     valid: (bool) false,
     file: (bool) false,
@@ -198,11 +198,11 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=14) "ap-southeast-2",
-    subtitle: (*string)((len=21) "Asia Pacific (Sydney)"),
+    title: (string) (len=14) "ap-southeast-1",
+    subtitle: (*string)((len=24) "Asia Pacific (Singapore)"),
     match: (*string)(<nil>),
-    uid: (*string)((len=14) "ap-southeast-2"),
-    autocomplete: (*string)((len=51) "elasticbeanstalk applications App1 $ap-southeast-2 "),
+    uid: (*string)((len=14) "ap-southeast-1"),
+    autocomplete: (*string)((len=51) "elasticbeanstalk applications App1 $ap-southeast-1 "),
     arg: ([]string) <nil>,
     valid: (bool) false,
     file: (bool) false,

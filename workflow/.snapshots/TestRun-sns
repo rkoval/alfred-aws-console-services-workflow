@@ -504,42 +504,6 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=8) "transfer",
-    subtitle: (*string)((len=62) "Transfer for SFTP – Fully-managed SFTP service for Amazon S3"),
-    match: (*string)((len=26) "transfer Transfer for SFTP"),
-    uid: (*string)((len=8) "transfer"),
-    autocomplete: (*string)((len=9) "transfer "),
-    arg: ([]string) (len=1) {
-      (string) (len=72) "https://us-west-2.console.aws.amazon.com/transfer/home?region=us-west-2#"
-    },
-    valid: (bool) true,
-    file: (bool) false,
-    copytext: (*string)(<nil>),
-    largetype: (*string)(<nil>),
-    ql: (*string)(<nil>),
-    vars: (map[string]string) (len=1) {
-      (string) (len=6) "action": (string) (len=8) "open-url"
-    },
-    mods: (map[string]*aw.Modifier) (len=1) {
-      (string) (len=3) "cmd": (*aw.Modifier)({
-        Key: (string) (len=3) "cmd",
-        arg: ([]string) <nil>,
-        subtitle: (*string)((len=21) "Copy URL to clipboard"),
-        valid: (bool) false,
-        icon: (*aw.Icon)(<nil>),
-        vars: (map[string]string) (len=1) {
-          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
-        }
-      })
-    },
-    actions: (map[string][]string) <nil>,
-    icon: (*aw.Icon)({
-      Value: (string) (len=19) "images/transfer.png",
-      Type: (aw.IconType) ""
-    }),
-    noUID: (bool) false
-  }),
-  (*aw.Item)({
     title: (string) (len=10) "transcribe",
     subtitle: (*string)((len=42) "Transcribe – Powerful Speech Recognition"),
     match: (*string)((len=21) "transcribe Transcribe"),
@@ -571,6 +535,42 @@
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=21) "images/transcribe.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=8) "transfer",
+    subtitle: (*string)((len=62) "Transfer for SFTP – Fully-managed SFTP service for Amazon S3"),
+    match: (*string)((len=26) "transfer Transfer for SFTP"),
+    uid: (*string)((len=8) "transfer"),
+    autocomplete: (*string)((len=9) "transfer "),
+    arg: ([]string) (len=1) {
+      (string) (len=72) "https://us-west-2.console.aws.amazon.com/transfer/home?region=us-west-2#"
+    },
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=19) "images/transfer.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
@@ -648,42 +648,6 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=13) "groundstation",
-    subtitle: (*string)((len=51) "🗂 Ground Station – Communicate with satellites"),
-    match: (*string)((len=28) "groundstation Ground Station"),
-    uid: (*string)((len=13) "groundstation"),
-    autocomplete: (*string)((len=14) "groundstation "),
-    arg: ([]string) (len=1) {
-      (string) (len=86) "https://us-west-2.console.aws.amazon.com/groundstation/home?region=us-west-2#/contacts"
-    },
-    valid: (bool) true,
-    file: (bool) false,
-    copytext: (*string)(<nil>),
-    largetype: (*string)(<nil>),
-    ql: (*string)(<nil>),
-    vars: (map[string]string) (len=1) {
-      (string) (len=6) "action": (string) (len=8) "open-url"
-    },
-    mods: (map[string]*aw.Modifier) (len=1) {
-      (string) (len=3) "cmd": (*aw.Modifier)({
-        Key: (string) (len=3) "cmd",
-        arg: ([]string) <nil>,
-        subtitle: (*string)((len=21) "Copy URL to clipboard"),
-        valid: (bool) false,
-        icon: (*aw.Icon)(<nil>),
-        vars: (map[string]string) (len=1) {
-          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
-        }
-      })
-    },
-    actions: (map[string][]string) <nil>,
-    icon: (*aw.Icon)({
-      Value: (string) (len=24) "images/groundstation.png",
-      Type: (aw.IconType) ""
-    }),
-    noUID: (bool) false
-  }),
-  (*aw.Item)({
     title: (string) (len=13) "iotgreengrass",
     subtitle: (*string)((len=54) "IoT Greengrass – Deploy and run code on your devices"),
     match: (*string)((len=28) "iotgreengrass IoT Greengrass"),
@@ -715,6 +679,42 @@
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=24) "images/iotgreengrass.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=13) "groundstation",
+    subtitle: (*string)((len=51) "🗂 Ground Station – Communicate with satellites"),
+    match: (*string)((len=28) "groundstation Ground Station"),
+    uid: (*string)((len=13) "groundstation"),
+    autocomplete: (*string)((len=14) "groundstation "),
+    arg: ([]string) (len=1) {
+      (string) (len=86) "https://us-west-2.console.aws.amazon.com/groundstation/home?region=us-west-2#/contacts"
+    },
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=24) "images/groundstation.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
@@ -792,42 +792,6 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=11) "marketplace",
-    subtitle: (*string)((len=95) "🗂 Marketplace Subscriptions – Digital catalog where you can find, buy, and deploy software"),
-    match: (*string)((len=37) "marketplace Marketplace Subscriptions"),
-    uid: (*string)((len=11) "marketplace"),
-    autocomplete: (*string)((len=12) "marketplace "),
-    arg: ([]string) (len=1) {
-      (string) (len=62) "https://console.aws.amazon.com/marketplace/home#/subscriptions"
-    },
-    valid: (bool) true,
-    file: (bool) false,
-    copytext: (*string)(<nil>),
-    largetype: (*string)(<nil>),
-    ql: (*string)(<nil>),
-    vars: (map[string]string) (len=1) {
-      (string) (len=6) "action": (string) (len=8) "open-url"
-    },
-    mods: (map[string]*aw.Modifier) (len=1) {
-      (string) (len=3) "cmd": (*aw.Modifier)({
-        Key: (string) (len=3) "cmd",
-        arg: ([]string) <nil>,
-        subtitle: (*string)((len=21) "Copy URL to clipboard"),
-        valid: (bool) false,
-        icon: (*aw.Icon)(<nil>),
-        vars: (map[string]string) (len=1) {
-          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
-        }
-      })
-    },
-    actions: (map[string][]string) <nil>,
-    icon: (*aw.Icon)({
-      Value: (string) (len=22) "images/marketplace.png",
-      Type: (aw.IconType) ""
-    }),
-    noUID: (bool) false
-  }),
-  (*aw.Item)({
     title: (string) (len=15) "managedservices",
     subtitle: (*string)((len=53) "Managed Services – IT operations management for AWS"),
     match: (*string)((len=32) "managedservices Managed Services"),
@@ -859,6 +823,42 @@
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=26) "images/managedservices.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=11) "marketplace",
+    subtitle: (*string)((len=95) "🗂 Marketplace Subscriptions – Digital catalog where you can find, buy, and deploy software"),
+    match: (*string)((len=37) "marketplace Marketplace Subscriptions"),
+    uid: (*string)((len=11) "marketplace"),
+    autocomplete: (*string)((len=12) "marketplace "),
+    arg: ([]string) (len=1) {
+      (string) (len=62) "https://console.aws.amazon.com/marketplace/home#/subscriptions"
+    },
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=22) "images/marketplace.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
@@ -1080,42 +1080,6 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=14) "costmanagement",
-    subtitle: (*string)((len=71) "🗂 Cost Management – Visualize and Explore Your AWS Costs and Usage"),
-    match: (*string)((len=30) "costmanagement Cost Management"),
-    uid: (*string)((len=14) "costmanagement"),
-    autocomplete: (*string)((len=15) "costmanagement "),
-    arg: ([]string) (len=1) {
-      (string) (len=62) "https://console.aws.amazon.com/cost-management/home#/dashboard"
-    },
-    valid: (bool) true,
-    file: (bool) false,
-    copytext: (*string)(<nil>),
-    largetype: (*string)(<nil>),
-    ql: (*string)(<nil>),
-    vars: (map[string]string) (len=1) {
-      (string) (len=6) "action": (string) (len=8) "open-url"
-    },
-    mods: (map[string]*aw.Modifier) (len=1) {
-      (string) (len=3) "cmd": (*aw.Modifier)({
-        Key: (string) (len=3) "cmd",
-        arg: ([]string) <nil>,
-        subtitle: (*string)((len=21) "Copy URL to clipboard"),
-        valid: (bool) false,
-        icon: (*aw.Icon)(<nil>),
-        vars: (map[string]string) (len=1) {
-          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
-        }
-      })
-    },
-    actions: (map[string][]string) <nil>,
-    icon: (*aw.Icon)({
-      Value: (string) (len=25) "images/costmanagement.png",
-      Type: (aw.IconType) ""
-    }),
-    noUID: (bool) false
-  }),
-  (*aw.Item)({
     title: (string) (len=16) "elasticbeanstalk",
     subtitle: (*string)((len=50) "🗂 Elastic Beanstalk – Run and Manage Web Apps"),
     match: (*string)((len=34) "elasticbeanstalk Elastic Beanstalk"),
@@ -1147,6 +1111,42 @@
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=27) "images/elasticbeanstalk.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=14) "costmanagement",
+    subtitle: (*string)((len=71) "🗂 Cost Management – Visualize and Explore Your AWS Costs and Usage"),
+    match: (*string)((len=30) "costmanagement Cost Management"),
+    uid: (*string)((len=14) "costmanagement"),
+    autocomplete: (*string)((len=15) "costmanagement "),
+    arg: ([]string) (len=1) {
+      (string) (len=62) "https://console.aws.amazon.com/cost-management/home#/dashboard"
+    },
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=25) "images/costmanagement.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
