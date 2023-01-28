@@ -1,4 +1,4 @@
-([]*aw.Item) (len=153) {
+([]*aw.Item) (len=155) {
   (*aw.Item)({
     title: (string) (len=5) "alexa",
     subtitle: (*string)((len=59) "Alexa for Business – Empower your organization with voice"),
@@ -715,6 +715,42 @@
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=22) "images/cloudsearch.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=10) "cloudshell",
+    subtitle: (*string)((len=34) "CloudShell – Browser-based shell"),
+    match: (*string)((len=21) "cloudshell CloudShell"),
+    uid: (*string)((len=10) "cloudshell"),
+    autocomplete: (*string)((len=22) "$us-east-1 cloudshell "),
+    arg: ([]string) (len=1) {
+      (string) (len=69) "https://us-east-1.console.aws.amazon.com/cloudshell?region=us-east-1#"
+    },
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=21) "images/cloudshell.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
@@ -3775,6 +3811,42 @@
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/ram.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=17) "resource-explorer",
+    subtitle: (*string)((len=114) "Resource Explorer – Find relevant resources across AWS Regions using resource metadata, tags and simple keywords"),
+    match: (*string)((len=35) "resource-explorer Resource Explorer"),
+    uid: (*string)((len=17) "resource-explorer"),
+    autocomplete: (*string)((len=29) "$us-east-1 resource-explorer "),
+    arg: ([]string) (len=1) {
+      (string) (len=87) "https://us-east-1.console.aws.amazon.com/resource-explorer/home?region=us-east-1#search"
+    },
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=28) "images/resource-explorer.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false

@@ -289,7 +289,7 @@
 - id: cloudshell
   name: CloudShell
   description: Browser-based shell
-  url: /cloudshell
+  url: /cloudshell#
 
 - id: cloudtrail
   name: CloudTrail

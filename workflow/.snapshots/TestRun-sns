@@ -612,6 +612,42 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
+    title: (string) (len=22) "servermigrationservice",
+    subtitle: (*string)((len=63) "Server Migration Service – Migrate on-premises servers to AWS"),
+    match: (*string)((len=47) "servermigrationservice Server Migration Service"),
+    uid: (*string)((len=22) "servermigrationservice"),
+    autocomplete: (*string)((len=23) "servermigrationservice "),
+    arg: ([]string) (len=1) {
+      (string) (len=79) "https://us-west-2.console.aws.amazon.com/servermigration/home?region=us-west-2#"
+    },
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=33) "images/servermigrationservice.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
     title: (string) (len=13) "groundstation",
     subtitle: (*string)((len=51) "🗂 Ground Station – Communicate with satellites"),
     match: (*string)((len=28) "groundstation Ground Station"),
@@ -679,42 +715,6 @@
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=24) "images/iotgreengrass.png",
-      Type: (aw.IconType) ""
-    }),
-    noUID: (bool) false
-  }),
-  (*aw.Item)({
-    title: (string) (len=22) "servermigrationservice",
-    subtitle: (*string)((len=63) "Server Migration Service – Migrate on-premises servers to AWS"),
-    match: (*string)((len=47) "servermigrationservice Server Migration Service"),
-    uid: (*string)((len=22) "servermigrationservice"),
-    autocomplete: (*string)((len=23) "servermigrationservice "),
-    arg: ([]string) (len=1) {
-      (string) (len=79) "https://us-west-2.console.aws.amazon.com/servermigration/home?region=us-west-2#"
-    },
-    valid: (bool) true,
-    file: (bool) false,
-    copytext: (*string)(<nil>),
-    largetype: (*string)(<nil>),
-    ql: (*string)(<nil>),
-    vars: (map[string]string) (len=1) {
-      (string) (len=6) "action": (string) (len=8) "open-url"
-    },
-    mods: (map[string]*aw.Modifier) (len=1) {
-      (string) (len=3) "cmd": (*aw.Modifier)({
-        Key: (string) (len=3) "cmd",
-        arg: ([]string) <nil>,
-        subtitle: (*string)((len=21) "Copy URL to clipboard"),
-        valid: (bool) false,
-        icon: (*aw.Icon)(<nil>),
-        vars: (map[string]string) (len=1) {
-          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
-        }
-      })
-    },
-    actions: (map[string][]string) <nil>,
-    icon: (*aw.Icon)({
-      Value: (string) (len=33) "images/servermigrationservice.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
@@ -792,42 +792,6 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=15) "managedservices",
-    subtitle: (*string)((len=53) "Managed Services – IT operations management for AWS"),
-    match: (*string)((len=32) "managedservices Managed Services"),
-    uid: (*string)((len=15) "managedservices"),
-    autocomplete: (*string)((len=16) "managedservices "),
-    arg: ([]string) (len=1) {
-      (string) (len=79) "https://us-west-2.console.aws.amazon.com/managedservices/home?region=us-west-2#"
-    },
-    valid: (bool) true,
-    file: (bool) false,
-    copytext: (*string)(<nil>),
-    largetype: (*string)(<nil>),
-    ql: (*string)(<nil>),
-    vars: (map[string]string) (len=1) {
-      (string) (len=6) "action": (string) (len=8) "open-url"
-    },
-    mods: (map[string]*aw.Modifier) (len=1) {
-      (string) (len=3) "cmd": (*aw.Modifier)({
-        Key: (string) (len=3) "cmd",
-        arg: ([]string) <nil>,
-        subtitle: (*string)((len=21) "Copy URL to clipboard"),
-        valid: (bool) false,
-        icon: (*aw.Icon)(<nil>),
-        vars: (map[string]string) (len=1) {
-          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
-        }
-      })
-    },
-    actions: (map[string][]string) <nil>,
-    icon: (*aw.Icon)({
-      Value: (string) (len=26) "images/managedservices.png",
-      Type: (aw.IconType) ""
-    }),
-    noUID: (bool) false
-  }),
-  (*aw.Item)({
     title: (string) (len=11) "marketplace",
     subtitle: (*string)((len=95) "🗂 Marketplace Subscriptions – Digital catalog where you can find, buy, and deploy software"),
     match: (*string)((len=37) "marketplace Marketplace Subscriptions"),
@@ -859,6 +823,42 @@
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=22) "images/marketplace.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=15) "managedservices",
+    subtitle: (*string)((len=53) "Managed Services – IT operations management for AWS"),
+    match: (*string)((len=32) "managedservices Managed Services"),
+    uid: (*string)((len=15) "managedservices"),
+    autocomplete: (*string)((len=16) "managedservices "),
+    arg: ([]string) (len=1) {
+      (string) (len=79) "https://us-west-2.console.aws.amazon.com/managedservices/home?region=us-west-2#"
+    },
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=26) "images/managedservices.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
@@ -972,42 +972,6 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=14) "licensemanager",
-    subtitle: (*string)((len=99) "License Manager – Set rules to manage, discover, and report third-party license usage proactively"),
-    match: (*string)((len=30) "licensemanager License Manager"),
-    uid: (*string)((len=14) "licensemanager"),
-    autocomplete: (*string)((len=15) "licensemanager "),
-    arg: ([]string) (len=1) {
-      (string) (len=79) "https://us-west-2.console.aws.amazon.com/license-manager/home?region=us-west-2#"
-    },
-    valid: (bool) true,
-    file: (bool) false,
-    copytext: (*string)(<nil>),
-    largetype: (*string)(<nil>),
-    ql: (*string)(<nil>),
-    vars: (map[string]string) (len=1) {
-      (string) (len=6) "action": (string) (len=8) "open-url"
-    },
-    mods: (map[string]*aw.Modifier) (len=1) {
-      (string) (len=3) "cmd": (*aw.Modifier)({
-        Key: (string) (len=3) "cmd",
-        arg: ([]string) <nil>,
-        subtitle: (*string)((len=21) "Copy URL to clipboard"),
-        valid: (bool) false,
-        icon: (*aw.Icon)(<nil>),
-        vars: (map[string]string) (len=1) {
-          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
-        }
-      })
-    },
-    actions: (map[string][]string) <nil>,
-    icon: (*aw.Icon)({
-      Value: (string) (len=25) "images/licensemanager.png",
-      Type: (aw.IconType) ""
-    }),
-    noUID: (bool) false
-  }),
-  (*aw.Item)({
     title: (string) (len=14) "serverlessrepo",
     subtitle: (*string)((len=119) "🗂 Serverless Application Repository – Assemble, deploy, and share serverless applications within teams or publicly"),
     match: (*string)((len=48) "serverlessrepo Serverless Application Repository"),
@@ -1039,6 +1003,42 @@
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=25) "images/serverlessrepo.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=14) "licensemanager",
+    subtitle: (*string)((len=99) "License Manager – Set rules to manage, discover, and report third-party license usage proactively"),
+    match: (*string)((len=30) "licensemanager License Manager"),
+    uid: (*string)((len=14) "licensemanager"),
+    autocomplete: (*string)((len=15) "licensemanager "),
+    arg: ([]string) (len=1) {
+      (string) (len=79) "https://us-west-2.console.aws.amazon.com/license-manager/home?region=us-west-2#"
+    },
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=25) "images/licensemanager.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
