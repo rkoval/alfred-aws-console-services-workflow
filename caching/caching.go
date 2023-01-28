@@ -2,7 +2,6 @@ package caching
 
 import (
 	"errors"
-	"io/ioutil"
 	"log"
 	"os"
 	"strings"
@@ -70,7 +69,7 @@ func LoadEntityArrayFromCache[K Entity](wf *aw.Workflow, searchArgs searchutil.S
 				// but that's bad given that we will never be run in AWS. as a result, just populate an error string that informs users better
 				errString = "NoCredentialProviders"
 			}
-			_ = ioutil.WriteFile(lastFetchErrPath, []byte(errString), 0600)
+			_ = os.WriteFile(lastFetchErrPath, []byte(errString), 0600)
 			panic(err)
 		} else {
 			os.Remove(lastFetchErrPath)

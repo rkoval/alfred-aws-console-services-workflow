@@ -2,7 +2,6 @@ package caching
 
 import (
 	"errors"
-	"io/ioutil"
 	"log"
 	"os"
 	"os/exec"
@@ -53,7 +52,7 @@ func handleExpiredCache(wf *aw.Workflow, cacheName string, lastFetchErrPath stri
 }
 
 func handleFetchErr(wf *aw.Workflow, lastFetchErrPath string, searchArgs searchutil.SearchArgs) error {
-	data, err := ioutil.ReadFile(lastFetchErrPath)
+	data, err := os.ReadFile(lastFetchErrPath)
 	if err != nil {
 		if !os.IsNotExist(err) {
 			// this file will often not exist, so don't spam logs if it doesn't

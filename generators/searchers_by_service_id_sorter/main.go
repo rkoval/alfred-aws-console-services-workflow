@@ -1,13 +1,13 @@
 package main
 
 import (
-	"io/ioutil"
+	"os"
 	"sort"
 	"strings"
 )
 
 func main() {
-	content, err := ioutil.ReadFile("../searchers/searchers_by_service_id.go")
+	content, err := os.ReadFile("../searchers/searchers_by_service_id.go")
 	if err != nil {
 		panic(err)
 	}
@@ -36,7 +36,7 @@ func main() {
 		}
 	}
 
-	err = ioutil.WriteFile("../searchers/searchers_by_service_id.go", []byte(strings.Join(lines, "\n")), 0600)
+	err = os.WriteFile("../searchers/searchers_by_service_id.go", []byte(strings.Join(lines, "\n")), 0600)
 	if err != nil {
 		panic(err)
 	}

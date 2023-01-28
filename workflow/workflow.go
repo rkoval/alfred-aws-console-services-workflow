@@ -3,7 +3,6 @@ package workflow
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
@@ -250,7 +249,7 @@ func handleOpenAll(wf *aw.Workflow, awsService *awsworkflow.AwsService, allAwsSe
 		if err != nil {
 			panic(err)
 		}
-		err = ioutil.WriteFile(lastOpenedUrlsPath, urlBytes, 0600)
+		err = os.WriteFile(lastOpenedUrlsPath, urlBytes, 0600)
 		if err != nil {
 			panic(err)
 		}

@@ -1,8 +1,8 @@
 package parsers
 
 import (
-	"io/ioutil"
 	"log"
+	"os"
 
 	"github.com/rkoval/alfred-aws-console-services-workflow/awsworkflow"
 	"gopkg.in/yaml.v2"
@@ -10,7 +10,7 @@ import (
 
 func ParseConsoleServicesYml(ymlPath string) []awsworkflow.AwsService {
 	awsServices := []awsworkflow.AwsService{}
-	yamlFile, err := ioutil.ReadFile(ymlPath)
+	yamlFile, err := os.ReadFile(ymlPath)
 	if err != nil {
 		log.Fatal(err)
 	}
