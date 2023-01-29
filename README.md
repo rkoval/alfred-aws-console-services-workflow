@@ -4,7 +4,7 @@
 
 A powerful workflow for quickly opening up AWS Console Services in your browser or searching for entities within them.
 
-Supports Alfred 3 and 4
+Supports Alfred 3, 4, and 5
 
 ![AWS Console Services - Alfred Workflow Demo](demo.gif)
 

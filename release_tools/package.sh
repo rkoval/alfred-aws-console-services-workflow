@@ -54,6 +54,11 @@ add_version_to_package_name() {
   mv "$PACKAGE_NAME.zip" "AWS Console Services ${VERSION}.alfredworkflow.zip"
 }
 
+create_dummy_awgo_updater_file() {
+  echo -e "please ignore and/or discard this file! it only exists to make it so awgo's auto-update will detect a new version is available.\nsee here: https://github.com/deanishe/awgo/blob/11f767b094816cd865fa3b396d09023baeaa8ff5/update/github.go#L93-L97" \
+      > do-not-download-this-file.alfredworkflow
+}
+
 open_github() {
   echo "opening github releases page ..."
   open "https://github.com/rkoval/alfred-aws-console-services-workflow/releases/new?tag=${VERSION}&title=${VERSION}&body=%23%23%20Changes%0A%0AUser-facing%0A-%20TODO"
@@ -71,5 +76,6 @@ package_release
 notarize_package
 add_version_to_package_name
 bump_version_and_tag
+create_dummy_awgo_updater_file
 open_github
 open_finder
