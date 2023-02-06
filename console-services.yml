@@ -1099,23 +1099,23 @@
 - id: glue
   name: Glue
   description: fully managed ETL (extract, transform, and load) service
-  url: /glue/home#catalog:tab=databases
+  url: /glue/home#/v2/data-catalog/databases
   sub_services:
     - id: databases
       name: Databases
-      url: /glue/home#catalog:tab=databases
+      url: /glue/home#/v2/data-catalog/databases
     - id: tables
       name: Tables
-      url: /glue/home#catalog:tab=tables
+      url: /glue/home#/v2/data-catalog/tables
     - id: connections
       name: Connections
-      url: /glue/home#catalog:tab=connections
+      url: /gluestudio/home#/connectors
     - id: crawlers
       name: Crawlers
-      url: /glue/home#catalog:tab=crawlers
+      url: /glue/home#/v2/data-catalog/crawlers
     - id: classifiers
       name: Classifiers
-      url: /glue/home#catalog:tab=classifiers
+      url: /glue/home#/v2/data-catalog/classifiers
     - id: schemaregistries
       name: Schema registries
       url: /glue/home#catalog:tab=schemaRegistries
@@ -1124,7 +1124,7 @@
       url: /glue/home#catalog:tab=schemas
     - id: settings
       name: Settings
-      url: /glue/home#catalog:tab=settings
+      url: /glue/home#/v2/security/settings
     - id: awsgluestudio
       name: AWS Glue Studio
       url: /gluestudio/home#/
@@ -1136,22 +1136,22 @@
       url: /glue/home#etl:tab=workflows
     - id: jobs
       name: Jobs
-      url: /glue/home#etl:tab=jobs
+      url: /gluestudio/home#/jobs
     - id: mltransforms
       name: ML Transforms
       url: /glue/home#etl:tab=mlTransforms
     - id: triggers
       name: Triggers
-      url: /glue/home#etl:tab=triggers
-    - id: devendpoints
-      name: Dev endpoints
-      url: /glue/home#etl:tab=devEndpoints
+      url: /glue/home#/v2/etl-configuration/triggers
+    - id: interactivesessions
+      name: Interactive Sessions
+      url: /glue/home#/v2/etl-configuration/sessions/history
     - id: notebooks
-      name: Notebooks
-      url: /glue/home#etl:tab=notebooks
+      name: Jupyter Notebooks
+      url: /gluestudio/home#/notebook/jupyter
     - id: securityconfigurations
       name: Security configurations
-      url: '/glue/home#securityConfigurations:'
+      url: /glue/home#/v2/security/security-configurations
 
 - id: groundstation
   name: Ground Station
