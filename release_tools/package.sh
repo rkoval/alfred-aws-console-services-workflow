@@ -40,11 +40,14 @@ bump_version_and_tag() {
   git push origin "$VERSION"
 }
 
-copy_to_release_dir() {
+create_release_dir() {
   echo "Using directory $RELEASE_DIR to stage release files ..."
   rm -rf "$RELEASE_DIR"
   mkdir -p "$RELEASE_DIR"
-  cp -R images alfred-aws-console-services-workflow console-services.yml icon.png info.plist LICENSE README.md "$RELEASE_DIR"
+}
+
+copy_to_release_dir() {
+  cp -R images console-services.yml icon.png info.plist LICENSE README.md "$RELEASE_DIR"
 }
 
 PACKAGE_NAME="AWS Console Services.alfredworkflow"
@@ -76,6 +79,7 @@ open_finder() {
 }
 
 test
+create_release_dir
 install_package
 copy_to_release_dir
 sign_binary
