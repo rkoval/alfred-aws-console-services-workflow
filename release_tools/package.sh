@@ -13,7 +13,14 @@ test() {
 }
 
 install_package() {
-  ./build.sh
+  GOARCH="amd64" ./build.sh -o "$RELEASE_DIR/alfred-aws-console-services-workflow-amd64"
+  GOARCH="arm64" ./build.sh -o "$RELEASE_DIR/alfred-aws-console-services-workflow-arm64"
+  lipo -create -output "$RELEASE_DIR/alfred-aws-console-services-workflow" \
+    "$RELEASE_DIR/alfred-aws-console-services-workflow-arm64" \
+    "$RELEASE_DIR/alfred-aws-console-services-workflow-amd64"
+
+  rm -f "$RELEASE_DIR/alfred-aws-console-services-workflow-arm64" \
+    "$RELEASE_DIR/alfred-aws-console-services-workflow-amd64"
 }
 
 sign_binary() {
@@ -75,7 +82,7 @@ sign_binary
 package_release
 notarize_package
 add_version_to_package_name
-bump_version_and_tag
 create_dummy_awgo_updater_file
+bump_version_and_tag
 open_github
 open_finder
