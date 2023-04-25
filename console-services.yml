@@ -979,7 +979,7 @@
   extra_search_terms:
     - elasticsearch
     - opensearch
-  url: "/esv3/home#"
+  url: "/aos/home#"
 
 - id: elastictranscoder
   name: Elastic Transcoder
