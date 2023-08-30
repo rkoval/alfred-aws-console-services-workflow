@@ -50,5 +50,5 @@ require (
 	go.deanishe.net/env v0.5.1 // indirect
 	go.deanishe.net/fuzzy v1.0.0 // indirect
 	golang.org/x/text v0.3.8 // indirect
-	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
+	gopkg.in/yaml.v3 v3.0.0 // indirect
 )
