@@ -34,6 +34,21 @@
   description: Real-Time Data Sync Using GraphQL for Mobile & Web Apps, Online or Offline
   url: "/appsync/home#/"
 
+- id: apprunner
+  name: App Runner
+  description: Deploy containerized web applications and APIs at scale
+  url: /apprunner/home#
+  sub_services:
+    - id: services
+      name: Services
+      url: /apprunner/home#/services
+    - id: connections
+      name: Connected accounts
+      url: /apprunner/home#/connections
+    - id: networkconfiguration
+      name: Network configuration
+      url: /apprunner/home#/networkconfiguration
+
 - id: artifact
   name: Artifact
   description: AWS Compliance Reports and Agreements
@@ -221,7 +236,7 @@
   name: CloudFront
   description: Global Content Delivery Network
   has_global_region: true
-  url: '/cloudfront/home#'
+  url: "/cloudfront/home#"
   sub_services:
     - id: distributions
       name: Distributions
@@ -390,7 +405,6 @@
       name: Account metrics
       url: /codesuite/codebuild/metrics#
 
-
 - id: codecommit
   name: CodeCommit
   description: Store Code in Private Git Repositories
@@ -420,7 +434,6 @@
     - id: onpremisesinstances
       name: On-premises instances
       url: /codesuite/codedeploy/on-premises-instances#
-
 
 - id: codepipeline
   name: CodePipeline
@@ -558,7 +571,6 @@
     - id: preferences
       name: Preferences
       url: /cost-management/home#/settings
-
 
 - id: datapipeline
   name: Data Pipeline
@@ -1151,7 +1163,7 @@
       url: /glue/home#etl:tab=notebooks
     - id: securityconfigurations
       name: Security configurations
-      url: '/glue/home#securityConfigurations:'
+      url: "/glue/home#securityConfigurations:"
 
 - id: groundstation
   name: Ground Station
@@ -1252,7 +1264,7 @@
 # TODO consolidate IoT services into sub-services
 - id: iot1click
   name: IoT 1-Click
-  description:  Trigger AWS Lambda functions from simple devices
+  description: Trigger AWS Lambda functions from simple devices
   url: "/iot1click/home#"
 
 - id: iotanalytics
@@ -1520,38 +1532,38 @@
 - id: neptune
   name: Neptune
   description: Fast, reliable graph database built for the cloud
-  url: '/neptune/home#databases:'
+  url: "/neptune/home#databases:"
   sub_services:
     - id: databases
       name: Databases
-      url: '/neptune/home#databases:'
+      url: "/neptune/home#databases:"
     - id: clusters
       name: Clusters
-      url: '/neptune/home#dbclusters:'
+      url: "/neptune/home#dbclusters:"
     - id: snapshots
       name: Snapshots
-      url: '/neptune/home#db-snapshots:'
+      url: "/neptune/home#db-snapshots:"
     - id: reservedinstances
       name: Reserved instances
-      url: '/neptune/home#reserved-instance-list:'
+      url: "/neptune/home#reserved-instance-list:"
     - id: notebooks
       name: Notebooks
-      url: '/neptune/home#notebooks:'
+      url: "/neptune/home#notebooks:"
     - id: subnetgroups
       name: Subnet groups
-      url: '/neptune/home#db-subnet-groups:'
+      url: "/neptune/home#db-subnet-groups:"
     - id: parametergroups
       name: Parameter groups
-      url: '/neptune/home#parameter-groups:'
+      url: "/neptune/home#parameter-groups:"
     - id: events
       name: Events
-      url: '/neptune/home#events:'
+      url: "/neptune/home#events:"
     - id: eventsubscriptions
       name: Event subscriptions
-      url: '/neptune/home#event-subscriptions-list:'
+      url: "/neptune/home#event-subscriptions-list:"
     - id: notifications
       name: Notifications
-      url: '/neptune/home#notifications:'
+      url: "/neptune/home#notifications:"
 
 - id: opsworks
   name: OpsWorks
@@ -1624,7 +1636,7 @@
 
 - id: quicksight
   name: QuickSight
-  description:  Fast, easy to use business analytics
+  description: Fast, easy to use business analytics
   url: https://quicksight.aws.amazon.com/
 
 - id: rds
@@ -1775,32 +1787,32 @@
 - id: ram
   name: Resource Access Manager
   description: Share AWS resources with other accounts or AWS Organizations
-  url: '/ram/home#OwnedResourceShares:'
+  url: "/ram/home#OwnedResourceShares:"
   sub_services:
     - id: ownedresourceshares
       name: Owned resource shares
-      url: '/ram/home#OwnedResourceShares:'
+      url: "/ram/home#OwnedResourceShares:"
     - id: ownedresources
       name: Owned resources
-      url: '/ram/home#OwnedResources:'
+      url: "/ram/home#OwnedResources:"
     - id: ownedprincipals
       name: Owned principals
-      url: '/ram/home#OwnedPrincipals:'
+      url: "/ram/home#OwnedPrincipals:"
     - id: sharedresourceshares
       name: Shared resource shares
-      url: '/ram/home#SharedResourceShares:'
+      url: "/ram/home#SharedResourceShares:"
     - id: sharedresources
       name: Shared resources
-      url: '/ram/home#SharedResources:'
+      url: "/ram/home#SharedResources:"
     - id: sharedprincipals
       name: Shared principals
-      url: '/ram/home#SharedPrincipals:'
+      url: "/ram/home#SharedPrincipals:"
     - id: permissionslibrary
       name: Permissions library
-      url: '/ram/home#Permissions:'
+      url: "/ram/home#Permissions:"
     - id: settings
       name: Settings
-      url: '/ram/home#Settings:'
+      url: "/ram/home#Settings:"
 
 - id: resource-explorer
   name: Resource Explorer
@@ -2012,7 +2024,6 @@
     - id: prepaidjobs
       name: Prepaid jobs
       url: /snowfamily/home#/prepaidjobs
-
 
 - id: sns
   name: Simple Notification Service
@@ -2341,7 +2352,6 @@
     - id: settings
       name: Settings
       url: "/vpc/home#Settings:"
-
 
 - id: waf
   name: Web Application Firewall & Shield
