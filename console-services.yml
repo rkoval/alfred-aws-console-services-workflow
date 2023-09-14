@@ -1884,7 +1884,7 @@
   name: Simple Storage Service
   short_name: S3
   description: Scalable Storage in the Cloud
-  has_global_region: true
+  has_global_region: false
   url: /s3/home
   sub_services:
     - id: buckets
