@@ -36,6 +36,8 @@ func InitAWS(transport http.RoundTripper, profile *awsconfig.Profile, region *aw
 		profileLoadOptionsFunc,
 		regionLoadOptionsFunc,
 	)
+func InitAWS(transport http.RoundTripper, profile *awsconfig.Profile, region *awsconfig.Region, wf *aw.Workflow) aws.Config {
+	cfg, err := awsconfig.GetAwsConfig(profile, region)
 	if err != nil {
 		panic(err)
 	}
