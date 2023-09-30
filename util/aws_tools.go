@@ -250,7 +250,7 @@ func fetchFederatedSession(cfg aws.Config) (map[string]string, error) {
 
 	input := &sts.GetFederationTokenInput{
 		DurationSeconds: aws.Int32(43200),
-		Name:            aws.String("alfred-aws"),
+		Name:            aws.String(GetProfile(cfg)),
 		Policy:          aws.String(`{"Version":"2012-10-17","Statement":[{"Effect":"Allow","Action":"*","Resource":"*"}]}`),
 	}
 
