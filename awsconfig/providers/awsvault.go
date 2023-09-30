@@ -6,7 +6,6 @@ import (
 	"errors"
 	"os/exec"
 	"strings"
-	"time"
 
 	"github.com/aws/aws-sdk-go-v2/aws"
 )
@@ -46,7 +45,7 @@ func (c AWSVaultCredentialsProvider) Retrieve(ctx context.Context) (aws.Credenti
 }
 
 func executeAwsVaultCommand(profile string) (string, error) {
-	cmd := exec.Command("aws-vault", "exec", profile, "--", "env")
+	cmd := exec.Command("aws-vault", "exec", profile, "--no-session", "--", "env")
 	output, err := cmd.Output()
 	if err != nil {
 		return "", err
@@ -71,11 +70,10 @@ func parseKeyValuePairs(output string) (map[string]string, error) {
 }
 
 const (
-	accessKeyIDKey       = "AWS_ACCESS_KEY_ID"
-	secretAccessKeyKey   = "AWS_SECRET_ACCESS_KEY"
-	sessionTokenKey      = "AWS_SESSION_TOKEN"
-	sessionExpirationKey = "AWS_CREDENTIAL_EXPIRATION"
-	timeFormat           = "2006-01-02T15:04:05Z"
+	accessKeyIDKey     = "AWS_ACCESS_KEY_ID"
+	secretAccessKeyKey = "AWS_SECRET_ACCESS_KEY"
+	sessionTokenKey    = "AWS_SESSION_TOKEN"
+	timeFormat         = "2006-01-02T15:04:05Z"
 )
 
 func mapToCredentials(m map[string]string) (aws.Credentials, error) {
@@ -85,8 +83,7 @@ func mapToCredentials(m map[string]string) (aws.Credentials, error) {
 	creds.AccessKeyID = m[accessKeyIDKey]
 	creds.SecretAccessKey = m[secretAccessKeyKey]
 	creds.SessionToken = m[sessionTokenKey]
-	creds.CanExpire = true
-	creds.Expires, err = time.Parse(timeFormat, m[sessionExpirationKey])
+	creds.CanExpire = false
 
 	if err != nil {
 		return creds, errors.New("failed to parse expiration time")
