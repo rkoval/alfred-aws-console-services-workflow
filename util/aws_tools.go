@@ -186,7 +186,7 @@ func GenerateLogoutLoginUrl(destinationUrl string) url.URL {
 
 	finalUrl := url.URL{
 		Scheme:   "https",
-		Host:     "us-east-1.signin.aws.amazon.com",
+		Host:     "signin.aws.amazon.com",
 		Path:     "/oauth",
 		RawQuery: url.Values(logoutUrlParams).Encode(),
 	}
