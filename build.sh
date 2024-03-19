@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 set -e
 ./generate.sh
-go build
+GOOS=darwin go build $@

@@ -13,7 +13,14 @@ test() {
 }
 
 install_package() {
-  ./build.sh
+  GOARCH="amd64" ./build.sh -o "$RELEASE_DIR/alfred-aws-console-services-workflow-amd64"
+  GOARCH="arm64" ./build.sh -o "$RELEASE_DIR/alfred-aws-console-services-workflow-arm64"
+  lipo -create -output "$RELEASE_DIR/alfred-aws-console-services-workflow" \
+    "$RELEASE_DIR/alfred-aws-console-services-workflow-arm64" \
+    "$RELEASE_DIR/alfred-aws-console-services-workflow-amd64"
+
+  rm -f "$RELEASE_DIR/alfred-aws-console-services-workflow-arm64" \
+    "$RELEASE_DIR/alfred-aws-console-services-workflow-amd64"
 }
 
 sign_binary() {
@@ -33,11 +40,14 @@ bump_version_and_tag() {
   git push origin "$VERSION"
 }
 
-copy_to_release_dir() {
+create_release_dir() {
   echo "Using directory $RELEASE_DIR to stage release files ..."
   rm -rf "$RELEASE_DIR"
   mkdir -p "$RELEASE_DIR"
-  cp -R images alfred-aws-console-services-workflow console-services.yml icon.png info.plist LICENSE README.md "$RELEASE_DIR"
+}
+
+copy_to_release_dir() {
+  cp -R images console-services.yml icon.png info.plist LICENSE README.md "$RELEASE_DIR"
 }
 
 PACKAGE_NAME="AWS Console Services.alfredworkflow"
@@ -69,13 +79,14 @@ open_finder() {
 }
 
 test
+create_release_dir
 install_package
 copy_to_release_dir
 sign_binary
 package_release
 notarize_package
 add_version_to_package_name
-bump_version_and_tag
 create_dummy_awgo_updater_file
+bump_version_and_tag
 open_github
 open_finder
