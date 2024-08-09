@@ -39,9 +39,7 @@ func (s ElasticBeanstalkEnvironmentSearcher) fetch(cfg aws.Config) ([]types.Envi
 			return nil, err
 		}
 
-		for i := range resp.Environments {
-			environments = append(environments, resp.Environments[i])
-		}
+		environments = append(environments, resp.Environments...)
 
 		if resp.NextToken != nil {
 			NextToken = *resp.NextToken
