@@ -71,6 +71,9 @@ var tcs []testCase = []testCase{
 		query: "$ @ adsf asdf",
 	},
 	{
+		query: "$us-east 1",
+	},
+	{
 		query: "$us-east-1 @",
 	},
 	{

@@ -1,10 +1,76 @@
-([]*aw.Item) (len=3) {
+([]*aw.Item) (len=7) {
+  (*aw.Item)({
+    title: (string) (len=5) "usgov",
+    subtitle: (*string)((len=18) "🌎 us-gov-east-1"),
+    match: (*string)(<nil>),
+    uid: (*string)((len=5) "usgov"),
+    autocomplete: (*string)((len=12) "@usgov  prof"),
+    arg: ([]string) <nil>,
+    valid: (bool) false,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=78) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/Accounts.icns",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=5) "china",
+    subtitle: (*string)((len=15) "🌎 cn-north-1"),
+    match: (*string)(<nil>),
+    uid: (*string)((len=5) "china"),
+    autocomplete: (*string)((len=12) "@china  prof"),
+    arg: ([]string) <nil>,
+    valid: (bool) false,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=78) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/Accounts.icns",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=7) "default",
+    subtitle: (*string)((len=14) "🌎 us-west-2"),
+    match: (*string)(<nil>),
+    uid: (*string)((len=7) "default"),
+    autocomplete: (*string)((len=14) "@default  prof"),
+    arg: ([]string) <nil>,
+    valid: (bool) false,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=78) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/Accounts.icns",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
   (*aw.Item)({
     title: (string) (len=8) "profile1",
     subtitle: (*string)((len=14) "🌎 us-east-1"),
     match: (*string)(<nil>),
     uid: (*string)((len=8) "profile1"),
-    autocomplete: (*string)((len=6) "@ prof"),
+    autocomplete: (*string)((len=15) "@profile1  prof"),
     arg: ([]string) <nil>,
     valid: (bool) false,
     file: (bool) false,
@@ -26,7 +92,29 @@
     subtitle: (*string)((len=14) "🌎 sa-east-1"),
     match: (*string)(<nil>),
     uid: (*string)((len=8) "profile3"),
-    autocomplete: (*string)((len=6) "@ prof"),
+    autocomplete: (*string)((len=15) "@profile3  prof"),
+    arg: ([]string) <nil>,
+    valid: (bool) false,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=78) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/Accounts.icns",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=8) "noregion",
+    subtitle: (*string)((len=76) "⚠️ This profile does not specify a region. Functionality will be limited"),
+    match: (*string)(<nil>),
+    uid: (*string)((len=8) "noregion"),
+    autocomplete: (*string)((len=15) "@noregion  prof"),
     arg: ([]string) <nil>,
     valid: (bool) false,
     file: (bool) false,
@@ -48,7 +136,7 @@
     subtitle: (*string)((len=10) "🌎 bogus"),
     match: (*string)(<nil>),
     uid: (*string)((len=12) "bogusprofile"),
-    autocomplete: (*string)((len=6) "@ prof"),
+    autocomplete: (*string)((len=19) "@bogusprofile  prof"),
     arg: ([]string) <nil>,
     valid: (bool) false,
     file: (bool) false,
