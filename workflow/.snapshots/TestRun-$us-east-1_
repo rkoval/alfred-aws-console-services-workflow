@@ -1698,7 +1698,7 @@
     uid: (*string)((len=3) "ecr"),
     autocomplete: (*string)((len=15) "$us-east-1 ecr "),
     arg: ([]string) (len=1) {
-      (string) (len=75) "https://us-east-1.console.aws.amazon.com/ecr/repositories?region=us-east-1#"
+      (string) (len=92) "https://us-east-1.console.aws.amazon.com/ecr/private-registry/repositories?region=us-east-1#"
     },
     valid: (bool) true,
     file: (bool) false,

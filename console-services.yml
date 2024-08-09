@@ -876,7 +876,7 @@
   name: Elastic Container Registry
   short_name: ECR
   description: Fully-managed Docker container registry
-  url: "/ecr/repositories#"
+  url: "/ecr/private-registry/repositories#"
   sub_services:
     - id: privaterepositories
       name: Private repositories
