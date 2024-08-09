@@ -324,42 +324,6 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=8) "forecast",
-    subtitle: (*string)((len=71) "Forecast – fully-managed service for accurate time-series forecasting"),
-    match: (*string)((len=17) "forecast Forecast"),
-    uid: (*string)((len=8) "forecast"),
-    autocomplete: (*string)((len=9) "forecast "),
-    arg: ([]string) (len=1) {
-      (string) (len=72) "https://us-west-2.console.aws.amazon.com/forecast/home?region=us-west-2#"
-    },
-    valid: (bool) true,
-    file: (bool) false,
-    copytext: (*string)(<nil>),
-    largetype: (*string)(<nil>),
-    ql: (*string)(<nil>),
-    vars: (map[string]string) (len=1) {
-      (string) (len=6) "action": (string) (len=8) "open-url"
-    },
-    mods: (map[string]*aw.Modifier) (len=1) {
-      (string) (len=3) "cmd": (*aw.Modifier)({
-        Key: (string) (len=3) "cmd",
-        arg: ([]string) <nil>,
-        subtitle: (*string)((len=21) "Copy URL to clipboard"),
-        valid: (bool) false,
-        icon: (*aw.Icon)(<nil>),
-        vars: (map[string]string) (len=1) {
-          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
-        }
-      })
-    },
-    actions: (map[string][]string) <nil>,
-    icon: (*aw.Icon)({
-      Value: (string) (len=19) "images/forecast.png",
-      Type: (aw.IconType) ""
-    }),
-    noUID: (bool) false
-  }),
-  (*aw.Item)({
     title: (string) (len=8) "codestar",
     subtitle: (*string)((len=56) "🗂 Codestar – Develop, build and deploy applications"),
     match: (*string)((len=17) "codestar Codestar"),
@@ -391,6 +355,42 @@
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=19) "images/codestar.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=8) "forecast",
+    subtitle: (*string)((len=71) "Forecast – fully-managed service for accurate time-series forecasting"),
+    match: (*string)((len=17) "forecast Forecast"),
+    uid: (*string)((len=8) "forecast"),
+    autocomplete: (*string)((len=9) "forecast "),
+    arg: ([]string) (len=1) {
+      (string) (len=72) "https://us-west-2.console.aws.amazon.com/forecast/home?region=us-west-2#"
+    },
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=19) "images/forecast.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false

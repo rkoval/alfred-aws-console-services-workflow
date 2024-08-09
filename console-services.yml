@@ -34,6 +34,24 @@
   description: Real-Time Data Sync Using GraphQL for Mobile & Web Apps, Online or Offline
   url: "/appsync/home#/"
 
+- id: apprunner
+  name: App Runner
+  description: Deploy containerized web applications and APIs at scale
+  url: /apprunner/home#
+  sub_services:
+    - id: services
+      name: Services
+      url: /apprunner/home#/services
+    - id: connections
+      name: Connected accounts
+      url: /apprunner/home#/connections
+    - id: networkconfiguration
+      name: Network configuration
+      url: /apprunner/home#/networkconfiguration
+    - id: autoscalingconfiguration
+      name: Auto scaling configuration
+      url: /apprunner/home#/autoscalingconfiguration
+
 - id: artifact
   name: Artifact
   description: AWS Compliance Reports and Agreements

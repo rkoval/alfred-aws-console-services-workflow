@@ -438,6 +438,12 @@ var tcs []testCase = []testCase{
 		query: "elasticbeanstalk",
 	},
 	{
+		query: "app",
+	},
+	{
+		query: "apprunner",
+	},
+	{
 		query:       "elasticbeanstalk ",
 		fixtureName: "../searchers/elastic_beanstalk_environments_test", // reuse test fixture from this other test
 	},
@@ -548,12 +554,10 @@ var tcs []testCase = []testCase{
 		fixtureName: "../searchers/elasticache_memcached_clusters_test", // reuse test fixture from this other test
 	},
 	{
-		query:       "oss",
-		fixtureName: "../searchers/elasticache_memcached_clusters_test", // reuse test fixture from this other test
+		query: "oss",
 	},
 	{
-		query:       "oss integrat",
-		fixtureName: "../searchers/elasticache_memcached_clusters_test", // reuse test fixture from this other test
+		query: "oss integrat",
 	},
 	{
 		query:       "ec2 loadbalancers",
