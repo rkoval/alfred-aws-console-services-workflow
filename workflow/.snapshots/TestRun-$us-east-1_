@@ -3966,7 +3966,7 @@
     uid: (*string)((len=2) "s3"),
     autocomplete: (*string)((len=14) "$us-east-1 s3 "),
     arg: ([]string) (len=1) {
-      (string) (len=65) "https://us-east-1.console.aws.amazon.com/s3/home?region=us-east-1"
+      (string) (len=66) "https://us-east-1.console.aws.amazon.com/s3/home?region=us-east-1#"
     },
     valid: (bool) true,
     file: (bool) false,

@@ -1946,20 +1946,20 @@
   name: Simple Storage Service
   short_name: S3
   description: Scalable Storage in the Cloud
-  url: /s3/home
+  url: "/s3/home#"
   sub_services:
     - id: buckets
       name: Buckets
-      url: "/s3/home"
+      url: "/s3/home#"
     - id: batchoperations
       name: Batch Operations
-      url: "/s3/jobs"
+      url: "/s3/jobs#"
     - id: accessanalyzer
       name: Access Analyzer
-      url: "/s3/access"
+      url: "/s3/access#"
     - id: settings
       name: Account settings
-      url: "/s3/settings"
+      url: "/s3/settings#"
 
 - id: sagemaker
   name: SageMaker
