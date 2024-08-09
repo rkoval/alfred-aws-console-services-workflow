@@ -878,13 +878,16 @@
   sub_services:
     - id: clusters
       name: Clusters
-      url: "/ecs/home#/clusters"
+      url: "/ecs/v2/clusters"
+    - id: namespaces
+      name: Namespaces
+      url: "/ecs/v2/namespaces"
     - id: taskdefinitions
       name: Task Definitions
-      url: "/ecs/home#/taskDefinitions"
+      url: "/ecs/v2/task-definitions"
     - id: settings
       name: Account settings
-      url: "/ecs/home#/settings"
+      url: "/ecs/v2/account-settings"
 
 - id: efs
   name: Elastic File Storage
