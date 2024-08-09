@@ -6,7 +6,7 @@
     uid: (*string)(<nil>),
     autocomplete: (*string)((len=16) "pipeline-name-1 "),
     arg: ([]string) (len=1) {
-      (string) (len=94) "https://us-west-2.console.aws.amazon.com/codesuite/codepipeline/pipelines/pipeline-name-1/view"
+      (string) (len=111) "https://us-west-2.console.aws.amazon.com/codesuite/codepipeline/pipelines/pipeline-name-1/view?region=us-west-2"
     },
     valid: (bool) true,
     file: (bool) false,
@@ -42,7 +42,7 @@
     uid: (*string)(<nil>),
     autocomplete: (*string)((len=16) "pipeline-name-2 "),
     arg: ([]string) (len=1) {
-      (string) (len=94) "https://us-west-2.console.aws.amazon.com/codesuite/codepipeline/pipelines/pipeline-name-2/view"
+      (string) (len=111) "https://us-west-2.console.aws.amazon.com/codesuite/codepipeline/pipelines/pipeline-name-2/view?region=us-west-2"
     },
     valid: (bool) true,
     file: (bool) false,
@@ -78,7 +78,7 @@
     uid: (*string)(<nil>),
     autocomplete: (*string)((len=16) "pipeline-name-3 "),
     arg: ([]string) (len=1) {
-      (string) (len=94) "https://us-west-2.console.aws.amazon.com/codesuite/codepipeline/pipelines/pipeline-name-3/view"
+      (string) (len=111) "https://us-west-2.console.aws.amazon.com/codesuite/codepipeline/pipelines/pipeline-name-3/view?region=us-west-2"
     },
     valid: (bool) true,
     file: (bool) false,

@@ -294,7 +294,7 @@
 
 A powerful workflow for quickly opening up AWS Console Services in your browser or searching for entities within them.
 
-Supports Alfred 3 and 4
+Supports Alfred 3, 4, and 5
 
 Please see https://github.com/rkoval/alfred-aws-console-services-workflow for more details</string>
 	<key>uidata</key>

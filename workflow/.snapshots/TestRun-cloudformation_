@@ -78,7 +78,7 @@
     uid: (*string)((len=8) "designer"),
     autocomplete: (*string)((len=24) "cloudformation designer "),
     arg: ([]string) (len=1) {
-      (string) (len=69) "https://us-west-2.console.aws.amazon.com/cloudformation/designer/home"
+      (string) (len=86) "https://us-west-2.console.aws.amazon.com/cloudformation/designer/home?region=us-west-2"
     },
     valid: (bool) true,
     file: (bool) false,

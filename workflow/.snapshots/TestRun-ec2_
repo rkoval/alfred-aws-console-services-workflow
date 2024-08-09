@@ -258,7 +258,7 @@
     uid: (*string)((len=12) "spotrequests"),
     autocomplete: (*string)((len=17) "ec2 spotrequests "),
     arg: ([]string) (len=1) {
-      (string) (len=46) "https://us-west-2.console.aws.amazon.com/ec2sp"
+      (string) (len=63) "https://us-west-2.console.aws.amazon.com/ec2sp?region=us-west-2"
     },
     valid: (bool) true,
     file: (bool) false,
@@ -402,7 +402,7 @@
     uid: (*string)((len=18) "scheduledinstances"),
     autocomplete: (*string)((len=23) "ec2 scheduledinstances "),
     arg: ([]string) (len=1) {
-      (string) (len=57) "https://us-west-2.console.aws.amazon.com/ec2sp/v2/si/home"
+      (string) (len=74) "https://us-west-2.console.aws.amazon.com/ec2sp/v2/si/home?region=us-west-2"
     },
     valid: (bool) true,
     file: (bool) false,
