@@ -6,7 +6,7 @@
     uid: (*string)(<nil>),
     autocomplete: (*string)((len=20) "s3 buckets bucket-1 "),
     arg: ([]string) (len=1) {
-      (string) (len=80) "https://console.aws.amazon.com/s3/buckets/bucket-1/?region=us-west-2&tab=objects"
+      (string) (len=90) "https://us-west-2.console.aws.amazon.com/s3/buckets/bucket-1/?region=us-west-2&tab=objects"
     },
     valid: (bool) true,
     file: (bool) false,
