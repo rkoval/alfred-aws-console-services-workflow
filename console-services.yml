@@ -975,14 +975,58 @@
       name: Change history
       url: "/elasticbeanstalk/home/changeHistory"
 
-- id: ess
-  name: Elasticsearch Service
-  short_name: ESS
-  description: Run and Scale Elasticsearch Clusters
+- id: oss
+  name: OpenSearch Service
+  short_name: OSS
+  description: Run open-source OpenSearch or Elasticsearch using Managed Clusters or Serverless deployments.
   extra_search_terms:
+    - ess # legacy keyword for elasticsearch
     - elasticsearch
     - opensearch
-  url: "/esv3/home#"
+  url: "/aos/home#opensearch/dashboard"
+  sub_services:
+    - id: dashboard
+      name: Dashboard
+      url: "/aos/home#opensearch/dashboard"
+    - id: domains
+      name: Domains
+      url: "/aos/home#opensearch/domains"
+    - id: reservedinstances
+      name: Reserved Instances
+      url: "/aos/home#opensearch/reserved-instances"
+    - id: packages
+      name: Packages
+      url: "/aos/home#opensearch/custom-packages"
+    - id: vpcendpoints
+      name: VPC Endpoints
+      url: "/aos/home#opensearch/vpc-endpoints"
+    - id: serverlessdashboard
+      name: "Serverless: Dashboard"
+      url: "/aos/home#opensearch/get-started-serverless"
+    - id: serverlesscollections
+      name: "Serverless: Collections"
+      url: "/aos/home#opensearch/collections"
+    - id: serverlesssecurity
+      name: "Serverless: Security"
+      url: "/aos/home#opensearch/security"
+    - id: serverlessdatalifecyclepolicies
+      name: "Serverless: Data Lifecycle Policies"
+      url: "/aos/home#opensearch/data-lifecycle-policies"
+    - id: serverlessvpcendpoints
+      name: "Serverless: VPC Endpoints"
+      url: "/aos/home#opensearch/vpcEndpoint"
+    - id: ingestiondashboard
+      name: "Ingestion: Dashboard"
+      url: "/aos/home#opensearch/ingestion-dashboard"
+    - id: ingestionpipeliness
+      name: "Ingestion: Pipelines"
+      url: "/aos/home#opensearch/ingestion-pipelines"
+    - id: integrations
+      name: Integrations
+      url: "/aos/home#opensearch/integrations"
+    - id: notifications
+      name: Notifications
+      url: "/aos/home#opensearch/notifications"
 
 - id: elastictranscoder
   name: Elastic Transcoder

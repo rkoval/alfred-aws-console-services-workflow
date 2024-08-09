@@ -36,13 +36,13 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=3) "ess",
-    subtitle: (*string)((len=68) "Elasticsearch Service (ESS) – Run and Scale Elasticsearch Clusters"),
-    match: (*string)((len=28) "ess elasticsearch opensearch"),
-    uid: (*string)((len=3) "ess"),
-    autocomplete: (*string)((len=4) "ess "),
+    title: (string) (len=3) "oss",
+    subtitle: (*string)((len=127) "🗂 OpenSearch Service (OSS) – Run open-source OpenSearch or Elasticsearch using Managed Clusters or Serverless deployments."),
+    match: (*string)((len=32) "oss ess elasticsearch opensearch"),
+    uid: (*string)((len=3) "oss"),
+    autocomplete: (*string)((len=4) "oss "),
     arg: ([]string) (len=1) {
-      (string) (len=68) "https://us-west-2.console.aws.amazon.com/esv3/home?region=us-west-2#"
+      (string) (len=87) "https://us-west-2.console.aws.amazon.com/aos/home?region=us-west-2#opensearch/dashboard"
     },
     valid: (bool) true,
     file: (bool) false,
@@ -66,7 +66,7 @@
     },
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=14) "images/ess.png",
+      Value: (string) (len=14) "images/oss.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false

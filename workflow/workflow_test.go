@@ -548,6 +548,14 @@ var tcs []testCase = []testCase{
 		fixtureName: "../searchers/elasticache_memcached_clusters_test", // reuse test fixture from this other test
 	},
 	{
+		query:       "oss",
+		fixtureName: "../searchers/elasticache_memcached_clusters_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "oss integrat",
+		fixtureName: "../searchers/elasticache_memcached_clusters_test", // reuse test fixture from this other test
+	},
+	{
 		query:       "ec2 loadbalancers",
 		fixtureName: "../searchers/ec2_load_balancers_test", // reuse test fixture from this other test
 	},

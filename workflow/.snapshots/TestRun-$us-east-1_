@@ -1872,13 +1872,13 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=3) "ess",
-    subtitle: (*string)((len=68) "Elasticsearch Service (ESS) – Run and Scale Elasticsearch Clusters"),
-    match: (*string)((len=28) "ess elasticsearch opensearch"),
-    uid: (*string)((len=3) "ess"),
-    autocomplete: (*string)((len=15) "$us-east-1 ess "),
+    title: (string) (len=3) "oss",
+    subtitle: (*string)((len=127) "🗂 OpenSearch Service (OSS) – Run open-source OpenSearch or Elasticsearch using Managed Clusters or Serverless deployments."),
+    match: (*string)((len=32) "oss ess elasticsearch opensearch"),
+    uid: (*string)((len=3) "oss"),
+    autocomplete: (*string)((len=15) "$us-east-1 oss "),
     arg: ([]string) (len=1) {
-      (string) (len=68) "https://us-east-1.console.aws.amazon.com/esv3/home?region=us-east-1#"
+      (string) (len=87) "https://us-east-1.console.aws.amazon.com/aos/home?region=us-east-1#opensearch/dashboard"
     },
     valid: (bool) true,
     file: (bool) false,
@@ -1902,7 +1902,7 @@
     },
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=14) "images/ess.png",
+      Value: (string) (len=14) "images/oss.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
@@ -2238,7 +2238,7 @@
     uid: (*string)((len=4) "glue"),
     autocomplete: (*string)((len=16) "$us-east-1 glue "),
     arg: ([]string) (len=1) {
-      (string) (len=89) "https://us-east-1.console.aws.amazon.com/glue/home?region=us-east-1#catalog:tab=databases"
+      (string) (len=94) "https://us-east-1.console.aws.amazon.com/glue/home?region=us-east-1#/v2/data-catalog/databases"
     },
     valid: (bool) true,
     file: (bool) false,
