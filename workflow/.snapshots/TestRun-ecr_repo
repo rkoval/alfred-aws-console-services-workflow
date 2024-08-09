@@ -1,0 +1,74 @@
+([]*aw.Item) (len=2) {
+  (*aw.Item)({
+    title: (string) (len=22) "ecr publicrepositories",
+    subtitle: (*string)((len=27) "ECR – Public repositories"),
+    match: (*string)((len=38) "publicrepositories Public repositories"),
+    uid: (*string)((len=18) "publicrepositories"),
+    autocomplete: (*string)((len=23) "ecr publicrepositories "),
+    arg: ([]string) (len=1) {
+      (string) (len=90) "https://us-west-2.console.aws.amazon.com/ecr/public-registry/repositories?region=us-west-2"
+    },
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=14) "images/ecr.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=23) "ecr privaterepositories",
+    subtitle: (*string)((len=28) "ECR – Private repositories"),
+    match: (*string)((len=40) "privaterepositories Private repositories"),
+    uid: (*string)((len=19) "privaterepositories"),
+    autocomplete: (*string)((len=24) "ecr privaterepositories "),
+    arg: ([]string) (len=1) {
+      (string) (len=91) "https://us-west-2.console.aws.amazon.com/ecr/private-registry/repositories?region=us-west-2"
+    },
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=14) "images/ecr.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  })
+}

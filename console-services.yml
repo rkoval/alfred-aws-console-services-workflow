@@ -878,12 +878,18 @@
   description: Fully-managed Docker container registry
   url: "/ecr/repositories#"
   sub_services:
-    - id: repositories
-      name: Repositories
-      url: "/ecr/repositories#"
-    - id: registries
-      name: Registries
-      url: "/ecr/registries#"
+    - id: privaterepositories
+      name: Private repositories
+      url: "/ecr/private-registry/repositories"
+    - id: privatesettings
+      name: Private registry
+      url: "/ecr/private-registry"
+    - id: publicrepositories
+      name: Public repositories
+      url: "/ecr/public-registry/repositories"
+    - id: publicsettings
+      name: Public registry
+      url: "/ecr/public-registry"
     - id: publicgallery
       name: Public gallery
       url: https://gallery.ecr.aws/

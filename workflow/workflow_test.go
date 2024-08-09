@@ -321,6 +321,12 @@ var tcs []testCase = []testCase{
 		query: "cloudformation ",
 	},
 	{
+		query: "ecr ",
+	},
+	{
+		query: "ecr repo",
+	},
+	{
 		query: "cloudformation stacks",
 	},
 	{
