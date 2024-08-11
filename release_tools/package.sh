@@ -27,7 +27,9 @@ sign_binary() {
   # must cd to release directory because signing takes into account directory contents at time of signing.
   # if directory contents change between now and notarization (e.g., because we've packaged into an .alfredworkflow file), the signature verification will fail
   cd "$RELEASE_DIR"
-  gon ../release_tools/sign-binary.hcl
+  export APP_CERTIFICATE="Developer ID Application: Ryan Koval"
+  export PKG_CERTIFICATE="Developer ID Installer: Ryan Koval"
+  codesign -s "$APP_CERTIFICATE" -f -v --timestamp --options runtime ./alfred-aws-console-services-workflow
   cd -
 }
 
@@ -53,12 +55,21 @@ copy_to_release_dir() {
 PACKAGE_NAME="AWS Console Services.alfredworkflow"
 package_release() {
   ditto -ck "$RELEASE_DIR" "$PACKAGE_NAME"
+  zip "$PACKAGE_NAME.zip" "$PACKAGE_NAME"
 }
 
 notarize_package() {
-  gon release_tools/package.hcl
+  xcrun notarytool submit "./AWS Console Services.alfredworkflow.zip" \
+    --wait \
+    --apple-id "ryan@ryankoval.com" \
+    --team-id "MLBCABYB34"
   rm -f "$PACKAGE_NAME"
 }
+
+# does not work against .zip files, but not sure if i actually need this
+# staple_notarized_package() {
+#   xcrun stapler staple Lokal-Installer.pkg "./AWS Console Services.alfredworkflow.zip"
+# }
 
 add_version_to_package_name() {
   mv "$PACKAGE_NAME.zip" "AWS Console Services ${VERSION}.alfredworkflow.zip"
@@ -85,6 +96,7 @@ copy_to_release_dir
 sign_binary
 package_release
 notarize_package
+# staple_notarized_package
 add_version_to_package_name
 create_dummy_awgo_updater_file
 bump_version_and_tag
