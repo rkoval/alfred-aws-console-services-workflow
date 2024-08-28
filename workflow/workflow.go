@@ -66,7 +66,7 @@ func Run(wf *aw.Workflow, rawQuery string, transport http.RoundTripper, forceFet
 		return
 	}
 
-	cfg := awsworkflow.InitAWS(transport, query.ProfileOverride, query.GetRegionOverride())
+	cfg := awsworkflow.InitAWS(transport, query.ProfileOverride, query.GetRegionOverride(), wf)
 	searchArgs := searchutil.SearchArgs{
 		Cfg:        cfg,
 		ForceFetch: forceFetch,
