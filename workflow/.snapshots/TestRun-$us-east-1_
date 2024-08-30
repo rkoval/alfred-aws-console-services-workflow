@@ -1,4 +1,4 @@
-([]*aw.Item) (len=156) {
+([]*aw.Item) (len=157) {
   (*aw.Item)({
     title: (string) (len=5) "alexa",
     subtitle: (*string)((len=59) "Alexa for Business – Empower your organization with voice"),
@@ -391,6 +391,42 @@
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=16) "images/batch.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=7) "bedrock",
+    subtitle: (*string)((len=88) "🗂 Bedrock – Build and scale generative AI applications with foundation models (FMs)"),
+    match: (*string)((len=15) "bedrock Bedrock"),
+    uid: (*string)((len=7) "bedrock"),
+    autocomplete: (*string)((len=19) "$us-east-1 bedrock "),
+    arg: ([]string) (len=1) {
+      (string) (len=71) "https://us-east-1.console.aws.amazon.com/bedrock/home?region=us-east-1#"
+    },
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=18) "images/bedrock.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
