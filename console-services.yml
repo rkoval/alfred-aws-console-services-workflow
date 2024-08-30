@@ -169,7 +169,7 @@
       url: /bedrock/home#import-models
     - id: knowledgebases
       name: Knowledge bases
-      url: /batch/home#knowledge-bases
+      url: /bedrock/home#knowledge-bases
     - id: modelaccess
       name: Model access
       url: /bedrock/home#model-access
