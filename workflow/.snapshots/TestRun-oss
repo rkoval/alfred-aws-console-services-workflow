@@ -144,42 +144,6 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=13) "organizations",
-    subtitle: (*string)((len=68) "Organizations – Policy-based management for multiple AWS accounts."),
-    match: (*string)((len=27) "organizations Organizations"),
-    uid: (*string)((len=13) "organizations"),
-    autocomplete: (*string)((len=14) "organizations "),
-    arg: ([]string) (len=1) {
-      (string) (len=64) "https://console.aws.amazon.com/organizations/v2/home/invitations"
-    },
-    valid: (bool) true,
-    file: (bool) false,
-    copytext: (*string)(<nil>),
-    largetype: (*string)(<nil>),
-    ql: (*string)(<nil>),
-    vars: (map[string]string) (len=1) {
-      (string) (len=6) "action": (string) (len=8) "open-url"
-    },
-    mods: (map[string]*aw.Modifier) (len=1) {
-      (string) (len=3) "cmd": (*aw.Modifier)({
-        Key: (string) (len=3) "cmd",
-        arg: ([]string) <nil>,
-        subtitle: (*string)((len=21) "Copy URL to clipboard"),
-        valid: (bool) false,
-        icon: (*aw.Icon)(<nil>),
-        vars: (map[string]string) (len=1) {
-          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
-        }
-      })
-    },
-    actions: (map[string][]string) <nil>,
-    icon: (*aw.Icon)({
-      Value: (string) (len=24) "images/organizations.png",
-      Type: (aw.IconType) ""
-    }),
-    noUID: (bool) false
-  }),
-  (*aw.Item)({
     title: (string) (len=11) "iotsitewise",
     subtitle: (*string)((len=63) "IoT SiteWise – Data driven decisions in Industrial operations"),
     match: (*string)((len=24) "iotsitewise IoT SiteWise"),
@@ -211,6 +175,42 @@
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=22) "images/iotsitewise.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=13) "organizations",
+    subtitle: (*string)((len=68) "Organizations – Policy-based management for multiple AWS accounts."),
+    match: (*string)((len=27) "organizations Organizations"),
+    uid: (*string)((len=13) "organizations"),
+    autocomplete: (*string)((len=14) "organizations "),
+    arg: ([]string) (len=1) {
+      (string) (len=64) "https://console.aws.amazon.com/organizations/v2/home/invitations"
+    },
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=24) "images/organizations.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
@@ -432,42 +432,6 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=9) "iotevents",
-    subtitle: (*string)((len=78) "IoT Events – Monitor device fleets for changes and trigger alerts to respond"),
-    match: (*string)((len=20) "iotevents IoT Events"),
-    uid: (*string)((len=9) "iotevents"),
-    autocomplete: (*string)((len=10) "iotevents "),
-    arg: ([]string) (len=1) {
-      (string) (len=73) "https://us-west-2.console.aws.amazon.com/iotevents/home?region=us-west-2#"
-    },
-    valid: (bool) true,
-    file: (bool) false,
-    copytext: (*string)(<nil>),
-    largetype: (*string)(<nil>),
-    ql: (*string)(<nil>),
-    vars: (map[string]string) (len=1) {
-      (string) (len=6) "action": (string) (len=8) "open-url"
-    },
-    mods: (map[string]*aw.Modifier) (len=1) {
-      (string) (len=3) "cmd": (*aw.Modifier)({
-        Key: (string) (len=3) "cmd",
-        arg: ([]string) <nil>,
-        subtitle: (*string)((len=21) "Copy URL to clipboard"),
-        valid: (bool) false,
-        icon: (*aw.Icon)(<nil>),
-        vars: (map[string]string) (len=1) {
-          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
-        }
-      })
-    },
-    actions: (map[string][]string) <nil>,
-    icon: (*aw.Icon)({
-      Value: (string) (len=20) "images/iotevents.png",
-      Type: (aw.IconType) ""
-    }),
-    noUID: (bool) false
-  }),
-  (*aw.Item)({
     title: (string) (len=8) "cloudhsm",
     subtitle: (*string)((len=64) "🗂 CloudHSM – Managed Hardware Security Modules in the Cloud"),
     match: (*string)((len=17) "cloudhsm CloudHSM"),
@@ -499,6 +463,42 @@
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=19) "images/cloudhsm.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=9) "iotevents",
+    subtitle: (*string)((len=78) "IoT Events – Monitor device fleets for changes and trigger alerts to respond"),
+    match: (*string)((len=20) "iotevents IoT Events"),
+    uid: (*string)((len=9) "iotevents"),
+    autocomplete: (*string)((len=10) "iotevents "),
+    arg: ([]string) (len=1) {
+      (string) (len=73) "https://us-west-2.console.aws.amazon.com/iotevents/home?region=us-west-2#"
+    },
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=20) "images/iotevents.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
