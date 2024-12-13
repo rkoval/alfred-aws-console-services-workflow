@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 set -e
-command -v genny >> /dev/null || go get github.com/cheekybits/genny
-command -v goimports >> /dev/null || go get golang.org/x/tools/cmd/goimports
+command -v goimports >> /dev/null || go install golang.org/x/tools/cmd/goimports@v0.24.0
 go generate ./...

@@ -1,12 +1,12 @@
-([]*aw.Item) (len=26) {
+([]*aw.Item) (len=30) {
   (*aw.Item)({
-    title: (string) (len=13) "ec2 dashboard",
-    subtitle: (*string)((len=17) "EC2 – Dashboard"),
-    match: (*string)((len=19) "dashboard Dashboard"),
-    uid: (*string)((len=9) "dashboard"),
-    autocomplete: (*string)((len=14) "ec2 dashboard "),
+    title: (string) (len=7) "outpost",
+    subtitle: (*string)((len=46) "🗂 Outposts – Run AWS Services On Premises"),
+    match: (*string)((len=16) "outpost Outposts"),
+    uid: (*string)((len=7) "outpost"),
+    autocomplete: (*string)((len=8) "outpost "),
     arg: ([]string) (len=1) {
-      (string) (len=72) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#Home:"
+      (string) (len=80) "https://us-west-2.console.aws.amazon.com/outposts/home?region=us-west-2#Outposts"
     },
     valid: (bool) true,
     file: (bool) false,
@@ -30,19 +30,19 @@
     },
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=14) "images/ec2.png",
+      Value: (string) (len=18) "images/outpost.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=10) "ec2 events",
-    subtitle: (*string)((len=14) "EC2 – Events"),
-    match: (*string)((len=13) "events Events"),
-    uid: (*string)((len=6) "events"),
-    autocomplete: (*string)((len=11) "ec2 events "),
+    title: (string) (len=8) "opsworks",
+    subtitle: (*string)((len=63) "🗂 OpsWorks – Configuration Management with Chef and Puppet"),
+    match: (*string)((len=17) "opsworks OpsWorks"),
+    uid: (*string)((len=8) "opsworks"),
+    autocomplete: (*string)((len=9) "opsworks "),
     arg: ([]string) (len=1) {
-      (string) (len=74) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#Events:"
+      (string) (len=55) "https://console.aws.amazon.com/opsworks/home#/dashboard"
     },
     valid: (bool) true,
     file: (bool) false,
@@ -66,19 +66,19 @@
     },
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=14) "images/ec2.png",
+      Value: (string) (len=19) "images/opsworks.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=8) "ec2 tags",
-    subtitle: (*string)((len=12) "EC2 – Tags"),
-    match: (*string)((len=9) "tags Tags"),
-    uid: (*string)((len=4) "tags"),
-    autocomplete: (*string)((len=9) "ec2 tags "),
+    title: (string) (len=3) "oss",
+    subtitle: (*string)((len=127) "🗂 OpenSearch Service (OSS) – Run open-source OpenSearch or Elasticsearch using Managed Clusters or Serverless deployments."),
+    match: (*string)((len=32) "oss ess elasticsearch opensearch"),
+    uid: (*string)((len=3) "oss"),
+    autocomplete: (*string)((len=4) "oss "),
     arg: ([]string) (len=1) {
-      (string) (len=72) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#Tags:"
+      (string) (len=87) "https://us-west-2.console.aws.amazon.com/aos/home?region=us-west-2#opensearch/dashboard"
     },
     valid: (bool) true,
     file: (bool) false,
@@ -102,19 +102,19 @@
     },
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=14) "images/ec2.png",
+      Value: (string) (len=14) "images/oss.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=10) "ec2 limits",
-    subtitle: (*string)((len=14) "EC2 – Limits"),
-    match: (*string)((len=13) "limits Limits"),
-    uid: (*string)((len=6) "limits"),
-    autocomplete: (*string)((len=11) "ec2 limits "),
+    title: (string) (len=10) "workspaces",
+    subtitle: (*string)((len=36) "WorkSpaces – Desktops in the Cloud"),
+    match: (*string)((len=21) "workspaces WorkSpaces"),
+    uid: (*string)((len=10) "workspaces"),
+    autocomplete: (*string)((len=11) "workspaces "),
     arg: ([]string) (len=1) {
-      (string) (len=74) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#Limits:"
+      (string) (len=74) "https://us-west-2.console.aws.amazon.com/workspaces/home?region=us-west-2#"
     },
     valid: (bool) true,
     file: (bool) false,
@@ -138,19 +138,19 @@
     },
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=14) "images/ec2.png",
+      Value: (string) (len=21) "images/workspaces.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=13) "ec2 instances",
-    subtitle: (*string)((len=28) "🔎⭐️ EC2 – Instances"),
-    match: (*string)((len=19) "instances Instances"),
-    uid: (*string)((len=9) "instances"),
-    autocomplete: (*string)((len=14) "ec2 instances "),
+    title: (string) (len=13) "organizations",
+    subtitle: (*string)((len=68) "Organizations – Policy-based management for multiple AWS accounts."),
+    match: (*string)((len=27) "organizations Organizations"),
+    uid: (*string)((len=13) "organizations"),
+    autocomplete: (*string)((len=14) "organizations "),
     arg: ([]string) (len=1) {
-      (string) (len=80) "https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Instances:"
+      (string) (len=64) "https://console.aws.amazon.com/organizations/v2/home/invitations"
     },
     valid: (bool) true,
     file: (bool) false,
@@ -174,19 +174,19 @@
     },
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=14) "images/ec2.png",
+      Value: (string) (len=24) "images/organizations.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=17) "ec2 instancetypes",
-    subtitle: (*string)((len=22) "EC2 – Instance Types"),
-    match: (*string)((len=28) "instancetypes Instance Types"),
-    uid: (*string)((len=13) "instancetypes"),
-    autocomplete: (*string)((len=18) "ec2 instancetypes "),
+    title: (string) (len=11) "iotsitewise",
+    subtitle: (*string)((len=63) "IoT SiteWise – Data driven decisions in Industrial operations"),
+    match: (*string)((len=24) "iotsitewise IoT SiteWise"),
+    uid: (*string)((len=11) "iotsitewise"),
+    autocomplete: (*string)((len=12) "iotsitewise "),
     arg: ([]string) (len=1) {
-      (string) (len=84) "https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#InstanceTypes:"
+      (string) (len=75) "https://us-west-2.console.aws.amazon.com/iotsitewise/home?region=us-west-2#"
     },
     valid: (bool) true,
     file: (bool) false,
@@ -210,19 +210,19 @@
     },
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=14) "images/ec2.png",
+      Value: (string) (len=22) "images/iotsitewise.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=19) "ec2 launchtemplates",
-    subtitle: (*string)((len=24) "EC2 – Launch Templates"),
-    match: (*string)((len=32) "launchtemplates Launch Templates"),
-    uid: (*string)((len=15) "launchtemplates"),
-    autocomplete: (*string)((len=20) "ec2 launchtemplates "),
+    title: (string) (len=10) "cloudshell",
+    subtitle: (*string)((len=34) "CloudShell – Browser-based shell"),
+    match: (*string)((len=21) "cloudshell CloudShell"),
+    uid: (*string)((len=10) "cloudshell"),
+    autocomplete: (*string)((len=11) "cloudshell "),
     arg: ([]string) (len=1) {
-      (string) (len=83) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#LaunchTemplates:"
+      (string) (len=69) "https://us-west-2.console.aws.amazon.com/cloudshell?region=us-west-2#"
     },
     valid: (bool) true,
     file: (bool) false,
@@ -246,19 +246,19 @@
     },
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=14) "images/ec2.png",
+      Value: (string) (len=21) "images/cloudshell.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=16) "ec2 spotrequests",
-    subtitle: (*string)((len=21) "EC2 – Spot Requests"),
-    match: (*string)((len=26) "spotrequests Spot Requests"),
-    uid: (*string)((len=12) "spotrequests"),
-    autocomplete: (*string)((len=17) "ec2 spotrequests "),
+    title: (string) (len=11) "autoscaling",
+    subtitle: (*string)((len=93) "Auto Scaling – AWS Auto Scaling enables you to quickly scale your entire application on AWS"),
+    match: (*string)((len=24) "autoscaling Auto Scaling"),
+    uid: (*string)((len=11) "autoscaling"),
+    autocomplete: (*string)((len=12) "autoscaling "),
     arg: ([]string) (len=1) {
-      (string) (len=63) "https://us-west-2.console.aws.amazon.com/ec2sp?region=us-west-2"
+      (string) (len=87) "https://us-west-2.console.aws.amazon.com/awsautoscaling/home?region=us-west-2#dashboard"
     },
     valid: (bool) true,
     file: (bool) false,
@@ -282,19 +282,19 @@
     },
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=14) "images/ec2.png",
+      Value: (string) (len=22) "images/autoscaling.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=16) "ec2 savingsplans",
-    subtitle: (*string)((len=21) "EC2 – Savings Plans"),
-    match: (*string)((len=26) "savingsplans Savings Plans"),
-    uid: (*string)((len=12) "savingsplans"),
-    autocomplete: (*string)((len=17) "ec2 savingsplans "),
+    title: (string) (len=11) "cloudsearch",
+    subtitle: (*string)((len=38) "CloudSearch – Managed Search Service"),
+    match: (*string)((len=23) "cloudsearch CloudSearch"),
+    uid: (*string)((len=11) "cloudsearch"),
+    autocomplete: (*string)((len=12) "cloudsearch "),
     arg: ([]string) (len=1) {
-      (string) (len=80) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#SavingsPlans:"
+      (string) (len=75) "https://us-west-2.console.aws.amazon.com/cloudsearch/home?region=us-west-2#"
     },
     valid: (bool) true,
     file: (bool) false,
@@ -318,19 +318,19 @@
     },
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=14) "images/ec2.png",
+      Value: (string) (len=22) "images/cloudsearch.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=21) "ec2 reservedinstances",
-    subtitle: (*string)((len=26) "EC2 – Reserved Instances"),
-    match: (*string)((len=36) "reservedinstances Reserved Instances"),
-    uid: (*string)((len=17) "reservedinstances"),
-    autocomplete: (*string)((len=22) "ec2 reservedinstances "),
+    title: (string) (len=8) "codestar",
+    subtitle: (*string)((len=56) "🗂 Codestar – Develop, build and deploy applications"),
+    match: (*string)((len=17) "codestar Codestar"),
+    uid: (*string)((len=8) "codestar"),
+    autocomplete: (*string)((len=9) "codestar "),
     arg: ([]string) (len=1) {
-      (string) (len=85) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#ReservedInstances:"
+      (string) (len=86) "https://us-west-2.console.aws.amazon.com/codesuite/codestar/projects?region=us-west-2#"
     },
     valid: (bool) true,
     file: (bool) false,
@@ -354,19 +354,19 @@
     },
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=14) "images/ec2.png",
+      Value: (string) (len=19) "images/codestar.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=18) "ec2 dedicatedhosts",
-    subtitle: (*string)((len=23) "EC2 – Dedicated Hosts"),
-    match: (*string)((len=30) "dedicatedhosts Dedicated Hosts"),
-    uid: (*string)((len=14) "dedicatedhosts"),
-    autocomplete: (*string)((len=19) "ec2 dedicatedhosts "),
+    title: (string) (len=8) "forecast",
+    subtitle: (*string)((len=71) "Forecast – fully-managed service for accurate time-series forecasting"),
+    match: (*string)((len=17) "forecast Forecast"),
+    uid: (*string)((len=8) "forecast"),
+    autocomplete: (*string)((len=9) "forecast "),
     arg: ([]string) (len=1) {
-      (string) (len=73) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#Hosts:"
+      (string) (len=72) "https://us-west-2.console.aws.amazon.com/forecast/home?region=us-west-2#"
     },
     valid: (bool) true,
     file: (bool) false,
@@ -390,19 +390,19 @@
     },
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=14) "images/ec2.png",
+      Value: (string) (len=19) "images/forecast.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=22) "ec2 scheduledinstances",
-    subtitle: (*string)((len=27) "EC2 – Scheduled Instances"),
-    match: (*string)((len=38) "scheduledinstances Scheduled Instances"),
-    uid: (*string)((len=18) "scheduledinstances"),
-    autocomplete: (*string)((len=23) "ec2 scheduledinstances "),
+    title: (string) (len=8) "freertos",
+    subtitle: (*string)((len=54) "FreeRTOS – IoT Operating System for Microcontrollers"),
+    match: (*string)((len=17) "freertos FreeRTOS"),
+    uid: (*string)((len=8) "freertos"),
+    autocomplete: (*string)((len=9) "freertos "),
     arg: ([]string) (len=1) {
-      (string) (len=74) "https://us-west-2.console.aws.amazon.com/ec2sp/v2/si/home?region=us-west-2"
+      (string) (len=72) "https://us-west-2.console.aws.amazon.com/freertos/home?region=us-west-2#"
     },
     valid: (bool) true,
     file: (bool) false,
@@ -426,19 +426,19 @@
     },
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=14) "images/ec2.png",
+      Value: (string) (len=19) "images/freertos.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=24) "ec2 capacityreservations",
-    subtitle: (*string)((len=29) "EC2 – Capacity Reservations"),
-    match: (*string)((len=42) "capacityreservations Capacity Reservations"),
-    uid: (*string)((len=20) "capacityreservations"),
-    autocomplete: (*string)((len=25) "ec2 capacityreservations "),
+    title: (string) (len=9) "iotevents",
+    subtitle: (*string)((len=78) "IoT Events – Monitor device fleets for changes and trigger alerts to respond"),
+    match: (*string)((len=20) "iotevents IoT Events"),
+    uid: (*string)((len=9) "iotevents"),
+    autocomplete: (*string)((len=10) "iotevents "),
     arg: ([]string) (len=1) {
-      (string) (len=89) "https://us-west-2.console.aws.amazon.com/ec2sp/v2/home/?region=us-west-2#/cr/reservations"
+      (string) (len=73) "https://us-west-2.console.aws.amazon.com/iotevents/home?region=us-west-2#"
     },
     valid: (bool) true,
     file: (bool) false,
@@ -462,19 +462,19 @@
     },
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=14) "images/ec2.png",
+      Value: (string) (len=20) "images/iotevents.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=8) "ec2 amis",
-    subtitle: (*string)((len=12) "EC2 – AMIs"),
-    match: (*string)((len=9) "amis AMIs"),
-    uid: (*string)((len=4) "amis"),
-    autocomplete: (*string)((len=9) "ec2 amis "),
+    title: (string) (len=8) "cloudhsm",
+    subtitle: (*string)((len=64) "🗂 CloudHSM – Managed Hardware Security Modules in the Cloud"),
+    match: (*string)((len=17) "cloudhsm CloudHSM"),
+    uid: (*string)((len=8) "cloudhsm"),
+    autocomplete: (*string)((len=9) "cloudhsm "),
     arg: ([]string) (len=1) {
-      (string) (len=74) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#Images:"
+      (string) (len=81) "https://us-west-2.console.aws.amazon.com/cloudhsm/home?region=us-west-2#/clusters"
     },
     valid: (bool) true,
     file: (bool) false,
@@ -498,19 +498,19 @@
     },
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=14) "images/ec2.png",
+      Value: (string) (len=19) "images/cloudhsm.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=11) "ec2 volumes",
-    subtitle: (*string)((len=14) "EC2 – Volume"),
-    match: (*string)((len=14) "volumes Volume"),
-    uid: (*string)((len=7) "volumes"),
-    autocomplete: (*string)((len=12) "ec2 volumes "),
+    title: (string) (len=13) "groundstation",
+    subtitle: (*string)((len=51) "🗂 Ground Station – Communicate with satellites"),
+    match: (*string)((len=28) "groundstation Ground Station"),
+    uid: (*string)((len=13) "groundstation"),
+    autocomplete: (*string)((len=14) "groundstation "),
     arg: ([]string) (len=1) {
-      (string) (len=75) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#Volumes:"
+      (string) (len=86) "https://us-west-2.console.aws.amazon.com/groundstation/home?region=us-west-2#/contacts"
     },
     valid: (bool) true,
     file: (bool) false,
@@ -534,19 +534,19 @@
     },
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=14) "images/ec2.png",
+      Value: (string) (len=24) "images/groundstation.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=13) "ec2 snapshots",
-    subtitle: (*string)((len=17) "EC2 – Snapshots"),
-    match: (*string)((len=19) "snapshots Snapshots"),
-    uid: (*string)((len=9) "snapshots"),
-    autocomplete: (*string)((len=14) "ec2 snapshots "),
+    title: (string) (len=13) "iotgreengrass",
+    subtitle: (*string)((len=54) "IoT Greengrass – Deploy and run code on your devices"),
+    match: (*string)((len=28) "iotgreengrass IoT Greengrass"),
+    uid: (*string)((len=13) "iotgreengrass"),
+    autocomplete: (*string)((len=14) "iotgreengrass "),
     arg: ([]string) (len=1) {
-      (string) (len=77) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#Snapshots:"
+      (string) (len=77) "https://us-west-2.console.aws.amazon.com/iotgreengrass/home?region=us-west-2#"
     },
     valid: (bool) true,
     file: (bool) false,
@@ -570,19 +570,19 @@
     },
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=14) "images/ec2.png",
+      Value: (string) (len=24) "images/iotgreengrass.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=20) "ec2 lifecyclemanager",
-    subtitle: (*string)((len=25) "EC2 – Lifecycle Manager"),
-    match: (*string)((len=34) "lifecyclemanager Lifecycle Manager"),
-    uid: (*string)((len=16) "lifecyclemanager"),
-    autocomplete: (*string)((len=21) "ec2 lifecyclemanager "),
+    title: (string) (len=13) "stepfunctions",
+    subtitle: (*string)((len=59) "🗂 Step Functions – Coordinate Distributed Applications"),
+    match: (*string)((len=28) "stepfunctions Step Functions"),
+    uid: (*string)((len=13) "stepfunctions"),
+    autocomplete: (*string)((len=14) "stepfunctions "),
     arg: ([]string) (len=1) {
-      (string) (len=77) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#Lifecycle:"
+      (string) (len=84) "https://us-west-2.console.aws.amazon.com/states/home?region=us-west-2#/statemachines"
     },
     valid: (bool) true,
     file: (bool) false,
@@ -606,19 +606,19 @@
     },
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=14) "images/ec2.png",
+      Value: (string) (len=24) "images/stepfunctions.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=18) "ec2 securitygroups",
-    subtitle: (*string)((len=28) "🔎 EC2 – Security Groups"),
-    match: (*string)((len=30) "securitygroups Security Groups"),
-    uid: (*string)((len=14) "securitygroups"),
-    autocomplete: (*string)((len=19) "ec2 securitygroups "),
+    title: (string) (len=14) "costmanagement",
+    subtitle: (*string)((len=71) "🗂 Cost Management – Visualize and Explore Your AWS Costs and Usage"),
+    match: (*string)((len=30) "costmanagement Cost Management"),
+    uid: (*string)((len=14) "costmanagement"),
+    autocomplete: (*string)((len=15) "costmanagement "),
     arg: ([]string) (len=1) {
-      (string) (len=85) "https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#SecurityGroups:"
+      (string) (len=62) "https://console.aws.amazon.com/cost-management/home#/dashboard"
     },
     valid: (bool) true,
     file: (bool) false,
@@ -642,19 +642,19 @@
     },
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=14) "images/ec2.png",
+      Value: (string) (len=25) "images/costmanagement.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=14) "ec2 elasticips",
-    subtitle: (*string)((len=19) "EC2 – Elastic IPs"),
-    match: (*string)((len=22) "elasticips Elastic IPs"),
-    uid: (*string)((len=10) "elasticips"),
-    autocomplete: (*string)((len=15) "ec2 elasticips "),
+    title: (string) (len=5) "alexa",
+    subtitle: (*string)((len=59) "Alexa for Business – Empower your organization with voice"),
+    match: (*string)((len=24) "alexa Alexa for Business"),
+    uid: (*string)((len=5) "alexa"),
+    autocomplete: (*string)((len=6) "alexa "),
     arg: ([]string) (len=1) {
-      (string) (len=77) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#Addresses:"
+      (string) (len=67) "https://us-west-2.console.aws.amazon.com/a4b/home?region=us-west-2#"
     },
     valid: (bool) true,
     file: (bool) false,
@@ -678,19 +678,19 @@
     },
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=14) "images/ec2.png",
+      Value: (string) (len=16) "images/alexa.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=19) "ec2 placementgroups",
-    subtitle: (*string)((len=24) "EC2 – Placement Groups"),
-    match: (*string)((len=32) "placementgroups Placement Groups"),
-    uid: (*string)((len=15) "placementgroups"),
-    autocomplete: (*string)((len=20) "ec2 placementgroups "),
+    title: (string) (len=12) "iotanalytics",
+    subtitle: (*string)((len=87) "IoT Analytics – Collect, preprocess, store, analyze and visualize data of IoT devices"),
+    match: (*string)((len=26) "iotanalytics IoT Analytics"),
+    uid: (*string)((len=12) "iotanalytics"),
+    autocomplete: (*string)((len=13) "iotanalytics "),
     arg: ([]string) (len=1) {
-      (string) (len=83) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#PlacementGroups:"
+      (string) (len=76) "https://us-west-2.console.aws.amazon.com/iotanalytics/home?region=us-west-2#"
     },
     valid: (bool) true,
     file: (bool) false,
@@ -714,19 +714,19 @@
     },
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=14) "images/ec2.png",
+      Value: (string) (len=23) "images/iotanalytics.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=12) "ec2 keypairs",
-    subtitle: (*string)((len=17) "EC2 – Key Pairs"),
-    match: (*string)((len=18) "keypairs Key Pairs"),
-    uid: (*string)((len=8) "keypairs"),
-    autocomplete: (*string)((len=13) "ec2 keypairs "),
+    title: (string) (len=3) "ram",
+    subtitle: (*string)((len=93) "🗂 Resource Access Manager – Share AWS resources with other accounts or AWS Organizations"),
+    match: (*string)((len=27) "ram Resource Access Manager"),
+    uid: (*string)((len=3) "ram"),
+    autocomplete: (*string)((len=4) "ram "),
     arg: ([]string) (len=1) {
-      (string) (len=76) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#KeyPairs:"
+      (string) (len=87) "https://us-west-2.console.aws.amazon.com/ram/home?region=us-west-2#OwnedResourceShares:"
     },
     valid: (bool) true,
     file: (bool) false,
@@ -750,19 +750,19 @@
     },
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=14) "images/ec2.png",
+      Value: (string) (len=14) "images/ram.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=21) "ec2 networkinterfaces",
-    subtitle: (*string)((len=26) "EC2 – Network Interfaces"),
-    match: (*string)((len=36) "networkinterfaces Network Interfaces"),
-    uid: (*string)((len=17) "networkinterfaces"),
-    autocomplete: (*string)((len=22) "ec2 networkinterfaces "),
+    title: (string) (len=16) "directoryservice",
+    subtitle: (*string)((len=59) "🗂 Directory Service – Host and Manage Active Directory"),
+    match: (*string)((len=34) "directoryservice Directory Service"),
+    uid: (*string)((len=16) "directoryservice"),
+    autocomplete: (*string)((len=17) "directoryservice "),
     arg: ([]string) (len=1) {
-      (string) (len=71) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#NIC:"
+      (string) (len=99) "https://us-west-2.console.aws.amazon.com/directoryservicev2/identity?region=us-west-2#!/directories"
     },
     valid: (bool) true,
     file: (bool) false,
@@ -786,19 +786,19 @@
     },
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=14) "images/ec2.png",
+      Value: (string) (len=27) "images/directoryservice.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=17) "ec2 loadbalancers",
-    subtitle: (*string)((len=27) "🔎 EC2 – Load Balancers"),
-    match: (*string)((len=28) "loadbalancers Load Balancers"),
-    uid: (*string)((len=13) "loadbalancers"),
-    autocomplete: (*string)((len=18) "ec2 loadbalancers "),
+    title: (string) (len=14) "iotthingsgraph",
+    subtitle: (*string)((len=86) "IoT Things Graph – Easily connect devices and web services to build IoT applications"),
+    match: (*string)((len=31) "iotthingsgraph IoT Things Graph"),
+    uid: (*string)((len=14) "iotthingsgraph"),
+    autocomplete: (*string)((len=15) "iotthingsgraph "),
     arg: ([]string) (len=1) {
-      (string) (len=81) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#LoadBalancers:"
+      (string) (len=75) "https://us-west-2.console.aws.amazon.com/thingsgraph/home?region=us-west-2#"
     },
     valid: (bool) true,
     file: (bool) false,
@@ -822,19 +822,19 @@
     },
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=14) "images/ec2.png",
+      Value: (string) (len=25) "images/iotthingsgraph.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=16) "ec2 targetgroups",
-    subtitle: (*string)((len=21) "EC2 – Target Groups"),
-    match: (*string)((len=26) "targetgroups Target Groups"),
-    uid: (*string)((len=12) "targetgroups"),
-    autocomplete: (*string)((len=17) "ec2 targetgroups "),
+    title: (string) (len=10) "snowfamily",
+    subtitle: (*string)((len=82) "🗂 Snow Family – Process data at the edge and migrate data into and out of AWS"),
+    match: (*string)((len=51) "snowfamily Snow Family snowball snowcone snowmobile"),
+    uid: (*string)((len=10) "snowfamily"),
+    autocomplete: (*string)((len=11) "snowfamily "),
     arg: ([]string) (len=1) {
-      (string) (len=80) "https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#TargetGroups:"
+      (string) (len=79) "https://us-west-2.console.aws.amazon.com/snowfamily/home?region=us-west-2#/jobs"
     },
     valid: (bool) true,
     file: (bool) false,
@@ -858,19 +858,19 @@
     },
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=14) "images/ec2.png",
+      Value: (string) (len=21) "images/snowfamily.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=17) "ec2 launchconfigs",
-    subtitle: (*string)((len=29) "EC2 – Launch Configurations"),
-    match: (*string)((len=35) "launchconfigs Launch Configurations"),
-    uid: (*string)((len=13) "launchconfigs"),
-    autocomplete: (*string)((len=18) "ec2 launchconfigs "),
+    title: (string) (len=14) "trustedadvisor",
+    subtitle: (*string)((len=58) "🗂 Trusted Advisor – Optimize Performance and Security"),
+    match: (*string)((len=30) "trustedadvisor Trusted Advisor"),
+    uid: (*string)((len=14) "trustedadvisor"),
+    autocomplete: (*string)((len=15) "trustedadvisor "),
     arg: ([]string) (len=1) {
-      (string) (len=81) "https://us-west-2.console.aws.amazon.com/ec2autoscaling/home?region=us-west-2#/lc"
+      (string) (len=61) "https://console.aws.amazon.com/trustedadvisor/home#/dashboard"
     },
     valid: (bool) true,
     file: (bool) false,
@@ -894,19 +894,19 @@
     },
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=14) "images/ec2.png",
+      Value: (string) (len=25) "images/trustedadvisor.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=21) "ec2 autoscalinggroups",
-    subtitle: (*string)((len=27) "EC2 – Auto Scaling Groups"),
-    match: (*string)((len=37) "autoscalinggroups Auto Scaling Groups"),
-    uid: (*string)((len=17) "autoscalinggroups"),
-    autocomplete: (*string)((len=22) "ec2 autoscalinggroups "),
+    title: (string) (len=3) "mcs",
+    subtitle: (*string)((len=130) "🗂 Keyspaces (for Apache Cassandra) – A scalable, highly available, and managed Apache Cassandra–compatible database service"),
+    match: (*string)((len=36) "mcs Keyspaces (for Apache Cassandra)"),
+    uid: (*string)((len=3) "mcs"),
+    autocomplete: (*string)((len=4) "mcs "),
     arg: ([]string) (len=1) {
-      (string) (len=86) "https://us-west-2.console.aws.amazon.com/ec2autoscaling/home?region=us-west-2#/details"
+      (string) (len=82) "https://us-west-2.console.aws.amazon.com/keyspaces/home?region=us-west-2#dashboard"
     },
     valid: (bool) true,
     file: (bool) false,
@@ -930,7 +930,151 @@
     },
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=14) "images/ec2.png",
+      Value: (string) (len=14) "images/mcs.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=14) "serverlessrepo",
+    subtitle: (*string)((len=119) "🗂 Serverless Application Repository – Assemble, deploy, and share serverless applications within teams or publicly"),
+    match: (*string)((len=48) "serverlessrepo Serverless Application Repository"),
+    uid: (*string)((len=14) "serverlessrepo"),
+    autocomplete: (*string)((len=15) "serverlessrepo "),
+    arg: ([]string) (len=1) {
+      (string) (len=101) "https://us-west-2.console.aws.amazon.com/serverlessrepo/home?region=us-west-2#/available-applications"
+    },
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=25) "images/serverlessrepo.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=14) "developertools",
+    subtitle: (*string)((len=84) "🗂 Developer Tools – Host code, build, test, and deploy your applications to AWS"),
+    match: (*string)((len=40) "developertools Developer Tools codesuite"),
+    uid: (*string)((len=14) "developertools"),
+    autocomplete: (*string)((len=15) "developertools "),
+    arg: ([]string) (len=1) {
+      (string) (len=91) "https://us-west-2.console.aws.amazon.com/codesuite/settings/notifications?region=us-west-2#"
+    },
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=25) "images/developertools.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=17) "elastictranscoder",
+    subtitle: (*string)((len=61) "Elastic Transcoder – Easy-to-Use Scalable Media Transcoding"),
+    match: (*string)((len=36) "elastictranscoder Elastic Transcoder"),
+    uid: (*string)((len=17) "elastictranscoder"),
+    autocomplete: (*string)((len=18) "elastictranscoder "),
+    arg: ([]string) (len=1) {
+      (string) (len=81) "https://us-west-2.console.aws.amazon.com/elastictranscoder/home?region=us-west-2#"
+    },
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=28) "images/elastictranscoder.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=22) "servermigrationservice",
+    subtitle: (*string)((len=63) "Server Migration Service – Migrate on-premises servers to AWS"),
+    match: (*string)((len=47) "servermigrationservice Server Migration Service"),
+    uid: (*string)((len=22) "servermigrationservice"),
+    autocomplete: (*string)((len=23) "servermigrationservice "),
+    arg: ([]string) (len=1) {
+      (string) (len=79) "https://us-west-2.console.aws.amazon.com/servermigration/home?region=us-west-2#"
+    },
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=33) "images/servermigrationservice.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false

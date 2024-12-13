@@ -71,6 +71,9 @@ var tcs []testCase = []testCase{
 		query: "$ @ adsf asdf",
 	},
 	{
+		query: "$us-east 1",
+	},
+	{
 		query: "$us-east-1 @",
 	},
 	{
@@ -318,6 +321,12 @@ var tcs []testCase = []testCase{
 		query: "cloudformation ",
 	},
 	{
+		query: "ecr ",
+	},
+	{
+		query: "ecr repo",
+	},
+	{
 		query: "cloudformation stacks",
 	},
 	{
@@ -435,6 +444,12 @@ var tcs []testCase = []testCase{
 		query: "elasticbeanstalk",
 	},
 	{
+		query: "app",
+	},
+	{
+		query: "apprunner",
+	},
+	{
 		query:       "elasticbeanstalk ",
 		fixtureName: "../searchers/elastic_beanstalk_environments_test", // reuse test fixture from this other test
 	},
@@ -543,6 +558,12 @@ var tcs []testCase = []testCase{
 	{
 		query:       "elasticache memcached ",
 		fixtureName: "../searchers/elasticache_memcached_clusters_test", // reuse test fixture from this other test
+	},
+	{
+		query: "oss",
+	},
+	{
+		query: "oss integrat",
 	},
 	{
 		query:       "ec2 loadbalancers",

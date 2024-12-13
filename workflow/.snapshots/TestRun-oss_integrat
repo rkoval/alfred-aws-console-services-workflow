@@ -1,12 +1,12 @@
 ([]*aw.Item) (len=1) {
   (*aw.Item)({
-    title: (string) (len=15) "pipeline-name-1",
-    subtitle: (*string)((len=50) "Version 3 – Created Mon Jun 13 17:36:50 UTC 2022"),
-    match: (*string)(<nil>),
-    uid: (*string)(<nil>),
-    autocomplete: (*string)((len=39) "codepipeline pipelines pipeline-name-1 "),
+    title: (string) (len=16) "oss integrations",
+    subtitle: (*string)((len=20) "OSS – Integrations"),
+    match: (*string)((len=25) "integrations Integrations"),
+    uid: (*string)((len=12) "integrations"),
+    autocomplete: (*string)((len=17) "oss integrations "),
     arg: ([]string) (len=1) {
-      (string) (len=111) "https://us-west-2.console.aws.amazon.com/codesuite/codepipeline/pipelines/pipeline-name-1/view?region=us-west-2"
+      (string) (len=90) "https://us-west-2.console.aws.amazon.com/aos/home?region=us-west-2#opensearch/integrations"
     },
     valid: (bool) true,
     file: (bool) false,
@@ -30,7 +30,7 @@
     },
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=23) "images/codepipeline.png",
+      Value: (string) (len=14) "images/oss.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false

@@ -34,6 +34,24 @@
   description: Real-Time Data Sync Using GraphQL for Mobile & Web Apps, Online or Offline
   url: "/appsync/home#/"
 
+- id: apprunner
+  name: App Runner
+  description: Deploy containerized web applications and APIs at scale
+  url: /apprunner/home#
+  sub_services:
+    - id: services
+      name: Services
+      url: /apprunner/home#/services
+    - id: connections
+      name: Connected accounts
+      url: /apprunner/home#/connections
+    - id: networkconfiguration
+      name: Network configuration
+      url: /apprunner/home#/networkconfiguration
+    - id: autoscalingconfiguration
+      name: Auto scaling configuration
+      url: /apprunner/home#/autoscalingconfiguration
+
 - id: artifact
   name: Artifact
   description: AWS Compliance Reports and Agreements
@@ -858,14 +876,20 @@
   name: Elastic Container Registry
   short_name: ECR
   description: Fully-managed Docker container registry
-  url: "/ecr/repositories#"
+  url: "/ecr/private-registry/repositories#"
   sub_services:
-    - id: repositories
-      name: Repositories
-      url: "/ecr/repositories#"
-    - id: registries
-      name: Registries
-      url: "/ecr/registries#"
+    - id: privaterepositories
+      name: Private repositories
+      url: "/ecr/private-registry/repositories"
+    - id: privatesettings
+      name: Private registry
+      url: "/ecr/private-registry"
+    - id: publicrepositories
+      name: Public repositories
+      url: "/ecr/public-registry/repositories"
+    - id: publicsettings
+      name: Public registry
+      url: "/ecr/public-registry"
     - id: publicgallery
       name: Public gallery
       url: https://gallery.ecr.aws/
@@ -878,13 +902,16 @@
   sub_services:
     - id: clusters
       name: Clusters
-      url: "/ecs/home#/clusters"
+      url: "/ecs/v2/clusters"
+    - id: namespaces
+      name: Namespaces
+      url: "/ecs/v2/namespaces"
     - id: taskdefinitions
       name: Task Definitions
-      url: "/ecs/home#/taskDefinitions"
+      url: "/ecs/v2/task-definitions"
     - id: settings
       name: Account settings
-      url: "/ecs/home#/settings"
+      url: "/ecs/v2/account-settings"
 
 - id: efs
   name: Elastic File Storage
@@ -972,14 +999,58 @@
       name: Change history
       url: "/elasticbeanstalk/home/changeHistory"
 
-- id: ess
-  name: Elasticsearch Service
-  short_name: ESS
-  description: Run and Scale Elasticsearch Clusters
+- id: oss
+  name: OpenSearch Service
+  short_name: OSS
+  description: Run open-source OpenSearch or Elasticsearch using Managed Clusters or Serverless deployments.
   extra_search_terms:
+    - ess # legacy keyword for elasticsearch
     - elasticsearch
     - opensearch
-  url: "/esv3/home#"
+  url: "/aos/home#opensearch/dashboard"
+  sub_services:
+    - id: dashboard
+      name: Dashboard
+      url: "/aos/home#opensearch/dashboard"
+    - id: domains
+      name: Domains
+      url: "/aos/home#opensearch/domains"
+    - id: reservedinstances
+      name: Reserved Instances
+      url: "/aos/home#opensearch/reserved-instances"
+    - id: packages
+      name: Packages
+      url: "/aos/home#opensearch/custom-packages"
+    - id: vpcendpoints
+      name: VPC Endpoints
+      url: "/aos/home#opensearch/vpc-endpoints"
+    - id: serverlessdashboard
+      name: "Serverless: Dashboard"
+      url: "/aos/home#opensearch/get-started-serverless"
+    - id: serverlesscollections
+      name: "Serverless: Collections"
+      url: "/aos/home#opensearch/collections"
+    - id: serverlesssecurity
+      name: "Serverless: Security"
+      url: "/aos/home#opensearch/security"
+    - id: serverlessdatalifecyclepolicies
+      name: "Serverless: Data Lifecycle Policies"
+      url: "/aos/home#opensearch/data-lifecycle-policies"
+    - id: serverlessvpcendpoints
+      name: "Serverless: VPC Endpoints"
+      url: "/aos/home#opensearch/vpcEndpoint"
+    - id: ingestiondashboard
+      name: "Ingestion: Dashboard"
+      url: "/aos/home#opensearch/ingestion-dashboard"
+    - id: ingestionpipeliness
+      name: "Ingestion: Pipelines"
+      url: "/aos/home#opensearch/ingestion-pipelines"
+    - id: integrations
+      name: Integrations
+      url: "/aos/home#opensearch/integrations"
+    - id: notifications
+      name: Notifications
+      url: "/aos/home#opensearch/notifications"
 
 - id: elastictranscoder
   name: Elastic Transcoder
@@ -1099,23 +1170,23 @@
 - id: glue
   name: Glue
   description: fully managed ETL (extract, transform, and load) service
-  url: /glue/home#catalog:tab=databases
+  url: /glue/home#/v2/data-catalog/databases
   sub_services:
     - id: databases
       name: Databases
-      url: /glue/home#catalog:tab=databases
+      url: /glue/home#/v2/data-catalog/databases
     - id: tables
       name: Tables
-      url: /glue/home#catalog:tab=tables
+      url: /glue/home#/v2/data-catalog/tables
     - id: connections
       name: Connections
-      url: /glue/home#catalog:tab=connections
+      url: /gluestudio/home#/connectors
     - id: crawlers
       name: Crawlers
-      url: /glue/home#catalog:tab=crawlers
+      url: /glue/home#/v2/data-catalog/crawlers
     - id: classifiers
       name: Classifiers
-      url: /glue/home#catalog:tab=classifiers
+      url: /glue/home#/v2/data-catalog/classifiers
     - id: schemaregistries
       name: Schema registries
       url: /glue/home#catalog:tab=schemaRegistries
@@ -1124,10 +1195,7 @@
       url: /glue/home#catalog:tab=schemas
     - id: settings
       name: Settings
-      url: /glue/home#catalog:tab=settings
-    - id: awsgluestudio
-      name: AWS Glue Studio
-      url: /gluestudio/home#/
+      url: /glue/home#/v2/security/settings
     - id: blueprints
       name: Blueprints
       url: /glue/home#etl:tab=blueprints
@@ -1136,22 +1204,22 @@
       url: /glue/home#etl:tab=workflows
     - id: jobs
       name: Jobs
-      url: /glue/home#etl:tab=jobs
+      url: /gluestudio/home#/jobs
     - id: mltransforms
       name: ML Transforms
       url: /glue/home#etl:tab=mlTransforms
     - id: triggers
       name: Triggers
-      url: /glue/home#etl:tab=triggers
-    - id: devendpoints
-      name: Dev endpoints
-      url: /glue/home#etl:tab=devEndpoints
+      url: /glue/home#/v2/etl-configuration/triggers
+    - id: interactivesessions
+      name: Interactive Sessions
+      url: /glue/home#/v2/etl-configuration/sessions/history
     - id: notebooks
-      name: Notebooks
-      url: /glue/home#etl:tab=notebooks
+      name: Jupyter Notebooks
+      url: /gluestudio/home#/notebook/jupyter
     - id: securityconfigurations
       name: Security configurations
-      url: '/glue/home#securityConfigurations:'
+      url: /glue/home#/v2/security/security-configurations
 
 - id: groundstation
   name: Ground Station
@@ -1884,21 +1952,20 @@
   name: Simple Storage Service
   short_name: S3
   description: Scalable Storage in the Cloud
-  has_global_region: true
-  url: /s3/home
+  url: "/s3/home#"
   sub_services:
     - id: buckets
       name: Buckets
-      url: "/s3/home"
+      url: "/s3/home#"
     - id: batchoperations
       name: Batch Operations
-      url: "/s3/jobs"
+      url: "/s3/jobs#"
     - id: accessanalyzer
       name: Access Analyzer
-      url: "/s3/access"
+      url: "/s3/access#"
     - id: settings
       name: Account settings
-      url: "/s3/settings"
+      url: "/s3/settings#"
 
 - id: sagemaker
   name: SageMaker

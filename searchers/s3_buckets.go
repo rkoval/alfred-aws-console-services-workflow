@@ -35,9 +35,7 @@ func (s S3BucketSearcher) fetch(cfg aws.Config) ([]types.Bucket, error) {
 	}
 
 	buckets := []types.Bucket{}
-	for i := range resp.Buckets {
-		buckets = append(buckets, resp.Buckets[i])
-	}
+	buckets = append(buckets, resp.Buckets...)
 	return buckets, nil
 }
 

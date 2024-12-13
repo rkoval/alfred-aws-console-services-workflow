@@ -1,12 +1,12 @@
 ([]*aw.Item) (len=1) {
   (*aw.Item)({
-    title: (string) (len=15) "pipeline-name-1",
-    subtitle: (*string)((len=50) "Version 3 – Created Mon Jun 13 17:36:50 UTC 2022"),
-    match: (*string)(<nil>),
-    uid: (*string)(<nil>),
-    autocomplete: (*string)((len=39) "codepipeline pipelines pipeline-name-1 "),
+    title: (string) (len=9) "apprunner",
+    subtitle: (*string)((len=75) "🗂 App Runner – Deploy containerized web applications and APIs at scale"),
+    match: (*string)((len=20) "apprunner App Runner"),
+    uid: (*string)((len=9) "apprunner"),
+    autocomplete: (*string)((len=10) "apprunner "),
     arg: ([]string) (len=1) {
-      (string) (len=111) "https://us-west-2.console.aws.amazon.com/codesuite/codepipeline/pipelines/pipeline-name-1/view?region=us-west-2"
+      (string) (len=73) "https://us-west-2.console.aws.amazon.com/apprunner/home?region=us-west-2#"
     },
     valid: (bool) true,
     file: (bool) false,
@@ -30,7 +30,7 @@
     },
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=23) "images/codepipeline.png",
+      Value: (string) (len=20) "images/apprunner.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false

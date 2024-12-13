@@ -44,8 +44,12 @@ func ConstructAWSConsoleUrl(path, region string) string {
 
 	urlBuilder.WriteString(AWSConsoleDomain)
 
-	if region != "" {
-		urlBuilder.WriteString(strings.Replace(path, "#", "?region="+region+"#", 1))
+	if region != "" && !strings.Contains(path, "region=") {
+		if strings.Contains(path, "#") {
+			urlBuilder.WriteString(strings.Replace(path, "#", "?region="+region+"#", 1))
+		} else {
+			urlBuilder.WriteString(path + "?region=" + region)
+		}
 	} else {
 		urlBuilder.WriteString(path)
 	}

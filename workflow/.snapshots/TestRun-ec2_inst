@@ -114,7 +114,7 @@
     uid: (*string)((len=18) "scheduledinstances"),
     autocomplete: (*string)((len=23) "ec2 scheduledinstances "),
     arg: ([]string) (len=1) {
-      (string) (len=57) "https://us-west-2.console.aws.amazon.com/ec2sp/v2/si/home"
+      (string) (len=74) "https://us-west-2.console.aws.amazon.com/ec2sp/v2/si/home?region=us-west-2"
     },
     valid: (bool) true,
     file: (bool) false,

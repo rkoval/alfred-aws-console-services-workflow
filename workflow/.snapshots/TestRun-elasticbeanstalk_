@@ -78,7 +78,7 @@
     uid: (*string)((len=13) "changehistory"),
     autocomplete: (*string)((len=31) "elasticbeanstalk changehistory "),
     arg: ([]string) (len=1) {
-      (string) (len=76) "https://us-west-2.console.aws.amazon.com/elasticbeanstalk/home/changeHistory"
+      (string) (len=93) "https://us-west-2.console.aws.amazon.com/elasticbeanstalk/home/changeHistory?region=us-west-2"
     },
     valid: (bool) true,
     file: (bool) false,
