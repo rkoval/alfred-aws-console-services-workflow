@@ -11,7 +11,12 @@ Supports Alfred 3, 4, and 5
 ## Installation
 - [Download and extract the latest release](https://github.com/rkoval/alfred-aws-console-services-workflow/releases)
 - Open the .alfredworkflow file in Finder
-- Make sure your AWS Credentials and Region are set in your `~/.aws/credentials` and `~/.aws/config` files, respectively. This workflow will use your `default` profile by default within these files. See [the official AWS docs](https://docs.aws.amazon.com/sdk-for-go/v1/developer-guide/configuring-sdk.html#specifying-the-region) for more info on how to configure these
+- Set up your AWS configuration in the standard AWS config files:
+  - For traditional access key authentication: Configure your credentials in `~/.aws/credentials`
+  - For AWS SSO authentication: Configure your SSO profiles in `~/.aws/config`
+  - Set your preferred region in `~/.aws/config`
+  - This workflow will use your `default` profile by default
+  - See [the official AWS docs](https://docs.aws.amazon.com/sdk-for-go/v1/developer-guide/configuring-sdk.html#specifying-the-region) for more info on how to configure these files
 
 ## Usage
 To use, activate Alfred and type `aws` to trigger this workflow. From there:
@@ -33,7 +38,10 @@ At any time:
 - Configurable [workflow environment variables](https://www.alfredapp.com/help/workflows/advanced/variables/#environment)
   - Search alias – If a sub-service has a ⭐ in the subtitle, you can use `,` as an alias for it to more quickly search for that entity. For example, in this workflow, the EC2 service's default entity is an EC2 instance, so `aws ec2 ,searchterm` is a shorter alias for `aws ec2 instances searchterm`. You can customize this alias by setting the `ALFRED_AWS_CONSOLE_SERVICES_WORKFLOW_SEARCH_ALIAS` environment variable to any other string.
   - Region override - By default, searchers will use the region configured in your `~/.aws/config` file. However, you can override this on a single query basis by typing `$`. This workflow will then populate a list of regions to select for this query. You can customize this alias by setting the `ALFRED_AWS_CONSOLE_SERVICES_OVERRIDE_AWS_REGION_ALIAS` environment variable to any other string.
-  - Profile override - By default, searchers will use the default profile configured in your `~/.aws/credentials` file. However, you can override this on a single query basis by typing `@`. This workflow will then populate the list of profiles defined in your `~/.aws/credentials` file. You can customize this alias by setting the `ALFRED_AWS_CONSOLE_SERVICES_OVERRIDE_AWS_PROFILE_ALIAS` environment variable to any other string.
+  - Profile override - By default, searchers will use the default profile. You can override this on a single query basis by typing `@`. This workflow will find and populate:
+    - Traditional IAM profiles from your `~/.aws/credentials` file
+    - AWS SSO profiles from your `~/.aws/config` file
+    - You can customize this alias by setting the `ALFRED_AWS_CONSOLE_SERVICES_OVERRIDE_AWS_PROFILE_ALIAS` environment variable to any other string.
   - Cache expiration age – Sub-service entity searching makes heavy use of caching to make filtering performant and to prevent handling big requests/responses to/from AWS on every execution. The cache expiration age for each entity is set to 3 minutes by default. If you find that this is too short/long for your usage, you can set the `ALFRED_AWS_CONSOLE_SERVICES_WORKFLOW_MAX_CACHE_AGE_SECONDS` environment variable to the number of seconds that better suits your need.
   - Custom AWS Management Console domain – If your AWS account's management console lives at a domain that is not the standard "console.amazonaws.com", you can set a custom domain with the `ALFRED_AWS_CONSOLE_SERVICES_WORKFLOW_AWS_CONSOLE_DOMAIN` environment variable. This workflow will then populate all relevant URLs with that domain when opening links.
   - AWS settings – You can override any/all AWS configuration values which the underlying AWS library should respect.
