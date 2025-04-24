@@ -10,7 +10,7 @@ region = eu-west-1
 [profile profile3]
 region = sa-east-1
 
-[profile bogusprofile]
+[profile bogus-test-profile]
 region = bogus
 
 [profile usgov]

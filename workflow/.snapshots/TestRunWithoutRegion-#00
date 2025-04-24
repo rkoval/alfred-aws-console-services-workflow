@@ -19,73 +19,45 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=21) "No profile configured",
-    subtitle: (*string)((len=55) "Select this option to open AWS docs on how to configure"),
+    title: (string) (len=34) "Using profile \"bogus-test-profile\"",
+    subtitle: (*string)((len=41) "Use \"@\" to override for the current query"),
     match: (*string)(<nil>),
     uid: (*string)(<nil>),
     autocomplete: (*string)(<nil>),
-    arg: ([]string) (len=1) {
-      (string) (len=82) "https://aws.github.io/aws-sdk-go-v2/docs/configuring-sdk/#creating-the-config-file"
-    },
-    valid: (bool) true,
+    arg: ([]string) <nil>,
+    valid: (bool) false,
     file: (bool) false,
     copytext: (*string)(<nil>),
     largetype: (*string)(<nil>),
     ql: (*string)(<nil>),
-    vars: (map[string]string) (len=1) {
-      (string) (len=6) "action": (string) (len=8) "open-url"
+    vars: (map[string]string) {
     },
-    mods: (map[string]*aw.Modifier) (len=1) {
-      (string) (len=3) "cmd": (*aw.Modifier)({
-        Key: (string) (len=3) "cmd",
-        arg: ([]string) <nil>,
-        subtitle: (*string)((len=21) "Copy URL to clipboard"),
-        valid: (bool) false,
-        icon: (*aw.Icon)(<nil>),
-        vars: (map[string]string) (len=1) {
-          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
-        }
-      })
-    },
+    mods: (map[string]*aw.Modifier) <nil>,
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=83) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/AlertNoteIcon.icns",
+      Value: (string) (len=78) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/Accounts.icns",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=37) "No region configured for this profile",
-    subtitle: (*string)((len=55) "Select this option to open AWS docs on how to configure"),
+    title: (string) (len=20) "Using region \"bogus\"",
+    subtitle: (*string)((len=41) "Use \"$\" to override for the current query"),
     match: (*string)(<nil>),
     uid: (*string)(<nil>),
     autocomplete: (*string)(<nil>),
-    arg: ([]string) (len=1) {
-      (string) (len=82) "https://aws.github.io/aws-sdk-go-v2/docs/configuring-sdk/#creating-the-config-file"
-    },
-    valid: (bool) true,
+    arg: ([]string) <nil>,
+    valid: (bool) false,
     file: (bool) false,
     copytext: (*string)(<nil>),
     largetype: (*string)(<nil>),
     ql: (*string)(<nil>),
-    vars: (map[string]string) (len=1) {
-      (string) (len=6) "action": (string) (len=8) "open-url"
+    vars: (map[string]string) {
     },
-    mods: (map[string]*aw.Modifier) (len=1) {
-      (string) (len=3) "cmd": (*aw.Modifier)({
-        Key: (string) (len=3) "cmd",
-        arg: ([]string) <nil>,
-        subtitle: (*string)((len=21) "Copy URL to clipboard"),
-        valid: (bool) false,
-        icon: (*aw.Icon)(<nil>),
-        vars: (map[string]string) (len=1) {
-          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
-        }
-      })
-    },
+    mods: (map[string]*aw.Modifier) <nil>,
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=83) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/AlertNoteIcon.icns",
+      Value: (string) (len=82) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BookmarkIcon.icns",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false

@@ -95,7 +95,7 @@ func Run(wf *aw.Workflow, rawQuery string, transport http.RoundTripper, forceFet
 		log.Printf("using searcher associated with services with query %q", searchArgs.Query)
 		SearchServices(wf, awsServices, searchArgs)
 	} else {
-		if !query.HasDefaultSearchAlias && (query.Service.SubServices == nil || len(query.Service.SubServices) <= 0) {
+		if !query.HasDefaultSearchAlias && (len(query.Service.SubServices) <= 0) {
 			handleUnimplemented(wf, query.Service, nil, fmt.Sprintf("%s doesn't have sub-services configured (yet)", query.Service.Id), searchArgs)
 			return
 		}

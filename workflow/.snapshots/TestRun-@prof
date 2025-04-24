@@ -44,11 +44,11 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=12) "bogusprofile",
+    title: (string) (len=18) "bogus-test-profile",
     subtitle: (*string)((len=10) "🌎 bogus"),
     match: (*string)(<nil>),
-    uid: (*string)((len=12) "bogusprofile"),
-    autocomplete: (*string)((len=14) "@bogusprofile "),
+    uid: (*string)((len=18) "bogus-test-profile"),
+    autocomplete: (*string)((len=20) "@bogus-test-profile "),
     arg: ([]string) <nil>,
     valid: (bool) false,
     file: (bool) false,

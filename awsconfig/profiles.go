@@ -16,7 +16,7 @@ type Profile struct {
 var awsProfiles []Profile
 
 func GetAwsProfiles() []Profile {
-	if awsProfiles == nil || len(awsProfiles) <= 0 {
+	if len(awsProfiles) <= 0 {
 		loadAwsProfiles()
 	}
 	return awsProfiles
