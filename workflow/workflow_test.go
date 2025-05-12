@@ -641,6 +641,33 @@ var tcs []testCase = []testCase{
 		query:       "codepipeline pipelines pipeline-name-1",
 		fixtureName: "../searchers/codepipeline_pipelines_test", // reuse test fixture from this other test
 	},
+	{
+		query: "@sso-profile1",
+	},
+	{
+		query: "@sso-profile2",
+	},
+	{
+		query: "@sso-profile3",
+	},
+	{
+		query: "@sso-profile1 elasticbeanstalk",
+	},
+	{
+		query: "$eu-central-1 @sso-profile1 elasticbeanstalk",
+	},
+	{
+		query:       "@sso-profile1 elasticbeanstalk applications",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
+	},
+	{
+		query:       "elasticbeanstalk applications @sso-profile1",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
+	},
+	{
+		query:       "@sso-profile2 elasticbeanstalk applications",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
+	},
 }
 
 func testWorkflow(t *testing.T, tc testCase, forceFetch, snapshot bool) []*aw.Item {
@@ -681,6 +708,9 @@ func TestRunWithCache(t *testing.T) {
 	}
 }
 
+// TestRunWithoutRegion uses a non-existent profile "bogus-test-profile" to test
+// that the workflow handles invalid AWS profiles gracefully instead of crashing.
+// The snapshot verifies the correct error state appears in the UI.
 func TestRunWithoutRegion(t *testing.T) {
 	tcs := []testCase{
 		{

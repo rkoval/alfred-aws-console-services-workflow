@@ -1,0 +1,24 @@
+([]*aw.Item) (len=1) {
+  (*aw.Item)({
+    title: (string) (len=12) "sso-profile3",
+    subtitle: (*string)((len=19) "🌎 ap-northeast-1"),
+    match: (*string)(<nil>),
+    uid: (*string)((len=12) "sso-profile3"),
+    autocomplete: (*string)((len=14) "@sso-profile3 "),
+    arg: ([]string) <nil>,
+    valid: (bool) false,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=78) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/Accounts.icns",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  })
+}
