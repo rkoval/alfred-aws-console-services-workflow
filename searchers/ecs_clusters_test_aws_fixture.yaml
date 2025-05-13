@@ -1,0 +1,120 @@
+---
+version: 2
+interactions:
+    - id: 0
+      request:
+        proto: ""
+        proto_major: 0
+        proto_minor: 0
+        content_length: 0
+        transfer_encoding: []
+        trailer: {}
+        host: ""
+        remote_addr: ""
+        request_uri: ""
+        body: '{}'
+        form: {}
+        headers:
+            Content-Type:
+                - application/x-amz-json-1.1
+            X-Amz-Target:
+                - AmazonEC2ContainerServiceV20141113.ListClusters
+        url: https://ecs.us-west-2.amazonaws.com/
+        method: POST
+      response:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        transfer_encoding: []
+        trailer: {}
+        content_length: 66
+        uncompressed: false
+        body: |-
+            {
+              "clusterArns": [
+                "arn:aws:ecs:us-west-2:0000000000:cluster/dev"
+              ]
+            }
+        headers:
+            Content-Type:
+                - application/x-amz-json-1.1
+        status: 200 OK
+        code: 200
+        duration: 342.71825ms
+    - id: 1
+      request:
+        proto: ""
+        proto_major: 0
+        proto_minor: 0
+        content_length: 0
+        transfer_encoding: []
+        trailer: {}
+        host: ""
+        remote_addr: ""
+        request_uri: ""
+        body: '{"clusters":["arn:aws:ecs:us-west-2:0000000000:cluster/dev"],"include":["TAGS"]}'
+        form: {}
+        headers:
+            Content-Type:
+                - application/x-amz-json-1.1
+            X-Amz-Target:
+                - AmazonEC2ContainerServiceV20141113.DescribeClusters
+        url: https://ecs.us-west-2.amazonaws.com/
+        method: POST
+      response:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        transfer_encoding: []
+        trailer: {}
+        content_length: 824
+        uncompressed: false
+        body: |-
+            {
+              "clusters": [
+                {
+                  "activeServicesCount": 3,
+                  "capacityProviders": [
+                    "FARGATE",
+                    "FARGATE_SPOT"
+                  ],
+                  "clusterArn": "arn:aws:ecs:us-west-2:0000000000:cluster/dev",
+                  "clusterName": "dev",
+                  "defaultCapacityProviderStrategy": [],
+                  "pendingTasksCount": 0,
+                  "registeredContainerInstancesCount": 0,
+                  "runningTasksCount": 5,
+                  "serviceConnectDefaults": {
+                    "namespace": "arn:aws:servicediscovery:us-west-2:0000000000:namespace/ns-aaaaaaaaaa"
+                  },
+                  "settings": [],
+                  "statistics": [],
+                  "status": "ACTIVE",
+                  "tags": [
+                    {
+                      "key": "aws:cloudformation:stack-name",
+                      "value": "Infra-ECS-Cluster-dev-34c6fcec"
+                    },
+                    {
+                      "key": "Environment",
+                      "value": "dev"
+                    },
+                    {
+                      "key": "aws:cloudformation:logical-id",
+                      "value": "ECSCluster"
+                    },
+                    {
+                      "key": "aws:cloudformation:stack-id",
+                      "value": "arn:aws:cloudformation:us-west-2:0000000000:stack/Infra-ECS-Cluster-dev-34c6fcec/00000000-0000-0000-0000-000000000000"
+                    }
+                  ]
+                }
+              ],
+              "failures": []
+            }
+        headers:
+            Content-Type:
+                - application/x-amz-json-1.1
+        status: 200 OK
+        code: 200
+        duration: 96.93525ms

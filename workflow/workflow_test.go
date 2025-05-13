@@ -645,6 +645,26 @@ var tcs []testCase = []testCase{
 		fixtureName: "../searchers/codepipeline_pipelines_test", // reuse test fixture from this other test
 	},
 	{
+		query:       "ecs",
+		fixtureName: "../searchers/ecs_clusters_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "ecs ",
+		fixtureName: "../searchers/ecs_clusters_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "ecs clusters",
+		fixtureName: "../searchers/ecs_clusters_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "ecs clusters ",
+		fixtureName: "../searchers/ecs_clusters_test", // reuse test fixture from this other test
+	},
+	{
+		query:       "ecs ,dev",
+		fixtureName: "../searchers/ecs_clusters_test", // reuse test fixture from this other test
+	},
+	{
 		query: "@legacy-sso-direct-config-profile",
 	},
 	{

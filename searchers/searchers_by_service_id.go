@@ -22,6 +22,8 @@ var snsTopicSearcher = &SNSTopicSearcher{}
 var wafIPSetSearcher = &WAFIPSetSearcher{}
 var wafWebACLSearcher = &WAFWebACLSearcher{}
 
+var ecsClusterSearcher = &ECSClusterSearcher{}
+
 var SearchersByServiceId map[string]Searcher = map[string]Searcher{
 	"cloudformation":                cloudFormationStackSearcher,
 	"cloudformation_stacks":         cloudFormationStackSearcher,
@@ -34,6 +36,8 @@ var SearchersByServiceId map[string]Searcher = map[string]Searcher{
 	"ec2_instances":                 ec2InstanceSearcher,
 	"ec2_loadbalancers":             ec2LoadBalancerSearcher,
 	"ec2_securitygroups":            ec2SecurityGroupSearcher,
+	"ecs":                           ecsClusterSearcher,
+	"ecs_clusters":                  ecsClusterSearcher,
 	"elasticache":                   elasticacheRedisClusterSearcher,
 	"elasticache_memcached":         elasticacheMemcachedClusterSearcher,
 	"elasticache_redis":             elasticacheRedisClusterSearcher,

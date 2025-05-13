@@ -11,6 +11,7 @@ import (
 	cloudwatchlogs "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs/types"
 	codepipeline "github.com/aws/aws-sdk-go-v2/service/codepipeline/types"
 	ec2 "github.com/aws/aws-sdk-go-v2/service/ec2/types"
+	ecs "github.com/aws/aws-sdk-go-v2/service/ecs/types"
 	elasticache "github.com/aws/aws-sdk-go-v2/service/elasticache/types"
 	elasticbeanstalk "github.com/aws/aws-sdk-go-v2/service/elasticbeanstalk/types"
 	elasticloadbalancingv2 "github.com/aws/aws-sdk-go-v2/service/elasticloadbalancingv2/types"
@@ -26,7 +27,7 @@ import (
 )
 
 type Entity interface {
-	cloudwatchlogs.LogGroup | ec2.Instance | s3.Bucket | ec2.SecurityGroup | elasticbeanstalk.EnvironmentDescription | wafv2.IPSetSummary | wafv2.WebACLSummary | lambda.FunctionConfiguration | cloudformation.Stack | rds.DBInstance | sns.Topic | sns.Subscription | elasticache.CacheCluster | elasticloadbalancingv2.LoadBalancer | elasticbeanstalk.ApplicationDescription | route53.HostedZone | cloudwatchlogs.QueryDefinition | codepipeline.PipelineSummary
+	cloudwatchlogs.LogGroup | ec2.Instance | s3.Bucket | ec2.SecurityGroup | elasticbeanstalk.EnvironmentDescription | wafv2.IPSetSummary | wafv2.WebACLSummary | lambda.FunctionConfiguration | cloudformation.Stack | rds.DBInstance | sns.Topic | sns.Subscription | elasticache.CacheCluster | elasticloadbalancingv2.LoadBalancer | elasticbeanstalk.ApplicationDescription | route53.HostedZone | cloudwatchlogs.QueryDefinition | codepipeline.PipelineSummary | ecs.Cluster
 }
 
 func LoadEntityArrayFromCache[K Entity](wf *aw.Workflow, searchArgs searchutil.SearchArgs, cacheName string, fetcher func(aws.Config) ([]K, error)) []K {
