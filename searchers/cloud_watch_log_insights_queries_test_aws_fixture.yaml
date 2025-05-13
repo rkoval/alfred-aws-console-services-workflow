@@ -1,54 +1,71 @@
 ---
-version: 1
+version: 2
 interactions:
-- request:
-    body: '{"maxResults":1000}'
-    form: {}
-    headers:
-      Content-Type:
-      - application/x-amz-json-1.1
-      X-Amz-Target:
-      - Logs_20140328.DescribeQueryDefinitions
-    url: https://logs.us-west-2.amazonaws.com/
-    method: POST
-  response:
-    body: |-
-      {
-        "queryDefinitions": [
-          {
-            "lastModified": 1625000000000,
-            "logGroupNames": [
-              "/aws/loggroup1.log"
-            ],
-            "name": "Query 1",
-            "queryDefinitionId": "00000000-0000-0000-0000-000000000000",
-            "queryString": "filter @type = \"REPORT\"\n | stats avg(@duration), max(@duration), min(@duration) by bin(5m)"
-          },
-          {
-            "lastModified": 1625001000000,
-            "logGroupNames": [
-              "/aws/loggroup1.log",
-              "/aws/loggroup2.log",
-              "/aws/loggroup3.log"
-            ],
-            "name": "Query 2",
-            "queryDefinitionId": "00000000-0000-0000-0000-000000000000",
-            "queryString": "fields @timestamp, @message\n | sort @timestamp desc\n | limit 25"
-          },
-          {
-            "lastModified": 1625002000000,
-            "logGroupNames": [
-              "/aws/loggroup3.log"
-            ],
-            "name": "Query 3",
-            "queryDefinitionId": "00000000-0000-0000-0000-000000000000",
-            "queryString": "stats count(*) as numRequests by resolverIp\n | sort numRequests desc\n | limit 10"
-          }
-        ]
-      }
-    headers:
-      Content-Type:
-      - application/x-amz-json-1.1
-    status: 200 OK
-    code: 200
-    duration: ""
+    - id: 0
+      request:
+        proto: ""
+        proto_major: 0
+        proto_minor: 0
+        content_length: 0
+        transfer_encoding: []
+        trailer: {}
+        host: ""
+        remote_addr: ""
+        request_uri: ""
+        body: '{"maxResults":1000}'
+        form: {}
+        headers:
+            Content-Type:
+                - application/x-amz-json-1.1
+            X-Amz-Target:
+                - Logs_20140328.DescribeQueryDefinitions
+        url: https://logs.us-west-2.amazonaws.com/
+        method: POST
+      response:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        transfer_encoding: []
+        trailer: {}
+        content_length: 23
+        uncompressed: false
+        body: |-
+            {
+              "queryDefinitions": [
+                {
+                  "lastModified": 1625000000000,
+                  "logGroupNames": [
+                    "/aws/loggroup1.log"
+                  ],
+                  "name": "Query 1",
+                  "queryDefinitionId": "00000000-0000-0000-0000-000000000000",
+                  "queryString": "filter @type = \"REPORT\"\n | stats avg(@duration), max(@duration), min(@duration) by bin(5m)"
+                },
+                {
+                  "lastModified": 1625001000000,
+                  "logGroupNames": [
+                    "/aws/loggroup1.log",
+                    "/aws/loggroup2.log",
+                    "/aws/loggroup3.log"
+                  ],
+                  "name": "Query 2",
+                  "queryDefinitionId": "00000000-0000-0000-0000-000000000000",
+                  "queryString": "fields @timestamp, @message\n | sort @timestamp desc\n | limit 25"
+                },
+                {
+                  "lastModified": 1625002000000,
+                  "logGroupNames": [
+                    "/aws/loggroup3.log"
+                  ],
+                  "name": "Query 3",
+                  "queryDefinitionId": "00000000-0000-0000-0000-000000000000",
+                  "queryString": "stats count(*) as numRequests by resolverIp\n | sort numRequests desc\n | limit 10"
+                }
+              ]
+            }
+        headers:
+            Content-Type:
+                - application/x-amz-json-1.1
+        status: 200 OK
+        code: 200
+        duration: 381.813792ms

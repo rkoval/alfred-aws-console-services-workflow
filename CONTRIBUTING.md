@@ -1,9 +1,11 @@
 # Contributing
 
 ## Requirements
-- go 1.22.6 (or later)
+
+- go 1.24.3 (or later)
 
 ## Installation
+
 Clone the repository into your `$GOPATH` and add that directory as a workflow within Alfred (make sure to disable any other versions of this workflow in Alfred so that the `aws` keyword doesn't conflict). Then, from the root of this repo, run:
 
 ```sh
@@ -13,7 +15,6 @@ Clone the repository into your `$GOPATH` and add that directory as a workflow wi
 
 You should now be able to invoke the Alfred workflow from your cloned repo.
 
-
 ## Adding services or sub-services
 
 To add/update/remove services or sub-services, simply update [the .yml config file](console-services.yml) with your changes. This file is used by the executable to populate entries in Alfred (for a list of valid properties, see [the models file](awsworkflow/aws_service.go)). Once you've done that, run `./test.sh` to update any snapshots with the data changes you've made.
@@ -21,7 +22,6 @@ To add/update/remove services or sub-services, simply update [the .yml config fi
 ### Bulk Verifying URLs
 
 If you're wanting to verify all sub-service URLs for a particular service, you can use `OPEN_ALL` as a sub-service term within the Alfred workflow. For example, to open all EC2 sub-service URLs, use `aws ec2 OPEN_ALL`. This will allow you to just go through the tabs opened in your browser to verify that the links are not broken.
-
 
 ## Adding a searcher
 
@@ -32,7 +32,6 @@ Generally, if you're just wanting to add a searcher, you can follow the patterns
   - [cupaloy](https://github.com/bradleyjkemp/cupaloy) for snapshot testing to assert results in the Alfred Workflow. The `./test.sh` script should automatically update snapshots on every run, so make sure that the snapshots look the way that they should before committing them.
 - Each new searcher should have a test case in [this file](https://github.com/rkoval/alfred-aws-console-services-workflow/blob/master/workflow/workflow_test.go). This file is an integration-style test that will massage logic across the entire workflow. The new test case should have a query that matches the searcher that you added.
 
-
 ## Advanced
 
 For more rapid development, you can also run:
@@ -42,5 +41,3 @@ For more rapid development, you can also run:
 ```
 
 This will build and run a single execution of the workflow and log any relevant output to the console. Keep in that the `./run.sh` environment is not 100% the same as running within Alfred, so you should always verify your changes via `./build.sh` and invoking this workflow manually in Alfred.
-
-

@@ -1,69 +1,99 @@
 ---
-version: 1
+version: 2
 interactions:
-- request:
-    body: '{"Limit":100,"Scope":"REGIONAL"}'
-    form: {}
-    headers:
-      Content-Type:
-      - application/x-amz-json-1.1
-      X-Amz-Target:
-      - AWSWAF_20190729.ListWebACLs
-    url: https://wafv2.us-west-2.amazonaws.com/
-    method: POST
-  response:
-    body: |-
-      {
-        "NextMarker": "web-acl-3",
-        "WebACLs": [
-          {
-            "ARN": "arn:aws:wafv2:us-west-2:0000000000:regional/webacl/web-acl-1/00000000-0000-0000-0000-000000000000",
-            "Description": "description for web-acl-1",
-            "Id": "00000000-0000-0000-0000-000000000000",
-            "LockToken": "00000000-0000-0000-0000-000000000000",
-            "Name": "web-acl-1"
-          },
-          {
-            "ARN": "arn:aws:wafv2:us-west-2:0000000000:regional/webacl/web-acl-2/00000000-0000-0000-0000-000000000000",
-            "Description": "",
-            "Id": "00000000-0000-0000-0000-000000000000",
-            "LockToken": "00000000-0000-0000-0000-000000000000",
-            "Name": "web-acl-2"
-          },
-          {
-            "ARN": "arn:aws:wafv2:us-west-2:0000000000:regional/webacl/web-acl-3/00000000-0000-0000-0000-000000000000",
-            "Description": "",
-            "Id": "00000000-0000-0000-0000-000000000000",
-            "LockToken": "00000000-0000-0000-0000-000000000000",
-            "Name": "web-acl-3"
-          }
-        ]
-      }
-    headers:
-      Content-Length:
-      - "798"
-      Content-Type:
-      - application/x-amz-json-1.1
-    status: 200 OK
-    code: 200
-    duration: ""
-- request:
-    body: '{"Limit":100,"NextMarker":"web-acl-3","Scope":"REGIONAL"}'
-    form: {}
-    headers:
-      Content-Type:
-      - application/x-amz-json-1.1
-      X-Amz-Target:
-      - AWSWAF_20190729.ListWebACLs
-    url: https://wafv2.us-west-2.amazonaws.com/
-    method: POST
-  response:
-    body: '{"WebACLs":[]}'
-    headers:
-      Content-Length:
-      - "14"
-      Content-Type:
-      - application/x-amz-json-1.1
-    status: 200 OK
-    code: 200
-    duration: ""
+    - id: 0
+      request:
+        proto: ""
+        proto_major: 0
+        proto_minor: 0
+        content_length: 0
+        transfer_encoding: []
+        trailer: {}
+        host: ""
+        remote_addr: ""
+        request_uri: ""
+        body: '{"Limit":100,"Scope":"REGIONAL"}'
+        form: {}
+        headers:
+            Content-Type:
+                - application/x-amz-json-1.1
+            X-Amz-Target:
+                - AWSWAF_20190729.ListWebACLs
+        url: https://wafv2.us-west-2.amazonaws.com/
+        method: POST
+      response:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        transfer_encoding: []
+        trailer: {}
+        content_length: 14
+        uncompressed: false
+        body: |-
+            {
+              "NextMarker": "web-acl-3",
+              "WebACLs": [
+                {
+                  "ARN": "arn:aws:wafv2:us-west-2:0000000000:regional/webacl/web-acl-1/00000000-0000-0000-0000-000000000000",
+                  "Description": "description for web-acl-1",
+                  "Id": "00000000-0000-0000-0000-000000000000",
+                  "LockToken": "00000000-0000-0000-0000-000000000000",
+                  "Name": "web-acl-1"
+                },
+                {
+                  "ARN": "arn:aws:wafv2:us-west-2:0000000000:regional/webacl/web-acl-2/00000000-0000-0000-0000-000000000000",
+                  "Description": "",
+                  "Id": "00000000-0000-0000-0000-000000000000",
+                  "LockToken": "00000000-0000-0000-0000-000000000000",
+                  "Name": "web-acl-2"
+                },
+                {
+                  "ARN": "arn:aws:wafv2:us-west-2:0000000000:regional/webacl/web-acl-3/00000000-0000-0000-0000-000000000000",
+                  "Description": "",
+                  "Id": "00000000-0000-0000-0000-000000000000",
+                  "LockToken": "00000000-0000-0000-0000-000000000000",
+                  "Name": "web-acl-3"
+                }
+              ]
+            }
+        headers:
+            Content-Type:
+                - application/x-amz-json-1.1
+        status: 200 OK
+        code: 200
+        duration: 416.539208ms
+    - id: 1
+      request:
+        proto: ""
+        proto_major: 0
+        proto_minor: 0
+        content_length: 0
+        transfer_encoding: []
+        trailer: {}
+        host: ""
+        remote_addr: ""
+        request_uri: ""
+        body: '{"Limit":100,"NextMarker":"web-acl-3","Scope":"REGIONAL"}'
+        form: {}
+        headers:
+            Content-Type:
+                - application/x-amz-json-1.1
+            X-Amz-Target:
+                - AWSWAF_20190729.ListWebACLs
+        url: https://wafv2.us-west-2.amazonaws.com/
+        method: POST
+      response:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        transfer_encoding: []
+        trailer: {}
+        content_length: 14
+        uncompressed: false
+        body: '{"WebACLs":[]}'
+        headers:
+            Content-Type:
+                - application/x-amz-json-1.1
+        status: 200 OK
+        code: 200
+        duration: 334.955375ms

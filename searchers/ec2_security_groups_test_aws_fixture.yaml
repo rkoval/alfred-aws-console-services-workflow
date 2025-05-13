@@ -1,251 +1,273 @@
 ---
-version: 1
+version: 2
 interactions:
-- request:
-    body: Action=DescribeSecurityGroups&MaxResults=1000&NextToken=&Version=2016-11-15
-    form:
-      Action:
-      - DescribeSecurityGroups
-      MaxResults:
-      - "1000"
-      NextToken:
-      - ""
-      Version:
-      - "2016-11-15"
-    headers:
-      Content-Type:
-      - application/x-www-form-urlencoded
-    url: https://ec2.us-west-2.amazonaws.com/
-    method: POST
-  response:
-    body: |-
-      <?xml version="1.0" encoding="UTF-8"?>
-      <DescribeSecurityGroupsResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">
-          <requestId>00000000-0000-0000-0000-000000000000</requestId>
-          <securityGroupInfo>
-              <item>
-                  <ownerId>000000000000</ownerId>
-                  <groupId>sg-00000000000000000</groupId>
-                  <groupName>awseb-e-0000000000-stack-AWSEBSecurityGroup-AAAAAAAAAAAA</groupName>
-                  <groupDescription>SecurityGroup for ElasticBeanstalk environment.</groupDescription>
-                  <vpcId>vpc-00000000</vpcId>
-                  <ipPermissions>
-                      <item>
-                          <ipProtocol>tcp</ipProtocol>
-                          <fromPort>80</fromPort>
-                          <toPort>80</toPort>
-                          <groups>
-                              <item>
-                                  <userId>000000000000</userId>
-                                  <groupId>sg-00000000000000000</groupId>
-                              </item>
-                          </groups>
-                          <ipRanges>
-                              <item>
-                                  <cidrIp>0.0.0.0/32</cidrIp>
-                                  <description>description of range</description>
-                              </item>
-                          </ipRanges>
-                          <ipv6Ranges/>
-                          <prefixListIds/>
-                      </item>
-                  </ipPermissions>
-                  <ipPermissionsEgress>
-                      <item>
-                          <ipProtocol>-1</ipProtocol>
-                          <groups/>
-                          <ipRanges>
-                              <item>
-                                  <cidrIp>0.0.0.0/32</cidrIp>
-                              </item>
-                          </ipRanges>
-                          <ipv6Ranges/>
-                          <prefixListIds/>
-                      </item>
-                  </ipPermissionsEgress>
-                  <tagSet>
-                      <item>
-                          <key>Name</key>
-                          <value>security group 1</value>
-                      </item>
-                      <item>
-                          <key>aws:cloudformation:logical-id</key>
-                          <value>AWSEBSecurityGroup</value>
-                      </item>
-                      <item>
-                          <key>aws:cloudformation:stack-name</key>
-                          <value>awseb-e-0000000000-stack</value>
-                      </item>
-                      <item>
-                          <key>elasticbeanstalk:environment-name</key>
-                          <value>beanstalk environment 1</value>
-                      </item>
-                      <item>
-                          <key>elasticbeanstalk:environment-id</key>
-                          <value>e-0000000000</value>
-                      </item>
-                      <item>
-                          <key>aws:cloudformation:stack-id</key>
-                          <value>arn:aws:cloudformation:us-west-2:000000000000:stack/awseb-e-0000000000-stack/00000000-0000-0000-00000000000000000</value>
-                      </item>
-                  </tagSet>
-              </item>
-              <item>
-                  <ownerId>000000000000</ownerId>
-                  <groupId>sg-11111111111111111</groupId>
-                  <groupName>awseb-e-0000000000-stack-AWSEBSecurityGroup-AAAAAAAAAAAA</groupName>
-                  <groupDescription>SecurityGroup for ElasticBeanstalk environment.</groupDescription>
-                  <vpcId>vpc-00000000</vpcId>
-                  <ipPermissions>
-                      <item>
-                          <ipProtocol>tcp</ipProtocol>
-                          <fromPort>80</fromPort>
-                          <toPort>80</toPort>
-                          <groups>
-                              <item>
-                                  <userId>000000000000</userId>
-                                  <groupId>sg-11111111111111111</groupId>
-                              </item>
-                          </groups>
-                          <ipRanges>
-                              <item>
-                                  <cidrIp>0.0.0.0/32</cidrIp>
-                                  <description>description of range</description>
-                              </item>
-                          </ipRanges>
-                          <ipv6Ranges/>
-                          <prefixListIds/>
-                      </item>
-                      <item>
-                          <ipProtocol>tcp</ipProtocol>
-                          <fromPort>22</fromPort>
-                          <toPort>22</toPort>
-                          <groups/>
-                          <ipRanges>
-                              <item>
-                                  <cidrIp>0.0.0.0/32</cidrIp>
-                              </item>
-                          </ipRanges>
-                          <ipv6Ranges/>
-                          <prefixListIds/>
-                      </item>
-                  </ipPermissions>
-                  <ipPermissionsEgress>
-                      <item>
-                          <ipProtocol>-1</ipProtocol>
-                          <groups/>
-                          <ipRanges>
-                              <item>
-                                  <cidrIp>0.0.0.0/32</cidrIp>
-                              </item>
-                          </ipRanges>
-                          <ipv6Ranges/>
-                          <prefixListIds/>
-                      </item>
-                  </ipPermissionsEgress>
-                  <tagSet>
-                      <item>
-                          <key>elasticbeanstalk:environment-id</key>
-                          <value>e-0000000000</value>
-                      </item>
-                      <item>
-                          <key>aws:cloudformation:stack-id</key>
-                          <value>arn:aws:cloudformation:us-west-2:000000000000:stack/awseb-e-0000000000-stack/00000000-0000-0000-0000-000000000000</value>
-                      </item>
-                      <item>
-                          <key>Name</key>
-                          <value>security group 2</value>
-                      </item>
-                      <item>
-                          <key>aws:cloudformation:logical-id</key>
-                          <value>AWSEBSecurityGroup</value>
-              </item>
-              <item>
-                          <key>aws:cloudformation:stack-name</key>
-                          <value>awseb-e-0000000000-stack</value>
-                      </item>
-                      <item>
-                          <key>elasticbeanstalk:environment-name</key>
-                          <value>beanstalk environment name</value>
-                      </item>
-                  </tagSet>
-              </item>
-              <item>
-                  <ownerId>000000000000</ownerId>
-                  <groupId>sg-22222222222222222</groupId>
-                  <groupName>awseb-e-0000000000-stack-AWSEBSecurityGroup-AAAAAAAAAAAAA</groupName>
-                  <groupDescription>SecurityGroup for ElasticBeanstalk environment.</groupDescription>
-                  <vpcId>vpc-00000000</vpcId>
-                  <ipPermissions>
-                      <item>
-                          <ipProtocol>tcp</ipProtocol>
-                          <fromPort>80</fromPort>
-                          <toPort>80</toPort>
-                          <groups>
-                              <item>
-                                  <userId>000000000000</userId>
-                                  <groupId>sg-22222222222222222</groupId>
-                              </item>
-                          </groups>
-                          <ipRanges>
-                              <item>
-                                  <cidrIp>0.0.0.0/32</cidrIp>
-                                  <description>description of range</description>
-                              </item>
-                          </ipRanges>
-                          <ipv6Ranges/>
-                          <prefixListIds/>
-                      </item>
-                  </ipPermissions>
-                  <ipPermissionsEgress>
-                      <item>
-                          <ipProtocol>-1</ipProtocol>
-                          <groups/>
-                          <ipRanges>
-                              <item>
-                                  <cidrIp>0.0.0.0/32</cidrIp>
-                              </item>
-                          </ipRanges>
-                          <ipv6Ranges/>
-                          <prefixListIds/>
-                      </item>
-                  </ipPermissionsEgress>
-                  <tagSet>
-                      <item>
-                          <key>Name</key>
-                          <value>security group 3</value>
-                      </item>
-                      <item>
-                          <key>aws:cloudformation:logical-id</key>
-                          <value>AWSEBSecurityGroup</value>
-                      </item>
-                      <item>
-                          <key>elasticbeanstalk:environment-id</key>
-                          <value>e-0000000000</value>
-                      </item>
-                      <item>
-                          <key>aws:cloudformation:stack-name</key>
-                          <value>awseb-e-0000000000-stack</value>
-                      </item>
-                      <item>
-                          <key>aws:cloudformation:stack-id</key>
-                          <value>arn:aws:cloudformation:us-west-2:000000000000:stack/awseb-e-0000000000-stack/00000000-0000-0000-0000-000000000000</value>
-                      </item>
-                      <item>
-                          <key>elasticbeanstalk:environment-name</key>
-                          <value>beanstalk environment name 2</value>
-                      </item>
-                  </tagSet>
-              </item>
-          </securityGroupInfo>
-      </DescribeSecurityGroupsResponse>
-    headers:
-      Content-Type:
-      - text/xml;charset=UTF-8
-      Server:
-      - AmazonEC2
-      Vary:
-      - accept-encoding
-    status: 200 OK
-    code: 200
-    duration: ""
+    - id: 0
+      request:
+        proto: ""
+        proto_major: 0
+        proto_minor: 0
+        content_length: 0
+        transfer_encoding: []
+        trailer: {}
+        host: ""
+        remote_addr: ""
+        request_uri: ""
+        body: Action=DescribeSecurityGroups&MaxResults=1000&NextToken=&Version=2016-11-15
+        form:
+            Action:
+                - DescribeSecurityGroups
+            MaxResults:
+                - "1000"
+            NextToken:
+                - ""
+            Version:
+                - "2016-11-15"
+        headers:
+            Content-Type:
+                - application/x-www-form-urlencoded
+        url: https://ec2.us-west-2.amazonaws.com/
+        method: POST
+      response:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        transfer_encoding:
+            - chunked
+        trailer: {}
+        content_length: -1
+        uncompressed: true
+        body: |-
+            <?xml version="1.0" encoding="UTF-8"?>
+            <DescribeSecurityGroupsResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">
+                <requestId>00000000-0000-0000-0000-000000000000</requestId>
+                <securityGroupInfo>
+                    <item>
+                        <ownerId>000000000000</ownerId>
+                        <groupId>sg-00000000000000000</groupId>
+                        <groupName>awseb-e-0000000000-stack-AWSEBSecurityGroup-AAAAAAAAAAAA</groupName>
+                        <groupDescription>SecurityGroup for ElasticBeanstalk environment.</groupDescription>
+                        <vpcId>vpc-00000000</vpcId>
+                        <ipPermissions>
+                            <item>
+                                <ipProtocol>tcp</ipProtocol>
+                                <fromPort>80</fromPort>
+                                <toPort>80</toPort>
+                                <groups>
+                                    <item>
+                                        <userId>000000000000</userId>
+                                        <groupId>sg-00000000000000000</groupId>
+                                    </item>
+                                </groups>
+                                <ipRanges>
+                                    <item>
+                                        <cidrIp>0.0.0.0/32</cidrIp>
+                                        <description>description of range</description>
+                                    </item>
+                                </ipRanges>
+                                <ipv6Ranges/>
+                                <prefixListIds/>
+                            </item>
+                        </ipPermissions>
+                        <ipPermissionsEgress>
+                            <item>
+                                <ipProtocol>-1</ipProtocol>
+                                <groups/>
+                                <ipRanges>
+                                    <item>
+                                        <cidrIp>0.0.0.0/32</cidrIp>
+                                    </item>
+                                </ipRanges>
+                                <ipv6Ranges/>
+                                <prefixListIds/>
+                            </item>
+                        </ipPermissionsEgress>
+                        <tagSet>
+                            <item>
+                                <key>Name</key>
+                                <value>security group 1</value>
+                            </item>
+                            <item>
+                                <key>aws:cloudformation:logical-id</key>
+                                <value>AWSEBSecurityGroup</value>
+                            </item>
+                            <item>
+                                <key>aws:cloudformation:stack-name</key>
+                                <value>awseb-e-0000000000-stack</value>
+                            </item>
+                            <item>
+                                <key>elasticbeanstalk:environment-name</key>
+                                <value>beanstalk environment 1</value>
+                            </item>
+                            <item>
+                                <key>elasticbeanstalk:environment-id</key>
+                                <value>e-0000000000</value>
+                            </item>
+                            <item>
+                                <key>aws:cloudformation:stack-id</key>
+                                <value>arn:aws:cloudformation:us-west-2:000000000000:stack/awseb-e-0000000000-stack/00000000-0000-0000-00000000000000000</value>
+                            </item>
+                        </tagSet>
+                    </item>
+                    <item>
+                        <ownerId>000000000000</ownerId>
+                        <groupId>sg-11111111111111111</groupId>
+                        <groupName>awseb-e-0000000000-stack-AWSEBSecurityGroup-AAAAAAAAAAAA</groupName>
+                        <groupDescription>SecurityGroup for ElasticBeanstalk environment.</groupDescription>
+                        <vpcId>vpc-00000000</vpcId>
+                        <ipPermissions>
+                            <item>
+                                <ipProtocol>tcp</ipProtocol>
+                                <fromPort>80</fromPort>
+                                <toPort>80</toPort>
+                                <groups>
+                                    <item>
+                                        <userId>000000000000</userId>
+                                        <groupId>sg-11111111111111111</groupId>
+                                    </item>
+                                </groups>
+                                <ipRanges>
+                                    <item>
+                                        <cidrIp>0.0.0.0/32</cidrIp>
+                                        <description>description of range</description>
+                                    </item>
+                                </ipRanges>
+                                <ipv6Ranges/>
+                                <prefixListIds/>
+                            </item>
+                            <item>
+                                <ipProtocol>tcp</ipProtocol>
+                                <fromPort>22</fromPort>
+                                <toPort>22</toPort>
+                                <groups/>
+                                <ipRanges>
+                                    <item>
+                                        <cidrIp>0.0.0.0/32</cidrIp>
+                                    </item>
+                                </ipRanges>
+                                <ipv6Ranges/>
+                                <prefixListIds/>
+                            </item>
+                        </ipPermissions>
+                        <ipPermissionsEgress>
+                            <item>
+                                <ipProtocol>-1</ipProtocol>
+                                <groups/>
+                                <ipRanges>
+                                    <item>
+                                        <cidrIp>0.0.0.0/32</cidrIp>
+                                    </item>
+                                </ipRanges>
+                                <ipv6Ranges/>
+                                <prefixListIds/>
+                            </item>
+                        </ipPermissionsEgress>
+                        <tagSet>
+                            <item>
+                                <key>elasticbeanstalk:environment-id</key>
+                                <value>e-0000000000</value>
+                            </item>
+                            <item>
+                                <key>aws:cloudformation:stack-id</key>
+                                <value>arn:aws:cloudformation:us-west-2:000000000000:stack/awseb-e-0000000000-stack/00000000-0000-0000-0000-000000000000</value>
+                            </item>
+                            <item>
+                                <key>Name</key>
+                                <value>security group 2</value>
+                            </item>
+                            <item>
+                                <key>aws:cloudformation:logical-id</key>
+                                <value>AWSEBSecurityGroup</value>
+                    </item>
+                    <item>
+                                <key>aws:cloudformation:stack-name</key>
+                                <value>awseb-e-0000000000-stack</value>
+                            </item>
+                            <item>
+                                <key>elasticbeanstalk:environment-name</key>
+                                <value>beanstalk environment name</value>
+                            </item>
+                        </tagSet>
+                    </item>
+                    <item>
+                        <ownerId>000000000000</ownerId>
+                        <groupId>sg-22222222222222222</groupId>
+                        <groupName>awseb-e-0000000000-stack-AWSEBSecurityGroup-AAAAAAAAAAAAA</groupName>
+                        <groupDescription>SecurityGroup for ElasticBeanstalk environment.</groupDescription>
+                        <vpcId>vpc-00000000</vpcId>
+                        <ipPermissions>
+                            <item>
+                                <ipProtocol>tcp</ipProtocol>
+                                <fromPort>80</fromPort>
+                                <toPort>80</toPort>
+                                <groups>
+                                    <item>
+                                        <userId>000000000000</userId>
+                                        <groupId>sg-22222222222222222</groupId>
+                                    </item>
+                                </groups>
+                                <ipRanges>
+                                    <item>
+                                        <cidrIp>0.0.0.0/32</cidrIp>
+                                        <description>description of range</description>
+                                    </item>
+                                </ipRanges>
+                                <ipv6Ranges/>
+                                <prefixListIds/>
+                            </item>
+                        </ipPermissions>
+                        <ipPermissionsEgress>
+                            <item>
+                                <ipProtocol>-1</ipProtocol>
+                                <groups/>
+                                <ipRanges>
+                                    <item>
+                                        <cidrIp>0.0.0.0/32</cidrIp>
+                                    </item>
+                                </ipRanges>
+                                <ipv6Ranges/>
+                                <prefixListIds/>
+                            </item>
+                        </ipPermissionsEgress>
+                        <tagSet>
+                            <item>
+                                <key>Name</key>
+                                <value>security group 3</value>
+                            </item>
+                            <item>
+                                <key>aws:cloudformation:logical-id</key>
+                                <value>AWSEBSecurityGroup</value>
+                            </item>
+                            <item>
+                                <key>elasticbeanstalk:environment-id</key>
+                                <value>e-0000000000</value>
+                            </item>
+                            <item>
+                                <key>aws:cloudformation:stack-name</key>
+                                <value>awseb-e-0000000000-stack</value>
+                            </item>
+                            <item>
+                                <key>aws:cloudformation:stack-id</key>
+                                <value>arn:aws:cloudformation:us-west-2:000000000000:stack/awseb-e-0000000000-stack/00000000-0000-0000-0000-000000000000</value>
+                            </item>
+                            <item>
+                                <key>elasticbeanstalk:environment-name</key>
+                                <value>beanstalk environment name 2</value>
+                            </item>
+                        </tagSet>
+                    </item>
+                </securityGroupInfo>
+            </DescribeSecurityGroupsResponse>
+        headers:
+            Cache-Control:
+                - no-cache, no-store
+            Content-Type:
+                - text/xml;charset=UTF-8
+            Server:
+                - AmazonEC2
+            Strict-Transport-Security:
+                - max-age=31536000; includeSubDomains
+            Vary:
+                - accept-encoding
+        status: 200 OK
+        code: 200
+        duration: 458.436583ms

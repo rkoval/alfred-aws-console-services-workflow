@@ -1,97 +1,129 @@
 ---
-version: 1
+version: 2
 interactions:
-- request:
-    body: '{"limit":50}'
-    form: {}
-    headers:
-      Content-Type:
-      - application/x-amz-json-1.1
-      X-Amz-Target:
-      - Logs_20140328.DescribeLogGroups
-    url: https://logs.us-west-2.amazonaws.com/
-    method: POST
-  response:
-    body: |-
-      {
-        "logGroups": [
-          {
-            "arn": "arn:aws:logs:us-west-2:0000000000:log-group:/aws/cloudfront/LambdaEdge/AAAAAAAAAAAAAA:*",
-            "creationTime": 1111111111111,
-            "logGroupName": "/aws/cloudfront/LambdaEdge/AAAAAAAAAAAAAA",
-            "metricFilterCount": 0,
-            "retentionInDays": 1,
-            "storedBytes": 0
-          },
-          {
-            "arn": "arn:aws:logs:us-west-2:0000000000:log-group:/aws/elasticbeanstalk/log-group-aaa/var/log/httpd/access.log:*",
-            "creationTime": 1111111111111,
-            "logGroupName": "/aws/elasticbeanstalk/log-group-aaa/var/log/httpd/access.log",
-            "metricFilterCount": 0,
-            "retentionInDays": 7,
-            "storedBytes": 0
-          },
-          {
-            "arn": "arn:aws:logs:us-west-2:0000000000:log-group:/aws/elasticbeanstalk/log-group-bbb/var/log/apache/error.log:*",
-            "creationTime": 1111111111111,
-            "logGroupName": "/aws/elasticbeanstalk/log-group-bbb/var/log/apache/error.log",
-            "metricFilterCount": 0,
-            "storedBytes": 97530
-          }
-        ],
-        "nextToken": "/aws/elasticbeanstalk/log-group-bbb/var/log/apache/error.log"
-      }
-    headers:
-      Content-Type:
-      - application/x-amz-json-1.1
-    status: 200 OK
-    code: 200
-    duration: ""
-- request:
-    body: '{"limit":50,"nextToken":"/aws/elasticbeanstalk/log-group-bbb/var/log/apache/error.log"}'
-    form: {}
-    headers:
-      Content-Length:
-      - "95"
-      Content-Type:
-      - application/x-amz-json-1.1
-      X-Amz-Target:
-      - Logs_20140328.DescribeLogGroups
-    url: https://logs.us-west-2.amazonaws.com/
-    method: POST
-  response:
-    body: |-
-      {
-        "logGroups": [
-          {
-            "arn": "arn:aws:logs:us-west-2:0000000000:log-group:/aws/elasticbeanstalk/log-group-bbb/var/log/application/application.log:*",
-            "creationTime": 1111111111111,
-            "logGroupName": "/aws/elasticbeanstalk/log-group-bbb/var/log/application/application.log",
-            "metricFilterCount": 0,
-            "retentionInDays": 14,
-            "storedBytes": 62664
-          },
-          {
-            "arn": "arn:aws:logs:us-west-2:0000000000:log-group:/aws/elasticbeanstalk/log-group-aaa/var/log/eb-activity.log:*",
-            "creationTime": 1111111111111,
-            "logGroupName": "/aws/elasticbeanstalk/log-group-aaa/var/log/eb-activity.log",
-            "metricFilterCount": 0,
-            "retentionInDays": 5,
-            "storedBytes": 754289
-          },
-          {
-            "arn": "arn:aws:logs:us-west-2:0000000000:log-group:/aws/elasticbeanstalk/log-group-aaa/var/log/application/application.log:*",
-            "creationTime": 1111111111111,
-            "logGroupName": "/aws/elasticbeanstalk/log-group-aaa/var/log/application/application.log",
-            "metricFilterCount": 0,
-            "retentionInDays": 5,
-            "storedBytes": 483982
-          }
-        ]
-      }
-    headers:
-      Content-Type:
-      - application/x-amz-json-1.1
-    status: 200 OK
-    code: 200
-    duration: ""
+    - id: 0
+      request:
+        proto: ""
+        proto_major: 0
+        proto_minor: 0
+        content_length: 0
+        transfer_encoding: []
+        trailer: {}
+        host: ""
+        remote_addr: ""
+        request_uri: ""
+        body: '{"limit":50}'
+        form: {}
+        headers:
+            Content-Type:
+                - application/x-amz-json-1.1
+            X-Amz-Target:
+                - Logs_20140328.DescribeLogGroups
+        url: https://logs.us-west-2.amazonaws.com/
+        method: POST
+      response:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        transfer_encoding: []
+        trailer: {}
+        content_length: -1
+        uncompressed: true
+        body: |-
+            {
+              "logGroups": [
+                {
+                  "arn": "arn:aws:logs:us-west-2:0000000000:log-group:/aws/cloudfront/LambdaEdge/AAAAAAAAAAAAAA:*",
+                  "creationTime": 1111111111111,
+                  "logGroupName": "/aws/cloudfront/LambdaEdge/AAAAAAAAAAAAAA",
+                  "metricFilterCount": 0,
+                  "retentionInDays": 1,
+                  "storedBytes": 0
+                },
+                {
+                  "arn": "arn:aws:logs:us-west-2:0000000000:log-group:/aws/elasticbeanstalk/log-group-aaa/var/log/httpd/access.log:*",
+                  "creationTime": 1111111111111,
+                  "logGroupName": "/aws/elasticbeanstalk/log-group-aaa/var/log/httpd/access.log",
+                  "metricFilterCount": 0,
+                  "retentionInDays": 7,
+                  "storedBytes": 0
+                },
+                {
+                  "arn": "arn:aws:logs:us-west-2:0000000000:log-group:/aws/elasticbeanstalk/log-group-bbb/var/log/apache/error.log:*",
+                  "creationTime": 1111111111111,
+                  "logGroupName": "/aws/elasticbeanstalk/log-group-bbb/var/log/apache/error.log",
+                  "metricFilterCount": 0,
+                  "storedBytes": 97530
+                }
+              ],
+              "nextToken": "/aws/elasticbeanstalk/log-group-bbb/var/log/apache/error.log"
+            }
+        headers:
+            Content-Type:
+                - application/x-amz-json-1.1
+        status: 200 OK
+        code: 200
+        duration: 466.95425ms
+    - id: 1
+      request:
+        proto: ""
+        proto_major: 0
+        proto_minor: 0
+        content_length: 0
+        transfer_encoding: []
+        trailer: {}
+        host: ""
+        remote_addr: ""
+        request_uri: ""
+        body: '{"limit":50,"nextToken":"/aws/elasticbeanstalk/log-group-bbb/var/log/apache/error.log"}'
+        form: {}
+        headers:
+            Content-Type:
+                - application/x-amz-json-1.1
+            X-Amz-Target:
+                - Logs_20140328.DescribeLogGroups
+        url: https://logs.us-west-2.amazonaws.com/
+        method: POST
+      response:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        transfer_encoding: []
+        trailer: {}
+        content_length: -1
+        uncompressed: true
+        body: |-
+            {
+              "logGroups": [
+                {
+                  "arn": "arn:aws:logs:us-west-2:0000000000:log-group:/aws/elasticbeanstalk/log-group-bbb/var/log/application/application.log:*",
+                  "creationTime": 1111111111111,
+                  "logGroupName": "/aws/elasticbeanstalk/log-group-bbb/var/log/application/application.log",
+                  "metricFilterCount": 0,
+                  "retentionInDays": 14,
+                  "storedBytes": 62664
+                },
+                {
+                  "arn": "arn:aws:logs:us-west-2:0000000000:log-group:/aws/elasticbeanstalk/log-group-aaa/var/log/eb-activity.log:*",
+                  "creationTime": 1111111111111,
+                  "logGroupName": "/aws/elasticbeanstalk/log-group-aaa/var/log/eb-activity.log",
+                  "metricFilterCount": 0,
+                  "retentionInDays": 5,
+                  "storedBytes": 754289
+                },
+                {
+                  "arn": "arn:aws:logs:us-west-2:0000000000:log-group:/aws/elasticbeanstalk/log-group-aaa/var/log/application/application.log:*",
+                  "creationTime": 1111111111111,
+                  "logGroupName": "/aws/elasticbeanstalk/log-group-aaa/var/log/application/application.log",
+                  "metricFilterCount": 0,
+                  "retentionInDays": 5,
+                  "storedBytes": 483982
+                }
+              ]
+            }
+        headers:
+            Content-Type:
+                - application/x-amz-json-1.1
+        status: 200 OK
+        code: 200
+        duration: 348.597458ms

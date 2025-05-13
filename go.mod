@@ -21,9 +21,9 @@ require (
 	github.com/aws/smithy-go v1.22.3
 	github.com/bradleyjkemp/cupaloy v2.3.0+incompatible
 	github.com/deanishe/awgo v0.29.1
-	github.com/dnaeon/go-vcr v1.2.0
 	github.com/iancoleman/strcase v0.3.0
-	github.com/stretchr/testify v1.10.0
+	github.com/stretchr/testify v1.7.0
+	gopkg.in/dnaeon/go-vcr.v4 v4.0.2
 	gopkg.in/ini.v1 v1.67.0
 	gopkg.in/yaml.v2 v2.4.0
 )

@@ -1,116 +1,129 @@
 ---
-version: 1
+version: 2
 interactions:
-- request:
-    body: Action=DescribeApplications&Version=2010-12-01
-    form:
-      Action:
-      - DescribeApplications
-      Version:
-      - "2010-12-01"
-    headers:
-      Content-Type:
-      - application/x-www-form-urlencoded
-    url: https://elasticbeanstalk.us-east-1.amazonaws.com/
-    method: POST
-  response:
-    body: |
-      <DescribeApplicationsResponse xmlns="http://elasticbeanstalk.amazonaws.com/docs/2010-12-01/">
-        <DescribeApplicationsResult>
-          <Applications>
-            <member>
-              <ConfigurationTemplates/>
-              <DateCreated>2020-01-01T00:00:00.000Z</DateCreated>
-              <Versions>
-                <member>11111111</member>
-                <member>22222222</member>
-                <member>00000000</member>
-              </Versions>
-              <ResourceLifecycleConfig>
-                <ServiceRole>arn:aws:iam::0000000000:role/aws-elasticbeanstalk-service-role</ServiceRole>
-                <VersionLifecycleConfig>
-                  <MaxAgeRule>
-                    <MaxAgeInDays>14</MaxAgeInDays>
-                    <DeleteSourceFromS3>true</DeleteSourceFromS3>
-                    <Enabled>false</Enabled>
-                  </MaxAgeRule>
-                  <MaxCountRule>
-                    <DeleteSourceFromS3>true</DeleteSourceFromS3>
-                    <MaxCount>7</MaxCount>
-                    <Enabled>true</Enabled>
-                  </MaxCountRule>
-                </VersionLifecycleConfig>
-              </ResourceLifecycleConfig>
-              <ApplicationArn>arn:aws:elasticbeanstalk:us-east-1:0000000000:application/App1</ApplicationArn>
-              <ApplicationName>App1</ApplicationName>
-              <DateUpdated>2020-01-01T00:00:00.000Z</DateUpdated>
-            </member>
-            <member>
-              <ConfigurationTemplates/>
-              <DateCreated>2020-01-01T00:00:00.000Z</DateCreated>
-              <Versions>
-                <member>11111111</member>
-                <member>22222222</member>
-                <member>00000000</member>
-              </Versions>
-              <ResourceLifecycleConfig>
-                <ServiceRole>arn:aws:iam::0000000000:role/aws-elasticbeanstalk-service-role</ServiceRole>
-                <VersionLifecycleConfig>
-                  <MaxAgeRule>
-                    <MaxAgeInDays>7</MaxAgeInDays>
-                    <DeleteSourceFromS3>true</DeleteSourceFromS3>
-                    <Enabled>false</Enabled>
-                  </MaxAgeRule>
-                  <MaxCountRule>
-                    <DeleteSourceFromS3>true</DeleteSourceFromS3>
-                    <MaxCount>20</MaxCount>
-                    <Enabled>true</Enabled>
-                  </MaxCountRule>
-                </VersionLifecycleConfig>
-              </ResourceLifecycleConfig>
-              <Description />
-              <ApplicationArn>arn:aws:elasticbeanstalk:us-east-1:0000000000:application/App2</ApplicationArn>
-              <ApplicationName>App2</ApplicationName>
-              <DateUpdated>2020-01-01T00:00:00.000Z</DateUpdated>
-            </member>
-            <member>
-              <ConfigurationTemplates/>
-              <DateCreated>2020-01-01T00:00:00.000Z</DateCreated>
-              <Versions>
-                <member>Sample Application</member>
-              </Versions>
-              <ResourceLifecycleConfig>
-                <VersionLifecycleConfig>
-                  <MaxAgeRule>
-                    <MaxAgeInDays>60</MaxAgeInDays>
-                    <DeleteSourceFromS3>false</DeleteSourceFromS3>
-                    <Enabled>false</Enabled>
-                  </MaxAgeRule>
-                  <MaxCountRule>
-                    <DeleteSourceFromS3>false</DeleteSourceFromS3>
-                    <MaxCount>200</MaxCount>
-                    <Enabled>false</Enabled>
-                  </MaxCountRule>
-                </VersionLifecycleConfig>
-              </ResourceLifecycleConfig>
-              <Description>Description for App3</Description>
-              <ApplicationArn>arn:aws:elasticbeanstalk:us-east-1:0000000000:application/App3</ApplicationArn>
-              <ApplicationName>App3</ApplicationName>
-              <DateUpdated>2020-01-01T00:00:00.000Z</DateUpdated>
-            </member>
-          </Applications>
-        </DescribeApplicationsResult>
-        <ResponseMetadata>
-          <RequestId>00000000-0000-0000-0000-000000000000</RequestId>
-        </ResponseMetadata>
-      </DescribeApplicationsResponse>
-    headers:
-      Connection:
-      - keep-alive
-      Content-Type:
-      - text/xml
-      Vary:
-      - accept-encoding
-    status: 200 OK
-    code: 200
-    duration: ""
+    - id: 0
+      request:
+        proto: ""
+        proto_major: 0
+        proto_minor: 0
+        content_length: 0
+        transfer_encoding: []
+        trailer: {}
+        host: ""
+        remote_addr: ""
+        request_uri: ""
+        body: Action=DescribeApplications&Version=2010-12-01
+        form:
+            Action:
+                - DescribeApplications
+            Version:
+                - "2010-12-01"
+        headers:
+            Content-Type:
+                - application/x-www-form-urlencoded
+        url: https://elasticbeanstalk.us-east-1.amazonaws.com/
+        method: POST
+      response:
+        proto: HTTP/2.0
+        proto_major: 2
+        proto_minor: 0
+        transfer_encoding: []
+        trailer: {}
+        content_length: 316
+        uncompressed: false
+        body: |
+            <DescribeApplicationsResponse xmlns="http://elasticbeanstalk.amazonaws.com/docs/2010-12-01/">
+              <DescribeApplicationsResult>
+                <Applications>
+                  <member>
+                    <ConfigurationTemplates/>
+                    <DateCreated>2020-01-01T00:00:00.000Z</DateCreated>
+                    <Versions>
+                      <member>00000000</member>
+                      <member>11111111</member>
+                      <member>22222222</member>
+                    </Versions>
+                    <ResourceLifecycleConfig>
+                      <ServiceRole>arn:aws:iam::0000000000:role/aws-elasticbeanstalk-service-role</ServiceRole>
+                      <VersionLifecycleConfig>
+                        <MaxAgeRule>
+                          <MaxAgeInDays>14</MaxAgeInDays>
+                          <DeleteSourceFromS3>true</DeleteSourceFromS3>
+                          <Enabled>false</Enabled>
+                        </MaxAgeRule>
+                        <MaxCountRule>
+                          <DeleteSourceFromS3>true</DeleteSourceFromS3>
+                          <MaxCount>7</MaxCount>
+                          <Enabled>true</Enabled>
+                        </MaxCountRule>
+                      </VersionLifecycleConfig>
+                    </ResourceLifecycleConfig>
+                    <ApplicationArn>arn:aws:elasticbeanstalk:us-east-1:0000000000:application/App1</ApplicationArn>
+                    <ApplicationName>App1</ApplicationName>
+                    <DateUpdated>2020-01-01T00:00:00.000Z</DateUpdated>
+                  </member>
+                  <member>
+                    <ConfigurationTemplates/>
+                    <DateCreated>2020-01-01T00:00:00.000Z</DateCreated>
+                    <Versions>
+                      <member>00000000</member>
+                      <member>11111111</member>
+                      <member>22222222</member>
+                    </Versions>
+                    <ResourceLifecycleConfig>
+                      <ServiceRole>arn:aws:iam::0000000000:role/aws-elasticbeanstalk-service-role</ServiceRole>
+                      <VersionLifecycleConfig>
+                        <MaxAgeRule>
+                          <MaxAgeInDays>7</MaxAgeInDays>
+                          <DeleteSourceFromS3>true</DeleteSourceFromS3>
+                          <Enabled>false</Enabled>
+                        </MaxAgeRule>
+                        <MaxCountRule>
+                          <DeleteSourceFromS3>true</DeleteSourceFromS3>
+                          <MaxCount>20</MaxCount>
+                          <Enabled>true</Enabled>
+                        </MaxCountRule>
+                      </VersionLifecycleConfig>
+                    </ResourceLifecycleConfig>
+                    <Description />
+                    <ApplicationArn>arn:aws:elasticbeanstalk:us-east-1:0000000000:application/App2</ApplicationArn>
+                    <ApplicationName>App2</ApplicationName>
+                    <DateUpdated>2020-01-01T00:00:00.000Z</DateUpdated>
+                  </member>
+                  <member>
+                    <ConfigurationTemplates/>
+                    <DateCreated>2020-01-01T00:00:00.000Z</DateCreated>
+                    <Versions>
+                      <member>00000000</member>
+                    </Versions>
+                    <ResourceLifecycleConfig>
+                      <VersionLifecycleConfig>
+                        <MaxAgeRule>
+                          <MaxAgeInDays>60</MaxAgeInDays>
+                          <DeleteSourceFromS3>false</DeleteSourceFromS3>
+                          <Enabled>false</Enabled>
+                        </MaxAgeRule>
+                        <MaxCountRule>
+                          <DeleteSourceFromS3>false</DeleteSourceFromS3>
+                          <MaxCount>200</MaxCount>
+                          <Enabled>false</Enabled>
+                        </MaxCountRule>
+                      </VersionLifecycleConfig>
+                    </ResourceLifecycleConfig>
+                    <Description>Description for App3</Description>
+                    <ApplicationArn>arn:aws:elasticbeanstalk:us-east-1:0000000000:application/App3</ApplicationArn>
+                    <ApplicationName>App3</ApplicationName>
+                    <DateUpdated>2020-01-01T00:00:00.000Z</DateUpdated>
+                  </member>
+                </Applications>
+              </DescribeApplicationsResult>
+              <ResponseMetadata>
+                <RequestId>00000000-0000-0000-0000-000000000000</RequestId>
+              </ResponseMetadata>
+            </DescribeApplicationsResponse>
+        headers:
+            Content-Type:
+                - text/xml
+        status: 200 OK
+        code: 200
+        duration: 381.053583ms

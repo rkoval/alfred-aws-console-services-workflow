@@ -1,182 +1,197 @@
 ---
-version: 1
+version: 2
 interactions:
-- request:
-    body: Action=DescribeCacheClusters&MaxRecords=100&Version=2015-02-02
-    form:
-      Action:
-      - DescribeCacheClusters
-      MaxRecords:
-      - "100"
-      Version:
-      - "2015-02-02"
-    headers:
-      Content-Type:
-      - application/x-www-form-urlencoded
-    url: https://elasticache.us-west-2.amazonaws.com/
-    method: POST
-  response:
-    body: |
-      <DescribeCacheClustersResponse xmlns="http://elasticache.amazonaws.com/doc/2015-02-02/">
-        <DescribeCacheClustersResult>
-          <CacheClusters>
-            <CacheCluster>
-              <LogDeliveryConfigurations/>
-              <CacheSubnetGroupName>default</CacheSubnetGroupName>
-              <PreferredAvailabilityZone>us-west-2a</PreferredAvailabilityZone>
-              <AtRestEncryptionEnabled>false</AtRestEncryptionEnabled>
-              <DeleteProtection>false</DeleteProtection>
-              <CacheClusterCreateTime>2020-01-01T00:00:00.000Z</CacheClusterCreateTime>
-              <SnapshotRetentionLimit>0</SnapshotRetentionLimit>
-              <CacheClusterStatus>available</CacheClusterStatus>
-              <NumCacheNodes>1</NumCacheNodes>
-              <Engine>redis</Engine>
-              <CacheSecurityGroups/>
-              <CacheParameterGroup>
-                <ParameterApplyStatus>in-sync</ParameterApplyStatus>
-                <CacheNodeIdsToReboot/>
-                <CacheParameterGroupName>default.redis1.0</CacheParameterGroupName>
-              </CacheParameterGroup>
-              <ARN>arn:aws:elasticache:us-west-2:0000000000:cluster:redis-cluster-a</ARN>
-              <EngineVersion>4.0.0</EngineVersion>
-              <CacheClusterId>redis-cluster-a</CacheClusterId>
-              <AuthTokenEnabled>false</AuthTokenEnabled>
-              <ClientDownloadLandingPage>https://console.aws.amazon.com/elasticache/home#client-download:</ClientDownloadLandingPage>
-              <SnapshotWindow>07:00-08:00</SnapshotWindow>
-              <CacheNodeType>cache.t3.small</CacheNodeType>
-              <PendingModifiedValues/>
-              <PreferredMaintenanceWindow>sat:09:00-sat:10:00</PreferredMaintenanceWindow>
-              <SecurityGroups>
-                <member>
-                  <SecurityGroupId>sg-aaaaaaaaaa</SecurityGroupId>
-                  <Status>active</Status>
-                </member>
-              </SecurityGroups>
-              <TransitEncryptionEnabled>false</TransitEncryptionEnabled>
-              <AutoMinorVersionUpgrade>true</AutoMinorVersionUpgrade>
-              <ReplicationGroupLogDeliveryEnabled>false</ReplicationGroupLogDeliveryEnabled>
-            </CacheCluster>
-            <CacheCluster>
-              <LogDeliveryConfigurations/>
-              <CacheSubnetGroupName>default</CacheSubnetGroupName>
-              <PreferredAvailabilityZone>us-west-2a</PreferredAvailabilityZone>
-              <AtRestEncryptionEnabled>false</AtRestEncryptionEnabled>
-              <DeleteProtection>false</DeleteProtection>
-              <CacheClusterCreateTime>2020-01-01T00:00:00.000Z</CacheClusterCreateTime>
-              <SnapshotRetentionLimit>0</SnapshotRetentionLimit>
-              <CacheClusterStatus>available</CacheClusterStatus>
-              <NumCacheNodes>1</NumCacheNodes>
-              <Engine>redis</Engine>
-              <CacheSecurityGroups/>
-              <CacheParameterGroup>
-                <ParameterApplyStatus>in-sync</ParameterApplyStatus>
-                <CacheNodeIdsToReboot/>
-                <CacheParameterGroupName>default.redis1.0</CacheParameterGroupName>
-              </CacheParameterGroup>
-              <ARN>arn:aws:elasticache:us-west-2:0000000000:cluster:redis-cluster-b</ARN>
-              <EngineVersion>5.0.0</EngineVersion>
-              <CacheClusterId>redis-cluster-b</CacheClusterId>
-              <AuthTokenEnabled>false</AuthTokenEnabled>
-              <ClientDownloadLandingPage>https://console.aws.amazon.com/elasticache/home#client-download:</ClientDownloadLandingPage>
-              <SnapshotWindow>09:30-10:30</SnapshotWindow>
-              <CacheNodeType>cache.t3.micro</CacheNodeType>
-              <PendingModifiedValues/>
-              <PreferredMaintenanceWindow>wed:07:00-wed:08:00</PreferredMaintenanceWindow>
-              <SecurityGroups>
-                <member>
-                  <SecurityGroupId>sg-aaaaaaaaaa</SecurityGroupId>
-                  <Status>active</Status>
-                </member>
-              </SecurityGroups>
-              <TransitEncryptionEnabled>false</TransitEncryptionEnabled>
-              <AutoMinorVersionUpgrade>true</AutoMinorVersionUpgrade>
-              <ReplicationGroupLogDeliveryEnabled>false</ReplicationGroupLogDeliveryEnabled>
-            </CacheCluster>
-            <CacheCluster>
-              <LogDeliveryConfigurations/>
-              <CacheSubnetGroupName>default</CacheSubnetGroupName>
-              <PreferredAvailabilityZone>us-west-2a</PreferredAvailabilityZone>
-              <AtRestEncryptionEnabled>false</AtRestEncryptionEnabled>
-              <DeleteProtection>false</DeleteProtection>
-              <CacheClusterCreateTime>2020-01-01T00:00:00.000Z</CacheClusterCreateTime>
-              <SnapshotRetentionLimit>0</SnapshotRetentionLimit>
-              <CacheClusterStatus>available</CacheClusterStatus>
-              <NumCacheNodes>1</NumCacheNodes>
-              <Engine>redis</Engine>
-              <CacheSecurityGroups/>
-              <CacheParameterGroup>
-                <ParameterApplyStatus>in-sync</ParameterApplyStatus>
-                <CacheNodeIdsToReboot/>
-                <CacheParameterGroupName>default.redis1.0</CacheParameterGroupName>
-              </CacheParameterGroup>
-              <ARN>arn:aws:elasticache:us-west-2:0000000000:cluster:redis-cluster-c</ARN>
-              <EngineVersion>3.0.0</EngineVersion>
-              <CacheClusterId>redis-cluster-c</CacheClusterId>
-              <AuthTokenEnabled>false</AuthTokenEnabled>
-              <ClientDownloadLandingPage>https://console.aws.amazon.com/elasticache/home#client-download:</ClientDownloadLandingPage>
-              <SnapshotWindow>10:30-11:30</SnapshotWindow>
-              <CacheNodeType>cache.t2.small</CacheNodeType>
-              <PendingModifiedValues/>
-              <PreferredMaintenanceWindow>wed:07:00-wed:08:00</PreferredMaintenanceWindow>
-              <SecurityGroups>
-                <member>
-                  <SecurityGroupId>sg-aaaaaaaaaa</SecurityGroupId>
-                  <Status>active</Status>
-                </member>
-              </SecurityGroups>
-              <TransitEncryptionEnabled>false</TransitEncryptionEnabled>
-              <AutoMinorVersionUpgrade>true</AutoMinorVersionUpgrade>
-              <ReplicationGroupLogDeliveryEnabled>false</ReplicationGroupLogDeliveryEnabled>
-            </CacheCluster>
-            <CacheCluster>
-              <LogDeliveryConfigurations/>
-              <CacheSubnetGroupName>default</CacheSubnetGroupName>
-              <PreferredAvailabilityZone>us-west-2b</PreferredAvailabilityZone>
-              <AtRestEncryptionEnabled>false</AtRestEncryptionEnabled>
-              <ConfigurationEndpoint>
-                <Address>memcached-cluster-a.aaaaaaa.subdomain.us-west-2.service.amazonaws.com</Address>
-                <Port>11211</Port>
-              </ConfigurationEndpoint>
-              <DeleteProtection>false</DeleteProtection>
-              <CacheClusterCreateTime>2020-01-01T00:00:00.000Z</CacheClusterCreateTime>
-              <CacheClusterStatus>available</CacheClusterStatus>
-              <NumCacheNodes>1</NumCacheNodes>
-              <Engine>memcached</Engine>
-              <CacheSecurityGroups/>
-              <CacheParameterGroup>
-                <ParameterApplyStatus>in-sync</ParameterApplyStatus>
-                <CacheNodeIdsToReboot/>
-                <CacheParameterGroupName>default.memcached1.6</CacheParameterGroupName>
-              </CacheParameterGroup>
-              <ARN>arn:aws:elasticache:us-west-2:0000000000:cluster:memcached-cluster-a</ARN>
-              <EngineVersion>1.6.6</EngineVersion>
-              <CacheClusterId>memcached-cluster-a</CacheClusterId>
-              <AuthTokenEnabled>false</AuthTokenEnabled>
-              <ClientDownloadLandingPage>https://console.aws.amazon.com/elasticache/home#client-download:</ClientDownloadLandingPage>
-              <CacheNodeType>cache.t2.micro</CacheNodeType>
-              <PendingModifiedValues/>
-              <PreferredMaintenanceWindow>fri:08:30-fri:09:30</PreferredMaintenanceWindow>
-              <SecurityGroups>
-                <member>
-                  <SecurityGroupId>sg-aaaaaaaaaa</SecurityGroupId>
-                  <Status>active</Status>
-                </member>
-              </SecurityGroups>
-              <TransitEncryptionEnabled>false</TransitEncryptionEnabled>
-              <AutoMinorVersionUpgrade>true</AutoMinorVersionUpgrade>
-              <ReplicationGroupLogDeliveryEnabled>false</ReplicationGroupLogDeliveryEnabled>
-            </CacheCluster>
-          </CacheClusters>
-        </DescribeCacheClustersResult>
-        <ResponseMetadata>
-          <RequestId>00000000-0000-0000-0000-000000000000</RequestId>
-        </ResponseMetadata>
-      </DescribeCacheClustersResponse>
-    headers:
-      Content-Type:
-      - text/xml
-      Vary:
-      - accept-encoding
-    status: 200 OK
-    code: 200
-    duration: ""
+    - id: 0
+      request:
+        proto: ""
+        proto_major: 0
+        proto_minor: 0
+        content_length: 0
+        transfer_encoding: []
+        trailer: {}
+        host: ""
+        remote_addr: ""
+        request_uri: ""
+        body: Action=DescribeCacheClusters&MaxRecords=100&Version=2015-02-02
+        form:
+            Action:
+                - DescribeCacheClusters
+            MaxRecords:
+                - "100"
+            Version:
+                - "2015-02-02"
+        headers:
+            Content-Type:
+                - application/x-www-form-urlencoded
+        url: https://elasticache.us-west-2.amazonaws.com/
+        method: POST
+      response:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        transfer_encoding: []
+        trailer: {}
+        content_length: 2346
+        uncompressed: false
+        body: |
+            <DescribeCacheClustersResponse xmlns="http://elasticache.amazonaws.com/doc/2015-02-02/">
+              <DescribeCacheClustersResult>
+                <CacheClusters>
+                  <CacheCluster>
+                    <LogDeliveryConfigurations/>
+                    <CacheSubnetGroupName>default</CacheSubnetGroupName>
+                    <PreferredAvailabilityZone>us-west-2a</PreferredAvailabilityZone>
+                    <AtRestEncryptionEnabled>false</AtRestEncryptionEnabled>
+                    <DeleteProtection>false</DeleteProtection>
+                    <CacheClusterCreateTime>2020-01-01T00:00:00.000Z</CacheClusterCreateTime>
+                    <SnapshotRetentionLimit>0</SnapshotRetentionLimit>
+                    <CacheClusterStatus>available</CacheClusterStatus>
+                    <NumCacheNodes>1</NumCacheNodes>
+                    <Engine>redis</Engine>
+                    <CacheSecurityGroups/>
+                    <CacheParameterGroup>
+                      <ParameterApplyStatus>in-sync</ParameterApplyStatus>
+                      <CacheNodeIdsToReboot/>
+                      <CacheParameterGroupName>default.redis1.0</CacheParameterGroupName>
+                    </CacheParameterGroup>
+                    <ARN>arn:aws:elasticache:us-west-2:0000000000:cluster:redis-cluster-a</ARN>
+                    <EngineVersion>4.0.0</EngineVersion>
+                    <CacheClusterId>redis-cluster-a</CacheClusterId>
+                    <AuthTokenEnabled>false</AuthTokenEnabled>
+                    <ClientDownloadLandingPage>https://console.aws.amazon.com/elasticache/home#client-download:</ClientDownloadLandingPage>
+                    <SnapshotWindow>07:00-08:00</SnapshotWindow>
+                    <CacheNodeType>cache.t3.small</CacheNodeType>
+                    <PendingModifiedValues/>
+                    <PreferredMaintenanceWindow>sat:09:00-sat:10:00</PreferredMaintenanceWindow>
+                    <SecurityGroups>
+                      <member>
+                        <SecurityGroupId>sg-aaaaaaaaaa</SecurityGroupId>
+                        <Status>active</Status>
+                      </member>
+                    </SecurityGroups>
+                    <TransitEncryptionEnabled>false</TransitEncryptionEnabled>
+                    <AutoMinorVersionUpgrade>true</AutoMinorVersionUpgrade>
+                    <ReplicationGroupLogDeliveryEnabled>false</ReplicationGroupLogDeliveryEnabled>
+                  </CacheCluster>
+                  <CacheCluster>
+                    <LogDeliveryConfigurations/>
+                    <CacheSubnetGroupName>default</CacheSubnetGroupName>
+                    <PreferredAvailabilityZone>us-west-2a</PreferredAvailabilityZone>
+                    <AtRestEncryptionEnabled>false</AtRestEncryptionEnabled>
+                    <DeleteProtection>false</DeleteProtection>
+                    <CacheClusterCreateTime>2020-01-01T00:00:00.000Z</CacheClusterCreateTime>
+                    <SnapshotRetentionLimit>0</SnapshotRetentionLimit>
+                    <CacheClusterStatus>available</CacheClusterStatus>
+                    <NumCacheNodes>1</NumCacheNodes>
+                    <Engine>redis</Engine>
+                    <CacheSecurityGroups/>
+                    <CacheParameterGroup>
+                      <ParameterApplyStatus>in-sync</ParameterApplyStatus>
+                      <CacheNodeIdsToReboot/>
+                      <CacheParameterGroupName>default.redis1.0</CacheParameterGroupName>
+                    </CacheParameterGroup>
+                    <ARN>arn:aws:elasticache:us-west-2:0000000000:cluster:redis-cluster-b</ARN>
+                    <EngineVersion>5.0.0</EngineVersion>
+                    <CacheClusterId>redis-cluster-b</CacheClusterId>
+                    <AuthTokenEnabled>false</AuthTokenEnabled>
+                    <ClientDownloadLandingPage>https://console.aws.amazon.com/elasticache/home#client-download:</ClientDownloadLandingPage>
+                    <SnapshotWindow>09:30-10:30</SnapshotWindow>
+                    <CacheNodeType>cache.t3.micro</CacheNodeType>
+                    <PendingModifiedValues/>
+                    <PreferredMaintenanceWindow>wed:07:00-wed:08:00</PreferredMaintenanceWindow>
+                    <SecurityGroups>
+                      <member>
+                        <SecurityGroupId>sg-aaaaaaaaaa</SecurityGroupId>
+                        <Status>active</Status>
+                      </member>
+                    </SecurityGroups>
+                    <TransitEncryptionEnabled>false</TransitEncryptionEnabled>
+                    <AutoMinorVersionUpgrade>true</AutoMinorVersionUpgrade>
+                    <ReplicationGroupLogDeliveryEnabled>false</ReplicationGroupLogDeliveryEnabled>
+                  </CacheCluster>
+                  <CacheCluster>
+                    <LogDeliveryConfigurations/>
+                    <CacheSubnetGroupName>default</CacheSubnetGroupName>
+                    <PreferredAvailabilityZone>us-west-2a</PreferredAvailabilityZone>
+                    <AtRestEncryptionEnabled>false</AtRestEncryptionEnabled>
+                    <DeleteProtection>false</DeleteProtection>
+                    <CacheClusterCreateTime>2020-01-01T00:00:00.000Z</CacheClusterCreateTime>
+                    <SnapshotRetentionLimit>0</SnapshotRetentionLimit>
+                    <CacheClusterStatus>available</CacheClusterStatus>
+                    <NumCacheNodes>1</NumCacheNodes>
+                    <Engine>redis</Engine>
+                    <CacheSecurityGroups/>
+                    <CacheParameterGroup>
+                      <ParameterApplyStatus>in-sync</ParameterApplyStatus>
+                      <CacheNodeIdsToReboot/>
+                      <CacheParameterGroupName>default.redis1.0</CacheParameterGroupName>
+                    </CacheParameterGroup>
+                    <ARN>arn:aws:elasticache:us-west-2:0000000000:cluster:redis-cluster-c</ARN>
+                    <EngineVersion>3.0.0</EngineVersion>
+                    <CacheClusterId>redis-cluster-c</CacheClusterId>
+                    <AuthTokenEnabled>false</AuthTokenEnabled>
+                    <ClientDownloadLandingPage>https://console.aws.amazon.com/elasticache/home#client-download:</ClientDownloadLandingPage>
+                    <SnapshotWindow>10:30-11:30</SnapshotWindow>
+                    <CacheNodeType>cache.t2.small</CacheNodeType>
+                    <PendingModifiedValues/>
+                    <PreferredMaintenanceWindow>wed:07:00-wed:08:00</PreferredMaintenanceWindow>
+                    <SecurityGroups>
+                      <member>
+                        <SecurityGroupId>sg-aaaaaaaaaa</SecurityGroupId>
+                        <Status>active</Status>
+                      </member>
+                    </SecurityGroups>
+                    <TransitEncryptionEnabled>false</TransitEncryptionEnabled>
+                    <AutoMinorVersionUpgrade>true</AutoMinorVersionUpgrade>
+                    <ReplicationGroupLogDeliveryEnabled>false</ReplicationGroupLogDeliveryEnabled>
+                  </CacheCluster>
+                  <CacheCluster>
+                    <LogDeliveryConfigurations/>
+                    <CacheSubnetGroupName>default</CacheSubnetGroupName>
+                    <PreferredAvailabilityZone>us-west-2b</PreferredAvailabilityZone>
+                    <AtRestEncryptionEnabled>false</AtRestEncryptionEnabled>
+                    <ConfigurationEndpoint>
+                      <Address>memcached-cluster-a.aaaaaaa.subdomain.us-west-2.service.amazonaws.com</Address>
+                      <Port>11211</Port>
+                    </ConfigurationEndpoint>
+                    <DeleteProtection>false</DeleteProtection>
+                    <CacheClusterCreateTime>2020-01-01T00:00:00.000Z</CacheClusterCreateTime>
+                    <CacheClusterStatus>available</CacheClusterStatus>
+                    <NumCacheNodes>1</NumCacheNodes>
+                    <Engine>memcached</Engine>
+                    <CacheSecurityGroups/>
+                    <CacheParameterGroup>
+                      <ParameterApplyStatus>in-sync</ParameterApplyStatus>
+                      <CacheNodeIdsToReboot/>
+                      <CacheParameterGroupName>default.memcached1.6</CacheParameterGroupName>
+                    </CacheParameterGroup>
+                    <ARN>arn:aws:elasticache:us-west-2:0000000000:cluster:memcached-cluster-a</ARN>
+                    <EngineVersion>1.6.6</EngineVersion>
+                    <CacheClusterId>memcached-cluster-a</CacheClusterId>
+                    <AuthTokenEnabled>false</AuthTokenEnabled>
+                    <ClientDownloadLandingPage>https://console.aws.amazon.com/elasticache/home#client-download:</ClientDownloadLandingPage>
+                    <CacheNodeType>cache.t2.micro</CacheNodeType>
+                    <PendingModifiedValues/>
+                    <PreferredMaintenanceWindow>fri:08:30-fri:09:30</PreferredMaintenanceWindow>
+                    <SecurityGroups>
+                      <member>
+                        <SecurityGroupId>sg-aaaaaaaaaa</SecurityGroupId>
+                        <Status>active</Status>
+                      </member>
+                    </SecurityGroups>
+                    <TransitEncryptionEnabled>false</TransitEncryptionEnabled>
+                    <AutoMinorVersionUpgrade>true</AutoMinorVersionUpgrade>
+                    <ReplicationGroupLogDeliveryEnabled>false</ReplicationGroupLogDeliveryEnabled>
+                  </CacheCluster>
+                </CacheClusters>
+              </DescribeCacheClustersResult>
+              <ResponseMetadata>
+                <RequestId>00000000-0000-0000-0000-000000000000</RequestId>
+              </ResponseMetadata>
+            </DescribeCacheClustersResponse>
+        headers:
+            Content-Type:
+                - text/xml
+        status: 200 OK
+        code: 200
+        duration: 452.898375ms

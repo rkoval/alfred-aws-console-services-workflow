@@ -1,43 +1,62 @@
 ---
-version: 1
+version: 2
 interactions:
-- request:
-    body: '{"maxResults":100}'
-    form: {}
-    headers:
-      Content-Type:
-      - application/x-amz-json-1.1
-      X-Amz-Target:
-      - CodePipeline_20150709.ListPipelines
-    url: https://codepipeline.us-west-2.amazonaws.com/
-    method: POST
-  response:
-    body: |-
-      {
-        "pipelines": [
+    - id: 0
+      request:
+        proto: ""
+        proto_major: 0
+        proto_minor: 0
+        content_length: 0
+        transfer_encoding: []
+        trailer: {}
+        host: ""
+        remote_addr: ""
+        request_uri: ""
+        body: '{"maxResults":100}'
+        form: {}
+        headers:
+            Content-Type:
+                - application/x-amz-json-1.1
+            X-Amz-Target:
+                - CodePipeline_20150709.ListPipelines
+        url: https://codepipeline.us-west-2.amazonaws.com/
+        method: POST
+      response:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        transfer_encoding: []
+        trailer: {}
+        content_length: 16
+        uncompressed: false
+        body: |-
             {
-                "created": 1655141810.526,
-                "name": "pipeline-name-1",
-                "updated": 1659011989.943,
-                "version": 3
-            },
-            {
-                "created": 1655133384.161,
-                "name": "pipeline-name-2",
-                "updated": 1658910465.794,
-                "version": 3
-            },
-            {
-                "created": 1658926290.414,
-                "name": "pipeline-name-3",
-                "updated": 1658926290.414,
-                "version": 1
+              "pipelines": [
+                {
+                  "created": 1655141810.526,
+                  "name": "pipeline-name-1",
+                  "updated": 1659011989.943,
+                  "version": 3
+                },
+                {
+                  "created": 1655133384.161,
+                  "name": "pipeline-name-2",
+                  "updated": 1658910465.794,
+                  "version": 3
+                },
+                {
+                  "created": 1658926290.414,
+                  "name": "pipeline-name-3",
+                  "updated": 1658926290.414,
+                  "version": 1
+                }
+              ]
             }
-        ]
-      }
-    headers:
-      Content-Type:
-      - application/x-amz-json-1.1
-    status: 200 OK
-    code: 200
-    duration: ""
+        headers:
+            Connection:
+                - keep-alive
+            Content-Type:
+                - application/x-amz-json-1.1
+        status: 200 OK
+        code: 200
+        duration: 411.103333ms

@@ -1,42 +1,60 @@
 ---
-version: 1
+version: 2
 interactions:
-- request:
-    body: ""
-    form: {}
-    headers:
-      Accept-Encoding:
-      - identity
-    url: https://s3.us-west-2.amazonaws.com/?x-id=ListBuckets
-    method: GET
-  response:
-    body: |-
-      <?xml version="1.0"?>
-      <ListAllMyBucketsResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
-        <Owner>
-          <ID>000000000000</ID>
-          <DisplayName>accountowner</DisplayName>
-        </Owner>
-        <Buckets>
-          <Bucket>
-            <Name>bucket-1</Name>
-            <CreationDate>2020-01-01T00:00:00.000Z</CreationDate>
-          </Bucket>
-          <Bucket>
-            <Name>bucket-2</Name>
-            <CreationDate>2020-01-01T00:00:00.000Z</CreationDate>
-          </Bucket>
-          <Bucket>
-            <Name>bucket-3</Name>
-            <CreationDate>2020-01-01T00:00:00.000Z</CreationDate>
-          </Bucket>
-        </Buckets>
-      </ListAllMyBucketsResult>
-    headers:
-      Content-Type:
-      - application/xml
-      Server:
-      - AmazonS3
-    status: 200 OK
-    code: 200
-    duration: ""
+    - id: 0
+      request:
+        proto: ""
+        proto_major: 0
+        proto_minor: 0
+        content_length: 0
+        transfer_encoding: []
+        trailer: {}
+        host: ""
+        remote_addr: ""
+        request_uri: ""
+        body: ""
+        form: {}
+        headers:
+            Accept-Encoding:
+                - identity
+        url: https://s3.us-west-2.amazonaws.com/?x-id=ListBuckets
+        method: GET
+      response:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        transfer_encoding:
+            - chunked
+        trailer: {}
+        content_length: -1
+        uncompressed: false
+        body: |-
+            <?xml version="1.0"?>
+            <ListAllMyBucketsResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+                <Owner>
+                <ID>000000000000</ID>
+                <DisplayName>accountowner</DisplayName>
+                </Owner>
+                <Buckets>
+                <Bucket>
+                    <Name>bucket-1</Name>
+                    <CreationDate>2020-01-01T00:00:00.000Z</CreationDate>
+                </Bucket>
+                <Bucket>
+                    <Name>bucket-2</Name>
+                    <CreationDate>2020-01-01T00:00:00.000Z</CreationDate>
+                </Bucket>
+                <Bucket>
+                    <Name>bucket-3</Name>
+                    <CreationDate>2020-01-01T00:00:00.000Z</CreationDate>
+                </Bucket>
+                </Buckets>
+            </ListAllMyBucketsResult>
+        headers:
+            Content-Type:
+                - application/xml
+            Server:
+                - AmazonS3
+        status: 200 OK
+        code: 200
+        duration: 544.999958ms
