@@ -642,30 +642,30 @@ var tcs []testCase = []testCase{
 		fixtureName: "../searchers/codepipeline_pipelines_test", // reuse test fixture from this other test
 	},
 	{
+		query: "@legacy-sso-direct-config-profile",
+	},
+	{
 		query: "@sso-profile1",
 	},
 	{
 		query: "@sso-profile2",
 	},
 	{
-		query: "@sso-profile3",
+		query: "@legacy-sso-direct-config-profile elasticbeanstalk",
 	},
 	{
-		query: "@sso-profile1 elasticbeanstalk",
+		query: "$eu-central-1 @legacy-sso-direct-config-profile elasticbeanstalk",
 	},
 	{
-		query: "$eu-central-1 @sso-profile1 elasticbeanstalk",
+		query:       "@legacy-sso-direct-config-profile elasticbeanstalk applications",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
+	},
+	{
+		query:       "elasticbeanstalk applications @legacy-sso-direct-config-profile",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
 	},
 	{
 		query:       "@sso-profile1 elasticbeanstalk applications",
-		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
-	},
-	{
-		query:       "elasticbeanstalk applications @sso-profile1",
-		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
-	},
-	{
-		query:       "@sso-profile2 elasticbeanstalk applications",
 		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
 	},
 }

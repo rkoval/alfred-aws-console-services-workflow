@@ -23,7 +23,7 @@
   }),
   (*aw.Item)({
     title: (string) (len=12) "sso-profile1",
-    subtitle: (*string)((len=17) "🌎 eu-central-1"),
+    subtitle: (*string)((len=14) "🌎 us-west-1"),
     match: (*string)(<nil>),
     uid: (*string)((len=12) "sso-profile1"),
     autocomplete: (*string)((len=49) "elasticbeanstalk applications App1 @sso-profile1 "),

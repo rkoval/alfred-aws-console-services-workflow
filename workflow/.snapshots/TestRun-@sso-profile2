@@ -1,7 +1,7 @@
 ([]*aw.Item) (len=1) {
   (*aw.Item)({
     title: (string) (len=12) "sso-profile2",
-    subtitle: (*string)((len=14) "🌎 us-west-1"),
+    subtitle: (*string)((len=19) "🌎 ap-northeast-1"),
     match: (*string)(<nil>),
     uid: (*string)((len=12) "sso-profile2"),
     autocomplete: (*string)((len=14) "@sso-profile2 "),
