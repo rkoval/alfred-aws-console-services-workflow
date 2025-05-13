@@ -37,15 +37,7 @@ func InitAWS(transport http.RoundTripper, profile *awsconfig.Profile, region *aw
 		regionLoadOptionsFunc,
 	)
 	if err != nil {
-		cfg = aws.Config{}
-		if profile != nil {
-			cfg.ConfigSources = append(cfg.ConfigSources, config.SharedConfig{
-				Profile: profile.Name,
-			})
-			if profile.Region != "" {
-				cfg.Region = profile.Region
-			}
-		}
+		panic(err)
 	}
 
 	if transport != nil {

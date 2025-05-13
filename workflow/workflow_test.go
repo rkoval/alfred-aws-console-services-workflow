@@ -1,7 +1,9 @@
 package workflow
 
 import (
+	"fmt"
 	"os"
+	"strings"
 	"testing"
 
 	"github.com/bradleyjkemp/cupaloy"
@@ -14,6 +16,7 @@ type testCase struct {
 	query                       string
 	fixtureName                 string
 	deleteItemArgBeforeSnapshot bool
+	expectedPanicMessage        string
 }
 
 var tcs []testCase = []testCase{
@@ -671,6 +674,20 @@ var tcs []testCase = []testCase{
 }
 
 func testWorkflow(t *testing.T, tc testCase, forceFetch, snapshot bool) []*aw.Item {
+	if tc.expectedPanicMessage != "" {
+		defer func() {
+			if r := recover(); r != nil {
+				panicMsg := fmt.Sprintf("%v", r)
+				if !strings.Contains(panicMsg, tc.expectedPanicMessage) {
+					t.Fatalf("Expected panic with message containing '%s', got '%s'", tc.expectedPanicMessage, panicMsg)
+				}
+				// panic matches expected message, test passes
+				return
+			}
+			t.Fatalf("Expected panic with message: %s, but no panic occurred", tc.expectedPanicMessage)
+		}()
+	}
+
 	updater := &tests.MockAlfredUpdater{}
 	wf := aw.New(aw.Update(updater))
 
@@ -714,7 +731,8 @@ func TestRunWithCache(t *testing.T) {
 func TestRunWithoutRegion(t *testing.T) {
 	tcs := []testCase{
 		{
-			query: "",
+			query:                "bogus-test-profile",
+			expectedPanicMessage: "failed to get shared config profile, bogus-test-profile",
 		},
 	}
 	awsProfile := os.Getenv("AWS_PROFILE")
