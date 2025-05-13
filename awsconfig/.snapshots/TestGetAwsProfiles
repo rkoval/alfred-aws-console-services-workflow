@@ -1,0 +1,42 @@
+([]map[string]string) (len=10) {
+  (map[string]string) (len=2) {
+    (string) (len=4) "name": (string) (len=12) "bogusprofile",
+    (string) (len=6) "region": (string) (len=5) "bogus"
+  },
+  (map[string]string) (len=2) {
+    (string) (len=4) "name": (string) (len=5) "china",
+    (string) (len=6) "region": (string) (len=10) "cn-north-1"
+  },
+  (map[string]string) (len=2) {
+    (string) (len=4) "name": (string) (len=7) "default",
+    (string) (len=6) "region": (string) (len=9) "us-west-2"
+  },
+  (map[string]string) (len=2) {
+    (string) (len=4) "name": (string) (len=32) "legacy-sso-direct-config-profile",
+    (string) (len=6) "region": (string) (len=12) "eu-central-1"
+  },
+  (map[string]string) (len=2) {
+    (string) (len=4) "name": (string) (len=8) "noregion",
+    (string) (len=6) "region": (string) ""
+  },
+  (map[string]string) (len=2) {
+    (string) (len=4) "name": (string) (len=8) "profile1",
+    (string) (len=6) "region": (string) (len=9) "us-east-1"
+  },
+  (map[string]string) (len=2) {
+    (string) (len=4) "name": (string) (len=8) "profile3",
+    (string) (len=6) "region": (string) (len=9) "sa-east-1"
+  },
+  (map[string]string) (len=2) {
+    (string) (len=4) "name": (string) (len=12) "sso-profile1",
+    (string) (len=6) "region": (string) (len=9) "us-west-1"
+  },
+  (map[string]string) (len=2) {
+    (string) (len=4) "name": (string) (len=12) "sso-profile2",
+    (string) (len=6) "region": (string) (len=14) "ap-northeast-1"
+  },
+  (map[string]string) (len=2) {
+    (string) (len=4) "name": (string) (len=5) "usgov",
+    (string) (len=6) "region": (string) (len=13) "us-gov-east-1"
+  }
+}

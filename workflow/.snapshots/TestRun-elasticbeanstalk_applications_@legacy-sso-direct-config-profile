@@ -4,7 +4,7 @@
     subtitle: (*string)((len=17) "🌎 eu-central-1"),
     match: (*string)(<nil>),
     uid: (*string)((len=32) "legacy-sso-direct-config-profile"),
-    autocomplete: (*string)((len=44) "@legacy-sso-direct-config-profile  asdf asdf"),
+    autocomplete: (*string)((len=64) "elasticbeanstalk applications @legacy-sso-direct-config-profile "),
     arg: ([]string) <nil>,
     valid: (bool) false,
     file: (bool) false,

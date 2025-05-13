@@ -1,4 +1,4 @@
-([]*aw.Item) (len=3) {
+([]*aw.Item) (len=6) {
   (*aw.Item)({
     title: (string) (len=8) "profile1",
     subtitle: (*string)((len=14) "🌎 us-east-1"),
@@ -44,11 +44,77 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
+    title: (string) (len=12) "sso-profile1",
+    subtitle: (*string)((len=14) "🌎 us-west-1"),
+    match: (*string)(<nil>),
+    uid: (*string)((len=12) "sso-profile1"),
+    autocomplete: (*string)((len=25) "$us-east-1 @sso-profile1 "),
+    arg: ([]string) <nil>,
+    valid: (bool) false,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=78) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/Accounts.icns",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=12) "sso-profile2",
+    subtitle: (*string)((len=19) "🌎 ap-northeast-1"),
+    match: (*string)(<nil>),
+    uid: (*string)((len=12) "sso-profile2"),
+    autocomplete: (*string)((len=25) "$us-east-1 @sso-profile2 "),
+    arg: ([]string) <nil>,
+    valid: (bool) false,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=78) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/Accounts.icns",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
     title: (string) (len=12) "bogusprofile",
     subtitle: (*string)((len=10) "🌎 bogus"),
     match: (*string)(<nil>),
     uid: (*string)((len=12) "bogusprofile"),
     autocomplete: (*string)((len=25) "$us-east-1 @bogusprofile "),
+    arg: ([]string) <nil>,
+    valid: (bool) false,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) {
+    },
+    mods: (map[string]*aw.Modifier) <nil>,
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=78) "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/Accounts.icns",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=32) "legacy-sso-direct-config-profile",
+    subtitle: (*string)((len=17) "🌎 eu-central-1"),
+    match: (*string)(<nil>),
+    uid: (*string)((len=32) "legacy-sso-direct-config-profile"),
+    autocomplete: (*string)((len=45) "$us-east-1 @legacy-sso-direct-config-profile "),
     arg: ([]string) <nil>,
     valid: (bool) false,
     file: (bool) false,

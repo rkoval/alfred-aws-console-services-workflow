@@ -1,7 +1,9 @@
 package workflow
 
 import (
+	"fmt"
 	"os"
+	"strings"
 	"testing"
 
 	"github.com/bradleyjkemp/cupaloy"
@@ -14,6 +16,7 @@ type testCase struct {
 	query                       string
 	fixtureName                 string
 	deleteItemArgBeforeSnapshot bool
+	expectedPanicMessage        string
 }
 
 var tcs []testCase = []testCase{
@@ -641,9 +644,50 @@ var tcs []testCase = []testCase{
 		query:       "codepipeline pipelines pipeline-name-1",
 		fixtureName: "../searchers/codepipeline_pipelines_test", // reuse test fixture from this other test
 	},
+	{
+		query: "@legacy-sso-direct-config-profile",
+	},
+	{
+		query: "@sso-profile1",
+	},
+	{
+		query: "@sso-profile2",
+	},
+	{
+		query: "@legacy-sso-direct-config-profile elasticbeanstalk",
+	},
+	{
+		query: "$eu-central-1 @legacy-sso-direct-config-profile elasticbeanstalk",
+	},
+	{
+		query:       "@legacy-sso-direct-config-profile elasticbeanstalk applications",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
+	},
+	{
+		query:       "elasticbeanstalk applications @legacy-sso-direct-config-profile",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
+	},
+	{
+		query:       "@sso-profile1 elasticbeanstalk applications",
+		fixtureName: "../searchers/elastic_beanstalk_applications_test_us-east-1", // reuse test fixture from this other test
+	},
 }
 
 func testWorkflow(t *testing.T, tc testCase, forceFetch, snapshot bool) []*aw.Item {
+	if tc.expectedPanicMessage != "" {
+		defer func() {
+			if r := recover(); r != nil {
+				panicMsg := fmt.Sprintf("%v", r)
+				if !strings.Contains(panicMsg, tc.expectedPanicMessage) {
+					t.Fatalf("Expected panic with message containing '%s', got '%s'", tc.expectedPanicMessage, panicMsg)
+				}
+				// panic matches expected message, test passes
+				return
+			}
+			t.Fatalf("Expected panic with message: %s, but no panic occurred", tc.expectedPanicMessage)
+		}()
+	}
+
 	updater := &tests.MockAlfredUpdater{}
 	wf := aw.New(aw.Update(updater))
 
@@ -681,10 +725,14 @@ func TestRunWithCache(t *testing.T) {
 	}
 }
 
+// TestRunWithoutRegion uses a non-existent profile "bogus-test-profile" to test
+// that the workflow handles invalid AWS profiles gracefully instead of crashing.
+// The snapshot verifies the correct error state appears in the UI.
 func TestRunWithoutRegion(t *testing.T) {
 	tcs := []testCase{
 		{
-			query: "",
+			query:                "bogus-test-profile",
+			expectedPanicMessage: "failed to get shared config profile, bogus-test-profile",
 		},
 	}
 	awsProfile := os.Getenv("AWS_PROFILE")

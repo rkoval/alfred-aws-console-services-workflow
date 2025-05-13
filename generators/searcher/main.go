@@ -58,7 +58,7 @@ type SearcherNamer struct {
 var numberAfterUnderscore *regexp.Regexp = regexp.MustCompile(`_([0-9]+)`)
 
 func NewSearcherNamer(service, entity string, operationDefinition OperationDefinition) SearcherNamer {
-	if "s" == entity[len(entity)-1:] {
+	if entity[len(entity)-1:] == "s" {
 		log.Fatalf("Entity should be singular for casing to work properly")
 	}
 

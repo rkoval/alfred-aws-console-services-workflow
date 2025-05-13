@@ -1,10 +1,10 @@
 ([]*aw.Item) (len=1) {
   (*aw.Item)({
-    title: (string) (len=32) "legacy-sso-direct-config-profile",
-    subtitle: (*string)((len=17) "🌎 eu-central-1"),
+    title: (string) (len=12) "sso-profile2",
+    subtitle: (*string)((len=19) "🌎 ap-northeast-1"),
     match: (*string)(<nil>),
-    uid: (*string)((len=32) "legacy-sso-direct-config-profile"),
-    autocomplete: (*string)((len=44) "@legacy-sso-direct-config-profile  asdf asdf"),
+    uid: (*string)((len=12) "sso-profile2"),
+    autocomplete: (*string)((len=14) "@sso-profile2 "),
     arg: ([]string) <nil>,
     valid: (bool) false,
     file: (bool) false,
