@@ -92,6 +92,7 @@ open_finder() {
 test
 create_release_dir
 install_package
+bump_version_and_tag
 copy_to_release_dir
 sign_binary
 package_release
@@ -99,6 +100,5 @@ notarize_package
 # staple_notarized_package
 add_version_to_package_name
 create_dummy_awgo_updater_file
-bump_version_and_tag
 open_github
 open_finder
