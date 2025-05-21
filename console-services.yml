@@ -129,6 +129,75 @@
       name: Wizard
       url: /batch/home#wizard
 
+- id: bedrock
+  name: Bedrock
+  description: Build and scale generative AI applications with foundation models (FMs)
+  url: "/bedrock/home#"
+  sub_services:
+    - id: agents
+      name: Agents
+      url: /bedrock/home#agents
+    - id: batchinference
+      name: Batch inference
+      url: /bedrock/home#batch-inference
+    - id: basemodels
+      name: Base models
+      url: /bedrock/home#models
+    - id: bedrockstudio
+      name: Bedrock Studio
+      url: /bedrock/home#bedrock-studio
+    - id: chatplayground
+      name: Chat playground
+      url: /bedrock/home#chat-playground
+    - id: crossregioninference
+      name: Cross-region inference
+      url: /bedrock/home#cross-region-inference
+    - id: custommodels
+      name: Custom models
+      url: /bedrock/home#custom-models
+    - id: examples
+      name: Examples
+      url: /bedrock/home#examples
+    - id: guardrails
+      name: Guardrails
+      url: /bedrock/home#guardrails
+    - id: imageplayground
+      name: Image playground
+      url: /bedrock/home#image-playground
+    - id: importedmodels
+      name: Imported models
+      url: /bedrock/home#import-models
+    - id: knowledgebases
+      name: Knowledge bases
+      url: /bedrock/home#knowledge-bases
+    - id: modelaccess
+      name: Model access
+      url: /bedrock/home#model-access
+    - id: modelevaluation
+      name: Model evaluation
+      url: /bedrock/home#model-evaluation
+    - id: overview
+      name: Overview
+      url: /bedrock/home#overview
+    - id: promptflows
+      name: Prompt flows
+      url: /bedrock/home#prompt-flows
+    - id: promptmanagement
+      name: Prompt management
+      url: /bedrock/home#prompt-management
+    - id: provisionedthroughput
+      name: Provisioned throughput
+      url: /bedrock/home#provisioned-throughput
+    - id: settings
+      name: Settings
+      url: /bedrock/home#settings
+    - id: textplayground
+      name: Text playground
+      url: /bedrock/home#text-playground
+    - id: watermarkdetection
+      name: Watermark detection
+      url: /bedrock/home#watermark-detection
+
 - id: blockchain
   name: Blockchain
   description: Easily create and manage scalable blockchain networks
@@ -239,7 +308,7 @@
   name: CloudFront
   description: Global Content Delivery Network
   has_global_region: true
-  url: '/cloudfront/home#'
+  url: "/cloudfront/home#"
   sub_services:
     - id: distributions
       name: Distributions
@@ -408,7 +477,6 @@
       name: Account metrics
       url: /codesuite/codebuild/metrics#
 
-
 - id: codecommit
   name: CodeCommit
   description: Store Code in Private Git Repositories
@@ -438,7 +506,6 @@
     - id: onpremisesinstances
       name: On-premises instances
       url: /codesuite/codedeploy/on-premises-instances#
-
 
 - id: codepipeline
   name: CodePipeline
@@ -576,7 +643,6 @@
     - id: preferences
       name: Preferences
       url: /cost-management/home#/settings
-
 
 - id: datapipeline
   name: Data Pipeline
@@ -1320,7 +1386,7 @@
 # TODO consolidate IoT services into sub-services
 - id: iot1click
   name: IoT 1-Click
-  description:  Trigger AWS Lambda functions from simple devices
+  description: Trigger AWS Lambda functions from simple devices
   url: "/iot1click/home#"
 
 - id: iotanalytics
@@ -1588,38 +1654,38 @@
 - id: neptune
   name: Neptune
   description: Fast, reliable graph database built for the cloud
-  url: '/neptune/home#databases:'
+  url: "/neptune/home#databases:"
   sub_services:
     - id: databases
       name: Databases
-      url: '/neptune/home#databases:'
+      url: "/neptune/home#databases:"
     - id: clusters
       name: Clusters
-      url: '/neptune/home#dbclusters:'
+      url: "/neptune/home#dbclusters:"
     - id: snapshots
       name: Snapshots
-      url: '/neptune/home#db-snapshots:'
+      url: "/neptune/home#db-snapshots:"
     - id: reservedinstances
       name: Reserved instances
-      url: '/neptune/home#reserved-instance-list:'
+      url: "/neptune/home#reserved-instance-list:"
     - id: notebooks
       name: Notebooks
-      url: '/neptune/home#notebooks:'
+      url: "/neptune/home#notebooks:"
     - id: subnetgroups
       name: Subnet groups
-      url: '/neptune/home#db-subnet-groups:'
+      url: "/neptune/home#db-subnet-groups:"
     - id: parametergroups
       name: Parameter groups
-      url: '/neptune/home#parameter-groups:'
+      url: "/neptune/home#parameter-groups:"
     - id: events
       name: Events
-      url: '/neptune/home#events:'
+      url: "/neptune/home#events:"
     - id: eventsubscriptions
       name: Event subscriptions
-      url: '/neptune/home#event-subscriptions-list:'
+      url: "/neptune/home#event-subscriptions-list:"
     - id: notifications
       name: Notifications
-      url: '/neptune/home#notifications:'
+      url: "/neptune/home#notifications:"
 
 - id: opsworks
   name: OpsWorks
@@ -1692,7 +1758,7 @@
 
 - id: quicksight
   name: QuickSight
-  description:  Fast, easy to use business analytics
+  description: Fast, easy to use business analytics
   url: https://quicksight.aws.amazon.com/
 
 - id: rds
@@ -1843,32 +1909,32 @@
 - id: ram
   name: Resource Access Manager
   description: Share AWS resources with other accounts or AWS Organizations
-  url: '/ram/home#OwnedResourceShares:'
+  url: "/ram/home#OwnedResourceShares:"
   sub_services:
     - id: ownedresourceshares
       name: Owned resource shares
-      url: '/ram/home#OwnedResourceShares:'
+      url: "/ram/home#OwnedResourceShares:"
     - id: ownedresources
       name: Owned resources
-      url: '/ram/home#OwnedResources:'
+      url: "/ram/home#OwnedResources:"
     - id: ownedprincipals
       name: Owned principals
-      url: '/ram/home#OwnedPrincipals:'
+      url: "/ram/home#OwnedPrincipals:"
     - id: sharedresourceshares
       name: Shared resource shares
-      url: '/ram/home#SharedResourceShares:'
+      url: "/ram/home#SharedResourceShares:"
     - id: sharedresources
       name: Shared resources
-      url: '/ram/home#SharedResources:'
+      url: "/ram/home#SharedResources:"
     - id: sharedprincipals
       name: Shared principals
-      url: '/ram/home#SharedPrincipals:'
+      url: "/ram/home#SharedPrincipals:"
     - id: permissionslibrary
       name: Permissions library
-      url: '/ram/home#Permissions:'
+      url: "/ram/home#Permissions:"
     - id: settings
       name: Settings
-      url: '/ram/home#Settings:'
+      url: "/ram/home#Settings:"
 
 - id: resource-explorer
   name: Resource Explorer
@@ -2079,7 +2145,6 @@
     - id: prepaidjobs
       name: Prepaid jobs
       url: /snowfamily/home#/prepaidjobs
-
 
 - id: sns
   name: Simple Notification Service
@@ -2408,7 +2473,6 @@
     - id: settings
       name: Settings
       url: "/vpc/home#Settings:"
-
 
 - id: waf
   name: Web Application Firewall & Shield
