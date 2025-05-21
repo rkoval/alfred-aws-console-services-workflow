@@ -324,42 +324,6 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=13) "stepfunctions",
-    subtitle: (*string)((len=59) "🗂 Step Functions – Coordinate Distributed Applications"),
-    match: (*string)((len=28) "stepfunctions Step Functions"),
-    uid: (*string)((len=13) "stepfunctions"),
-    autocomplete: (*string)((len=14) "stepfunctions "),
-    arg: ([]string) (len=1) {
-      (string) (len=84) "https://us-west-2.console.aws.amazon.com/states/home?region=us-west-2#/statemachines"
-    },
-    valid: (bool) true,
-    file: (bool) false,
-    copytext: (*string)(<nil>),
-    largetype: (*string)(<nil>),
-    ql: (*string)(<nil>),
-    vars: (map[string]string) (len=1) {
-      (string) (len=6) "action": (string) (len=8) "open-url"
-    },
-    mods: (map[string]*aw.Modifier) (len=1) {
-      (string) (len=3) "cmd": (*aw.Modifier)({
-        Key: (string) (len=3) "cmd",
-        arg: ([]string) <nil>,
-        subtitle: (*string)((len=21) "Copy URL to clipboard"),
-        valid: (bool) false,
-        icon: (*aw.Icon)(<nil>),
-        vars: (map[string]string) (len=1) {
-          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
-        }
-      })
-    },
-    actions: (map[string][]string) <nil>,
-    icon: (*aw.Icon)({
-      Value: (string) (len=24) "images/stepfunctions.png",
-      Type: (aw.IconType) ""
-    }),
-    noUID: (bool) false
-  }),
-  (*aw.Item)({
     title: (string) (len=9) "inspector",
     subtitle: (*string)((len=42) "Inspector – Analyze Application Security"),
     match: (*string)((len=19) "inspector Inspector"),
@@ -391,6 +355,42 @@
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=20) "images/inspector.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=13) "stepfunctions",
+    subtitle: (*string)((len=59) "🗂 Step Functions – Coordinate Distributed Applications"),
+    match: (*string)((len=28) "stepfunctions Step Functions"),
+    uid: (*string)((len=13) "stepfunctions"),
+    autocomplete: (*string)((len=14) "stepfunctions "),
+    arg: ([]string) (len=1) {
+      (string) (len=84) "https://us-west-2.console.aws.amazon.com/states/home?region=us-west-2#/statemachines"
+    },
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=24) "images/stepfunctions.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
@@ -612,42 +612,6 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=10) "workspaces",
-    subtitle: (*string)((len=36) "WorkSpaces – Desktops in the Cloud"),
-    match: (*string)((len=21) "workspaces WorkSpaces"),
-    uid: (*string)((len=10) "workspaces"),
-    autocomplete: (*string)((len=11) "workspaces "),
-    arg: ([]string) (len=1) {
-      (string) (len=74) "https://us-west-2.console.aws.amazon.com/workspaces/home?region=us-west-2#"
-    },
-    valid: (bool) true,
-    file: (bool) false,
-    copytext: (*string)(<nil>),
-    largetype: (*string)(<nil>),
-    ql: (*string)(<nil>),
-    vars: (map[string]string) (len=1) {
-      (string) (len=6) "action": (string) (len=8) "open-url"
-    },
-    mods: (map[string]*aw.Modifier) (len=1) {
-      (string) (len=3) "cmd": (*aw.Modifier)({
-        Key: (string) (len=3) "cmd",
-        arg: ([]string) <nil>,
-        subtitle: (*string)((len=21) "Copy URL to clipboard"),
-        valid: (bool) false,
-        icon: (*aw.Icon)(<nil>),
-        vars: (map[string]string) (len=1) {
-          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
-        }
-      })
-    },
-    actions: (map[string][]string) <nil>,
-    icon: (*aw.Icon)({
-      Value: (string) (len=21) "images/workspaces.png",
-      Type: (aw.IconType) ""
-    }),
-    noUID: (bool) false
-  }),
-  (*aw.Item)({
     title: (string) (len=15) "managedservices",
     subtitle: (*string)((len=53) "Managed Services – IT operations management for AWS"),
     match: (*string)((len=32) "managedservices Managed Services"),
@@ -684,13 +648,13 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=14) "accessanalyzer",
-    subtitle: (*string)((len=52) "🗂 Access Analyzer – Monitor access to resources"),
-    match: (*string)((len=34) "accessanalyzer Access Analyzer iam"),
-    uid: (*string)((len=14) "accessanalyzer"),
-    autocomplete: (*string)((len=15) "accessanalyzer "),
+    title: (string) (len=10) "workspaces",
+    subtitle: (*string)((len=36) "WorkSpaces – Desktops in the Cloud"),
+    match: (*string)((len=21) "workspaces WorkSpaces"),
+    uid: (*string)((len=10) "workspaces"),
+    autocomplete: (*string)((len=11) "workspaces "),
     arg: ([]string) (len=1) {
-      (string) (len=85) "https://us-west-2.console.aws.amazon.com/access-analyzer/home?region=us-west-2#/rules"
+      (string) (len=74) "https://us-west-2.console.aws.amazon.com/workspaces/home?region=us-west-2#"
     },
     valid: (bool) true,
     file: (bool) false,
@@ -714,7 +678,7 @@
     },
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
-      Value: (string) (len=25) "images/accessanalyzer.png",
+      Value: (string) (len=21) "images/workspaces.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
@@ -751,6 +715,42 @@
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=25) "images/developertools.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=14) "accessanalyzer",
+    subtitle: (*string)((len=52) "🗂 Access Analyzer – Monitor access to resources"),
+    match: (*string)((len=34) "accessanalyzer Access Analyzer iam"),
+    uid: (*string)((len=14) "accessanalyzer"),
+    autocomplete: (*string)((len=15) "accessanalyzer "),
+    arg: ([]string) (len=1) {
+      (string) (len=85) "https://us-west-2.console.aws.amazon.com/access-analyzer/home?region=us-west-2#/rules"
+    },
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=25) "images/accessanalyzer.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
@@ -864,42 +864,6 @@
     noUID: (bool) false
   }),
   (*aw.Item)({
-    title: (string) (len=22) "servermigrationservice",
-    subtitle: (*string)((len=63) "Server Migration Service – Migrate on-premises servers to AWS"),
-    match: (*string)((len=47) "servermigrationservice Server Migration Service"),
-    uid: (*string)((len=22) "servermigrationservice"),
-    autocomplete: (*string)((len=23) "servermigrationservice "),
-    arg: ([]string) (len=1) {
-      (string) (len=79) "https://us-west-2.console.aws.amazon.com/servermigration/home?region=us-west-2#"
-    },
-    valid: (bool) true,
-    file: (bool) false,
-    copytext: (*string)(<nil>),
-    largetype: (*string)(<nil>),
-    ql: (*string)(<nil>),
-    vars: (map[string]string) (len=1) {
-      (string) (len=6) "action": (string) (len=8) "open-url"
-    },
-    mods: (map[string]*aw.Modifier) (len=1) {
-      (string) (len=3) "cmd": (*aw.Modifier)({
-        Key: (string) (len=3) "cmd",
-        arg: ([]string) <nil>,
-        subtitle: (*string)((len=21) "Copy URL to clipboard"),
-        valid: (bool) false,
-        icon: (*aw.Icon)(<nil>),
-        vars: (map[string]string) (len=1) {
-          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
-        }
-      })
-    },
-    actions: (map[string][]string) <nil>,
-    icon: (*aw.Icon)({
-      Value: (string) (len=33) "images/servermigrationservice.png",
-      Type: (aw.IconType) ""
-    }),
-    noUID: (bool) false
-  }),
-  (*aw.Item)({
     title: (string) (len=3) "mcs",
     subtitle: (*string)((len=130) "🗂 Keyspaces (for Apache Cassandra) – A scalable, highly available, and managed Apache Cassandra–compatible database service"),
     match: (*string)((len=36) "mcs Keyspaces (for Apache Cassandra)"),
@@ -931,6 +895,42 @@
     actions: (map[string][]string) <nil>,
     icon: (*aw.Icon)({
       Value: (string) (len=14) "images/mcs.png",
+      Type: (aw.IconType) ""
+    }),
+    noUID: (bool) false
+  }),
+  (*aw.Item)({
+    title: (string) (len=22) "servermigrationservice",
+    subtitle: (*string)((len=63) "Server Migration Service – Migrate on-premises servers to AWS"),
+    match: (*string)((len=47) "servermigrationservice Server Migration Service"),
+    uid: (*string)((len=22) "servermigrationservice"),
+    autocomplete: (*string)((len=23) "servermigrationservice "),
+    arg: ([]string) (len=1) {
+      (string) (len=79) "https://us-west-2.console.aws.amazon.com/servermigration/home?region=us-west-2#"
+    },
+    valid: (bool) true,
+    file: (bool) false,
+    copytext: (*string)(<nil>),
+    largetype: (*string)(<nil>),
+    ql: (*string)(<nil>),
+    vars: (map[string]string) (len=1) {
+      (string) (len=6) "action": (string) (len=8) "open-url"
+    },
+    mods: (map[string]*aw.Modifier) (len=1) {
+      (string) (len=3) "cmd": (*aw.Modifier)({
+        Key: (string) (len=3) "cmd",
+        arg: ([]string) <nil>,
+        subtitle: (*string)((len=21) "Copy URL to clipboard"),
+        valid: (bool) false,
+        icon: (*aw.Icon)(<nil>),
+        vars: (map[string]string) (len=1) {
+          (string) (len=6) "action": (string) (len=17) "copy-to-clipboard"
+        }
+      })
+    },
+    actions: (map[string][]string) <nil>,
+    icon: (*aw.Icon)({
+      Value: (string) (len=33) "images/servermigrationservice.png",
       Type: (aw.IconType) ""
     }),
     noUID: (bool) false
