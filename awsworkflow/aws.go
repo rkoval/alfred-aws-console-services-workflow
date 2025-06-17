@@ -1,41 +1,22 @@
 package awsworkflow
 
 import (
-	"context"
 	"errors"
 	"net/http"
 	"os"
 	"strings"
+	"time"
 
 	"github.com/aws/aws-sdk-go-v2/aws"
-	"github.com/aws/aws-sdk-go-v2/config"
 	aw "github.com/deanishe/awgo"
 	"github.com/rkoval/alfred-aws-console-services-workflow/awsconfig"
 	"github.com/rkoval/alfred-aws-console-services-workflow/util"
 )
 
-func InitAWS(transport http.RoundTripper, profile *awsconfig.Profile, region *awsconfig.Region) aws.Config {
-	profileLoadOptionsFunc := func(o *config.LoadOptions) error {
-		return nil
-	}
-	regionLoadOptionsFunc := func(o *config.LoadOptions) error {
-		return nil
-	}
-	if profile != nil {
-		profileLoadOptionsFunc = config.WithSharedConfigProfile(profile.Name)
-		if profile.Region != "" {
-			regionLoadOptionsFunc = config.WithRegion(profile.Region)
-		}
-	}
-	if region != nil {
-		regionLoadOptionsFunc = config.WithRegion(region.Name)
-	}
+var SigninToken string
 
-	cfg, err := config.LoadDefaultConfig(
-		context.TODO(),
-		profileLoadOptionsFunc,
-		regionLoadOptionsFunc,
-	)
+func InitAWS(transport http.RoundTripper, profile *awsconfig.Profile, region *awsconfig.Region, wf *aw.Workflow) aws.Config {
+	cfg, err := awsconfig.GetAwsConfig(profile, region)
 	if err != nil {
 		panic(err)
 	}
@@ -47,6 +28,10 @@ func InitAWS(transport http.RoundTripper, profile *awsconfig.Profile, region *aw
 	}
 
 	InitAWSConsoleDomain(cfg.Region)
+	err = InitAWSSession(cfg, wf)
+	if err != nil {
+		panic(err)
+	}
 
 	return cfg
 }
@@ -71,6 +56,53 @@ func InitAWSConsoleDomain(region string) {
 		}
 	}
 	util.AWSConsoleDomain = awsConsoleDomain
+}
+
+func InitAWSSession(cfg aws.Config, wf *aw.Workflow) error {
+	fileName := "aws_session_" + util.GetProfile(cfg) + ".json"
+	var awsSession util.SessionJSON
+
+	// Attempt to load session from cache
+	if err := loadSessionFromCache(wf, fileName, &awsSession); err != nil {
+		// Cache miss or error, create a new session
+		var err error
+		awsSession, err = util.CreateSession(cfg)
+		if err != nil {
+			return err
+		}
+		if err := wf.Cache.StoreJSON(fileName, awsSession); err != nil {
+			return err
+		}
+	}
+
+	// Check if session is expired
+	if isSessionExpired(awsSession) {
+		awsSession, err := util.CreateSession(cfg)
+		if err != nil {
+			return err
+		}
+		if err := wf.Cache.StoreJSON(fileName, awsSession); err != nil {
+			return err
+		}
+	}
+
+	util.SigninToken = awsSession.SigninToken
+	return nil
+
+}
+
+func loadSessionFromCache(wf *aw.Workflow, fileName string, awsSession *util.SessionJSON) error {
+	if wf.Cache.Exists(fileName) {
+		if err := wf.Cache.LoadJSON(fileName, awsSession); err != nil {
+			return err
+		}
+		return nil
+	}
+	return errors.New("cache does not exist")
+}
+
+func isSessionExpired(session util.SessionJSON) bool {
+	return session.Expires.Before(time.Now())
 }
 
 func GetImageIcon(id string) *aw.Icon {
