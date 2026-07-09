@@ -61,8 +61,8 @@ package_release() {
 notarize_package() {
   xcrun notarytool submit "./AWS Console Services.alfredworkflow.zip" \
     --wait \
-    --apple-id "ryan@ryankoval.com" \
-    --team-id "MLBCABYB34"
+    --apple-id "ryan@endtoend.productions" \
+    --team-id "52BT7HFCN3"
   rm -f "$PACKAGE_NAME"
 }
 
