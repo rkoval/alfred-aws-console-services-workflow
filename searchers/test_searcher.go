@@ -17,7 +17,7 @@ func TestSearcher(t *testing.T, searcher Searcher, fixtureFilename string) {
 	r := tests.NewAWSRecorderSession(fixtureFilename)
 	defer tests.PanicOnError(r.Stop)
 
-	cfg := awsworkflow.InitAWS(r, nil, nil)
+	cfg := awsworkflow.InitAWS(r, nil, nil, nil)
 	err := searcher.Search(
 		wf,
 		searchutil.SearchArgs{
