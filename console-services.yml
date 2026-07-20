@@ -933,10 +933,10 @@
       url: "/ec2/home#TargetGroups:"
     - id: launchconfigs
       name: Launch Configurations
-      url: "/ec2autoscaling/home#/lc"
+      url: "/ec2/home#LaunchConfigurations:"
     - id: autoscalinggroups
       name: Auto Scaling Groups
-      url: "/ec2autoscaling/home#/details"
+      url: "/ec2/home#AutoScalingGroups:"
 
 - id: ecr
   name: Elastic Container Registry
